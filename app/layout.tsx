@@ -48,6 +48,17 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+function NavLink({ href, label }: { href: string; label: string }) {
+  return (
+    <Link
+      href={href}
+      className="rounded-lg px-3 py-1.5 font-semibold text-slate-600 hover:bg-slate-100 hover:text-slate-900 whitespace-nowrap transition"
+    >
+      {label}
+    </Link>
+  );
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -55,28 +66,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className="min-h-screen bg-background text-foreground">
-        <header className="border-b">
+      <body className="min-h-screen bg-slate-50 text-slate-900 antialiased">
+        <header className="sticky top-0 z-30 border-b bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
           <div className="container flex h-14 items-center gap-6">
-            <Link href="/" className="font-semibold">
-              ITパス理解ノート
+            <Link href="/" className="flex items-center gap-2 font-black tracking-tight">
+              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 text-sm font-black text-white shadow-sm">
+                理
+              </span>
+              <span>理解ノート</span>
             </Link>
-            <nav className="flex gap-4 text-sm text-muted-foreground overflow-x-auto">
-              <Link href="/learn" className="hover:text-foreground whitespace-nowrap">
-                学習
-              </Link>
-              <Link href="/learn/questions" className="hover:text-foreground whitespace-nowrap">
-                問題一覧
-              </Link>
-              <Link href="/topics" className="hover:text-foreground whitespace-nowrap">
-                論点
-              </Link>
-              <Link href="/misconceptions" className="hover:text-foreground whitespace-nowrap">
-                誤解パターン
-              </Link>
-              <Link href="/dashboard" className="hover:text-foreground whitespace-nowrap">
-                ダッシュボード
-              </Link>
+            <nav className="flex gap-1 text-sm overflow-x-auto">
+              <NavLink href="/learn" label="学習" />
+              <NavLink href="/learn/questions" label="問題" />
+              <NavLink href="/topics" label="論点" />
+              <NavLink href="/misconceptions" label="誤解" />
+              <NavLink href="/dashboard" label="DB" />
             </nav>
           </div>
         </header>

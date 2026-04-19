@@ -1,10 +1,11 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { ChoiceList, type ChoiceVM } from "./ChoiceList";
 import { ResultPanel, type ResultPanelData } from "./ResultPanel";
-import { Button } from "@/components/ui/button";
 import { recordAttemptAction } from "@/server/actions/attempts";
+import { Loader2 } from "lucide-react";
 
 export type QuestionPlayerProps = {
   questionId: string;
@@ -43,28 +44,72 @@ export function QuestionPlayer(props: QuestionPlayerProps) {
     });
   };
 
-  if (!revealed) {
-    return (
-      <div className="space-y-4">
-        <ChoiceList
-          choices={props.choices}
-          selectedLabel={selectedLabel}
-          revealed={false}
-          onSelect={setSelectedLabel}
-        />
-        <div className="flex justify-end">
-          <Button disabled={!selectedLabel || isPending} onClick={onSubmit}>
-            回答する
-          </Button>
-        </div>
-      </div>
-    );
-  }
+  return (
+    <div className="space-y-5">
+      <ChoiceList
+        choices={props.choices}
+        selectedLabel={selectedLabel}
+        revealed={revealed}
+        onSelect={setSelectedLabel}
+      />
 
+      <AnimatePresence mode="wait">
+        {!revealed && (
+          <motion.div
+            key="submit"
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            className="flex items-center justify-between gap-3 rounded-2xl border bg-slate-50 px-5 py-4"
+          >
+            <div className="text-sm text-slate-600">
+              {selectedLabel ? (
+                <>
+                  選択中:{" "}
+                  <span className="font-bold text-slate-900">
+                    {selectedLabel}
+                  </span>
+                </>
+              ) : (
+                "選択肢をタップして選んでください"
+              )}
+            </div>
+            <button
+              disabled={!selectedLabel || isPending}
+              onClick={onSubmit}
+              className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-6 py-3 font-bold text-white shadow-lg transition enabled:hover:bg-slate-800 enabled:hover:shadow-xl disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              {isPending ? (
+                <>
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  記録中
+                </>
+              ) : (
+                "回答する"
+              )}
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {revealed && (
+        <ResultPanel
+          data={buildResultData(props, selectedLabel!)}
+          nextHref={props.nextHref}
+        />
+      )}
+    </div>
+  );
+}
+
+function buildResultData(
+  props: QuestionPlayerProps,
+  selectedLabel: string
+): ResultPanelData {
   const selected = props.choices.find((c) => c.label === selectedLabel) ?? null;
-  const data: ResultPanelData = {
+  return {
     isCorrect: selected?.isCorrect ?? false,
-    selectedLabel: selectedLabel!,
+    selectedLabel,
     selectedChoice: selected
       ? {
           label: selected.label,
@@ -78,16 +123,4 @@ export function QuestionPlayer(props: QuestionPlayerProps) {
     topics: props.topics,
     materials: props.materials,
   };
-
-  return (
-    <div className="space-y-4">
-      <ChoiceList
-        choices={props.choices}
-        selectedLabel={selectedLabel}
-        revealed
-        onSelect={() => {}}
-      />
-      <ResultPanel data={data} nextHref={props.nextHref} />
-    </div>
-  );
 }

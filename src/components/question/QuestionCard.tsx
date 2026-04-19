@@ -1,27 +1,5 @@
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { pickFormat, pickMajor } from "@/lib/design";
 import { Markdown } from "@/lib/markdown";
-
-const FORMAT_LABEL: Record<string, string> = {
-  definition: "定義",
-  comparison: "比較",
-  case: "ケース",
-  table_read: "表読み取り",
-  calculation: "計算",
-  pseudo_lang: "擬似言語",
-  spreadsheet: "表計算",
-  security_case: "セキュリティ事例",
-  biz_analysis: "経営分析",
-  law_ip: "法務/知財",
-  network_basics: "ネットワーク基礎",
-  db_basics: "DB基礎",
-};
-
-const MAJOR_LABEL: Record<string, string> = {
-  strategy: "ストラテジ系",
-  management: "マネジメント系",
-  technology: "テクノロジ系",
-};
 
 export function QuestionCard({
   examYear,
@@ -38,23 +16,39 @@ export function QuestionCard({
   formatType: string;
   stem: string;
 }) {
+  const major = pickMajor(majorCategory);
+  const fmt = pickFormat(formatType);
+  const FmtIcon = fmt.icon;
+  const MajorIcon = major.icon;
   const seasonLabel =
     examSeason === "spring" ? "春" : examSeason === "autumn" ? "秋" : "";
+
   return (
-    <Card>
-      <CardHeader className="space-y-3">
-        <div className="flex flex-wrap gap-2">
-          <Badge variant="outline">
+    <div className="relative overflow-hidden rounded-2xl border bg-white shadow-sm">
+      <div className={`h-1.5 w-full bg-gradient-to-r ${major.gradient}`} />
+      <div className="p-6 space-y-4">
+        <div className="flex flex-wrap items-center gap-2">
+          <span
+            className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-semibold ${major.chip}`}
+          >
+            <MajorIcon className="h-3.5 w-3.5" />
+            {major.label}
+          </span>
+          <span
+            className={`inline-flex items-center gap-1.5 rounded-full border bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-700`}
+          >
+            <FmtIcon className={`h-3.5 w-3.5 ${fmt.color}`} />
+            {fmt.label}
+          </span>
+          <span className="ml-auto rounded-md bg-slate-900 px-2 py-0.5 text-xs font-bold text-white">
             R{examYear}
             {seasonLabel} 第{questionNumber}問
-          </Badge>
-          <Badge variant="secondary">{MAJOR_LABEL[majorCategory] ?? majorCategory}</Badge>
-          <Badge variant="secondary">{FORMAT_LABEL[formatType] ?? formatType}</Badge>
+          </span>
         </div>
-      </CardHeader>
-      <CardContent>
-        <Markdown>{stem}</Markdown>
-      </CardContent>
-    </Card>
+        <div className="text-base md:text-lg leading-relaxed">
+          <Markdown>{stem}</Markdown>
+        </div>
+      </div>
+    </div>
   );
 }

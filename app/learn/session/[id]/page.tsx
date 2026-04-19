@@ -5,7 +5,7 @@ import { db } from "@/db/client";
 import { sessions } from "@/db/schema";
 import { QuestionCard } from "@/components/question/QuestionCard";
 import { QuestionPlayer } from "@/components/question/QuestionPlayer";
-import { Button } from "@/components/ui/button";
+import { SessionProgressBar } from "@/components/session/SessionProgressBar";
 import { getOrCreateAnonUser } from "@/lib/anonId";
 import { getQuestionFull } from "@/server/queries/questions";
 
@@ -29,11 +29,14 @@ export default async function SessionPage({
   const ids = (s.questionIds as unknown as string[]) ?? [];
   if (ids.length === 0) {
     return (
-      <div className="space-y-4">
-        <p>このセッションには出題できる問題がありません。</p>
-        <Button asChild>
-          <Link href="/learn">学習ハブへ戻る</Link>
-        </Button>
+      <div className="rounded-2xl border bg-white p-8 text-center space-y-3">
+        <p className="text-slate-700">このセッションには出題できる問題がありません。</p>
+        <Link
+          href="/learn"
+          className="inline-flex rounded-xl bg-slate-900 px-5 py-2.5 font-semibold text-white"
+        >
+          学習ハブへ戻る
+        </Link>
       </div>
     );
   }
@@ -52,13 +55,8 @@ export default async function SessionPage({
       : `/learn/session/${id}/result`;
 
   return (
-    <div className="space-y-6 max-w-3xl mx-auto">
-      <div className="flex items-center justify-between text-sm text-muted-foreground">
-        <span>
-          セッション {step} / {ids.length}
-        </span>
-        <span>{s.mode} モード</span>
-      </div>
+    <div className="space-y-5 max-w-3xl mx-auto">
+      <SessionProgressBar step={step} total={ids.length} mode={s.mode} />
       <QuestionCard
         examYear={full.question.examYear}
         examSeason={full.question.examSeason}

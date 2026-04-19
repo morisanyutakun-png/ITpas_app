@@ -1,0 +1,55 @@
+{
+  "externalKey": "r07_official_q24",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 24,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "RPA に関する記述として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "企業の一部の業務を外部の組織に委託することによって、自社のリソースを重要な領域に集中したり、コストの最適化や業務の高効率化などを実現したりする。",
+      "isCorrect": false,
+      "whyAttractive": "『業務効率化』のキーワードで選びがち。これはアウトソーシングの説明で、自動化ではなく外部委託。",
+      "misconceptionSlug": "confuse_dx_methods"
+    },
+    {
+      "label": "イ",
+      "body": "組立てや搬送などにハードウェアのロボットを用いることによって、工場の生産活動の自動化を実現する。",
+      "isCorrect": false,
+      "whyAttractive": "『ロボット』『自動化』のワードで反応する。これはFA (Factory Automation) であり、ハードウェアの物理ロボット。RPA は **ソフトウェア**ロボット。",
+      "misconceptionSlug": "confuse_dx_methods"
+    },
+    {
+      "label": "ウ",
+      "body": "システムの利用者が、主体的にシステム管理や運用を行うことによって、利用者の IT リテラシー向上や、システムベンダーへの依存の軽減などを実現する。",
+      "isCorrect": false,
+      "whyAttractive": "『利用者主体』のIT概念として連想するがこれは EUC (End User Computing) の説明で、自動化とは別。",
+      "misconceptionSlug": "confuse_dx_methods"
+    },
+    {
+      "label": "エ",
+      "body": "ホワイトカラーの定型的な事務作業を、ソフトウェアのロボットに代替させることによって、自動化や効率化を図る。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "RPA = **Robotic Process Automation**。オフィスの**ホワイトカラー定型事務**を **ソフトウェアロボット**に代替させる技術。FA (工場の物理ロボ自動化) や EUC (利用者主導の運用) と区別する。",
+  "keyInsight": "**『ホワイトカラー × ソフトウェアロボ』** がRPAの2大特徴。工場ロボ＝FA、外部委託＝アウトソーシング、利用者運用＝EUC、と4つを並べて区別。",
+  "commonMistakeFlow": "1. 『ロボット』に反応して工場の物理ロボ (イ・FA) を選ぶ。\n2. 『業務効率化』だけでアウトソーシング (ア) を選ぶ。\n→ RPAは『**ホワイトカラーの定型事務 × ソフトウェアロボ**』が核心。物理ロボでも委託でもユーザ主導でもない。",
+  "topicSlugs": [
+    { "slug": "biz_dx_methods", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_dx_methods", "weight": 1.0 }
+  ],
+  "materialSlugs": [],
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問24",
+  "modifiedNote": "原典のスキャン PDF を OCR で読み取って構造化しました。OCR起因の表記揺れ (全角/半角、句読点の統一など) のみ整え、設問の意味・選択肢・正解は一切変更していません。",
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 11
+}

@@ -1,0 +1,55 @@
+{
+  "externalKey": "r07_official_q17",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 17,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "プロセスマイニングに関する記述として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "一連の業務で実際に遂行したシステムの操作ログなどを収集し、現行の業務プロセスの可視化、分析、モニタリングによって業務の課題を特定して改善を図る手法やツールである。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "業務プロセスをそれまでの習慣などにとらわれず、抜本的に再構築して業務効率の改善を図る手法である。",
+      "isCorrect": false,
+      "whyAttractive": "『プロセス改善』という共通点で迷う。これは BPR (Business Process Re-engineering) の説明で、可視化ではなく再構築が主眼。",
+      "misconceptionSlug": "confuse_dx_methods"
+    },
+    {
+      "label": "ウ",
+      "body": "コンタクトセンターへの問合せ内容や SNS の投稿内容の分析などの業務プロセスで用いられる、膨大な文章データから必要な情報を抽出して分析する手法である。",
+      "isCorrect": false,
+      "whyAttractive": "『データ分析』というキーワードで連想する。これはテキストマイニングの説明で、対象が『業務プロセス』ではなく『文章』。",
+      "misconceptionSlug": "confuse_dx_methods"
+    },
+    {
+      "label": "エ",
+      "body": "大量の計算処理で正しい値を算出する一連のプロセスを通じて、暗号資産を取得する手段である。",
+      "isCorrect": false,
+      "whyAttractive": "『マイニング』の語感で暗号資産マイニングを連想する。これはブロックチェーンのマイニングであり、業務改善ではない。",
+      "misconceptionSlug": "confuse_dx_methods"
+    }
+  ],
+  "explanation": "プロセスマイニングはシステム操作ログから**業務プロセスを可視化・分析**する手法。BPR（再構築）、テキストマイニング（文章分析）、暗号資産マイニング（計算による暗号資産取得）と区別する。",
+  "keyInsight": "**『マイニング = 採掘 = 隠れた構造を見つける』** と覚える。プロセスマイニングは『業務プロセスを操作ログから掘り起こす』。再構築するBPRや、文章を分析するテキストマイニングとは出発点が違う。",
+  "commonMistakeFlow": "1. 『マイニング』だけで暗号資産を連想して エ を選ぶ。\n2. 『プロセス改善』の語で BPR (イ) を選ぶ。\n3. 『データ抽出』の語でテキストマイニング (ウ) を選ぶ。\n→ いずれも対象が異なる。プロセスマイニングは『**システム操作ログ → 業務プロセス可視化**』。",
+  "topicSlugs": [
+    { "slug": "biz_dx_methods", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_dx_methods", "weight": 1.0 }
+  ],
+  "materialSlugs": [],
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問17",
+  "modifiedNote": "原典のスキャン PDF を OCR で読み取って構造化しました。OCR起因の表記揺れ (全角/半角、句読点の統一など) のみ整え、設問の意味・選択肢・正解は一切変更していません。",
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 8
+}

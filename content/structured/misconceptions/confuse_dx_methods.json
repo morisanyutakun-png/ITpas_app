@@ -1,0 +1,8 @@
+{
+  "slug": "confuse_dx_methods",
+  "title": "RPA / プロセスマイニング / BPR の取り違え",
+  "definition": "業務改善系の語を『何をする手法か』で区別できず混同する。",
+  "typicalExample": "RPAを問われて『工場のロボット自動化』と答える。",
+  "counterExample": "RPA=オフィスの定型事務をソフトロボで自動化 / プロセスマイニング=ログから業務を可視化 / BPR=業務の抜本再構築 / FA=工場の物理自動化。",
+  "recoveryHint": "『可視化／自動化／再構築／物理』の4択で当てはめる。"
+}

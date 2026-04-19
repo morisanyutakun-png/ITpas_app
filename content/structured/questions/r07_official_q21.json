@@ -1,0 +1,55 @@
+{
+  "externalKey": "r07_official_q21",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 21,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "基本的な機能やサービスは無償で提供し、追加の機能やサービスを有償で提供することで利益を上げるビジネスモデルを表す用語として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "フリーウェア",
+      "isCorrect": false,
+      "whyAttractive": "『無償で提供』に反応して選びがち。フリーウェアは『完全に無料のソフトウェア』で、有料部分が無いため設問のビジネスモデルとは異なる。",
+      "misconceptionSlug": "confuse_free_terms"
+    },
+    {
+      "label": "イ",
+      "body": "フリーミアム",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "フリーライド",
+      "isCorrect": false,
+      "whyAttractive": "『フリー』系の語で混同する。フリーライドは『他人の成果にただ乗りする』行為で、ビジネスモデル名ではない。",
+      "misconceptionSlug": "confuse_free_terms"
+    },
+    {
+      "label": "エ",
+      "body": "プロフェッショナルサービス",
+      "isCorrect": false,
+      "whyAttractive": "『有償サービス』のキーワードで連想する。プロフェッショナルサービスはコンサルティングなど専門知識の提供で、設問のフリー＋有料のモデルではない。",
+      "misconceptionSlug": "confuse_free_terms"
+    }
+  ],
+  "explanation": "フリーミアム = **Free + Premium**。基本機能は無料で提供して大量のユーザを獲得し、高機能・大容量・サポートなどを有料化して収益を得るモデル (Spotify、Slack、Zoom 等)。",
+  "keyInsight": "**Free + Premium → フリーミアム**。語源を分解できれば『無料部分＋有料部分の組合せ』とすぐ分かる。完全無料 (フリーウェア) や ただ乗り (フリーライド) と区別。",
+  "commonMistakeFlow": "1. 『無償で提供』に反応してフリーウェアを選ぶ。\n2. 『フリー』系略語の中から音感で選ぶ。\n→ 設問の核心は『**基本無料 + 追加有料**』という2段構造。これに合致するのはフリーミアム (Free + Premium) のみ。",
+  "topicSlugs": [
+    { "slug": "biz_models", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_free_terms", "weight": 1.0 }
+  ],
+  "materialSlugs": [],
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問21",
+  "modifiedNote": "原典のスキャン PDF を OCR で読み取って構造化しました。OCR起因の表記揺れ (全角/半角、句読点の統一など) のみ整え、設問の意味・選択肢・正解は一切変更していません。選択肢エの末尾はOCRが大きく崩れていたため、文脈から最適な選択肢として補完しています。",
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 10
+}

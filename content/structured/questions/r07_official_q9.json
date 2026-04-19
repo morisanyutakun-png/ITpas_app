@@ -1,0 +1,55 @@
+{
+  "externalKey": "r07_official_q9",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 9,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "ハッカソンに関する記述として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "定められたルールの下、ある主題について、肯定派と否定派といった異なる立場に分かれて議論する。",
+      "isCorrect": false,
+      "whyAttractive": "「ハッカソン」を競技形式と捉えると『議論で競う』を選びがち。だがこれはディベートの説明。ハッカソンは『議論』ではなく『開発』。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "情報セキュリティ分野で活躍したいという意志をもった若者が、合宿形式で情報セキュリティに関する実践的な知識を学ぶ。",
+      "isCorrect": false,
+      "whyAttractive": "「ハッカー」の語感で連想する。これは『セキュリティ・キャンプ』等の人材育成イベントの説明であり、ハッカソンとは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "プログラマーやデザイナーなどから成る複数の参加チームが、与えられたテーマに関するプロトタイプを短期間で作成し、その成果を発表して競い合う。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "問題解決や利用者獲得などゲーム的な要素のない分野に、デジタル技術を活用したゲームの要素を取り入れることによって、利用者の参加を動機づける。",
+      "isCorrect": false,
+      "whyAttractive": "『ハッカソン＝楽しい競技』のイメージで連想する。これはゲーミフィケーションの説明で、別概念。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ハッカソン (Hackathon) は **Hack + Marathon**。短期集中で**プロトタイプを作成・発表**して競う開発イベント。ディベート（議論）、セキュリティキャンプ（合宿学習）、ゲーミフィケーション（ゲーム要素活用）と区別する。",
+  "keyInsight": "**Hack(作る)＋Marathon(短期集中)** と分解。『議論』でも『学習』でもなく、**作って発表して競う** が核心。",
+  "commonMistakeFlow": "1. 『短期間で競う』だけでディベートを選ぶ。\n2. 『ハッカー』の語感でセキュリティキャンプを選ぶ。\n3. 『楽しい』『参加動機』からゲーミフィケーションを選ぶ。\n→ どれも『**プロトタイプを作る**』という核心を外している。設問に『プロトタイプ』『短期間で作成』とあれば即ハッカソン。",
+  "topicSlugs": [
+    { "slug": "biz_innovation_methods", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1.0 }
+  ],
+  "materialSlugs": [],
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問9",
+  "modifiedNote": "原典のスキャン PDF を OCR で読み取って構造化しました。OCR起因の表記揺れ (全角/半角、句読点の統一など) のみ整え、設問の意味・選択肢・正解は一切変更していません。",
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 5
+}

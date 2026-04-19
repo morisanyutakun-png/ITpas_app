@@ -37,7 +37,9 @@
       "misconceptionSlug": "confuse_similar_terms"
     }
   ],
-  "explanation": "DNS (Domain Name System) はホスト名 (例: www.example.com) から IPアドレスを得るプロトコル。DHCPは『割り当て』、ARPは『IP→MAC』、NATは『プライベート⇔グローバル』。役割をきちんと分ける。",
+  "explanation": "**DNS (Domain Name System)** はホスト名 (例: www.example.com) → IPアドレスを得るプロトコル。\n\n```\n┌────────┬──────────────────────────┬───────────────────┐\n│ 略語   │ 入力 → 出力              │ 主な用途          │\n├────────┼──────────────────────────┼───────────────────┤\n│ DNS    │ ホスト名 → IPアドレス    │ Webアクセス       │\n│ DHCP   │ MACアドレス → IP割り当て  │ 自動IP配布        │\n│ ARP    │ IPアドレス → MACアドレス │ LAN内通信         │\n│ NAT    │ プライベートIP ⇔ グローバルIP │ ルータ越しの変換  │\n└────────┴──────────────────────────┴───────────────────┘\n```\n\n4つは『何を入れて何を返すか』が違う。DNSは唯一『**ホスト名**』を扱う。",
+  "keyInsight": "**『ホスト名』が入力に出てきたら DNS 一択**。他の3つはホスト名を扱わない。",
+  "commonMistakeFlow": "1. 『IPアドレス』のキーワードで DHCP に流れる (DHCP は『割り当て』が役割で、ホスト名解決ではない)。\n2. ARP/NAT のアドレス変換のイメージで連想する。\n→ 『**入力＝ホスト名**』を見れば DNS 一択。出力（IP）に引きずられない。",
   "topicSlugs": [
     {
       "slug": "network_protocols",

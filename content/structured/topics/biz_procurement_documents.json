@@ -1,0 +1,8 @@
+{
+  "slug": "biz_procurement_documents",
+  "title": "システム調達の文書（RFI / RFP / RFQ）",
+  "majorCategory": "strategy",
+  "minorTopic": "システム企画・調達",
+  "summary": "システム調達の流れに沿って『情報収集 → 提案依頼 → 見積依頼』の3文書がある。順序と目的を取り違えない。",
+  "body": "## 調達文書の流れ\n\n1. **RFI (Request for Information)** — 情報提供依頼書\n   - 提供者に**活用事例や技術情報**などの提供を依頼する\n   - まだ何を調達するか決めきれていない段階で出す\n\n2. **RFP (Request for Proposal)** — 提案依頼書\n   - 要件を提示し、**提案書**の提出を依頼する\n   - ベンダ選定の中核\n\n3. **RFQ (Request for Quotation)** — 見積依頼書\n   - 仕様が固まった後、**見積額**を依頼する\n\n## 似て非なる略語\n\n- **EDI (Electronic Data Interchange)**: 取引データの電子交換\n- **KPI (Key Performance Indicator)**: 重要業績評価指標\n- **SLA (Service Level Agreement)**: サービスレベル合意\n\n## ひっかけ\n- 『RFP = 情報提供依頼』 → ✗ それは RFI\n- 『RFI の後は契約』 → ✗ 普通は RFI → RFP → RFQ → 契約"
+}

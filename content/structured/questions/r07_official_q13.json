@@ -1,0 +1,54 @@
+{
+  "externalKey": "r07_official_q13",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 13,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "新しいITソリューションの活用の是非を判断するために、そのITソリューションの提供者に、活用事例や技術情報などの提供を依頼する文書として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "EDI",
+      "isCorrect": false,
+      "whyAttractive": "略語の見た目から調達文書だと連想する。だが EDI = Electronic Data Interchange は『取引データの電子交換』の仕組みで、文書名ではない。",
+      "misconceptionSlug": "confuse_procurement_docs"
+    },
+    {
+      "label": "イ",
+      "body": "KPI",
+      "isCorrect": false,
+      "whyAttractive": "ビジネス略語として有名で迷う。KPI = Key Performance Indicator は重要業績評価指標で、文書名ではない。",
+      "misconceptionSlug": "confuse_procurement_docs"
+    },
+    {
+      "label": "ウ",
+      "body": "RFI",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "RFP",
+      "isCorrect": false,
+      "whyAttractive": "調達文書系の RF系略語で混同する。RFP = Request for Proposal は『提案依頼書』であり、まだ情報収集段階の RFI とは段階が違う。",
+      "misconceptionSlug": "confuse_procurement_docs"
+    }
+  ],
+  "explanation": "RFI = **Request for Information** = 情報提供依頼書。調達の最初の段階で、ベンダーに『活用事例や技術情報』の提供を依頼する。情報収集後にRFP（提案依頼）→ RFQ（見積依頼）→ 契約と進む。",
+  "topicSlugs": [
+    { "slug": "biz_procurement_documents", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_procurement_docs", "weight": 1.0 }
+  ],
+  "materialSlugs": [
+    { "slug": "procurement_docs_flow", "role": "compare" }
+  ],
+  "originType": "ipa_actual",
+  "sourceNote": "IPA ITパスポート試験 令和7年度 公開問題 問13 より引用 (著作権法第32条)。",
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 7
+}

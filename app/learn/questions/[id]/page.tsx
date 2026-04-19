@@ -45,6 +45,9 @@ export default async function QuestionDetailPage({
       <AttributionNote
         originType={question.originType}
         sourceNote={question.sourceNote}
+        examYear={question.examYear}
+        examSeason={question.examSeason}
+        questionNumber={question.questionNumber}
       />
     </div>
   );

@@ -1,0 +1,54 @@
+{
+  "externalKey": "r07_official_q10",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 10,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "生成AIにおいて、もっともらしいが事実とは異なる内容が出力されることを表す用語として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "エコーチェンバー",
+      "isCorrect": false,
+      "whyAttractive": "AIや情報技術関連で耳にする語感で選びがち。だがエコーチェンバーは『SNS等で同じ意見ばかりが反響し合う』社会現象で、AIの出力誤りではない。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "イ",
+      "body": "シンギュラリティ",
+      "isCorrect": false,
+      "whyAttractive": "AIの未来を語る文脈で頻出する語で連想する。だがシンギュラリティは『AIが人間の知能を超える時点』の概念で、誤回答の現象名ではない。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ディープフェイク",
+      "isCorrect": false,
+      "whyAttractive": "AIによる偽物のイメージで選びがち。だがディープフェイクは『本物そっくりの偽動画/画像』で、生成AIのテキスト出力誤りではない。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ハルシネーション",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "ハルシネーション (Hallucination, 幻覚) は生成AIがもっともらしいが事実と異なる内容を出力する現象。エコーチェンバー (SNS反響) / シンギュラリティ (AI超越点) / ディープフェイク (偽動画) とは別。",
+  "topicSlugs": [
+    { "slug": "ai_generative_basics", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_ai_terms", "weight": 1.0 }
+  ],
+  "materialSlugs": [
+    { "slug": "ai_generative_terms_table", "role": "compare" }
+  ],
+  "originType": "ipa_actual",
+  "sourceNote": "IPA ITパスポート試験 令和7年度 公開問題 問10 より引用 (著作権法第32条)。",
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 6
+}

@@ -15,7 +15,8 @@
     "db:apply": "tsx scripts/applyMigrations.ts",
     "db:studio": "drizzle-kit studio",
     "seed": "tsx scripts/seed.ts",
-    "validate:content": "tsx scripts/validate_structured.ts"
+    "validate:content": "tsx scripts/validate_structured.ts",
+    "ocr:pdf": "tsx scripts/extractPdfOcr.ts"
   },
   "dependencies": {
     "@neondatabase/serverless": "^0.10.4",

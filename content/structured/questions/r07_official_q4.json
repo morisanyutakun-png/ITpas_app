@@ -1,0 +1,52 @@
+{
+  "externalKey": "r07_official_q4",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 4,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "投資の優先度などの経営の戦略を策定するために、経済価値、希少性、模倣困難性及び組織の四つの要素で評価することによって、自社のもつ資源を分析する手法として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "4P",
+      "isCorrect": false,
+      "whyAttractive": "経営戦略系の略語で連想する。だが 4P は Product/Price/Place/Promotion のマーケティングミックス。経営資源の分析手法ではない。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "イ",
+      "body": "PPM",
+      "isCorrect": false,
+      "whyAttractive": "投資の優先度というキーワードで PPM (Product Portfolio Management) を選びがち。だが PPM は市場成長率×市場シェアの2軸で事業を分類する手法であり、4要素ではない。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "ウ",
+      "body": "SWOT分析",
+      "isCorrect": false,
+      "whyAttractive": "強み/弱み/機会/脅威の4要素で迷う。だが SWOT は内部/外部の状況分析で、評価対象は『経済価値・希少性・模倣困難性・組織』ではない。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "エ",
+      "body": "VRIO分析",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "VRIO 分析は **V**alue (経済価値) / **R**arity (希少性) / **I**mitability (模倣困難性) / **O**rganization (組織) の4要素で自社の経営資源を分析する手法。設問の4要素と完全一致する。4P=マーケティング、PPM=事業ポートフォリオ、SWOT=内部/外部の状況分析、と区別する。",
+  "topicSlugs": [
+    { "slug": "biz_marketing_frameworks", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_marketing_framework", "weight": 1.0 }
+  ],
+  "materialSlugs": [],
+  "originType": "ipa_actual",
+  "sourceNote": "IPA ITパスポート試験 令和7年度 公開問題 問4 より引用 (著作権法第32条)。",
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 3
+}

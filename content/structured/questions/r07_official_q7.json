@@ -1,0 +1,54 @@
+{
+  "externalKey": "r07_official_q7",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 7,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "新しい概念やアイディアの実証を目的とした、開発の前段階における検証を表す用語はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "CRM",
+      "isCorrect": false,
+      "whyAttractive": "ビジネス系略語として有名で迷う。だが CRM は Customer Relationship Management = 顧客関係管理。実証や検証ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "PoC",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "RAS",
+      "isCorrect": false,
+      "whyAttractive": "技術系3文字略語で連想する。RAS は Reliability/Availability/Serviceability = 信頼性・可用性・保守性。検証手法名ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "SLA",
+      "isCorrect": false,
+      "whyAttractive": "サービス系略語で混同する。SLA は Service Level Agreement = サービス品質合意。実証ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "PoC = **Proof of Concept** = 概念実証。新しい技術やアイディアが実現可能かを、開発の前段階で試作・検証する活動。CRM (顧客関係管理) / RAS (信頼性指標) / SLA (品質合意) と区別する。",
+  "topicSlugs": [
+    { "slug": "biz_validation_methods", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1.0 }
+  ],
+  "materialSlugs": [
+    { "slug": "biz_validation_compare_table", "role": "compare" }
+  ],
+  "originType": "ipa_actual",
+  "sourceNote": "IPA ITパスポート試験 令和7年度 公開問題 問7 より引用 (著作権法第32条)。",
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 4
+}

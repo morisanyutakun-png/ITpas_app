@@ -85,10 +85,15 @@ export default function RootLayout({
           </div>
         </header>
         <main className="container py-8">{children}</main>
-        <footer className="border-t py-6 text-center text-xs text-muted-foreground space-y-1">
+        <footer className="border-t py-6 text-center text-xs text-slate-500 space-y-1.5">
           <div>© {new Date().getFullYear()} {siteConfig.name}</div>
           <div>
-            ITパスポート試験の問題は IPA (情報処理推進機構) の著作物です。本サイトは学習目的で構造化・解説しています。
+            ITパスポート試験の問題は IPA (情報処理推進機構) の著作物です。本サイトは学習目的での引用・構造化・解説を行っています。
+          </div>
+          <div>
+            <Link href="/legal" className="underline hover:text-slate-700">
+              著作権・引用について
+            </Link>
           </div>
         </footer>
       </body>

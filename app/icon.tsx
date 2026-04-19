@@ -11,17 +11,18 @@ export default function Icon() {
         style={{
           width: "100%",
           height: "100%",
-          background: "#0f172a",
-          color: "white",
+          background: "linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%)",
+          color: "#0f172a",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          fontSize: 36,
-          fontWeight: 800,
-          letterSpacing: -2,
+          fontSize: 44,
+          fontWeight: 900,
+          fontFamily:
+            "'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', system-ui, sans-serif",
         }}
       >
-        iP
+        理
       </div>
     ),
     { ...size }

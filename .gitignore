@@ -1,0 +1,45 @@
+# dependencies
+node_modules
+.pnp
+.pnp.js
+
+# testing
+coverage
+
+# next.js
+.next
+out
+
+# production
+build
+
+# misc
+.DS_Store
+*.pem
+.tsbuildinfo
+next-env.d.ts
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# local env files
+.env
+.env.local
+.env.*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+
+# Drizzle generated meta backups
+drizzle/meta/_journal.json.bak
+
+# Source PDFs are large (~30MB total) and personally held.
+# Keep structured JSON/MD in git, exclude raw PDFs.
+content/raw/**/*.pdf
+ITパスポート過去問/

@@ -1,0 +1,8 @@
+{
+  "slug": "confuse_similar_terms",
+  "title": "似た用語の意味境界が曖昧",
+  "definition": "似た略語や似た日本語訳の語を、意味の差を意識せずに同じものとして覚えてしまう。",
+  "typicalExample": "PoC と PoV、認証と認可、SaaS と PaaS など、頭文字や訳語が似ているものを取り違える。",
+  "counterExample": "それぞれの語が『何を対象にしているか』を1語で言える状態にする (PoC=実現性, PoV=価値)。",
+  "recoveryHint": "対比表を作って、対象/目的/例を1行ずつ並べる。覚えるのではなく『差を言語化』する。"
+}

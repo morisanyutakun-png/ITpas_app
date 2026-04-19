@@ -1,0 +1,8 @@
+{
+  "slug": "security_authn_authz",
+  "title": "認証(Authentication)と認可(Authorization)",
+  "majorCategory": "technology",
+  "minorTopic": "情報セキュリティ",
+  "summary": "認証は『誰か』を確かめること、認可は『何ができるか』を決めること。混同しやすい代表例。",
+  "body": "## 認証 (Authentication, AuthN)\n本人確認のプロセス。パスワード・指紋・SMSコードなど。\n\n## 認可 (Authorization, AuthZ)\nそのユーザに何の権限を与えるか決めるプロセス。RBAC, ACL など。\n\n## 試験で混同しやすいポイント\n- 多要素認証は『AuthN』の話であって『AuthZ』ではない\n- ロールを割り当てるのは『AuthZ』\n- シングルサインオン(SSO)は主に『AuthN』の効率化"
+}

@@ -1,0 +1,8 @@
+{
+  "slug": "network_basics_osi",
+  "title": "OSI参照モデルとTCP/IPモデル",
+  "majorCategory": "technology",
+  "minorTopic": "ネットワーク基礎",
+  "summary": "通信機能を階層化したモデル。各層の代表的なプロトコル/機器を覚える。",
+  "body": "## OSI 7階層 (上から)\n7. アプリケーション層 (HTTP, SMTP, DNS)\n6. プレゼンテーション層 (SSL/TLS の一部)\n5. セッション層\n4. トランスポート層 (TCP, UDP)\n3. ネットワーク層 (IP, ICMP, ルータ)\n2. データリンク層 (Ethernet, MACアドレス, スイッチ)\n1. 物理層 (リピータハブ, ケーブル)\n\n## 試験頻出のひっかけ\n- ルータ ↔ ネットワーク層 / スイッチ ↔ データリンク層\n- TCP は『信頼性あり』, UDP は『高速・コネクションレス』\n- HTTP/SMTP は『アプリケーション層』であってトランスポート層ではない"
+}

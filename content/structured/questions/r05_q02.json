@@ -1,0 +1,53 @@
+{
+  "externalKey": "r05_q02",
+  "examYear": 5,
+  "examSeason": "annual",
+  "questionNumber": 2,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "[サンプル — 該当ページから問題文を転記してください] あるWebサービスで、ログイン後の利用者ごとに『どのページを閲覧できるか』『どの操作ができるか』を制御する仕組みを示す用語として最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "認証(Authentication)",
+      "isCorrect": false,
+      "whyAttractive": "『ログイン後』という文言から認証を選びがち。だが認証は『誰か』を確かめる段階で、操作の可否を決めるのは別。",
+      "misconceptionSlug": "confuse_authn_authz"
+    },
+    {
+      "label": "イ",
+      "body": "認可(Authorization)",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "暗号化(Encryption)",
+      "isCorrect": false,
+      "whyAttractive": "セキュリティ系の選択肢で迷わされた。暗号化はデータの中身を秘匿する技術で、操作可否の制御とは別物。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "多要素認証(MFA)",
+      "isCorrect": false,
+      "whyAttractive": "『利用者ごと』に着目して認証強化を選びがち。MFAは認証の強度を上げる手段で、AuthZではない。",
+      "misconceptionSlug": "confuse_authn_authz"
+    }
+  ],
+  "explanation": "操作の可否を決めるのは『認可(AuthZ)』。認証(AuthN)は本人確認、MFAは認証の強化、暗号化はデータ秘匿。試験では『誰か(AuthN)』と『何ができるか(AuthZ)』の混同を狙った設問が頻出。",
+  "topicSlugs": [
+    { "slug": "security_authn_authz", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_authn_authz", "weight": 1.0 },
+    { "slug": "confuse_similar_terms", "weight": 0.5 }
+  ],
+  "materialSlugs": [
+    { "slug": "authn_vs_authz_table", "role": "compare" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r05.pdf",
+  "sourcePageNumber": null
+}

@@ -1,0 +1,52 @@
+{
+  "externalKey": "r07_q01",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 1,
+  "majorCategory": "technology",
+  "formatType": "network_basics",
+  "trapType": "similar_term",
+  "stem": "[サンプル — 該当ページから問題文を転記してください] 受信したフレームの宛先MACアドレスを見て、適切なポートにのみ転送するLAN機器として最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "リピータハブ",
+      "isCorrect": false,
+      "whyAttractive": "LAN機器という共通点から選んでしまう。だがリピータハブはL1で、宛先を見ずに全ポートに信号を増幅・転送する。",
+      "misconceptionSlug": "confuse_router_switch_layer"
+    },
+    {
+      "label": "イ",
+      "body": "スイッチングハブ(L2スイッチ)",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "ルータ",
+      "isCorrect": false,
+      "whyAttractive": "『宛先を見て転送』からルータに引き寄せられる。だがルータはIPアドレス(L3)で判断する機器で、MACアドレス(L2)ではない。",
+      "misconceptionSlug": "confuse_router_switch_layer"
+    },
+    {
+      "label": "エ",
+      "body": "ファイアウォール",
+      "isCorrect": false,
+      "whyAttractive": "『フィルタリング』のイメージで選びがち。ファイアウォールはセキュリティ目的の機器で、L2のフレーム転送が主目的ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "MACアドレスで宛先を判断するのはL2(データリンク層)機器であるスイッチングハブ。ルータはIPアドレスで判断するL3機器、リピータハブは信号増幅のみのL1機器、ファイアウォールはセキュリティ機能。",
+  "topicSlugs": [
+    { "slug": "network_basics_osi", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_router_switch_layer", "weight": 1.0 }
+  ],
+  "materialSlugs": [
+    { "slug": "osi_layer_quickref", "role": "compare" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": null
+}

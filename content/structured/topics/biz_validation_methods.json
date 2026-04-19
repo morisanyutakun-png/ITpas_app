@@ -1,0 +1,8 @@
+{
+  "slug": "biz_validation_methods",
+  "title": "事業検証の手法（PoC/PoV/MVP/プロトタイプ）",
+  "majorCategory": "strategy",
+  "minorTopic": "ビジネス開発",
+  "summary": "アイデアを段階的に検証するための手法群。何を確かめるかが手法ごとに異なる。",
+  "body": "## それぞれが検証する対象\n\n- **PoC (Proof of Concept)**: 技術的に実現可能か\n- **PoV (Proof of Value)**: ユーザにとって価値があるか\n- **MVP (Minimum Viable Product)**: 最小機能で市場に受け入れられるか\n- **Prototype**: 体験/UIの確からしさ\n\n## 出題されやすい論点\n\n- 「PoC は価値検証である」と書かれた選択肢は誤り\n- 「MVP はバグのあるベータ版を出すこと」は誤り\n- 検証の対象（実現性 / 価値 / 市場 / 体験）の取り違えに注意"
+}

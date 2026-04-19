@@ -1,0 +1,52 @@
+{
+  "externalKey": "r05_q01",
+  "examYear": 5,
+  "examSeason": "annual",
+  "questionNumber": 1,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "[サンプル — content/raw/past_exams/r05.pdf の該当ページから問題文を転記してください] PoC(Proof of Concept)の説明として最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "新しい技術やアイデアが本当に実現可能かを、試作や検証実験によって確かめる活動。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "新しいサービスがユーザにとって価値があるかを、対象顧客に試してもらって確かめる活動。",
+      "isCorrect": false,
+      "whyAttractive": "PoVの説明と取り違えやすい。『価値の検証』に引き寄せられたが、PoCは『実現可能性』の検証である。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "最低限の機能だけを実装した製品を市場に出し、フィードバックを得ながら改善する手法。",
+      "isCorrect": false,
+      "whyAttractive": "MVPの説明と取り違えた。MVPは『市場検証』, PoCは『技術的実現性の検証』。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "本番に近い見た目だけを作り、操作感やUIをユーザに評価してもらう試作物。",
+      "isCorrect": false,
+      "whyAttractive": "プロトタイプの説明と取り違えた。プロトタイプは『体験/UI検証』。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "PoC(Proof of Concept)は『技術的に実現可能か』を試作・検証実験で確かめる活動。価値検証(PoV)、市場検証(MVP)、UI検証(プロトタイプ)とは対象が異なる。",
+  "topicSlugs": [
+    { "slug": "biz_validation_methods", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1.0 }
+  ],
+  "materialSlugs": [
+    { "slug": "biz_validation_compare_table", "role": "compare" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r05.pdf",
+  "sourcePageNumber": null
+}

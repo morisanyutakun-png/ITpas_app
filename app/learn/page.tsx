@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Crosshair, ListChecks, Network, Skull, ArrowRight, type LucideIcon } from "lucide-react";
+import { Crosshair, ListChecks, Network, Skull, ArrowRight, Shuffle, type LucideIcon } from "lucide-react";
 
 export default function LearnHubPage() {
   return (
@@ -10,6 +10,14 @@ export default function LearnHubPage() {
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">
+        <BigCard
+          href="/learn/random"
+          tone="from-amber-500 to-orange-500"
+          icon={Shuffle}
+          title="ランダムに1問"
+          desc="迷ったらこれ。全範囲から1問だけ表示します。"
+          cta="ランダム出題"
+        />
         <BigCard
           href="/learn/session/new?mode=weakness&count=5"
           tone="from-rose-500 to-pink-500"
@@ -22,8 +30,8 @@ export default function LearnHubPage() {
           href="/learn/questions"
           tone="from-violet-500 to-fuchsia-500"
           icon={ListChecks}
-          title="問題一覧から選ぶ"
-          desc="年度・大分類で絞り込み。1問ずつじっくり。"
+          title="問題集（目次）"
+          desc="年度・分類で絞り込んだ目次から好きな問題へ。"
           cta="一覧を開く"
         />
         <BigCard

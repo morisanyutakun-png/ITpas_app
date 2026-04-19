@@ -41,16 +41,26 @@
   "keyInsight": "**設問のキーフレーズに頭文字を当てる**。『**実証**を目的』→ Proof = P, 『**概念**やアイディア』→ Concept = C → **PoC**。3文字略語問題は問題文の名詞をアルファベットに変換すれば即答できる。",
   "commonMistakeFlow": "1. 『新しい』『開発前段階』のワードに反応してSLA(サービス導入時の品質合意)に流れる。\n2. 『顧客の概念』と読み違えてCRMを選ぶ。\n3. 信頼性検証だと思いRASを選ぶ。\n→ 設問の中心ワードは『**実証 (Proof)**』。これを直訳して P で始まる略語＝PoC を機械的に選べる。",
   "topicSlugs": [
-    { "slug": "biz_validation_methods", "weight": 1.0 }
+    {
+      "slug": "biz_validation_methods",
+      "weight": 1
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "confuse_similar_terms", "weight": 1.0 }
+    {
+      "slug": "confuse_similar_terms",
+      "weight": 1
+    }
   ],
   "materialSlugs": [
-    { "slug": "biz_validation_compare_table", "role": "compare" }
+    {
+      "slug": "biz_validation_compare_table",
+      "role": "compare"
+    }
   ],
   "originType": "ipa_actual",
-  "sourceNote": "IPA ITパスポート試験 令和7年度 公開問題 問7 より引用 (著作権法第32条)。",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問7",
   "sourceFilePath": "content/raw/past_exams/r07.pdf",
-  "sourcePageNumber": 4
+  "sourcePageNumber": 4,
+  "modifiedNote": "原典のスキャン PDF を OCR で読み取って構造化しました。OCR起因の表記揺れ (全角/半角、句読点の統一など) のみ整え、設問の意味・選択肢・正解は一切変更していません。"
 }

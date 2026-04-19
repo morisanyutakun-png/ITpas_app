@@ -41,14 +41,21 @@
   "keyInsight": "**問題文の4要素を選択肢に当てはめる**。経済価値・希少性・模倣困難性・組織 → V/R/I/O の頭文字に1対1対応するのは VRIO だけ。フレームワーク問題は『何の4分類か』を問題文の単語から逆算するのがコツ。",
   "commonMistakeFlow": "1. 『経営戦略』に反応して SWOT を選ぶ。\n2. 『投資の優先度』に反応して PPM を選ぶ。\n3. 4要素あるから4Pかと連想する。\n→ いずれも『内容を見ずキーワードに反応』した結果。設問の4要素を『V/R/I/O』『S/W/O/T』『P/P/P/P』に当てはめれば即座にわかる。",
   "topicSlugs": [
-    { "slug": "biz_marketing_frameworks", "weight": 1.0 }
+    {
+      "slug": "biz_marketing_frameworks",
+      "weight": 1
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "confuse_marketing_framework", "weight": 1.0 }
+    {
+      "slug": "confuse_marketing_framework",
+      "weight": 1
+    }
   ],
   "materialSlugs": [],
   "originType": "ipa_actual",
-  "sourceNote": "IPA ITパスポート試験 令和7年度 公開問題 問4 より引用 (著作権法第32条)。",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問4",
   "sourceFilePath": "content/raw/past_exams/r07.pdf",
-  "sourcePageNumber": 3
+  "sourcePageNumber": 3,
+  "modifiedNote": "原典のスキャン PDF を OCR で読み取って構造化しました。OCR起因の表記揺れ (全角/半角、句読点の統一など) のみ整え、設問の意味・選択肢・正解は一切変更していません。"
 }

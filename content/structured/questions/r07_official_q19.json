@@ -41,16 +41,26 @@
   "keyInsight": "1秒判定: **『目の前に現実が見えているか？』** 見えていれば AR、完全に仮想なら VR。ヘッドセットを着ける ≒ VR、スマホをかざす ≒ AR、と覚えてもよい（厳密ではないが速い）。",
   "commonMistakeFlow": "1. 『仮想の物が見えている』という共通点で、AR の3例も VR と判断してしまう。\n2. 『動画/画像が出る』要素で何でも仮想だと感じる。\n→ 区別の決め手は『**現実が同時に見えているか**』。AR=現実+情報重ね、VR=完全没入。",
   "topicSlugs": [
-    { "slug": "vr_ar_basics", "weight": 1.0 }
+    {
+      "slug": "vr_ar_basics",
+      "weight": 1
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "confuse_vr_ar", "weight": 1.0 }
+    {
+      "slug": "confuse_vr_ar",
+      "weight": 1
+    }
   ],
   "materialSlugs": [
-    { "slug": "vr_ar_compare", "role": "compare" }
+    {
+      "slug": "vr_ar_compare",
+      "role": "compare"
+    }
   ],
   "originType": "ipa_actual",
-  "sourceNote": "IPA ITパスポート試験 令和7年度 公開問題 問19 より引用 (著作権法第32条)。",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問19",
   "sourceFilePath": "content/raw/past_exams/r07.pdf",
-  "sourcePageNumber": 9
+  "sourcePageNumber": 9,
+  "modifiedNote": "原典のスキャン PDF を OCR で読み取って構造化しました。OCR起因の表記揺れ (全角/半角、句読点の統一など) のみ整え、設問の意味・選択肢・正解は一切変更していません。"
 }

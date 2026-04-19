@@ -27,17 +27,23 @@ export default function HomePage() {
           </p>
           <div className="flex flex-wrap gap-3 pt-2">
             <Link
-              href="/learn/questions"
+              href="/learn/random"
               className="inline-flex items-center gap-2 rounded-xl bg-amber-400 px-6 py-3 font-bold text-slate-900 shadow-lg transition hover:bg-amber-300 hover:shadow-xl"
             >
-              今すぐ1問試す
+              ランダムに1問解く
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/learn/session/new?mode=weakness&count=5"
               className="inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur transition hover:bg-white/20"
             >
-              5問チャレンジ
+              弱点5問チャレンジ
+            </Link>
+            <Link
+              href="/learn/questions?origin=actual"
+              className="inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur transition hover:bg-white/20"
+            >
+              公式過去問を見る
             </Link>
           </div>
         </div>

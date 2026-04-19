@@ -41,14 +41,21 @@
   "keyInsight": "『access＋ability』の語源を意識すれば、『誰がアクセスできるか』ではなく『誰でもアクセス**できる能力**』とわかる。アクセス制御 (誰がアクセスできるか) との混同を避けるカギ。",
   "commonMistakeFlow": "1. 設問の『アクセス』に反応してエ（アクセス制御）を選ぶ。\n2. 『使う人の感じ方』とあるウ（UX）に流れる。\n3. 似たビジネス用語のイ（CRM）を選ぶ。\n→ いずれも『access ability＝使える能力』という語源の意味を取らずに表面的に判断したのが原因。",
   "topicSlugs": [
-    { "slug": "ui_accessibility", "weight": 1.0 }
+    {
+      "slug": "ui_accessibility",
+      "weight": 1
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "confuse_similar_terms", "weight": 1.0 }
+    {
+      "slug": "confuse_similar_terms",
+      "weight": 1
+    }
   ],
   "materialSlugs": [],
   "originType": "ipa_actual",
-  "sourceNote": "IPA ITパスポート試験 令和7年度 公開問題 問18 より引用 (著作権法第32条)。",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問18",
   "sourceFilePath": "content/raw/past_exams/r07.pdf",
-  "sourcePageNumber": 9
+  "sourcePageNumber": 9,
+  "modifiedNote": "原典のスキャン PDF を OCR で読み取って構造化しました。OCR起因の表記揺れ (全角/半角、句読点の統一など) のみ整え、設問の意味・選択肢・正解は一切変更していません。"
 }

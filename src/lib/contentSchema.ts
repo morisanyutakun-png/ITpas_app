@@ -93,6 +93,7 @@ export const questionFileZ = z.object({
   commonMistakeFlow: z.string().nullable().default(null),
   originType: originTypeZ.default("ipa_inspired"),
   sourceNote: z.string().nullable().default(null),
+  modifiedNote: z.string().nullable().default(null),
   sourceFilePath: z.string().nullable().default(null),
   sourcePageNumber: z.number().int().nullable().default(null),
 });

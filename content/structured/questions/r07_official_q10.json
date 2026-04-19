@@ -41,16 +41,26 @@
   "keyInsight": "**『生成AIの出力誤り』を表す語はハルシネーションだけ**。AIで作った偽動画 → ディープフェイク、AIが人を超える → シンギュラリティ、SNSで意見が偏る → エコーチェンバー。それぞれ『何の現象か』を1語で答えられる状態を作る。",
   "commonMistakeFlow": "1. 『AI＝偽情報』のイメージでディープフェイクを選ぶ。\n2. 派手な響きでシンギュラリティに流れる。\n3. 『情報の偏り』からエコーチェンバーへ。\n→ いずれも『**生成AI のテキスト出力**』に絞った時にハルシネーション以外残らない。形式（動画/概念/SNS現象）と意味の対応表を作っておく。",
   "topicSlugs": [
-    { "slug": "ai_generative_basics", "weight": 1.0 }
+    {
+      "slug": "ai_generative_basics",
+      "weight": 1
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "confuse_ai_terms", "weight": 1.0 }
+    {
+      "slug": "confuse_ai_terms",
+      "weight": 1
+    }
   ],
   "materialSlugs": [
-    { "slug": "ai_generative_terms_table", "role": "compare" }
+    {
+      "slug": "ai_generative_terms_table",
+      "role": "compare"
+    }
   ],
   "originType": "ipa_actual",
-  "sourceNote": "IPA ITパスポート試験 令和7年度 公開問題 問10 より引用 (著作権法第32条)。",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問10",
   "sourceFilePath": "content/raw/past_exams/r07.pdf",
-  "sourcePageNumber": 6
+  "sourcePageNumber": 6,
+  "modifiedNote": "原典のスキャン PDF を OCR で読み取って構造化しました。OCR起因の表記揺れ (全角/半角、句読点の統一など) のみ整え、設問の意味・選択肢・正解は一切変更していません。"
 }

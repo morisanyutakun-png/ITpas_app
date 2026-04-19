@@ -41,16 +41,26 @@
   "keyInsight": "**設問の依頼内容を頭文字に変換**: 『**情報** (Information) の提供を依頼』→ I → **RFI**。RF系3兄弟は I/P/Q の順で『情報→提案→見積』と段階が進む。",
   "commonMistakeFlow": "1. 『RF系の文書』と認識して RFP に流れる。\n2. EDI/KPI を『なんとなく文書っぽい』と選ぶ。\n→ 設問の『活用事例や技術情報』に注目すれば、**情報＝Information** で RFI 一択。RFP は要件が固まった後の『提案依頼』なので段階が違う。",
   "topicSlugs": [
-    { "slug": "biz_procurement_documents", "weight": 1.0 }
+    {
+      "slug": "biz_procurement_documents",
+      "weight": 1
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "confuse_procurement_docs", "weight": 1.0 }
+    {
+      "slug": "confuse_procurement_docs",
+      "weight": 1
+    }
   ],
   "materialSlugs": [
-    { "slug": "procurement_docs_flow", "role": "compare" }
+    {
+      "slug": "procurement_docs_flow",
+      "role": "compare"
+    }
   ],
   "originType": "ipa_actual",
-  "sourceNote": "IPA ITパスポート試験 令和7年度 公開問題 問13 より引用 (著作権法第32条)。",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問13",
   "sourceFilePath": "content/raw/past_exams/r07.pdf",
-  "sourcePageNumber": 7
+  "sourcePageNumber": 7,
+  "modifiedNote": "原典のスキャン PDF を OCR で読み取って構造化しました。OCR起因の表記揺れ (全角/半角、句読点の統一など) のみ整え、設問の意味・選択肢・正解は一切変更していません。"
 }

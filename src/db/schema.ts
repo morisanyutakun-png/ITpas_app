@@ -197,6 +197,7 @@ export const questions = pgTable(
     commonMistakeFlow: text("common_mistake_flow"),
     originType: originTypeEnum("origin_type").notNull().default("ipa_inspired"),
     sourceNote: text("source_note"),
+    modifiedNote: text("modified_note"),
     sourceFilePath: text("source_file_path"),
     sourcePageNumber: integer("source_page_number"),
     createdAt: timestamp("created_at", { withTimezone: true })

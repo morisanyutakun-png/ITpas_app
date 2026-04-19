@@ -127,6 +127,7 @@ async function upsertQuestions() {
         commonMistakeFlow: q.commonMistakeFlow ?? null,
         originType: q.originType,
         sourceNote: q.sourceNote ?? null,
+        modifiedNote: q.modifiedNote ?? null,
         sourceFilePath: q.sourceFilePath ?? null,
         sourcePageNumber: q.sourcePageNumber ?? null,
       })
@@ -146,6 +147,7 @@ async function upsertQuestions() {
           commonMistakeFlow: q.commonMistakeFlow ?? null,
           originType: q.originType,
           sourceNote: q.sourceNote ?? null,
+          modifiedNote: q.modifiedNote ?? null,
           sourceFilePath: q.sourceFilePath ?? null,
           sourcePageNumber: q.sourcePageNumber ?? null,
           updatedAt: sql`now()`,

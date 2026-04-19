@@ -88,9 +88,7 @@ export default async function SessionPage({
       <AttributionNote
         originType={full.question.originType}
         sourceNote={full.question.sourceNote}
-        examYear={full.question.examYear}
-        examSeason={full.question.examSeason}
-        questionNumber={full.question.questionNumber}
+        modifiedNote={full.question.modifiedNote}
       />
     </div>
   );

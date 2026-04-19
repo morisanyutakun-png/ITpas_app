@@ -77,6 +77,8 @@ export default async function SessionPage({
           misconceptionSlug: c.misconceptionSlug,
         }))}
         explanation={full.question.explanation}
+        keyInsight={full.question.keyInsight}
+        commonMistakeFlow={full.question.commonMistakeFlow}
         topics={full.topics}
         misconceptions={full.misconceptions}
         materials={full.materials}

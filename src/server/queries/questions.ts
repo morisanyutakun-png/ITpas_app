@@ -17,6 +17,7 @@ export async function listQuestions(filters?: {
   formatType?: string;
   topicSlug?: string;
   misconceptionSlug?: string;
+  originType?: "ipa_actual" | "ipa_inspired" | "original";
 }) {
   const where = [] as ReturnType<typeof eq>[];
   if (filters?.examYear !== undefined) {
@@ -24,6 +25,9 @@ export async function listQuestions(filters?: {
   }
   if (filters?.majorCategory) {
     where.push(eq(questions.majorCategory, filters.majorCategory));
+  }
+  if (filters?.originType) {
+    where.push(eq(questions.originType, filters.originType));
   }
   // formatType requires enum-typed value; skip strict check at MVP
 
@@ -64,6 +68,7 @@ export async function listQuestions(filters?: {
       majorCategory: questions.majorCategory,
       formatType: questions.formatType,
       stem: questions.stem,
+      originType: questions.originType,
     })
     .from(questions)
     .where(where.length ? and(...where) : undefined)

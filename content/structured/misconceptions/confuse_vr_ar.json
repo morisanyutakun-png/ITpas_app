@@ -1,0 +1,8 @@
+{
+  "slug": "confuse_vr_ar",
+  "title": "VR と AR を取り違える",
+  "definition": "見ているのが『仮想空間』か『現実+追加情報』かを区別せずに使う。",
+  "typicalExample": "『スマホでかざすと家具が現実の部屋に表示される』を VR と答えてしまう。",
+  "counterExample": "現実が見えていれば AR、現実が見えず完全仮想なら VR。",
+  "recoveryHint": "『目の前に現実があるか？』を1秒考える。"
+}

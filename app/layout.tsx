@@ -78,9 +78,11 @@ export default function RootLayout({
             <nav className="flex gap-1 text-sm overflow-x-auto">
               <NavLink href="/learn" label="学習" />
               <NavLink href="/learn/questions" label="問題" />
+              <NavLink href="/guides" label="ガイド" />
               <NavLink href="/topics" label="論点" />
               <NavLink href="/misconceptions" label="誤解" />
               <NavLink href="/dashboard" label="DB" />
+              <NavLink href="/history" label="履歴" />
             </nav>
           </div>
         </header>

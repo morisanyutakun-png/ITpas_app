@@ -38,6 +38,8 @@
     }
   ],
   "explanation": "RFI = **Request for Information** = 情報提供依頼書。調達の最初の段階で、ベンダーに『活用事例や技術情報』の提供を依頼する。情報収集後にRFP（提案依頼）→ RFQ（見積依頼）→ 契約と進む。",
+  "keyInsight": "**設問の依頼内容を頭文字に変換**: 『**情報** (Information) の提供を依頼』→ I → **RFI**。RF系3兄弟は I/P/Q の順で『情報→提案→見積』と段階が進む。",
+  "commonMistakeFlow": "1. 『RF系の文書』と認識して RFP に流れる。\n2. EDI/KPI を『なんとなく文書っぽい』と選ぶ。\n→ 設問の『活用事例や技術情報』に注目すれば、**情報＝Information** で RFI 一択。RFP は要件が固まった後の『提案依頼』なので段階が違う。",
   "topicSlugs": [
     { "slug": "biz_procurement_documents", "weight": 1.0 }
   ],

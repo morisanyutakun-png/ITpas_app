@@ -193,6 +193,8 @@ export const questions = pgTable(
     formatType: formatTypeEnum("format_type").notNull(),
     trapType: trapTypeEnum("trap_type").notNull().default("none"),
     explanation: text("explanation").notNull().default(""),
+    keyInsight: text("key_insight"),
+    commonMistakeFlow: text("common_mistake_flow"),
     originType: originTypeEnum("origin_type").notNull().default("ipa_inspired"),
     sourceNote: text("source_note"),
     sourceFilePath: text("source_file_path"),

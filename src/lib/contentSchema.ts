@@ -89,6 +89,8 @@ export const questionFileZ = z.object({
       })
     )
     .default([]),
+  keyInsight: z.string().nullable().default(null),
+  commonMistakeFlow: z.string().nullable().default(null),
   originType: originTypeZ.default("ipa_inspired"),
   sourceNote: z.string().nullable().default(null),
   sourceFilePath: z.string().nullable().default(null),

@@ -1,0 +1,8 @@
+{
+  "slug": "ui_accessibility",
+  "title": "アクセシビリティとUX関連用語",
+  "majorCategory": "technology",
+  "minorTopic": "ヒューマンインタフェース",
+  "summary": "アクセシビリティ / ユーザビリティ / UX / CRM 等の似た4用語を、対象と目的の軸で区別する。",
+  "body": "## 用語の境界\n\n- **アクセシビリティ (Accessibility)**: 高齢者・障害者を含む**幅広い層**が等しく使えるか\n- **ユーザビリティ (Usability)**: 使いやすさ全般（効率/効果/満足度）\n- **UX (User Experience)**: 製品・サービスを使って得られる**体験全体**\n- **CRM (Customer Relationship Management)**: 顧客との関係を深める**営業/マーケ手法**（UI概念ではない）\n\n## ひっかけパターン\n- 『アクセシビリティ＝高齢者専用』 → ✗ 全ての利用者が等しく\n- 『UX＝UI画面』 → ✗ 体験全体（感情/反応含む）\n- 『CRM＝アクセシビリティの一種』 → ✗ 別領域"
+}

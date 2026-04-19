@@ -1,0 +1,8 @@
+{
+  "slug": "vr_ar_basics",
+  "title": "VR / AR / MR — 仮想現実技術の境界",
+  "majorCategory": "technology",
+  "minorTopic": "新技術",
+  "summary": "VR=完全仮想 / AR=現実に重ねる / MR=現実と仮想を融合。『見ているのは現実か仮想か』で見分ける。",
+  "body": "## 3つの境界\n\n- **VR (Virtual Reality)**: ヘッドセット等で**完全に仮想の世界**を体験する\n- **AR (Augmented Reality)**: スマホやグラス越しに**現実の風景に情報を重ねて**表示する\n- **MR (Mixed Reality)**: 現実と仮想を**インタラクティブに融合**\n\n## 典型例\n\n| 技術 | 例 |\n|---|---|\n| VR | ヘッドセットで仮想避難訓練、VR ゲーム |\n| AR | スマホをかざして家具配置プレビュー、ポケモンGO、図鑑にかざして動画再生 |\n| MR | HoloLens 等での協働作業 |\n\n## ひっかけ\n- 『スマホかざして現実に情報重ねる ＝ VR』 → ✗ それは AR\n- 『ヘッドセットで仮想空間 ＝ AR』 → ✗ それは VR"
+}

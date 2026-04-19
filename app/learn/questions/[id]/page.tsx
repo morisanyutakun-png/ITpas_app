@@ -38,6 +38,8 @@ export default async function QuestionDetailPage({
           misconceptionSlug: c.misconceptionSlug,
         }))}
         explanation={question.explanation}
+        keyInsight={question.keyInsight}
+        commonMistakeFlow={question.commonMistakeFlow}
         topics={topics}
         misconceptions={misconceptions}
         materials={materials}

@@ -1,0 +1,54 @@
+{
+  "externalKey": "r07_official_q18",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 18,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "ITにおけるアクセシビリティに関する記述として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "高齢者や障害者などを含め、様々な能力や特性をもつ幅広い層の人が等しく利用できるように配慮したソフトウェア製品の設計。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "顧客データを基に顧客を識別し、コールセンターやインターネットなどの様々なチャネルを用いて顧客との関係を深める手法。",
+      "isCorrect": false,
+      "whyAttractive": "ビジネス系の手法説明として読み流すと選んでしまうが、これはCRM (Customer Relationship Management) の説明。アクセシビリティとは別領域。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "製品、システム、サービスなどにおいて、それらを使用する場面をイメージしたり実際に利用したりすることで得られる人の感じ方や反応。",
+      "isCorrect": false,
+      "whyAttractive": "『使う側の話』という共通点で混同する。これはUX (User Experience) の定義。アクセシビリティは『誰でも使える』、UXは『どう感じるか』。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "特定のファイルやデータベースなどの情報資産に対し、参照や更新などの権限の認可や制限を確実にする手段。",
+      "isCorrect": false,
+      "whyAttractive": "『アクセス』の語感で連想する。これはアクセス制御 (Access Control) ＝認可の話で、アクセシビリティ（access+ability＝使える性）とは別概念。",
+      "misconceptionSlug": "confuse_authn_authz"
+    }
+  ],
+  "explanation": "**アクセシビリティ (Accessibility)** は『access (使える)＋ability (能力)』で、高齢者・障害者・初学者など多様な利用者が等しく使えることを指す。CRM（顧客関係管理）/ UX（体験）/ アクセス制御（権限管理） は別概念。",
+  "keyInsight": "『access＋ability』の語源を意識すれば、『誰がアクセスできるか』ではなく『誰でもアクセス**できる能力**』とわかる。アクセス制御 (誰がアクセスできるか) との混同を避けるカギ。",
+  "commonMistakeFlow": "1. 設問の『アクセス』に反応してエ（アクセス制御）を選ぶ。\n2. 『使う人の感じ方』とあるウ（UX）に流れる。\n3. 似たビジネス用語のイ（CRM）を選ぶ。\n→ いずれも『access ability＝使える能力』という語源の意味を取らずに表面的に判断したのが原因。",
+  "topicSlugs": [
+    { "slug": "ui_accessibility", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1.0 }
+  ],
+  "materialSlugs": [],
+  "originType": "ipa_actual",
+  "sourceNote": "IPA ITパスポート試験 令和7年度 公開問題 問18 より引用 (著作権法第32条)。",
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 9
+}

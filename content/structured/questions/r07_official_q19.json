@@ -1,0 +1,56 @@
+{
+  "externalKey": "r07_official_q19",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 19,
+  "majorCategory": "technology",
+  "formatType": "case",
+  "trapType": "similar_term",
+  "stem": "仮想環境を用いた技術である AR 又は VR の活用事例のうち、VR の活用事例として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "顔を覆うように頭部にゴーグルを装着し、そのゴーグル内に投影された仮想空間に広がる火災や地震の映像を見ながら避難方法をイメージすることによって、防災訓練が行える。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "家具をオンラインで購入するときに、スマートフォンのカメラを通して画面に映っている現実の自分の部屋に、購入したい家具をリアルタイムに重ねて試し置きできる。",
+      "isCorrect": false,
+      "whyAttractive": "『仮想の家具を見ている』という感覚でVRを選びがちだが、現実の部屋が映っているのでARの典型例。VRなら現実は見えない。",
+      "misconceptionSlug": "confuse_vr_ar"
+    },
+    {
+      "label": "ウ",
+      "body": "史跡などにスマートフォンを向けることによって、昔あった建物の画像や説明情報が現実の風景と重なって画面に表示される。",
+      "isCorrect": false,
+      "whyAttractive": "『昔の建物』という仮想要素にVRを連想するが、『現実の風景に重ねる』のがARの定義そのもの。",
+      "misconceptionSlug": "confuse_vr_ar"
+    },
+    {
+      "label": "エ",
+      "body": "図鑑にスマートフォンをかざすことによって、図鑑の絵や写真に重なって生物の動画が見られる。",
+      "isCorrect": false,
+      "whyAttractive": "『動画＝仮想』のイメージから引き寄せられる。だが現実の図鑑が見えていて情報が重なるのはAR。",
+      "misconceptionSlug": "confuse_vr_ar"
+    }
+  ],
+  "explanation": "**VR (Virtual Reality)** はゴーグル等で完全な仮想空間に没入する技術。アの『ゴーグル内に投影された仮想空間』が VR の定義に合致。イ・ウ・エはいずれも『現実の風景に情報を重ねる』ので AR (Augmented Reality)。",
+  "keyInsight": "1秒判定: **『目の前に現実が見えているか？』** 見えていれば AR、完全に仮想なら VR。ヘッドセットを着ける ≒ VR、スマホをかざす ≒ AR、と覚えてもよい（厳密ではないが速い）。",
+  "commonMistakeFlow": "1. 『仮想の物が見えている』という共通点で、AR の3例も VR と判断してしまう。\n2. 『動画/画像が出る』要素で何でも仮想だと感じる。\n→ 区別の決め手は『**現実が同時に見えているか**』。AR=現実+情報重ね、VR=完全没入。",
+  "topicSlugs": [
+    { "slug": "vr_ar_basics", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_vr_ar", "weight": 1.0 }
+  ],
+  "materialSlugs": [
+    { "slug": "vr_ar_compare", "role": "compare" }
+  ],
+  "originType": "ipa_actual",
+  "sourceNote": "IPA ITパスポート試験 令和7年度 公開問題 問19 より引用 (著作権法第32条)。",
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 9
+}

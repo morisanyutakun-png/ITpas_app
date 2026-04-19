@@ -14,6 +14,8 @@ export type QuestionPlayerProps = {
     misconceptionSlug: string | null;
   })[];
   explanation: string;
+  keyInsight?: string | null;
+  commonMistakeFlow?: string | null;
   misconceptions: { slug: string; title: string }[];
   topics: { slug: string; title: string; summary: string }[];
   materials: { slug: string; title: string; body: string; role: string }[];
@@ -119,6 +121,8 @@ function buildResultData(
         }
       : null,
     explanation: props.explanation,
+    keyInsight: props.keyInsight ?? null,
+    commonMistakeFlow: props.commonMistakeFlow ?? null,
     misconceptions: props.misconceptions,
     topics: props.topics,
     materials: props.materials,

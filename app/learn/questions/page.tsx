@@ -12,6 +12,7 @@ export default async function QuestionsListPage({
     major?: string;
     topic?: string;
     misconception?: string;
+    origin?: string;
   }>;
 }) {
   const sp = await searchParams;
@@ -20,6 +21,12 @@ export default async function QuestionsListPage({
     majorCategory: sp.major as "strategy" | "management" | "technology" | undefined,
     topicSlug: sp.topic,
     misconceptionSlug: sp.misconception,
+    originType:
+      sp.origin === "actual"
+        ? "ipa_actual"
+        : sp.origin === "inspired"
+          ? "ipa_inspired"
+          : undefined,
   });
 
   return (
@@ -34,26 +41,42 @@ export default async function QuestionsListPage({
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-2">
-        <FilterChip href="/learn/questions" label="すべて" active={!sp.year && !sp.major} />
-        <FilterChip
-          href="/learn/questions?major=strategy"
-          label="ストラテジ"
-          active={sp.major === "strategy"}
-          tone="from-violet-500 to-fuchsia-500"
-        />
-        <FilterChip
-          href="/learn/questions?major=management"
-          label="マネジメント"
-          active={sp.major === "management"}
-          tone="from-sky-500 to-cyan-500"
-        />
-        <FilterChip
-          href="/learn/questions?major=technology"
-          label="テクノロジ"
-          active={sp.major === "technology"}
-          tone="from-emerald-500 to-teal-500"
-        />
+      <div className="space-y-2">
+        <div className="flex flex-wrap gap-2">
+          <FilterChip href="/learn/questions" label="すべて" active={!sp.year && !sp.major && !sp.origin} />
+          <FilterChip
+            href="/learn/questions?major=strategy"
+            label="ストラテジ"
+            active={sp.major === "strategy"}
+            tone="from-violet-500 to-fuchsia-500"
+          />
+          <FilterChip
+            href="/learn/questions?major=management"
+            label="マネジメント"
+            active={sp.major === "management"}
+            tone="from-sky-500 to-cyan-500"
+          />
+          <FilterChip
+            href="/learn/questions?major=technology"
+            label="テクノロジ"
+            active={sp.major === "technology"}
+            tone="from-emerald-500 to-teal-500"
+          />
+        </div>
+        <div className="flex flex-wrap gap-2">
+          <FilterChip
+            href="/learn/questions?origin=actual"
+            label="🏛 IPA公式過去問のみ"
+            active={sp.origin === "actual"}
+            tone="from-slate-700 to-slate-900"
+          />
+          <FilterChip
+            href="/learn/questions?origin=inspired"
+            label="✨ オリジナル問題のみ"
+            active={sp.origin === "inspired"}
+            tone="from-violet-500 to-fuchsia-500"
+          />
+        </div>
       </div>
 
       {items.length === 0 ? (
@@ -76,6 +99,15 @@ export default async function QuestionsListPage({
                 <div className={`absolute left-0 top-0 h-full w-1 bg-gradient-to-b ${major.gradient}`} />
                 <div className="space-y-2 pl-2">
                   <div className="flex flex-wrap items-center gap-2">
+                    {q.originType === "ipa_actual" ? (
+                      <span className="inline-flex items-center rounded-md border border-slate-900 bg-slate-900 px-2 py-0.5 text-[11px] font-bold text-white">
+                        🏛 IPA過去問
+                      </span>
+                    ) : (
+                      <span className="inline-flex items-center rounded-md border border-violet-200 bg-violet-100 px-2 py-0.5 text-[11px] font-bold text-violet-800">
+                        ✨ オリジナル
+                      </span>
+                    )}
                     <span className={`inline-flex items-center gap-1 rounded-md border px-2 py-0.5 text-[11px] font-semibold ${major.chip}`}>
                       {major.label}
                     </span>
@@ -84,7 +116,9 @@ export default async function QuestionsListPage({
                       {fmt.label}
                     </span>
                     <span className="ml-auto text-[11px] font-bold text-slate-500">
-                      R{q.examYear} 第{q.questionNumber}問
+                      {q.originType === "ipa_actual"
+                        ? `R${q.examYear} 第${q.questionNumber}問`
+                        : `R${q.examYear}範囲 #${q.questionNumber}`}
                     </span>
                   </div>
                   <p className="text-sm text-slate-800 line-clamp-2 group-hover:text-slate-950">{q.stem}</p>

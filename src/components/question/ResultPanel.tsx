@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Check, X, Sparkles, ArrowRight } from "lucide-react";
+import { Check, X, Sparkles, ArrowRight, Lightbulb, Footprints } from "lucide-react";
 import { Markdown } from "@/lib/markdown";
 import { WhyAttractiveCard } from "./WhyAttractiveCard";
 import { MisconceptionBadges } from "./MisconceptionBadges";
@@ -19,6 +19,8 @@ export type ResultPanelData = {
     misconceptionSlug: string | null;
   } | null;
   explanation: string;
+  keyInsight?: string | null;
+  commonMistakeFlow?: string | null;
   misconceptions: { slug: string; title: string }[];
   topics: { slug: string; title: string; summary: string }[];
   materials: { slug: string; title: string; body: string; role: string }[];
@@ -117,6 +119,46 @@ export function ResultPanel({
         </div>
         <Markdown>{data.explanation}</Markdown>
       </motion.div>
+
+      {/* Key insight — the "decisive shortcut" to remember */}
+      {data.keyInsight && (
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="rounded-2xl border-2 border-emerald-300 bg-gradient-to-br from-emerald-50 to-teal-50 p-5 shadow-sm"
+        >
+          <div className="flex items-center gap-2 mb-2">
+            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-500 text-white">
+              <Lightbulb className="h-4 w-4" strokeWidth={2.5} />
+            </div>
+            <div className="text-xs font-bold uppercase tracking-wider text-emerald-800">
+              押さえるコツ
+            </div>
+          </div>
+          <Markdown className="text-emerald-950">{data.keyInsight}</Markdown>
+        </motion.div>
+      )}
+
+      {/* Common mistake flow — only show on miss */}
+      {!data.isCorrect && data.commonMistakeFlow && (
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.35 }}
+          className="rounded-2xl border-2 border-rose-200 bg-rose-50/60 p-5 shadow-sm"
+        >
+          <div className="flex items-center gap-2 mb-2">
+            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-rose-500 text-white">
+              <Footprints className="h-4 w-4" strokeWidth={2.5} />
+            </div>
+            <div className="text-xs font-bold uppercase tracking-wider text-rose-800">
+              典型的な間違え方の流れ
+            </div>
+          </div>
+          <Markdown className="text-rose-950">{data.commonMistakeFlow}</Markdown>
+        </motion.div>
+      )}
 
       <MisconceptionBadges items={data.misconceptions} />
 

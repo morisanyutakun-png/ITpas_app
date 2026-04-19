@@ -1,0 +1,50 @@
+{
+  "externalKey": "r07_q15",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 15,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "マーケティング戦略の 4P に該当しないものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "Product (製品)",
+      "isCorrect": false,
+      "whyAttractive": "4P の代表的な要素なので答えとして選びにくい。設問が『該当しない』なので注意。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "イ",
+      "body": "Place (流通)",
+      "isCorrect": false,
+      "whyAttractive": "4Pの一要素なので除外候補ではない。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "ウ",
+      "body": "People (人材)",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "Promotion (販促)",
+      "isCorrect": false,
+      "whyAttractive": "Pで始まる4Pの正規メンバー。設問の意図を逆に取らないよう注意。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    }
+  ],
+  "explanation": "4Pは Product / Price / Place / Promotion。**People**は7P（サービスマーケティング）で追加される要素で、4Pには含まれない。設問の『該当しない』を読み落とすと正答を選べない。",
+  "topicSlugs": [
+    { "slug": "biz_marketing_frameworks", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_marketing_framework", "weight": 1.0 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": null
+}

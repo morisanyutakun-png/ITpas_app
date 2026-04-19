@@ -1,0 +1,53 @@
+{
+  "externalKey": "r05_q07",
+  "examYear": 5,
+  "examSeason": "annual",
+  "questionNumber": 7,
+  "majorCategory": "technology",
+  "formatType": "network_basics",
+  "trapType": "similar_term",
+  "stem": "ホスト名からIPアドレスを得るために使用されるプロトコルとして最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "DHCP",
+      "isCorrect": false,
+      "whyAttractive": "『IPアドレス』が出てきたのでDHCPに引き寄せられた。だがDHCPはIPアドレスを『割り当てる』プロトコルで、名前から検索するのは別物。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    },
+    {
+      "label": "イ",
+      "body": "DNS",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "ARP",
+      "isCorrect": false,
+      "whyAttractive": "アドレス変換系で似ているが、ARPは『IPアドレス→MACアドレス』の変換。ホスト名は出てこない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "NAT",
+      "isCorrect": false,
+      "whyAttractive": "アドレス変換のイメージで連想する。NATはプライベートIPと公開IPを変換する仕組みで、ホスト名解決とは無関係。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "DNS (Domain Name System) はホスト名 (例: www.example.com) から IPアドレスを得るプロトコル。DHCPは『割り当て』、ARPは『IP→MAC』、NATは『プライベート⇔グローバル』。役割をきちんと分ける。",
+  "topicSlugs": [
+    { "slug": "network_protocols", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_protocol_layer", "weight": 0.5 },
+    { "slug": "confuse_similar_terms", "weight": 1.0 }
+  ],
+  "materialSlugs": [
+    { "slug": "osi_layer_quickref", "role": "compare" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r05.pdf",
+  "sourcePageNumber": null
+}

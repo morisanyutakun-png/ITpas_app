@@ -1,0 +1,52 @@
+{
+  "externalKey": "r07_q14",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 14,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "サービス提供者と利用者との間で、提供するサービスの内容や品質基準を合意した文書はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "SLA",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "SLO",
+      "isCorrect": false,
+      "whyAttractive": "似た略語で混同する。SLO は内部的な目標で、利用者との合意ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "SLM",
+      "isCorrect": false,
+      "whyAttractive": "ITサービスマネジメントの略語で連想。SLMは『SLAを達成するためのマネジメント活動』で、文書そのものではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "RFP",
+      "isCorrect": false,
+      "whyAttractive": "発注関連の略語で混同する。RFPは提案依頼書で、サービス品質合意とは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "**SLA (Service Level Agreement)** はサービス提供者と利用者との品質合意。SLOは内部目標、SLMはSLA達成のマネジメント、RFPは提案依頼書。略語ファミリーの中身を区別する。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1.0 }
+  ],
+  "materialSlugs": [
+    { "slug": "itil_process_compare", "role": "compare" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": null
+}

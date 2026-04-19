@@ -43,3 +43,6 @@ drizzle/meta/_journal.json.bak
 # Keep structured JSON/MD in git, exclude raw PDFs.
 content/raw/**/*.pdf
 ITパスポート過去問/
+
+# Auto-extracted PDF text (regenerable from raw PDFs)
+content/extracted/

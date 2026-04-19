@@ -1,0 +1,52 @@
+{
+  "externalKey": "r06_q10",
+  "examYear": 6,
+  "examSeason": "annual",
+  "questionNumber": 10,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "プロジェクト全体の作業を階層的に分解して図示したものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "WBS",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "ガントチャート",
+      "isCorrect": false,
+      "whyAttractive": "PM図表として最も有名で選びがち。だがガントチャートは時間軸での進捗管理であり、階層分解ではない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "PERT図 (アローダイアグラム)",
+      "isCorrect": false,
+      "whyAttractive": "プロジェクト計画系の図で混同する。PERT図は作業の前後関係と所要時間を矢印で示す図で、階層分解ではない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "エ",
+      "body": "クリティカルパス図",
+      "isCorrect": false,
+      "whyAttractive": "工期管理から連想する。クリティカルパスは『最長経路』を示すもので、階層分解の図ではない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    }
+  ],
+  "explanation": "**WBS** = Work Breakdown Structure。作業を**階層的に分解**してツリー状に表す。スケジュールではなく『何をやるか』を示す図。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_pm_terms", "weight": 1.0 }
+  ],
+  "materialSlugs": [
+    { "slug": "pm_chart_compare_table", "role": "compare" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r06.pdf",
+  "sourcePageNumber": null
+}

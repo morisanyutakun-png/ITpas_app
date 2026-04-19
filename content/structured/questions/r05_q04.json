@@ -1,0 +1,52 @@
+{
+  "externalKey": "r05_q04",
+  "examYear": 5,
+  "examSeason": "annual",
+  "questionNumber": 4,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "クラウドサービスの提供形態のうち、ハードウェア・OS・ミドルウェアまでをサービス事業者が提供し、利用者はその上でアプリケーションを開発・実行できるものとして最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "IaaS",
+      "isCorrect": false,
+      "whyAttractive": "『クラウドのインフラ』という印象でIaaSを選んでしまう。だがIaaSは仮想マシンまでで、OSやミドルウェアの管理は利用者の責任。",
+      "misconceptionSlug": "confuse_cloud_models"
+    },
+    {
+      "label": "イ",
+      "body": "PaaS",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "SaaS",
+      "isCorrect": false,
+      "whyAttractive": "『アプリケーション』というキーワードに引き寄せられた。SaaSはアプリ完成品の提供で、利用者がアプリを開発するわけではない。",
+      "misconceptionSlug": "confuse_cloud_models"
+    },
+    {
+      "label": "エ",
+      "body": "DaaS",
+      "isCorrect": false,
+      "whyAttractive": "クラウド系の略語で揺さぶられた。DaaSはデスクトップ環境の提供で、設問の『アプリ開発・実行環境』とは別物。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "PaaS = Platform as a Service。OS・ミドルウェアまでをベンダが提供し、利用者は**アプリ開発・実行**に集中できる。IaaSは仮想マシンまで、SaaSはアプリ完成品まで提供。",
+  "topicSlugs": [
+    { "slug": "cloud_service_models", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_cloud_models", "weight": 1.0 }
+  ],
+  "materialSlugs": [
+    { "slug": "cloud_service_models_table", "role": "compare" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r05.pdf",
+  "sourcePageNumber": null
+}

@@ -1,0 +1,50 @@
+{
+  "externalKey": "r06_q06",
+  "examYear": 6,
+  "examSeason": "annual",
+  "questionNumber": 6,
+  "majorCategory": "technology",
+  "formatType": "pseudo_lang",
+  "trapType": "order_swap",
+  "stem": "次の擬似言語のプログラムを実行したとき、変数 x の最終的な値はいくつか。\n\n```\nx ← 0\nfor i ← 1 to 5\n  if i mod 2 = 0\n    x ← x + i\n  endif\nendfor\n```",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "0",
+      "isCorrect": false,
+      "whyAttractive": "ifの条件が一度も真にならないと誤解した。i=2,4で条件成立する。",
+      "misconceptionSlug": "wrong_pseudo_lang_flow"
+    },
+    {
+      "label": "イ",
+      "body": "6",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "9",
+      "isCorrect": false,
+      "whyAttractive": "奇数 (i=1,3,5) の合計を計算してしまった。条件は『偶数のとき』。",
+      "misconceptionSlug": "wrong_pseudo_lang_flow"
+    },
+    {
+      "label": "エ",
+      "body": "15",
+      "isCorrect": false,
+      "whyAttractive": "条件を無視して 1+2+3+4+5 を全部足してしまった。if判定があるので偶数だけ足す。",
+      "misconceptionSlug": "wrong_pseudo_lang_flow"
+    }
+  ],
+  "explanation": "i=1,2,3,4,5 のうち偶数 (mod 2 = 0) は i=2 と i=4。よって x = 0 + 2 + 4 = **6**。擬似言語は『どの値で if が真になるか』を1ステップずつ追うのが鉄則。",
+  "topicSlugs": [
+    { "slug": "algo_pseudo_lang", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "wrong_pseudo_lang_flow", "weight": 1.0 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r06.pdf",
+  "sourcePageNumber": null
+}

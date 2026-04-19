@@ -1,0 +1,52 @@
+{
+  "externalKey": "r07_q02",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 2,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "クラウドサービスのうち、利用者がアプリケーション (例: メール、ドキュメント編集) を Web ブラウザから利用するだけで、OS やミドルウェアの管理を意識しなくてよいものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "IaaS",
+      "isCorrect": false,
+      "whyAttractive": "クラウド系で最も低レベルなのでベンダ任せのイメージがある。だがIaaSはOS以上を利用者が管理する。",
+      "misconceptionSlug": "confuse_cloud_models"
+    },
+    {
+      "label": "イ",
+      "body": "PaaS",
+      "isCorrect": false,
+      "whyAttractive": "アプリ実行環境のイメージで選びがち。だがPaaSはアプリ開発のための実行環境提供で、エンドユーザがブラウザから使うアプリ完成品ではない。",
+      "misconceptionSlug": "confuse_cloud_models"
+    },
+    {
+      "label": "ウ",
+      "body": "SaaS",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "ハウジング",
+      "isCorrect": false,
+      "whyAttractive": "サーバホスティング系の用語で迷う。ハウジングはデータセンタにサーバを置くサービスで、クラウドの SaaS とは別。",
+      "misconceptionSlug": "confuse_cloud_models"
+    }
+  ],
+  "explanation": "**SaaS** = Software as a Service。Gmail、Office 365 のようにベンダがアプリ完成品を提供し、利用者はブラウザから使うだけでOK。OS/ミドルウェア/アプリ全部ベンダ管理。",
+  "topicSlugs": [
+    { "slug": "cloud_service_models", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_cloud_models", "weight": 1.0 }
+  ],
+  "materialSlugs": [
+    { "slug": "cloud_service_models_table", "role": "compare" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": null
+}

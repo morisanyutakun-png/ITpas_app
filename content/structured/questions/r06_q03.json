@@ -1,0 +1,50 @@
+{
+  "externalKey": "r06_q03",
+  "examYear": 6,
+  "examSeason": "annual",
+  "questionNumber": 3,
+  "majorCategory": "strategy",
+  "formatType": "law_ip",
+  "trapType": "similar_term",
+  "stem": "著作権に関する記述として最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "著作物を創作した時点で自動的に発生し、登録は不要である。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "特許庁への出願と審査を経て初めて発生する。",
+      "isCorrect": false,
+      "whyAttractive": "特許権と取り違えた。特許は出願・審査・登録が必要だが、著作権は無方式主義で自動発生。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "プログラムやデータベースは著作権の対象外である。",
+      "isCorrect": false,
+      "whyAttractive": "『データ=著作物ではない』という直感で選びがち。だがプログラムや創作的なデータベースは著作物として保護される。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "保護期間は5年で、期間終了後は更新できる。",
+      "isCorrect": false,
+      "whyAttractive": "商標権 (10年/更新可) と取り違えた。著作権は原則70年で更新は無い。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "著作権は**創作した時点で自動発生** (無方式主義)。プログラムも著作物。保護期間は原則70年。特許権 (出願必要)、商標権 (10年更新可) と区別する。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1.0 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r06.pdf",
+  "sourcePageNumber": null
+}

@@ -1,0 +1,50 @@
+{
+  "externalKey": "r07_q09",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 9,
+  "majorCategory": "technology",
+  "formatType": "table_read",
+  "trapType": "edge_case_miss",
+  "stem": "ある月の各支店の売上を表す次の表がある。\n\n| 支店 | 売上(万円) |\n|---|---|\n| A | 320 |\n| B | 480 |\n| C | 200 |\n| D | 600 |\n| E | 400 |\n\n中央値 (メジアン) として最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "200万円",
+      "isCorrect": false,
+      "whyAttractive": "最小値を選んでしまった。中央値は最小ではなく『真ん中』。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "400万円",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "440万円",
+      "isCorrect": false,
+      "whyAttractive": "中央値を求めるつもりで上位2つや中央付近2つの平均 (480+400)/2=440 を計算してしまった。データ数が奇数 (5個) なので平均ではなく真ん中1つだけを選ぶ。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "500万円",
+      "isCorrect": false,
+      "whyAttractive": "最大と最小の中点 (400) や、(480+600)/2=540 のような誤計算をした。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "中央値はデータを並べ替えた**真ん中**の値。並び替えると 200, 320, 400, 480, 600 → 真ん中は 400。データ数が偶数なら中央2つの平均。",
+  "topicSlugs": [
+    { "slug": "biz_financial_metrics", "weight": 0.5 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1.0 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": null
+}

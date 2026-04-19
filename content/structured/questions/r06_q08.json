@@ -1,0 +1,52 @@
+{
+  "externalKey": "r06_q08",
+  "examYear": 6,
+  "examSeason": "annual",
+  "questionNumber": 8,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "公開鍵基盤 (PKI) において、公開鍵の所有者を保証するために発行されるものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "デジタル署名",
+      "isCorrect": false,
+      "whyAttractive": "公開鍵関連で最も馴染みのある用語で選んでしまう。だがデジタル署名は『メッセージの本人性』を示す行為で、公開鍵そのものの所有者保証は別。",
+      "misconceptionSlug": "confuse_crypto_method"
+    },
+    {
+      "label": "イ",
+      "body": "デジタル証明書",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "ハッシュ値",
+      "isCorrect": false,
+      "whyAttractive": "暗号関連語で選びがち。ハッシュ値は改ざん検出のためのもので、所有者保証はしない。",
+      "misconceptionSlug": "confuse_crypto_method"
+    },
+    {
+      "label": "エ",
+      "body": "共通鍵",
+      "isCorrect": false,
+      "whyAttractive": "鍵関連の語感で選んでしまう。共通鍵は通信の暗号化に使われるが、誰の鍵かを保証する仕組みではない。",
+      "misconceptionSlug": "confuse_crypto_method"
+    }
+  ],
+  "explanation": "デジタル証明書は認証局 (CA) が発行し、『この公開鍵は確かにこの人/組織のものです』と保証する。HTTPS の SSL/TLS 通信でサーバ証明書として使われるのが代表例。",
+  "topicSlugs": [
+    { "slug": "security_crypto", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_crypto_method", "weight": 1.0 }
+  ],
+  "materialSlugs": [
+    { "slug": "crypto_compare_table", "role": "compare" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r06.pdf",
+  "sourcePageNumber": null
+}

@@ -1,0 +1,50 @@
+{
+  "externalKey": "r07_q03",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 3,
+  "majorCategory": "technology",
+  "formatType": "calculation",
+  "trapType": "edge_case_miss",
+  "stem": "ある商品の固定費が 300万円、変動費率が 60% のとき、損益分岐点となる売上高はいくらか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "180万円",
+      "isCorrect": false,
+      "whyAttractive": "固定費 × 60% で計算してしまう。公式を逆に使っている。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "500万円",
+      "isCorrect": false,
+      "whyAttractive": "固定費 ÷ 60% で誤計算した。分母は (1 - 変動費率) = 40%。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "750万円",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "1500万円",
+      "isCorrect": false,
+      "whyAttractive": "固定費を 60% で割ると 500、20% で割ると 1500。倍率を取り違えた。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "損益分岐点売上高 = 固定費 ÷ (1 - 変動費率) = 300万 ÷ (1 - 0.6) = 300万 ÷ 0.4 = **750万円**。公式の分母『1 - 変動費率』を覚えておけば計算できる。",
+  "topicSlugs": [
+    { "slug": "biz_financial_metrics", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1.0 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": null
+}

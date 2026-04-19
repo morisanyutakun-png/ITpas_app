@@ -1,0 +1,8 @@
+{
+  "slug": "db_normalization",
+  "title": "データベース正規化と関係モデル",
+  "majorCategory": "technology",
+  "minorTopic": "データベース",
+  "summary": "1NF / 2NF / 3NF は『繰返し排除 → 部分関数従属の排除 → 推移関数従属の排除』。整合性とトランザクション(ACID)も頻出。",
+  "body": "## 正規化の段階\n- **第1正規形 (1NF)**: 繰り返しグループを排除。1セル=1値。\n- **第2正規形 (2NF)**: 主キーの一部だけに従属する列を別表へ\n- **第3正規形 (3NF)**: 主キー以外の列に従属する列を別表へ（推移的従属の排除）\n\n## ACID 特性\n- **A**tomicity: 全部成功 or 全部失敗\n- **C**onsistency: 整合性が保たれる\n- **I**solation: 同時実行しても結果が一致\n- **D**urability: 障害があっても永続化される\n\n## ひっかけ\n- 『1NFで主キーを決める』→ ✗ 1NFは繰り返し排除がメイン\n- 『ACIDの I は Index』→ ✗ Isolation"
+}

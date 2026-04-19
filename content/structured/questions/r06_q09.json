@@ -1,0 +1,50 @@
+{
+  "externalKey": "r06_q09",
+  "examYear": 6,
+  "examSeason": "annual",
+  "questionNumber": 9,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "Webアプリケーションの入力欄に意図的にSQL文を入力し、データベースを不正に操作する攻撃はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "クロスサイトスクリプティング (XSS)",
+      "isCorrect": false,
+      "whyAttractive": "Web攻撃という共通点から選びがち。XSSは『スクリプト』を注入する攻撃で、SQLではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "SQLインジェクション",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "DoS攻撃",
+      "isCorrect": false,
+      "whyAttractive": "サーバへの攻撃で連想する。DoSは大量リクエストでサービス停止を狙う攻撃で、SQL注入とは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ゼロデイ攻撃",
+      "isCorrect": false,
+      "whyAttractive": "脆弱性悪用つながりで選んでしまう。ゼロデイは『パッチ未公開の脆弱性を突く』攻撃で、特定の手法ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "**SQLインジェクション**は入力欄から不正な SQL を流し込んでDBを操作する攻撃。XSSはスクリプト注入、DoSはリクエスト過多、ゼロデイは未パッチ脆弱性悪用と区別する。対策はプレースホルダ/エスケープ処理。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1.0 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r06.pdf",
+  "sourcePageNumber": null
+}

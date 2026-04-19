@@ -1,0 +1,52 @@
+{
+  "externalKey": "r05_q05",
+  "examYear": 5,
+  "examSeason": "annual",
+  "questionNumber": 5,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "ITサービスマネジメントにおいて、利用者から報告された障害をできるだけ早く復旧させ、サービスを正常な状態に戻すことを主な目的とするプロセスはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "問題管理",
+      "isCorrect": false,
+      "whyAttractive": "『障害』のワードに引き寄せられて問題管理を選んでしまう。問題管理は『二度と起こさない』ための根本原因分析が主目的で、目の前の復旧そのものではない。",
+      "misconceptionSlug": "confuse_incident_problem"
+    },
+    {
+      "label": "イ",
+      "body": "インシデント管理",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "変更管理",
+      "isCorrect": false,
+      "whyAttractive": "『復旧のために変更を加える』という連想で選びがち。変更管理は変更を計画/承認するプロセスで、復旧のスピードを目的とする活動ではない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "エ",
+      "body": "構成管理",
+      "isCorrect": false,
+      "whyAttractive": "障害対応に構成情報が必要なので連想する。だが構成管理はCMDB等での『台帳管理』が主目的で、復旧自体はしない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    }
+  ],
+  "explanation": "**インシデント管理**の目的は『サービスを早く正常に戻す』こと（暫定対応OK）。根本原因の分析と恒久対応は**問題管理**のスコープ。両者を分けるのがITILの肝。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_incident_problem", "weight": 1.0 }
+  ],
+  "materialSlugs": [
+    { "slug": "itil_process_compare", "role": "compare" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r05.pdf",
+  "sourcePageNumber": null
+}

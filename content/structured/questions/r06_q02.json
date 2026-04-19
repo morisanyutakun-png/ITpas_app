@@ -1,0 +1,50 @@
+{
+  "externalKey": "r06_q02",
+  "examYear": 6,
+  "examSeason": "annual",
+  "questionNumber": 2,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "SWOT分析における『機会(Opportunities)』に該当するものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "自社の優れた技術力や豊富な人材",
+      "isCorrect": false,
+      "whyAttractive": "強みっぽい例だが、強みは『Strengths』で内部要因。機会は外部要因。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "イ",
+      "body": "競合他社の新製品投入による市場シェアの脅威",
+      "isCorrect": false,
+      "whyAttractive": "外部要因という点で迷う。だが脅威は『Threats』であって機会ではない。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "ウ",
+      "body": "市場の拡大や規制緩和など、自社にとって追い風となる外部環境の変化",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "自社の生産設備の老朽化",
+      "isCorrect": false,
+      "whyAttractive": "弱みの例。Weaknesses で内部要因。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    }
+  ],
+  "explanation": "SWOTは内部 (S/W) と外部 (O/T) の組合せ。**機会** = 外部 × プラス、**脅威** = 外部 × マイナス、**強み** = 内部 × プラス、**弱み** = 内部 × マイナス。",
+  "topicSlugs": [
+    { "slug": "biz_marketing_frameworks", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_marketing_framework", "weight": 1.0 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r06.pdf",
+  "sourcePageNumber": null
+}

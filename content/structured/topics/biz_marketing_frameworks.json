@@ -1,0 +1,8 @@
+{
+  "slug": "biz_marketing_frameworks",
+  "title": "マーケティング/経営フレームワーク（SWOT / 4P / PPM / 3C）",
+  "majorCategory": "strategy",
+  "minorTopic": "経営戦略",
+  "summary": "用途と分析対象がフレームごとに違う。『内部か外部か』『何を分けるか』で見分ける。",
+  "body": "## SWOT\n- 内部要因 = Strengths(強み), Weaknesses(弱み)\n- 外部要因 = Opportunities(機会), Threats(脅威)\n\n## 4P\n- マーケティングミックス: Product, Price, Place, Promotion\n\n## PPM (Product Portfolio Management)\n- 縦軸=市場成長率, 横軸=市場シェア\n- 花形 / 金のなる木 / 問題児 / 負け犬\n\n## 3C\n- Customer, Competitor, Company\n\n## ひっかけ\n- 『SWOTで4Pを分析する』→ ✗ 別フレーム\n- 『PPMの花形は撤退すべき』→ ✗ 維持・成長"
+}

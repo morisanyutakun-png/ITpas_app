@@ -1,0 +1,50 @@
+{
+  "externalKey": "r05_q09",
+  "examYear": 5,
+  "examSeason": "annual",
+  "questionNumber": 9,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "次のマルウェアの説明として、『他のファイルに寄生せず、自分自身を複製しながらネットワーク経由で他のコンピュータへ自動的に感染を広げるもの』に該当するものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ウイルス",
+      "isCorrect": false,
+      "whyAttractive": "マルウェア=ウイルスの印象が強くて選びがち。だがウイルスは『他のファイルに寄生して増殖』が定義で、設問の『寄生せず単独』とは合わない。",
+      "misconceptionSlug": "confuse_malware_types"
+    },
+    {
+      "label": "イ",
+      "body": "ワーム",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "トロイの木馬",
+      "isCorrect": false,
+      "whyAttractive": "悪性プログラム名から連想する。トロイは『正規ソフトを装って侵入』で自己複製しない。",
+      "misconceptionSlug": "confuse_malware_types"
+    },
+    {
+      "label": "エ",
+      "body": "スパイウェア",
+      "isCorrect": false,
+      "whyAttractive": "情報を盗む系で連想する。スパイウェアは『情報を盗む』ことが目的で、感染拡大の仕組みではない。",
+      "misconceptionSlug": "confuse_malware_types"
+    }
+  ],
+  "explanation": "ワームは他のファイルに寄生せず、自分自身のコピーをネットワーク経由で広げる。ウイルスは寄生型、トロイは擬装型、スパイウェアは情報窃取型。3つの違いを『増殖の仕方』で覚える。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_malware_types", "weight": 1.0 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r05.pdf",
+  "sourcePageNumber": null
+}

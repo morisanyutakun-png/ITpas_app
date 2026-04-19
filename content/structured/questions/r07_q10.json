@@ -1,0 +1,50 @@
+{
+  "externalKey": "r07_q10",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 10,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "重要な業務データを暗号化し、復号鍵と引き換えに金銭を要求するマルウェアはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ランサムウェア",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "ボットネット",
+      "isCorrect": false,
+      "whyAttractive": "悪性ネットワーク系で連想。ボットネットは攻撃者の遠隔操作で動くマルウェア群で、データ暗号化が主目的ではない。",
+      "misconceptionSlug": "confuse_malware_types"
+    },
+    {
+      "label": "ウ",
+      "body": "スパイウェア",
+      "isCorrect": false,
+      "whyAttractive": "情報を奪うつながりで連想する。スパイウェアは『情報窃取』が目的で、暗号化と身代金要求はしない。",
+      "misconceptionSlug": "confuse_malware_types"
+    },
+    {
+      "label": "エ",
+      "body": "アドウェア",
+      "isCorrect": false,
+      "whyAttractive": "迷惑系のマルウェア名で連想。アドウェアは広告を強制表示するもので、暗号化攻撃ではない。",
+      "misconceptionSlug": "confuse_malware_types"
+    }
+  ],
+  "explanation": "**ランサムウェア** (Ransom = 身代金) はファイルを暗号化し、復号鍵と引き換えに金銭を要求する。バックアップを別系統で保管しておくのが最も有効な対策。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_malware_types", "weight": 1.0 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": null
+}

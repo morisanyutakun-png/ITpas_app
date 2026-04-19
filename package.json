@@ -12,6 +12,7 @@
     "lint": "next lint",
     "db:generate": "drizzle-kit generate",
     "db:push": "drizzle-kit push",
+    "db:apply": "tsx scripts/applyMigrations.ts",
     "db:studio": "drizzle-kit studio",
     "seed": "tsx scripts/seed.ts",
     "validate:content": "tsx scripts/validate_structured.ts"

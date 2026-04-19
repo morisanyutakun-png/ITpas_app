@@ -1,0 +1,52 @@
+{
+  "externalKey": "r06_q05",
+  "examYear": 6,
+  "examSeason": "annual",
+  "questionNumber": 5,
+  "majorCategory": "technology",
+  "formatType": "spreadsheet",
+  "trapType": "edge_case_miss",
+  "stem": "ある表の B2 セルに `=$A$1*B1` という式を入力し、これを C2 セルにコピーした。C2 に表示される式として正しいものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "=$A$1*B1",
+      "isCorrect": false,
+      "whyAttractive": "$ が付いているから絶対固定、というイメージで全体が動かないと考えてしまう。だが固定されているのはA1だけ。",
+      "misconceptionSlug": "wrong_spreadsheet_reference"
+    },
+    {
+      "label": "イ",
+      "body": "=$A$1*C1",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "=$B$1*C1",
+      "isCorrect": false,
+      "whyAttractive": "絶対参照の中身もズレると勘違いした。$A$1 は完全固定なのでA1のまま。",
+      "misconceptionSlug": "wrong_spreadsheet_reference"
+    },
+    {
+      "label": "エ",
+      "body": "=A1*C1",
+      "isCorrect": false,
+      "whyAttractive": "$ を見落として相対扱いしてしまった。",
+      "misconceptionSlug": "wrong_spreadsheet_reference"
+    }
+  ],
+  "explanation": "B2→C2 は1列右へのコピー。**$A$1** は完全固定なのでA1のまま。**B1** は相対参照なのでC1にズレる。結果は `=$A$1*C1`。",
+  "topicSlugs": [
+    { "slug": "spreadsheet_basics", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "wrong_spreadsheet_reference", "weight": 1.0 }
+  ],
+  "materialSlugs": [
+    { "slug": "spreadsheet_reference_quickref", "role": "compare" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r06.pdf",
+  "sourcePageNumber": null
+}

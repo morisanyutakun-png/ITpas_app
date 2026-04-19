@@ -1,0 +1,52 @@
+{
+  "externalKey": "r07_q11",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 11,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "OSI 参照モデルの第3層 (ネットワーク層) で動作する機器はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "リピータハブ",
+      "isCorrect": false,
+      "whyAttractive": "L1の機器をL3と勘違いした。リピータハブは物理層 (L1) で信号を増幅するだけ。",
+      "misconceptionSlug": "confuse_router_switch_layer"
+    },
+    {
+      "label": "イ",
+      "body": "L2スイッチ",
+      "isCorrect": false,
+      "whyAttractive": "名前にL2と入っているのに『スイッチ=ネットワーク機器』のイメージで選んでしまう。L2スイッチはデータリンク層 (L2)。",
+      "misconceptionSlug": "confuse_router_switch_layer"
+    },
+    {
+      "label": "ウ",
+      "body": "ルータ",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "リピータ",
+      "isCorrect": false,
+      "whyAttractive": "L1機器をL3と取り違えた。リピータは物理層で信号を中継する機器。",
+      "misconceptionSlug": "confuse_router_switch_layer"
+    }
+  ],
+  "explanation": "ルータは IPアドレス (L3情報) を見て経路を決定する**ネットワーク層 (L3)** 機器。L2スイッチはMACアドレスでL2、リピータ/ハブは信号レベルでL1。",
+  "topicSlugs": [
+    { "slug": "network_basics_osi", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_router_switch_layer", "weight": 1.0 }
+  ],
+  "materialSlugs": [
+    { "slug": "osi_layer_quickref", "role": "compare" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": null
+}

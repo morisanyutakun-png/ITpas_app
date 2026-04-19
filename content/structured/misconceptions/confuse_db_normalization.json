@@ -1,0 +1,8 @@
+{
+  "slug": "confuse_db_normalization",
+  "title": "1NF / 2NF / 3NF の段階を混同する",
+  "definition": "正規化のステップで『何を排除するか』を取り違える。",
+  "typicalExample": "『1NFで部分関数従属を排除する』と回答してしまう。",
+  "counterExample": "1NF=繰り返しを排除 / 2NF=主キー一部への部分関数従属を排除 / 3NF=主キー以外への推移的従属を排除。",
+  "recoveryHint": "『繰返し → 部分 → 推移』の順で覚える。"
+}

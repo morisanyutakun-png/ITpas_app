@@ -1,0 +1,53 @@
+{
+  "externalKey": "r06_q07",
+  "examYear": 6,
+  "examSeason": "annual",
+  "questionNumber": 7,
+  "majorCategory": "technology",
+  "formatType": "network_basics",
+  "trapType": "similar_term",
+  "stem": "TCP と UDP の違いとして最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "TCPはコネクションレス型で高速、UDPはコネクション型で信頼性が高い。",
+      "isCorrect": false,
+      "whyAttractive": "TCPとUDPの説明を完全に逆にしている。鏡像のような選択肢に引っかかりやすい。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "TCPはコネクション型で信頼性が高く、UDPはコネクションレス型で高速。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "TCPもUDPも同じく信頼性のあるコネクション型で、ポート番号で区別される。",
+      "isCorrect": false,
+      "whyAttractive": "両方とも『同じ』と答えてしまう。実際は性質が逆。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "TCPはネットワーク層、UDPはトランスポート層で動作する。",
+      "isCorrect": false,
+      "whyAttractive": "層を取り違える。両方ともトランスポート層で動作する。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    }
+  ],
+  "explanation": "TCP = Transmission Control Protocol、コネクション型 (3ウェイハンドシェイク) で信頼性あり。UDP = User Datagram Protocol、コネクションレスで高速だが信頼性なし。両方ともトランスポート層。",
+  "topicSlugs": [
+    { "slug": "network_protocols", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_protocol_layer", "weight": 0.5 },
+    { "slug": "confuse_similar_terms", "weight": 1.0 }
+  ],
+  "materialSlugs": [
+    { "slug": "osi_layer_quickref", "role": "compare" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r06.pdf",
+  "sourcePageNumber": null
+}

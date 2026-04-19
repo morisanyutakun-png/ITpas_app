@@ -1,0 +1,52 @@
+{
+  "externalKey": "r05_q10",
+  "examYear": 5,
+  "examSeason": "annual",
+  "questionNumber": 10,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "RAID 5 の特徴として最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "データを2台のディスクに同じ内容で書き込み、片方が故障してもデータが失われない。",
+      "isCorrect": false,
+      "whyAttractive": "RAIDの『冗長性』からRAID 1のミラーリングと混同する。設問はRAID 5なのでパリティ分散が答え。",
+      "misconceptionSlug": "confuse_raid_levels"
+    },
+    {
+      "label": "イ",
+      "body": "データとパリティを複数のディスクに分散して書き込み、ディスク1台の故障まで耐えられる。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "データを複数のディスクに分散して書き込み、冗長性は無いが高速化を実現する。",
+      "isCorrect": false,
+      "whyAttractive": "RAID 0 (ストライピング) の説明と混同する。RAID 5には冗長性がある。",
+      "misconceptionSlug": "confuse_raid_levels"
+    },
+    {
+      "label": "エ",
+      "body": "パリティを2重化し、ディスク2台までの故障に耐えられる。",
+      "isCorrect": false,
+      "whyAttractive": "RAID 6 と取り違えた。5は1台耐、6は2台耐。",
+      "misconceptionSlug": "confuse_raid_levels"
+    }
+  ],
+  "explanation": "RAID 5 はデータ＋パリティを分散書込み。**1台**故障までデータ復旧可能。最低3台必要。2台故障に耐えるならRAID 6（パリティ二重化）。",
+  "topicSlugs": [
+    { "slug": "hw_storage_raid", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_raid_levels", "weight": 1.0 }
+  ],
+  "materialSlugs": [
+    { "slug": "raid_levels_table", "role": "compare" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r05.pdf",
+  "sourcePageNumber": null
+}

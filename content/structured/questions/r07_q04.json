@@ -1,0 +1,50 @@
+{
+  "externalKey": "r07_q04",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 4,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "PPM (Product Portfolio Management) における『花形 (Star)』に該当する事業の特徴として最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "市場成長率が低く、市場シェアも低い。撤退を検討する。",
+      "isCorrect": false,
+      "whyAttractive": "『負け犬』の説明と取り違えた。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "イ",
+      "body": "市場成長率が高く、市場シェアも高い。投資を維持して伸ばす。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "市場成長率は低いが、市場シェアは高い。安定的にキャッシュを生む。",
+      "isCorrect": false,
+      "whyAttractive": "『金のなる木』の説明と取り違えた。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "エ",
+      "body": "市場成長率は高いが、市場シェアは低い。投資判断が難しい。",
+      "isCorrect": false,
+      "whyAttractive": "『問題児』の説明と取り違えた。花形ほど目立つが、まだシェアが取れていないステージ。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    }
+  ],
+  "explanation": "PPMは縦軸=市場成長率、横軸=市場シェアの2軸で4分類。花形=高成長×高シェア / 金のなる木=低成長×高シェア / 問題児=高成長×低シェア / 負け犬=低成長×低シェア。",
+  "topicSlugs": [
+    { "slug": "biz_marketing_frameworks", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_marketing_framework", "weight": 1.0 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": null
+}

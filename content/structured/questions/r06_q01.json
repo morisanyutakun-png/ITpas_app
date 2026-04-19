@@ -1,0 +1,50 @@
+{
+  "externalKey": "r06_q01",
+  "examYear": 6,
+  "examSeason": "annual",
+  "questionNumber": 1,
+  "majorCategory": "strategy",
+  "formatType": "biz_analysis",
+  "trapType": "similar_term",
+  "stem": "ROE（自己資本利益率）を表す式として最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "当期純利益 ÷ 総資産",
+      "isCorrect": false,
+      "whyAttractive": "ROAと取り違えた。Aは Asset(総資産) なのでROAの式。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "当期純利益 ÷ 自己資本",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "売上高 ÷ 自己資本",
+      "isCorrect": false,
+      "whyAttractive": "分子を売上にしてしまう。ROEの分子は『利益』であって『売上』ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "営業利益 ÷ 投資額",
+      "isCorrect": false,
+      "whyAttractive": "ROIと取り違えた。Iは Investment(投資額) なのでROI。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ROE = Return On Equity = 当期純利益 ÷ **自己資本**。E=Equity(自己資本)、A=Asset(総資産)、I=Investment(投資額) と頭文字に対応させて覚える。",
+  "topicSlugs": [
+    { "slug": "biz_financial_metrics", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1.0 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r06.pdf",
+  "sourcePageNumber": null
+}

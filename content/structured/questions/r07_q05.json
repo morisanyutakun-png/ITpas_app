@@ -1,0 +1,52 @@
+{
+  "externalKey": "r07_q05",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 5,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "ID/パスワードに加えて、スマートフォンに送られる確認コードを併用する認証方法を一般に何というか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "シングルサインオン (SSO)",
+      "isCorrect": false,
+      "whyAttractive": "認証つながりで連想する。SSOは『1回のログインで複数サービスを使える』仕組みで、要素を追加する話ではない。",
+      "misconceptionSlug": "confuse_authn_authz"
+    },
+    {
+      "label": "イ",
+      "body": "多要素認証 (MFA)",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "ロールベースアクセス制御 (RBAC)",
+      "isCorrect": false,
+      "whyAttractive": "セキュリティ用語で混同する。RBACは『何ができるか (認可)』の制御で、認証とは別。",
+      "misconceptionSlug": "confuse_authn_authz"
+    },
+    {
+      "label": "エ",
+      "body": "デジタル署名",
+      "isCorrect": false,
+      "whyAttractive": "本人確認系で連想する。デジタル署名はメッセージの真正性を示す技術で、ログイン認証の方式名ではない。",
+      "misconceptionSlug": "confuse_crypto_method"
+    }
+  ],
+  "explanation": "**多要素認証 (MFA)** は『知識(パスワード)』『所持(スマホ)』『生体(指紋)』など複数の要素を組み合わせる認証。SSOは1回のログインで複数サービス利用、RBACは認可の話なので別概念。",
+  "topicSlugs": [
+    { "slug": "security_authn_authz", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_authn_authz", "weight": 1.0 }
+  ],
+  "materialSlugs": [
+    { "slug": "authn_vs_authz_table", "role": "compare" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": null
+}

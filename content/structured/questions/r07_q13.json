@@ -1,0 +1,52 @@
+{
+  "externalKey": "r07_q13",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 13,
+  "majorCategory": "technology",
+  "formatType": "spreadsheet",
+  "trapType": "edge_case_miss",
+  "stem": "B1〜B5 に数値が入力されている。 D1 に `=COUNTIF(B1:B5, \">=80\")` と入力した結果として正しいものはどれか。\n\nB1:60, B2:80, B3:75, B4:95, B5:80",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "1",
+      "isCorrect": false,
+      "whyAttractive": "B4=95 だけと数えてしまった。`>=80` は 80 を含むので80も該当する。",
+      "misconceptionSlug": "wrong_spreadsheet_reference"
+    },
+    {
+      "label": "イ",
+      "body": "3",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "2",
+      "isCorrect": false,
+      "whyAttractive": "B2=80, B5=80 は同じ80だから1つと数えてしまった。COUNTIFは『該当するセルの個数』なので重複して数える。",
+      "misconceptionSlug": "wrong_spreadsheet_reference"
+    },
+    {
+      "label": "エ",
+      "body": "5",
+      "isCorrect": false,
+      "whyAttractive": "条件を読み飛ばしてCOUNT(全体)で5と答えてしまった。COUNTIFは条件を満たすものだけ数える。",
+      "misconceptionSlug": "wrong_spreadsheet_reference"
+    }
+  ],
+  "explanation": "`>=80` を満たすのは B2(80), B4(95), B5(80) の3個。COUNTIFは条件を満たすセルの**個数**を返す関数で、同じ値でも別セルなら別々に数える。",
+  "topicSlugs": [
+    { "slug": "spreadsheet_basics", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "wrong_spreadsheet_reference", "weight": 1.0 }
+  ],
+  "materialSlugs": [
+    { "slug": "spreadsheet_reference_quickref", "role": "compare" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": null
+}

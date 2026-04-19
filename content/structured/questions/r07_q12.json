@@ -1,0 +1,50 @@
+{
+  "externalKey": "r07_q12",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 12,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "DHCP の役割として最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ホスト名から IPアドレスを得る。",
+      "isCorrect": false,
+      "whyAttractive": "DNSと取り違えた。DNSが名前解決、DHCPが割り当て。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    },
+    {
+      "label": "イ",
+      "body": "ネットワークに接続したコンピュータに IPアドレスを自動的に割り当てる。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "プライベート IPアドレスとグローバル IPアドレスを変換する。",
+      "isCorrect": false,
+      "whyAttractive": "NATと取り違えた。アドレス系の機能は名前が似ていて混同しやすい。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    },
+    {
+      "label": "エ",
+      "body": "IPアドレスから MACアドレスを得る。",
+      "isCorrect": false,
+      "whyAttractive": "ARPと取り違えた。DHCPはIPの割り当て、ARPはIP→MACの解決。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    }
+  ],
+  "explanation": "DHCP (Dynamic Host Configuration Protocol) はネットワーク接続時にIPアドレス・サブネットマスク・デフォルトゲートウェイなどを**自動配布**する。DNS (名前解決) / NAT (アドレス変換) / ARP (IP→MAC) と混同しやすい。",
+  "topicSlugs": [
+    { "slug": "network_protocols", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_protocol_layer", "weight": 1.0 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": null
+}

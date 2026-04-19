@@ -1,0 +1,53 @@
+{
+  "externalKey": "r05_q08",
+  "examYear": 5,
+  "examSeason": "annual",
+  "questionNumber": 8,
+  "majorCategory": "technology",
+  "formatType": "db_basics",
+  "trapType": "similar_term",
+  "stem": "リレーショナルデータベースで、ある列の値が別の列の値に従属している関係を排除し、整合性を保ちやすくする操作はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "正規化",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "インデックス作成",
+      "isCorrect": false,
+      "whyAttractive": "DB操作のキーワードで連想する。インデックスは検索の高速化が目的で、データ構造の整合性は別問題。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "トランザクション",
+      "isCorrect": false,
+      "whyAttractive": "整合性のイメージから連想する。トランザクションは複数操作の原子性(ACID)の仕組みで、列構造の整理ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "結合 (JOIN)",
+      "isCorrect": false,
+      "whyAttractive": "正規化と裏返しの関係から混同する。結合は分けた表を**戻して使う**操作で、整合性確保の操作ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "**正規化**は関数従属を排除して整合性を保つ操作。1NF→2NF→3NFと段階を踏み、繰返し→部分→推移の順で従属を排除する。インデックスは検索高速化、トランザクションはACID、結合は表をまとめる別概念。",
+  "topicSlugs": [
+    { "slug": "db_normalization", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_db_normalization", "weight": 0.5 },
+    { "slug": "confuse_similar_terms", "weight": 1.0 }
+  ],
+  "materialSlugs": [
+    { "slug": "db_normalization_steps", "role": "compare" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r05.pdf",
+  "sourcePageNumber": null
+}

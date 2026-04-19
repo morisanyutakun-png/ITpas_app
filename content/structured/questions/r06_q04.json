@@ -1,0 +1,52 @@
+{
+  "externalKey": "r06_q04",
+  "examYear": 6,
+  "examSeason": "annual",
+  "questionNumber": 4,
+  "majorCategory": "technology",
+  "formatType": "spreadsheet",
+  "trapType": "edge_case_miss",
+  "stem": "セルA1に式 `=B1+C1` が入力されている。これをセルA2にコピーした場合、A2のセルに表示される式として正しいものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "=B1+C1",
+      "isCorrect": false,
+      "whyAttractive": "コピー＝同じ式、と単純に考えてしまう。だが相対参照は移動した分だけズレる。",
+      "misconceptionSlug": "wrong_spreadsheet_reference"
+    },
+    {
+      "label": "イ",
+      "body": "=B2+C2",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "=$B$1+$C$1",
+      "isCorrect": false,
+      "whyAttractive": "コピーで固定したい時の書き方を、コピー結果と取り違えた。元の式に$は付いていないので絶対参照にはならない。",
+      "misconceptionSlug": "wrong_spreadsheet_reference"
+    },
+    {
+      "label": "エ",
+      "body": "=B3+C3",
+      "isCorrect": false,
+      "whyAttractive": "1行下にコピーしたのに2行ズレる、と誤解した。実際にズレるのはコピー先と元の差分（A1→A2なので+1）。",
+      "misconceptionSlug": "wrong_spreadsheet_reference"
+    }
+  ],
+  "explanation": "相対参照 `B1`, `C1` はコピー先で**コピー方向と同じ分だけ**ズレる。A1→A2は1行下なので、B1→B2、C1→C2となり、結果は `=B2+C2`。",
+  "topicSlugs": [
+    { "slug": "spreadsheet_basics", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "wrong_spreadsheet_reference", "weight": 1.0 }
+  ],
+  "materialSlugs": [
+    { "slug": "spreadsheet_reference_quickref", "role": "compare" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r06.pdf",
+  "sourcePageNumber": null
+}

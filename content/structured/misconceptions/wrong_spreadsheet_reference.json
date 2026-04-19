@@ -1,0 +1,8 @@
+{
+  "slug": "wrong_spreadsheet_reference",
+  "title": "絶対参照 / 相対参照を取り違える",
+  "definition": "$ の有無による参照の固定/移動を逆に解釈する。",
+  "typicalExample": "コピーで動いてほしくないセルに $ を付けず、結果がズレる。",
+  "counterExample": "$A$1 は完全固定 / A$1 は行のみ固定 / $A1 は列のみ固定 / A1 はどちらもズレる。",
+  "recoveryHint": "『$は鍵。鍵がある側は動かない』と覚える。"
+}

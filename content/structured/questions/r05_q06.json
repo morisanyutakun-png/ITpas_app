@@ -1,0 +1,52 @@
+{
+  "externalKey": "r05_q06",
+  "examYear": 5,
+  "examSeason": "annual",
+  "questionNumber": 6,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "プロジェクト全体の所要日数を決定する経路として最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "プロジェクト内のすべての経路のうち、最も短い時間で終わる経路。",
+      "isCorrect": false,
+      "whyAttractive": "『最短』という日本語の語感で『早く終わる』ものを選んでしまう。だが工期を決めるのは『一番遅い経路』であって、短い経路は関係ない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "イ",
+      "body": "プロジェクト内の経路のうち、所要時間が最も長い経路。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "プロジェクトの開始時点から最初の合流点までの経路。",
+      "isCorrect": false,
+      "whyAttractive": "『プロジェクトの最初』という時間軸の前半に注目してしまう。だが工期を決めるのは合流の早い遅いではなく、全体の最長経路。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "エ",
+      "body": "WBSの最上位階層に並ぶ作業をつないだ経路。",
+      "isCorrect": false,
+      "whyAttractive": "WBSとアローダイアグラムを混同している。WBSは作業の分解で、経路や所要日数は表現していない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    }
+  ],
+  "explanation": "**クリティカルパス**は所要時間が最も長い経路。ここを短縮しなければプロジェクト全体の工期は縮まらない。クリティカルパス上の作業は遅延がそのまま工期遅延になるため重点管理対象。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_pm_terms", "weight": 1.0 }
+  ],
+  "materialSlugs": [
+    { "slug": "pm_chart_compare_table", "role": "compare" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r05.pdf",
+  "sourcePageNumber": null
+}

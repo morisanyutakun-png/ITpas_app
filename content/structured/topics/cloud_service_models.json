@@ -1,0 +1,8 @@
+{
+  "slug": "cloud_service_models",
+  "title": "クラウドサービスモデル（IaaS / PaaS / SaaS）",
+  "majorCategory": "technology",
+  "minorTopic": "システム基盤",
+  "summary": "『どこまでベンダが管理するか』が境界。利用者が触れる層が下に行くほど自由度が高く、責任も重くなる。",
+  "body": "## レイヤー早見\n- **SaaS**: アプリケーションまで提供（Gmail, Office 365, Salesforce）\n- **PaaS**: 実行環境まで提供（App Engine, Heroku）\n- **IaaS**: 仮想マシンまで提供（EC2, Compute Engine）\n\n## 利用者の責任範囲\n- IaaS: OS, ミドルウェア, アプリ全部 → 自由度高\n- PaaS: アプリだけ\n- SaaS: 設定とデータだけ\n\n## ひっかけ\n- 『SaaSは自分でOSをアップデートする』→ ✗ ベンダ側\n- 『IaaSはアプリも提供される』→ ✗ 仮想マシンまで"
+}

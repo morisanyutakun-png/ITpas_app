@@ -1,0 +1,50 @@
+{
+  "externalKey": "r07_q06",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 6,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "データベースのトランザクションが備えるべき性質 (ACID特性) のうち、『障害が発生しても、コミットされたトランザクションの結果が失われない』性質はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "原子性 (Atomicity)",
+      "isCorrect": false,
+      "whyAttractive": "ACIDの先頭で覚えやすく選びがち。原子性は『全部成功 or 全部失敗』であって、結果の永続化ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "一貫性 (Consistency)",
+      "isCorrect": false,
+      "whyAttractive": "『失われない=一貫性』のイメージで選びがち。一貫性は整合性ルールの維持で、永続化のことではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "独立性 (Isolation)",
+      "isCorrect": false,
+      "whyAttractive": "ACIDのIで意味を取り違えた。Isolationは並行制御 (同時実行しても結果が一致) で、永続化ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "永続性 (Durability)",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "**Durability (永続性)** は『コミット済みのデータは障害があっても失われない』性質。原子性=All or Nothing、一貫性=整合性ルール維持、独立性=並行性能、永続性=耐障害保存、と4つを意味で区別する。",
+  "topicSlugs": [
+    { "slug": "db_normalization", "weight": 1.0 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1.0 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": null
+}

@@ -39,15 +39,29 @@
   ],
   "explanation": "TCP = Transmission Control Protocol、コネクション型 (3ウェイハンドシェイク) で信頼性あり。UDP = User Datagram Protocol、コネクションレスで高速だが信頼性なし。両方ともトランスポート層。",
   "topicSlugs": [
-    { "slug": "network_protocols", "weight": 1.0 }
+    {
+      "slug": "network_protocols",
+      "weight": 1
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "confuse_protocol_layer", "weight": 0.5 },
-    { "slug": "confuse_similar_terms", "weight": 1.0 }
+    {
+      "slug": "confuse_protocol_layer",
+      "weight": 0.5
+    },
+    {
+      "slug": "confuse_similar_terms",
+      "weight": 1
+    }
   ],
   "materialSlugs": [
-    { "slug": "osi_layer_quickref", "role": "compare" }
+    {
+      "slug": "osi_layer_quickref",
+      "role": "compare"
+    }
   ],
   "sourceFilePath": "content/raw/past_exams/r06.pdf",
-  "sourcePageNumber": null
+  "sourcePageNumber": null,
+  "originType": "ipa_inspired",
+  "sourceNote": "IPA ITパスポート試験の出題範囲・頻出論点を元に作成したオリジナル問題です。実際の過去問の文言とは異なります。"
 }

@@ -39,14 +39,25 @@
   ],
   "explanation": "PaaS = Platform as a Service。OS・ミドルウェアまでをベンダが提供し、利用者は**アプリ開発・実行**に集中できる。IaaSは仮想マシンまで、SaaSはアプリ完成品まで提供。",
   "topicSlugs": [
-    { "slug": "cloud_service_models", "weight": 1.0 }
+    {
+      "slug": "cloud_service_models",
+      "weight": 1
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "confuse_cloud_models", "weight": 1.0 }
+    {
+      "slug": "confuse_cloud_models",
+      "weight": 1
+    }
   ],
   "materialSlugs": [
-    { "slug": "cloud_service_models_table", "role": "compare" }
+    {
+      "slug": "cloud_service_models_table",
+      "role": "compare"
+    }
   ],
   "sourceFilePath": "content/raw/past_exams/r05.pdf",
-  "sourcePageNumber": null
+  "sourcePageNumber": null,
+  "originType": "ipa_inspired",
+  "sourceNote": "IPA ITパスポート試験の出題範囲・頻出論点を元に作成したオリジナル問題です。実際の過去問の文言とは異なります。"
 }

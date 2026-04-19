@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { QuestionCard } from "@/components/question/QuestionCard";
 import { QuestionPlayer } from "@/components/question/QuestionPlayer";
+import { AttributionNote } from "@/components/question/AttributionNote";
 import { getQuestionFull } from "@/server/queries/questions";
 
 export const dynamic = "force-dynamic";
@@ -25,6 +26,7 @@ export default async function QuestionDetailPage({
         majorCategory={question.majorCategory}
         formatType={question.formatType}
         stem={question.stem}
+        originType={question.originType}
       />
       <QuestionPlayer
         questionId={question.id}
@@ -39,6 +41,10 @@ export default async function QuestionDetailPage({
         topics={topics}
         misconceptions={misconceptions}
         materials={materials}
+      />
+      <AttributionNote
+        originType={question.originType}
+        sourceNote={question.sourceNote}
       />
     </div>
   );

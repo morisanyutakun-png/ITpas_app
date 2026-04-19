@@ -39,12 +39,20 @@
   ],
   "explanation": "個人情報＝**特定の個人を識別できる情報**。氏名・生年月日・住所・顔写真などが含まれる。要配慮個人情報 (人種・信条・病歴等) はより厳格な扱いが要求される。",
   "topicSlugs": [
-    { "slug": "law_privacy_ip", "weight": 1.0 }
+    {
+      "slug": "law_privacy_ip",
+      "weight": 1
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "confuse_similar_terms", "weight": 1.0 }
+    {
+      "slug": "confuse_similar_terms",
+      "weight": 1
+    }
   ],
   "materialSlugs": [],
   "sourceFilePath": "content/raw/past_exams/r07.pdf",
-  "sourcePageNumber": null
+  "sourcePageNumber": null,
+  "originType": "ipa_inspired",
+  "sourceNote": "IPA ITパスポート試験の出題範囲・頻出論点を元に作成したオリジナル問題です。実際の過去問の文言とは異なります。"
 }

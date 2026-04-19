@@ -39,12 +39,20 @@
   ],
   "explanation": "SWOTは内部 (S/W) と外部 (O/T) の組合せ。**機会** = 外部 × プラス、**脅威** = 外部 × マイナス、**強み** = 内部 × プラス、**弱み** = 内部 × マイナス。",
   "topicSlugs": [
-    { "slug": "biz_marketing_frameworks", "weight": 1.0 }
+    {
+      "slug": "biz_marketing_frameworks",
+      "weight": 1
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "confuse_marketing_framework", "weight": 1.0 }
+    {
+      "slug": "confuse_marketing_framework",
+      "weight": 1
+    }
   ],
   "materialSlugs": [],
   "sourceFilePath": "content/raw/past_exams/r06.pdf",
-  "sourcePageNumber": null
+  "sourcePageNumber": null,
+  "originType": "ipa_inspired",
+  "sourceNote": "IPA ITパスポート試験の出題範囲・頻出論点を元に作成したオリジナル問題です。実際の過去問の文言とは異なります。"
 }

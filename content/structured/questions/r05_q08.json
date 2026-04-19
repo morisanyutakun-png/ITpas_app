@@ -39,15 +39,29 @@
   ],
   "explanation": "**正規化**は関数従属を排除して整合性を保つ操作。1NF→2NF→3NFと段階を踏み、繰返し→部分→推移の順で従属を排除する。インデックスは検索高速化、トランザクションはACID、結合は表をまとめる別概念。",
   "topicSlugs": [
-    { "slug": "db_normalization", "weight": 1.0 }
+    {
+      "slug": "db_normalization",
+      "weight": 1
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "confuse_db_normalization", "weight": 0.5 },
-    { "slug": "confuse_similar_terms", "weight": 1.0 }
+    {
+      "slug": "confuse_db_normalization",
+      "weight": 0.5
+    },
+    {
+      "slug": "confuse_similar_terms",
+      "weight": 1
+    }
   ],
   "materialSlugs": [
-    { "slug": "db_normalization_steps", "role": "compare" }
+    {
+      "slug": "db_normalization_steps",
+      "role": "compare"
+    }
   ],
   "sourceFilePath": "content/raw/past_exams/r05.pdf",
-  "sourcePageNumber": null
+  "sourcePageNumber": null,
+  "originType": "ipa_inspired",
+  "sourceNote": "IPA ITパスポート試験の出題範囲・頻出論点を元に作成したオリジナル問題です。実際の過去問の文言とは異なります。"
 }

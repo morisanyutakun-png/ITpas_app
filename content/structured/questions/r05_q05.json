@@ -39,14 +39,25 @@
   ],
   "explanation": "**インシデント管理**の目的は『サービスを早く正常に戻す』こと（暫定対応OK）。根本原因の分析と恒久対応は**問題管理**のスコープ。両者を分けるのがITILの肝。",
   "topicSlugs": [
-    { "slug": "itsm_itil", "weight": 1.0 }
+    {
+      "slug": "itsm_itil",
+      "weight": 1
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "confuse_incident_problem", "weight": 1.0 }
+    {
+      "slug": "confuse_incident_problem",
+      "weight": 1
+    }
   ],
   "materialSlugs": [
-    { "slug": "itil_process_compare", "role": "compare" }
+    {
+      "slug": "itil_process_compare",
+      "role": "compare"
+    }
   ],
   "sourceFilePath": "content/raw/past_exams/r05.pdf",
-  "sourcePageNumber": null
+  "sourcePageNumber": null,
+  "originType": "ipa_inspired",
+  "sourceNote": "IPA ITパスポート試験の出題範囲・頻出論点を元に作成したオリジナル問題です。実際の過去問の文言とは異なります。"
 }

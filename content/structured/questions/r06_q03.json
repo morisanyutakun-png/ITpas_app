@@ -39,12 +39,20 @@
   ],
   "explanation": "著作権は**創作した時点で自動発生** (無方式主義)。プログラムも著作物。保護期間は原則70年。特許権 (出願必要)、商標権 (10年更新可) と区別する。",
   "topicSlugs": [
-    { "slug": "law_privacy_ip", "weight": 1.0 }
+    {
+      "slug": "law_privacy_ip",
+      "weight": 1
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "confuse_similar_terms", "weight": 1.0 }
+    {
+      "slug": "confuse_similar_terms",
+      "weight": 1
+    }
   ],
   "materialSlugs": [],
   "sourceFilePath": "content/raw/past_exams/r06.pdf",
-  "sourcePageNumber": null
+  "sourcePageNumber": null,
+  "originType": "ipa_inspired",
+  "sourceNote": "IPA ITパスポート試験の出題範囲・頻出論点を元に作成したオリジナル問題です。実際の過去問の文言とは異なります。"
 }

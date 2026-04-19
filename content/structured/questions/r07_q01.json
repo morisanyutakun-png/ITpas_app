@@ -6,7 +6,7 @@
   "majorCategory": "technology",
   "formatType": "network_basics",
   "trapType": "similar_term",
-  "stem": "[サンプル — 該当ページから問題文を転記してください] 受信したフレームの宛先MACアドレスを見て、適切なポートにのみ転送するLAN機器として最も適切なものはどれか。",
+  "stem": "受信したフレームの宛先 MAC アドレスを見て、適切なポートにのみ転送する LAN 機器として最も適切なものはどれか。",
   "choices": [
     {
       "label": "ア",
@@ -39,14 +39,25 @@
   ],
   "explanation": "MACアドレスで宛先を判断するのはL2(データリンク層)機器であるスイッチングハブ。ルータはIPアドレスで判断するL3機器、リピータハブは信号増幅のみのL1機器、ファイアウォールはセキュリティ機能。",
   "topicSlugs": [
-    { "slug": "network_basics_osi", "weight": 1.0 }
+    {
+      "slug": "network_basics_osi",
+      "weight": 1
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "confuse_router_switch_layer", "weight": 1.0 }
+    {
+      "slug": "confuse_router_switch_layer",
+      "weight": 1
+    }
   ],
   "materialSlugs": [
-    { "slug": "osi_layer_quickref", "role": "compare" }
+    {
+      "slug": "osi_layer_quickref",
+      "role": "compare"
+    }
   ],
   "sourceFilePath": "content/raw/past_exams/r07.pdf",
-  "sourcePageNumber": null
+  "sourcePageNumber": null,
+  "originType": "ipa_inspired",
+  "sourceNote": "IPA ITパスポート試験の出題範囲・頻出論点を元に作成したオリジナル問題です。実際の過去問の文言とは異なります。"
 }

@@ -39,14 +39,25 @@
   ],
   "explanation": "RAID 5 はデータ＋パリティを分散書込み。**1台**故障までデータ復旧可能。最低3台必要。2台故障に耐えるならRAID 6（パリティ二重化）。",
   "topicSlugs": [
-    { "slug": "hw_storage_raid", "weight": 1.0 }
+    {
+      "slug": "hw_storage_raid",
+      "weight": 1
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "confuse_raid_levels", "weight": 1.0 }
+    {
+      "slug": "confuse_raid_levels",
+      "weight": 1
+    }
   ],
   "materialSlugs": [
-    { "slug": "raid_levels_table", "role": "compare" }
+    {
+      "slug": "raid_levels_table",
+      "role": "compare"
+    }
   ],
   "sourceFilePath": "content/raw/past_exams/r05.pdf",
-  "sourcePageNumber": null
+  "sourcePageNumber": null,
+  "originType": "ipa_inspired",
+  "sourceNote": "IPA ITパスポート試験の出題範囲・頻出論点を元に作成したオリジナル問題です。実際の過去問の文言とは異なります。"
 }

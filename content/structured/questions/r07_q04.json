@@ -39,12 +39,20 @@
   ],
   "explanation": "PPMは縦軸=市場成長率、横軸=市場シェアの2軸で4分類。花形=高成長×高シェア / 金のなる木=低成長×高シェア / 問題児=高成長×低シェア / 負け犬=低成長×低シェア。",
   "topicSlugs": [
-    { "slug": "biz_marketing_frameworks", "weight": 1.0 }
+    {
+      "slug": "biz_marketing_frameworks",
+      "weight": 1
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "confuse_marketing_framework", "weight": 1.0 }
+    {
+      "slug": "confuse_marketing_framework",
+      "weight": 1
+    }
   ],
   "materialSlugs": [],
   "sourceFilePath": "content/raw/past_exams/r07.pdf",
-  "sourcePageNumber": null
+  "sourcePageNumber": null,
+  "originType": "ipa_inspired",
+  "sourceNote": "IPA ITパスポート試験の出題範囲・頻出論点を元に作成したオリジナル問題です。実際の過去問の文言とは異なります。"
 }

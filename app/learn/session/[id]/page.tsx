@@ -5,6 +5,7 @@ import { db } from "@/db/client";
 import { sessions } from "@/db/schema";
 import { QuestionCard } from "@/components/question/QuestionCard";
 import { QuestionPlayer } from "@/components/question/QuestionPlayer";
+import { AttributionNote } from "@/components/question/AttributionNote";
 import { SessionProgressBar } from "@/components/session/SessionProgressBar";
 import { getOrCreateAnonUser } from "@/lib/anonId";
 import { getQuestionFull } from "@/server/queries/questions";
@@ -64,6 +65,7 @@ export default async function SessionPage({
         majorCategory={full.question.majorCategory}
         formatType={full.question.formatType}
         stem={full.question.stem}
+        originType={full.question.originType}
       />
       <QuestionPlayer
         questionId={full.question.id}
@@ -80,6 +82,10 @@ export default async function SessionPage({
         materials={full.materials}
         nextHref={nextHref}
         sessionId={id}
+      />
+      <AttributionNote
+        originType={full.question.originType}
+        sourceNote={full.question.sourceNote}
       />
     </div>
   );

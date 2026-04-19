@@ -39,14 +39,25 @@
   ],
   "explanation": "**多要素認証 (MFA)** は『知識(パスワード)』『所持(スマホ)』『生体(指紋)』など複数の要素を組み合わせる認証。SSOは1回のログインで複数サービス利用、RBACは認可の話なので別概念。",
   "topicSlugs": [
-    { "slug": "security_authn_authz", "weight": 1.0 }
+    {
+      "slug": "security_authn_authz",
+      "weight": 1
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "confuse_authn_authz", "weight": 1.0 }
+    {
+      "slug": "confuse_authn_authz",
+      "weight": 1
+    }
   ],
   "materialSlugs": [
-    { "slug": "authn_vs_authz_table", "role": "compare" }
+    {
+      "slug": "authn_vs_authz_table",
+      "role": "compare"
+    }
   ],
   "sourceFilePath": "content/raw/past_exams/r07.pdf",
-  "sourcePageNumber": null
+  "sourcePageNumber": null,
+  "originType": "ipa_inspired",
+  "sourceNote": "IPA ITパスポート試験の出題範囲・頻出論点を元に作成したオリジナル問題です。実際の過去問の文言とは異なります。"
 }

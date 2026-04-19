@@ -16,6 +16,7 @@ export const formatTypeZ = z.enum([
   "network_basics",
   "db_basics",
 ]);
+export const originTypeZ = z.enum(["ipa_actual", "ipa_inspired", "original"]);
 export const trapTypeZ = z.enum([
   "similar_term",
   "scope_overgeneral",
@@ -88,6 +89,8 @@ export const questionFileZ = z.object({
       })
     )
     .default([]),
+  originType: originTypeZ.default("ipa_inspired"),
+  sourceNote: z.string().nullable().default(null),
   sourceFilePath: z.string().nullable().default(null),
   sourcePageNumber: z.number().int().nullable().default(null),
 });

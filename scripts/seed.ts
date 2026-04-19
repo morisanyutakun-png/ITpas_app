@@ -123,6 +123,8 @@ async function upsertQuestions() {
         formatType: q.formatType,
         trapType: q.trapType,
         explanation: q.explanation,
+        originType: q.originType,
+        sourceNote: q.sourceNote ?? null,
         sourceFilePath: q.sourceFilePath ?? null,
         sourcePageNumber: q.sourcePageNumber ?? null,
       })
@@ -138,6 +140,8 @@ async function upsertQuestions() {
           formatType: q.formatType,
           trapType: q.trapType,
           explanation: q.explanation,
+          originType: q.originType,
+          sourceNote: q.sourceNote ?? null,
           sourceFilePath: q.sourceFilePath ?? null,
           sourcePageNumber: q.sourcePageNumber ?? null,
           updatedAt: sql`now()`,

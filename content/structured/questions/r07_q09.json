@@ -39,12 +39,20 @@
   ],
   "explanation": "中央値はデータを並べ替えた**真ん中**の値。並び替えると 200, 320, 400, 480, 600 → 真ん中は 400。データ数が偶数なら中央2つの平均。",
   "topicSlugs": [
-    { "slug": "biz_financial_metrics", "weight": 0.5 }
+    {
+      "slug": "biz_financial_metrics",
+      "weight": 0.5
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "confuse_similar_terms", "weight": 1.0 }
+    {
+      "slug": "confuse_similar_terms",
+      "weight": 1
+    }
   ],
   "materialSlugs": [],
   "sourceFilePath": "content/raw/past_exams/r07.pdf",
-  "sourcePageNumber": null
+  "sourcePageNumber": null,
+  "originType": "ipa_inspired",
+  "sourceNote": "IPA ITパスポート試験の出題範囲・頻出論点を元に作成したオリジナル問題です。実際の過去問の文言とは異なります。"
 }

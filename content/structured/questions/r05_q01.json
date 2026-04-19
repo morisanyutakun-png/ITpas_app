@@ -6,7 +6,7 @@
   "majorCategory": "strategy",
   "formatType": "definition",
   "trapType": "similar_term",
-  "stem": "[サンプル — content/raw/past_exams/r05.pdf の該当ページから問題文を転記してください] PoC(Proof of Concept)の説明として最も適切なものはどれか。",
+  "stem": "PoC (Proof of Concept) の説明として最も適切なものはどれか。",
   "choices": [
     {
       "label": "ア",
@@ -39,14 +39,25 @@
   ],
   "explanation": "PoC(Proof of Concept)は『技術的に実現可能か』を試作・検証実験で確かめる活動。価値検証(PoV)、市場検証(MVP)、UI検証(プロトタイプ)とは対象が異なる。",
   "topicSlugs": [
-    { "slug": "biz_validation_methods", "weight": 1.0 }
+    {
+      "slug": "biz_validation_methods",
+      "weight": 1
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "confuse_similar_terms", "weight": 1.0 }
+    {
+      "slug": "confuse_similar_terms",
+      "weight": 1
+    }
   ],
   "materialSlugs": [
-    { "slug": "biz_validation_compare_table", "role": "compare" }
+    {
+      "slug": "biz_validation_compare_table",
+      "role": "compare"
+    }
   ],
   "sourceFilePath": "content/raw/past_exams/r05.pdf",
-  "sourcePageNumber": null
+  "sourcePageNumber": null,
+  "originType": "ipa_inspired",
+  "sourceNote": "IPA ITパスポート試験の出題範囲・頻出論点を元に作成したオリジナル問題です。実際の過去問の文言とは異なります。"
 }

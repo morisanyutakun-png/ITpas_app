@@ -39,14 +39,25 @@
   ],
   "explanation": "`>=80` を満たすのは B2(80), B4(95), B5(80) の3個。COUNTIFは条件を満たすセルの**個数**を返す関数で、同じ値でも別セルなら別々に数える。",
   "topicSlugs": [
-    { "slug": "spreadsheet_basics", "weight": 1.0 }
+    {
+      "slug": "spreadsheet_basics",
+      "weight": 1
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "wrong_spreadsheet_reference", "weight": 1.0 }
+    {
+      "slug": "wrong_spreadsheet_reference",
+      "weight": 1
+    }
   ],
   "materialSlugs": [
-    { "slug": "spreadsheet_reference_quickref", "role": "compare" }
+    {
+      "slug": "spreadsheet_reference_quickref",
+      "role": "compare"
+    }
   ],
   "sourceFilePath": "content/raw/past_exams/r07.pdf",
-  "sourcePageNumber": null
+  "sourcePageNumber": null,
+  "originType": "ipa_inspired",
+  "sourceNote": "IPA ITパスポート試験の出題範囲・頻出論点を元に作成したオリジナル問題です。実際の過去問の文言とは異なります。"
 }

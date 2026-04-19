@@ -39,14 +39,25 @@
   ],
   "explanation": "ルータは IPアドレス (L3情報) を見て経路を決定する**ネットワーク層 (L3)** 機器。L2スイッチはMACアドレスでL2、リピータ/ハブは信号レベルでL1。",
   "topicSlugs": [
-    { "slug": "network_basics_osi", "weight": 1.0 }
+    {
+      "slug": "network_basics_osi",
+      "weight": 1
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "confuse_router_switch_layer", "weight": 1.0 }
+    {
+      "slug": "confuse_router_switch_layer",
+      "weight": 1
+    }
   ],
   "materialSlugs": [
-    { "slug": "osi_layer_quickref", "role": "compare" }
+    {
+      "slug": "osi_layer_quickref",
+      "role": "compare"
+    }
   ],
   "sourceFilePath": "content/raw/past_exams/r07.pdf",
-  "sourcePageNumber": null
+  "sourcePageNumber": null,
+  "originType": "ipa_inspired",
+  "sourceNote": "IPA ITパスポート試験の出題範囲・頻出論点を元に作成したオリジナル問題です。実際の過去問の文言とは異なります。"
 }

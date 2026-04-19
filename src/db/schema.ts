@@ -84,6 +84,12 @@ export const sessionModeEnum = pgEnum("session_mode", [
   "mixed",
 ]);
 
+export const originTypeEnum = pgEnum("origin_type", [
+  "ipa_actual",      // Verbatim copy from IPA past exam (cited)
+  "ipa_inspired",    // Original wording, inspired by IPA syllabus/topics
+  "original",        // Fully original (not based on any past exam)
+]);
+
 // ===== Tables =====
 
 export const users = pgTable("users", {
@@ -187,6 +193,8 @@ export const questions = pgTable(
     formatType: formatTypeEnum("format_type").notNull(),
     trapType: trapTypeEnum("trap_type").notNull().default("none"),
     explanation: text("explanation").notNull().default(""),
+    originType: originTypeEnum("origin_type").notNull().default("ipa_inspired"),
+    sourceNote: text("source_note"),
     sourceFilePath: text("source_file_path"),
     sourcePageNumber: integer("source_page_number"),
     createdAt: timestamp("created_at", { withTimezone: true })

@@ -39,12 +39,20 @@
   ],
   "explanation": "i=1,2,3,4,5 のうち偶数 (mod 2 = 0) は i=2 と i=4。よって x = 0 + 2 + 4 = **6**。擬似言語は『どの値で if が真になるか』を1ステップずつ追うのが鉄則。",
   "topicSlugs": [
-    { "slug": "algo_pseudo_lang", "weight": 1.0 }
+    {
+      "slug": "algo_pseudo_lang",
+      "weight": 1
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "wrong_pseudo_lang_flow", "weight": 1.0 }
+    {
+      "slug": "wrong_pseudo_lang_flow",
+      "weight": 1
+    }
   ],
   "materialSlugs": [],
   "sourceFilePath": "content/raw/past_exams/r06.pdf",
-  "sourcePageNumber": null
+  "sourcePageNumber": null,
+  "originType": "ipa_inspired",
+  "sourceNote": "IPA ITパスポート試験の出題範囲・頻出論点を元に作成したオリジナル問題です。実際の過去問の文言とは異なります。"
 }

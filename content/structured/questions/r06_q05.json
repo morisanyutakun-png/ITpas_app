@@ -39,14 +39,25 @@
   ],
   "explanation": "B2→C2 は1列右へのコピー。**$A$1** は完全固定なのでA1のまま。**B1** は相対参照なのでC1にズレる。結果は `=$A$1*C1`。",
   "topicSlugs": [
-    { "slug": "spreadsheet_basics", "weight": 1.0 }
+    {
+      "slug": "spreadsheet_basics",
+      "weight": 1
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "wrong_spreadsheet_reference", "weight": 1.0 }
+    {
+      "slug": "wrong_spreadsheet_reference",
+      "weight": 1
+    }
   ],
   "materialSlugs": [
-    { "slug": "spreadsheet_reference_quickref", "role": "compare" }
+    {
+      "slug": "spreadsheet_reference_quickref",
+      "role": "compare"
+    }
   ],
   "sourceFilePath": "content/raw/past_exams/r06.pdf",
-  "sourcePageNumber": null
+  "sourcePageNumber": null,
+  "originType": "ipa_inspired",
+  "sourceNote": "IPA ITパスポート試験の出題範囲・頻出論点を元に作成したオリジナル問題です。実際の過去問の文言とは異なります。"
 }

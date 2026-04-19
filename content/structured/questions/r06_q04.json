@@ -39,14 +39,25 @@
   ],
   "explanation": "相対参照 `B1`, `C1` はコピー先で**コピー方向と同じ分だけ**ズレる。A1→A2は1行下なので、B1→B2、C1→C2となり、結果は `=B2+C2`。",
   "topicSlugs": [
-    { "slug": "spreadsheet_basics", "weight": 1.0 }
+    {
+      "slug": "spreadsheet_basics",
+      "weight": 1
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "wrong_spreadsheet_reference", "weight": 1.0 }
+    {
+      "slug": "wrong_spreadsheet_reference",
+      "weight": 1
+    }
   ],
   "materialSlugs": [
-    { "slug": "spreadsheet_reference_quickref", "role": "compare" }
+    {
+      "slug": "spreadsheet_reference_quickref",
+      "role": "compare"
+    }
   ],
   "sourceFilePath": "content/raw/past_exams/r06.pdf",
-  "sourcePageNumber": null
+  "sourcePageNumber": null,
+  "originType": "ipa_inspired",
+  "sourceNote": "IPA ITパスポート試験の出題範囲・頻出論点を元に作成したオリジナル問題です。実際の過去問の文言とは異なります。"
 }

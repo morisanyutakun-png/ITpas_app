@@ -39,14 +39,25 @@
   ],
   "explanation": "デジタル証明書は認証局 (CA) が発行し、『この公開鍵は確かにこの人/組織のものです』と保証する。HTTPS の SSL/TLS 通信でサーバ証明書として使われるのが代表例。",
   "topicSlugs": [
-    { "slug": "security_crypto", "weight": 1.0 }
+    {
+      "slug": "security_crypto",
+      "weight": 1
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "confuse_crypto_method", "weight": 1.0 }
+    {
+      "slug": "confuse_crypto_method",
+      "weight": 1
+    }
   ],
   "materialSlugs": [
-    { "slug": "crypto_compare_table", "role": "compare" }
+    {
+      "slug": "crypto_compare_table",
+      "role": "compare"
+    }
   ],
   "sourceFilePath": "content/raw/past_exams/r06.pdf",
-  "sourcePageNumber": null
+  "sourcePageNumber": null,
+  "originType": "ipa_inspired",
+  "sourceNote": "IPA ITパスポート試験の出題範囲・頻出論点を元に作成したオリジナル問題です。実際の過去問の文言とは異なります。"
 }

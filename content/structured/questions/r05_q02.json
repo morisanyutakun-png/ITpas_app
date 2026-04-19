@@ -6,7 +6,7 @@
   "majorCategory": "technology",
   "formatType": "security_case",
   "trapType": "similar_term",
-  "stem": "[サンプル — 該当ページから問題文を転記してください] あるWebサービスで、ログイン後の利用者ごとに『どのページを閲覧できるか』『どの操作ができるか』を制御する仕組みを示す用語として最も適切なものはどれか。",
+  "stem": "ある Web サービスで、ログイン後の利用者ごとに『どのページを閲覧できるか』『どの操作ができるか』を制御する仕組みを示す用語として最も適切なものはどれか。",
   "choices": [
     {
       "label": "ア",
@@ -39,15 +39,29 @@
   ],
   "explanation": "操作の可否を決めるのは『認可(AuthZ)』。認証(AuthN)は本人確認、MFAは認証の強化、暗号化はデータ秘匿。試験では『誰か(AuthN)』と『何ができるか(AuthZ)』の混同を狙った設問が頻出。",
   "topicSlugs": [
-    { "slug": "security_authn_authz", "weight": 1.0 }
+    {
+      "slug": "security_authn_authz",
+      "weight": 1
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "confuse_authn_authz", "weight": 1.0 },
-    { "slug": "confuse_similar_terms", "weight": 0.5 }
+    {
+      "slug": "confuse_authn_authz",
+      "weight": 1
+    },
+    {
+      "slug": "confuse_similar_terms",
+      "weight": 0.5
+    }
   ],
   "materialSlugs": [
-    { "slug": "authn_vs_authz_table", "role": "compare" }
+    {
+      "slug": "authn_vs_authz_table",
+      "role": "compare"
+    }
   ],
   "sourceFilePath": "content/raw/past_exams/r05.pdf",
-  "sourcePageNumber": null
+  "sourcePageNumber": null,
+  "originType": "ipa_inspired",
+  "sourceNote": "IPA ITパスポート試験の出題範囲・頻出論点を元に作成したオリジナル問題です。実際の過去問の文言とは異なります。"
 }

@@ -39,14 +39,25 @@
   ],
   "explanation": "**WBS** = Work Breakdown Structure。作業を**階層的に分解**してツリー状に表す。スケジュールではなく『何をやるか』を示す図。",
   "topicSlugs": [
-    { "slug": "pm_basics", "weight": 1.0 }
+    {
+      "slug": "pm_basics",
+      "weight": 1
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "confuse_pm_terms", "weight": 1.0 }
+    {
+      "slug": "confuse_pm_terms",
+      "weight": 1
+    }
   ],
   "materialSlugs": [
-    { "slug": "pm_chart_compare_table", "role": "compare" }
+    {
+      "slug": "pm_chart_compare_table",
+      "role": "compare"
+    }
   ],
   "sourceFilePath": "content/raw/past_exams/r06.pdf",
-  "sourcePageNumber": null
+  "sourcePageNumber": null,
+  "originType": "ipa_inspired",
+  "sourceNote": "IPA ITパスポート試験の出題範囲・頻出論点を元に作成したオリジナル問題です。実際の過去問の文言とは異なります。"
 }

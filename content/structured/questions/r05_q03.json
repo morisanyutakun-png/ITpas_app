@@ -39,14 +39,25 @@
   ],
   "explanation": "デジタル署名は『本人性』と『改ざん検出』を保証する仕組み。送信者は自分の**秘密鍵**で署名し、受信者は送信者の**公開鍵**で検証する。秘密鍵は本人しか持たないので、検証できれば本人が送ったと言える。",
   "topicSlugs": [
-    { "slug": "security_crypto", "weight": 1.0 }
+    {
+      "slug": "security_crypto",
+      "weight": 1
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "confuse_crypto_method", "weight": 1.0 }
+    {
+      "slug": "confuse_crypto_method",
+      "weight": 1
+    }
   ],
   "materialSlugs": [
-    { "slug": "crypto_compare_table", "role": "compare" }
+    {
+      "slug": "crypto_compare_table",
+      "role": "compare"
+    }
   ],
   "sourceFilePath": "content/raw/past_exams/r05.pdf",
-  "sourcePageNumber": null
+  "sourcePageNumber": null,
+  "originType": "ipa_inspired",
+  "sourceNote": "IPA ITパスポート試験の出題範囲・頻出論点を元に作成したオリジナル問題です。実際の過去問の文言とは異なります。"
 }

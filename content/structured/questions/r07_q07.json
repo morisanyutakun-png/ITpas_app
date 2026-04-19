@@ -39,12 +39,20 @@
   ],
   "explanation": "i=0: a[0]=3, 条件 3>3 は偽 → そのまま。\ni=1: 1>3 偽。\ni=2: 4>3 真 → 4*2=8。\ni=3: 1>3 偽。\ni=4: 5>3 真 → 5*2=10。\n結果は {3, 1, 8, 1, 10}。",
   "topicSlugs": [
-    { "slug": "algo_pseudo_lang", "weight": 1.0 }
+    {
+      "slug": "algo_pseudo_lang",
+      "weight": 1
+    }
   ],
   "misconceptionSlugs": [
-    { "slug": "wrong_pseudo_lang_flow", "weight": 1.0 }
+    {
+      "slug": "wrong_pseudo_lang_flow",
+      "weight": 1
+    }
   ],
   "materialSlugs": [],
   "sourceFilePath": "content/raw/past_exams/r07.pdf",
-  "sourcePageNumber": null
+  "sourcePageNumber": null,
+  "originType": "ipa_inspired",
+  "sourceNote": "IPA ITパスポート試験の出題範囲・頻出論点を元に作成したオリジナル問題です。実際の過去問の文言とは異なります。"
 }

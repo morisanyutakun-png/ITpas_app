@@ -7,48 +7,29 @@ import {
   Sparkles,
   Target,
 } from "lucide-react";
-import { readCurrentUser } from "@/lib/currentUser";
+import { getCurrentUser } from "@/lib/currentUser";
 import { hasFeature, isPro } from "@/lib/plan";
 import { getLastAttempt, getPersonalSummary } from "@/server/queries/personal";
 import { getRecommendation } from "@/server/queries/history";
 import { getRoadmap } from "@/server/queries/roadmap";
-import { AuthErrorBanner } from "@/components/AuthErrorBanner";
 import { Roadmap } from "@/components/home/Roadmap";
-import { LandingPage } from "@/components/landing/LandingPage";
 
 export const dynamic = "force-dynamic";
 
-export default async function HomePage({
-  searchParams,
-}: {
-  searchParams: Promise<{ auth_error?: string }>;
-}) {
-  const sp = await searchParams;
-  const user = await readCurrentUser();
-  const signedIn = !!user?.isSignedIn;
-
-  // Signed-out visitors see the marketing landing page, not the app home.
-  if (!signedIn) {
-    return (
-      <>
-        {sp.auth_error && (
-          <div className="mb-6">
-            <AuthErrorBanner code={sp.auth_error} />
-          </div>
-        )}
-        <LandingPage />
-      </>
-    );
-  }
-
+/**
+ * Signed-in home. The (app) layout guarantees the visitor is authed,
+ * so there is no anon branch here — this is the app's "Listen Now" page.
+ */
+export default async function HomePage() {
+  const user = await getCurrentUser();
   const pro = isPro(user);
   const showAds = !hasFeature(user, "adFree");
 
   const [summary, last, rec, roadmap] = await Promise.all([
-    getPersonalSummary(user!.id),
-    getLastAttempt(user!.id),
-    getRecommendation(user!.id),
-    getRoadmap(user!.id),
+    getPersonalSummary(user.id),
+    getLastAttempt(user.id),
+    getRecommendation(user.id),
+    getRoadmap(user.id),
   ]);
 
   const accuracy =
@@ -56,46 +37,34 @@ export default async function HomePage({
       ? Math.round((summary.correctAttempts / summary.totalAttempts) * 100)
       : null;
 
-  const firstName = user?.displayName?.split(" ")[0];
+  const firstName = user.displayName?.split(" ")[0];
   const greeting = greetingFor(new Date());
 
   return (
     <div className="space-y-7">
-      {sp.auth_error && <AuthErrorBanner code={sp.auth_error} />}
-
-      {/* Hero greeting — Apple Music "Listen Now"-style header */}
+      {/* Hero greeting */}
       <header className="pt-1">
         <div className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary" />
           {greeting}
         </div>
         <h1 className="mt-1.5 text-ios-large font-semibold text-balance">
-          {signedIn ? (
-            <>
-              おかえり、<span className="bg-grad-sunset bg-clip-text text-transparent">{firstName ?? "学習者"}</span>さん
-            </>
-          ) : (
-            <>
-              理解で解く、<br className="hidden sm:inline" />
-              <span className="bg-grad-ocean bg-clip-text text-transparent">ITパスポート</span>。
-            </>
-          )}
+          おかえり、
+          <span className="bg-grad-sunset bg-clip-text text-transparent">
+            {firstName ?? "学習者"}
+          </span>
+          さん
         </h1>
         <p className="mt-2 max-w-xl text-[15px] leading-relaxed text-muted-foreground">
-          {signedIn
-            ? pro
-              ? "今日もマイペースで理解を積み上げましょう。"
-              : "今日の無料枠は10問。続きから再開できます。"
-            : "誤答の『魅力理由』から、丸暗記を崩す過去問学習。"}
+          {pro
+            ? "今日もマイペースで理解を積み上げましょう。"
+            : "今日の無料枠は10問。続きから再開できます。"}
         </p>
       </header>
 
       {/* Personal stats strip */}
       {summary && (
-        <section
-          aria-label="学習サマリー"
-          className="surface-card overflow-hidden"
-        >
+        <section aria-label="学習サマリー" className="surface-card overflow-hidden">
           <div className="grid grid-cols-3 divide-x divide-border/60">
             <MiniStat
               label="連続学習"
@@ -119,7 +88,7 @@ export default async function HomePage({
         </section>
       )}
 
-      {/* Primary hero tiles — Apple Music "Featured" style */}
+      {/* Primary hero tiles */}
       <section className="grid gap-3 sm:grid-cols-2">
         <Link
           href="/learn/session/new?mode=weakness&count=5"
@@ -144,10 +113,7 @@ export default async function HomePage({
           </div>
         </Link>
 
-        <Link
-          href="/learn/random"
-          className="hero-tile bg-grad-ocean"
-        >
+        <Link href="/learn/random" className="hero-tile bg-grad-ocean">
           <div className="relative z-10">
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/15 ring-1 ring-inset ring-white/25 backdrop-blur">
               <PlayCircle className="h-5 w-5" strokeWidth={2.2} />
@@ -161,10 +127,7 @@ export default async function HomePage({
           </div>
         </Link>
 
-        <Link
-          href="/learn/mock-exam"
-          className="hero-tile bg-grad-ink"
-        >
+        <Link href="/learn/mock-exam" className="hero-tile bg-grad-ink">
           <div className="relative z-10">
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/15 ring-1 ring-inset ring-white/25 backdrop-blur">
               <Sparkles className="h-5 w-5" strokeWidth={2.2} />
@@ -179,9 +142,9 @@ export default async function HomePage({
         </Link>
       </section>
 
-      {/* Learning roadmap — 3 majors × minorTopics with progress dots */}
+      {/* Learning roadmap */}
       {roadmap && roadmap.length > 0 && (
-        <Roadmap majors={roadmap} signedIn={signedIn} />
+        <Roadmap majors={roadmap} signedIn />
       )}
 
       {/* Continuation + recommendation */}
@@ -230,27 +193,8 @@ export default async function HomePage({
         </section>
       )}
 
-      {/* Sign-in nudge */}
-      {!signedIn && (
-        <section className="surface-card p-6">
-          <div className="text-ios-headline font-semibold">
-            端末をまたいで進捗を残す
-          </div>
-          <p className="mt-1 text-[13.5px] leading-relaxed text-muted-foreground">
-            Googleでログインすると、ブックマーク / 弱点レコメンド / 続きから再開 が有効になります。
-          </p>
-          <Link
-            href="/api/auth/google/login?returnTo=/"
-            className="pill-neutral mt-4 inline-flex h-10 gap-1.5 px-4 text-[14px]"
-          >
-            Googleでログイン
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-        </section>
-      )}
-
       {/* Upgrade nudge */}
-      {signedIn && showAds && (
+      {showAds && (
         <section className="relative overflow-hidden rounded-3xl bg-grad-purple p-6 text-white shadow-hero">
           <div className="relative z-10 flex items-start gap-4">
             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/15 ring-1 ring-inset ring-white/25 backdrop-blur">
@@ -278,31 +222,6 @@ export default async function HomePage({
           <div className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 rounded-full bg-white/10 blur-2xl" />
         </section>
       )}
-
-      {/* Concept section */}
-      <section className="space-y-2">
-        <div className="ios-section-label">理解ノートの特徴</div>
-        <div className="ios-list">
-          <FeatureRow
-            tile="bg-grad-sunset"
-            emoji="✨"
-            title="誤答ごとの『魅力理由』"
-            desc="全ての誤答に『なぜ引き寄せられたか』を明示"
-          />
-          <FeatureRow
-            tile="bg-grad-blue"
-            emoji="🎯"
-            title="誤解パターン別の弱点分析"
-            desc="単元ではなく『どこでズレたか』で積み上げる"
-          />
-          <FeatureRow
-            tile="bg-grad-green"
-            emoji="📚"
-            title="比較表 / 補助資料へ1タップ"
-            desc="似た用語・計算ルールへ問題から直接ジャンプ"
-          />
-        </div>
-      </section>
     </div>
   );
 }
@@ -337,30 +256,10 @@ function MiniStat({
           {value}
         </span>
         {unit && (
-          <span className="text-[12px] font-medium text-muted-foreground">{unit}</span>
+          <span className="text-[12px] font-medium text-muted-foreground">
+            {unit}
+          </span>
         )}
-      </div>
-    </div>
-  );
-}
-
-function FeatureRow({
-  tile,
-  emoji,
-  title,
-  desc,
-}: {
-  tile: string;
-  emoji: string;
-  title: string;
-  desc: string;
-}) {
-  return (
-    <div className="ios-row">
-      <span className={`tile-icon-sm ${tile} text-[15px]`}>{emoji}</span>
-      <div className="min-w-0 flex-1">
-        <div className="text-[15px] font-semibold">{title}</div>
-        <div className="text-[12.5px] text-muted-foreground">{desc}</div>
       </div>
     </div>
   );

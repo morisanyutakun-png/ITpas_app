@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { Home, BookOpen, Timer, BarChart3, User } from "lucide-react";
 
 const TABS = [
-  { href: "/", label: "ホーム", icon: Home, matchPrefix: false },
+  { href: "/home", label: "ホーム", icon: Home, matchPrefix: false },
   { href: "/learn/questions", label: "問題", icon: BookOpen, matchPrefix: true },
   { href: "/learn/mock-exam", label: "模試", icon: Timer, matchPrefix: true },
   { href: "/dashboard", label: "分析", icon: BarChart3, matchPrefix: true },

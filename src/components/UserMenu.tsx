@@ -13,7 +13,7 @@ export async function UserMenu() {
   if (!user || !user.isSignedIn) {
     return (
       <Link
-        href="/api/auth/google/login?returnTo=/"
+        href="/api/auth/google/login?returnTo=/home"
         className="inline-flex h-8 items-center rounded-full bg-foreground px-3.5 text-[13px] font-semibold text-background transition-[transform,opacity] active:scale-[0.97]"
       >
         ログイン

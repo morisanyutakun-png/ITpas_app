@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const LINKS = [
-  { href: "/", label: "ホーム", matchPrefix: false },
+  { href: "/home", label: "ホーム", matchPrefix: false },
   { href: "/learn/questions", label: "問題", matchPrefix: true },
   { href: "/learn/mock-exam", label: "模試", matchPrefix: true },
   { href: "/dashboard", label: "分析", matchPrefix: true },

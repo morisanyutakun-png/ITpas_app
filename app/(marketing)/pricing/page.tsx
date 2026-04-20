@@ -147,7 +147,7 @@ export default async function PricingPage({
             plan === "free" ? (
               user?.isSignedIn ? null : (
                 <Link
-                  href="/api/auth/google/login?returnTo=/"
+                  href="/api/auth/google/login?returnTo=/home"
                   className="inline-flex h-11 w-full items-center justify-center rounded-full bg-foreground text-[15px] font-semibold text-background active:opacity-80"
                 >
                   Googleでログインして始める

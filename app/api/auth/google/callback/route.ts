@@ -14,7 +14,9 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 function safeReturnTo(raw: string | undefined): string {
-  if (!raw || !raw.startsWith("/") || raw.startsWith("//")) return "/";
+  if (!raw || !raw.startsWith("/") || raw.startsWith("//")) return "/home";
+  // Don't send sign-in callbacks back to the public LP.
+  if (raw === "/") return "/home";
   return raw;
 }
 
@@ -41,7 +43,7 @@ export async function GET(req: NextRequest) {
     return errorRedirect(url.origin, "state_mismatch");
   }
 
-  let returnTo = "/";
+  let returnTo = "/home";
   try {
     const decoded = JSON.parse(Buffer.from(state, "base64url").toString("utf8")) as {
       r?: string;

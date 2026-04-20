@@ -1,10 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import Link from "next/link";
-import { Suspense } from "react";
 import "./globals.css";
 import { siteConfig } from "@/lib/site";
-import { UserMenu } from "@/components/UserMenu";
-import { MobileTabBar } from "@/components/MobileTabBar";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -42,7 +38,7 @@ export const metadata: Metadata = {
   },
 };
 
-// The header reads the session/anon cookie — keep the layout dynamic.
+// Session/anon cookies are read in nested layouts — keep dynamic.
 export const dynamic = "force-dynamic";
 
 export const viewport: Viewport = {
@@ -55,8 +51,12 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
-import { DesktopNav } from "@/components/DesktopNav";
-
+/**
+ * Root layout — intentionally minimal (html/body only).
+ * Chrome (header / tab bar / container) lives in the nested group
+ * layouts so signed-out marketing pages and signed-in app pages can
+ * have distinct shells without leaking into each other.
+ */
 export default function RootLayout({
   children,
 }: {
@@ -65,43 +65,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className="min-h-screen bg-background text-foreground antialiased">
-        <header className="sticky top-0 z-30 border-b border-border/50 glass-bar">
-          <div className="mx-auto flex h-14 max-w-5xl items-center gap-5 px-4 md:px-6">
-            <Link
-              href="/"
-              className="flex items-center gap-2.5 text-[15.5px] font-semibold tracking-tight"
-            >
-              <span className="flex h-7 w-7 items-center justify-center rounded-[9px] bg-grad-ink text-[12px] font-bold text-white shadow-tile">
-                理
-              </span>
-              <span className="hidden sm:inline">理解ノート</span>
-            </Link>
-            <DesktopNav />
-            <div className="ml-auto">
-              <Suspense fallback={null}>
-                <UserMenu />
-              </Suspense>
-            </div>
-          </div>
-        </header>
-
-        <main className="mx-auto w-full max-w-3xl px-4 pt-5 pb-[calc(env(safe-area-inset-bottom)+96px)] md:max-w-5xl md:px-6 md:pt-10 md:pb-20">
-          {children}
-        </main>
-
-        <footer className="hidden border-t border-border/50 py-8 text-center text-[11px] text-muted-foreground md:block">
-          <div className="mx-auto max-w-5xl px-6">
-            <div>© {new Date().getFullYear()} {siteConfig.name}</div>
-            <div className="mt-1">
-              ITパスポート試験の問題はIPAの著作物です。
-              <Link href="/legal" className="ml-1 underline underline-offset-2 hover:text-foreground">
-                著作権・引用について
-              </Link>
-            </div>
-          </div>
-        </footer>
-
-        <MobileTabBar />
+        {children}
       </body>
     </html>
   );

@@ -3,6 +3,7 @@ import { eq } from "drizzle-orm";
 import { db } from "@/db/client";
 import { users } from "@/db/schema";
 import { setPlan } from "@/lib/plan";
+import { planFromPriceId, retrieveSubscription } from "@/lib/stripe";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -37,13 +38,30 @@ export async function POST(req: NextRequest) {
       case "checkout.session.completed": {
         const obj = event.data.object as CheckoutSessionObject;
         const userId = obj.client_reference_id;
-        if (userId) {
-          await setPlan({
-            userId,
-            plan: "pro",
-            stripeCustomerId: obj.customer ?? null,
-            stripeSubscriptionId: obj.subscription ?? null,
-          });
+        if (userId && obj.subscription) {
+          // Look up the subscription to find which price (tier) was purchased.
+          try {
+            const sub = await retrieveSubscription(obj.subscription);
+            const priceId = sub.items.data[0]?.price.id;
+            const tier = planFromPriceId(priceId) ?? "pro";
+            await setPlan({
+              userId,
+              plan: tier,
+              stripeCustomerId: obj.customer ?? null,
+              stripeSubscriptionId: obj.subscription,
+              renewsAt: sub.current_period_end
+                ? new Date(sub.current_period_end * 1000)
+                : null,
+            });
+          } catch (e) {
+            console.error("retrieveSubscription failed, defaulting to pro", e);
+            await setPlan({
+              userId,
+              plan: "pro",
+              stripeCustomerId: obj.customer ?? null,
+              stripeSubscriptionId: obj.subscription,
+            });
+          }
         }
         break;
       }
@@ -80,9 +98,14 @@ async function updatePlanBySubscription(sub: SubscriptionObject) {
     : null;
   if (!row) return;
   const active = sub.status === "active" || sub.status === "trialing";
+
+  let tier: "pro" | "premium" | null = null;
+  const priceId = sub.items?.data?.[0]?.price?.id;
+  tier = planFromPriceId(priceId);
+
   await setPlan({
     userId: row.id,
-    plan: active ? "pro" : "free",
+    plan: active ? tier ?? "pro" : "free",
     renewsAt: sub.current_period_end
       ? new Date(sub.current_period_end * 1000)
       : null,
@@ -138,4 +161,5 @@ type SubscriptionObject = {
   id: string;
   status: string;
   current_period_end?: number;
+  items?: { data: Array<{ price: { id: string } }> };
 };

@@ -1,21 +1,51 @@
 // Minimal Stripe helpers using fetch — avoids pulling in the full `stripe` SDK.
-// All endpoints Stripe Billing exposes accept `application/x-www-form-urlencoded`
-// with a Bearer secret-key auth header.
 
 const STRIPE_API = "https://api.stripe.com/v1";
 
 export type StripeInterval = "month" | "year";
+export type StripeTier = "pro" | "premium";
 
 export function stripeConfig() {
-  const secret = process.env.STRIPE_SECRET_KEY;
-  const priceMonthly = process.env.STRIPE_PRICE_PRO_MONTHLY;
-  const priceYearly = process.env.STRIPE_PRICE_PRO_YEARLY;
-  return { secret, priceMonthly, priceYearly };
+  return {
+    secret: process.env.STRIPE_SECRET_KEY,
+    prices: {
+      pro: {
+        month: process.env.STRIPE_PRICE_PRO_MONTHLY,
+        year: process.env.STRIPE_PRICE_PRO_YEARLY,
+      },
+      premium: {
+        month: process.env.STRIPE_PRICE_PREMIUM_MONTHLY,
+        year: process.env.STRIPE_PRICE_PREMIUM_YEARLY,
+      },
+    },
+  };
 }
 
 export function stripeConfigured(): boolean {
-  const { secret, priceMonthly, priceYearly } = stripeConfig();
-  return Boolean(secret && (priceMonthly || priceYearly));
+  const c = stripeConfig();
+  if (!c.secret) return false;
+  return Boolean(
+    c.prices.pro.month ||
+      c.prices.pro.year ||
+      c.prices.premium.month ||
+      c.prices.premium.year
+  );
+}
+
+export function priceIdFor(tier: StripeTier, interval: StripeInterval): string | undefined {
+  return stripeConfig().prices[tier][interval];
+}
+
+export function planFromPriceId(priceId: string | undefined | null): StripeTier | null {
+  if (!priceId) return null;
+  const c = stripeConfig();
+  if (priceId === c.prices.premium.month || priceId === c.prices.premium.year) {
+    return "premium";
+  }
+  if (priceId === c.prices.pro.month || priceId === c.prices.pro.year) {
+    return "pro";
+  }
+  return null;
 }
 
 function form(obj: Record<string, string | undefined>) {
@@ -76,4 +106,24 @@ export async function createBillingPortalSession(input: {
     return_url: input.returnUrl,
   });
   return stripeFetch("/billing_portal/sessions", body);
+}
+
+export async function retrieveSubscription(id: string): Promise<{
+  id: string;
+  status: string;
+  current_period_end: number;
+  items: { data: Array<{ price: { id: string } }> };
+}> {
+  const { secret } = stripeConfig();
+  if (!secret) throw new Error("STRIPE_SECRET_KEY not set");
+  const res = await fetch(`${STRIPE_API}/subscriptions/${id}`, {
+    headers: { Authorization: `Bearer ${secret}` },
+  });
+  if (!res.ok) throw new Error(`retrieveSubscription failed ${res.status}`);
+  return (await res.json()) as {
+    id: string;
+    status: string;
+    current_period_end: number;
+    items: { data: Array<{ price: { id: string } }> };
+  };
 }

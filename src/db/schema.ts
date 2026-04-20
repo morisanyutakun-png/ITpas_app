@@ -91,8 +91,9 @@ export const originTypeEnum = pgEnum("origin_type", [
 ]);
 
 export const planEnum = pgEnum("plan", [
-  "free",  // Daily question cap, limited analytics.
-  "pro",   // Unlimited + full analytics + mock exam + export.
+  "free",     // Daily question cap, limited analytics.
+  "pro",      // Unlimited + full analytics + mock exam + export.
+  "premium",  // Pro + full past-exam archive + AI explanations + priority support.
 ]);
 
 // ===== Tables =====

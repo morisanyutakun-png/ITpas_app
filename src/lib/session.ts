@@ -124,23 +124,15 @@ export async function readSessionCookie(): Promise<SessionPayload | null> {
   return verifySession(raw);
 }
 
-const OAUTH_STATE_COOKIE = "itpas_oauth_state";
-const OAUTH_STATE_MAX_AGE = 60 * 10; // 10 min
+export const OAUTH_STATE_COOKIE = "itpas_oauth_state";
+export const OAUTH_STATE_MAX_AGE = 60 * 10; // 10 min
 
-export async function setOAuthStateCookie(state: string) {
-  const jar = await cookies();
-  jar.set(OAUTH_STATE_COOKIE, state, {
+export function oauthStateCookieOptions() {
+  return {
     httpOnly: true,
-    sameSite: "lax",
+    sameSite: "lax" as const,
     secure: process.env.NODE_ENV === "production",
     maxAge: OAUTH_STATE_MAX_AGE,
     path: "/",
-  });
-}
-
-export async function consumeOAuthStateCookie(): Promise<string | null> {
-  const jar = await cookies();
-  const v = jar.get(OAUTH_STATE_COOKIE)?.value ?? null;
-  jar.delete(OAUTH_STATE_COOKIE);
-  return v;
+  };
 }

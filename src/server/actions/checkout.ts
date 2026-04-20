@@ -9,8 +9,10 @@ import { getCurrentUser } from "@/lib/currentUser";
 import {
   createCheckoutSession,
   createBillingPortalSession,
-  stripeConfig,
+  priceIdFor,
   stripeConfigured,
+  type StripeInterval,
+  type StripeTier,
 } from "@/lib/stripe";
 
 async function siteOrigin(): Promise<string> {
@@ -21,8 +23,12 @@ async function siteOrigin(): Promise<string> {
   return process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 }
 
-export async function startCheckoutAction(formData: FormData) {
-  const interval = formData.get("interval") === "year" ? "year" : "month";
+export async function startCheckoutAction(formData: FormData): Promise<void> {
+  const tier: StripeTier =
+    formData.get("tier") === "premium" ? "premium" : "pro";
+  const interval: StripeInterval =
+    formData.get("interval") === "year" ? "year" : "month";
+
   const user = await getCurrentUser();
   if (!user.isSignedIn || !user.email) {
     redirect(`/api/auth/google/login?returnTo=${encodeURIComponent("/pricing")}`);
@@ -30,10 +36,9 @@ export async function startCheckoutAction(formData: FormData) {
   if (!stripeConfigured()) {
     redirect("/pricing?stripe=unconfigured");
   }
-  const { priceMonthly, priceYearly } = stripeConfig();
-  const priceId = interval === "year" ? priceYearly : priceMonthly;
+  const priceId = priceIdFor(tier, interval);
   if (!priceId) {
-    redirect(`/pricing?stripe=missing_${interval}`);
+    redirect(`/pricing?stripe=missing_${tier}_${interval}`);
   }
 
   const origin = await siteOrigin();
@@ -41,7 +46,7 @@ export async function startCheckoutAction(formData: FormData) {
     priceId,
     customerEmail: user.email,
     clientReferenceId: user.id,
-    successUrl: `${origin}/account?upgraded=1`,
+    successUrl: `${origin}/account?upgraded=${tier}`,
     cancelUrl: `${origin}/pricing?canceled=1`,
   });
   redirect(session.url);

@@ -2,7 +2,7 @@ import { eq, sql } from "drizzle-orm";
 import { db } from "@/db/client";
 import { bookmarks, notes, users } from "@/db/schema";
 
-export type Plan = "free" | "pro";
+export type Plan = "free" | "pro" | "premium";
 
 export const PLAN_LIMITS = {
   free: {
@@ -14,6 +14,8 @@ export const PLAN_LIMITS = {
     advancedAnalytics: false,
     pdfExport: false,
     unlimitedYears: false,
+    aiExplanations: false,
+    prioritySupport: false,
   },
   pro: {
     dailyQuestionAttempts: Number.POSITIVE_INFINITY,
@@ -23,20 +25,56 @@ export const PLAN_LIMITS = {
     mockExam: true,
     advancedAnalytics: true,
     pdfExport: true,
+    unlimitedYears: false,
+    aiExplanations: false,
+    prioritySupport: false,
+  },
+  premium: {
+    dailyQuestionAttempts: Number.POSITIVE_INFINITY,
+    maxSessionCount: 200,
+    maxBookmarks: Number.POSITIVE_INFINITY,
+    maxNotes: Number.POSITIVE_INFINITY,
+    mockExam: true,
+    advancedAnalytics: true,
+    pdfExport: true,
     unlimitedYears: true,
+    aiExplanations: true,
+    prioritySupport: true,
   },
 } as const;
 
 export const PRO_PRICE_JPY_MONTHLY = 780;
 export const PRO_PRICE_JPY_YEARLY = 6800;
+export const PREMIUM_PRICE_JPY_MONTHLY = 1980;
+export const PREMIUM_PRICE_JPY_YEARLY = 19800;
 
 export type PlanUser = {
   id: string;
   plan: Plan;
 };
 
+export function isPaid(user: Pick<PlanUser, "plan"> | null | undefined): boolean {
+  return user?.plan === "pro" || user?.plan === "premium";
+}
+
 export function isPro(user: Pick<PlanUser, "plan"> | null | undefined): boolean {
-  return user?.plan === "pro";
+  // Legacy callers: "pro or better". Premium users get Pro features for free.
+  return isPaid(user);
+}
+
+export function isPremium(user: Pick<PlanUser, "plan"> | null | undefined): boolean {
+  return user?.plan === "premium";
+}
+
+export function planLabel(plan: Plan): string {
+  switch (plan) {
+    case "premium":
+      return "Premium";
+    case "pro":
+      return "Pro";
+    default:
+      return "Free";
+  }
 }
 
 export function limitsFor(plan: Plan) {
@@ -45,8 +83,7 @@ export function limitsFor(plan: Plan) {
 
 /**
  * Count attempts (excluding skipped) the user has made since the start of
- * "today" in JST. We intentionally use JST so limits reset at a consistent
- * time for Japanese users regardless of server TZ.
+ * "today" in JST.
  */
 export async function getDailyAttemptCount(userId: string): Promise<number> {
   const row = await db.execute(sql`
@@ -113,11 +150,10 @@ export async function setPlan(input: {
     .update(users)
     .set({
       plan: input.plan,
-      planSince: input.plan === "pro" ? new Date() : null,
+      planSince: input.plan !== "free" ? new Date() : null,
       planRenewsAt: input.renewsAt ?? null,
       stripeCustomerId: input.stripeCustomerId ?? undefined,
       stripeSubscriptionId: input.stripeSubscriptionId ?? undefined,
     })
     .where(eq(users.id, input.userId));
 }
-

@@ -2,9 +2,16 @@ import Link from "next/link";
 import { sql } from "drizzle-orm";
 import { db } from "@/db/client";
 import { readCurrentUser } from "@/lib/currentUser";
-import { getDailyAttemptCount, isPro, limitsFor, PLAN_LIMITS } from "@/lib/plan";
+import {
+  getDailyAttemptCount,
+  isPaid,
+  isPremium,
+  limitsFor,
+  PLAN_LIMITS,
+  planLabel,
+} from "@/lib/plan";
 import { openBillingPortalAction } from "@/server/actions/checkout";
-import { CheckCircle2, LogOut, Sparkles, User } from "lucide-react";
+import { CheckCircle2, Crown, LogOut, Sparkles, User } from "lucide-react";
 
 export const dynamic = "force-dynamic";
 
@@ -22,7 +29,7 @@ export default async function AccountPage({
         <User className="mx-auto h-10 w-10 text-slate-400" />
         <h1 className="text-xl font-bold">アカウント</h1>
         <p className="text-sm text-slate-600">
-          進捗を端末をまたいで保存し、Proプランを使うにはGoogleでログインしてください。
+          進捗を端末をまたいで保存し、Pro/Premiumを使うにはGoogleでログインしてください。
         </p>
         <Link
           href="/api/auth/google/login?returnTo=/account"
@@ -34,7 +41,8 @@ export default async function AccountPage({
     );
   }
 
-  const pro = isPro(user);
+  const paid = isPaid(user);
+  const premium = isPremium(user);
   const [usedToday, totalsRow] = await Promise.all([
     getDailyAttemptCount(user.id),
     db.execute(sql`
@@ -54,12 +62,12 @@ export default async function AccountPage({
       {sp.upgraded && (
         <div className="rounded-xl border-2 border-emerald-300 bg-emerald-50 p-4 text-sm text-emerald-900 flex items-center gap-2">
           <CheckCircle2 className="h-5 w-5" />
-          Proへのアップグレードが完了しました！ありがとうございます。
+          {sp.upgraded === "premium" ? "Premium" : "Pro"}へのアップグレードが完了しました！
         </div>
       )}
       {sp.portal === "no_customer" && (
         <div className="rounded-xl border-2 border-amber-300 bg-amber-50 p-4 text-sm text-amber-900">
-          Stripeの課金情報がまだ関連付けられていません。先にProへアップグレードしてください。
+          Stripeの課金情報がまだ関連付けられていません。先にProまたはPremiumへアップグレードしてください。
         </div>
       )}
 
@@ -98,7 +106,12 @@ export default async function AccountPage({
               現在のプラン
             </div>
             <div className="mt-1 flex items-center gap-2 text-2xl font-black">
-              {pro ? (
+              {premium ? (
+                <>
+                  <Crown className="h-5 w-5 text-violet-500" />
+                  <span>Premium</span>
+                </>
+              ) : paid ? (
                 <>
                   <Sparkles className="h-5 w-5 text-amber-500" />
                   <span>Pro</span>
@@ -108,7 +121,7 @@ export default async function AccountPage({
               )}
             </div>
           </div>
-          {pro ? (
+          {paid ? (
             <form action={openBillingPortalAction}>
               <button
                 type="submit"
@@ -122,10 +135,24 @@ export default async function AccountPage({
               href="/pricing"
               className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 px-4 py-2 font-bold text-white"
             >
-              Proへ
+              アップグレード
             </Link>
           )}
         </div>
+
+        {paid && !premium && (
+          <Link
+            href="/pricing"
+            className="flex items-center gap-3 rounded-xl border-2 border-violet-200 bg-violet-50 p-3 text-sm text-violet-900 transition hover:border-violet-400"
+          >
+            <Crown className="h-5 w-5 text-violet-600" />
+            <div className="flex-1">
+              <div className="font-bold">Premium にアップグレード</div>
+              <div className="text-xs text-violet-700">全年度アーカイブ + AI個別解説 + 優先サポート</div>
+            </div>
+            <span className="text-xs font-bold">→</span>
+          </Link>
+        )}
 
         <div className="rounded-xl bg-slate-50 p-4">
           <div className="text-xs font-bold uppercase tracking-wider text-slate-500">
@@ -158,14 +185,17 @@ export default async function AccountPage({
       </div>
 
       <div className="rounded-3xl border-2 border-slate-200 bg-white p-6 space-y-2">
-        <h2 className="text-sm font-bold">プラン比較</h2>
+        <h2 className="text-sm font-bold">プラン比較 (現在: {planLabel(user.plan)})</h2>
         <ul className="text-xs text-slate-600 space-y-1">
-          <li>1日の回答数: Free {PLAN_LIMITS.free.dailyQuestionAttempts}問 / Pro 無制限</li>
-          <li>模擬試験: Free ✕ / Pro ○</li>
-          <li>詳細分析: Free ✕ / Pro ○</li>
-          <li>ブックマーク: Free {PLAN_LIMITS.free.maxBookmarks}件 / Pro 無制限</li>
-          <li>問題ノート: Free ✕ / Pro ○</li>
-          <li>PDF書き出し: Free ✕ / Pro ○</li>
+          <li>1日の回答数: Free {PLAN_LIMITS.free.dailyQuestionAttempts}問 / Pro・Premium 無制限</li>
+          <li>模擬試験: Free ✕ / Pro ○ / Premium ○ (最大{PLAN_LIMITS.premium.maxSessionCount}問)</li>
+          <li>詳細分析: Free ✕ / Pro ○ / Premium ○</li>
+          <li>ブックマーク: Free {PLAN_LIMITS.free.maxBookmarks}件 / Pro・Premium 無制限</li>
+          <li>問題ノート: Free ✕ / Pro ○ / Premium ○</li>
+          <li>PDF書き出し: Free ✕ / Pro ○ / Premium ○</li>
+          <li>全年度フルアーカイブ: Premium のみ</li>
+          <li>AI個別解説: Premium のみ</li>
+          <li>優先サポート: Premium のみ</li>
         </ul>
       </div>
     </div>

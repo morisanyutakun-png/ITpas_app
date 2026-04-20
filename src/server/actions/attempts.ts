@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { db } from "@/db/client";
 import { attempts } from "@/db/schema";
 import { getCurrentUser } from "@/lib/currentUser";
-import { checkAttemptGate } from "@/lib/plan";
+import { checkAttemptGate, type Plan } from "@/lib/plan";
 
 export type RecordAttemptResult =
   | { ok: true; remaining: number | null }
@@ -13,7 +13,7 @@ export type RecordAttemptResult =
       reason: "daily_limit";
       used: number;
       limit: number;
-      plan: "free" | "pro";
+      plan: Plan;
     };
 
 export async function recordAttemptAction(input: {

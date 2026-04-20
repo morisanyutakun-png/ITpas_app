@@ -4,23 +4,30 @@ import { readCurrentUser } from "@/lib/currentUser";
 import { isPro } from "@/lib/plan";
 import { getLastAttempt, getPersonalSummary } from "@/server/queries/personal";
 import { getRecommendation } from "@/server/queries/history";
+import { AuthErrorBanner } from "@/components/AuthErrorBanner";
 
 export const dynamic = "force-dynamic";
 
-export default async function HomePage() {
+export default async function HomePage({
+  searchParams,
+}: {
+  searchParams: Promise<{ auth_error?: string }>;
+}) {
+  const sp = await searchParams;
   const user = await readCurrentUser();
   const showPersonal = !!user?.isSignedIn;
   const [summary, last, rec] = showPersonal
     ? await Promise.all([
-        getPersonalSummary(user.id),
-        getLastAttempt(user.id),
-        getRecommendation(user.id),
+        getPersonalSummary(user!.id),
+        getLastAttempt(user!.id),
+        getRecommendation(user!.id),
       ])
     : [null, null, null];
   const pro = isPro(user);
 
   return (
     <div className="space-y-16">
+      {sp.auth_error && <AuthErrorBanner code={sp.auth_error} />}
       {showPersonal && summary && (
         <section className="rounded-3xl border-2 border-slate-200 bg-white p-6 shadow-sm">
           <div className="flex items-center justify-between gap-3 mb-4">

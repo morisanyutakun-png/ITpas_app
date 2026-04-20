@@ -1,245 +1,250 @@
 import Link from "next/link";
-import { ChevronRight, Crosshair, Lock, Shuffle } from "lucide-react";
-import { listQuestions } from "@/server/queries/questions";
+import {
+  ArrowRight,
+  ChevronRight,
+  Crosshair,
+  Flame,
+  Shuffle,
+  Sparkles,
+  Target,
+} from "lucide-react";
 import { readCurrentUser } from "@/lib/currentUser";
-import { minAllowedExamYear, planLabel } from "@/lib/plan";
+import { getRoadmap, type RoadmapMajor } from "@/server/queries/roadmap";
+import { getRecommendation } from "@/server/queries/history";
 
 export const dynamic = "force-dynamic";
+export const metadata = { title: "攻め方を選ぶ" };
 
-const MAJOR_LABEL: Record<string, string> = {
-  strategy: "ストラテジ",
-  management: "マネジメント",
-  technology: "テクノロジ",
+const MAJOR_GRAD: Record<string, string> = {
+  strategy: "bg-grad-purple",
+  management: "bg-grad-ocean",
+  technology: "bg-grad-green",
 };
 
-export default async function QuestionsListPage({
-  searchParams,
-}: {
-  searchParams: Promise<{
-    year?: string;
-    major?: string;
-    topic?: string;
-    misconception?: string;
-    origin?: string;
-  }>;
-}) {
-  const sp = await searchParams;
+/**
+ * High-level entry-point for self-directed practice.
+ *
+ * Deliberately does NOT list individual questions, stems, or IDs. Instead
+ * it presents three paths: (1) recommended moves, (2) pillar summary +
+ * link into the roadmap, (3) filter-driven random draw. Individual
+ * questions are only reachable via session flows — keeps DB content
+ * behind practice rather than a browsable index.
+ */
+export default async function QuestionsIndexPage() {
   const user = await readCurrentUser();
-  const plan = user?.plan ?? "free";
-  const minYear = await minAllowedExamYear(plan);
-
-  const yearParam = sp.year ? Number(sp.year) : undefined;
-  const yearBlocked =
-    yearParam !== undefined && minYear !== null && yearParam < minYear;
-
-  const items = await listQuestions({
-    examYear: yearBlocked ? undefined : yearParam,
-    majorCategory: sp.major as
-      | "strategy"
-      | "management"
-      | "technology"
-      | undefined,
-    topicSlug: sp.topic,
-    misconceptionSlug: sp.misconception,
-    originType:
-      sp.origin === "actual"
-        ? "ipa_actual"
-        : sp.origin === "inspired"
-        ? "ipa_inspired"
-        : undefined,
-    minYear,
-  });
-
-  const byYear = items.reduce<Record<number, typeof items>>((acc, q) => {
-    (acc[q.examYear] ||= []).push(q);
-    return acc;
-  }, {});
-  const years = Object.keys(byYear)
-    .map(Number)
-    .sort((a, b) => b - a);
-
-  const randomQs = new URLSearchParams();
-  if (sp.major) randomQs.set("major", sp.major);
-  if (sp.origin) randomQs.set("origin", sp.origin);
-  const randomHref = `/learn/random${
-    randomQs.toString() ? `?${randomQs}` : ""
-  }`;
+  const signedIn = !!user?.isSignedIn;
+  const [roadmap, rec] = await Promise.all([
+    getRoadmap(user?.id ?? null),
+    signedIn ? getRecommendation(user!.id) : Promise.resolve(null),
+  ]);
 
   return (
-    <div className="space-y-5">
-      <header className="pt-2">
-        <h1 className="text-ios-title1 font-semibold">問題集</h1>
-        <p className="mt-1 text-[13px] text-muted-foreground">
-          ランダム1問から始めるか、目次から好きな問題へ。
+    <div className="space-y-7">
+      <header className="pt-1">
+        <div className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+          <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary" />
+          Play
+        </div>
+        <h1 className="mt-1.5 text-ios-large font-semibold">攻め方を選ぶ</h1>
+        <p className="mt-1 text-[14px] text-muted-foreground text-pretty">
+          どこから切り込む？目的別のセッションで、今日の一歩を選べます。
         </p>
       </header>
 
-      {/* Quick actions */}
-      <div className="grid grid-cols-2 gap-2">
+      {/* Recommended next move */}
+      {signedIn && rec && (
         <Link
-          href={randomHref}
-          className="flex items-center gap-2 rounded-2xl bg-card p-3 shadow-ios-sm active:opacity-70"
+          href={`/learn/session/new?mode=topic&topic=${rec.slug}&count=5`}
+          className="surface-card flex items-center gap-4 p-4 transition-transform active:scale-[0.99]"
         >
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-ios-purple/10 text-ios-purple">
-            <Shuffle className="h-4 w-4" strokeWidth={2.2} />
+          <span className="tile-icon bg-grad-orange">
+            <Flame className="h-5 w-5" strokeWidth={2.4} />
+          </span>
+          <div className="min-w-0 flex-1">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.12em] text-ios-orange">
+              今日のおすすめ — {rec.reason}
+            </div>
+            <div className="truncate text-[16px] font-semibold">{rec.title}</div>
+            <div className="text-[11.5px] text-muted-foreground">
+              重み付き抽選で5問
+            </div>
           </div>
-          <div className="min-w-0">
-            <div className="text-[13px] font-semibold">ランダム1問</div>
-            <div className="text-[11px] text-muted-foreground">絞り込み範囲から</div>
-          </div>
+          <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
         </Link>
+      )}
+
+      {/* Primary modes — hero tiles */}
+      <section className="grid gap-3 sm:grid-cols-2">
         <Link
           href="/learn/session/new?mode=weakness&count=5"
-          className="flex items-center gap-2 rounded-2xl bg-card p-3 shadow-ios-sm active:opacity-70"
+          className="hero-tile bg-grad-sunset sm:col-span-2"
         >
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-ios-red/10 text-ios-red">
-            <Crosshair className="h-4 w-4" strokeWidth={2.2} />
-          </div>
-          <div className="min-w-0">
-            <div className="text-[13px] font-semibold">弱点5問</div>
-            <div className="text-[11px] text-muted-foreground">誤解パターン重み付き</div>
+          <div className="relative z-10 flex items-center gap-4">
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/15 ring-1 ring-inset ring-white/25 backdrop-blur">
+              <Crosshair className="h-5 w-5" strokeWidth={2.2} />
+            </span>
+            <div className="min-w-0 flex-1">
+              <div className="text-[11px] font-semibold uppercase tracking-[0.14em] opacity-80">
+                Sharpen
+              </div>
+              <div className="mt-0.5 text-[19px] font-semibold leading-tight tracking-tight">
+                弱点5問チャレンジ
+              </div>
+              <div className="mt-0.5 text-[12.5px] opacity-85">
+                誤解パターン重み付きで自動抽出
+              </div>
+            </div>
+            <ChevronRight className="h-5 w-5 opacity-80" />
           </div>
         </Link>
-      </div>
 
-      {/* Filter chips (iOS-style scrollable) */}
-      <div className="-mx-4 overflow-x-auto px-4">
-        <div className="flex min-w-max gap-1.5">
-          <Chip href="/learn/questions" label="すべて" active={!sp.major && !sp.origin} />
-          <Chip
-            href="/learn/questions?major=strategy"
-            label="ストラテジ"
-            active={sp.major === "strategy"}
-          />
-          <Chip
-            href="/learn/questions?major=management"
-            label="マネジメント"
-            active={sp.major === "management"}
-          />
-          <Chip
-            href="/learn/questions?major=technology"
-            label="テクノロジ"
-            active={sp.major === "technology"}
-          />
-          <div className="w-2" />
-          <Chip
-            href="/learn/questions?origin=actual"
-            label="公式過去問"
-            active={sp.origin === "actual"}
-          />
-          <Chip
-            href="/learn/questions?origin=inspired"
-            label="オリジナル"
-            active={sp.origin === "inspired"}
-          />
-        </div>
-      </div>
-
-      {minYear !== null && (
-        <Link
-          href="/pricing?reason=year_locked"
-          className="flex items-center gap-2 rounded-2xl bg-card px-4 py-3 text-[13px] shadow-ios-sm active:opacity-80"
-        >
-          <Lock className="h-3.5 w-3.5 shrink-0 text-ios-orange" />
-          <span className="flex-1 text-muted-foreground">
-            <strong className="text-foreground">{planLabel(plan)}</strong>{" "}
-            プランでは令和{minYear}年以降を表示中
-            {yearBlocked && ` (令和${yearParam}年度はロック)`}
-          </span>
-          <span className="rounded-full bg-ios-purple/10 px-2 py-0.5 text-[11px] font-semibold text-ios-purple">
-            Premium で解放
-          </span>
+        <Link href="/learn/random" className="hero-tile bg-grad-purple">
+          <div className="relative z-10">
+            <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/15 ring-1 ring-inset ring-white/25 backdrop-blur">
+              <Shuffle className="h-5 w-5" strokeWidth={2.2} />
+            </span>
+            <div className="mt-4 text-[18px] font-semibold leading-tight tracking-tight">
+              ランダム1問
+            </div>
+            <div className="mt-0.5 text-[12.5px] opacity-85">
+              全範囲から1問
+            </div>
+          </div>
         </Link>
-      )}
 
-      <div className="px-1 text-[12px] text-muted-foreground">
-        {items.length}問が見つかりました
-      </div>
+        <Link href="/learn/mock-exam" className="hero-tile bg-grad-ocean">
+          <div className="relative z-10">
+            <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/15 ring-1 ring-inset ring-white/25 backdrop-blur">
+              <Target className="h-5 w-5" strokeWidth={2.2} />
+            </span>
+            <div className="mt-4 text-[18px] font-semibold leading-tight tracking-tight">
+              模擬試験
+            </div>
+            <div className="mt-0.5 text-[12.5px] opacity-85">
+              100問 / 120分
+            </div>
+          </div>
+        </Link>
+      </section>
 
-      {items.length === 0 ? (
-        <div className="rounded-2xl bg-card p-8 text-center text-[13px] text-muted-foreground shadow-ios-sm">
-          該当する問題がありません。
+      {/* Pillars — summarised topic counts, links into per-major selections */}
+      <section className="space-y-2">
+        <div className="flex items-end justify-between px-1">
+          <div>
+            <div className="section-title">3 Pillars</div>
+            <div className="text-[17px] font-semibold tracking-tight">
+              範囲から選ぶ
+            </div>
+          </div>
         </div>
-      ) : (
-        <div className="space-y-5">
-          {years.map((y) => {
-            const qs = byYear[y];
-            const byMajor = qs.reduce<Record<string, typeof qs>>((acc, q) => {
-              (acc[q.majorCategory] ||= []).push(q);
-              return acc;
-            }, {});
-            return (
-              <section key={y} className="space-y-2">
-                <div className="ios-section-label flex items-center justify-between">
-                  <span>令和{y}年度</span>
-                  <span className="text-muted-foreground">{qs.length}問</span>
-                </div>
-                <div className="space-y-3">
-                  {(["strategy", "management", "technology"] as const).map(
-                    (m) => {
-                      const list = byMajor[m];
-                      if (!list || list.length === 0) return null;
-                      return (
-                        <div key={m} className="ios-list shadow-ios-sm">
-                          <div className="px-4 py-2 text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground">
-                            {MAJOR_LABEL[m]} · {list.length}
-                          </div>
-                          {list
-                            .sort((a, b) => a.questionNumber - b.questionNumber)
-                            .map((q) => (
-                              <Link
-                                key={q.id}
-                                href={`/learn/questions/${q.id}`}
-                                className="ios-row items-start active:bg-muted/60"
-                              >
-                                <span
-                                  className={`flex h-7 min-w-[28px] items-center justify-center rounded-md text-[11px] font-semibold tabular-nums ${
-                                    q.originType === "ipa_actual"
-                                      ? "bg-foreground text-background"
-                                      : "bg-ios-purple/10 text-ios-purple"
-                                  }`}
-                                >
-                                  {q.questionNumber}
-                                </span>
-                                <span className="line-clamp-2 flex-1 text-[14px]">
-                                  {q.stem}
-                                </span>
-                                <ChevronRight className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" />
-                              </Link>
-                            ))}
-                        </div>
-                      );
-                    }
-                  )}
-                </div>
-              </section>
-            );
-          })}
+        <div className="grid gap-3 sm:grid-cols-3">
+          {roadmap.map((m) => (
+            <PillarCard key={m.major} major={m} signedIn={signedIn} />
+          ))}
         </div>
-      )}
+      </section>
+
+      {/* Deep-dive links — roadmap + misconception dictionary */}
+      <section className="space-y-2">
+        <div className="ios-section-label">掘り下げる</div>
+        <div className="ios-list">
+          <Row
+            href="/topics"
+            tile="bg-grad-blue"
+            icon={Sparkles}
+            title="論点マップ"
+            desc="全論点を一覧。詳細から関連セッションへ"
+          />
+          <Row
+            href="/misconceptions"
+            tile="bg-grad-orange"
+            icon={Target}
+            title="誤解パターン辞典"
+            desc="ひっかけの正体を予習"
+          />
+          <Row
+            href="/guides"
+            tile="bg-grad-green"
+            icon={ArrowRight}
+            title="学習ガイド"
+            desc="3大領域の概観を読む"
+          />
+        </div>
+      </section>
     </div>
   );
 }
 
-function Chip({
-  href,
-  label,
-  active,
+function PillarCard({
+  major,
+  signedIn,
 }: {
-  href: string;
-  label: string;
-  active: boolean;
+  major: RoadmapMajor;
+  signedIn: boolean;
 }) {
+  const grad = MAJOR_GRAD[major.major] ?? "bg-grad-ink";
+  const total = major.topicCount;
+  const pct =
+    total === 0
+      ? 0
+      : Math.round(((major.attemptedCount + major.masteredCount) / (total * 2)) * 100);
+
   return (
     <Link
-      href={href}
-      className={`inline-flex h-8 items-center rounded-full px-3.5 text-[13px] font-medium transition-colors ${
-        active
-          ? "bg-foreground text-background"
-          : "bg-card text-foreground active:opacity-70"
-      }`}
+      href={`/guides/${major.major}`}
+      className={`hero-tile ${grad} !p-5`}
     >
-      {label}
+      <div className="relative z-10 space-y-3">
+        <div className="text-[11px] font-semibold uppercase tracking-[0.14em] opacity-80">
+          {major.minors.length} areas
+        </div>
+        <div className="text-[18px] font-semibold leading-tight tracking-tight">
+          {major.label}
+        </div>
+        <div className="text-[12px] leading-relaxed opacity-85 text-pretty line-clamp-2">
+          {major.intro}
+        </div>
+        {signedIn && (
+          <div>
+            <div className="h-1.5 w-full overflow-hidden rounded-full bg-white/20">
+              <div
+                className="h-full rounded-full bg-white transition-[width] duration-500 ease-out"
+                style={{ width: `${Math.max(pct, 2)}%` }}
+              />
+            </div>
+            <div className="num mt-1.5 text-[11px] font-medium opacity-85">
+              習熟度 {pct}% · {major.masteredCount}/{total} 習熟
+            </div>
+          </div>
+        )}
+      </div>
+    </Link>
+  );
+}
+
+function Row({
+  href,
+  tile,
+  icon: Icon,
+  title,
+  desc,
+}: {
+  href: string;
+  tile: string;
+  icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
+  title: string;
+  desc: string;
+}) {
+  return (
+    <Link href={href} className="ios-row active:bg-muted/60">
+      <span className={`tile-icon-sm ${tile}`}>
+        <Icon className="h-4 w-4" strokeWidth={2.4} />
+      </span>
+      <div className="min-w-0 flex-1">
+        <div className="text-[15px] font-semibold">{title}</div>
+        <div className="text-[12.5px] text-muted-foreground">{desc}</div>
+      </div>
+      <ChevronRight className="h-4 w-4 text-muted-foreground" />
     </Link>
   );
 }

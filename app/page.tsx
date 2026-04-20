@@ -11,7 +11,9 @@ import { readCurrentUser } from "@/lib/currentUser";
 import { hasFeature, isPro } from "@/lib/plan";
 import { getLastAttempt, getPersonalSummary } from "@/server/queries/personal";
 import { getRecommendation } from "@/server/queries/history";
+import { getRoadmap } from "@/server/queries/roadmap";
 import { AuthErrorBanner } from "@/components/AuthErrorBanner";
+import { Roadmap } from "@/components/home/Roadmap";
 
 export const dynamic = "force-dynamic";
 
@@ -26,13 +28,14 @@ export default async function HomePage({
   const pro = isPro(user);
   const showAds = !hasFeature(user, "adFree");
 
-  const [summary, last, rec] = signedIn
+  const [summary, last, rec, roadmap] = signedIn
     ? await Promise.all([
         getPersonalSummary(user!.id),
         getLastAttempt(user!.id),
         getRecommendation(user!.id),
+        getRoadmap(user!.id),
       ])
-    : [null, null, null];
+    : [null, null, null, await getRoadmap(null)];
 
   const accuracy =
     summary && summary.totalAttempts > 0
@@ -161,6 +164,11 @@ export default async function HomePage({
           </div>
         </Link>
       </section>
+
+      {/* Learning roadmap — 3 majors × minorTopics with progress dots */}
+      {roadmap && roadmap.length > 0 && (
+        <Roadmap majors={roadmap} signedIn={signedIn} />
+      )}
 
       {/* Continuation + recommendation */}
       {(last || rec) && (

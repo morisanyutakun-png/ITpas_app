@@ -14,6 +14,7 @@ import { getRecommendation } from "@/server/queries/history";
 import { getRoadmap } from "@/server/queries/roadmap";
 import { AuthErrorBanner } from "@/components/AuthErrorBanner";
 import { Roadmap } from "@/components/home/Roadmap";
+import { LandingPage } from "@/components/landing/LandingPage";
 
 export const dynamic = "force-dynamic";
 
@@ -25,17 +26,30 @@ export default async function HomePage({
   const sp = await searchParams;
   const user = await readCurrentUser();
   const signedIn = !!user?.isSignedIn;
+
+  // Signed-out visitors see the marketing landing page, not the app home.
+  if (!signedIn) {
+    return (
+      <>
+        {sp.auth_error && (
+          <div className="mb-6">
+            <AuthErrorBanner code={sp.auth_error} />
+          </div>
+        )}
+        <LandingPage />
+      </>
+    );
+  }
+
   const pro = isPro(user);
   const showAds = !hasFeature(user, "adFree");
 
-  const [summary, last, rec, roadmap] = signedIn
-    ? await Promise.all([
-        getPersonalSummary(user!.id),
-        getLastAttempt(user!.id),
-        getRecommendation(user!.id),
-        getRoadmap(user!.id),
-      ])
-    : [null, null, null, await getRoadmap(null)];
+  const [summary, last, rec, roadmap] = await Promise.all([
+    getPersonalSummary(user!.id),
+    getLastAttempt(user!.id),
+    getRecommendation(user!.id),
+    getRoadmap(user!.id),
+  ]);
 
   const accuracy =
     summary && summary.totalAttempts > 0

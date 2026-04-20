@@ -5,9 +5,16 @@ import {
   ChevronRight,
   Clock,
   Crown,
+  Flame,
+  Gauge,
+  Layers,
   Lock,
+  PlayCircle,
+  Rocket,
   Sparkles,
   Target,
+  Timer,
+  Zap,
 } from "lucide-react";
 import { readCurrentUser } from "@/lib/currentUser";
 import {
@@ -31,6 +38,46 @@ import {
 export const dynamic = "force-dynamic";
 export const metadata = { title: "模擬試験" };
 
+const YEAR_GRAD: Record<number, string> = {
+  7: "bg-grad-r07",
+  6: "bg-grad-r06",
+  5: "bg-grad-r05",
+  2: "bg-grad-r02",
+  1: "bg-grad-r01",
+};
+
+const YEAR_GLYPH: Record<number, string> = {
+  7: "R7",
+  6: "R6",
+  5: "R5",
+  2: "R2",
+  1: "R1",
+};
+
+const CATEGORY_META: Record<
+  string,
+  { grad: string; label: string; kana: string; emoji: string }
+> = {
+  strategy: {
+    grad: "bg-grad-strategy",
+    label: "Strategy",
+    kana: "ストラテジ",
+    emoji: "🧭",
+  },
+  management: {
+    grad: "bg-grad-management",
+    label: "Management",
+    kana: "マネジメント",
+    emoji: "📊",
+  },
+  technology: {
+    grad: "bg-grad-technology",
+    label: "Technology",
+    kana: "テクノロジ",
+    emoji: "⚡",
+  },
+};
+
 export default async function MockExamEntryPage({
   searchParams,
 }: {
@@ -43,215 +90,466 @@ export default async function MockExamEntryPage({
   const maxSize = limitsFor(plan).mockExamMaxCount;
   const premium = isPremium(user);
   const minYear = await minAllowedExamYear(plan);
-  const pastExams = await listPastExams({ minYear });
+  const pastExams = await listPastExams();
   const templates = getMockExamTemplates();
+  const totalPool = pastExams.reduce((a, e) => a + e.importedCount, 0);
 
   if (!unlocked) {
     return (
       <div className="mx-auto max-w-md space-y-5 pt-6">
-        <div className="rounded-3xl bg-card p-6 text-center shadow-ios-sm">
-          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-ios-orange/10 text-ios-orange">
-            <Lock className="h-6 w-6" />
+        <div className="relative overflow-hidden rounded-3xl bg-grad-sunset p-8 text-center text-white shadow-hero">
+          <div className="relative z-10">
+            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-white/15 ring-1 ring-inset ring-white/30 backdrop-blur">
+              <Timer className="h-7 w-7" strokeWidth={2.2} />
+            </div>
+            <h1 className="mt-4 text-[26px] font-semibold tracking-tight">
+              模擬試験は Pro で解放
+            </h1>
+            <p className="mt-1.5 text-[13px] opacity-90">
+              本試験形式 100問 × 120分 / 本物の緊張感を。
+            </p>
+            <Link
+              href="/pricing?reason=mock_exam"
+              className="mt-5 inline-flex h-11 items-center justify-center rounded-full bg-white px-6 text-[14px] font-semibold text-foreground shadow-ios active:opacity-90"
+            >
+              プランを見る
+              <ChevronRight className="ml-1 h-4 w-4" />
+            </Link>
           </div>
-          <h1 className="mt-3 text-ios-title3 font-semibold">
-            模擬試験は Pro で解放されます
-          </h1>
-          <p className="mt-1 text-[13px] text-muted-foreground">
-            本番形式 100問 × 120分。時間配分と踏みとどまり方を鍛えます。
-          </p>
-          <Link
-            href="/pricing?reason=mock_exam"
-            className="mt-4 inline-flex h-11 w-full items-center justify-center rounded-full bg-primary text-[15px] font-semibold text-primary-foreground active:opacity-80"
-          >
-            プランを見る
-          </Link>
+          <div className="pointer-events-none absolute -right-10 -top-10 h-48 w-48 rounded-full bg-white/15 blur-3xl" />
         </div>
       </div>
     );
   }
 
-  // Bucket templates by purpose
-  const fullTemplates = templates.filter((t) => t.filter.kind === "all" && t.count >= 50);
+  const fullTemplates = templates.filter(
+    (t) => t.filter.kind === "all" && t.count >= 50
+  );
   const yearTemplates = templates.filter((t) => t.filter.kind === "year");
-  const categoryTemplates = templates.filter((t) => t.filter.kind === "category");
+  const categoryTemplates = templates.filter(
+    (t) => t.filter.kind === "category"
+  );
 
   const isTplAvailable = (t: MockExamTemplate) => {
     if (t.count > maxSize) return false;
     if (t.tier === "premium" && !premium) return false;
-    if (t.filter.kind === "year" && minYear != null && t.filter.examYear < minYear) {
+    if (
+      t.filter.kind === "year" &&
+      minYear != null &&
+      t.filter.examYear < minYear
+    ) {
       return false;
     }
     return true;
   };
 
   return (
-    <div className="space-y-6">
-      <header className="pt-2">
-        <h1 className="text-ios-title1 font-semibold">模擬試験</h1>
-        <p className="mt-1 flex items-center gap-1.5 text-[13px] text-muted-foreground">
-          <Clock className="h-3.5 w-3.5" />
-          本試験形式 {MOCK_EXAM_DURATION_MIN}分 · 過去問プール {pastExams.length}回分
-        </p>
+    <div className="space-y-8 pb-8">
+      {/* ── Hero ─────────────────────────────────────── */}
+      <header className="space-y-2 pt-1">
+        <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+          <span className="inline-block h-1.5 w-1.5 rounded-full bg-ios-red" />
+          Mock Exam Center
+        </div>
+        <h1 className="text-ios-large font-semibold tracking-tight">
+          本番リハーサル
+        </h1>
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[12.5px] text-muted-foreground">
+          <span className="inline-flex items-center gap-1">
+            <Clock className="h-3.5 w-3.5" /> {MOCK_EXAM_DURATION_MIN}分
+          </span>
+          <span className="inline-flex items-center gap-1">
+            <Archive className="h-3.5 w-3.5" /> 過去問 {pastExams.length} 回分
+          </span>
+          <span className="inline-flex items-center gap-1">
+            <Layers className="h-3.5 w-3.5" /> プール{" "}
+            <span className="num font-medium text-foreground">{totalPool}</span> 問
+          </span>
+        </div>
       </header>
 
+      {/* ── Errors ───────────────────────────────────── */}
       {sp.error === "size_locked" && (
-        <div className="rounded-2xl bg-ios-yellow/10 px-4 py-3 text-[13px] text-ios-orange shadow-ios-sm">
+        <ErrorBanner>
           選択したサイズは{planLabel(plan)}では利用できません (最大{maxSize}問)。
-        </div>
+        </ErrorBanner>
       )}
       {sp.error === "year_locked" && (
-        <div className="rounded-2xl bg-ios-yellow/10 px-4 py-3 text-[13px] text-ios-orange shadow-ios-sm">
-          この年度は{planLabel(plan)}では解放されていません。Premiumで全年度にアクセスできます。
-        </div>
+        <ErrorBanner>
+          この年度は{planLabel(plan)}では未解放です。Premiumで全年度にアクセスできます。
+        </ErrorBanner>
       )}
       {sp.error === "empty" && (
-        <div className="rounded-2xl bg-ios-red/10 px-4 py-3 text-[13px] text-ios-red shadow-ios-sm">
+        <ErrorBanner tone="red">
           条件に合致する問題がありません。プールが増えるまで別のテンプレートをお試しください。
-        </div>
+        </ErrorBanner>
       )}
 
-      <section className="space-y-2">
-        <div className="ios-section-label">本番形式</div>
-        <div className="ios-list shadow-ios-sm">
-          {fullTemplates.map((t) => (
-            <TemplateRow
-              key={t.slug}
-              template={t}
-              locked={!isTplAvailable(t)}
-              maxSize={maxSize}
+      {/* ── Featured hero tile ─────────────────────── */}
+      {fullTemplates[0] && (
+        <section>
+          <form
+            action={startMockExamFromTemplate}
+            className="block"
+          >
+            <input
+              type="hidden"
+              name="template"
+              value={fullTemplates[0].slug}
             />
-          ))}
-        </div>
-      </section>
-
-      <section className="space-y-2">
-        <div className="ios-section-label">年度別模試</div>
-        <div className="ios-list shadow-ios-sm">
-          {yearTemplates.map((t) => (
-            <TemplateRow
-              key={t.slug}
-              template={t}
-              locked={!isTplAvailable(t)}
-              maxSize={maxSize}
-            />
-          ))}
-        </div>
-        <div className="px-3 text-[11.5px] text-muted-foreground">
-          各回の出典は IPA 公開 PDF。構造化データとして取り込まれた問題から出題。
-        </div>
-      </section>
-
-      <section className="space-y-2">
-        <div className="ios-section-label">分野別模試</div>
-        <div className="ios-list shadow-ios-sm">
-          {categoryTemplates.map((t) => (
-            <TemplateRow
-              key={t.slug}
-              template={t}
-              locked={!isTplAvailable(t)}
-              maxSize={maxSize}
-            />
-          ))}
-        </div>
-      </section>
-
-      <section className="space-y-2">
-        <div className="ios-section-label">カスタム (ランダム再抽選)</div>
-        <div className="ios-list shadow-ios-sm">
-          {[100, 150, 200]
-            .filter((n) => n <= maxSize)
-            .map((n) => (
-              <form key={n} action={startMockExam} className="contents">
-                <input type="hidden" name="count" value={n} />
-                <button
-                  type="submit"
-                  className="ios-row w-full text-left active:bg-muted/60"
-                >
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-muted">
-                    <Sparkles className="h-4 w-4 text-ios-blue" strokeWidth={2.2} />
+            <button
+              type="submit"
+              className="album-tile w-full bg-grad-sunset !aspect-auto !p-7 sm:!p-9 text-left"
+              disabled={!isTplAvailable(fullTemplates[0])}
+            >
+              <div className="relative z-10 flex items-center gap-5">
+                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white/20 ring-1 ring-inset ring-white/30 backdrop-blur">
+                  <Rocket className="h-7 w-7" strokeWidth={2.2} />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.14em] opacity-85">
+                    Featured · 本試験形式
                   </div>
-                  <div className="flex-1">
-                    <div className="text-[15px] font-medium">
-                      ランダム{n}問 / {MOCK_EXAM_DURATION_MIN}分
-                    </div>
-                    <div className="text-[12px] text-muted-foreground">
-                      毎回違う抽選。苦手重みもゆるく効きます。
-                    </div>
+                  <div className="mt-1 text-[28px] font-semibold leading-tight tracking-tight">
+                    全国模試 100問
                   </div>
-                  <ChevronRight className="h-4 w-4 text-muted-foreground" />
-                </button>
-              </form>
-            ))}
+                  <div className="mt-1 flex flex-wrap items-center gap-2 text-[12px] opacity-90">
+                    <span className="glass-chip">
+                      <Clock className="h-3 w-3" /> 120分
+                    </span>
+                    <span className="glass-chip">
+                      <Target className="h-3 w-3" /> 全年度ランダム
+                    </span>
+                    <span className="glass-chip">
+                      <Flame className="h-3 w-3" /> 苦手重み付け
+                    </span>
+                  </div>
+                </div>
+                <div className="hidden sm:flex h-12 w-12 items-center justify-center rounded-full bg-white text-ios-red shadow-ios">
+                  <PlayCircle className="h-6 w-6" strokeWidth={2.2} />
+                </div>
+              </div>
+              <div className="pointer-events-none absolute -right-20 -bottom-20 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
+            </button>
+          </form>
+        </section>
+      )}
+
+      {/* ── Year-based album tiles ─────────────────── */}
+      <section className="space-y-3">
+        <SectionHeader
+          kicker="Past Papers"
+          title="年度別模試"
+          sub="過去の本試験をそのまま再構成"
+          viewAllHref="/learn/past-exams"
+        />
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
+          {yearTemplates.map((t) => {
+            if (t.filter.kind !== "year") return null;
+            const y = t.filter.examYear;
+            const locked = !isTplAvailable(t);
+            const source = pastExams.find((p) => p.examYear === y);
+            return (
+              <YearAlbumTile
+                key={t.slug}
+                template={t}
+                year={y}
+                label={source?.shortLabel ?? `R${y}`}
+                coverage={source?.coveragePct ?? 0}
+                imported={source?.importedCount ?? 0}
+                total={source?.totalQuestions ?? 100}
+                locked={locked}
+              />
+            );
+          })}
         </div>
       </section>
 
-      <section className="space-y-2">
-        <div className="ios-section-label">出典となる過去問</div>
-        <Link href="/learn/past-exams" className="ios-row shadow-ios-sm active:bg-muted/60">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-muted">
-            <Archive className="h-4 w-4 text-ios-indigo" strokeWidth={2.2} />
-          </div>
-          <div className="flex-1">
-            <div className="text-[15px] font-medium">過去問アーカイブを見る</div>
-            <div className="text-[12px] text-muted-foreground">
-              収録済み {pastExams.length} 回分 · IPA公開問題への出典つき
-            </div>
-          </div>
-          <ChevronRight className="h-4 w-4 text-muted-foreground" />
-        </Link>
+      {/* ── Category cards ─────────────────────────── */}
+      <section className="space-y-3">
+        <SectionHeader
+          kicker="By Field"
+          title="分野別模試"
+          sub="3大領域に絞って強化"
+        />
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+          {categoryTemplates.map((t) => {
+            if (t.filter.kind !== "category") return null;
+            const meta = CATEGORY_META[t.filter.majorCategory];
+            const locked = !isTplAvailable(t);
+            return (
+              <CategoryTile
+                key={t.slug}
+                template={t}
+                grad={meta.grad}
+                label={meta.label}
+                kana={meta.kana}
+                emoji={meta.emoji}
+                locked={locked}
+              />
+            );
+          })}
+        </div>
       </section>
 
-      <section className="space-y-2">
-        <div className="ios-section-label">ルール</div>
-        <div className="ios-list shadow-ios-sm">
-          <Rule text="解答はプラン制限を受けず、何問でも進められます" />
-          <Rule text="タイマーがゼロになると結果画面へ自動遷移します" />
-          <Rule text="ブラウザを閉じても途中から再開できます (残り時間は保存されません)" />
-          <Rule text="出題は構造化された IPA 公開問題に基づき、各問ごとに出典を表示" />
+      {/* ── Size variants (compact chip row) ──────── */}
+      <section className="space-y-3">
+        <SectionHeader
+          kicker="Quick Start"
+          title="サイズを選ぶ"
+          sub="全範囲ランダム / 毎回違う出題"
+        />
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+          {fullTemplates.map((t) => {
+            const locked = !isTplAvailable(t);
+            return (
+              <QuickSizeTile key={t.slug} template={t} locked={locked} />
+            );
+          })}
+          <form action={startMockExam}>
+            <input type="hidden" name="count" value={50} />
+            <button
+              type="submit"
+              className="flex h-full w-full flex-col gap-2 rounded-3xl bg-card p-4 text-left shadow-surface ring-1 ring-black/5 transition-transform active:scale-[0.98] dark:ring-white/10"
+            >
+              <div className="flex items-center justify-between">
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-grad-green text-white shadow-tile">
+                  <Zap className="h-5 w-5" strokeWidth={2.2} />
+                </span>
+                <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+                  Quick
+                </span>
+              </div>
+              <div>
+                <div className="num text-[24px] font-semibold tracking-tight">
+                  50<span className="text-[14px] text-muted-foreground">問</span>
+                </div>
+                <div className="text-[12px] text-muted-foreground">
+                  時短 60分
+                </div>
+              </div>
+            </button>
+          </form>
         </div>
+      </section>
+
+      {/* ── Archive CTA ──────────────────────────── */}
+      <Link
+        href="/learn/past-exams"
+        className="surface-card group flex items-center gap-4 p-5 transition-transform active:scale-[0.99]"
+      >
+        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-grad-ink text-white shadow-tile">
+          <Archive className="h-5 w-5" strokeWidth={2.2} />
+        </span>
+        <div className="min-w-0 flex-1">
+          <div className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+            Archive
+          </div>
+          <div className="text-[16px] font-semibold">
+            過去問アーカイブを見る
+          </div>
+          <div className="text-[12.5px] text-muted-foreground">
+            収録 {pastExams.length} 回 · IPA公開問題 · 出典つき
+          </div>
+        </div>
+        <ChevronRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
+      </Link>
+
+      {/* ── Rules (condensed pills) ─────────────── */}
+      <section className="surface-card p-4">
+        <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+          <Gauge className="h-3.5 w-3.5" /> Rules
+        </div>
+        <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+          <RulePill>解答数はカウント対象外 (無制限)</RulePill>
+          <RulePill>タイムアップで自動集計</RulePill>
+          <RulePill>中断→再開可 (残時間は非保存)</RulePill>
+          <RulePill>全問に IPA 公開問題の出典を表示</RulePill>
+        </ul>
       </section>
     </div>
   );
 }
 
-function TemplateRow({
+// ---- Components -----------------------------------------------------------
+
+function SectionHeader({
+  kicker,
+  title,
+  sub,
+  viewAllHref,
+}: {
+  kicker: string;
+  title: string;
+  sub?: string;
+  viewAllHref?: string;
+}) {
+  return (
+    <div className="flex items-end justify-between px-1">
+      <div className="min-w-0">
+        <div className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+          {kicker}
+        </div>
+        <div className="mt-0.5 text-[19px] font-semibold tracking-tight">
+          {title}
+        </div>
+        {sub && (
+          <div className="text-[12px] text-muted-foreground">{sub}</div>
+        )}
+      </div>
+      {viewAllHref && (
+        <Link
+          href={viewAllHref}
+          className="inline-flex shrink-0 items-center gap-0.5 text-[12px] font-medium text-muted-foreground active:opacity-70"
+        >
+          すべて <ChevronRight className="h-3.5 w-3.5" />
+        </Link>
+      )}
+    </div>
+  );
+}
+
+function YearAlbumTile({
   template,
+  year,
+  label,
+  coverage,
+  imported,
+  total,
   locked,
-  maxSize,
 }: {
   template: MockExamTemplate;
+  year: number;
+  label: string;
+  coverage: number;
+  imported: number;
+  total: number;
   locked: boolean;
-  maxSize: number;
 }) {
-  const ActionIcon = template.tier === "premium" ? Crown : Target;
-  const iconColor =
-    template.tier === "premium" ? "text-ios-purple" : "text-ios-blue";
+  const grad = YEAR_GRAD[year] ?? "bg-grad-ink";
+  const glyph = YEAR_GLYPH[year] ?? `R${year}`;
+
+  const content = (
+    <>
+      {/* Huge decorative year glyph */}
+      <div
+        aria-hidden
+        className="album-glyph pointer-events-none absolute right-[-10%] top-[-12%] text-[160px] opacity-[0.18] sm:text-[180px]"
+      >
+        {glyph}
+      </div>
+      <div className="relative z-10 flex items-start justify-between">
+        <span className="glass-chip">
+          {template.filter.kind === "year" ? "公開問題" : "Mix"}
+        </span>
+        {locked ? (
+          <Lock className="h-4 w-4 opacity-85" />
+        ) : (
+          <PlayCircle className="h-5 w-5 opacity-90" />
+        )}
+      </div>
+      <div className="relative z-10 mt-auto space-y-1">
+        <div className="album-glyph text-[48px]">{label}</div>
+        <div className="text-[12px] font-medium opacity-90">
+          {template.count}問 · {template.durationMin}分
+        </div>
+        {!locked && (
+          <div>
+            <div className="cat-stripe">
+              <div
+                className="h-full bg-white"
+                style={{ width: `${Math.max(2, Math.min(100, coverage))}%` }}
+              />
+            </div>
+            <div className="mt-1 flex items-baseline justify-between text-[10.5px] opacity-90">
+              <span>収録 {imported}/{total}</span>
+              <span className="num font-medium">{coverage}%</span>
+            </div>
+          </div>
+        )}
+      </div>
+    </>
+  );
 
   if (locked) {
     return (
       <Link
         href="/pricing?reason=mock_exam"
-        className="ios-row w-full text-left active:bg-muted/60"
+        className={`album-tile ${grad} grayscale-[0.15]`}
       >
-        <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-muted">
-          <Lock className="h-4 w-4 text-muted-foreground" strokeWidth={2.2} />
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <form action={startMockExamFromTemplate} className="contents">
+      <input type="hidden" name="template" value={template.slug} />
+      <button type="submit" className={`album-tile ${grad} text-left`}>
+        {content}
+      </button>
+    </form>
+  );
+}
+
+function CategoryTile({
+  template,
+  grad,
+  label,
+  kana,
+  emoji,
+  locked,
+}: {
+  template: MockExamTemplate;
+  grad: string;
+  label: string;
+  kana: string;
+  emoji: string;
+  locked: boolean;
+}) {
+  const content = (
+    <>
+      <div className="relative z-10 flex items-start justify-between">
+        <span
+          aria-hidden
+          className="text-[44px] leading-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.25)]"
+        >
+          {emoji}
+        </span>
+        {locked ? (
+          <Lock className="h-4 w-4 opacity-85" />
+        ) : (
+          <PlayCircle className="h-5 w-5 opacity-90" />
+        )}
+      </div>
+      <div className="relative z-10 mt-auto">
+        <div className="text-[11px] font-semibold uppercase tracking-[0.14em] opacity-85">
+          {label}
         </div>
-        <div className="flex-1">
-          <div className="flex items-center gap-1.5 text-[15px] font-medium">
-            <span>{template.label}</span>
-            {template.badge && (
-              <span className="rounded-full bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground">
-                {template.badge}
-              </span>
-            )}
-          </div>
-          <div className="text-[12px] text-muted-foreground">
-            {template.count > maxSize
-              ? `最大${maxSize}問まで / 上位プランで解放`
-              : "上位プランで解放"}
-          </div>
+        <div className="mt-0.5 text-[22px] font-semibold tracking-tight">
+          {kana}
         </div>
-        <ChevronRight className="h-4 w-4 text-muted-foreground" />
+        <div className="mt-1 flex items-center gap-2 text-[11.5px] opacity-90">
+          <span className="glass-chip">
+            <Layers className="h-3 w-3" />
+            {template.count}問
+          </span>
+          <span className="glass-chip">
+            <Clock className="h-3 w-3" />
+            {template.durationMin}分
+          </span>
+        </div>
+      </div>
+    </>
+  );
+
+  if (locked) {
+    return (
+      <Link
+        href="/pricing?reason=mock_exam"
+        className={`album-tile ${grad} !aspect-[16/10] grayscale-[0.15]`}
+      >
+        {content}
       </Link>
     );
   }
@@ -261,38 +559,110 @@ function TemplateRow({
       <input type="hidden" name="template" value={template.slug} />
       <button
         type="submit"
-        className="ios-row w-full text-left active:bg-muted/60"
+        className={`album-tile ${grad} !aspect-[16/10] text-left`}
       >
-        <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-muted">
-          <ActionIcon className={`h-4 w-4 ${iconColor}`} strokeWidth={2.2} />
-        </div>
-        <div className="flex-1">
-          <div className="flex items-center gap-1.5 text-[15px] font-medium">
-            <span>{template.label}</span>
-            {template.badge && (
-              <span className="rounded-full bg-ios-blue/10 px-1.5 py-0.5 text-[10px] font-medium text-ios-blue">
-                {template.badge}
-              </span>
-            )}
-          </div>
-          <div className="text-[12px] text-muted-foreground">
-            {template.count}問 / {template.durationMin}分 · {template.description}
-          </div>
-        </div>
-        <ChevronRight className="h-4 w-4 text-muted-foreground" />
+        {content}
       </button>
     </form>
   );
 }
 
-function Rule({ text }: { text: string }) {
+function QuickSizeTile({
+  template,
+  locked,
+}: {
+  template: MockExamTemplate;
+  locked: boolean;
+}) {
+  const Icon = template.tier === "premium" ? Crown : Sparkles;
+  const grad =
+    template.count >= 200
+      ? "bg-grad-ink"
+      : template.count >= 150
+      ? "bg-grad-purple"
+      : "bg-grad-blue";
+
+  const body = (
+    <>
+      <div className="flex items-center justify-between">
+        <span
+          className={`flex h-10 w-10 items-center justify-center rounded-xl ${grad} text-white shadow-tile`}
+        >
+          <Icon className="h-5 w-5" strokeWidth={2.2} />
+        </span>
+        {locked && (
+          <span className="inline-flex items-center gap-1 rounded-full bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground">
+            <Lock className="h-3 w-3" />
+            {template.tier === "premium" ? "Premium" : "上位"}
+          </span>
+        )}
+      </div>
+      <div>
+        <div className="num text-[24px] font-semibold tracking-tight">
+          {template.count}
+          <span className="text-[14px] text-muted-foreground">問</span>
+        </div>
+        <div className="text-[12px] text-muted-foreground">
+          {template.durationMin}分 {template.badge && `· ${template.badge}`}
+        </div>
+      </div>
+    </>
+  );
+
+  if (locked) {
+    return (
+      <Link
+        href="/pricing?reason=mock_exam"
+        className="flex h-full flex-col gap-2 rounded-3xl bg-card p-4 opacity-75 shadow-surface ring-1 ring-black/5 transition-transform active:scale-[0.98] dark:ring-white/10"
+      >
+        {body}
+      </Link>
+    );
+  }
+
   return (
-    <div className="ios-row items-start">
-      <span className="mt-0.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-ios-gray2" />
-      <span className="text-[13px] text-muted-foreground">{text}</span>
+    <form action={startMockExamFromTemplate} className="contents">
+      <input type="hidden" name="template" value={template.slug} />
+      <button
+        type="submit"
+        className="flex h-full w-full flex-col gap-2 rounded-3xl bg-card p-4 text-left shadow-surface ring-1 ring-black/5 transition-transform active:scale-[0.98] dark:ring-white/10"
+      >
+        {body}
+      </button>
+    </form>
+  );
+}
+
+function ErrorBanner({
+  children,
+  tone = "yellow",
+}: {
+  children: React.ReactNode;
+  tone?: "yellow" | "red";
+}) {
+  const c =
+    tone === "red"
+      ? "bg-ios-red/10 text-ios-red"
+      : "bg-ios-yellow/10 text-ios-orange";
+  return (
+    <div
+      className={`rounded-2xl px-4 py-3 text-[13px] shadow-ios-sm ${c}`}
+    >
+      {children}
     </div>
   );
 }
+
+function RulePill({ children }: { children: React.ReactNode }) {
+  return (
+    <li className="flex items-start gap-2 rounded-xl bg-muted/60 px-3 py-2 text-[12.5px]">
+      <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+      <span>{children}</span>
+    </li>
+  );
+}
+
+// ---- Server actions -------------------------------------------------------
 
 async function startMockExam(formData: FormData): Promise<void> {
   "use server";

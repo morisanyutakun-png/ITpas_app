@@ -229,6 +229,83 @@
     font-variant-numeric: tabular-nums;
     font-feature-settings: "ss01" 1, "cv01" 1;
   }
+
+  /* ── Album-art tiles (toC catalog feel) ───────────────────────────── */
+
+  /* Square tile with a huge year/label as typographic art. */
+  .album-tile {
+    @apply relative flex aspect-[4/5] flex-col overflow-hidden rounded-3xl p-5 text-white shadow-hero transition-transform duration-200 ease-out active:scale-[0.98];
+  }
+  .album-tile::before {
+    /* Diagonal light sweep */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(130% 80% at 100% 0%, rgba(255,255,255,0.28), transparent 55%),
+      radial-gradient(100% 80% at 0% 100%, rgba(0,0,0,0.25), transparent 50%);
+    pointer-events: none;
+  }
+  .album-tile::after {
+    /* Film grain */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.16 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    mix-blend-mode: overlay;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  /* Oversized decorative year/label glyph inside album-tile. */
+  .album-glyph {
+    font-family: ui-serif, "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-weight: 700;
+    font-feature-settings: "palt" 1;
+    letter-spacing: -0.04em;
+    line-height: 0.82;
+  }
+
+  /* Chip used on album tiles. */
+  .glass-chip {
+    @apply inline-flex items-center gap-1 rounded-full bg-white/20 px-2 py-0.5 text-[10.5px] font-medium text-white ring-1 ring-inset ring-white/25 backdrop-blur;
+  }
+
+  /* Radial coverage ring — used on past-exam cards. */
+  .coverage-ring {
+    --p: 0;
+    --size: 56px;
+    --thick: 6px;
+    --track: rgba(255,255,255,0.22);
+    --fill: #ffffff;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 9999px;
+    background:
+      conic-gradient(var(--fill) calc(var(--p) * 1%), var(--track) 0);
+    display: grid;
+    place-items: center;
+  }
+  .coverage-ring::before {
+    content: "";
+    width: calc(var(--size) - var(--thick) * 2);
+    height: calc(var(--size) - var(--thick) * 2);
+    border-radius: 9999px;
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(4px);
+    grid-area: 1 / 1;
+  }
+  .coverage-ring > span {
+    grid-area: 1 / 1;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Big readable category stripe (for past-exam detail). */
+  .cat-stripe {
+    @apply flex h-1.5 w-full overflow-hidden rounded-full bg-white/15;
+  }
 }
 
 @layer utilities {

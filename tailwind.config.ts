@@ -101,6 +101,19 @@ const config: Config = {
         "grad-ocean":  "linear-gradient(135deg, #32ADE6 0%, #0A84FF 100%)",
         "grad-mono":   "linear-gradient(135deg, #1d1d1f 0%, #3c3c43 100%)",
         "grad-ink":    "linear-gradient(160deg, #111113 0%, #232327 60%, #111113 100%)",
+        // Year-themed palettes — used on past-exam "album-art" tiles.
+        "grad-r07":    "linear-gradient(150deg, #FF3B30 0%, #FF9500 55%, #FFD60A 100%)",
+        "grad-r06":    "linear-gradient(150deg, #5E5CE6 0%, #AF52DE 55%, #FF375F 100%)",
+        "grad-r05":    "linear-gradient(150deg, #00C7BE 0%, #32ADE6 55%, #5E5CE6 100%)",
+        "grad-r02":    "linear-gradient(150deg, #0A84FF 0%, #5856D6 55%, #1d1d1f 100%)",
+        "grad-r01":    "linear-gradient(150deg, #FF2D55 0%, #AF52DE 55%, #5E5CE6 100%)",
+        // Category palettes for strategy/management/technology split.
+        "grad-strategy":   "linear-gradient(140deg, #FF375F 0%, #AF52DE 100%)",
+        "grad-management": "linear-gradient(140deg, #FF9500 0%, #FFCC00 100%)",
+        "grad-technology": "linear-gradient(140deg, #00C7BE 0%, #0A84FF 100%)",
+        // Noise texture (CSS-only; adds subtle "magazine paper" feel on tiles).
+        "noise":
+          "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.35 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>\")",
       },
       fontSize: {
         // iOS HIG typography scale.

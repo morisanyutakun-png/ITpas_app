@@ -17,7 +17,8 @@
     "db:studio": "drizzle-kit studio",
     "seed": "tsx scripts/seed.ts",
     "validate:content": "tsx scripts/validate_structured.ts",
-    "ocr:pdf": "tsx scripts/extractPdfOcr.ts"
+    "ocr:pdf": "tsx scripts/extractPdfOcr.ts",
+    "scaffold:question": "tsx scripts/scaffoldQuestionFromOcr.ts"
   },
   "dependencies": {
     "@neondatabase/serverless": "^0.10.4",

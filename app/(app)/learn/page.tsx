@@ -1,5 +1,6 @@
 import Link from "next/link";
 import {
+  Archive,
   ChevronRight,
   Crosshair,
   ListChecks,
@@ -76,6 +77,13 @@ export default function LearnHubPage() {
             title="誤解パターン辞典"
             desc="ひっかけの正体を予習"
             href="/misconceptions"
+          />
+          <Row
+            icon={Archive}
+            tile="bg-grad-ink"
+            title="過去問アーカイブ"
+            desc="IPA公開問題の収録状況と回別模試"
+            href="/learn/past-exams"
           />
         </div>
       </section>

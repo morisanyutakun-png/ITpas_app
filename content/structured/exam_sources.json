@@ -1,0 +1,72 @@
+[
+  {
+    "slug": "r07",
+    "examYear": 7,
+    "examSeason": "annual",
+    "label": "令和7年度 ITパスポート試験 公開問題",
+    "shortLabel": "R7",
+    "issuer": "独立行政法人 情報処理推進機構 (IPA)",
+    "sourceUrl": "https://www3.jitec.ipa.go.jp/JitesCbt/html/openinfo/questions.html",
+    "sourceFilePath": "content/raw/past_exams/r07.pdf",
+    "extractedTextPath": "content/extracted/r07.txt",
+    "extractedPagesDir": "content/extracted/r07.pages",
+    "totalQuestions": 100,
+    "notes": "スキャンPDFをOCR抽出し、設問単位で構造化。原典はIPA公開PDF。"
+  },
+  {
+    "slug": "r06",
+    "examYear": 6,
+    "examSeason": "annual",
+    "label": "令和6年度 ITパスポート試験 公開問題",
+    "shortLabel": "R6",
+    "issuer": "独立行政法人 情報処理推進機構 (IPA)",
+    "sourceUrl": "https://www3.jitec.ipa.go.jp/JitesCbt/html/openinfo/questions.html",
+    "sourceFilePath": "content/raw/past_exams/r06.pdf",
+    "extractedTextPath": "content/extracted/r06.txt",
+    "extractedPagesDir": "content/extracted/r06.pages",
+    "totalQuestions": 100,
+    "notes": "スキャンPDFをOCR抽出。原典はIPA公開PDF。"
+  },
+  {
+    "slug": "r05",
+    "examYear": 5,
+    "examSeason": "annual",
+    "label": "令和5年度 ITパスポート試験 公開問題",
+    "shortLabel": "R5",
+    "issuer": "独立行政法人 情報処理推進機構 (IPA)",
+    "sourceUrl": "https://www3.jitec.ipa.go.jp/JitesCbt/html/openinfo/questions.html",
+    "sourceFilePath": "content/raw/past_exams/r05.pdf",
+    "extractedTextPath": "content/extracted/r05.txt",
+    "extractedPagesDir": "content/extracted/r05.pages",
+    "totalQuestions": 100,
+    "notes": "スキャンPDFをOCR抽出。原典はIPA公開PDF。"
+  },
+  {
+    "slug": "r02_aki",
+    "examYear": 2,
+    "examSeason": "autumn",
+    "label": "令和2年度 秋期 ITパスポート試験 公開問題",
+    "shortLabel": "R2秋",
+    "issuer": "独立行政法人 情報処理推進機構 (IPA)",
+    "sourceUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020r02_2/2020r02a_ip_qs.pdf",
+    "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+    "extractedTextPath": "content/extracted/r02_aki.txt",
+    "extractedPagesDir": "content/extracted/r02_aki.pages",
+    "totalQuestions": 100,
+    "notes": "スキャンPDFをOCR抽出。原典はIPA公開PDF。"
+  },
+  {
+    "slug": "r01_aki",
+    "examYear": 1,
+    "examSeason": "autumn",
+    "label": "令和元年度 秋期 ITパスポート試験 公開問題",
+    "shortLabel": "令和元年秋",
+    "issuer": "独立行政法人 情報処理推進機構 (IPA)",
+    "sourceUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/_index_mondai2_ip.html",
+    "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+    "extractedTextPath": "content/extracted/r01_aki.txt",
+    "extractedPagesDir": "content/extracted/r01_aki.pages",
+    "totalQuestions": 100,
+    "notes": "スキャンPDFをOCR抽出。原典はIPA公開PDF。"
+  }
+]

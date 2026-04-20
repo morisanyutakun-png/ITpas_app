@@ -7,6 +7,7 @@ export type SelectorFilters = {
   misconceptionSlugs?: string[];
   examYear?: number;
   formatType?: string;
+  majorCategory?: "strategy" | "management" | "technology";
 };
 
 /**
@@ -49,6 +50,7 @@ export async function selectQuestionIds(input: {
         (${filters.examYear ?? null}::int IS NULL OR q.exam_year = ${filters.examYear ?? null})
         AND (${minYear}::int IS NULL OR q.exam_year >= ${minYear}::int)
         AND (${filters.formatType ?? null}::text IS NULL OR q.format_type::text = ${filters.formatType ?? null})
+        AND (${filters.majorCategory ?? null}::text IS NULL OR q.major_category::text = ${filters.majorCategory ?? null})
         AND (
           ${topicCsv}::text = ''
           OR EXISTS (

@@ -5,6 +5,7 @@ import { eq, sql } from "drizzle-orm";
 import { db } from "@/db/client";
 import { sessions } from "@/db/schema";
 import { getCurrentUser } from "@/lib/currentUser";
+import { getMockExamTemplate } from "@/lib/examSources";
 import {
   hasFeature,
   isYearAllowed,
@@ -116,6 +117,39 @@ export async function createSessionAction(input: {
     .returning({ id: sessions.id });
 
   redirect(`/learn/session/${inserted[0].id}`);
+}
+
+/**
+ * Create a mock exam session from a named template (see
+ * `content/structured/mock_exam_templates.json`). Delegates to
+ * `createSessionAction` after translating the template into selector filters.
+ */
+export async function createMockExamFromTemplateAction(input: {
+  templateSlug: string;
+}): Promise<CreateSessionResult | void> {
+  const tpl = getMockExamTemplate(input.templateSlug);
+  if (!tpl) {
+    return {
+      ok: false,
+      reason: "no_questions_found",
+      plan: "free",
+      detail: "unknown_template",
+    };
+  }
+
+  const filters: SelectorFilters = {};
+  if (tpl.filter.kind === "year") {
+    filters.examYear = tpl.filter.examYear;
+  } else if (tpl.filter.kind === "category") {
+    filters.majorCategory = tpl.filter.majorCategory;
+  }
+
+  return createSessionAction({
+    mode: "mixed",
+    filters,
+    count: tpl.count,
+    mockExam: true,
+  });
 }
 
 export async function finishSessionAction(sessionId: string) {

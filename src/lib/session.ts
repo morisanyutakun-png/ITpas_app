@@ -1,7 +1,17 @@
 import { cookies } from "next/headers";
 
-const SESSION_COOKIE = "itpas_session";
-const SESSION_MAX_AGE_SEC = 60 * 60 * 24 * 30; // 30 days
+export const SESSION_COOKIE = "itpas_session";
+export const SESSION_MAX_AGE_SEC = 60 * 60 * 24 * 30; // 30 days
+
+export function sessionCookieOptions() {
+  return {
+    httpOnly: true,
+    sameSite: "lax" as const,
+    secure: process.env.NODE_ENV === "production",
+    maxAge: SESSION_MAX_AGE_SEC,
+    path: "/",
+  };
+}
 
 export type SessionPayload = {
   uid: string;        // users.id
@@ -99,13 +109,7 @@ export async function verifySession(token: string): Promise<SessionPayload | nul
 
 export async function setSessionCookie(token: string) {
   const jar = await cookies();
-  jar.set(SESSION_COOKIE, token, {
-    httpOnly: true,
-    sameSite: "lax",
-    secure: process.env.NODE_ENV === "production",
-    maxAge: SESSION_MAX_AGE_SEC,
-    path: "/",
-  });
+  jar.set(SESSION_COOKIE, token, sessionCookieOptions());
 }
 
 export async function clearSessionCookie() {

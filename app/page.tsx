@@ -1,9 +1,145 @@
 import Link from "next/link";
-import { ArrowRight, Skull, Target, BookOpen, Zap, Check, X } from "lucide-react";
+import { ArrowRight, Skull, Target, Zap, Check, X, Flame, Bookmark, Compass, PlayCircle } from "lucide-react";
+import { readCurrentUser } from "@/lib/currentUser";
+import { isPro } from "@/lib/plan";
+import { getLastAttempt, getPersonalSummary } from "@/server/queries/personal";
+import { getRecommendation } from "@/server/queries/history";
 
-export default function HomePage() {
+export const dynamic = "force-dynamic";
+
+export default async function HomePage() {
+  const user = await readCurrentUser();
+  const showPersonal = !!user?.isSignedIn;
+  const [summary, last, rec] = showPersonal
+    ? await Promise.all([
+        getPersonalSummary(user.id),
+        getLastAttempt(user.id),
+        getRecommendation(user.id),
+      ])
+    : [null, null, null];
+  const pro = isPro(user);
+
   return (
     <div className="space-y-16">
+      {showPersonal && summary && (
+        <section className="rounded-3xl border-2 border-slate-200 bg-white p-6 shadow-sm">
+          <div className="flex items-center justify-between gap-3 mb-4">
+            <div>
+              <div className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                こんにちは、{user.displayName ?? user.email?.split("@")[0] ?? "学習者"}さん
+              </div>
+              <div className="text-lg font-bold text-slate-900">
+                {pro ? "Proプランで進行中" : "Freeプランで進行中"}
+              </div>
+            </div>
+            {!pro && (
+              <Link
+                href="/pricing"
+                className="inline-flex items-center gap-1 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 px-3 py-1.5 text-xs font-bold text-white shadow"
+              >
+                <Zap className="h-3 w-3" />
+                Proへ
+              </Link>
+            )}
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <MiniStat icon={Flame} tone="rose" label="連続学習" value={`${summary.streakDays}日`} />
+            <MiniStat
+              icon={Target}
+              tone="violet"
+              label="累計回答"
+              value={summary.totalAttempts.toString()}
+            />
+            <MiniStat
+              icon={Check}
+              tone="emerald"
+              label="正答率"
+              value={
+                summary.totalAttempts > 0
+                  ? `${Math.round((summary.correctAttempts / summary.totalAttempts) * 100)}%`
+                  : "—"
+              }
+            />
+            <MiniStat
+              icon={Bookmark}
+              tone="amber"
+              label="保存した問題"
+              value={summary.bookmarkCount.toString()}
+            />
+          </div>
+
+          <div className="mt-5 grid md:grid-cols-2 gap-3">
+            {last && (
+              <Link
+                href={
+                  last.sessionId
+                    ? `/learn/session/${last.sessionId}`
+                    : `/learn/questions/${last.questionId}`
+                }
+                className="group flex items-center gap-3 rounded-xl border-2 border-slate-200 bg-slate-50 p-4 transition hover:border-slate-400"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-900 text-white">
+                  <PlayCircle className="h-5 w-5" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                    続きから
+                  </div>
+                  <div className="text-sm font-bold text-slate-900 line-clamp-1">
+                    {last.sessionId ? "前回のセッションへ戻る" : "直前に解いた問題へ"}
+                  </div>
+                </div>
+                <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-slate-700" />
+              </Link>
+            )}
+            {rec && (
+              <Link
+                href={`/learn/session/new?mode=topic&topic=${rec.slug}&count=5`}
+                className="group flex items-center gap-3 rounded-xl border-2 border-violet-200 bg-gradient-to-br from-violet-50 to-white p-4 transition hover:border-violet-400"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-violet-500 to-fuchsia-500 text-white">
+                  <Compass className="h-5 w-5" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-xs font-bold uppercase tracking-wider text-violet-700">
+                    {rec.reason} — おすすめ5問
+                  </div>
+                  <div className="text-sm font-bold text-slate-900 line-clamp-1">
+                    {rec.title}
+                  </div>
+                </div>
+                <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-violet-700" />
+              </Link>
+            )}
+          </div>
+        </section>
+      )}
+
+      {!showPersonal && (
+        <section className="rounded-3xl border-2 border-amber-200 bg-gradient-to-br from-amber-50 to-white p-5 shadow-sm">
+          <div className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500 text-white">
+              <Zap className="h-5 w-5" />
+            </div>
+            <div className="flex-1">
+              <div className="text-sm font-bold text-slate-900">
+                Googleでログインすると端末をまたいで進捗保存
+              </div>
+              <div className="text-xs text-slate-600">
+                ブックマーク / 連続学習日数 / 弱点レコメンド / 続きから再開
+              </div>
+            </div>
+            <Link
+              href="/api/auth/google/login?returnTo=/"
+              className="inline-flex items-center gap-1 rounded-lg bg-slate-900 px-4 py-2 text-sm font-bold text-white"
+            >
+              ログイン
+            </Link>
+          </div>
+        </section>
+      )}
+
       {/* Hero */}
       <section className="relative overflow-hidden rounded-3xl border bg-gradient-to-br from-slate-900 via-slate-800 to-violet-900 px-6 py-12 md:px-12 md:py-16 text-white shadow-xl">
         <div className="absolute right-0 top-0 h-64 w-64 rounded-full bg-amber-400/20 blur-3xl" />
@@ -162,6 +298,36 @@ function SampleChoice({
           </div>
         )}
       </div>
+    </div>
+  );
+}
+
+function MiniStat({
+  icon: Icon,
+  tone,
+  label,
+  value,
+}: {
+  icon: typeof Flame;
+  tone: "violet" | "emerald" | "rose" | "amber";
+  label: string;
+  value: string;
+}) {
+  const palette = {
+    violet: "bg-violet-100 text-violet-700",
+    emerald: "bg-emerald-100 text-emerald-700",
+    rose: "bg-rose-100 text-rose-700",
+    amber: "bg-amber-100 text-amber-700",
+  }[tone];
+  return (
+    <div className="rounded-xl border bg-slate-50 p-3">
+      <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-slate-500">
+        <span className={`flex h-5 w-5 items-center justify-center rounded-md ${palette}`}>
+          <Icon className="h-3 w-3" />
+        </span>
+        {label}
+      </div>
+      <div className="mt-1 text-xl font-black text-slate-900">{value}</div>
     </div>
   );
 }

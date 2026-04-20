@@ -2,10 +2,10 @@ import { cookies } from "next/headers";
 import { and, eq, isNull, sql } from "drizzle-orm";
 import { db } from "@/db/client";
 import { attempts, bookmarks, notes, sessions, users } from "@/db/schema";
-import { readSessionCookie, signSession, setSessionCookie } from "@/lib/session";
+import { readSessionCookie, signSession } from "@/lib/session";
 import type { Plan } from "@/lib/plan";
 
-const ANON_COOKIE = "itpas_anon_key";
+export const ANON_COOKIE = "itpas_anon_key";
 const ANON_MAX_AGE = 60 * 60 * 24 * 365 * 2;
 
 export type CurrentUser = {
@@ -106,15 +106,20 @@ export async function readCurrentUser(): Promise<CurrentUser | null> {
  * Sign in with Google. Creates or updates the users row keyed by google_id.
  * If an anon row exists for this browser, its attempts/sessions/bookmarks/notes
  * are merged into the Google-linked row so signup does not erase progress.
+ *
+ * Returns the signed session token — the caller is responsible for setting it
+ * on the outgoing response (e.g. NextResponse.cookies.set). We don't set it
+ * here because cookie mutations via `cookies()` don't reliably propagate to
+ * `NextResponse.redirect()` responses in Next.js 15.
  */
 export async function signInWithGoogle(input: {
   sub: string;
   email: string;
   name?: string;
   image?: string;
-}): Promise<CurrentUser> {
-  const jar = await cookies();
-  const anon = jar.get(ANON_COOKIE)?.value ?? null;
+  anonKeyFromCookie: string | null;
+}): Promise<{ user: CurrentUser; sessionToken: string }> {
+  const anon = input.anonKeyFromCookie;
 
   const existingByGoogle = await db.query.users.findFirst({
     where: eq(users.googleId, input.sub),
@@ -186,20 +191,15 @@ export async function signInWithGoogle(input: {
     userRow = inserted[0];
   }
 
-  // Write session cookie.
-  const token = await signSession({
+  const sessionToken = await signSession({
     uid: userRow.id,
     sub: input.sub,
     email: input.email,
     name: input.name,
     image: input.image,
   });
-  await setSessionCookie(token);
 
-  // Clear the anon cookie — the user is now identified.
-  jar.delete(ANON_COOKIE);
-
-  return toCurrent(userRow);
+  return { user: toCurrent(userRow), sessionToken };
 }
 
 async function mergeUser(fromUserId: string, toUserId: string) {

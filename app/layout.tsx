@@ -41,6 +41,9 @@ export const metadata: Metadata = {
   },
 };
 
+// The header reads the session/anon cookie — keep the layout dynamic.
+export const dynamic = "force-dynamic";
+
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
@@ -85,6 +88,7 @@ export default function RootLayout({
               <NavLink href="/misconceptions" label="誤解" />
               <NavLink href="/dashboard" label="DB" />
               <NavLink href="/history" label="履歴" />
+              <NavLink href="/bookmarks" label="保存" />
               <NavLink href="/pricing" label="料金" />
             </nav>
             <Suspense fallback={null}>

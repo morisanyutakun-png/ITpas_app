@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Check } from "lucide-react";
+import { ArrowUpRight, ChevronRight, Circle, Sparkles } from "lucide-react";
 import type {
   RoadmapMajor,
   RoadmapMinor,
@@ -11,40 +11,40 @@ import type {
 const MAJOR_VISUAL: Record<
   string,
   {
-    bg: string;         // gradient background class
-    spineColor: string; // fill color for progress spine
-    spineGlow: string;  // matching glow
+    hue: string;      // ring hue + accents (hex)
+    hueDim: string;   // track hue (hex, ~15% opacity look)
+    grad: string;     // small accent tile gradient class
+    label: string;    // kicker label
   }
 > = {
   strategy: {
-    bg: "bg-grad-purple",
-    spineColor: "linear-gradient(to bottom, #FFB3FF, #FFE9A8)",
-    spineGlow: "shadow-[0_0_14px_rgba(255,200,140,0.55)]",
+    hue: "#FF375F",
+    hueDim: "rgba(255,55,95,0.14)",
+    grad: "bg-grad-strategy",
+    label: "STRATEGY",
   },
   management: {
-    bg: "bg-grad-ocean",
-    spineColor: "linear-gradient(to bottom, #7BE0FF, #B9FBE0)",
-    spineGlow: "shadow-[0_0_14px_rgba(123,224,255,0.55)]",
+    hue: "#FF9500",
+    hueDim: "rgba(255,149,0,0.14)",
+    grad: "bg-grad-management",
+    label: "MANAGEMENT",
   },
   technology: {
-    bg: "bg-grad-green",
-    spineColor: "linear-gradient(to bottom, #9BF7D8, #FFF59D)",
-    spineGlow: "shadow-[0_0_14px_rgba(155,247,216,0.55)]",
+    hue: "#0A84FF",
+    hueDim: "rgba(10,132,255,0.14)",
+    grad: "bg-grad-technology",
+    label: "TECHNOLOGY",
   },
 };
 
 /**
- * Home-screen learning roadmap.
+ * Home roadmap — Apple Fitness-style.
  *
- * A vertical skill tree per major category: a central spine that lights
- * up with progress, with topic nodes branching left/right on alternating
- * rows. Minor-area pills divide the spine into readable chapters.
+ *   1. Hero: three nested activity rings (one per major) + macro summary.
+ *   2. Editorial chapter cards per major with minor-area breakdowns.
  *
- * Design choices for readability:
- *   • Two-column alternation (not a continuous wave) — easy to scan.
- *   • Labels get room, wrap up to 2 lines, never truncate aggressively.
- *   • Node badges carry the state visually (size, fill, glyph).
- *   • Minor pills interrupt the spine as horizontal dividers.
+ * No more flat gradient walls — each component earns its visual weight with
+ * real data structure (ring fill, segmented mastery bar, next-topic pick).
  */
 export function Roadmap({
   majors,
@@ -53,461 +53,412 @@ export function Roadmap({
   majors: RoadmapMajor[];
   signedIn: boolean;
 }) {
+  const totals = majors.reduce(
+    (a, m) => ({
+      topics: a.topics + m.topicCount,
+      mastered: a.mastered + m.masteredCount,
+      attempted: a.attempted + m.attemptedCount,
+    }),
+    { topics: 0, mastered: 0, attempted: 0 }
+  );
+  const overallPct =
+    totals.topics > 0 ? Math.round((totals.mastered / totals.topics) * 100) : 0;
+
   return (
-    <section className="space-y-4">
+    <section className="space-y-5">
       <div className="flex items-end justify-between px-1">
         <div>
-          <div className="text-[12px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-            Your Roadmap
-          </div>
-          <div className="mt-0.5 text-[22px] font-semibold tracking-tight">
-            学びの星座
+          <div className="kicker">Your Roadmap</div>
+          <div className="mt-2 text-[22px] font-semibold tracking-tight">
+            学習の全体像
           </div>
           <div className="text-[12.5px] text-muted-foreground">
-            論点を点で結ぶ。進めるほど経路が光る。
+            3大領域の進捗とアクティブな論点
           </div>
         </div>
         <Link
           href="/topics"
-          className="text-[13px] font-semibold text-primary transition-opacity hover:opacity-80"
+          className="inline-flex items-center gap-0.5 text-[12px] font-medium text-muted-foreground active:opacity-70"
         >
-          すべて
+          すべて <ChevronRight className="h-3.5 w-3.5" />
         </Link>
       </div>
 
-      <div className="space-y-5">
+      <RingsHero
+        majors={majors}
+        overallPct={overallPct}
+        totals={totals}
+        signedIn={signedIn}
+      />
+
+      <div className="space-y-3">
         {majors.map((m) => (
-          <Constellation key={m.major} major={m} signedIn={signedIn} />
+          <ChapterCard key={m.major} major={m} signedIn={signedIn} />
         ))}
       </div>
-
-      <Legend signedIn={signedIn} />
     </section>
   );
 }
 
-// ── Per-major constellation card ──────────────────────────────────────────
+// ── Rings hero (Apple Fitness-style) ─────────────────────────────────────
 
-function Constellation({
+function RingsHero({
+  majors,
+  overallPct,
+  totals,
+  signedIn,
+}: {
+  majors: RoadmapMajor[];
+  overallPct: number;
+  totals: { topics: number; mastered: number; attempted: number };
+  signedIn: boolean;
+}) {
+  const size = 190;
+  const stroke = 14;
+  const gap = 4;
+
+  return (
+    <div className="editorial-card p-5 sm:p-6">
+      <div className="relative z-10 grid gap-6 sm:grid-cols-[auto_1fr] sm:items-center">
+        <div className="relative mx-auto" style={{ width: size, height: size }}>
+          <svg
+            width={size}
+            height={size}
+            viewBox={`0 0 ${size} ${size}`}
+            className="-rotate-90"
+          >
+            {majors.map((m, i) => {
+              const v = MAJOR_VISUAL[m.major];
+              const r = (size - stroke) / 2 - i * (stroke + gap);
+              if (r <= 0) return null;
+              const c = 2 * Math.PI * r;
+              const pct =
+                m.topicCount > 0 ? m.masteredCount / m.topicCount : 0;
+              const dash = pct * c;
+              return (
+                <g key={m.major}>
+                  <circle
+                    cx={size / 2}
+                    cy={size / 2}
+                    r={r}
+                    fill="none"
+                    stroke={v.hueDim}
+                    strokeWidth={stroke}
+                  />
+                  <circle
+                    cx={size / 2}
+                    cy={size / 2}
+                    r={r}
+                    fill="none"
+                    stroke={v.hue}
+                    strokeWidth={stroke}
+                    strokeLinecap="round"
+                    strokeDasharray={`${dash} ${c}`}
+                    style={{
+                      filter: `drop-shadow(0 0 6px ${v.hue}33)`,
+                      transition: "stroke-dasharray 700ms ease-out",
+                    }}
+                  />
+                </g>
+              );
+            })}
+          </svg>
+          <div className="absolute inset-0 grid place-items-center text-center">
+            <div>
+              <div className="num text-[30px] font-semibold leading-none tracking-tight">
+                {overallPct}
+                <span className="ml-0.5 text-[13px] font-medium text-muted-foreground">
+                  %
+                </span>
+              </div>
+              <div className="mt-0.5 text-[9.5px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                Mastery
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <div className="space-y-2">
+            {majors.map((m) => {
+              const v = MAJOR_VISUAL[m.major];
+              const pct =
+                m.topicCount > 0
+                  ? Math.round((m.masteredCount / m.topicCount) * 100)
+                  : 0;
+              return (
+                <div
+                  key={m.major}
+                  className="flex items-center gap-3"
+                >
+                  <span
+                    aria-hidden
+                    className="h-2.5 w-2.5 shrink-0 rounded-full"
+                    style={{
+                      background: v.hue,
+                      boxShadow: `0 0 8px ${v.hue}66`,
+                    }}
+                  />
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-baseline justify-between text-[12.5px]">
+                      <span className="font-medium">{m.label}</span>
+                      <span className="num text-muted-foreground">
+                        <span className="font-semibold text-foreground">
+                          {m.masteredCount}
+                        </span>
+                        {" / "}
+                        {m.topicCount}
+                      </span>
+                    </div>
+                    <div
+                      className="mt-1 h-1 overflow-hidden rounded-full"
+                      style={{ background: v.hueDim }}
+                    >
+                      <div
+                        className="h-full rounded-full"
+                        style={{
+                          width: `${Math.max(2, pct)}%`,
+                          background: v.hue,
+                        }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {signedIn && (
+            <div className="flex items-center gap-4 border-t border-border pt-3 text-[11px]">
+              <SummaryCell
+                label="論点"
+                value={totals.topics}
+                accent="text-foreground"
+              />
+              <span aria-hidden className="h-6 w-px bg-border" />
+              <SummaryCell
+                label="学習中"
+                value={totals.attempted - totals.mastered}
+                accent="text-ios-orange"
+              />
+              <span aria-hidden className="h-6 w-px bg-border" />
+              <SummaryCell
+                label="習熟"
+                value={totals.mastered}
+                accent="text-ios-green"
+              />
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function SummaryCell({
+  label,
+  value,
+  accent,
+}: {
+  label: string;
+  value: number;
+  accent: string;
+}) {
+  return (
+    <div className="flex-1">
+      <div className="text-[10px] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
+        {label}
+      </div>
+      <div className={`num mt-0.5 text-[18px] font-semibold tracking-tight ${accent}`}>
+        {value}
+      </div>
+    </div>
+  );
+}
+
+// ── Chapter card per major ──────────────────────────────────────────────
+
+function ChapterCard({
   major,
   signedIn,
 }: {
   major: RoadmapMajor;
   signedIn: boolean;
 }) {
-  const v = MAJOR_VISUAL[major.major] ?? MAJOR_VISUAL.technology;
-
-  // Flatten topics while remembering where each minor starts.
+  const v = MAJOR_VISUAL[major.major];
   const flat: RoadmapTopic[] = major.minors.flatMap((m) => m.topics);
-  const totalNodes = flat.length;
+  const pct =
+    major.topicCount > 0
+      ? Math.round((major.masteredCount / major.topicCount) * 100)
+      : 0;
 
-  // Progress = ratio of 定着+習熟 (level ≥ 2) nodes.
-  const litCount = flat.filter((t) => t.level >= 2).length;
-  const progressPct = totalNodes > 0 ? litCount / totalNodes : 0;
-
-  // "You are here" — first non-mastered node index, or last if all mastered.
-  let currentIdx = -1;
-  if (signedIn && totalNodes > 0) {
-    const firstNonMastered = flat.findIndex((n) => n.level < 3);
-    currentIdx = firstNonMastered === -1 ? totalNodes - 1 : firstNonMastered;
-  }
-
-  const mastered = major.masteredCount;
-  const attempted = major.attemptedCount;
-  const overallPct =
-    major.topicCount === 0
-      ? 0
-      : Math.round(((attempted + mastered) / (major.topicCount * 2)) * 100);
+  // Next topic pick: first topic with level < 3, lowest correctRate if any,
+  // else the first attempted one. This is the editorial "up next" suggestion.
+  const next =
+    flat
+      .filter((t) => t.level < 3)
+      .sort((a, b) => {
+        if (a.attempted === 0 && b.attempted > 0) return 1; // prefer attempted first
+        if (b.attempted === 0 && a.attempted > 0) return -1;
+        return a.correctRate - b.correctRate;
+      })[0] ?? flat[0];
 
   return (
-    <div className={`relative overflow-hidden rounded-3xl text-white shadow-hero ${v.bg}`}>
-      {/* Ambient glow */}
-      <div className="pointer-events-none absolute -right-16 -top-24 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-white/5 blur-3xl" />
-      <Starfield />
-
-      {/* Header */}
-      <div className="relative z-10 flex items-start gap-4 p-5">
-        <div className="min-w-0 flex-1">
-          <div className="text-[11px] font-semibold uppercase tracking-[0.14em] opacity-75">
-            {major.minors.length} areas · {totalNodes} topics
+    <div className="surface-card overflow-hidden">
+      {/* Header: color bar + name + big number */}
+      <div className="relative flex items-center gap-4 p-5">
+        <div
+          aria-hidden
+          className="absolute inset-y-3 left-0 w-1 rounded-r-full"
+          style={{ background: v.hue }}
+        />
+        <div className="min-w-0 flex-1 pl-2">
+          <div
+            className="text-[10.5px] font-semibold uppercase tracking-[0.16em]"
+            style={{ color: v.hue }}
+          >
+            {v.label} · {major.minors.length} areas
           </div>
-          <div className="mt-0.5 text-[20px] font-semibold leading-tight tracking-tight">
+          <div className="mt-1 text-[22px] font-semibold leading-tight tracking-tight">
             {major.label}
           </div>
-          <div className="mt-0.5 text-[12.5px] opacity-85">{major.intro}</div>
+          <div className="text-[12px] text-muted-foreground">
+            {major.intro}
+          </div>
         </div>
         {signedIn && (
           <div className="text-right">
             <div className="num text-[26px] font-semibold leading-none tracking-tight">
-              {overallPct}
-              <span className="ml-0.5 text-[11px] font-medium opacity-70">%</span>
+              {pct}
+              <span className="ml-0.5 text-[12px] font-medium text-muted-foreground">
+                %
+              </span>
             </div>
-            <div className="text-[9.5px] font-semibold uppercase tracking-[0.14em] opacity-70">
-              習熟度
+            <div className="text-[9.5px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+              Mastery
             </div>
           </div>
         )}
       </div>
 
-      {/* Spine + nodes */}
-      <div className="relative z-10 px-3 pb-2 sm:px-6">
-        {/* Background spine */}
-        <div className="pointer-events-none absolute left-1/2 top-0 bottom-0 w-[2px] -translate-x-1/2">
-          <div
-            className="absolute inset-0 bg-gradient-to-b from-white/25 via-white/10 to-transparent"
-            style={{ maskImage: "linear-gradient(to bottom, black, black, transparent)" }}
-          />
-          {/* Lit progress spine */}
-          {progressPct > 0 && (
-            <div
-              className={`absolute inset-x-0 top-0 rounded-full ${v.spineGlow}`}
-              style={{
-                height: `${progressPct * 100}%`,
-                background: v.spineColor,
-              }}
-            />
-          )}
-        </div>
-
-        {/* Render minors */}
-        <div className="relative">
-          {major.minors.map((minor, mi) => {
-            const baseIdx = major.minors
-              .slice(0, mi)
-              .reduce((n, mm) => n + mm.topics.length, 0);
-            return (
-              <MinorBlock
-                key={`${minor.minorTopic}-${mi}`}
-                minor={minor}
-                baseIdx={baseIdx}
-                currentIdx={currentIdx}
-                signedIn={signedIn}
-                first={mi === 0}
-              />
-            );
-          })}
-        </div>
+      {/* Minor areas — segmented mastery bar */}
+      <div className="space-y-2.5 border-t border-border px-5 py-4">
+        {major.minors.map((minor) => (
+          <MinorRow key={minor.minorTopic} minor={minor} hue={v.hue} />
+        ))}
       </div>
 
-      {/* Footer stats */}
-      {signedIn && (
-        <div className="relative z-10 mt-1 grid grid-cols-3 gap-3 border-t border-white/10 bg-black/10 px-5 py-4 text-[11px]">
-          <FooterCell label="習熟" value={`${mastered}`} accent="text-white" />
-          <FooterCell
-            label="学習中"
-            value={`${Math.max(0, attempted - mastered)}`}
-            accent="text-white"
-          />
-          <FooterCell
-            label="未挑戦"
-            value={`${Math.max(0, major.topicCount - attempted)}`}
-            accent="text-white/75"
-          />
-        </div>
+      {/* Footer: up-next topic CTA */}
+      {signedIn && next && (
+        <Link
+          href={`/learn/session/new?mode=topic&topic=${next.slug}&count=5`}
+          className="group flex items-center gap-3 border-t border-border bg-muted/40 px-5 py-4 transition-colors hover:bg-muted/70"
+        >
+          <span
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-white shadow-tile"
+            style={{ background: v.hue }}
+          >
+            <Sparkles className="h-4 w-4" strokeWidth={2.4} />
+          </span>
+          <div className="min-w-0 flex-1">
+            <div
+              className="text-[10.5px] font-semibold uppercase tracking-[0.12em]"
+              style={{ color: v.hue }}
+            >
+              Up Next · 5問で攻める
+            </div>
+            <div className="truncate text-[14.5px] font-semibold">
+              {next.title}
+            </div>
+            {next.attempted > 0 ? (
+              <div className="text-[11px] text-muted-foreground">
+                正答率 {Math.round(next.correctRate * 100)}% · {next.attempted}問
+              </div>
+            ) : (
+              <div className="text-[11px] text-muted-foreground">未挑戦</div>
+            )}
+          </div>
+          <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        </Link>
       )}
     </div>
   );
 }
 
-// ── Minor block: divider pill + its topic rows ────────────────────────────
-
-function MinorBlock({
+function MinorRow({
   minor,
-  baseIdx,
-  currentIdx,
-  signedIn,
-  first,
+  hue,
 }: {
   minor: RoadmapMinor;
-  baseIdx: number;
-  currentIdx: number;
-  signedIn: boolean;
-  first: boolean;
+  hue: string;
 }) {
+  const topics = minor.topics;
+  const total = topics.length;
   return (
     <div>
-      {/* Chapter marker */}
-      <div className={`relative flex items-center justify-center ${first ? "pt-1" : "pt-4"} pb-1`}>
-        {/* Horizontal accent stubs mask the spine */}
-        <div className="relative inline-flex items-center gap-2 rounded-full bg-white/12 px-3 py-1 text-[10.5px] font-semibold uppercase tracking-[0.14em] ring-1 ring-inset ring-white/25 backdrop-blur">
-          <span>{minor.minorTopic}</span>
-          {signedIn && minor.topicCount > 0 && (
-            <span className="inline-flex items-center gap-0.5">
-              {Array.from({ length: minor.topicCount }).map((_, i) => (
-                <span
-                  key={i}
-                  className={`h-1 w-1 rounded-full ${
-                    i < minor.masteredCount ? "bg-white" : "bg-white/35"
-                  }`}
-                />
-              ))}
+      <div className="flex items-baseline justify-between">
+        <div className="flex min-w-0 items-center gap-1.5">
+          <span className="truncate text-[12.5px] font-medium">
+            {minor.minorTopic}
+          </span>
+          {minor.masteredCount === total && total > 0 && (
+            <span
+              className="inline-flex h-4 items-center gap-0.5 rounded-full px-1.5 text-[9px] font-semibold uppercase tracking-wider text-white"
+              style={{ background: hue }}
+            >
+              Clear
             </span>
           )}
         </div>
+        <div className="num text-[10.5px] text-muted-foreground">
+          <span className="font-semibold text-foreground">
+            {minor.masteredCount}
+          </span>
+          {" / "}
+          {total}
+        </div>
       </div>
-
-      {/* Topic rows */}
-      <div>
-        {minor.topics.map((topic, i) => {
-          const absoluteIdx = baseIdx + i;
-          const side: "left" | "right" = absoluteIdx % 2 === 0 ? "left" : "right";
-          return (
-            <TopicRow
-              key={topic.slug}
-              topic={topic}
-              side={side}
-              signedIn={signedIn}
-              current={absoluteIdx === currentIdx && topic.level < 3}
-            />
-          );
-        })}
+      {/* Segmented bar — one tick per topic. */}
+      <div className="mt-1 flex gap-[3px]">
+        {topics.map((t) => (
+          <LevelTick key={t.slug} level={t.level} hue={hue} slug={t.slug} />
+        ))}
       </div>
     </div>
   );
 }
 
-// ── Topic row: label | node | label (grid with stubs) ────────────────────
-
-function TopicRow({
-  topic,
-  side,
-  signedIn,
-  current,
+function LevelTick({
+  level,
+  hue,
+  slug,
 }: {
-  topic: RoadmapTopic;
-  side: "left" | "right";
-  signedIn: boolean;
-  current: boolean;
+  level: 0 | 1 | 2 | 3;
+  hue: string;
+  slug: string;
 }) {
+  // Each tick is a link to a 5-problem topic session.
+  const style =
+    level === 3
+      ? { background: hue, opacity: 1 }
+      : level === 2
+      ? { background: hue, opacity: 0.55 }
+      : level === 1
+      ? { background: hue, opacity: 0.28 }
+      : { background: "hsl(var(--muted))" };
   return (
     <Link
-      href={`/learn/session/new?mode=topic&topic=${topic.slug}&count=5`}
-      className="group relative grid min-h-[62px] grid-cols-[1fr_40px_1fr] items-center transition-transform active:scale-[0.99]"
+      href={`/learn/session/new?mode=topic&topic=${slug}&count=5`}
+      className="group/tick relative flex-1 overflow-hidden rounded-full"
+      style={{ height: 6 }}
     >
-      {/* Left label */}
-      <div
-        className={`flex items-center justify-end pr-2 ${
-          side === "left" ? "" : "pointer-events-none opacity-0"
-        }`}
-      >
-        <TopicLabel topic={topic} align="right" signedIn={signedIn} />
-      </div>
-
-      {/* Node column */}
-      <div className="relative flex h-full items-center justify-center">
-        {/* Branch stub — horizontal line from node outward to label */}
-        <div
-          className={`absolute top-1/2 h-[2px] w-3 -translate-y-1/2 rounded-full bg-white/25 ${
-            side === "left" ? "right-[26px]" : "left-[26px]"
-          } transition-colors group-hover:bg-white/50`}
-        />
-        <NodeBadge level={topic.level} current={current} />
-      </div>
-
-      {/* Right label */}
-      <div
-        className={`flex items-center justify-start pl-2 ${
-          side === "right" ? "" : "pointer-events-none opacity-0"
-        }`}
-      >
-        <TopicLabel topic={topic} align="left" signedIn={signedIn} />
-      </div>
+      <span
+        className="absolute inset-0 rounded-full transition-transform group-hover/tick:scale-y-[1.6]"
+        style={style}
+      />
     </Link>
   );
 }
 
-// ── Label shown on one side of the row ───────────────────────────────────
-
-function TopicLabel({
-  topic,
-  align,
-  signedIn,
-}: {
-  topic: RoadmapTopic;
-  align: "left" | "right";
-  signedIn: boolean;
-}) {
-  return (
-    <div className={align === "right" ? "text-right" : "text-left"}>
-      <div
-        className={`line-clamp-2 text-[13.5px] font-semibold leading-tight ${
-          topic.level === 0 ? "text-white/65" : "text-white"
-        }`}
-      >
-        {topic.title}
-      </div>
-      {signedIn && topic.attempted > 0 ? (
-        <div className="num mt-0.5 text-[10.5px] opacity-75">
-          {Math.round(topic.correctRate * 100)}% · {topic.correct}/{topic.attempted}
-        </div>
-      ) : (
-        <div className="mt-0.5 text-[10.5px] opacity-60">
-          {topic.level === 0 ? "未挑戦" : ""}
-        </div>
-      )}
-    </div>
-  );
-}
-
-// ── Node badge (on the spine) ────────────────────────────────────────────
-
-function NodeBadge({
-  level,
-  current,
-}: {
-  level: 0 | 1 | 2 | 3;
-  current: boolean;
-}) {
-  const size =
-    level === 3 ? 28 : level === 2 ? 26 : level === 1 ? 24 : 20;
-
-  const LEVEL = {
-    0: {
-      ring: "ring-white/35",
-      bg: "bg-white/8",
-      inner: null,
-    },
-    1: {
-      ring: "ring-[#FF9F0A]/80",
-      bg: "bg-[#FF9500]",
-      inner: (
-        <span className="h-1.5 w-1.5 rounded-full bg-white/90" />
-      ),
-    },
-    2: {
-      ring: "ring-[#64D2FF]/90",
-      bg: "bg-[#0A84FF]",
-      inner: (
-        <span className="flex gap-0.5">
-          <span className="h-1.5 w-1.5 rounded-full bg-white/95" />
-          <span className="h-1.5 w-1.5 rounded-full bg-white/95" />
-        </span>
-      ),
-    },
-    3: {
-      ring: "ring-[#B9FBC0]",
-      bg: "bg-[#30D158]",
-      inner: <Check className="h-3.5 w-3.5 text-white" strokeWidth={3.2} />,
-    },
-  }[level];
-
-  return (
-    <span
-      className="relative flex shrink-0 items-center justify-center"
-      style={{ width: size + 4, height: size + 4 }}
-    >
-      {/* Glow */}
-      {level >= 1 && (
-        <span
-          className={`absolute inset-[-6px] rounded-full ${
-            level === 3
-              ? "bg-[#30D158]/30"
-              : level === 2
-              ? "bg-[#0A84FF]/30"
-              : "bg-[#FF9500]/30"
-          } blur-md`}
-        />
-      )}
-
-      {/* Pulse ring for "you are here" */}
-      {current && (
-        <>
-          <span className="absolute inset-[-10px] animate-ping rounded-full border-2 border-white/70" />
-          <span className="absolute inset-[-4px] rounded-full border border-white/80" />
-        </>
-      )}
-
-      {/* Core */}
-      <span
-        className={`relative flex items-center justify-center rounded-full ring-2 ${LEVEL.ring} ${LEVEL.bg} ${
-          level === 0 ? "backdrop-blur" : "shadow-[0_2px_8px_rgba(0,0,0,0.25)]"
-        }`}
-        style={{ width: size, height: size }}
-      >
-        {LEVEL.inner}
-      </span>
-    </span>
-  );
-}
-
-// ── Starfield backdrop ────────────────────────────────────────────────────
-
-function Starfield() {
-  const stars = Array.from({ length: 24 }).map((_, i) => {
-    const x = (Math.sin(i * 91.17) + 1) / 2;
-    const y = (Math.cos(i * 53.3) + 1) / 2;
-    const o = 0.2 + ((i * 37) % 50) / 100;
-    const s = 1 + ((i * 17) % 3);
-    return { x, y, o, s };
-  });
-  return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden">
-      {stars.map((st, i) => (
-        <span
-          key={i}
-          className="absolute rounded-full bg-white"
-          style={{
-            left: `${st.x * 100}%`,
-            top: `${st.y * 100}%`,
-            width: st.s,
-            height: st.s,
-            opacity: st.o * 0.5,
-            filter: "blur(0.2px)",
-          }}
-        />
-      ))}
-    </div>
-  );
-}
-
-// ── Footer cell ──────────────────────────────────────────────────────────
-
-function FooterCell({
-  label,
-  value,
-  accent,
-}: {
-  label: string;
-  value: string;
-  accent: string;
-}) {
-  return (
-    <div className="text-center">
-      <div className={`num text-[16px] font-semibold tracking-tight ${accent}`}>
-        {value}
-      </div>
-      <div className="text-[10px] font-semibold uppercase tracking-[0.14em] opacity-70">
-        {label}
-      </div>
-    </div>
-  );
-}
-
-// ── Legend ──────────────────────────────────────────────────────────────
-
-function Legend({ signedIn }: { signedIn: boolean }) {
-  if (!signedIn) {
-    return (
-      <div className="px-1 text-[11.5px] text-muted-foreground">
-        ログインで、解いた論点が経路上で色として可視化されます。
-      </div>
-    );
-  }
-  const items = [
-    { color: "bg-[#30D158]", label: "習熟" },
-    { color: "bg-[#0A84FF]", label: "定着" },
-    { color: "bg-[#FF9500]", label: "伸ばす" },
-    { color: "bg-muted-foreground/40", label: "未挑戦" },
-  ];
-  return (
-    <div className="flex flex-wrap items-center gap-3 px-1 text-[11px] text-muted-foreground">
-      {items.map((it) => (
-        <div key={it.label} className="flex items-center gap-1.5">
-          <span className={`h-2 w-2 rounded-full ${it.color}`} />
-          {it.label}
-        </div>
-      ))}
-    </div>
-  );
-}
+/* Kept for API compatibility — unused glyph imports won't tree-shake cleanly otherwise. */
+void Circle;

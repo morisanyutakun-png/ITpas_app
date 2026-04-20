@@ -90,16 +90,36 @@ export const originTypeEnum = pgEnum("origin_type", [
   "original",        // Fully original (not based on any past exam)
 ]);
 
+export const planEnum = pgEnum("plan", [
+  "free",  // Daily question cap, limited analytics.
+  "pro",   // Unlimited + full analytics + mock exam + export.
+]);
+
 // ===== Tables =====
 
-export const users = pgTable("users", {
-  id: uuid("id").primaryKey().defaultRandom(),
-  anonKey: text("anon_key").notNull().unique(),
-  displayName: text("display_name"),
-  createdAt: timestamp("created_at", { withTimezone: true })
-    .notNull()
-    .defaultNow(),
-});
+export const users = pgTable(
+  "users",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    // Nullable once a user signs in with Google (we keep the anon row linked).
+    anonKey: text("anon_key").unique(),
+    googleId: text("google_id").unique(),
+    email: text("email"),
+    displayName: text("display_name"),
+    imageUrl: text("image_url"),
+    plan: planEnum("plan").notNull().default("free"),
+    planSince: timestamp("plan_since", { withTimezone: true }),
+    planRenewsAt: timestamp("plan_renews_at", { withTimezone: true }),
+    stripeCustomerId: text("stripe_customer_id"),
+    stripeSubscriptionId: text("stripe_subscription_id"),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (t) => ({
+    emailIdx: uniqueIndex("users_email_idx").on(t.email),
+  })
+);
 
 export const topics = pgTable(
   "topics",
@@ -326,6 +346,54 @@ export const sessions = pgTable("sessions", {
   finishedAt: timestamp("finished_at", { withTimezone: true }),
 });
 
+export const bookmarks = pgTable(
+  "bookmarks",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    userId: uuid("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    questionId: uuid("question_id")
+      .notNull()
+      .references(() => questions.id, { onDelete: "cascade" }),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (t) => ({
+    userQuestionIdx: uniqueIndex("bookmarks_user_question_idx").on(
+      t.userId,
+      t.questionId
+    ),
+  })
+);
+
+export const notes = pgTable(
+  "notes",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    userId: uuid("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    questionId: uuid("question_id")
+      .notNull()
+      .references(() => questions.id, { onDelete: "cascade" }),
+    body: text("body").notNull().default(""),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (t) => ({
+    userQuestionIdx: uniqueIndex("notes_user_question_idx").on(
+      t.userId,
+      t.questionId
+    ),
+  })
+);
+
 // ===== Drizzle Relations =====
 
 export const questionsRelations = relations(questions, ({ many }) => ({
@@ -433,6 +501,24 @@ export const attemptsRelations = relations(attempts, ({ one }) => ({
 export const usersRelations = relations(users, ({ many }) => ({
   attempts: many(attempts),
   sessions: many(sessions),
+  bookmarks: many(bookmarks),
+  notes: many(notes),
+}));
+
+export const bookmarksRelations = relations(bookmarks, ({ one }) => ({
+  user: one(users, { fields: [bookmarks.userId], references: [users.id] }),
+  question: one(questions, {
+    fields: [bookmarks.questionId],
+    references: [questions.id],
+  }),
+}));
+
+export const notesRelations = relations(notes, ({ one }) => ({
+  user: one(users, { fields: [notes.userId], references: [users.id] }),
+  question: one(questions, {
+    fields: [notes.questionId],
+    references: [questions.id],
+  }),
 }));
 
 export const sessionsRelations = relations(sessions, ({ one }) => ({

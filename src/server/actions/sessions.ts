@@ -4,7 +4,8 @@ import { redirect } from "next/navigation";
 import { eq, sql } from "drizzle-orm";
 import { db } from "@/db/client";
 import { attempts, sessions } from "@/db/schema";
-import { getOrCreateAnonUser } from "@/lib/anonId";
+import { getCurrentUser } from "@/lib/currentUser";
+import { limitsFor } from "@/lib/plan";
 import {
   selectQuestionIds,
   type SelectorFilters,
@@ -16,12 +17,16 @@ export async function createSessionAction(input: {
   filters?: SelectorFilters;
   count?: number;
 }) {
-  const user = await getOrCreateAnonUser();
+  const user = await getCurrentUser();
+  const requested = input.count ?? 5;
+  const cap = limitsFor(user.plan).maxSessionCount;
+  const effectiveCount = Math.min(requested, cap);
+
   const ids = await selectQuestionIds({
     userId: user.id,
     mode: input.mode,
     filters: input.filters,
-    count: input.count ?? 5,
+    count: effectiveCount,
   });
 
   if (ids.length === 0) {
@@ -43,7 +48,7 @@ export async function createSessionAction(input: {
 }
 
 export async function finishSessionAction(sessionId: string) {
-  const user = await getOrCreateAnonUser();
+  const user = await getCurrentUser();
   const s = await db.query.sessions.findFirst({
     where: eq(sessions.id, sessionId),
   });

@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { sql } from "drizzle-orm";
 import { db } from "@/db/client";
-import { getOrCreateAnonUser } from "@/lib/anonId";
+import { getCurrentUser } from "@/lib/currentUser";
+import { isPro } from "@/lib/plan";
 import {
   getProgressByMisconception,
   getProgressByTopic,
@@ -13,12 +14,13 @@ import {
 import { MisconceptionHeatmap } from "@/components/dashboard/MisconceptionHeatmap";
 import { TopicHeatmap } from "@/components/dashboard/TopicHeatmap";
 import { DailySparkline } from "@/components/dashboard/DailySparkline";
-import { ArrowRight, Compass, Flame, Target, Trophy, type LucideIcon } from "lucide-react";
+import { ArrowRight, Compass, Flame, Lock, Sparkles, Target, Trophy, type LucideIcon } from "lucide-react";
 
 export const dynamic = "force-dynamic";
 
 export default async function DashboardPage() {
-  const user = await getOrCreateAnonUser();
+  const user = await getCurrentUser();
+  const pro = isPro(user);
   const [misc, topic, statsRow, daily, rec] = await Promise.all([
     getProgressByMisconception(user.id),
     getProgressByTopic(user.id),
@@ -124,24 +126,107 @@ export default async function DashboardPage() {
       {/* Sparkline */}
       <DailySparkline data={daily} />
 
-      {/* Misconception heatmap */}
-      <section className="space-y-3">
-        <SectionHeader
-          title="誤解パターン別ヒートマップ"
-          desc="赤いほど誤答率が高い『敵』。クリックで詳細＆対策へ。"
-        />
+      {/* Misconception heatmap — Pro content */}
+      <ProGate pro={pro} title="誤解パターン別ヒートマップ" desc="赤いほど誤答率が高い『敵』。クリックで詳細＆対策へ。">
         <MisconceptionHeatmap items={misc} />
-      </section>
+      </ProGate>
 
-      {/* Topic heatmap */}
-      <section className="space-y-3">
-        <SectionHeader
-          title="論点別ヒートマップ"
-          desc="緑が押さえた論点。赤は補強対象。"
-        />
+      {/* Topic heatmap — Pro content */}
+      <ProGate pro={pro} title="論点別ヒートマップ" desc="緑が押さえた論点。赤は補強対象。">
         <TopicHeatmap items={topic} />
+      </ProGate>
+
+      {/* Mock exam CTA */}
+      <section
+        className={`rounded-2xl border-2 p-5 shadow-sm ${
+          pro
+            ? "border-slate-900 bg-gradient-to-br from-slate-900 to-slate-800 text-white"
+            : "border-amber-300 bg-amber-50"
+        }`}
+      >
+        <div className="flex items-start gap-4">
+          <div
+            className={`flex h-12 w-12 items-center justify-center rounded-xl ${
+              pro ? "bg-amber-400 text-slate-900" : "bg-amber-200 text-amber-800"
+            }`}
+          >
+            <Sparkles className="h-6 w-6" />
+          </div>
+          <div className="flex-1">
+            <div className="text-xs font-bold uppercase tracking-wider opacity-80">
+              模擬試験モード {pro ? "" : "(Pro)"}
+            </div>
+            <div className="text-lg font-bold">100問 / 120分 — 本番形式で力試し</div>
+            <p className="mt-1 text-xs opacity-80">
+              時間配分の感覚と、押されたときの踏みとどまり方を鍛えられます。
+            </p>
+          </div>
+          {pro ? (
+            <Link
+              href="/learn/session/new?mode=mixed&count=100"
+              className="inline-flex items-center gap-1 rounded-lg bg-amber-400 px-4 py-2 text-sm font-bold text-slate-900"
+            >
+              開始
+            </Link>
+          ) : (
+            <Link
+              href="/pricing"
+              className="inline-flex items-center gap-1 rounded-lg bg-amber-600 px-4 py-2 text-sm font-bold text-white"
+            >
+              Proで解放
+            </Link>
+          )}
+        </div>
       </section>
     </div>
+  );
+}
+
+function ProGate({
+  pro,
+  title,
+  desc,
+  children,
+}: {
+  pro: boolean;
+  title: string;
+  desc: string;
+  children: React.ReactNode;
+}) {
+  if (pro) {
+    return (
+      <section className="space-y-3">
+        <SectionHeader title={title} desc={desc} />
+        {children}
+      </section>
+    );
+  }
+  return (
+    <section className="space-y-3">
+      <SectionHeader title={title} desc={desc} />
+      <div className="relative overflow-hidden rounded-2xl border-2 border-slate-200 bg-white">
+        <div className="pointer-events-none select-none opacity-40 blur-[2px]">{children}</div>
+        <div className="absolute inset-0 flex items-center justify-center bg-white/70 p-6">
+          <div className="text-center space-y-2 max-w-xs">
+            <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-amber-100 text-amber-700">
+              <Lock className="h-5 w-5" />
+            </div>
+            <div className="text-sm font-bold text-slate-900">
+              詳細分析はProで解放
+            </div>
+            <p className="text-xs text-slate-600">
+              弱点の深堀りと学習経路の推薦で、合格までの距離を短縮します。
+            </p>
+            <Link
+              href="/pricing"
+              className="inline-flex items-center gap-1 rounded-lg bg-slate-900 px-4 py-2 text-xs font-bold text-white"
+            >
+              Proを見る
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 

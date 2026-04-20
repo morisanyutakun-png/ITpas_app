@@ -12,7 +12,17 @@
   - 書き込み: Server Action (`src/server/actions/*`)。
   - 外部からfetchが必要な場合のみ Route Handler (`app/api/*`)。
 - **Drizzle ORM + Neon Postgres**。マイグレーションは `pnpm db:generate` → `pnpm db:push`。
-- **匿名ユーザ**: cookie `itpas_anon_key` ベース。NextAuth等は MVP では入れない。
+- **ユーザ解決**: 常に `getCurrentUser()` (`@/lib/currentUser`) を使う。
+  - 署名済みセッションCookie (`itpas_session`) が最優先。Google OAuth でサインイン済みならここに入る。
+  - 無ければ匿名Cookie (`itpas_anon_key`) から `users` 行を引く/作る。
+  - Googleでサインインすると匿名行は `signInWithGoogle` が自動マージする (attempts/sessions/bookmarks/notes)。
+  - 旧 `getOrCreateAnonUser` は back-compat シム。新規コードは `getCurrentUser()` を直接使う。
+- **マネタイズ**: `users.plan` が `free` / `pro`。制限は `src/lib/plan.ts` の `PLAN_LIMITS` に集約。
+  - Free: 1日10問 / セッション最大5問 / ブックマーク3件 / 高度分析・模擬試験・PDF出力 不可。
+  - 日次上限ゲートは `recordAttemptAction` が持つ (JSTで日付判定)。
+  - 新しい制限を入れるなら PLAN_LIMITS を触ること。DBフラグは増やさない。
+  - Stripe 連携は `src/lib/stripe.ts` が fetch ベース (`stripe` npm依存なし)。
+    Webhook は `app/api/stripe/webhook/route.ts` で `STRIPE_WEBHOOK_SECRET` を使い署名検証。
 
 ## 絶対のルール（コンテンツ品質）
 
@@ -26,13 +36,20 @@
 
 ```bash
 pnpm install
-cp .env.example .env.local             # DATABASE_URL を Neon の接続URLに書き換え
+cp .env.example .env.local             # DATABASE_URL / AUTH_SECRET / GOOGLE_* を入れる
 pnpm db:generate                       # スキーマ変更時
-pnpm db:push                           # マイグレーション適用
+pnpm db:push                           # マイグレーション適用 (0004_monetization.sql を含む)
 pnpm validate:content                  # 構造化データの整合性チェック
 pnpm seed                              # content/structured/** → DB
 pnpm dev                               # http://localhost:3000
 ```
+
+### Google OAuth セットアップ
+
+1. https://console.cloud.google.com/apis/credentials で OAuth 2.0 クライアントIDを作成。
+2. Authorized redirect URI に `http://localhost:3000/api/auth/google/callback` と本番のURLを登録。
+3. `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET` を `.env.local` に入れる。
+4. `AUTH_SECRET` は `openssl rand -base64 48` などで生成 (32文字以上必須)。
 
 ## 新しい問題を1問足す手順
 

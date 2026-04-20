@@ -3,7 +3,18 @@
 import { revalidatePath } from "next/cache";
 import { db } from "@/db/client";
 import { attempts } from "@/db/schema";
-import { getOrCreateAnonUser } from "@/lib/anonId";
+import { getCurrentUser } from "@/lib/currentUser";
+import { checkAttemptGate } from "@/lib/plan";
+
+export type RecordAttemptResult =
+  | { ok: true; remaining: number | null }
+  | {
+      ok: false;
+      reason: "daily_limit";
+      used: number;
+      limit: number;
+      plan: "free" | "pro";
+    };
 
 export async function recordAttemptAction(input: {
   questionId: string;
@@ -11,8 +22,23 @@ export async function recordAttemptAction(input: {
   result: "correct" | "incorrect" | "skipped";
   durationMs: number;
   sessionId?: string;
-}) {
-  const user = await getOrCreateAnonUser();
+}): Promise<RecordAttemptResult> {
+  const user = await getCurrentUser();
+
+  // Skipped attempts do not count toward the freemium cap.
+  if (input.result !== "skipped") {
+    const gate = await checkAttemptGate({ id: user.id, plan: user.plan });
+    if (!gate.ok) {
+      return {
+        ok: false,
+        reason: "daily_limit",
+        used: gate.used,
+        limit: gate.limit,
+        plan: gate.plan,
+      };
+    }
+  }
+
   await db.insert(attempts).values({
     userId: user.id,
     questionId: input.questionId,
@@ -21,6 +47,9 @@ export async function recordAttemptAction(input: {
     durationMs: input.durationMs,
     sessionId: input.sessionId ?? null,
   });
+
   revalidatePath("/dashboard");
-  return { ok: true };
+
+  const after = await checkAttemptGate({ id: user.id, plan: user.plan });
+  return { ok: true, remaining: after.ok ? after.remaining : 0 };
 }

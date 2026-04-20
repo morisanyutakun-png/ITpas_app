@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import Link from "next/link";
+import { Suspense } from "react";
 import "./globals.css";
 import { siteConfig } from "@/lib/site";
+import { UserMenu } from "@/components/UserMenu";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -75,7 +77,7 @@ export default function RootLayout({
               </span>
               <span>理解ノート</span>
             </Link>
-            <nav className="flex gap-1 text-sm overflow-x-auto">
+            <nav className="flex gap-1 text-sm overflow-x-auto flex-1">
               <NavLink href="/learn" label="学習" />
               <NavLink href="/learn/questions" label="問題" />
               <NavLink href="/guides" label="ガイド" />
@@ -83,7 +85,11 @@ export default function RootLayout({
               <NavLink href="/misconceptions" label="誤解" />
               <NavLink href="/dashboard" label="DB" />
               <NavLink href="/history" label="履歴" />
+              <NavLink href="/pricing" label="料金" />
             </nav>
+            <Suspense fallback={null}>
+              <UserMenu />
+            </Suspense>
           </div>
         </header>
         <main className="container py-8">{children}</main>

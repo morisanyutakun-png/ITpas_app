@@ -8,6 +8,24 @@
 - 単元別ではなく **「誤解パターン別」** ヒートマップ
 - 論点・比較表・補助資料へその場で1タップ
 - 苦手な誤解パターンに絞った再出題
+- Googleアカウントでログイン、端末をまたいで進捗保存
+
+## 料金モデル (フリーミアム)
+
+| | Free | Pro |
+|---|---|---|
+| 1日の回答数 | 10問 | 無制限 |
+| 誤答の魅力理由表示 | ○ | ○ |
+| セッション最大サイズ | 5問 | 100問 |
+| 詳細ヒートマップ / 日次分析 | ✕ | ○ |
+| 模擬試験モード (100問/120分) | ✕ | ○ |
+| ブックマーク | 3件 | 無制限 |
+| 問題ノート | ✕ | 無制限 |
+| 学習レポートPDF書き出し | ✕ | ○ |
+
+Pro: ¥780/月 or ¥6,800/年 (年払いで約27%お得)。
+
+料金の編集は `src/lib/plan.ts` の `PLAN_LIMITS` / `PRO_PRICE_JPY_*` で一元管理されています。
 
 ## 技術スタック
 
@@ -34,16 +52,18 @@ cd itpas_app
 npm install
 ```
 
-### 2. Neon DB を用意
+### 2. Neon DB + Google OAuth + (任意) Stripe を用意
 
-1. https://neon.tech にサインアップ
-2. プロジェクトを作成（リージョンは `Asia Pacific (Tokyo)` 推奨）
-3. ダッシュボードから **Pooled connection** の URL をコピー (`postgres://...?sslmode=require`)
-4. 以下で `.env.local` を作成
+1. [Neon](https://neon.tech) のプロジェクトを作成 → **Pooled connection** URL をコピー
+2. [Google Cloud Console](https://console.cloud.google.com/apis/credentials) で OAuth 2.0 クライアントIDを発行
+   - Authorized redirect URI: `http://localhost:3000/api/auth/google/callback` (本番URLも追加)
+3. `AUTH_SECRET` は `openssl rand -base64 48` で生成
+4. (任意) Stripe の Subscription Price を2つ作成 (月額 / 年額) し `STRIPE_PRICE_PRO_*` に設定
+5. `.env.local` を作成
 
 ```bash
 cp .env.example .env.local
-# DATABASE_URL を貼り付ける
+# DATABASE_URL / AUTH_SECRET / GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET を埋める
 ```
 
 ### 3. スキーマ適用 + サンプル投入

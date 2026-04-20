@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ChoiceList, type ChoiceVM } from "./ChoiceList";
 import { ResultPanel, type ResultPanelData } from "./ResultPanel";
 import { recordAttemptAction } from "@/server/actions/attempts";
+import { UpgradeModal } from "@/components/UpgradeModal";
 import { Loader2 } from "lucide-react";
 
 export type QuestionPlayerProps = {
@@ -28,26 +29,47 @@ export function QuestionPlayer(props: QuestionPlayerProps) {
   const [revealed, setRevealed] = useState(false);
   const [startedAt] = useState<number>(Date.now());
   const [isPending, startTransition] = useTransition();
+  const [paywall, setPaywall] = useState(false);
+  const [remaining, setRemaining] = useState<number | null>(null);
 
   const onSubmit = () => {
     if (!selectedLabel) return;
     const isCorrect =
       props.choices.find((c) => c.label === selectedLabel)?.isCorrect ?? false;
     const durationMs = Date.now() - startedAt;
-    setRevealed(true);
     startTransition(async () => {
-      await recordAttemptAction({
+      const res = await recordAttemptAction({
         questionId: props.questionId,
         selectedChoiceLabel: selectedLabel,
         result: isCorrect ? "correct" : "incorrect",
         durationMs,
         sessionId: props.sessionId,
       });
+      if (!res.ok && res.reason === "daily_limit") {
+        setPaywall(true);
+        return;
+      }
+      if (res.ok) setRemaining(res.remaining);
+      setRevealed(true);
     });
   };
 
   return (
     <div className="space-y-5">
+      <UpgradeModal
+        open={paywall}
+        onClose={() => setPaywall(false)}
+        reason="daily_limit"
+      />
+      {remaining !== null && remaining <= 3 && !paywall && (
+        <div className="rounded-xl border-2 border-amber-300 bg-amber-50 px-4 py-2 text-sm text-amber-900">
+          今日の無料枠は残り <strong>{remaining}問</strong> です。無制限にするなら
+          <a href="/pricing" className="ml-1 font-bold underline">
+            Proにアップグレード
+          </a>
+          。
+        </div>
+      )}
       <ChoiceList
         choices={props.choices}
         selectedLabel={selectedLabel}

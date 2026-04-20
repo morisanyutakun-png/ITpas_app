@@ -306,6 +306,69 @@
   .cat-stripe {
     @apply flex h-1.5 w-full overflow-hidden rounded-full bg-white/15;
   }
+
+  /* ── Editorial (App Store / Today-style) ─────────────────────────── */
+
+  /* Large editorial card with subtle gradient + grain — for "featured" picks. */
+  .editorial-card {
+    @apply relative overflow-hidden rounded-3xl bg-card ring-1 ring-black/[0.05] shadow-hero dark:ring-white/[0.07];
+  }
+  .editorial-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(70% 60% at 100% 0%, hsl(var(--primary) / 0.10), transparent 60%),
+      radial-gradient(60% 50% at 0% 100%, hsl(280 90% 60% / 0.08), transparent 60%);
+    pointer-events: none;
+  }
+  .editorial-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    pointer-events: none;
+    mix-blend-mode: multiply;
+  }
+
+  /* Editorial kicker — small-caps label with a leading dot. */
+  .kicker {
+    @apply inline-flex items-center gap-1.5 text-[10.5px] font-semibold uppercase tracking-[0.16em] text-muted-foreground;
+  }
+  .kicker::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background: hsl(var(--primary));
+  }
+
+  /* Horizontal scroll row — Apple Music/App Store "Recently Played". */
+  .hscroll {
+    @apply -mx-4 flex gap-3 overflow-x-auto px-4 pb-2;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .hscroll::-webkit-scrollbar {
+    display: none;
+  }
+  .hscroll > * {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+
+  /* Hairline separator with label — editorial rhythm. */
+  .rule-label {
+    @apply flex items-center gap-3 px-1 text-[10.5px] font-semibold uppercase tracking-[0.14em] text-muted-foreground;
+  }
+  .rule-label::before,
+  .rule-label::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: hsl(var(--border));
+  }
 }
 
 @layer utilities {

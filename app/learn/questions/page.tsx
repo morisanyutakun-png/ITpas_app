@@ -1,16 +1,15 @@
 import Link from "next/link";
-import { Shuffle, Crosshair, ArrowRight, ChevronRight, Lock } from "lucide-react";
+import { ChevronRight, Crosshair, Lock, Shuffle } from "lucide-react";
 import { listQuestions } from "@/server/queries/questions";
-import { pickMajor } from "@/lib/design";
 import { readCurrentUser } from "@/lib/currentUser";
 import { minAllowedExamYear, planLabel } from "@/lib/plan";
 
 export const dynamic = "force-dynamic";
 
 const MAJOR_LABEL: Record<string, string> = {
-  strategy: "ストラテジ系",
-  management: "マネジメント系",
-  technology: "テクノロジ系",
+  strategy: "ストラテジ",
+  management: "マネジメント",
+  technology: "テクノロジ",
 };
 
 export default async function QuestionsListPage({
@@ -29,123 +28,140 @@ export default async function QuestionsListPage({
   const plan = user?.plan ?? "free";
   const minYear = await minAllowedExamYear(plan);
 
-  // If the user picked a specific year they cannot see, drop the filter so
-  // the page still renders and explains the lock, rather than returning empty.
   const yearParam = sp.year ? Number(sp.year) : undefined;
   const yearBlocked =
     yearParam !== undefined && minYear !== null && yearParam < minYear;
 
   const items = await listQuestions({
     examYear: yearBlocked ? undefined : yearParam,
-    majorCategory: sp.major as "strategy" | "management" | "technology" | undefined,
+    majorCategory: sp.major as
+      | "strategy"
+      | "management"
+      | "technology"
+      | undefined,
     topicSlug: sp.topic,
     misconceptionSlug: sp.misconception,
     originType:
       sp.origin === "actual"
         ? "ipa_actual"
         : sp.origin === "inspired"
-          ? "ipa_inspired"
-          : undefined,
+        ? "ipa_inspired"
+        : undefined,
     minYear,
   });
 
-  // Group by year then by major category for ToC layout
   const byYear = items.reduce<Record<number, typeof items>>((acc, q) => {
     (acc[q.examYear] ||= []).push(q);
     return acc;
   }, {});
   const years = Object.keys(byYear)
     .map(Number)
-    .sort((a, b) => b - a); // newest first
+    .sort((a, b) => b - a);
 
   const randomQs = new URLSearchParams();
   if (sp.major) randomQs.set("major", sp.major);
   if (sp.origin) randomQs.set("origin", sp.origin);
-  const randomHref = `/learn/random${randomQs.toString() ? `?${randomQs}` : ""}`;
+  const randomHref = `/learn/random${
+    randomQs.toString() ? `?${randomQs}` : ""
+  }`;
 
   return (
-    <div className="space-y-6 max-w-3xl mx-auto">
-      <div>
-        <h1 className="text-2xl md:text-3xl font-black tracking-tight">問題集</h1>
-        <p className="text-sm text-slate-600">
+    <div className="space-y-5">
+      <header className="pt-2">
+        <h1 className="text-ios-title1 font-semibold">問題集</h1>
+        <p className="mt-1 text-[13px] text-muted-foreground">
           ランダム1問から始めるか、目次から好きな問題へ。
         </p>
-      </div>
+      </header>
 
-      {/* Quick action buttons */}
-      <div className="grid grid-cols-2 gap-3">
+      {/* Quick actions */}
+      <div className="grid grid-cols-2 gap-2">
         <Link
           href={randomHref}
-          className="group relative overflow-hidden rounded-2xl border-2 border-slate-200 bg-white p-4 transition hover:border-slate-400 hover:shadow-md"
+          className="flex items-center gap-2 rounded-2xl bg-card p-3 shadow-ios-sm active:opacity-70"
         >
-          <div className="absolute -right-6 -top-6 h-20 w-20 rounded-full bg-gradient-to-br from-violet-500 to-fuchsia-500 opacity-15 blur-xl group-hover:opacity-25 transition" />
-          <div className="relative flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-500 text-white shadow">
-              <Shuffle className="h-5 w-5" strokeWidth={2.5} />
-            </div>
-            <div className="flex-1 min-w-0">
-              <div className="font-bold text-sm text-slate-900">ランダムに1問</div>
-              <div className="text-[11px] text-slate-500">いま絞り込んだ範囲から</div>
-            </div>
-            <ArrowRight className="h-4 w-4 text-slate-400 group-hover:translate-x-0.5 transition" />
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-ios-purple/10 text-ios-purple">
+            <Shuffle className="h-4 w-4" strokeWidth={2.2} />
+          </div>
+          <div className="min-w-0">
+            <div className="text-[13px] font-semibold">ランダム1問</div>
+            <div className="text-[11px] text-muted-foreground">絞り込み範囲から</div>
           </div>
         </Link>
         <Link
           href="/learn/session/new?mode=weakness&count=5"
-          className="group relative overflow-hidden rounded-2xl border-2 border-slate-200 bg-white p-4 transition hover:border-slate-400 hover:shadow-md"
+          className="flex items-center gap-2 rounded-2xl bg-card p-3 shadow-ios-sm active:opacity-70"
         >
-          <div className="absolute -right-6 -top-6 h-20 w-20 rounded-full bg-gradient-to-br from-rose-500 to-pink-500 opacity-15 blur-xl group-hover:opacity-25 transition" />
-          <div className="relative flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-rose-500 to-pink-500 text-white shadow">
-              <Crosshair className="h-5 w-5" strokeWidth={2.5} />
-            </div>
-            <div className="flex-1 min-w-0">
-              <div className="font-bold text-sm text-slate-900">弱点5問</div>
-              <div className="text-[11px] text-slate-500">誤解パターン重み付き</div>
-            </div>
-            <ArrowRight className="h-4 w-4 text-slate-400 group-hover:translate-x-0.5 transition" />
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-ios-red/10 text-ios-red">
+            <Crosshair className="h-4 w-4" strokeWidth={2.2} />
+          </div>
+          <div className="min-w-0">
+            <div className="text-[13px] font-semibold">弱点5問</div>
+            <div className="text-[11px] text-muted-foreground">誤解パターン重み付き</div>
           </div>
         </Link>
       </div>
 
-      {/* Filter chips — minimal */}
-      <div className="space-y-2">
-        <div className="flex flex-wrap gap-1.5">
+      {/* Filter chips (iOS-style scrollable) */}
+      <div className="-mx-4 overflow-x-auto px-4">
+        <div className="flex min-w-max gap-1.5">
           <Chip href="/learn/questions" label="すべて" active={!sp.major && !sp.origin} />
-          <Chip href="/learn/questions?major=strategy" label="ストラテジ" active={sp.major === "strategy"} />
-          <Chip href="/learn/questions?major=management" label="マネジメント" active={sp.major === "management"} />
-          <Chip href="/learn/questions?major=technology" label="テクノロジ" active={sp.major === "technology"} />
-        </div>
-        <div className="flex flex-wrap gap-1.5">
-          <Chip href="/learn/questions?origin=actual" label="🏛 公式過去問のみ" active={sp.origin === "actual"} />
-          <Chip href="/learn/questions?origin=inspired" label="✨ オリジナルのみ" active={sp.origin === "inspired"} />
+          <Chip
+            href="/learn/questions?major=strategy"
+            label="ストラテジ"
+            active={sp.major === "strategy"}
+          />
+          <Chip
+            href="/learn/questions?major=management"
+            label="マネジメント"
+            active={sp.major === "management"}
+          />
+          <Chip
+            href="/learn/questions?major=technology"
+            label="テクノロジ"
+            active={sp.major === "technology"}
+          />
+          <div className="w-2" />
+          <Chip
+            href="/learn/questions?origin=actual"
+            label="公式過去問"
+            active={sp.origin === "actual"}
+          />
+          <Chip
+            href="/learn/questions?origin=inspired"
+            label="オリジナル"
+            active={sp.origin === "inspired"}
+          />
         </div>
       </div>
 
       {minYear !== null && (
-        <div className="flex items-center gap-2 rounded-xl border-2 border-amber-200 bg-amber-50 px-4 py-2.5 text-xs text-amber-900">
-          <Lock className="h-3.5 w-3.5" />
-          <span>
-            <strong>{planLabel(plan)}</strong>プランでは令和{minYear}年以降の過去問を表示中。
-            {yearBlocked && ` 令和${yearParam}年度はロックされています。`}
+        <Link
+          href="/pricing?reason=year_locked"
+          className="flex items-center gap-2 rounded-2xl bg-card px-4 py-3 text-[13px] shadow-ios-sm active:opacity-80"
+        >
+          <Lock className="h-3.5 w-3.5 shrink-0 text-ios-orange" />
+          <span className="flex-1 text-muted-foreground">
+            <strong className="text-foreground">{planLabel(plan)}</strong>{" "}
+            プランでは令和{minYear}年以降を表示中
+            {yearBlocked && ` (令和${yearParam}年度はロック)`}
           </span>
-          <Link
-            href="/pricing"
-            className="ml-auto rounded-md bg-amber-600 px-2 py-1 font-bold text-white"
-          >
-            全年度をPremiumで解放
-          </Link>
-        </div>
+          <span className="rounded-full bg-ios-purple/10 px-2 py-0.5 text-[11px] font-semibold text-ios-purple">
+            Premium で解放
+          </span>
+        </Link>
       )}
 
-      <div className="text-xs text-slate-500">{items.length} 問が見つかりました</div>
+      <div className="px-1 text-[12px] text-muted-foreground">
+        {items.length}問が見つかりました
+      </div>
 
       {items.length === 0 ? (
-        <div className="rounded-2xl border-2 border-dashed border-slate-200 p-8 text-center text-sm text-slate-600">
+        <div className="rounded-2xl bg-card p-8 text-center text-[13px] text-muted-foreground shadow-ios-sm">
           該当する問題がありません。
         </div>
       ) : (
-        <div className="space-y-6">
+        <div className="space-y-5">
           {years.map((y) => {
             const qs = byYear[y];
             const byMajor = qs.reduce<Record<string, typeof qs>>((acc, q) => {
@@ -153,54 +169,48 @@ export default async function QuestionsListPage({
               return acc;
             }, {});
             return (
-              <section key={y} className="rounded-2xl border bg-white shadow-sm overflow-hidden">
-                <header className="flex items-center justify-between px-5 py-3 bg-slate-50 border-b">
-                  <h2 className="text-base font-black tracking-tight">令和{y}年度</h2>
-                  <span className="text-[11px] font-bold text-slate-500">{qs.length}問</span>
-                </header>
-                <div className="divide-y">
-                  {(["strategy", "management", "technology"] as const).map((m) => {
-                    const list = byMajor[m];
-                    if (!list || list.length === 0) return null;
-                    const theme = pickMajor(m);
-                    return (
-                      <div key={m} className="px-5 py-3 space-y-1.5">
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className={`h-1.5 w-1.5 rounded-full bg-gradient-to-r ${theme.gradient}`} />
-                          <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">
-                            {MAJOR_LABEL[m]}
-                          </span>
-                          <span className="text-[10px] text-slate-400">{list.length}</span>
-                        </div>
-                        <ul className="-mx-2">
+              <section key={y} className="space-y-2">
+                <div className="ios-section-label flex items-center justify-between">
+                  <span>令和{y}年度</span>
+                  <span className="text-muted-foreground">{qs.length}問</span>
+                </div>
+                <div className="space-y-3">
+                  {(["strategy", "management", "technology"] as const).map(
+                    (m) => {
+                      const list = byMajor[m];
+                      if (!list || list.length === 0) return null;
+                      return (
+                        <div key={m} className="ios-list shadow-ios-sm">
+                          <div className="px-4 py-2 text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground">
+                            {MAJOR_LABEL[m]} · {list.length}
+                          </div>
                           {list
                             .sort((a, b) => a.questionNumber - b.questionNumber)
                             .map((q) => (
-                              <li key={q.id}>
-                                <Link
-                                  href={`/learn/questions/${q.id}`}
-                                  className="group flex items-center gap-3 rounded-lg px-2 py-2 hover:bg-slate-50 transition"
+                              <Link
+                                key={q.id}
+                                href={`/learn/questions/${q.id}`}
+                                className="ios-row items-start active:bg-muted/60"
+                              >
+                                <span
+                                  className={`flex h-7 min-w-[28px] items-center justify-center rounded-md text-[11px] font-semibold tabular-nums ${
+                                    q.originType === "ipa_actual"
+                                      ? "bg-foreground text-background"
+                                      : "bg-ios-purple/10 text-ios-purple"
+                                  }`}
                                 >
-                                  <span
-                                    className={`flex h-7 w-9 shrink-0 items-center justify-center rounded-md text-[11px] font-black ${
-                                      q.originType === "ipa_actual"
-                                        ? "bg-slate-900 text-white"
-                                        : "bg-violet-100 text-violet-800"
-                                    }`}
-                                  >
-                                    {q.questionNumber}
-                                  </span>
-                                  <span className="flex-1 text-sm text-slate-800 line-clamp-1 group-hover:text-slate-950">
-                                    {q.stem}
-                                  </span>
-                                  <ChevronRight className="h-4 w-4 shrink-0 text-slate-300 group-hover:text-slate-600 group-hover:translate-x-0.5 transition" />
-                                </Link>
-                              </li>
+                                  {q.questionNumber}
+                                </span>
+                                <span className="line-clamp-2 flex-1 text-[14px]">
+                                  {q.stem}
+                                </span>
+                                <ChevronRight className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" />
+                              </Link>
                             ))}
-                        </ul>
-                      </div>
-                    );
-                  })}
+                        </div>
+                      );
+                    }
+                  )}
                 </div>
               </section>
             );
@@ -223,10 +233,10 @@ function Chip({
   return (
     <Link
       href={href}
-      className={`rounded-full border px-3 py-1 text-xs font-medium transition ${
+      className={`inline-flex h-8 items-center rounded-full px-3.5 text-[13px] font-medium transition-colors ${
         active
-          ? "border-slate-900 bg-slate-900 text-white"
-          : "border-slate-200 bg-white text-slate-700 hover:border-slate-400"
+          ? "bg-foreground text-background"
+          : "bg-card text-foreground active:opacity-70"
       }`}
     >
       {label}

@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { Check, X, MinusCircle, Clock } from "lucide-react";
+import { Check, ChevronRight, Clock, MinusCircle, X } from "lucide-react";
 import { getOrCreateAnonUser } from "@/lib/anonId";
 import { getRecentHistory } from "@/server/queries/history";
-import { pickFormat, pickMajor } from "@/lib/design";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "学習履歴" };
@@ -19,86 +18,86 @@ export default async function HistoryPage() {
       : 0;
 
   return (
-    <div className="space-y-6 max-w-3xl mx-auto">
-      <div>
-        <h1 className="text-2xl md:text-3xl font-black tracking-tight">学習履歴</h1>
-        <p className="text-sm text-slate-600">直近100問の解答記録（匿名）</p>
-      </div>
+    <div className="space-y-5">
+      <header className="pt-2">
+        <h1 className="text-ios-title1 font-semibold">学習履歴</h1>
+        <p className="mt-1 text-[13px] text-muted-foreground">
+          直近100問の解答記録
+        </p>
+      </header>
 
-      <div className="grid grid-cols-3 gap-3">
-        <SummaryCard label="総解答数" value={`${total}`} />
-        <SummaryCard
-          label="正答率"
-          value={total > 0 ? `${Math.round((correct / total) * 100)}%` : "—"}
-          sub={total > 0 ? `${correct} / ${total}` : ""}
-        />
-        <SummaryCard label="平均回答時間" value={`${(avgMs / 1000).toFixed(1)}秒`} />
-      </div>
+      <section className="ios-list shadow-ios-sm">
+        <div className="grid grid-cols-3 divide-x divide-border/60">
+          <Summary label="総解答" value={`${total}`} unit="問" />
+          <Summary
+            label="正答率"
+            value={total > 0 ? `${Math.round((correct / total) * 100)}` : "—"}
+            unit={total > 0 ? "%" : ""}
+          />
+          <Summary
+            label="平均回答"
+            value={`${(avgMs / 1000).toFixed(1)}`}
+            unit="秒"
+          />
+        </div>
+      </section>
 
       {rows.length === 0 ? (
-        <div className="rounded-2xl border-2 border-dashed border-slate-200 p-8 text-center text-sm text-slate-600">
-          まだ解答記録がありません。
-          <Link href="/learn/questions" className="block mt-2 text-violet-700 underline">
-            問題を解きにいく →
+        <div className="rounded-2xl bg-card p-8 text-center shadow-ios-sm">
+          <div className="text-[15px] font-medium">まだ解答記録がありません</div>
+          <Link
+            href="/learn/questions"
+            className="mt-3 inline-flex h-10 items-center rounded-full bg-primary px-4 text-[14px] font-semibold text-primary-foreground active:opacity-80"
+          >
+            問題を解きに行く
           </Link>
         </div>
       ) : (
-        <div className="space-y-2">
+        <div className="ios-list shadow-ios-sm">
           {rows.map((r) => {
-            const major = pickMajor(r.majorCategory);
-            const fmt = pickFormat(r.formatType);
-            const FmtIcon = fmt.icon;
             const dt = new Date(r.createdAt);
             return (
               <Link
                 key={r.attemptId}
                 href={`/learn/questions/${r.questionId}`}
-                className="group flex gap-3 rounded-xl border-2 border-slate-100 bg-white p-3 transition hover:border-slate-300 hover:shadow-sm"
+                className="ios-row items-start active:bg-muted/60"
               >
                 <div
-                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg ${
+                  className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${
                     r.result === "correct"
-                      ? "bg-emerald-100 text-emerald-700"
+                      ? "bg-ios-green/10 text-ios-green"
                       : r.result === "incorrect"
-                        ? "bg-rose-100 text-rose-700"
-                        : "bg-slate-100 text-slate-500"
+                      ? "bg-ios-red/10 text-ios-red"
+                      : "bg-muted text-muted-foreground"
                   }`}
                 >
                   {r.result === "correct" ? (
-                    <Check className="h-5 w-5" strokeWidth={3} />
+                    <Check className="h-4 w-4" strokeWidth={3} />
                   ) : r.result === "incorrect" ? (
-                    <X className="h-5 w-5" strokeWidth={3} />
+                    <X className="h-4 w-4" strokeWidth={3} />
                   ) : (
-                    <MinusCircle className="h-5 w-5" />
+                    <MinusCircle className="h-4 w-4" />
                   )}
                 </div>
                 <div className="min-w-0 flex-1">
-                  <div className="flex flex-wrap items-center gap-2 mb-0.5">
-                    <span className={`inline-flex items-center rounded border px-1.5 py-0 text-[10px] font-semibold ${major.chip}`}>
-                      {major.label}
-                    </span>
-                    <span className="inline-flex items-center gap-0.5 rounded border border-slate-200 bg-slate-50 px-1.5 py-0 text-[10px] text-slate-700">
-                      <FmtIcon className={`h-3 w-3 ${fmt.color}`} />
-                      {fmt.label}
-                    </span>
-                    <span className="text-[10px] text-slate-500">
+                  <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground">
+                    <span>
                       R{r.examYear} #{r.questionNumber}
                     </span>
-                    <span className="ml-auto inline-flex items-center gap-1 text-[10px] text-slate-500">
+                    <span className="ml-auto flex items-center gap-0.5">
                       <Clock className="h-3 w-3" />
                       {(r.durationMs / 1000).toFixed(1)}s
                     </span>
                   </div>
-                  <p className="text-sm text-slate-800 line-clamp-1">{r.stem}</p>
-                  <div className="mt-0.5 text-[10px] text-slate-500">
-                    {dt.toLocaleString("ja-JP", { dateStyle: "medium", timeStyle: "short" })}
-                    {r.selectedChoiceLabel && (
-                      <span className="ml-2">
-                        選択: <span className="font-bold">{r.selectedChoiceLabel}</span>
-                      </span>
-                    )}
+                  <p className="line-clamp-1 text-[14px]">{r.stem}</p>
+                  <div className="mt-0.5 text-[11px] text-muted-foreground">
+                    {dt.toLocaleString("ja-JP", {
+                      dateStyle: "short",
+                      timeStyle: "short",
+                    })}
                   </div>
                 </div>
+                <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
               </Link>
             );
           })}
@@ -108,21 +107,25 @@ export default async function HistoryPage() {
   );
 }
 
-function SummaryCard({
+function Summary({
   label,
   value,
-  sub,
+  unit,
 }: {
   label: string;
   value: string;
-  sub?: string;
+  unit?: string;
 }) {
   return (
-    <div className="rounded-2xl border bg-white p-4 shadow-sm">
-      <div className="text-xs font-bold uppercase tracking-wider text-slate-500">{label}</div>
-      <div className="mt-1 flex items-baseline gap-2">
-        <div className="text-xl md:text-2xl font-black">{value}</div>
-        {sub && <div className="text-[11px] text-slate-500">{sub}</div>}
+    <div className="flex flex-col items-center gap-1 px-2 py-4 text-center">
+      <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground">
+        {label}
+      </div>
+      <div className="flex items-baseline gap-0.5">
+        <span className="text-[20px] font-semibold tabular-nums">{value}</span>
+        {unit && (
+          <span className="text-[12px] text-muted-foreground">{unit}</span>
+        )}
       </div>
     </div>
   );

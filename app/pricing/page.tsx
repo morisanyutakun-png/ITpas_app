@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Check, Crown, Sparkles, Zap } from "lucide-react";
+import { Check } from "lucide-react";
 import { readCurrentUser } from "@/lib/currentUser";
 import {
   isPremium,
@@ -15,7 +15,10 @@ import { stripeConfigured } from "@/lib/stripe";
 
 export const dynamic = "force-dynamic";
 
-const REASON_BANNER: Record<string, { title: string; body: string; tier: "pro" | "premium" }> = {
+const REASON_BANNER: Record<
+  string,
+  { title: string; body: string; tier: "pro" | "premium" }
+> = {
   mock_exam: {
     title: "模擬試験はProプラン以上で解放されます",
     body: "本番形式 100問 / 120分のシミュレーションで時間配分を鍛えます。",
@@ -79,98 +82,92 @@ export default async function PricingPage({
   searchParams: Promise<{ canceled?: string; stripe?: string; reason?: string }>;
 }) {
   const sp = await searchParams;
-  const banner = sp.reason ? REASON_BANNER[sp.reason] : undefined;
   const user = await readCurrentUser();
   const plan: Plan = user?.plan ?? "free";
   const pro = isPro(user);
   const premium = isPremium(user);
   const configured = stripeConfigured();
+  const banner = sp.reason ? REASON_BANNER[sp.reason] : undefined;
 
   return (
-    <div className="mx-auto max-w-6xl space-y-10">
-      <div className="text-center space-y-3">
-        <div className="inline-flex items-center gap-2 rounded-full bg-amber-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-amber-700">
-          <Sparkles className="h-3.5 w-3.5" />
-          料金プラン
-        </div>
-        <h1 className="text-3xl md:text-4xl font-black tracking-tight">
-          無料で始めて、必要になったらProかPremiumへ
-        </h1>
-        <p className="text-slate-600 max-w-2xl mx-auto">
-          まずはFreeで毎日10問。慣れて本気で合格を狙うならPro、試験まで最短ルートで行きたい人向けにPremium。
+    <div className="space-y-6">
+      <header className="pt-2">
+        <h1 className="text-ios-title1 font-semibold">料金プラン</h1>
+        <p className="mt-1 text-[15px] text-muted-foreground">
+          まずは Free で毎日10問。本気で合格を狙うなら Pro、試験直前は Premium。
         </p>
-      </div>
+      </header>
 
       {banner && (
         <div
-          className={`rounded-2xl border-2 p-4 text-sm ${
+          className={`rounded-2xl p-4 text-[13px] shadow-ios-sm ${
             banner.tier === "premium"
-              ? "border-violet-300 bg-violet-50 text-violet-900"
-              : "border-amber-300 bg-amber-50 text-amber-900"
+              ? "bg-ios-purple/10 text-ios-purple"
+              : "bg-ios-orange/10 text-ios-orange"
           }`}
         >
-          <div className="font-bold">{banner.title}</div>
-          <p className="mt-0.5 text-xs">{banner.body}</p>
+          <div className="text-[15px] font-semibold text-foreground">
+            {banner.title}
+          </div>
+          <p className="mt-0.5 text-muted-foreground">{banner.body}</p>
         </div>
       )}
 
       {sp.canceled && (
-        <div className="rounded-xl border-2 border-slate-200 bg-white p-4 text-sm text-slate-700">
-          決済をキャンセルしました。準備ができたらまたお越しください。
+        <div className="rounded-2xl bg-card p-4 text-[13px] text-muted-foreground shadow-ios-sm">
+          決済をキャンセルしました。
         </div>
       )}
       {sp.stripe?.startsWith("missing_") && (
-        <div className="rounded-xl border-2 border-amber-300 bg-amber-50 p-4 text-sm text-amber-900">
-          決済の準備中です。価格ID (<code>{sp.stripe}</code>) が環境変数に未設定です。
+        <div className="rounded-2xl bg-ios-yellow/10 p-4 text-[13px] text-ios-orange shadow-ios-sm">
+          価格ID ({sp.stripe}) が環境変数に未設定です。
         </div>
       )}
       {sp.stripe === "unconfigured" && (
-        <div className="rounded-xl border-2 border-amber-300 bg-amber-50 p-4 text-sm text-amber-900">
-          Stripeの設定が未完了です。
-          <code className="mx-1 rounded bg-amber-100 px-1 py-0.5 font-mono text-xs">
-            STRIPE_SECRET_KEY
-          </code>
-          と価格IDを環境変数に設定してください。
+        <div className="rounded-2xl bg-ios-yellow/10 p-4 text-[13px] text-ios-orange shadow-ios-sm">
+          Stripe の設定が未完了です。
         </div>
       )}
 
-      <div className="grid md:grid-cols-3 gap-5">
+      <div className="space-y-3">
         <PlanCard
           name="Free"
-          tag="ずっと無料"
+          sub="ずっと無料"
           price="¥0"
           priceSub=""
+          tone="muted"
+          current={plan === "free"}
           features={[
             "1日10問まで挑戦",
             "誤答の『魅力理由』表示",
-            "学習履歴 (直近)",
+            "学習履歴（直近）",
             "ブックマーク 3件まで",
           ]}
           cta={
             plan === "free" ? (
-              user?.isSignedIn ? (
-                <div className="text-center text-xs text-slate-500">現在のプランです</div>
-              ) : (
+              user?.isSignedIn ? null : (
                 <Link
                   href="/api/auth/google/login?returnTo=/"
-                  className="inline-flex w-full items-center justify-center rounded-xl bg-slate-900 px-5 py-3 font-bold text-white"
+                  className="inline-flex h-11 w-full items-center justify-center rounded-full bg-foreground text-[15px] font-semibold text-background active:opacity-80"
                 >
                   Googleでログインして始める
                 </Link>
               )
             ) : (
-              <div className="text-center text-xs text-slate-500">ダウングレードはアカウント画面から</div>
+              <p className="text-center text-[12px] text-muted-foreground">
+                ダウングレードはアカウント画面から
+              </p>
             )
           }
-          current={plan === "free"}
         />
 
         <PlanCard
-          highlight
           name="Pro"
-          tag="人気"
+          sub="人気"
           price={`¥${PRO_PRICE_JPY_MONTHLY.toLocaleString()}`}
-          priceSub={`/月  ·  年払い ¥${PRO_PRICE_JPY_YEARLY.toLocaleString()}`}
+          priceSub={`/月 · 年払い ¥${PRO_PRICE_JPY_YEARLY.toLocaleString()}`}
+          tone="primary"
+          current={plan === "pro"}
           features={[
             "問題演習 1日無制限",
             "詳細ヒートマップ / 日次推移 / 推薦学習",
@@ -183,38 +180,44 @@ export default async function PricingPage({
             pro && !premium ? (
               <Link
                 href="/account"
-                className="inline-flex w-full items-center justify-center rounded-xl bg-slate-900 px-5 py-3 font-bold text-white"
+                className="inline-flex h-11 w-full items-center justify-center rounded-full bg-muted text-[15px] font-semibold text-foreground active:opacity-80"
               >
                 アカウント管理
               </Link>
             ) : premium ? (
-              <div className="text-center text-xs text-slate-500">Premiumに含まれています</div>
+              <p className="text-center text-[12px] text-muted-foreground">
+                Premiumに含まれています
+              </p>
             ) : (
-              <CheckoutButtons tier="pro" configured={configured} signedIn={!!user?.isSignedIn} />
+              <CheckoutButtons
+                tier="pro"
+                configured={configured}
+                signedIn={!!user?.isSignedIn}
+              />
             )
           }
-          current={plan === "pro"}
         />
 
         <PlanCard
-          premium
           name="Premium"
-          tag="試験直前の追い込みに"
+          sub="試験直前の追い込み"
           price={`¥${PREMIUM_PRICE_JPY_MONTHLY.toLocaleString()}`}
-          priceSub={`/月  ·  年払い ¥${PREMIUM_PRICE_JPY_YEARLY.toLocaleString()}`}
+          priceSub={`/月 · 年払い ¥${PREMIUM_PRICE_JPY_YEARLY.toLocaleString()}`}
+          tone="purple"
+          current={plan === "premium"}
           features={[
-            "Proのすべての機能",
+            "Proの全機能",
             "全年度の過去問フルアーカイブ",
-            "AI解説 (誤答パターンに合わせた個別解説)",
-            "優先サポート (メール・24h以内返信)",
-            "模擬試験は最大200問まで拡張",
+            "AI解説（誤答パターン別個別解説）",
+            "優先サポート（メール・24h以内）",
+            "模擬試験を最大200問まで拡張",
             "学習プランの個別カスタマイズ",
           ]}
           cta={
             premium ? (
               <Link
                 href="/account"
-                className="inline-flex w-full items-center justify-center rounded-xl bg-slate-900 px-5 py-3 font-bold text-white"
+                className="inline-flex h-11 w-full items-center justify-center rounded-full bg-muted text-[15px] font-semibold text-foreground active:opacity-80"
               >
                 アカウント管理
               </Link>
@@ -226,17 +229,27 @@ export default async function PricingPage({
               />
             )
           }
-          current={plan === "premium"}
         />
       </div>
 
-      <section className="rounded-2xl border bg-white p-6 space-y-3">
-        <h2 className="text-lg font-bold">よくある質問</h2>
-        <Faq q="解約はいつでもできますか？" a="はい。アカウント画面から即時解約でき、解約後も課金期間の最終日までProまたはPremiumが使えます。" />
-        <Faq q="支払方法は？" a="Stripeで処理します。クレジットカードに対応しています。" />
-        <Faq q="無料プランでも過去問は解けますか？" a="はい。1日10問まで解けます。誤答の『魅力理由』表示も含めて核の体験はFreeでお試しいただけます。" />
-        <Faq q="プラン変更 (Pro → Premium) は即時反映されますか？" a="Stripe の仕様に従い、即時アップグレード＋次回請求で日割り計算されます。Premium → Pro のダウングレードも同様。" />
-        <Faq q="領収書は発行できますか？" a="Stripeのアカウントから自動発行されます。請求履歴もすべて取得できます。" />
+      <section className="space-y-2">
+        <div className="ios-section-label">よくある質問</div>
+        <div className="ios-list shadow-ios-sm">
+          <Faq
+            q="解約はいつでもできますか？"
+            a="はい。アカウント画面から即時解約でき、解約後も課金期間の最終日までご利用いただけます。"
+          />
+          <Faq q="支払方法は？" a="Stripeで処理します。クレジットカードに対応しています。" />
+          <Faq
+            q="無料プランでも過去問は解けますか？"
+            a="はい。1日10問まで解けます。誤答の『魅力理由』も含めて核の体験はFreeでお試しいただけます。"
+          />
+          <Faq
+            q="プラン変更 (Pro → Premium) は即時反映されますか？"
+            a="Stripeの仕様に従い即時アップグレード＋次回請求で日割り計算されます。"
+          />
+          <Faq q="領収書は発行できますか？" a="Stripeのアカウントから自動発行されます。" />
+        </div>
       </section>
     </div>
   );
@@ -251,14 +264,10 @@ function CheckoutButtons({
   configured: boolean;
   signedIn: boolean;
 }) {
-  const Icon = tier === "premium" ? Crown : Zap;
-  const monthColor =
-    tier === "premium"
-      ? "from-violet-600 to-fuchsia-600"
-      : "from-amber-500 to-orange-500";
-  const yearBorder =
-    tier === "premium" ? "border-violet-400 text-violet-700" : "border-amber-400 text-amber-700";
-
+  const isPremium = tier === "premium";
+  const primaryBg = isPremium
+    ? "bg-ios-purple text-white"
+    : "bg-primary text-primary-foreground";
   return (
     <div className="space-y-2">
       <form action={startCheckoutAction}>
@@ -267,9 +276,8 @@ function CheckoutButtons({
         <button
           type="submit"
           disabled={!configured}
-          className={`inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r ${monthColor} px-5 py-3 font-bold text-white shadow-lg transition hover:shadow-xl disabled:opacity-50`}
+          className={`inline-flex h-11 w-full items-center justify-center rounded-full ${primaryBg} text-[15px] font-semibold active:opacity-80 disabled:opacity-40`}
         >
-          <Icon className="h-4 w-4" />
           月額でアップグレード
         </button>
       </form>
@@ -279,13 +287,13 @@ function CheckoutButtons({
         <button
           type="submit"
           disabled={!configured}
-          className={`inline-flex w-full items-center justify-center rounded-xl border-2 ${yearBorder} bg-white px-5 py-3 font-bold transition hover:bg-slate-50 disabled:opacity-50`}
+          className="inline-flex h-11 w-full items-center justify-center rounded-full bg-muted text-[15px] font-semibold text-foreground active:opacity-80 disabled:opacity-40"
         >
-          年額 (お得)
+          年額（お得）
         </button>
       </form>
       {!signedIn && (
-        <p className="text-center text-xs text-slate-500">
+        <p className="text-center text-[11px] text-muted-foreground">
           お支払いにはGoogleログインが必要です
         </p>
       )}
@@ -295,73 +303,72 @@ function CheckoutButtons({
 
 function PlanCard({
   name,
-  tag,
+  sub,
   price,
   priceSub,
   features,
   cta,
-  highlight,
-  premium,
+  tone,
   current,
 }: {
   name: string;
-  tag: string;
+  sub: string;
   price: string;
   priceSub: string;
   features: string[];
   cta: React.ReactNode;
-  highlight?: boolean;
-  premium?: boolean;
+  tone: "muted" | "primary" | "purple";
   current?: boolean;
 }) {
-  const border = premium
-    ? "border-violet-400 bg-gradient-to-br from-violet-50 to-white shadow-xl"
-    : highlight
-      ? "border-amber-400 bg-gradient-to-br from-amber-50 to-white shadow-xl"
-      : "border-slate-200 bg-white";
+  const accentText =
+    tone === "purple"
+      ? "text-ios-purple"
+      : tone === "primary"
+      ? "text-primary"
+      : "text-muted-foreground";
   return (
-    <div className={`relative rounded-3xl border-2 p-6 ${border}`}>
-      {current && (
-        <div className="absolute right-4 top-4 rounded-full bg-emerald-100 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-emerald-700">
-          現在のプラン
-        </div>
-      )}
-      <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-500">
-        <span>{name}</span>
-        {tag && (
-          <span className={`rounded-full px-2 py-0.5 text-[10px] ${
-            premium ? "bg-violet-100 text-violet-700" : highlight ? "bg-amber-100 text-amber-700" : "bg-slate-100 text-slate-600"
-          }`}>
-            {tag}
+    <div className="rounded-3xl bg-card p-5 shadow-ios-sm">
+      <div className="flex items-center gap-2">
+        <span className="text-ios-title3 font-semibold">{name}</span>
+        <span className={`text-[12px] font-semibold ${accentText}`}>{sub}</span>
+        {current && (
+          <span className="ml-auto rounded-full bg-ios-green/15 px-2 py-0.5 text-[10px] font-semibold text-ios-green">
+            現在のプラン
           </span>
         )}
       </div>
-      <div className="mt-1 flex items-baseline gap-2">
-        <div className="text-4xl font-black tracking-tight text-slate-900">{price}</div>
-        {priceSub && <div className="text-sm text-slate-500">{priceSub}</div>}
+      <div className="mt-1 flex items-baseline gap-1.5">
+        <span className="text-[32px] font-semibold tracking-tight">{price}</span>
+        {priceSub && <span className="text-[12px] text-muted-foreground">{priceSub}</span>}
       </div>
 
-      <ul className="mt-5 space-y-2">
+      <ul className="mt-4 space-y-1.5">
         {features.map((f) => (
-          <li key={f} className="flex items-start gap-2 text-sm text-slate-800">
-            <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
-              <Check className="h-3 w-3" strokeWidth={3} />
-            </span>
-            {f}
+          <li key={f} className="flex items-start gap-2 text-[14px]">
+            <Check
+              className={`mt-0.5 h-4 w-4 shrink-0 ${accentText}`}
+              strokeWidth={2.5}
+            />
+            <span>{f}</span>
           </li>
         ))}
       </ul>
 
-      <div className="mt-6">{cta}</div>
+      {cta && <div className="mt-5">{cta}</div>}
     </div>
   );
 }
 
 function Faq({ q, a }: { q: string; a: string }) {
   return (
-    <details className="rounded-xl border bg-slate-50 px-4 py-3">
-      <summary className="cursor-pointer font-semibold text-slate-900">{q}</summary>
-      <p className="mt-2 text-sm text-slate-700">{a}</p>
+    <details className="group">
+      <summary className="ios-row cursor-pointer list-none font-medium [&::-webkit-details-marker]:hidden">
+        {q}
+        <span className="ml-auto text-muted-foreground transition-transform group-open:rotate-90">
+          ›
+        </span>
+      </summary>
+      <p className="px-4 pb-3 text-[13px] text-muted-foreground">{a}</p>
     </details>
   );
 }

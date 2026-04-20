@@ -2,45 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Apple-style design system.
+ *
+ * Palette inspired by iOS system colors: systemGray6 as the app background,
+ * pure white cards, near-black text with muted secondary greys, and a single
+ * tint (iOS systemBlue #007AFF) for primary actions.
+ *
+ * Typography targets the native font stack so the app renders in SF Pro on
+ * Apple devices (Hiragino Sans for Japanese glyphs) and Inter / Segoe on
+ * other platforms — feels like a native app rather than a web site.
+ */
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 47.4% 11.2%;
+    --background: 240 10% 96.5%;       /* #F2F2F7 systemGray6 light */
+    --foreground: 0 0% 7%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 47.4% 11.2%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
+    --card-foreground: 0 0% 7%;
+    --primary: 211 100% 50%;           /* #007AFF systemBlue */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 6% 90%;
+    --secondary-foreground: 0 0% 7%;
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+    --accent: 211 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 4 90% 58%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 211 100% 50%;
+    --radius: 0.875rem;                /* 14px — iOS-ish corner radius */
   }
   .dark {
-    --background: 222.2 47.4% 11.2%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 47.4% 11.2%;
-    --card-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 240 3% 11%;
+    --card-foreground: 0 0% 100%;
+    --primary: 211 100% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 3% 17%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 3% 17%;
+    --muted-foreground: 240 4% 65%;
+    --accent: 211 100% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 4 90% 58%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 3% 17%;
+    --input: 240 3% 17%;
+    --ring: 211 100% 55%;
   }
 }
 
@@ -48,8 +59,43 @@
   * {
     @apply border-border;
   }
+  html {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family:
+      -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro JP",
+      "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI",
+      "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1, "palt" 1;
+    letter-spacing: -0.003em;
+  }
+  h1, h2, h3, h4, h5 {
+    letter-spacing: -0.02em;
+  }
+  /* Honor safe areas so the bottom tab bar sits above the home indicator. */
+  body {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+@layer components {
+  /* iOS-style grouped inset list, used for settings / account. */
+  .ios-list {
+    @apply overflow-hidden rounded-2xl bg-card;
+  }
+  .ios-list > * + * {
+    @apply border-t border-border/60;
+  }
+  .ios-row {
+    @apply flex min-h-[52px] items-center gap-3 px-4 py-3 text-[15px];
+  }
+  /* Subtle section header used above grouped lists. */
+  .ios-section-label {
+    @apply px-4 pb-2 text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground;
   }
 }

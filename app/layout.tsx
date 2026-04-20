@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import "./globals.css";
 import { siteConfig } from "@/lib/site";
 import { UserMenu } from "@/components/UserMenu";
+import { MobileTabBar } from "@/components/MobileTabBar";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -46,18 +47,19 @@ export const dynamic = "force-dynamic";
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
+    { media: "(prefers-color-scheme: light)", color: "#F2F2F7" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
   ],
   width: "device-width",
   initialScale: 1,
+  viewportFit: "cover",
 };
 
 function NavLink({ href, label }: { href: string; label: string }) {
   return (
     <Link
       href={href}
-      className="rounded-lg px-3 py-1.5 font-semibold text-slate-600 hover:bg-slate-100 hover:text-slate-900 whitespace-nowrap transition"
+      className="rounded-full px-3 py-1.5 text-[14px] font-medium text-muted-foreground transition hover:bg-muted hover:text-foreground"
     >
       {label}
     </Link>
@@ -71,44 +73,50 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className="min-h-screen bg-slate-50 text-slate-900 antialiased">
-        <header className="sticky top-0 z-30 border-b bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-          <div className="container flex h-14 items-center gap-6">
-            <Link href="/" className="flex items-center gap-2 font-black tracking-tight">
-              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 text-sm font-black text-white shadow-sm">
+      <body className="min-h-screen bg-background text-foreground antialiased">
+        <header className="sticky top-0 z-30 border-b border-border/60 bg-background/80 backdrop-blur-xl">
+          <div className="mx-auto flex h-12 max-w-5xl items-center gap-4 px-4">
+            <Link
+              href="/"
+              className="flex items-center gap-2 text-[15px] font-semibold tracking-tight"
+            >
+              <span className="flex h-6 w-6 items-center justify-center rounded-md bg-foreground text-[11px] font-bold text-background">
                 理
               </span>
               <span>理解ノート</span>
             </Link>
-            <nav className="flex gap-1 text-sm overflow-x-auto flex-1">
-              <NavLink href="/learn" label="学習" />
+            <nav className="hidden flex-1 items-center gap-0.5 md:flex">
+              <NavLink href="/" label="ホーム" />
               <NavLink href="/learn/questions" label="問題" />
               <NavLink href="/learn/mock-exam" label="模試" />
-              <NavLink href="/guides" label="ガイド" />
-              <NavLink href="/topics" label="論点" />
-              <NavLink href="/misconceptions" label="誤解" />
-              <NavLink href="/dashboard" label="DB" />
-              <NavLink href="/history" label="履歴" />
+              <NavLink href="/dashboard" label="分析" />
               <NavLink href="/bookmarks" label="保存" />
+              <NavLink href="/topics" label="論点" />
               <NavLink href="/pricing" label="料金" />
             </nav>
-            <Suspense fallback={null}>
-              <UserMenu />
-            </Suspense>
+            <div className="ml-auto md:ml-0">
+              <Suspense fallback={null}>
+                <UserMenu />
+              </Suspense>
+            </div>
           </div>
         </header>
-        <main className="container py-8">{children}</main>
-        <footer className="border-t py-6 text-center text-xs text-slate-500 space-y-1.5">
+
+        <main className="mx-auto w-full max-w-3xl px-4 pt-4 pb-[calc(env(safe-area-inset-bottom)+88px)] md:max-w-5xl md:px-6 md:pt-8 md:pb-16">
+          {children}
+        </main>
+
+        <footer className="hidden border-t border-border/60 py-6 text-center text-[11px] text-muted-foreground md:block">
           <div>© {new Date().getFullYear()} {siteConfig.name}</div>
-          <div>
-            ITパスポート試験の問題は IPA (情報処理推進機構) の著作物です。本サイトは学習目的での引用・構造化・解説を行っています。
-          </div>
-          <div>
-            <Link href="/legal" className="underline hover:text-slate-700">
+          <div className="mt-1">
+            ITパスポート試験の問題はIPAの著作物です。
+            <Link href="/legal" className="ml-1 underline hover:text-foreground">
               著作権・引用について
             </Link>
           </div>
         </footer>
+
+        <MobileTabBar />
       </body>
     </html>
   );

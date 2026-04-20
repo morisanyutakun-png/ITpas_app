@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { Check, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { choiceTheme } from "@/lib/design";
 
 export type ChoiceVM = {
   label: string;
@@ -11,6 +10,14 @@ export type ChoiceVM = {
   isCorrect: boolean;
 };
 
+/**
+ * Apple-style choice list.
+ *
+ * Neutral cards by default; state is expressed with a single tint (primary
+ * blue for selected, system green/red on reveal). Large tap targets with
+ * subtle haptic-like scale animation. Label tile is a small circle, not a
+ * big colored panel — keeps the row clean and scannable.
+ */
 export function ChoiceList({
   choices,
   selectedLabel,
@@ -23,9 +30,8 @@ export function ChoiceList({
   onSelect: (label: string) => void;
 }) {
   return (
-    <div className="grid gap-3">
+    <div className="space-y-2">
       {choices.map((c, i) => {
-        const theme = choiceTheme[c.label] ?? choiceTheme["ア"];
         const isSelected = selectedLabel === c.label;
         const showCorrect = revealed && c.isCorrect;
         const showWrong = revealed && isSelected && !c.isCorrect;
@@ -37,56 +43,55 @@ export function ChoiceList({
             type="button"
             disabled={revealed}
             onClick={() => onSelect(c.label)}
-            initial={{ opacity: 0, y: 8 }}
+            initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: dimmed ? 0.4 : 1, y: 0 }}
-            transition={{ duration: 0.18, delay: i * 0.04 }}
-            whileHover={!revealed ? { scale: 1.01, y: -1 } : undefined}
-            whileTap={!revealed ? { scale: 0.99 } : undefined}
+            transition={{ duration: 0.18, delay: i * 0.03 }}
+            whileTap={!revealed ? { scale: 0.985 } : undefined}
             className={cn(
-              "group relative flex w-full items-stretch gap-0 overflow-hidden rounded-xl border-2 text-left transition-shadow",
-              !revealed && "shadow-sm hover:shadow-md",
-              !revealed && (isSelected ? theme.selected : theme.tile),
-              showCorrect && "bg-emerald-50 border-emerald-500 ring-2 ring-emerald-400 shadow-lg",
-              showWrong && "bg-rose-50 border-rose-500 ring-2 ring-rose-400 shadow-lg",
-              dimmed && "bg-slate-50 border-slate-200"
+              "flex w-full items-center gap-3 rounded-2xl bg-card p-4 text-left shadow-ios-sm transition-colors",
+              !revealed && !isSelected && "active:bg-muted",
+              !revealed && isSelected && "ring-2 ring-primary",
+              showCorrect && "ring-2 ring-ios-green bg-ios-green/5",
+              showWrong && "ring-2 ring-ios-red bg-ios-red/5"
             )}
           >
-            {/* Big colored label tile */}
-            <div
+            <span
               className={cn(
-                "flex w-14 shrink-0 items-center justify-center text-2xl font-black",
-                theme.label,
-                showCorrect && "bg-emerald-500",
-                showWrong && "bg-rose-500",
-                dimmed && "bg-slate-300"
+                "flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-[15px] font-semibold",
+                !revealed && !isSelected && "bg-muted text-foreground",
+                !revealed && isSelected && "bg-primary text-primary-foreground",
+                showCorrect && "bg-ios-green text-white",
+                showWrong && "bg-ios-red text-white",
+                dimmed && "bg-muted text-muted-foreground"
               )}
             >
               {c.label}
-            </div>
+            </span>
 
-            <div className="flex flex-1 items-center justify-between gap-3 px-4 py-4">
-              <span className="text-sm md:text-base leading-relaxed">{c.body}</span>
-              {showCorrect && (
-                <motion.div
-                  initial={{ scale: 0, rotate: -90 }}
-                  animate={{ scale: 1, rotate: 0 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 18 }}
-                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-white"
-                >
-                  <Check className="h-5 w-5" strokeWidth={3} />
-                </motion.div>
-              )}
-              {showWrong && (
-                <motion.div
-                  initial={{ scale: 0, rotate: 90 }}
-                  animate={{ scale: 1, rotate: 0 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 18 }}
-                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-rose-500 text-white"
-                >
-                  <X className="h-5 w-5" strokeWidth={3} />
-                </motion.div>
-              )}
-            </div>
+            <span className="flex-1 text-[15px] leading-relaxed text-foreground">
+              {c.body}
+            </span>
+
+            {showCorrect && (
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ type: "spring", stiffness: 320, damping: 18 }}
+                className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-ios-green text-white"
+              >
+                <Check className="h-4 w-4" strokeWidth={3} />
+              </motion.div>
+            )}
+            {showWrong && (
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ type: "spring", stiffness: 320, damping: 18 }}
+                className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-ios-red text-white"
+              >
+                <X className="h-4 w-4" strokeWidth={3} />
+              </motion.div>
+            )}
           </motion.button>
         );
       })}

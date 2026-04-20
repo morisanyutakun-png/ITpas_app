@@ -1,19 +1,8 @@
 import Link from "next/link";
 import { sql } from "drizzle-orm";
-import { db } from "@/db/client";
-import { readCurrentUser } from "@/lib/currentUser";
-import {
-  getDailyAttemptCount,
-  hasFeature,
-  isPaid,
-  isPremium,
-  limitsFor,
-  PLAN_LIMITS,
-  planLabel,
-} from "@/lib/plan";
-import { openBillingPortalAction } from "@/server/actions/checkout";
 import {
   CheckCircle2,
+  ChevronRight,
   Crown,
   FileText,
   LogOut,
@@ -22,6 +11,17 @@ import {
   Target,
   User,
 } from "lucide-react";
+import { db } from "@/db/client";
+import { readCurrentUser } from "@/lib/currentUser";
+import {
+  getDailyAttemptCount,
+  hasFeature,
+  isPaid,
+  isPremium,
+  limitsFor,
+  planLabel,
+} from "@/lib/plan";
+import { openBillingPortalAction } from "@/server/actions/checkout";
 import { AdSlot } from "@/components/AdSlot";
 
 export const dynamic = "force-dynamic";
@@ -36,18 +36,22 @@ export default async function AccountPage({
 
   if (!user || !user.isSignedIn) {
     return (
-      <div className="mx-auto max-w-md rounded-3xl border-2 border-slate-200 bg-white p-8 text-center space-y-4">
-        <User className="mx-auto h-10 w-10 text-slate-400" />
-        <h1 className="text-xl font-bold">アカウント</h1>
-        <p className="text-sm text-slate-600">
-          進捗を端末をまたいで保存し、Pro/Premiumを使うにはGoogleでログインしてください。
-        </p>
-        <Link
-          href="/api/auth/google/login?returnTo=/account"
-          className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 px-5 py-3 font-bold text-white shadow-lg transition hover:bg-slate-800"
-        >
-          Googleでログイン
-        </Link>
+      <div className="mx-auto max-w-md space-y-5 pt-6">
+        <div className="rounded-3xl bg-card p-6 text-center shadow-ios-sm">
+          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-muted">
+            <User className="h-6 w-6 text-muted-foreground" />
+          </div>
+          <h1 className="mt-3 text-ios-title3 font-semibold">アカウント</h1>
+          <p className="mt-1 text-[13px] text-muted-foreground">
+            Googleでログインすると、端末をまたいで進捗を保存できます。
+          </p>
+          <Link
+            href="/api/auth/google/login?returnTo=/account"
+            className="mt-4 inline-flex h-11 w-full items-center justify-center rounded-full bg-foreground text-[15px] font-semibold text-background active:opacity-80"
+          >
+            Googleでログイン
+          </Link>
+        </div>
       </div>
     );
   }
@@ -62,233 +66,256 @@ export default async function AccountPage({
       FROM attempts WHERE user_id = ${user.id}
     `),
   ]);
-  const totals = (totalsRow.rows[0] ?? {}) as { total?: number; correct?: number };
+  const totals = (totalsRow.rows[0] ?? {}) as {
+    total?: number;
+    correct?: number;
+  };
   const total = Number(totals.total ?? 0);
   const correct = Number(totals.correct ?? 0);
-
   const dailyLimit = limitsFor(user.plan).dailyQuestionAttempts;
 
   return (
-    <div className="mx-auto max-w-2xl space-y-6">
+    <div className="space-y-6">
       {sp.upgraded && (
-        <div className="rounded-xl border-2 border-emerald-300 bg-emerald-50 p-4 text-sm text-emerald-900 flex items-center gap-2">
-          <CheckCircle2 className="h-5 w-5" />
-          {sp.upgraded === "premium" ? "Premium" : "Pro"}へのアップグレードが完了しました！
+        <div className="flex items-center gap-2 rounded-2xl bg-ios-green/10 px-4 py-3 text-[13px] text-ios-green shadow-ios-sm">
+          <CheckCircle2 className="h-4 w-4" />
+          {sp.upgraded === "premium" ? "Premium" : "Pro"}へのアップグレードが完了しました
         </div>
       )}
       {sp.portal === "no_customer" && (
-        <div className="rounded-xl border-2 border-amber-300 bg-amber-50 p-4 text-sm text-amber-900">
-          Stripeの課金情報がまだ関連付けられていません。先にProまたはPremiumへアップグレードしてください。
+        <div className="rounded-2xl bg-ios-yellow/10 px-4 py-3 text-[13px] text-ios-orange shadow-ios-sm">
+          Stripeの課金情報が未紐付けです。先にアップグレードしてください。
         </div>
       )}
 
-      <div className="rounded-3xl border-2 border-slate-200 bg-white p-6">
-        <div className="flex items-center gap-4">
-          {user.imageUrl ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={user.imageUrl}
-              alt=""
-              className="h-14 w-14 rounded-full border-2 border-slate-200"
-            />
-          ) : (
-            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-slate-200">
-              <User className="h-6 w-6 text-slate-500" />
-            </div>
-          )}
-          <div className="min-w-0 flex-1">
-            <div className="truncate text-lg font-bold">{user.displayName ?? "ユーザー"}</div>
-            <div className="truncate text-sm text-slate-500">{user.email}</div>
+      {/* Profile header */}
+      <section className="flex items-center gap-4 rounded-2xl bg-card p-5 shadow-ios-sm">
+        {user.imageUrl ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={user.imageUrl}
+            alt=""
+            className="h-14 w-14 rounded-full"
+            referrerPolicy="no-referrer"
+          />
+        ) : (
+          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-muted">
+            <User className="h-6 w-6 text-muted-foreground" />
           </div>
-          <a
-            href="/api/auth/logout"
-            className="inline-flex items-center gap-1 rounded-lg border-2 border-slate-200 px-3 py-1.5 text-xs font-bold text-slate-700 hover:border-slate-400"
-          >
-            <LogOut className="h-3 w-3" />
-            ログアウト
-          </a>
-        </div>
-      </div>
-
-      <div className="rounded-3xl border-2 border-slate-200 bg-white p-6 space-y-4">
-        <div className="flex items-center justify-between">
-          <div>
-            <div className="text-xs font-bold uppercase tracking-wider text-slate-500">
-              現在のプラン
-            </div>
-            <div className="mt-1 flex items-center gap-2 text-2xl font-black">
-              {premium ? (
-                <>
-                  <Crown className="h-5 w-5 text-violet-500" />
-                  <span>Premium</span>
-                </>
-              ) : paid ? (
-                <>
-                  <Sparkles className="h-5 w-5 text-amber-500" />
-                  <span>Pro</span>
-                </>
-              ) : (
-                <span>Free</span>
-              )}
-            </div>
-          </div>
-          {paid ? (
-            <form action={openBillingPortalAction}>
-              <button
-                type="submit"
-                className="inline-flex items-center gap-1 rounded-lg border-2 border-slate-200 px-3 py-1.5 text-xs font-bold text-slate-700 hover:border-slate-400"
-              >
-                支払いを管理
-              </button>
-            </form>
-          ) : (
-            <Link
-              href="/pricing"
-              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 px-4 py-2 font-bold text-white"
-            >
-              アップグレード
-            </Link>
-          )}
-        </div>
-
-        {paid && !premium && (
-          <Link
-            href="/pricing"
-            className="flex items-center gap-3 rounded-xl border-2 border-violet-200 bg-violet-50 p-3 text-sm text-violet-900 transition hover:border-violet-400"
-          >
-            <Crown className="h-5 w-5 text-violet-600" />
-            <div className="flex-1">
-              <div className="font-bold">Premium にアップグレード</div>
-              <div className="text-xs text-violet-700">全年度アーカイブ + AI個別解説 + 優先サポート</div>
-            </div>
-            <span className="text-xs font-bold">→</span>
-          </Link>
         )}
+        <div className="min-w-0 flex-1">
+          <div className="truncate text-ios-title3 font-semibold">
+            {user.displayName ?? "ユーザー"}
+          </div>
+          <div className="truncate text-[12px] text-muted-foreground">
+            {user.email}
+          </div>
+        </div>
+      </section>
 
-        <div className="rounded-xl bg-slate-50 p-4">
-          <div className="text-xs font-bold uppercase tracking-wider text-slate-500">
-            本日の挑戦
+      {/* Plan section */}
+      <section className="space-y-2">
+        <div className="ios-section-label">プラン</div>
+        <div className="rounded-2xl bg-card p-5 shadow-ios-sm">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              {premium ? (
+                <Crown className="h-5 w-5 text-ios-purple" />
+              ) : paid ? (
+                <Sparkles className="h-5 w-5 text-ios-orange" />
+              ) : null}
+              <span className="text-ios-title2 font-semibold">
+                {planLabel(user.plan)}
+              </span>
+            </div>
+            {paid ? (
+              <form action={openBillingPortalAction}>
+                <button
+                  type="submit"
+                  className="h-9 rounded-full bg-muted px-3.5 text-[13px] font-semibold text-foreground active:opacity-80"
+                >
+                  支払い管理
+                </button>
+              </form>
+            ) : (
+              <Link
+                href="/pricing"
+                className="h-9 inline-flex items-center rounded-full bg-primary px-3.5 text-[13px] font-semibold text-primary-foreground active:opacity-80"
+              >
+                アップグレード
+              </Link>
+            )}
           </div>
-          <div className="mt-1 text-lg font-bold">
-            {Number.isFinite(dailyLimit)
-              ? `${usedToday} / ${dailyLimit} 問`
-              : `${usedToday} 問 (無制限)`}
-          </div>
-          {Number.isFinite(dailyLimit) && (
-            <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-slate-200">
+
+          {/* Daily usage bar */}
+          <div className="mt-5">
+            <div className="flex items-baseline justify-between text-[12px]">
+              <span className="text-muted-foreground">本日の挑戦</span>
+              <span className="font-semibold">
+                {Number.isFinite(dailyLimit)
+                  ? `${usedToday} / ${dailyLimit}問`
+                  : `${usedToday}問（無制限）`}
+              </span>
+            </div>
+            <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-muted">
               <div
-                className="h-full bg-gradient-to-r from-amber-400 to-orange-500 transition-all"
+                className={`h-full transition-all ${
+                  Number.isFinite(dailyLimit)
+                    ? "bg-primary"
+                    : "bg-ios-green"
+                }`}
                 style={{
-                  width: `${Math.min(100, (usedToday / (dailyLimit as number)) * 100)}%`,
+                  width: Number.isFinite(dailyLimit)
+                    ? `${Math.min(100, (usedToday / (dailyLimit as number)) * 100)}%`
+                    : "100%",
                 }}
               />
             </div>
+          </div>
+
+          {/* Totals */}
+          <div className="mt-5 grid grid-cols-2 gap-3">
+            <div className="rounded-xl bg-muted/60 p-3">
+              <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground">
+                累計回答
+              </div>
+              <div className="mt-1 text-[22px] font-semibold tabular-nums">
+                {total}
+              </div>
+            </div>
+            <div className="rounded-xl bg-muted/60 p-3">
+              <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground">
+                正答率
+              </div>
+              <div className="mt-1 text-[22px] font-semibold tabular-nums">
+                {total > 0 ? `${Math.round((correct / total) * 100)}%` : "—"}
+              </div>
+            </div>
+          </div>
+
+          {paid && !premium && (
+            <Link
+              href="/pricing?reason=year_locked"
+              className="mt-4 flex items-center gap-3 rounded-xl bg-ios-purple/10 p-3 text-[13px] text-ios-purple active:opacity-80"
+            >
+              <Crown className="h-4 w-4 shrink-0" />
+              <span className="flex-1">
+                <span className="font-semibold">Premiumへ</span>
+                <span className="block text-[11px] opacity-80">
+                  全年度アーカイブ + AI個別解説 + 優先サポート
+                </span>
+              </span>
+              <ChevronRight className="h-4 w-4" />
+            </Link>
           )}
         </div>
+      </section>
 
-        <div className="grid grid-cols-2 gap-3">
-          <Stat label="累計回答" value={total.toString()} />
-          <Stat
-            label="正答率"
-            value={total > 0 ? `${Math.round((correct / total) * 100)}%` : "—"}
+      {/* Tools list (grouped) */}
+      <section className="space-y-2">
+        <div className="ios-section-label">ツール</div>
+        <div className="ios-list shadow-ios-sm">
+          <SettingsRow
+            icon={Target}
+            tint="text-ios-blue"
+            title="模擬試験"
+            sub={
+              hasFeature(user, "mockExam") ? "100問 / 120分" : "Proで解放"
+            }
+            href={
+              hasFeature(user, "mockExam")
+                ? "/learn/mock-exam"
+                : "/pricing?reason=mock_exam"
+            }
+          />
+          <SettingsRow
+            icon={FileText}
+            tint="text-ios-green"
+            title="学習レポート (PDF)"
+            sub={
+              hasFeature(user, "pdfExport") ? "ワンクリック発行" : "Proで解放"
+            }
+            href={
+              hasFeature(user, "pdfExport")
+                ? "/account/report"
+                : "/pricing?reason=pdf_export"
+            }
+          />
+          <SettingsRow
+            icon={ShieldCheck}
+            tint="text-ios-purple"
+            title="優先サポート"
+            sub={
+              hasFeature(user, "prioritySupport")
+                ? "メール24時間以内返信"
+                : "Premiumで解放"
+            }
+            href={
+              hasFeature(user, "prioritySupport")
+                ? "/account/support"
+                : "/pricing?reason=priority_support"
+            }
           />
         </div>
-      </div>
-
-      <div className="grid gap-3 md:grid-cols-3">
-        <FeatureCard
-          icon={Target}
-          title="模擬試験"
-          desc={`100問 / 120分`}
-          href="/learn/mock-exam"
-          locked={!hasFeature(user, "mockExam")}
-          lockedHint="Proで解放"
-        />
-        <FeatureCard
-          icon={FileText}
-          title="学習レポートPDF"
-          desc="ワンクリック発行"
-          href="/account/report"
-          locked={!hasFeature(user, "pdfExport")}
-          lockedHint="Proで解放"
-        />
-        <FeatureCard
-          icon={ShieldCheck}
-          title="優先サポート"
-          desc="メール24h以内"
-          href="/account/support"
-          locked={!hasFeature(user, "prioritySupport")}
-          lockedHint="Premium限定"
-          premium
-        />
-      </div>
+      </section>
 
       <AdSlot variant="banner" />
 
-      <div className="rounded-3xl border-2 border-slate-200 bg-white p-6 space-y-2">
-        <h2 className="text-sm font-bold">プラン比較 (現在: {planLabel(user.plan)})</h2>
-        <ul className="text-xs text-slate-600 space-y-1">
-          <li>1日の回答数: Free {PLAN_LIMITS.free.dailyQuestionAttempts}問 / Pro・Premium 無制限</li>
-          <li>模擬試験: Free ✕ / Pro ○ / Premium ○ (最大{PLAN_LIMITS.premium.maxSessionCount}問)</li>
-          <li>詳細分析: Free ✕ / Pro ○ / Premium ○</li>
-          <li>ブックマーク: Free {PLAN_LIMITS.free.maxBookmarks}件 / Pro・Premium 無制限</li>
-          <li>問題ノート: Free ✕ / Pro ○ / Premium ○</li>
-          <li>PDF書き出し: Free ✕ / Pro ○ / Premium ○</li>
-          <li>全年度フルアーカイブ: Premium のみ</li>
-          <li>AI個別解説: Premium のみ</li>
-          <li>優先サポート: Premium のみ</li>
-        </ul>
-      </div>
+      {/* Links */}
+      <section className="space-y-2">
+        <div className="ios-section-label">その他</div>
+        <div className="ios-list shadow-ios-sm">
+          <SettingsLink href="/bookmarks" label="ブックマーク" />
+          <SettingsLink href="/history" label="学習履歴" />
+          <SettingsLink href="/pricing" label="料金プラン" />
+          <SettingsLink href="/legal" label="著作権・引用について" />
+        </div>
+      </section>
+
+      {/* Logout */}
+      <a
+        href="/api/auth/logout"
+        className="flex items-center justify-center gap-1.5 rounded-2xl bg-card p-4 text-[15px] font-semibold text-ios-red shadow-ios-sm active:opacity-80"
+      >
+        <LogOut className="h-4 w-4" />
+        ログアウト
+      </a>
     </div>
   );
 }
 
-function FeatureCard({
+function SettingsRow({
   icon: Icon,
+  tint,
   title,
-  desc,
+  sub,
   href,
-  locked,
-  lockedHint,
-  premium,
 }: {
-  icon: typeof User;
+  icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
+  tint: string;
   title: string;
-  desc: string;
+  sub: string;
   href: string;
-  locked: boolean;
-  lockedHint: string;
-  premium?: boolean;
 }) {
-  const hoverBorder = premium ? "hover:border-violet-400" : "hover:border-slate-400";
-  const iconWrap = premium
-    ? "bg-violet-100 text-violet-700"
-    : "bg-slate-900 text-white";
   return (
-    <Link
-      href={locked ? "/pricing" : href}
-      className={`flex items-center gap-3 rounded-2xl border-2 border-slate-200 bg-white p-4 transition ${hoverBorder} ${
-        locked ? "opacity-70" : ""
-      }`}
-    >
-      <div className={`flex h-10 w-10 items-center justify-center rounded-lg ${iconWrap}`}>
-        <Icon className="h-5 w-5" />
+    <Link href={href} className="ios-row active:bg-muted/60">
+      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-muted">
+        <Icon className={`h-4 w-4 ${tint}`} strokeWidth={2.2} />
       </div>
       <div className="flex-1 min-w-0">
-        <div className="text-sm font-bold truncate">{title}</div>
-        <div className="text-[11px] text-slate-500 truncate">
-          {locked ? lockedHint : desc}
-        </div>
+        <div className="text-[15px] font-medium">{title}</div>
+        <div className="text-[12px] text-muted-foreground">{sub}</div>
       </div>
+      <ChevronRight className="h-4 w-4 text-muted-foreground" />
     </Link>
   );
 }
 
-function Stat({ label, value }: { label: string; value: string }) {
+function SettingsLink({ href, label }: { href: string; label: string }) {
   return (
-    <div className="rounded-xl border bg-slate-50 p-4">
-      <div className="text-xs font-bold uppercase tracking-wider text-slate-500">{label}</div>
-      <div className="mt-1 text-2xl font-black">{value}</div>
-    </div>
+    <Link href={href} className="ios-row active:bg-muted/60">
+      <span className="flex-1 text-[15px] font-medium">{label}</span>
+      <ChevronRight className="h-4 w-4 text-muted-foreground" />
+    </Link>
   );
 }

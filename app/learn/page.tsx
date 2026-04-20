@@ -1,93 +1,105 @@
 import Link from "next/link";
-import { Crosshair, ListChecks, Network, Skull, ArrowRight, Shuffle, type LucideIcon } from "lucide-react";
+import {
+  ChevronRight,
+  Crosshair,
+  ListChecks,
+  Network,
+  Shuffle,
+  Skull,
+  Timer,
+  type LucideIcon,
+} from "lucide-react";
 
 export default function LearnHubPage() {
   return (
-    <div className="space-y-8">
-      <div>
-        <h1 className="text-2xl md:text-3xl font-black tracking-tight">学習ハブ</h1>
-        <p className="text-sm text-slate-600">どこから攻める？</p>
-      </div>
+    <div className="space-y-6">
+      <header className="pt-2">
+        <h1 className="text-ios-title1 font-semibold">学習</h1>
+        <p className="mt-1 text-[13px] text-muted-foreground">
+          どこから攻める？目的に合わせて選べます。
+        </p>
+      </header>
 
-      <div className="grid gap-4 md:grid-cols-2">
-        <BigCard
-          href="/learn/random"
-          tone="from-amber-500 to-orange-500"
-          icon={Shuffle}
-          title="ランダムに1問"
-          desc="迷ったらこれ。全範囲から1問だけ表示します。"
-          cta="ランダム出題"
-        />
-        <BigCard
-          href="/learn/session/new?mode=weakness&count=5"
-          tone="from-rose-500 to-pink-500"
-          icon={Crosshair}
-          title="弱点5問チャレンジ"
-          desc="あなたが落ちやすい誤解パターンに刺さる5問を自動抽出。"
-          cta="今すぐ挑む"
-        />
-        <BigCard
-          href="/learn/questions"
-          tone="from-violet-500 to-fuchsia-500"
-          icon={ListChecks}
-          title="問題集（目次）"
-          desc="年度・分類で絞り込んだ目次から好きな問題へ。"
-          cta="一覧を開く"
-        />
-        <BigCard
-          href="/topics"
-          tone="from-emerald-500 to-teal-500"
-          icon={Network}
-          title="論点マップから攻める"
-          desc="OSI、暗号、PM…論点ノードから関連問題に飛ぶ。"
-          cta="マップを見る"
-        />
-        <BigCard
-          href="/misconceptions"
-          tone="from-amber-500 to-orange-500"
-          icon={Skull}
-          title="誤解パターン辞典"
-          desc="ひっかけの正体を予習。同じ誤解で二度落ちない。"
-          cta="敵キャラを見る"
-        />
-      </div>
+      <section className="space-y-2">
+        <div className="ios-section-label">すぐに解く</div>
+        <div className="ios-list shadow-ios-sm">
+          <Row
+            icon={Crosshair}
+            tint="text-ios-red"
+            title="弱点5問チャレンジ"
+            desc="誤解パターン重み付きで自動抽出"
+            href="/learn/session/new?mode=weakness&count=5"
+          />
+          <Row
+            icon={Shuffle}
+            tint="text-ios-purple"
+            title="ランダムに1問"
+            desc="迷ったらこれ。全範囲から1問"
+            href="/learn/random"
+          />
+          <Row
+            icon={Timer}
+            tint="text-ios-blue"
+            title="模擬試験"
+            desc="本番形式 100問 / 120分"
+            href="/learn/mock-exam"
+          />
+        </div>
+      </section>
+
+      <section className="space-y-2">
+        <div className="ios-section-label">絞り込んで探す</div>
+        <div className="ios-list shadow-ios-sm">
+          <Row
+            icon={ListChecks}
+            tint="text-foreground"
+            title="問題集（目次）"
+            desc="年度・分類で絞り込んだ一覧"
+            href="/learn/questions"
+          />
+          <Row
+            icon={Network}
+            tint="text-ios-teal"
+            title="論点マップ"
+            desc="OSI / 暗号 / PM… ノードから関連問題へ"
+            href="/topics"
+          />
+          <Row
+            icon={Skull}
+            tint="text-ios-orange"
+            title="誤解パターン辞典"
+            desc="ひっかけの正体を予習"
+            href="/misconceptions"
+          />
+        </div>
+      </section>
     </div>
   );
 }
 
-function BigCard({
-  href,
-  tone,
+function Row({
   icon: Icon,
+  tint,
   title,
   desc,
-  cta,
+  href,
 }: {
-  href: string;
-  tone: string;
   icon: LucideIcon;
+  tint: string;
   title: string;
   desc: string;
-  cta: string;
+  href: string;
 }) {
   return (
-    <Link href={href} className="group block">
-      <div className="relative h-full overflow-hidden rounded-2xl border-2 border-slate-200 bg-white p-5 shadow-sm transition hover:border-slate-400 hover:shadow-lg">
-        <div
-          className={`absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gradient-to-br ${tone} opacity-10 blur-2xl group-hover:opacity-25 transition`}
-        />
-        <div className="relative space-y-3">
-          <div className={`inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${tone} text-white shadow-md`}>
-            <Icon className="h-6 w-6" strokeWidth={2.5} />
-          </div>
-          <h3 className="text-lg font-bold leading-snug">{title}</h3>
-          <p className="text-sm text-slate-600">{desc}</p>
-          <div className="flex items-center gap-1 text-sm font-bold text-slate-900 group-hover:translate-x-0.5 transition-transform">
-            {cta}
-            <ArrowRight className="h-4 w-4" />
-          </div>
-        </div>
+    <Link href={href} className="ios-row active:bg-muted/60">
+      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-muted">
+        <Icon className={`h-4 w-4 ${tint}`} strokeWidth={2.2} />
       </div>
+      <div className="flex-1 min-w-0">
+        <div className="text-[15px] font-medium">{title}</div>
+        <div className="text-[12px] text-muted-foreground">{desc}</div>
+      </div>
+      <ChevronRight className="h-4 w-4 text-muted-foreground" />
     </Link>
   );
 }

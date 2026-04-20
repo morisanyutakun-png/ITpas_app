@@ -24,11 +24,11 @@ export function BookmarkButton({
         href={`/api/auth/google/login?returnTo=${encodeURIComponent(
           `/learn/questions/${questionId}`
         )}`}
-        className="inline-flex items-center gap-1.5 rounded-lg border-2 border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 hover:border-slate-400"
+        className="inline-flex h-9 items-center gap-1.5 rounded-full bg-muted px-3 text-[13px] font-medium text-muted-foreground active:opacity-80"
         title="ブックマークにはログインが必要です"
       >
         <Bookmark className="h-3.5 w-3.5" />
-        保存 (要ログイン)
+        保存
       </a>
     );
   }
@@ -52,12 +52,13 @@ export function BookmarkButton({
         reason="bookmarks"
       />
       <button
+        type="button"
         onClick={onClick}
         disabled={pending}
-        className={`inline-flex items-center gap-1.5 rounded-lg border-2 px-3 py-1.5 text-xs font-semibold transition ${
+        className={`inline-flex h-9 items-center gap-1.5 rounded-full px-3 text-[13px] font-medium transition-colors active:opacity-80 ${
           bookmarked
-            ? "border-amber-400 bg-amber-50 text-amber-800"
-            : "border-slate-200 bg-white text-slate-600 hover:border-slate-400"
+            ? "bg-ios-orange/10 text-ios-orange"
+            : "bg-muted text-foreground"
         }`}
       >
         {pending ? (

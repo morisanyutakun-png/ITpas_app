@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { Clock, Crown, Lock, Sparkles, Target } from "lucide-react";
+import { ChevronRight, Clock, Crown, Lock, Target } from "lucide-react";
 import { readCurrentUser } from "@/lib/currentUser";
 import {
   hasFeature,
@@ -30,76 +30,68 @@ export default async function MockExamEntryPage({
 
   if (!unlocked) {
     return (
-      <div className="mx-auto max-w-md rounded-3xl border-2 border-amber-300 bg-gradient-to-br from-amber-50 to-white p-8 text-center space-y-4">
-        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-amber-100 text-amber-700">
-          <Lock className="h-7 w-7" />
+      <div className="mx-auto max-w-md space-y-5 pt-6">
+        <div className="rounded-3xl bg-card p-6 text-center shadow-ios-sm">
+          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-ios-orange/10 text-ios-orange">
+            <Lock className="h-6 w-6" />
+          </div>
+          <h1 className="mt-3 text-ios-title3 font-semibold">
+            模擬試験は Pro で解放されます
+          </h1>
+          <p className="mt-1 text-[13px] text-muted-foreground">
+            本番形式 100問 × 120分。時間配分と踏みとどまり方を鍛えます。
+          </p>
+          <Link
+            href="/pricing?reason=mock_exam"
+            className="mt-4 inline-flex h-11 w-full items-center justify-center rounded-full bg-primary text-[15px] font-semibold text-primary-foreground active:opacity-80"
+          >
+            プランを見る
+          </Link>
         </div>
-        <h1 className="text-xl font-bold">模擬試験はProプラン以上で解放されます</h1>
-        <p className="text-sm text-slate-600">
-          本番形式の100問×120分シミュレーション。時間配分と踏みとどまり方を鍛えます。
-        </p>
-        <Link
-          href="/pricing?reason=mock_exam"
-          className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 px-5 py-3 font-bold text-white shadow-lg"
-        >
-          <Sparkles className="h-4 w-4" />
-          Proを見る
-        </Link>
       </div>
     );
   }
 
   return (
-    <div className="mx-auto max-w-2xl space-y-6">
-      <div className="text-center space-y-2">
-        <div className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
-          <Target className="h-3.5 w-3.5" />
-          模擬試験モード
-        </div>
-        <h1 className="text-3xl font-black tracking-tight">本番形式で力試し</h1>
-        <p className="text-sm text-slate-600">
-          問題構成は重み付きランダム、時間は{MOCK_EXAM_DURATION_MIN}分。一度始めたら最後まで。
+    <div className="space-y-6">
+      <header className="pt-2">
+        <h1 className="text-ios-title1 font-semibold">模擬試験</h1>
+        <p className="mt-1 flex items-center gap-1.5 text-[13px] text-muted-foreground">
+          <Clock className="h-3.5 w-3.5" />
+          制限時間 {MOCK_EXAM_DURATION_MIN}分 · 全問必須
         </p>
-      </div>
+      </header>
 
       {sp.error === "size_locked" && (
-        <div className="rounded-xl border-2 border-amber-300 bg-amber-50 p-4 text-sm text-amber-900">
-          選択したサイズは現在のプランでは利用できません ({planLabel(plan)}: 最大{maxSize}問)。
+        <div className="rounded-2xl bg-ios-yellow/10 px-4 py-3 text-[13px] text-ios-orange shadow-ios-sm">
+          選択したサイズは{planLabel(plan)}では利用できません (最大{maxSize}問)。
         </div>
       )}
 
-      <div className="rounded-2xl border-2 border-slate-200 bg-white p-5 space-y-3">
-        <div className="flex items-center gap-2 text-sm">
-          <Clock className="h-4 w-4 text-slate-500" />
-          <span>制限時間 <strong>{MOCK_EXAM_DURATION_MIN}分</strong></span>
-        </div>
-        <div className="text-xs text-slate-500">
-          問題範囲: {planLabel(plan)}プランで解放されている全年度から出題されます。
-        </div>
-
-        <div className="grid gap-2">
-          {sizes.map((n) => (
-            <form key={n} action={startMockExam}>
-              <input type="hidden" name="count" value={n} />
-              <button
-                type="submit"
-                className={`flex w-full items-center justify-between rounded-xl border-2 px-5 py-4 text-left transition ${
-                  n <= maxSize
-                    ? "border-slate-900 bg-slate-900 text-white hover:bg-slate-800"
-                    : "border-violet-300 bg-violet-50 text-violet-900 hover:border-violet-500"
-                }`}
-              >
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10">
-                    {n > maxSize ? (
-                      <Crown className="h-5 w-5 text-violet-600" />
+      <section className="space-y-2">
+        <div className="ios-section-label">問題数を選ぶ</div>
+        <div className="ios-list shadow-ios-sm">
+          {sizes.map((n) => {
+            const locked = n > maxSize;
+            return (
+              <form key={n} action={startMockExam} className="contents">
+                <input type="hidden" name="count" value={n} />
+                <button
+                  type="submit"
+                  className="ios-row w-full text-left active:bg-muted/60"
+                >
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-muted">
+                    {locked ? (
+                      <Crown className="h-4 w-4 text-ios-purple" />
                     ) : (
-                      <Target className="h-5 w-5" />
+                      <Target className="h-4 w-4 text-ios-blue" strokeWidth={2.2} />
                     )}
                   </div>
-                  <div>
-                    <div className="text-lg font-black tracking-tight">{n}問 / {MOCK_EXAM_DURATION_MIN}分</div>
-                    <div className="text-xs opacity-80">
+                  <div className="flex-1">
+                    <div className="text-[15px] font-medium">
+                      {n}問 / {MOCK_EXAM_DURATION_MIN}分
+                    </div>
+                    <div className="text-[12px] text-muted-foreground">
                       {n === 100
                         ? "本試験と同じ規模"
                         : n === 150
@@ -107,24 +99,31 @@ export default async function MockExamEntryPage({
                         : "極限演習"}
                     </div>
                   </div>
-                </div>
-                <span className="text-xs font-bold">
-                  {n > maxSize ? "Premium →" : "開始 →"}
-                </span>
-              </button>
-            </form>
-          ))}
+                  <ChevronRight className="h-4 w-4 text-muted-foreground" />
+                </button>
+              </form>
+            );
+          })}
         </div>
-      </div>
+      </section>
 
-      <div className="rounded-2xl border bg-slate-50 p-4 text-xs text-slate-600 space-y-1">
-        <div className="font-bold text-slate-800">ルール</div>
-        <ul className="list-disc pl-5 space-y-0.5">
-          <li>解答中は Pro/Premium の1日回答数カウントに含まれます (上限は無制限です)。</li>
-          <li>タイマーがゼロになるとセッション結果画面へ自動遷移します。</li>
-          <li>ブラウザを閉じても途中から再開できます (残り時間は保存されません)。</li>
-        </ul>
-      </div>
+      <section className="space-y-2">
+        <div className="ios-section-label">ルール</div>
+        <div className="ios-list shadow-ios-sm">
+          <Rule text="回答数は Pro/Premium の1日カウントに含まれます (上限は無制限)" />
+          <Rule text="タイマーがゼロになると結果画面へ自動遷移します" />
+          <Rule text="ブラウザを閉じても途中から再開できます (残り時間は保存されません)" />
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function Rule({ text }: { text: string }) {
+  return (
+    <div className="ios-row items-start">
+      <span className="mt-0.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-ios-gray2" />
+      <span className="text-[13px] text-muted-foreground">{text}</span>
     </div>
   );
 }
@@ -139,7 +138,8 @@ async function startMockExam(formData: FormData): Promise<void> {
   });
   if (res && !res.ok) {
     if (res.reason === "mock_exam_locked") redirect("/pricing?reason=mock_exam");
-    if (res.reason === "mock_exam_size_locked") redirect("/learn/mock-exam?error=size_locked");
+    if (res.reason === "mock_exam_size_locked")
+      redirect("/learn/mock-exam?error=size_locked");
     redirect("/learn/mock-exam?error=empty");
   }
 }

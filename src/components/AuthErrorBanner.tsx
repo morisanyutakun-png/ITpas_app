@@ -67,13 +67,19 @@ function hintFor(code: string): Hint {
 export function AuthErrorBanner({ code }: { code: string }) {
   const hint = hintFor(code);
   return (
-    <div className="rounded-2xl border-2 border-rose-300 bg-rose-50 p-4 text-sm text-rose-900">
+    <div className="rounded-2xl bg-ios-red/10 p-4 text-[13px] shadow-ios-sm">
       <div className="flex items-start gap-2">
-        <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0" />
+        <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-ios-red" />
         <div className="space-y-1">
-          <div className="font-bold">ログインに失敗しました</div>
-          <div>{hint.message}</div>
-          {hint.followup && <div className="text-xs text-rose-700">{hint.followup}</div>}
+          <div className="text-[14px] font-semibold text-ios-red">
+            ログインに失敗しました
+          </div>
+          <div className="text-foreground">{hint.message}</div>
+          {hint.followup && (
+            <div className="text-[12px] text-muted-foreground">
+              {hint.followup}
+            </div>
+          )}
         </div>
       </div>
     </div>

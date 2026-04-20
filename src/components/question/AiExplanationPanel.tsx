@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useTransition } from "react";
 import Link from "next/link";
-import { Crown, Loader2, Sparkles, Wand2 } from "lucide-react";
+import { useState, useTransition } from "react";
+import { Loader2, Lock, Sparkles } from "lucide-react";
 import { generateAiExplanationAction } from "@/server/actions/aiExplanation";
 import type { Plan } from "@/lib/plan";
 
@@ -24,23 +24,23 @@ export function AiExplanationPanel({
 
   if (!unlocked) {
     return (
-      <div className="rounded-2xl border-2 border-violet-300 bg-gradient-to-br from-violet-50 to-white p-5 text-center space-y-2">
-        <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-violet-100 text-violet-700">
-          <Sparkles className="h-5 w-5" />
+      <Link
+        href="/pricing?reason=ai_explanations"
+        className="flex items-center gap-3 rounded-2xl bg-card p-5 shadow-ios-sm active:opacity-80"
+      >
+        <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-ios-purple/10 text-ios-purple">
+          <Lock className="h-4 w-4" />
         </div>
-        <div className="font-bold text-violet-900">AI個別解説はPremium限定です</div>
-        <p className="text-xs text-slate-600">
-          あなたの誤答パターン (この問題での直近の選択) に沿って、補足解説を生成します。
-          {plan === "pro" && " Proからのアップグレードは差額で日割り精算されます。"}
-        </p>
-        <Link
-          href="/pricing?reason=ai_explanations"
-          className="inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-violet-600 to-fuchsia-600 px-4 py-2 text-xs font-bold text-white"
-        >
-          <Crown className="h-3.5 w-3.5" />
-          Premiumを見る
-        </Link>
-      </div>
+        <div className="flex-1 min-w-0">
+          <div className="text-[15px] font-semibold">
+            AI個別解説は Premium で解放
+          </div>
+          <div className="text-[12px] text-muted-foreground">
+            誤答パターンに沿った補足をオンデマンド生成
+            {plan === "pro" && "（Proからは差額で日割り精算）"}
+          </div>
+        </div>
+      </Link>
     );
   }
 
@@ -64,58 +64,51 @@ export function AiExplanationPanel({
   };
 
   return (
-    <div className="rounded-2xl border-2 border-violet-200 bg-gradient-to-br from-violet-50 via-white to-fuchsia-50 p-5 space-y-3">
+    <div className="rounded-2xl bg-card p-5 shadow-ios-sm">
       <div className="flex items-center gap-2">
-        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-violet-500 to-fuchsia-500 text-white">
-          <Wand2 className="h-4 w-4" />
-        </div>
-        <div className="flex-1">
-          <div className="text-xs font-bold uppercase tracking-wider text-violet-700">
-            AI個別解説 — Premium
-          </div>
-          <div className="text-sm font-bold text-slate-900">
-            あなたの誤答パターンに合わせた補足
-          </div>
-        </div>
+        <Sparkles className="h-4 w-4 text-ios-purple" strokeWidth={2.2} />
+        <div className="text-[15px] font-medium">AI個別解説</div>
+        <span className="rounded-full bg-ios-purple/10 px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.08em] text-ios-purple">
+          Premium
+        </span>
         <button
           type="button"
           onClick={onGenerate}
           disabled={pending}
-          className="inline-flex items-center gap-1.5 rounded-lg bg-violet-600 px-3 py-1.5 text-xs font-bold text-white disabled:opacity-50"
+          className="ml-auto inline-flex h-8 items-center gap-1.5 rounded-full bg-ios-purple px-3 text-[12px] font-semibold text-white active:opacity-80 disabled:opacity-50"
         >
           {pending ? (
             <Loader2 className="h-3.5 w-3.5 animate-spin" />
           ) : (
             <Sparkles className="h-3.5 w-3.5" />
           )}
-          {summary ? "再生成" : "生成する"}
+          {summary ? "再生成" : "生成"}
         </button>
       </div>
 
       {error && (
-        <div className="rounded-lg border border-rose-200 bg-rose-50 px-3 py-2 text-xs text-rose-800">
+        <div className="mt-3 rounded-xl bg-ios-red/10 px-3 py-2 text-[12px] text-ios-red">
           {error}
         </div>
       )}
 
-      {summary && (
-        <div className="rounded-xl border bg-white p-4 space-y-3 text-sm">
-          <p className="text-slate-800">{summary}</p>
+      {summary ? (
+        <div className="mt-4 space-y-3">
+          <p className="text-[15px] leading-relaxed">{summary}</p>
           {sections.map((s, i) => (
-            <div key={i} className="space-y-1">
-              <div className="text-xs font-bold uppercase tracking-wider text-violet-700">
+            <div key={i}>
+              <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-ios-purple">
                 {s.heading}
               </div>
-              <p className="whitespace-pre-wrap text-slate-700">{s.body}</p>
+              <p className="mt-1 whitespace-pre-wrap text-[14px] leading-relaxed text-muted-foreground">
+                {s.body}
+              </p>
             </div>
           ))}
         </div>
-      )}
-
-      {!summary && !error && (
-        <p className="text-xs text-slate-600">
-          「生成する」を押すと、この問題でのあなたの直近の選択 (未解答なら問題全体) を元に、
-          誤解パターンに即した追加解説を作ります。
+      ) : (
+        <p className="mt-2 text-[13px] text-muted-foreground">
+          「生成」で、あなたの直近の選択を元に誤解パターンに即した追加解説を作ります。
         </p>
       )}
     </div>

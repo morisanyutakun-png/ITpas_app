@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { AlertTriangle } from "lucide-react";
 
 export function MisconceptionBadges({
   items,
@@ -8,19 +7,16 @@ export function MisconceptionBadges({
 }) {
   if (items.length === 0) return null;
   return (
-    <div className="rounded-2xl border bg-white p-4 shadow-sm">
-      <div className="flex items-center gap-2 mb-2">
-        <AlertTriangle className="h-4 w-4 text-amber-600" />
-        <div className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-          関連する誤解パターン
-        </div>
+    <div className="rounded-2xl bg-card p-4 shadow-ios-sm">
+      <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground">
+        関連する誤解パターン
       </div>
-      <div className="flex flex-wrap gap-2">
+      <div className="mt-2 flex flex-wrap gap-1.5">
         {items.map((m) => (
           <Link
             key={m.slug}
             href={`/misconceptions/${m.slug}`}
-            className="inline-flex items-center rounded-lg border-2 border-amber-200 bg-amber-50 px-3 py-1.5 text-sm font-medium text-amber-900 transition hover:border-amber-400 hover:bg-amber-100"
+            className="inline-flex items-center rounded-full bg-ios-orange/10 px-3 py-1 text-[13px] font-medium text-ios-orange active:opacity-70"
           >
             {m.title}
           </Link>

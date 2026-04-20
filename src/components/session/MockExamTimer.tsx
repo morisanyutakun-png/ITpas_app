@@ -2,15 +2,13 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import { AlarmClock, Clock } from "lucide-react";
 
 /**
- * Countdown timer rendered above a mock-exam session.
+ * iOS-style countdown bar rendered above a mock-exam session.
  *
- * The source of truth is `startedAt` on the server row — we compute
- * remaining seconds on the client each tick. When the timer hits zero we
- * push the user to the result page so they cannot keep answering beyond
- * the deadline.
+ * Truth source is `startedAt` on the server; we recompute remaining
+ * seconds on the client each tick. When time is up we redirect to the
+ * result page so the user cannot continue past the deadline.
  */
 export function MockExamTimer({
   sessionId,
@@ -47,37 +45,26 @@ export function MockExamTimer({
 
   return (
     <div
-      className={`sticky top-14 z-20 mb-3 overflow-hidden rounded-xl border-2 shadow-sm transition ${
-        criticalLow
-          ? "border-rose-400 bg-rose-50"
-          : "border-slate-200 bg-white"
-      }`}
+      className="sticky top-12 z-20 mb-3 overflow-hidden rounded-2xl bg-card shadow-ios-sm"
     >
-      <div className="flex items-center gap-3 px-4 py-2.5">
-        <div
-          className={`flex h-8 w-8 items-center justify-center rounded-lg ${
-            criticalLow ? "bg-rose-500 text-white" : "bg-slate-900 text-white"
-          }`}
-        >
-          {criticalLow ? <AlarmClock className="h-4 w-4" /> : <Clock className="h-4 w-4" />}
-        </div>
+      <div className="flex items-center gap-3 px-4 py-3">
         <div className="flex-1">
-          <div className="text-xs font-bold uppercase tracking-wider text-slate-500">
+          <div className="text-[10px] font-medium uppercase tracking-[0.08em] text-muted-foreground">
             模擬試験 残り時間
           </div>
           <div
-            className={`text-xl font-black tracking-tight tabular-nums ${
-              criticalLow ? "text-rose-700" : "text-slate-900"
+            className={`text-[22px] font-semibold tabular-nums tracking-tight ${
+              criticalLow ? "text-ios-red" : "text-foreground"
             }`}
           >
             {String(minutes).padStart(2, "0")}:{String(seconds).padStart(2, "0")}
           </div>
         </div>
       </div>
-      <div className="h-1 w-full bg-slate-100">
+      <div className="h-0.5 w-full bg-muted">
         <div
           className={`h-full transition-all ${
-            criticalLow ? "bg-rose-500" : "bg-slate-900"
+            criticalLow ? "bg-ios-red" : "bg-primary"
           }`}
           style={{ width: `${pct}%` }}
         />

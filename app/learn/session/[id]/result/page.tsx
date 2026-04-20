@@ -1,20 +1,28 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { eq, sql } from "drizzle-orm";
+import { ArrowRight, BarChart3 } from "lucide-react";
 import { db } from "@/db/client";
 import { sessions } from "@/db/schema";
 import { getOrCreateAnonUser } from "@/lib/anonId";
 import { finishSessionAction } from "@/server/actions/sessions";
-import { ArrowRight, Skull, Sparkles, Trophy } from "lucide-react";
 
 export const dynamic = "force-dynamic";
 
+const MODE_LABEL: Record<string, string> = {
+  weakness: "弱点",
+  topic: "論点",
+  year: "年度別",
+  format: "形式別",
+  mixed: "模擬試験",
+};
+
 function rankFor(rate: number) {
-  if (rate >= 1) return { rank: "S", grad: "from-amber-400 via-yellow-300 to-amber-500", line: "PERFECT!" };
-  if (rate >= 0.8) return { rank: "A", grad: "from-emerald-400 to-teal-500", line: "強い。" };
-  if (rate >= 0.6) return { rank: "B", grad: "from-sky-400 to-cyan-500", line: "あと一歩。" };
-  if (rate >= 0.4) return { rank: "C", grad: "from-violet-400 to-fuchsia-500", line: "理解の補正タイム。" };
-  return { rank: "D", grad: "from-rose-500 to-pink-500", line: "ここからが本番。" };
+  if (rate >= 1) return { rank: "S", tint: "text-ios-yellow", line: "完璧" };
+  if (rate >= 0.8) return { rank: "A", tint: "text-ios-green", line: "強い" };
+  if (rate >= 0.6) return { rank: "B", tint: "text-ios-blue", line: "あと一歩" };
+  if (rate >= 0.4) return { rank: "C", tint: "text-ios-purple", line: "理解の補正タイム" };
+  return { rank: "D", tint: "text-ios-red", line: "ここからが本番" };
 }
 
 export default async function SessionResultPage({
@@ -27,9 +35,7 @@ export default async function SessionResultPage({
   const s = await db.query.sessions.findFirst({ where: eq(sessions.id, id) });
   if (!s || s.userId !== user.id) notFound();
 
-  if (!s.finishedAt) {
-    await finishSessionAction(id);
-  }
+  if (!s.finishedAt) await finishSessionAction(id);
 
   const breakdown = await db.execute(sql`
     SELECT
@@ -55,47 +61,36 @@ export default async function SessionResultPage({
   const rank = rankFor(rate);
 
   return (
-    <div className="space-y-6 max-w-2xl mx-auto">
-      {/* Hero rank reveal */}
-      <div className="relative overflow-hidden rounded-3xl border-2 shadow-xl">
-        <div className={`bg-gradient-to-br ${rank.grad} px-6 py-10 text-white`}>
-          <div className="flex flex-col items-center gap-3 text-center">
-            <div className="text-xs font-bold uppercase tracking-[0.3em] text-white/80">
-              SESSION CLEAR
-            </div>
-            <div className="flex items-center justify-center gap-3">
-              <div className="text-7xl md:text-8xl font-black drop-shadow-lg leading-none">
-                {rank.rank}
-              </div>
-              <Sparkles className="h-8 w-8 text-yellow-200" />
-            </div>
-            <div className="text-lg font-bold">{rank.line}</div>
-            <div className="mt-2 flex items-baseline gap-2">
-              <span className="text-3xl md:text-4xl font-black">
-                {correct}
-              </span>
-              <span className="text-lg opacity-80">/ {total}</span>
-              <span className="text-2xl font-bold opacity-90">({pct}%)</span>
-            </div>
-            <div className="mt-1 text-xs uppercase tracking-wider text-white/70">
-              {s.mode} mode
-            </div>
-          </div>
+    <div className="mx-auto max-w-2xl space-y-5">
+      <section className="rounded-3xl bg-card p-6 text-center shadow-ios-sm">
+        <div className="text-[11px] font-medium uppercase tracking-[0.1em] text-muted-foreground">
+          セッション終了 · {MODE_LABEL[s.mode] ?? s.mode}
         </div>
-      </div>
+        <div className={`mt-3 text-[72px] font-semibold leading-none tracking-tight ${rank.tint}`}>
+          {rank.rank}
+        </div>
+        <div className="mt-2 text-[15px] text-muted-foreground">{rank.line}</div>
+        <div className="mt-4 flex items-baseline justify-center gap-1.5">
+          <span className="text-[34px] font-semibold tabular-nums">
+            {correct}
+          </span>
+          <span className="text-[17px] text-muted-foreground">
+            / {total}
+          </span>
+          <span className="ml-2 text-[22px] font-semibold tabular-nums">
+            {pct}%
+          </span>
+        </div>
+      </section>
 
-      {/* Breakdown */}
-      <div className="rounded-2xl border bg-white p-5 shadow-sm">
-        <div className="mb-3 flex items-center gap-2">
-          <Skull className="h-4 w-4 text-rose-600" />
-          <h3 className="text-sm font-bold uppercase tracking-wider text-slate-700">
-            このセッションで出会った敵
-          </h3>
-        </div>
+      <section className="space-y-2">
+        <div className="ios-section-label">このセッションで出会った誤解パターン</div>
         {breakdown.rows.length === 0 ? (
-          <p className="text-sm text-slate-600">記録がありません。</p>
+          <div className="rounded-2xl bg-card p-5 text-[13px] text-muted-foreground shadow-ios-sm">
+            記録がありません。
+          </div>
         ) : (
-          <div className="space-y-2">
+          <div className="ios-list shadow-ios-sm">
             {breakdown.rows.map((r) => {
               const row = r as {
                 slug?: string;
@@ -107,61 +102,59 @@ export default async function SessionResultPage({
               const att = Number(row.attempted ?? 0);
               const perc = att ? Math.round((inc / att) * 100) : 0;
               return (
-                <div
-                  key={String(row.slug)}
-                  className="flex items-center gap-3 rounded-xl border-2 border-slate-100 p-3 transition hover:border-amber-300"
-                >
-                  <div className="flex-1 min-w-0">
+                <div key={String(row.slug)} className="ios-row">
+                  <div className="min-w-0 flex-1">
                     <Link
                       href={`/misconceptions/${row.slug}`}
-                      className="font-semibold text-sm text-slate-900 hover:underline truncate block"
+                      className="truncate text-[14px] font-medium active:opacity-70"
                     >
                       {row.title}
                     </Link>
-                    <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-slate-100">
-                      <div
-                        className={`h-full rounded-full ${
-                          inc === 0
-                            ? "bg-emerald-400"
-                            : "bg-gradient-to-r from-amber-400 to-rose-500"
+                    <div className="mt-1 flex items-center gap-2">
+                      <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-muted">
+                        <div
+                          className={`h-full ${
+                            inc === 0 ? "bg-ios-green" : "bg-ios-red"
+                          }`}
+                          style={{ width: `${Math.max(6, perc)}%` }}
+                        />
+                      </div>
+                      <span
+                        className={`text-[11px] font-semibold tabular-nums ${
+                          inc === 0 ? "text-ios-green" : "text-ios-red"
                         }`}
-                        style={{ width: `${Math.max(8, perc)}%` }}
-                      />
+                      >
+                        {inc}/{att}
+                      </span>
                     </div>
                   </div>
-                  <div className="shrink-0 text-right">
-                    <div className={`text-sm font-black ${inc === 0 ? "text-emerald-600" : "text-rose-600"}`}>
-                      {inc}/{att}
-                    </div>
-                    <Link
-                      href={`/learn/session/new?mode=weakness&misconception=${row.slug}&count=5`}
-                      className="text-[10px] font-semibold uppercase tracking-wider text-slate-500 hover:text-slate-900"
-                    >
-                      5問挑む →
-                    </Link>
-                  </div>
+                  <Link
+                    href={`/learn/session/new?mode=weakness&misconception=${row.slug}&count=5`}
+                    className="ml-2 shrink-0 rounded-full bg-muted px-3 py-1 text-[11px] font-semibold text-foreground active:opacity-70"
+                  >
+                    5問
+                  </Link>
                 </div>
               );
             })}
           </div>
         )}
-      </div>
+      </section>
 
-      {/* Actions */}
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-col gap-2 md:flex-row">
         <Link
           href="/learn/session/new?mode=weakness&count=5"
-          className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-5 py-3 font-bold text-white shadow-lg transition hover:bg-slate-800 hover:shadow-xl"
+          className="inline-flex h-11 flex-1 items-center justify-center gap-1.5 rounded-full bg-primary text-[15px] font-semibold text-primary-foreground active:opacity-80"
         >
-          弱点5問にもう一度挑む
+          弱点5問に再挑戦
           <ArrowRight className="h-4 w-4" />
         </Link>
         <Link
           href="/dashboard"
-          className="inline-flex items-center gap-2 rounded-xl border-2 border-slate-200 bg-white px-5 py-3 font-semibold text-slate-700 transition hover:border-slate-400"
+          className="inline-flex h-11 items-center justify-center gap-1.5 rounded-full bg-muted px-5 text-[15px] font-semibold text-foreground active:opacity-80"
         >
-          <Trophy className="h-4 w-4" />
-          ダッシュボードへ
+          <BarChart3 className="h-4 w-4" />
+          分析を見る
         </Link>
       </div>
     </div>

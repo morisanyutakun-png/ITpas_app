@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BookMarked, Sparkles, Pencil } from "lucide-react";
+import { BookMarked, Pencil, Sparkles } from "lucide-react";
 
 export function AttributionNote({
   originType,
@@ -9,42 +9,38 @@ export function AttributionNote({
   originType: string;
   sourceNote?: string | null;
   modifiedNote?: string | null;
-  // legacy props (kept for backwards compat with existing call sites)
   examYear?: number;
   examSeason?: "spring" | "autumn" | "annual";
   questionNumber?: number;
 }) {
   if (originType === "ipa_actual") {
     return (
-      <div className="rounded-xl border-2 border-slate-300 bg-slate-50 p-4 text-xs space-y-3">
-        <div className="flex items-center gap-2 text-slate-700">
-          <BookMarked className="h-4 w-4" />
-          <span className="font-bold uppercase tracking-wider">出典</span>
+      <div className="rounded-2xl bg-card p-4 text-[12px] shadow-ios-sm">
+        <div className="flex items-center gap-1.5 text-muted-foreground">
+          <BookMarked className="h-3.5 w-3.5" />
+          <span className="text-[11px] font-medium uppercase tracking-[0.08em]">
+            出典
+          </span>
         </div>
-
-        {/* Citation in IPA-specified format */}
-        <div className="text-slate-900 font-semibold">
+        <div className="mt-1.5 text-[13px] font-medium">
           {sourceNote ?? "出典：IPA ITパスポート試験"}
         </div>
-
-        {/* Modification disclosure (required by IPA when content was changed) */}
         {modifiedNote && (
-          <div className="rounded-md bg-amber-50 border border-amber-200 px-3 py-2 text-slate-700 flex items-start gap-2">
-            <Pencil className="h-3.5 w-3.5 mt-0.5 shrink-0 text-amber-700" />
+          <div className="mt-2 flex items-start gap-1.5 rounded-xl bg-ios-yellow/10 px-3 py-2 text-[12px]">
+            <Pencil className="mt-0.5 h-3 w-3 shrink-0 text-ios-orange" />
             <div>
-              <span className="font-bold text-amber-800">改変について: </span>
+              <span className="font-semibold text-ios-orange">改変: </span>
               {modifiedNote}
             </div>
           </div>
         )}
-
-        <div className="text-[11px] text-slate-500 leading-relaxed border-t border-slate-200 pt-2">
-          ITパスポート試験の問題および公式解答の著作権は IPA (情報処理推進機構) に帰属します。本サイトは
+        <div className="mt-2 border-t border-border/60 pt-2 text-[11px] leading-relaxed text-muted-foreground">
+          問題および公式解答の著作権は IPA に帰属します。本サイトは
           <Link
             href="https://www.ipa.go.jp/shiken/faq.html"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-slate-700 underline mx-1"
+            className="mx-1 underline"
           >
             IPA公式FAQの利用条件
           </Link>
@@ -54,14 +50,15 @@ export function AttributionNote({
     );
   }
 
-  // ipa_inspired / original
   return (
-    <div className="rounded-xl border border-violet-200 bg-violet-50/50 p-4 text-xs flex gap-2 items-start">
-      <Sparkles className="h-3.5 w-3.5 mt-0.5 shrink-0 text-violet-600" />
-      <div className="text-violet-900/80 leading-relaxed">
-        <span className="font-bold text-violet-900">オリジナル問題　</span>
-        {sourceNote ??
-          "IPA ITパスポート試験の出題範囲・頻出論点を元に作成しました。実際の過去問の文言とは異なります。"}
+    <div className="flex items-start gap-2 rounded-2xl bg-ios-purple/5 p-4 text-[12px] shadow-ios-sm">
+      <Sparkles className="mt-0.5 h-3.5 w-3.5 shrink-0 text-ios-purple" />
+      <div className="leading-relaxed">
+        <span className="font-semibold text-ios-purple">オリジナル問題　</span>
+        <span className="text-muted-foreground">
+          {sourceNote ??
+            "IPA ITパスポート試験の出題範囲・頻出論点を元に作成。実際の過去問の文言とは異なります。"}
+        </span>
       </div>
     </div>
   );

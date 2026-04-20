@@ -1,132 +1,271 @@
 import Link from "next/link";
-import { Check, ChevronRight, Clock, MinusCircle, X } from "lucide-react";
+import {
+  Check,
+  ChevronRight,
+  Clock,
+  Layers,
+  MinusCircle,
+  TrendingUp,
+  X,
+} from "lucide-react";
 import { getOrCreateAnonUser } from "@/lib/anonId";
-import { getRecentHistory } from "@/server/queries/history";
+import {
+  getDailyStats,
+  getRecentHistory,
+  type HistoryRow,
+} from "@/server/queries/history";
+import { AccuracyRing } from "@/components/home/AccuracyRing";
+import { ActivityWeek } from "@/components/home/ActivityWeek";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "学習履歴" };
 
+const MAJOR_HUE: Record<string, string> = {
+  strategy: "#FF375F",
+  management: "#FF9500",
+  technology: "#0A84FF",
+};
+
 export default async function HistoryPage() {
   const user = await getOrCreateAnonUser();
-  const rows = await getRecentHistory(user.id, 100);
+  const [rows, daily] = await Promise.all([
+    getRecentHistory(user.id, 100),
+    getDailyStats(user.id, 7),
+  ]);
 
-  const total = rows.filter((r) => r.result !== "skipped").length;
+  const answered = rows.filter((r) => r.result !== "skipped");
+  const total = answered.length;
   const correct = rows.filter((r) => r.result === "correct").length;
+  const accuracy = total > 0 ? Math.round((correct / total) * 100) : null;
   const avgMs =
-    rows.length > 0
-      ? Math.round(rows.reduce((s, r) => s + r.durationMs, 0) / rows.length)
+    answered.length > 0
+      ? Math.round(
+          answered.reduce((s, r) => s + r.durationMs, 0) / answered.length
+        )
       : 0;
 
+  // Group by JST date for editorial timeline
+  const byDate = new Map<string, HistoryRow[]>();
+  for (const r of rows) {
+    const d = new Date(r.createdAt);
+    const jst = new Date(d.getTime() + 9 * 60 * 60 * 1000);
+    const key = jst.toISOString().slice(0, 10);
+    (byDate.get(key) ?? byDate.set(key, []).get(key)!)?.push(r);
+  }
+  const dateKeys = [...byDate.keys()].sort().reverse();
+
   return (
-    <div className="space-y-5">
-      <header className="pt-2">
-        <h1 className="text-ios-title1 font-semibold">学習履歴</h1>
-        <p className="mt-1 text-[13px] text-muted-foreground">
-          直近100問の解答記録
+    <div className="space-y-7 pb-10">
+      {/* ── Editorial header ── */}
+      <header className="space-y-1.5 pt-1">
+        <div className="kicker">History</div>
+        <h1 className="text-ios-large font-semibold leading-[1.05] tracking-tight">
+          学習履歴
+        </h1>
+        <p className="text-[13.5px] text-muted-foreground">
+          直近100問の解答記録をタイムラインで。
         </p>
       </header>
 
-      <section className="ios-list shadow-ios-sm">
-        <div className="grid grid-cols-3 divide-x divide-border/60">
-          <Summary label="総解答" value={`${total}`} unit="問" />
-          <Summary
-            label="正答率"
-            value={total > 0 ? `${Math.round((correct / total) * 100)}` : "—"}
-            unit={total > 0 ? "%" : ""}
-          />
-          <Summary
-            label="平均回答"
-            value={`${(avgMs / 1000).toFixed(1)}`}
-            unit="秒"
-          />
+      {/* ── Hero stats: ring + activity bar ── */}
+      <section className="editorial-card p-5 sm:p-6">
+        <div className="relative z-10 grid gap-5 sm:grid-cols-[auto_1px_1fr]">
+          <div className="flex items-center gap-4">
+            <AccuracyRing
+              percent={accuracy}
+              size={96}
+              thickness={8}
+              label="ACCURACY"
+            />
+            <div className="space-y-2">
+              <StatLine
+                label="解答"
+                value={total}
+                unit="問"
+                accent="text-foreground"
+              />
+              <StatLine
+                label="正解"
+                value={correct}
+                unit="問"
+                accent="text-ios-green"
+              />
+              <StatLine
+                label="平均"
+                value={avgMs > 0 ? +(avgMs / 1000).toFixed(1) : 0}
+                unit="秒"
+                accent="text-ios-blue"
+              />
+            </div>
+          </div>
+          <div aria-hidden className="hidden h-full w-px bg-border sm:block" />
+          <div className="min-h-[140px]">
+            <ActivityWeek data={daily} />
+          </div>
         </div>
       </section>
 
+      {/* ── Timeline ── */}
       {rows.length === 0 ? (
-        <div className="rounded-2xl bg-card p-8 text-center shadow-ios-sm">
-          <div className="text-[15px] font-medium">まだ解答記録がありません</div>
+        <div className="surface-card flex flex-col items-center gap-3 p-10 text-center">
+          <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-muted text-muted-foreground">
+            <TrendingUp className="h-5 w-5" />
+          </span>
+          <div className="text-[15px] font-medium">
+            まだ解答記録がありません
+          </div>
           <Link
-            href="/learn/questions"
-            className="mt-3 inline-flex h-10 items-center rounded-full bg-primary px-4 text-[14px] font-semibold text-primary-foreground active:opacity-80"
+            href="/learn/session/new?mode=weakness&count=5"
+            className="inline-flex h-10 items-center gap-1 rounded-full bg-foreground px-4 text-[13.5px] font-semibold text-background active:opacity-90"
           >
-            問題を解きに行く
+            5問セッションを始める
+            <ChevronRight className="h-3.5 w-3.5" />
           </Link>
         </div>
       ) : (
-        <div className="ios-list shadow-ios-sm">
-          {rows.map((r) => {
-            const dt = new Date(r.createdAt);
+        <section className="space-y-4">
+          <div className="rule-label">Timeline</div>
+          {dateKeys.map((key) => {
+            const list = byDate.get(key) ?? [];
+            const day = formatJstDateJp(key);
+            const dayCorrect = list.filter((r) => r.result === "correct").length;
+            const dayAnswered = list.filter((r) => r.result !== "skipped")
+              .length;
+            const dayRate =
+              dayAnswered > 0
+                ? Math.round((dayCorrect / dayAnswered) * 100)
+                : null;
             return (
-              <Link
-                key={r.attemptId}
-                href={`/learn/questions/${r.questionId}`}
-                className="ios-row items-start active:bg-muted/60"
-              >
-                <div
-                  className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${
-                    r.result === "correct"
-                      ? "bg-ios-green/10 text-ios-green"
-                      : r.result === "incorrect"
-                      ? "bg-ios-red/10 text-ios-red"
-                      : "bg-muted text-muted-foreground"
-                  }`}
-                >
-                  {r.result === "correct" ? (
-                    <Check className="h-4 w-4" strokeWidth={3} />
-                  ) : r.result === "incorrect" ? (
-                    <X className="h-4 w-4" strokeWidth={3} />
-                  ) : (
-                    <MinusCircle className="h-4 w-4" />
+              <div key={key} className="space-y-2">
+                <div className="flex items-baseline justify-between px-1">
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-[14px] font-semibold tracking-tight">
+                      {day}
+                    </span>
+                    <span className="num text-[11px] text-muted-foreground">
+                      {list.length}件
+                    </span>
+                  </div>
+                  {dayRate !== null && (
+                    <span
+                      className={`num text-[11.5px] font-semibold ${
+                        dayRate >= 70
+                          ? "text-ios-green"
+                          : dayRate >= 50
+                          ? "text-ios-orange"
+                          : "text-ios-red"
+                      }`}
+                    >
+                      {dayRate}%
+                    </span>
                   )}
                 </div>
-                <div className="min-w-0 flex-1">
-                  <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground">
-                    <span>
-                      R{r.examYear} #{r.questionNumber}
-                    </span>
-                    <span className="ml-auto flex items-center gap-0.5">
-                      <Clock className="h-3 w-3" />
-                      {(r.durationMs / 1000).toFixed(1)}s
-                    </span>
-                  </div>
-                  <p className="line-clamp-1 text-[14px]">{r.stem}</p>
-                  <div className="mt-0.5 text-[11px] text-muted-foreground">
-                    {dt.toLocaleString("ja-JP", {
-                      dateStyle: "short",
-                      timeStyle: "short",
-                    })}
-                  </div>
+                <div className="surface-card divide-y divide-border overflow-hidden">
+                  {list.map((r) => (
+                    <AttemptRow key={r.attemptId} r={r} />
+                  ))}
                 </div>
-                <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
-              </Link>
+              </div>
             );
           })}
-        </div>
+        </section>
       )}
     </div>
   );
 }
 
-function Summary({
+function AttemptRow({ r }: { r: HistoryRow }) {
+  const dt = new Date(r.createdAt);
+  const hue = MAJOR_HUE[r.majorCategory] ?? "#8E8E93";
+  const time = new Date(dt.getTime() + 9 * 60 * 60 * 1000)
+    .toISOString()
+    .slice(11, 16);
+  return (
+    <Link
+      href={`/learn/questions/${r.questionId}`}
+      className="group flex items-center gap-3 px-4 py-3 transition-colors hover:bg-muted/60"
+    >
+      <span
+        className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${
+          r.result === "correct"
+            ? "bg-ios-green/12 text-ios-green"
+            : r.result === "incorrect"
+            ? "bg-ios-red/12 text-ios-red"
+            : "bg-muted text-muted-foreground"
+        }`}
+      >
+        {r.result === "correct" ? (
+          <Check className="h-4 w-4" strokeWidth={3} />
+        ) : r.result === "incorrect" ? (
+          <X className="h-4 w-4" strokeWidth={3} />
+        ) : (
+          <MinusCircle className="h-4 w-4" />
+        )}
+      </span>
+      <div className="min-w-0 flex-1">
+        <div className="flex items-center gap-1.5 text-[10.5px] text-muted-foreground">
+          <span
+            className="inline-flex items-center gap-1 rounded-full px-1.5 py-0.5"
+            style={{
+              background: `${hue}1f`,
+              color: hue,
+            }}
+          >
+            <Layers className="h-2.5 w-2.5" />
+            R{r.examYear} 問{r.questionNumber}
+          </span>
+          <span className="ml-auto inline-flex items-center gap-0.5 num">
+            <Clock className="h-3 w-3" />
+            {(r.durationMs / 1000).toFixed(1)}s
+          </span>
+          <span className="num">{time}</span>
+        </div>
+        <p className="mt-0.5 line-clamp-1 text-[13.5px]">{r.stem}</p>
+      </div>
+      <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
+    </Link>
+  );
+}
+
+function StatLine({
   label,
   value,
   unit,
+  accent,
 }: {
   label: string;
-  value: string;
-  unit?: string;
+  value: number;
+  unit: string;
+  accent: string;
 }) {
   return (
-    <div className="flex flex-col items-center gap-1 px-2 py-4 text-center">
-      <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground">
+    <div className="flex items-baseline gap-2">
+      <span className="w-10 text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
         {label}
-      </div>
-      <div className="flex items-baseline gap-0.5">
-        <span className="text-[20px] font-semibold tabular-nums">{value}</span>
-        {unit && (
-          <span className="text-[12px] text-muted-foreground">{unit}</span>
-        )}
-      </div>
+      </span>
+      <span
+        className={`num text-[15px] font-semibold tracking-tight ${accent}`}
+      >
+        {value}
+        <span className="ml-0.5 text-[11px] font-medium text-muted-foreground">
+          {unit}
+        </span>
+      </span>
     </div>
   );
+}
+
+function formatJstDateJp(ymd: string): string {
+  const d = new Date(ymd + "T00:00:00Z");
+  const dow = ["日", "月", "火", "水", "木", "金", "土"][d.getUTCDay()];
+  const m = d.getUTCMonth() + 1;
+  const day = d.getUTCDate();
+  const nowJst = new Date(Date.now() + 9 * 60 * 60 * 1000);
+  const today = nowJst.toISOString().slice(0, 10);
+  const yesterday = new Date(nowJst.getTime() - 86_400_000)
+    .toISOString()
+    .slice(0, 10);
+  if (ymd === today) return "今日";
+  if (ymd === yesterday) return "昨日";
+  return `${m}月${day}日 (${dow})`;
 }

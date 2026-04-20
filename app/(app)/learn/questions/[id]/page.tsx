@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { and, eq } from "drizzle-orm";
-import { Crown, Lock } from "lucide-react";
+import { ChevronLeft, Crown, Lock } from "lucide-react";
 import { db } from "@/db/client";
 import { bookmarks, notes } from "@/db/schema";
 import { QuestionCard } from "@/components/question/QuestionCard";
@@ -22,54 +22,77 @@ export default async function QuestionDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const [full, user] = await Promise.all([getQuestionFull(id), getCurrentUser()]);
+  const [full, user] = await Promise.all([
+    getQuestionFull(id),
+    getCurrentUser(),
+  ]);
   if (!full) notFound();
 
   const { question, choices, topics, misconceptions, materials } = full;
-
   const allowed = await isYearAllowed(user.plan, question.examYear);
+
   if (!allowed) {
     return (
-      <div className="mx-auto max-w-md rounded-3xl border-2 border-violet-300 bg-gradient-to-br from-violet-50 to-white p-8 text-center space-y-3">
-        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-violet-100 text-violet-700">
-          <Lock className="h-6 w-6" />
+      <div className="mx-auto max-w-md pt-6">
+        <div className="relative overflow-hidden rounded-3xl bg-grad-purple p-8 text-center text-white shadow-hero">
+          <div className="relative z-10">
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15 ring-1 ring-inset ring-white/30 backdrop-blur">
+              <Lock className="h-6 w-6" />
+            </div>
+            <h1 className="mt-4 text-[22px] font-semibold tracking-tight">
+              この問題は Premium 限定
+            </h1>
+            <p className="mt-1.5 text-[13px] opacity-90">
+              令和{question.examYear}年度は {planLabel(user.plan)} では未解放です。
+              Premium で全年度のアーカイブに。
+            </p>
+            <Link
+              href="/pricing?reason=year_locked"
+              className="mt-5 inline-flex h-11 items-center justify-center gap-1.5 rounded-full bg-white px-5 text-[14px] font-semibold text-foreground shadow-ios active:opacity-90"
+            >
+              <Crown className="h-4 w-4" />
+              Premium を見る
+            </Link>
+          </div>
+          <div className="pointer-events-none absolute -right-12 -top-12 h-48 w-48 rounded-full bg-white/15 blur-3xl" />
         </div>
-        <h1 className="text-lg font-bold">
-          この問題 (令和{question.examYear}年度) はPremium限定です
-        </h1>
-        <p className="text-sm text-slate-600">
-          現在のプラン: <strong>{planLabel(user.plan)}</strong>。
-          Premiumでは過去全年度の問題アーカイブが開放されます。
-        </p>
-        <Link
-          href="/pricing?reason=year_locked"
-          className="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 px-5 py-2.5 font-bold text-white"
-        >
-          <Crown className="h-4 w-4" />
-          Premiumを見る
-        </Link>
       </div>
     );
   }
 
   const [bookmarkRow, noteRow] = await Promise.all([
     db.query.bookmarks.findFirst({
-      where: and(eq(bookmarks.userId, user.id), eq(bookmarks.questionId, question.id)),
+      where: and(
+        eq(bookmarks.userId, user.id),
+        eq(bookmarks.questionId, question.id)
+      ),
     }),
     db.query.notes.findFirst({
-      where: and(eq(notes.userId, user.id), eq(notes.questionId, question.id)),
+      where: and(
+        eq(notes.userId, user.id),
+        eq(notes.questionId, question.id)
+      ),
     }),
   ]);
 
   return (
-    <div className="space-y-6 max-w-3xl mx-auto">
-      <div className="flex justify-end">
+    <div className="mx-auto max-w-3xl space-y-5 pb-10">
+      {/* ── Thin editorial breadcrumb/toolbar ─────────── */}
+      <div className="flex items-center justify-between">
+        <Link
+          href="/learn"
+          className="inline-flex items-center gap-1 text-[12.5px] text-muted-foreground active:opacity-70"
+        >
+          <ChevronLeft className="h-3.5 w-3.5" />
+          <span className="kicker !mt-0">Question Detail</span>
+        </Link>
         <BookmarkButton
           questionId={question.id}
           initialBookmarked={!!bookmarkRow}
           signedIn={user.isSignedIn}
         />
       </div>
+
       <QuestionCard
         examYear={question.examYear}
         examSeason={question.examSeason}
@@ -79,6 +102,7 @@ export default async function QuestionDetailPage({
         stem={question.stem}
         originType={question.originType}
       />
+
       <QuestionPlayer
         questionId={question.id}
         choices={choices.map((c) => ({
@@ -95,17 +119,20 @@ export default async function QuestionDetailPage({
         misconceptions={misconceptions}
         materials={materials}
       />
+
       <AiExplanationPanel
         questionId={question.id}
         unlocked={hasFeature(user, "aiExplanations")}
         plan={user.plan}
       />
+
       <NoteEditor
         questionId={question.id}
         initialBody={noteRow?.body ?? ""}
         signedIn={user.isSignedIn}
         isPro={isPro(user)}
       />
+
       <AttributionNote
         originType={question.originType}
         sourceNote={question.sourceNote}

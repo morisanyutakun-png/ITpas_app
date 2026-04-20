@@ -94,3 +94,29 @@ export async function getMisconception(slug: string) {
 
   return { misconception: m, questions: qs };
 }
+
+/** Per-user incorrect rate across the questions that reference this misconception. */
+export async function getMisconceptionProgress(
+  slug: string,
+  userId: string | null
+): Promise<{ attempted: number; incorrect: number; rate: number }> {
+  if (!userId) return { attempted: 0, incorrect: 0, rate: 0 };
+  const rows = await db.execute(sql`
+    SELECT
+      COUNT(*)::int AS attempted,
+      SUM(CASE WHEN a.result = 'incorrect' THEN 1 ELSE 0 END)::int AS incorrect
+    FROM attempts a
+    JOIN question_misconceptions qm ON qm.question_id = a.question_id
+    JOIN misconceptions m ON m.id = qm.misconception_id
+    WHERE m.slug = ${slug} AND a.user_id = ${userId}
+      AND a.result IN ('correct', 'incorrect')
+  `);
+  const r = (rows.rows[0] ?? {}) as { attempted?: number; incorrect?: number };
+  const attempted = Number(r.attempted ?? 0);
+  const incorrect = Number(r.incorrect ?? 0);
+  return {
+    attempted,
+    incorrect,
+    rate: attempted > 0 ? incorrect / attempted : 0,
+  };
+}

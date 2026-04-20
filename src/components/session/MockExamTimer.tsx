@@ -2,13 +2,13 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
+import { Timer } from "lucide-react";
 
 /**
- * iOS-style countdown bar rendered above a mock-exam session.
- *
- * Truth source is `startedAt` on the server; we recompute remaining
- * seconds on the client each tick. When time is up we redirect to the
- * result page so the user cannot continue past the deadline.
+ * Mock-exam countdown pinned above the session. Source of truth is
+ * `startedAt` (server); we recompute each second on the client. When time
+ * is up we redirect to the result page so the user cannot continue past
+ * the deadline.
  */
 export function MockExamTimer({
   sessionId,
@@ -44,16 +44,23 @@ export function MockExamTimer({
   const criticalLow = remainingMs <= 5 * 60_000;
 
   return (
-    <div
-      className="sticky top-12 z-20 mb-3 overflow-hidden rounded-2xl bg-card shadow-ios-sm"
-    >
+    <div className="sticky top-14 z-20 mb-3 overflow-hidden rounded-2xl bg-card ring-1 ring-black/[0.04] shadow-ios dark:ring-white/[0.06]">
       <div className="flex items-center gap-3 px-4 py-3">
+        <span
+          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${
+            criticalLow
+              ? "bg-ios-red text-white shadow-[0_8px_22px_rgba(255,59,48,0.28)]"
+              : "bg-grad-blue text-white shadow-tile"
+          }`}
+        >
+          <Timer className="h-4 w-4" strokeWidth={2.4} />
+        </span>
         <div className="flex-1">
-          <div className="text-[10px] font-medium uppercase tracking-[0.08em] text-muted-foreground">
+          <div className="text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
             模擬試験 残り時間
           </div>
           <div
-            className={`text-[22px] font-semibold tabular-nums tracking-tight ${
+            className={`num text-[26px] font-semibold leading-tight tracking-tight ${
               criticalLow ? "text-ios-red" : "text-foreground"
             }`}
           >
@@ -61,10 +68,12 @@ export function MockExamTimer({
           </div>
         </div>
       </div>
-      <div className="h-0.5 w-full bg-muted">
+      <div className="h-1 w-full bg-muted">
         <div
-          className={`h-full transition-all ${
-            criticalLow ? "bg-ios-red" : "bg-primary"
+          className={`h-full transition-[width] duration-700 ease-linear ${
+            criticalLow
+              ? "bg-gradient-to-r from-[#FF6B4A] to-[#FF3B30]"
+              : "bg-gradient-to-r from-[#5E5CE6] to-[#0A84FF]"
           }`}
           style={{ width: `${pct}%` }}
         />

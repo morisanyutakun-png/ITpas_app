@@ -137,60 +137,76 @@ export function UpgradeModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-end justify-center bg-foreground/30 p-0 backdrop-blur-sm md:items-center md:p-4"
+      className="fixed inset-0 z-50 flex animate-fade-up items-end justify-center bg-foreground/40 p-0 backdrop-blur-md md:items-center md:p-4"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-md rounded-t-3xl bg-card p-5 pb-[calc(env(safe-area-inset-bottom)+1.25rem)] shadow-ios-lg md:rounded-3xl md:pb-5"
+        className="relative w-full max-w-md overflow-hidden rounded-t-3xl bg-card p-6 pb-[calc(env(safe-area-inset-bottom)+1.5rem)] shadow-elevated ring-1 ring-black/[0.06] md:rounded-3xl md:pb-6 dark:ring-white/[0.08]"
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Ambient gradient halo */}
+        <div
+          className={`pointer-events-none absolute -right-12 -top-12 h-48 w-48 rounded-full blur-3xl ${
+            premium ? "bg-ios-purple/20" : "bg-primary/15"
+          }`}
+        />
+
         {/* iOS-style grab handle */}
-        <div className="mx-auto mb-3 h-1 w-9 rounded-full bg-ios-gray4 md:hidden" />
+        <div className="mx-auto mb-3 h-1.5 w-10 rounded-full bg-ios-gray4 md:hidden" />
 
         <button
           type="button"
           onClick={onClose}
           aria-label="閉じる"
-          className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-muted text-muted-foreground active:opacity-60 md:top-4 md:right-4"
+          className="absolute right-3.5 top-3.5 flex h-8 w-8 items-center justify-center rounded-full bg-muted text-muted-foreground transition-transform active:scale-[0.92] md:top-4 md:right-4"
         >
           <X className="h-4 w-4" />
         </button>
 
-        <h2 className="pr-10 text-ios-title2 font-semibold">{copy.title}</h2>
-        <p className="mt-1 text-[14px] text-muted-foreground">{copy.body}</p>
+        <div className="relative">
+          <h2 className="pr-10 text-[22px] font-semibold leading-tight tracking-tight">
+            {copy.title}
+          </h2>
+          <p className="mt-1.5 text-[14px] leading-relaxed text-muted-foreground">
+            {copy.body}
+          </p>
 
-        <ul className="mt-4 space-y-2">
-          {copy.perks.map((p) => (
-            <li key={p} className="flex items-start gap-2 text-[14px]">
-              <Check
-                className={`mt-0.5 h-4 w-4 shrink-0 ${
-                  premium ? "text-ios-purple" : "text-primary"
-                }`}
-                strokeWidth={2.5}
-              />
-              {p}
-            </li>
-          ))}
-        </ul>
+          <ul className="mt-5 space-y-2.5">
+            {copy.perks.map((p) => (
+              <li key={p} className="flex items-start gap-2.5 text-[14.5px]">
+                <span
+                  className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${
+                    premium
+                      ? "bg-ios-purple/12 text-ios-purple"
+                      : "bg-primary/12 text-primary"
+                  }`}
+                >
+                  <Check className="h-3 w-3" strokeWidth={3} />
+                </span>
+                {p}
+              </li>
+            ))}
+          </ul>
 
-        <div className="mt-5 flex flex-col gap-2">
-          <Link
-            href={copy.cta.href}
-            className={`inline-flex h-11 items-center justify-center rounded-full px-5 text-[15px] font-semibold active:opacity-80 ${
-              premium
-                ? "bg-ios-purple text-white"
-                : "bg-primary text-primary-foreground"
-            }`}
-          >
-            {copy.cta.label}
-          </Link>
-          <button
-            type="button"
-            onClick={onClose}
-            className="inline-flex h-11 items-center justify-center rounded-full bg-muted text-[14px] font-medium text-foreground active:opacity-80"
-          >
-            あとで
-          </button>
+          <div className="mt-6 flex flex-col gap-2">
+            <Link
+              href={copy.cta.href}
+              className={`pill h-12 px-5 text-[15px] ${
+                premium
+                  ? "bg-ios-purple text-white shadow-tint-purple"
+                  : "bg-primary text-primary-foreground shadow-tint-blue"
+              }`}
+            >
+              {copy.cta.label}
+            </Link>
+            <button
+              type="button"
+              onClick={onClose}
+              className="pill-ghost h-12 text-[14px]"
+            >
+              あとで
+            </button>
+          </div>
         </div>
       </div>
     </div>

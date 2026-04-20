@@ -10,60 +10,81 @@ export function DailySparkline({ data }: { data: DailyStat[] }) {
   }
 
   const W = 600;
-  const H = 100;
-  const PAD = 20;
-  const innerW = W - PAD * 2;
-  const innerH = H - PAD * 2;
+  const H = 120;
+  const PAD_X = 24;
+  const PAD_Y = 18;
+  const innerW = W - PAD_X * 2;
+  const innerH = H - PAD_Y * 2;
   const maxTotal = Math.max(...data.map((d) => d.total), 1);
 
   const points = data.map((d, i) => {
-    const x = PAD + (i / Math.max(1, data.length - 1)) * innerW;
-    const y = PAD + (1 - d.rate) * innerH;
+    const x = PAD_X + (i / Math.max(1, data.length - 1)) * innerW;
+    const y = PAD_Y + (1 - d.rate) * innerH;
     return { x, y, ...d };
   });
 
-  const path = points
-    .map((p, i) => `${i === 0 ? "M" : "L"} ${p.x} ${p.y}`)
+  // Smooth curve through points via midpoint-anchored cubic bezier.
+  const linePath = points
+    .map((p, i) => {
+      if (i === 0) return `M ${p.x} ${p.y}`;
+      const prev = points[i - 1];
+      const mx = (prev.x + p.x) / 2;
+      return `C ${mx} ${prev.y}, ${mx} ${p.y}, ${p.x} ${p.y}`;
+    })
     .join(" ");
+  const last = points[points.length - 1];
+  const first = points[0];
+  const areaPath = `${linePath} L ${last.x} ${H - PAD_Y} L ${first.x} ${H - PAD_Y} Z`;
 
   return (
     <div>
       <div className="flex items-center justify-between text-[11px]">
-        <span className="font-medium uppercase tracking-[0.08em] text-muted-foreground">
+        <span className="font-semibold uppercase tracking-[0.1em] text-muted-foreground">
           正答率の推移
         </span>
-        <span className="text-muted-foreground">
+        <span className="num text-muted-foreground">
           {data.length}日・累計 {data.reduce((s, d) => s + d.total, 0)}問
         </span>
       </div>
       <svg viewBox={`0 0 ${W} ${H}`} className="mt-3 h-auto w-full">
+        <defs>
+          <linearGradient id="sparkArea" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stopColor="#0A84FF" stopOpacity="0.32" />
+            <stop offset="100%" stopColor="#0A84FF" stopOpacity="0" />
+          </linearGradient>
+          <linearGradient id="sparkLine" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0%" stopColor="#5E5CE6" />
+            <stop offset="100%" stopColor="#0A84FF" />
+          </linearGradient>
+        </defs>
         {[0, 0.5, 1].map((g) => (
           <line
             key={g}
-            x1={PAD}
-            x2={W - PAD}
-            y1={PAD + (1 - g) * innerH}
-            y2={PAD + (1 - g) * innerH}
+            x1={PAD_X}
+            x2={W - PAD_X}
+            y1={PAD_Y + (1 - g) * innerH}
+            y2={PAD_Y + (1 - g) * innerH}
             stroke="hsl(var(--border))"
-            strokeDasharray="2 3"
+            strokeDasharray="2 4"
           />
         ))}
         {[0, 50, 100].map((g) => (
           <text
             key={g}
             x={4}
-            y={PAD + (1 - g / 100) * innerH + 3}
+            y={PAD_Y + (1 - g / 100) * innerH + 3}
             fontSize="9"
             fill="hsl(var(--muted-foreground))"
           >
             {g}%
           </text>
         ))}
+        <path d={areaPath} fill="url(#sparkArea)" />
         <path
-          d={path}
+          d={linePath}
           fill="none"
-          stroke="#007AFF"
-          strokeWidth="2"
+          stroke="url(#sparkLine)"
+          strokeWidth="2.4"
           strokeLinejoin="round"
           strokeLinecap="round"
         />
@@ -77,7 +98,7 @@ export function DailySparkline({ data }: { data: DailyStat[] }) {
                 p.rate >= 0.7 ? "#34C759" : p.rate >= 0.5 ? "#FF9500" : "#FF3B30"
               }
               stroke="hsl(var(--card))"
-              strokeWidth="1.5"
+              strokeWidth="2"
             >
               <title>
                 {p.day} — {p.correct}/{p.total} ({Math.round(p.rate * 100)}%)

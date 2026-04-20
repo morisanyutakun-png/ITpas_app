@@ -3,10 +3,13 @@ import { ChevronRight } from "lucide-react";
 import type { MisconceptionProgress } from "@/server/queries/progress";
 
 function toneFor(rate: number) {
-  if (rate >= 0.6) return { text: "text-ios-red", bar: "bg-ios-red" };
-  if (rate >= 0.4) return { text: "text-ios-orange", bar: "bg-ios-orange" };
-  if (rate >= 0.2) return { text: "text-ios-yellow", bar: "bg-ios-yellow" };
-  return { text: "text-ios-green", bar: "bg-ios-green" };
+  if (rate >= 0.6)
+    return { text: "text-ios-red", bar: "bg-gradient-to-r from-[#FF6B4A] to-[#FF3B30]" };
+  if (rate >= 0.4)
+    return { text: "text-ios-orange", bar: "bg-gradient-to-r from-[#FFB23A] to-[#FF9500]" };
+  if (rate >= 0.2)
+    return { text: "text-ios-yellow", bar: "bg-gradient-to-r from-[#FFD94A] to-[#FFCC00]" };
+  return { text: "text-ios-green", bar: "bg-gradient-to-r from-[#30D158] to-[#00C7BE]" };
 }
 
 export function MisconceptionHeatmap({
@@ -30,21 +33,21 @@ export function MisconceptionHeatmap({
           <Link
             key={m.slug}
             href={`/misconceptions/${m.slug}`}
-            className="flex items-center gap-3 py-3 first:pt-0 last:pb-0 active:opacity-70"
+            className="flex items-center gap-3 py-3 first:pt-0 last:pb-0 transition-opacity active:opacity-60"
           >
             <div className="min-w-0 flex-1">
-              <div className="truncate text-[14px] font-medium">{m.title}</div>
-              <div className="mt-1 flex items-center gap-2">
-                <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-muted">
+              <div className="truncate text-[14.5px] font-medium">{m.title}</div>
+              <div className="mt-1.5 flex items-center gap-2.5">
+                <div className="h-2 flex-1 overflow-hidden rounded-full bg-muted">
                   <div
-                    className={`h-full ${t.bar}`}
-                    style={{ width: `${pct}%` }}
+                    className={`h-full rounded-full ${t.bar} transition-[width] duration-500 ease-out`}
+                    style={{ width: `${Math.max(pct, 4)}%` }}
                   />
                 </div>
-                <span className={`text-[11px] font-semibold tabular-nums ${t.text}`}>
+                <span className={`num text-[12px] font-semibold ${t.text}`}>
                   {pct}%
                 </span>
-                <span className="text-[11px] text-muted-foreground tabular-nums">
+                <span className="num text-[11px] text-muted-foreground">
                   {m.incorrect}/{m.attempted}
                 </span>
               </div>

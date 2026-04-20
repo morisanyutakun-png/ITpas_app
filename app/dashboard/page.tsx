@@ -7,6 +7,7 @@ import {
   Lock,
   Target,
   Timer,
+  TrendingUp,
 } from "lucide-react";
 import { db } from "@/db/client";
 import { getCurrentUser } from "@/lib/currentUser";
@@ -53,43 +54,103 @@ export default async function DashboardPage() {
   const accuracy = total > 0 ? Math.round((correct / total) * 100) : 0;
   const topEnemy = misc[0];
 
+  // Accuracy ring geometry (SVG).
+  const ringSize = 128;
+  const stroke = 10;
+  const r = (ringSize - stroke) / 2;
+  const circ = 2 * Math.PI * r;
+  const dashOffset = circ - (accuracy / 100) * circ;
+
   return (
-    <div className="space-y-6">
-      <header className="flex items-end justify-between gap-3 pt-2">
+    <div className="space-y-7">
+      {/* Large title */}
+      <header className="flex items-end justify-between gap-3 pt-1">
         <div>
-          <h1 className="text-ios-title1 font-semibold">分析</h1>
-          <p className="mt-1 text-[13px] text-muted-foreground">
+          <div className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary" />
+            Progress
+          </div>
+          <h1 className="mt-1.5 text-ios-large font-semibold">分析</h1>
+          <p className="mt-1 text-[14px] text-muted-foreground">
             あなたの『どこでズレているか』をひと目で。
           </p>
         </div>
         <Link
           href="/learn/session/new?mode=weakness&count=5"
-          className="inline-flex h-9 items-center gap-1 rounded-full bg-primary px-3.5 text-[13px] font-semibold text-primary-foreground active:opacity-80"
+          className="pill-primary h-10 gap-1 px-4 text-[13.5px]"
         >
           弱点5問
         </Link>
       </header>
 
-      {/* Stat strip */}
-      <section className="ios-list shadow-ios-sm">
-        <div className="grid grid-cols-3 divide-x divide-border/60">
-          <StatCell label="累計回答" value={total.toString()} unit="問" />
-          <StatCell
-            label="正答率"
-            value={total > 0 ? `${accuracy}` : "—"}
-            unit={total > 0 ? "%" : ""}
-          />
-          <StatCell
-            label="最大の敵"
-            value={
-              analyticsUnlocked && topEnemy
-                ? `${Math.round(topEnemy.incorrectRate * 100)}`
-                : "—"
-            }
-            unit={analyticsUnlocked && topEnemy ? "%" : ""}
-            sub={analyticsUnlocked ? topEnemy?.title : "Proで解放"}
-          />
+      {/* Hero: accuracy ring */}
+      <section className="relative overflow-hidden rounded-3xl bg-grad-ink p-6 text-white shadow-hero">
+        <div className="relative z-10 flex items-center gap-6">
+          <div className="relative shrink-0">
+            <svg width={ringSize} height={ringSize} className="-rotate-90">
+              <defs>
+                <linearGradient id="ringGrad" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stopColor="#30D158" />
+                  <stop offset="100%" stopColor="#00C7BE" />
+                </linearGradient>
+              </defs>
+              <circle
+                cx={ringSize / 2}
+                cy={ringSize / 2}
+                r={r}
+                stroke="rgba(255,255,255,0.12)"
+                strokeWidth={stroke}
+                fill="none"
+              />
+              <circle
+                cx={ringSize / 2}
+                cy={ringSize / 2}
+                r={r}
+                stroke="url(#ringGrad)"
+                strokeWidth={stroke}
+                fill="none"
+                strokeLinecap="round"
+                strokeDasharray={circ}
+                strokeDashoffset={total > 0 ? dashOffset : circ}
+                className="transition-[stroke-dashoffset] duration-700 ease-out"
+              />
+            </svg>
+            <div className="absolute inset-0 flex flex-col items-center justify-center">
+              <div className="num text-[30px] font-semibold leading-none">
+                {total > 0 ? accuracy : 0}
+                <span className="ml-0.5 text-[14px] font-medium opacity-70">%</span>
+              </div>
+              <div className="mt-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] opacity-70">
+                正答率
+              </div>
+            </div>
+          </div>
+          <div className="min-w-0 flex-1 space-y-3">
+            <div>
+              <div className="text-[11px] font-semibold uppercase tracking-[0.14em] opacity-70">
+                累計回答
+              </div>
+              <div className="num mt-0.5 text-[26px] font-semibold tracking-tight">
+                {total}
+                <span className="ml-1 text-[13px] font-medium opacity-70">問</span>
+              </div>
+            </div>
+            <div>
+              <div className="text-[11px] font-semibold uppercase tracking-[0.14em] opacity-70">
+                最大の敵
+              </div>
+              <div className="mt-0.5 truncate text-[15px] font-semibold">
+                {analyticsUnlocked && topEnemy
+                  ? `${topEnemy.title} (${Math.round(topEnemy.incorrectRate * 100)}%)`
+                  : analyticsUnlocked
+                  ? "—"
+                  : "Proで解放"}
+              </div>
+            </div>
+          </div>
         </div>
+        <div className="pointer-events-none absolute -right-12 -top-12 h-48 w-48 rounded-full bg-white/5 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-20 -left-12 h-56 w-56 rounded-full bg-primary/30 blur-3xl" />
       </section>
 
       {!pro && <AdSlot variant="banner" />}
@@ -98,18 +159,18 @@ export default async function DashboardPage() {
       {rec && (
         <Link
           href={`/learn/session/new?mode=topic&topic=${rec.slug}&count=5`}
-          className="flex items-center gap-4 rounded-2xl bg-card p-4 shadow-ios-sm active:opacity-70"
+          className="surface-card flex items-center gap-4 p-4 transition-transform active:scale-[0.99]"
         >
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-ios-orange/10 text-ios-orange">
-            <Flame className="h-5 w-5" strokeWidth={2.2} />
-          </div>
+          <span className="tile-icon bg-grad-orange">
+            <Flame className="h-5 w-5" strokeWidth={2.4} />
+          </span>
           <div className="min-w-0 flex-1">
-            <div className="text-[12px] font-medium text-muted-foreground">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.12em] text-ios-orange">
               次に学ぶべき — {rec.reason}
             </div>
-            <div className="truncate text-[15px] font-semibold">{rec.title}</div>
+            <div className="truncate text-[16px] font-semibold">{rec.title}</div>
             {rec.attempted > 0 && (
-              <div className="text-[11px] text-muted-foreground">
+              <div className="text-[11.5px] text-muted-foreground">
                 これまでの正答率 {Math.round(rec.correctRate * 100)}% ({rec.attempted}問)
               </div>
             )}
@@ -120,8 +181,16 @@ export default async function DashboardPage() {
 
       {/* Daily sparkline */}
       <section className="space-y-2">
-        <div className="ios-section-label">直近14日の学習量</div>
-        <div className="rounded-2xl bg-card p-4 shadow-ios-sm">
+        <div className="flex items-end justify-between px-1">
+          <div>
+            <div className="section-title text-ios-blue">14日の推移</div>
+            <div className="text-[15px] font-semibold tracking-tight">
+              継続がいちばんの武器
+            </div>
+          </div>
+          <TrendingUp className="h-4 w-4 text-muted-foreground" />
+        </div>
+        <div className="surface-card p-5">
           <DailySparkline data={daily} />
         </div>
       </section>
@@ -131,8 +200,9 @@ export default async function DashboardPage() {
         unlocked={analyticsUnlocked}
         title="誤解パターン別ヒートマップ"
         desc="赤いほど誤答率が高い『敵』"
+        accentTile="bg-grad-sunset"
       >
-        <div className="rounded-2xl bg-card p-4 shadow-ios-sm">
+        <div className="surface-card p-5">
           <MisconceptionHeatmap items={misc} />
         </div>
       </ProGate>
@@ -142,8 +212,9 @@ export default async function DashboardPage() {
         unlocked={analyticsUnlocked}
         title="論点別ヒートマップ"
         desc="緑が押さえた論点・赤は補強対象"
+        accentTile="bg-grad-green"
       >
-        <div className="rounded-2xl bg-card p-4 shadow-ios-sm">
+        <div className="surface-card p-5">
           <TopicHeatmap items={topic} />
         </div>
       </ProGate>
@@ -151,10 +222,10 @@ export default async function DashboardPage() {
       {/* Quick actions */}
       <section className="space-y-2">
         <div className="ios-section-label">ツール</div>
-        <div className="ios-list shadow-ios-sm">
+        <div className="ios-list">
           <ActionRow
             icon={Timer}
-            tint="text-ios-blue"
+            tile="bg-grad-ocean"
             title={`模擬試験 ${MOCK_EXAM_DURATION_MIN}分`}
             desc="本番形式で力試し"
             href={mockExamUnlocked ? "/learn/mock-exam" : "/pricing?reason=mock_exam"}
@@ -162,7 +233,7 @@ export default async function DashboardPage() {
           />
           <ActionRow
             icon={FileText}
-            tint="text-ios-green"
+            tile="bg-grad-green"
             title="学習レポートをPDFに"
             desc="累計・正答率・重点補強を1枚に"
             href={pdfUnlocked ? "/account/report" : "/pricing?reason=pdf_export"}
@@ -170,7 +241,7 @@ export default async function DashboardPage() {
           />
           <ActionRow
             icon={Target}
-            tint="text-ios-purple"
+            tile="bg-grad-purple"
             title="弱点5問にすぐ挑む"
             desc="誤解パターン重み付きで自動抽出"
             href="/learn/session/new?mode=weakness&count=5"
@@ -182,54 +253,25 @@ export default async function DashboardPage() {
   );
 }
 
-function StatCell({
-  label,
-  value,
-  unit,
-  sub,
-}: {
-  label: string;
-  value: string;
-  unit?: string;
-  sub?: string;
-}) {
-  return (
-    <div className="flex flex-col items-center gap-1 px-2 py-4 text-center">
-      <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground">
-        {label}
-      </div>
-      <div className="flex items-baseline gap-0.5">
-        <span className="text-[22px] font-semibold tabular-nums">{value}</span>
-        {unit && (
-          <span className="text-[12px] text-muted-foreground">{unit}</span>
-        )}
-      </div>
-      {sub && (
-        <div className="line-clamp-1 max-w-[10ch] text-[10px] text-muted-foreground">
-          {sub}
-        </div>
-      )}
-    </div>
-  );
-}
-
 function ProGate({
   unlocked,
   title,
   desc,
+  accentTile,
   children,
 }: {
   unlocked: boolean;
   title: string;
   desc: string;
+  accentTile: string;
   children: React.ReactNode;
 }) {
   if (unlocked) {
     return (
       <section className="space-y-2">
         <div className="px-1">
-          <div className="text-ios-headline font-semibold">{title}</div>
-          <div className="text-[12px] text-muted-foreground">{desc}</div>
+          <div className="text-[17px] font-semibold tracking-tight">{title}</div>
+          <div className="text-[12.5px] text-muted-foreground">{desc}</div>
         </div>
         {children}
       </section>
@@ -238,19 +280,19 @@ function ProGate({
   return (
     <section className="space-y-2">
       <div className="px-1">
-        <div className="text-ios-headline font-semibold">{title}</div>
-        <div className="text-[12px] text-muted-foreground">{desc}</div>
+        <div className="text-[17px] font-semibold tracking-tight">{title}</div>
+        <div className="text-[12.5px] text-muted-foreground">{desc}</div>
       </div>
       <Link
         href="/pricing?reason=advanced_analytics"
-        className="flex items-center gap-3 rounded-2xl bg-card p-5 shadow-ios-sm active:opacity-70"
+        className="surface-card flex items-center gap-4 p-5 transition-transform active:scale-[0.99]"
       >
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted text-muted-foreground">
+        <span className={`tile-icon ${accentTile} opacity-80`}>
           <Lock className="h-4 w-4" />
-        </div>
+        </span>
         <div className="min-w-0 flex-1">
-          <div className="text-[15px] font-semibold">詳細分析はProで解放</div>
-          <div className="text-[12px] text-muted-foreground">
+          <div className="text-[15.5px] font-semibold">詳細分析は Pro で解放</div>
+          <div className="text-[12.5px] text-muted-foreground">
             弱点の深掘りと学習経路の推薦で合格までの距離を短縮
           </div>
         </div>
@@ -262,30 +304,30 @@ function ProGate({
 
 function ActionRow({
   icon: Icon,
-  tint,
+  tile,
   title,
   desc,
   href,
   locked,
 }: {
   icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
-  tint: string;
+  tile: string;
   title: string;
   desc: string;
   href: string;
   locked: boolean;
 }) {
   return (
-    <Link href={href} className="ios-row group active:bg-muted/60">
-      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-muted">
-        <Icon className={`h-4 w-4 ${tint}`} strokeWidth={2.2} />
-      </div>
-      <div className="flex-1 min-w-0">
+    <Link href={href} className="ios-row active:bg-muted/60">
+      <span className={`tile-icon-sm ${tile}`}>
+        <Icon className="h-4 w-4" strokeWidth={2.4} />
+      </span>
+      <div className="min-w-0 flex-1">
         <div className="flex items-center gap-1.5">
-          <span className="text-[15px] font-medium">{title}</span>
+          <span className="text-[15px] font-semibold">{title}</span>
           {locked && <Lock className="h-3 w-3 text-muted-foreground" />}
         </div>
-        <div className="text-[12px] text-muted-foreground">{desc}</div>
+        <div className="text-[12.5px] text-muted-foreground">{desc}</div>
       </div>
       <ChevronRight className="h-4 w-4 text-muted-foreground" />
     </Link>

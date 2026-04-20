@@ -3,55 +3,65 @@
 @tailwind utilities;
 
 /*
- * Apple-style design system.
+ * Apple-grade design system — inspired by Apple Music / iOS 17.
  *
- * Palette inspired by iOS system colors: systemGray6 as the app background,
- * pure white cards, near-black text with muted secondary greys, and a single
- * tint (iOS systemBlue #007AFF) for primary actions.
- *
- * Typography targets the native font stack so the app renders in SF Pro on
- * Apple devices (Hiragino Sans for Japanese glyphs) and Inter / Segoe on
- * other platforms — feels like a native app rather than a web site.
+ * Philosophy:
+ *   • Material hierarchy: three surface tiers (app / card / elevated)
+ *     with hairline borders and carefully tuned shadows.
+ *   • Calm neutrals, vivid but restrained accents. Color earns its place.
+ *   • SF-like type stack with negative tracking on display sizes.
+ *   • Motion serves clarity — spring-based, never decorative.
  */
 @layer base {
   :root {
-    --background: 240 10% 96.5%;       /* #F2F2F7 systemGray6 light */
-    --foreground: 0 0% 7%;
+    /* Surfaces — warmer than pure #F2F2F7 for a softer feel in light mode. */
+    --background: 240 20% 98.4%;        /* #FAFAFC */
+    --background-2: 240 16% 95.8%;      /* recessed fill */
+    --foreground: 225 14% 10%;          /* slightly cool near-black */
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 7%;
-    --primary: 211 100% 50%;           /* #007AFF systemBlue */
+    --card-foreground: 225 14% 10%;
+    --elevated: 0 0% 100%;              /* popovers, sheets */
+
+    /* Semantic. */
+    --primary: 211 100% 50%;            /* iOS systemBlue */
     --primary-foreground: 0 0% 100%;
-    --secondary: 240 6% 90%;
-    --secondary-foreground: 0 0% 7%;
-    --muted: 240 5% 96%;
-    --muted-foreground: 240 4% 46%;
+    --secondary: 240 10% 92%;
+    --secondary-foreground: 225 14% 10%;
+    --muted: 240 14% 95.5%;
+    --muted-foreground: 240 6% 44%;
     --accent: 211 100% 50%;
     --accent-foreground: 0 0% 100%;
     --destructive: 4 90% 58%;
     --destructive-foreground: 0 0% 100%;
-    --border: 240 6% 90%;
-    --input: 240 6% 90%;
+
+    /* Separators — hairline borders (iOS separator style). */
+    --border: 240 10% 90%;
+    --border-strong: 240 10% 84%;
+    --input: 240 10% 90%;
     --ring: 211 100% 50%;
-    --radius: 0.875rem;                /* 14px — iOS-ish corner radius */
+    --radius: 1.125rem;                 /* 18px — iOS 17 card radius */
   }
   .dark {
-    --background: 0 0% 0%;
+    --background: 240 6% 5%;            /* near-black, faint blue cast */
+    --background-2: 240 5% 8%;
     --foreground: 0 0% 100%;
-    --card: 240 3% 11%;
+    --card: 240 5% 10%;
     --card-foreground: 0 0% 100%;
-    --primary: 211 100% 55%;
+    --elevated: 240 5% 13%;
+    --primary: 211 100% 60%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 240 3% 17%;
+    --secondary: 240 4% 16%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 240 3% 17%;
-    --muted-foreground: 240 4% 65%;
-    --accent: 211 100% 55%;
+    --muted: 240 4% 15%;
+    --muted-foreground: 240 4% 62%;
+    --accent: 211 100% 60%;
     --accent-foreground: 0 0% 100%;
     --destructive: 4 90% 58%;
     --destructive-foreground: 0 0% 100%;
-    --border: 240 3% 17%;
-    --input: 240 3% 17%;
-    --ring: 211 100% 55%;
+    --border: 240 4% 18%;
+    --border-strong: 240 4% 24%;
+    --input: 240 4% 18%;
+    --ring: 211 100% 60%;
   }
 }
 
@@ -71,31 +81,162 @@
       -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro JP",
       "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI",
       "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-feature-settings: "rlig" 1, "calt" 1, "palt" 1;
-    letter-spacing: -0.003em;
+    font-feature-settings: "rlig" 1, "calt" 1, "palt" 1, "ss01" 1;
+    letter-spacing: -0.006em;
+    padding-bottom: env(safe-area-inset-bottom);
   }
   h1, h2, h3, h4, h5 {
-    letter-spacing: -0.02em;
+    letter-spacing: -0.022em;
+    font-feature-settings: "ss01" 1, "palt" 1;
   }
-  /* Honor safe areas so the bottom tab bar sits above the home indicator. */
-  body {
-    padding-bottom: env(safe-area-inset-bottom);
+  /* Subtle texture behind the app — barely visible, adds warmth. */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+      radial-gradient(1200px 600px at 15% -10%, hsl(211 100% 50% / 0.04), transparent 60%),
+      radial-gradient(900px 500px at 110% 10%, hsl(280 90% 60% / 0.03), transparent 60%);
+  }
+  .dark body::before {
+    background:
+      radial-gradient(1200px 600px at 15% -10%, hsl(211 100% 60% / 0.07), transparent 60%),
+      radial-gradient(900px 500px at 110% 10%, hsl(280 90% 60% / 0.05), transparent 60%);
+  }
+  /* Focus ring — accessible but not intrusive. */
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+    border-radius: 0.5rem;
+  }
+  /* Selection. */
+  ::selection {
+    background: hsl(var(--primary) / 0.18);
+    color: inherit;
   }
 }
 
 @layer components {
-  /* iOS-style grouped inset list, used for settings / account. */
+  /* ── Materials ─────────────────────────────────────────────────────── */
+
+  /* Primary card surface. */
+  .surface-card {
+    @apply rounded-2xl bg-card ring-1 ring-black/[0.04] shadow-surface dark:ring-white/[0.06];
+  }
+  /* Elevated surface (sheets, popovers). */
+  .surface-elevated {
+    @apply rounded-2xl bg-card ring-1 ring-black/[0.06] shadow-elevated dark:ring-white/[0.08];
+  }
+  /* Recessed — quiet, used inside cards. */
+  .surface-recessed {
+    @apply rounded-xl bg-muted/70;
+  }
+
+  /* iOS grouped inset list. */
   .ios-list {
-    @apply overflow-hidden rounded-2xl bg-card;
+    @apply overflow-hidden rounded-2xl bg-card ring-1 ring-black/[0.04] shadow-surface dark:ring-white/[0.06];
   }
   .ios-list > * + * {
     @apply border-t border-border/60;
   }
   .ios-row {
-    @apply flex min-h-[52px] items-center gap-3 px-4 py-3 text-[15px];
+    @apply flex min-h-[56px] items-center gap-3 px-4 py-3 text-[15px];
   }
-  /* Subtle section header used above grouped lists. */
   .ios-section-label {
-    @apply px-4 pb-2 text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground;
+    @apply px-4 pb-1.5 pt-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-muted-foreground;
+  }
+
+  /* Pill button (iOS-style). */
+  .pill {
+    @apply inline-flex items-center justify-center whitespace-nowrap rounded-full font-semibold transition-[transform,opacity,background-color] duration-150 ease-out active:scale-[0.97] disabled:pointer-events-none disabled:opacity-50;
+  }
+  .pill-primary {
+    @apply pill bg-primary text-primary-foreground shadow-tint-blue hover:brightness-110 active:opacity-90;
+  }
+  .pill-neutral {
+    @apply pill bg-foreground text-background hover:brightness-110;
+  }
+  .pill-ghost {
+    @apply pill bg-muted text-foreground hover:bg-muted/80;
+  }
+
+  /* Nav pill used in desktop header. */
+  .nav-pill {
+    @apply inline-flex items-center rounded-full px-3.5 py-1.5 text-[13.5px] font-medium text-muted-foreground transition-colors;
+  }
+  .nav-pill:hover {
+    @apply bg-muted text-foreground;
+  }
+  .nav-pill[data-active="true"] {
+    @apply bg-foreground text-background;
+  }
+
+  /* Glass bar (header / tab bar). */
+  .glass-bar {
+    background: hsl(var(--background) / 0.72);
+    -webkit-backdrop-filter: saturate(1.8) blur(20px);
+    backdrop-filter: saturate(1.8) blur(20px);
+  }
+
+  /* Tinted "album-art" icon tile — Apple Music-style category tile. */
+  .tile-icon {
+    @apply relative flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-white shadow-tile;
+  }
+  .tile-icon-sm {
+    @apply relative flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-white shadow-tile;
+  }
+
+  /* Gradient hero tile (large CTA card). */
+  .hero-tile {
+    @apply relative overflow-hidden rounded-3xl p-5 text-white shadow-hero transition-transform duration-200 ease-out active:scale-[0.985];
+  }
+  .hero-tile::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(120% 80% at 100% 0%, rgba(255,255,255,0.18), transparent 60%);
+    pointer-events: none;
+  }
+
+  /* Subtle section heading. */
+  .section-title {
+    @apply text-[13px] font-semibold uppercase tracking-[0.1em] text-muted-foreground;
+  }
+  .section-heading {
+    @apply text-[22px] font-semibold tracking-tight;
+  }
+
+  /* Animated shimmer on skeletons. */
+  .shimmer {
+    background-image: linear-gradient(
+      90deg,
+      hsl(var(--muted)) 0%,
+      hsl(var(--muted) / 0.6) 50%,
+      hsl(var(--muted)) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.6s infinite linear;
+  }
+  @keyframes shimmer {
+    from { background-position: 200% 0; }
+    to   { background-position: -200% 0; }
+  }
+
+  /* Numeric text — tabular + refined. */
+  .num {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "ss01" 1, "cv01" 1;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty  { text-wrap: pretty; }
+  .bg-mesh {
+    background:
+      radial-gradient(600px 300px at 0% 0%, hsl(211 100% 50% / 0.12), transparent 60%),
+      radial-gradient(500px 300px at 100% 100%, hsl(280 90% 60% / 0.10), transparent 60%);
   }
 }

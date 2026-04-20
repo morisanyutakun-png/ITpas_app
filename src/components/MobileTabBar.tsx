@@ -13,11 +13,8 @@ const TABS = [
 ] as const;
 
 /**
- * iOS-style bottom tab bar. Visible on mobile only (hidden ≥ md).
- *
- * We bias to 5 primary destinations; secondary destinations (ガイド / 論点 /
- * 履歴 / ブックマーク / 料金) stay accessible from within those pages — the
- * tab bar optimises for one-tap reach, not a full sitemap.
+ * iOS 17-style bottom tab bar. Glass material with a tinted pill on the
+ * active tab for crisper affordance (mirrors Apple Music's Now Playing bar).
  */
 export function MobileTabBar() {
   const pathname = usePathname();
@@ -25,10 +22,10 @@ export function MobileTabBar() {
   return (
     <nav
       aria-label="主要ナビゲーション"
-      className="fixed inset-x-0 bottom-0 z-40 border-t border-border/80 bg-background/90 backdrop-blur-xl md:hidden"
+      className="fixed inset-x-0 bottom-0 z-40 border-t border-border/60 glass-bar md:hidden"
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
-      <div className="mx-auto flex max-w-md items-stretch justify-around">
+      <div className="mx-auto flex max-w-md items-stretch justify-around px-1.5 pt-1">
         {TABS.map((tab) => {
           const active = tab.matchPrefix
             ? pathname === tab.href || pathname.startsWith(`${tab.href}/`)
@@ -38,15 +35,25 @@ export function MobileTabBar() {
             <Link
               key={tab.href}
               href={tab.href}
-              className={`flex min-w-0 flex-1 flex-col items-center justify-center gap-0.5 py-2 text-[10px] font-medium transition-colors ${
-                active ? "text-primary" : "text-muted-foreground"
-              }`}
+              className="group flex min-w-0 flex-1 flex-col items-center justify-center gap-1 py-1.5 text-[10.5px] font-semibold"
             >
-              <Icon
-                className="h-[22px] w-[22px]"
-                strokeWidth={active ? 2.2 : 1.8}
-              />
-              <span className="truncate">{tab.label}</span>
+              <span
+                className={`relative flex h-8 w-14 items-center justify-center rounded-full transition-colors duration-200 ${
+                  active ? "bg-primary/12 text-primary" : "text-muted-foreground group-active:text-foreground"
+                }`}
+              >
+                <Icon
+                  className="h-[22px] w-[22px]"
+                  strokeWidth={active ? 2.4 : 1.9}
+                />
+              </span>
+              <span
+                className={`truncate transition-colors ${
+                  active ? "text-primary" : "text-muted-foreground"
+                }`}
+              >
+                {tab.label}
+              </span>
             </Link>
           );
         })}

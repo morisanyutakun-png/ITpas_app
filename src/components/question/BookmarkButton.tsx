@@ -24,7 +24,7 @@ export function BookmarkButton({
         href={`/api/auth/google/login?returnTo=${encodeURIComponent(
           `/learn/questions/${questionId}`
         )}`}
-        className="inline-flex h-9 items-center gap-1.5 rounded-full bg-muted px-3 text-[13px] font-medium text-muted-foreground active:opacity-80"
+        className="pill-ghost h-9 gap-1.5 px-3 text-[13px] text-muted-foreground"
         title="ブックマークにはログインが必要です"
       >
         <Bookmark className="h-3.5 w-3.5" />
@@ -55,9 +55,9 @@ export function BookmarkButton({
         type="button"
         onClick={onClick}
         disabled={pending}
-        className={`inline-flex h-9 items-center gap-1.5 rounded-full px-3 text-[13px] font-medium transition-colors active:opacity-80 ${
+        className={`pill h-9 gap-1.5 px-3 text-[13px] ${
           bookmarked
-            ? "bg-ios-orange/10 text-ios-orange"
+            ? "bg-ios-orange/12 text-ios-orange ring-1 ring-ios-orange/20"
             : "bg-muted text-foreground"
         }`}
       >

@@ -1,0 +1,59 @@
+{
+  "externalKey": "r01aki_q93",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 93,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "negation_miss",
+  "stem": "ディジタル署名やブロックチェーンなどで利用されているハッシュ関数の特徴に関する、次の記述中の a, b に入れる字句の適切な組合せはどれか。\nハッシュ関数によって、同じデータは、「a」ハッシュ値に変換され、変換後のハッシュ値から元のデータを復元することが「b」。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a: 都度異なる / b: できない",
+      "isCorrect": false,
+      "whyAttractive": "『ハッシュはランダム』という誤イメージで選んでしまうが、ハッシュ関数は決定論的(同じ入力→常に同じ出力)。『都度異なる』のはソルト付きハッシュやMAC等の派生。",
+      "misconceptionSlug": "confuse_crypto_method"
+    },
+    {
+      "label": "イ",
+      "body": "a: 都度異なる / b: できる",
+      "isCorrect": false,
+      "whyAttractive": "ハッシュの決定論的な性質も、一方向性の性質も両方逆にした選択肢。ハッシュの2大特徴の両方を誤認している場合にのみ選ばれる。",
+      "misconceptionSlug": "confuse_crypto_method"
+    },
+    {
+      "label": "ウ",
+      "body": "a: 常に同じ / b: できない",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "a: 常に同じ / b: できる",
+      "isCorrect": false,
+      "whyAttractive": "決定論性は正しいが、一方向性(復元不可)を誤認している。ハッシュ関数は元データを復元『できない』点が暗号化との違い。",
+      "misconceptionSlug": "confuse_crypto_method"
+    }
+  ],
+  "explanation": "ハッシュ関数の2大特徴: ①決定論性 (同じ入力→常に同じ出力)、②一方向性 (出力から入力を復元できない)。この2つがあるからこそ、改ざん検知やブロックチェーンの連結に使える。",
+  "keyInsight": "ハッシュ=『常に同じ + 元には戻せない』。暗号化(復号可)との違いがここにある。",
+  "topicSlugs": [
+    {
+      "slug": "security_crypto",
+      "weight": 1
+    }
+  ],
+  "misconceptionSlugs": [
+    {
+      "slug": "confuse_crypto_method",
+      "weight": 1
+    }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 40,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問93 ©2019 独立行政法人情報処理推進機構"
+}

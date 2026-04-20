@@ -1,0 +1,60 @@
+{
+  "externalKey": "r01aki_q01",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 1,
+  "majorCategory": "strategy",
+  "formatType": "law_ip",
+  "trapType": "similar_term",
+  "stem": "労働者派遣法に基づき、A社がY氏をB社へ派遣することとなった。このときに成立する関係として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "A社とB社との間の委託関係",
+      "isCorrect": false,
+      "whyAttractive": "A社とB社の間には確かに契約関係があるが、これは『委託契約』ではなく『労働者派遣契約』。委託は事務処理を委ねる契約で、労働力の提供は含まない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "A社とY氏との間の労働者派遣契約関係",
+      "isCorrect": false,
+      "whyAttractive": "『派遣』の語感でA(派遣元)とY(労働者)を結び付けたくなるが、労働者派遣契約はA社とB社(派遣先)の間で結ぶもの。A社とY氏の間にあるのは雇用契約。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "B社とY氏との間の雇用関係",
+      "isCorrect": false,
+      "whyAttractive": "現場で一緒に働くのでB社が雇用主と錯覚しやすいが、給与を払う(=雇用する)のは派遣元A社。B社はY氏を雇用せず、指揮命令のみを行う。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "B社とY氏との間の指揮命令関係",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "労働者派遣では、派遣元A社と労働者Y氏の間に『雇用関係』、派遣元A社と派遣先B社の間に『労働者派遣契約』、派遣先B社と労働者Y氏の間に『指揮命令関係』が成立する。B社はY氏を雇用しないが、現場で業務を指示する権限を持つ。",
+  "keyInsight": "雇用主は派遣元(A)、指揮命令は派遣先(B)。『給料を払う人』と『指示を出す人』が分離するのが派遣の特徴。",
+  "commonMistakeFlow": "『B社でY氏が働く』→『B社がY氏を雇っている』と直結して選んでしまうが、派遣では雇用と指揮命令が分離する点が引っかけ。",
+  "topicSlugs": [
+    {
+      "slug": "biz_labor_contracts",
+      "weight": 1
+    }
+  ],
+  "misconceptionSlugs": [
+    {
+      "slug": "confuse_similar_terms",
+      "weight": 1
+    }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 2,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問1 ©2019 独立行政法人情報処理推進機構"
+}

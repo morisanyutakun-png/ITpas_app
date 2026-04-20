@@ -1,7 +1,9 @@
 import Link from "next/link";
-import { Shuffle, Crosshair, ArrowRight, ChevronRight } from "lucide-react";
+import { Shuffle, Crosshair, ArrowRight, ChevronRight, Lock } from "lucide-react";
 import { listQuestions } from "@/server/queries/questions";
 import { pickMajor } from "@/lib/design";
+import { readCurrentUser } from "@/lib/currentUser";
+import { minAllowedExamYear, planLabel } from "@/lib/plan";
 
 export const dynamic = "force-dynamic";
 
@@ -23,8 +25,18 @@ export default async function QuestionsListPage({
   }>;
 }) {
   const sp = await searchParams;
+  const user = await readCurrentUser();
+  const plan = user?.plan ?? "free";
+  const minYear = await minAllowedExamYear(plan);
+
+  // If the user picked a specific year they cannot see, drop the filter so
+  // the page still renders and explains the lock, rather than returning empty.
+  const yearParam = sp.year ? Number(sp.year) : undefined;
+  const yearBlocked =
+    yearParam !== undefined && minYear !== null && yearParam < minYear;
+
   const items = await listQuestions({
-    examYear: sp.year ? Number(sp.year) : undefined,
+    examYear: yearBlocked ? undefined : yearParam,
     majorCategory: sp.major as "strategy" | "management" | "technology" | undefined,
     topicSlug: sp.topic,
     misconceptionSlug: sp.misconception,
@@ -34,6 +46,7 @@ export default async function QuestionsListPage({
         : sp.origin === "inspired"
           ? "ipa_inspired"
           : undefined,
+    minYear,
   });
 
   // Group by year then by major category for ToC layout
@@ -108,6 +121,22 @@ export default async function QuestionsListPage({
           <Chip href="/learn/questions?origin=inspired" label="✨ オリジナルのみ" active={sp.origin === "inspired"} />
         </div>
       </div>
+
+      {minYear !== null && (
+        <div className="flex items-center gap-2 rounded-xl border-2 border-amber-200 bg-amber-50 px-4 py-2.5 text-xs text-amber-900">
+          <Lock className="h-3.5 w-3.5" />
+          <span>
+            <strong>{planLabel(plan)}</strong>プランでは令和{minYear}年以降の過去問を表示中。
+            {yearBlocked && ` 令和${yearParam}年度はロックされています。`}
+          </span>
+          <Link
+            href="/pricing"
+            className="ml-auto rounded-md bg-amber-600 px-2 py-1 font-bold text-white"
+          >
+            全年度をPremiumで解放
+          </Link>
+        </div>
+      )}
 
       <div className="text-xs text-slate-500">{items.length} 問が見つかりました</div>
 

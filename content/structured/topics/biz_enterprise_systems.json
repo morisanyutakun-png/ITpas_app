@@ -1,0 +1,8 @@
+{
+  "slug": "biz_enterprise_systems",
+  "title": "基幹業務システム (ERP/SCM/CRM/SFA)",
+  "majorCategory": "strategy",
+  "minorTopic": "情報システム戦略",
+  "summary": "ERP=経営資源の統合管理、SCM=調達から販売までの供給連鎖最適化、CRM=顧客との関係管理、SFA=営業活動の支援・効率化。頭文字 (Resource/Supply/Customer/Force) で目的を区別する。",
+  "body": "## 一覧\n\n| 略称 | 正式名 | 対象 | 目的 |\n|---|---|---|---|\n| ERP | Enterprise Resource Planning | 企業全体 | 経営資源(ヒト/モノ/カネ/情報)の統合管理 |\n| SCM | Supply Chain Management | 調達〜販売 | 供給連鎖の最適化 (材料→製造→物流→販売) |\n| CRM | Customer Relationship Management | 顧客 | 顧客との長期関係構築 |\n| SFA | Sales Force Automation | 営業部門 | 営業活動の支援・効率化 |\n\n## 見分け方のコツ\n\n- 「供給」「材料調達から販売まで」→ **SCM**\n- 「顧客」「関係」→ **CRM**\n- 「営業」「案件管理」「商談」→ **SFA**\n- 「統合」「経営資源」「会計×人事×生産を横断」→ **ERP**\n"
+}

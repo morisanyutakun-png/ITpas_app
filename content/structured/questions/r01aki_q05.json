@@ -1,0 +1,60 @@
+{
+  "externalKey": "r01aki_q05",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 5,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "材料調達から商品販売までの流れを一括管理して、供給の最適化を目指すシステムはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ASP",
+      "isCorrect": false,
+      "whyAttractive": "ASP=Application Service Provider。ソフトをインターネット経由で提供する形態で、供給連鎖の管理とは別軸。『システム』という語感だけで選ばないこと。",
+      "misconceptionSlug": "confuse_enterprise_systems"
+    },
+    {
+      "label": "イ",
+      "body": "CRM",
+      "isCorrect": false,
+      "whyAttractive": "CRM=Customer Relationship Management(顧客関係管理)。対象が『顧客』であって、材料調達は範囲外。",
+      "misconceptionSlug": "confuse_enterprise_systems"
+    },
+    {
+      "label": "ウ",
+      "body": "ERP",
+      "isCorrect": false,
+      "whyAttractive": "『一括管理』『統合』の語感でERPを選びたくなる。ERPは経営資源(ヒト/モノ/カネ/情報)の統合管理で、目的が『供給連鎖の最適化』というより広義。本問は『材料調達から販売まで』という供給連鎖の最適化が主題なのでSCMが正解。",
+      "misconceptionSlug": "confuse_enterprise_systems"
+    },
+    {
+      "label": "エ",
+      "body": "SCM",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "SCM(Supply Chain Management)は『供給連鎖(調達→製造→物流→販売)の最適化』を目的とする。S=Supply(供給)と頭文字で覚えると即答できる。ERPは似ているが対象が経営資源全体なので、本問のように『材料調達から販売までの流れ』と限定されていればSCMが正解。",
+  "keyInsight": "頭文字で分類: S=Supply(SCM), C=Customer(CRM), R=Resource(ERP), F=Force(営業=SFA)。",
+  "commonMistakeFlow": "『一括管理』という語でERPに引き寄せられるが、ERPは経営資源全体を対象とするのに対し、本問は『供給連鎖』を限定している点に注意。",
+  "topicSlugs": [
+    {
+      "slug": "biz_enterprise_systems",
+      "weight": 1
+    }
+  ],
+  "misconceptionSlugs": [
+    {
+      "slug": "confuse_enterprise_systems",
+      "weight": 1
+    }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 4,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問5 ©2019 独立行政法人情報処理推進機構"
+}

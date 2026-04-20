@@ -1,0 +1,59 @@
+{
+  "externalKey": "r01aki_q13",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 13,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "IoTに関する記述として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "人工知能における学習の仕組み",
+      "isCorrect": false,
+      "whyAttractive": "機械学習の説明。IoTと機械学習は組み合わせて使われることが多いが、IoTそのものは『モノのインターネット』で、学習アルゴリズムのことではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "センサを搭載した機器や制御装置などが直接インターネットにつながり、それらがネットワークを通じて様々な情報をやり取りする仕組み",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "ソフトウェアの機能の一部を、ほかのプログラムで利用できるように公開する関数や手続の集まり",
+      "isCorrect": false,
+      "whyAttractive": "APIの説明。プログラム間の機能連携でネット要素はあるが、『モノ(機器)』が直接ネットに繋がるというIoTの核心を欠く。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ソフトウェアのロボットを利用して、定型的な仕事を効率化するツール",
+      "isCorrect": false,
+      "whyAttractive": "RPAの説明。『ロボット』の語感が紛らわしいが、RPAはPC内のソフトウェアロボットで、物理的な『モノ』は関係しない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "IoT(Internet of Things)=モノのインターネット。センサや制御装置などの『モノ』が直接ネットワークに接続し、人を介さずに情報をやり取りする仕組み。機械学習(AI)、API、RPAは全て別概念。",
+  "keyInsight": "IoTの必要条件は『モノ側にセンサ/制御装置』『自動で』『直接ネットに接続』の3つ。いずれかが欠ければIoTではない。",
+  "topicSlugs": [
+    {
+      "slug": "tech_iot_basics",
+      "weight": 1
+    }
+  ],
+  "misconceptionSlugs": [
+    {
+      "slug": "confuse_similar_terms",
+      "weight": 1
+    }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 7,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問13 ©2019 独立行政法人情報処理推進機構"
+}

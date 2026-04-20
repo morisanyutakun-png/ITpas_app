@@ -1,0 +1,59 @@
+{
+  "externalKey": "r01aki_q57",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 57,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "サーバの仮想化技術において、あるハードウェアで稼働している仮想化されたサーバを停止することなく別のハードウェアに移動させ、移動前の状態から引き続きサーバの処理を継続させる技術を何と呼ぶか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ストリーミング",
+      "isCorrect": false,
+      "whyAttractive": "ストリーミングは音声・映像データを受信しながら再生する技術。『動かしながら』という語感でリアルタイム連想したくなるが、サーバ移動とは無関係。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "ディジタルサイネージ",
+      "isCorrect": false,
+      "whyAttractive": "店頭や駅の電子掲示板で情報発信する仕組み。名前に『ディジタル』が入っているので紛らわしいが、仮想化とは全く別領域。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "プラグアンドプレイ",
+      "isCorrect": false,
+      "whyAttractive": "USB機器等を接続するだけで使える仕組み。ハードウェア周辺機器の話で、仮想サーバの移動技術ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ライブマイグレーション",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "ライブマイグレーション(Live Migration)=『Live(稼働中の)』『Migration(移行)』。仮想サーバをシャットダウンせず、稼働したまま別の物理ハードへ移動する技術。サーバ保守・負荷分散・障害対応で活用される。",
+  "keyInsight": "『Live=生きたまま』『Migration=移行』。停止せず動かしたまま引っ越す、が核心。",
+  "topicSlugs": [
+    {
+      "slug": "cloud_service_models",
+      "weight": 1
+    }
+  ],
+  "misconceptionSlugs": [
+    {
+      "slug": "confuse_similar_terms",
+      "weight": 1
+    }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 24,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問57 ©2019 独立行政法人情報処理推進機構"
+}

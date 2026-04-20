@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { pickRandomQuestionId } from "@/server/queries/random";
+import { readCurrentUser } from "@/lib/currentUser";
+import { minAllowedExamYear } from "@/lib/plan";
 
 export const dynamic = "force-dynamic";
 
@@ -21,7 +23,13 @@ export default async function RandomQuestionPage({
       ? sp.major
       : undefined;
 
-  const id = await pickRandomQuestionId({ originType: origin, majorCategory: major });
+  const user = await readCurrentUser();
+  const minYear = await minAllowedExamYear(user?.plan ?? "free");
+  const id = await pickRandomQuestionId({
+    originType: origin,
+    majorCategory: major,
+    minYear,
+  });
 
   if (!id) {
     return (

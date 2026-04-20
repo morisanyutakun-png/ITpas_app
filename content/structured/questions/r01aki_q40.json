@@ -1,0 +1,59 @@
+{
+  "externalKey": "r01aki_q40",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 40,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "アジャイル開発の方法論であるスクラムに関する記述として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ソフトウェア開発組織及びプロジェクトのプロセスを改善するために、その組織の成熟度レベルを段階的に定義したものである。",
+      "isCorrect": false,
+      "whyAttractive": "CMMI(能力成熟度モデル統合)の説明。『成熟度レベル』は組織評価モデルで、開発手法ではない。『プロセス改善』の語感に引き寄せられるが、対象が違う。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "イ",
+      "body": "ソフトウェア開発とその取引において、取得者と供給者が、作業内容の共通の物差しとするために定義したものである。",
+      "isCorrect": false,
+      "whyAttractive": "共通フレームの説明。発注側と受注側の共通言語を定めた枠組みで、アジャイル開発の反復的な方法論とは別物。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "複雑で変化の激しい問題に対応するためのシステム開発のフレームワークであり、反復的かつ漸進的な手法として定義したものである。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "プロジェクトマネジメントの知識を体系化したものであり、複数の知識エリアから定義されているものである。",
+      "isCorrect": false,
+      "whyAttractive": "PMBOKの説明。PM全般の知識体系で、スクラムのような特定の開発手法ではない。『体系化』という語感に引き寄せられる典型。",
+      "misconceptionSlug": "confuse_pm_terms"
+    }
+  ],
+  "explanation": "スクラムは『反復的かつ漸進的』なアジャイル開発フレームワーク。短いイテレーション(スプリント)で動くソフトウェアを作り、レビューと改善を繰り返す。CMMI(ア)、共通フレーム(イ)、PMBOK(エ)は全てスコープが違う。",
+  "keyInsight": "スクラム=反復的(iterative)+漸進的(incremental)。『短いサイクルで小さく作って育てる』が核心。",
+  "topicSlugs": [
+    {
+      "slug": "pm_basics",
+      "weight": 1
+    }
+  ],
+  "misconceptionSlugs": [
+    {
+      "slug": "confuse_pm_terms",
+      "weight": 1
+    }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 18,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問40 ©2019 独立行政法人情報処理推進機構"
+}

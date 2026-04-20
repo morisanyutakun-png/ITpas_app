@@ -1,0 +1,63 @@
+{
+  "externalKey": "r01aki_q100",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 100,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "脆弱性のあるIoT機器が幾つかの企業に多数設置されていた。その機器の1台にマルウェアが感染し、他の多数のIoT機器にマルウェア感染が拡大した。ある日のある時刻に、マルウェアに感染した多数のIoT機器が特定のWebサイトへ一斉に大量のアクセスを行い、Webサイトのサービスを停止に追い込んだ。このWebサイトが受けた攻撃はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "DDoS攻撃",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "クロスサイトスクリプティング",
+      "isCorrect": false,
+      "whyAttractive": "XSS=Webアプリの入力欄に悪意あるスクリプトを埋め込む攻撃。ユーザ単位の攻撃で、多数機器からの一斉アクセスというDDoS特有の構図とは別物。",
+      "misconceptionSlug": "confuse_malware_types"
+    },
+    {
+      "label": "ウ",
+      "body": "辞書攻撃",
+      "isCorrect": false,
+      "whyAttractive": "パスワード解読の手法(辞書にある語を順番に試す)。Webサイトをダウンさせる攻撃とは目的が違う。",
+      "misconceptionSlug": "confuse_malware_types"
+    },
+    {
+      "label": "エ",
+      "body": "ソーシャルエンジニアリング",
+      "isCorrect": false,
+      "whyAttractive": "人間の心理的隙を突く攻撃(なりすまし電話、肩越しの覗き見など)。技術的な一斉アクセス攻撃とは軸が違う。",
+      "misconceptionSlug": "confuse_malware_types"
+    }
+  ],
+  "explanation": "DDoS(Distributed Denial of Service=分散型サービス妨害)攻撃は、多数の感染端末(ボットネット)から同時に大量アクセスを送り、標的サーバを過負荷でダウンさせる攻撃。IoT機器はセキュリティが弱く踏み台化されやすい典型例(Mirai等)。",
+  "keyInsight": "DoS=1対1の過負荷、DDoS=多対1の過負荷(Distributed=分散)。『多数機器から一斉』という記述がDDoSの目印。",
+  "topicSlugs": [
+    {
+      "slug": "security_threats",
+      "weight": 1
+    },
+    {
+      "slug": "tech_iot_basics",
+      "weight": 0.5
+    }
+  ],
+  "misconceptionSlugs": [
+    {
+      "slug": "confuse_malware_types",
+      "weight": 1
+    }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 43,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問100 ©2019 独立行政法人情報処理推進機構"
+}

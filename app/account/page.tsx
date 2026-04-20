@@ -4,6 +4,7 @@ import { db } from "@/db/client";
 import { readCurrentUser } from "@/lib/currentUser";
 import {
   getDailyAttemptCount,
+  hasFeature,
   isPaid,
   isPremium,
   limitsFor,
@@ -11,7 +12,17 @@ import {
   planLabel,
 } from "@/lib/plan";
 import { openBillingPortalAction } from "@/server/actions/checkout";
-import { CheckCircle2, Crown, LogOut, Sparkles, User } from "lucide-react";
+import {
+  CheckCircle2,
+  Crown,
+  FileText,
+  LogOut,
+  ShieldCheck,
+  Sparkles,
+  Target,
+  User,
+} from "lucide-react";
+import { AdSlot } from "@/components/AdSlot";
 
 export const dynamic = "force-dynamic";
 
@@ -184,6 +195,36 @@ export default async function AccountPage({
         </div>
       </div>
 
+      <div className="grid gap-3 md:grid-cols-3">
+        <FeatureCard
+          icon={Target}
+          title="模擬試験"
+          desc={`100問 / 120分`}
+          href="/learn/mock-exam"
+          locked={!hasFeature(user, "mockExam")}
+          lockedHint="Proで解放"
+        />
+        <FeatureCard
+          icon={FileText}
+          title="学習レポートPDF"
+          desc="ワンクリック発行"
+          href="/account/report"
+          locked={!hasFeature(user, "pdfExport")}
+          lockedHint="Proで解放"
+        />
+        <FeatureCard
+          icon={ShieldCheck}
+          title="優先サポート"
+          desc="メール24h以内"
+          href="/account/support"
+          locked={!hasFeature(user, "prioritySupport")}
+          lockedHint="Premium限定"
+          premium
+        />
+      </div>
+
+      <AdSlot variant="banner" />
+
       <div className="rounded-3xl border-2 border-slate-200 bg-white p-6 space-y-2">
         <h2 className="text-sm font-bold">プラン比較 (現在: {planLabel(user.plan)})</h2>
         <ul className="text-xs text-slate-600 space-y-1">
@@ -199,6 +240,47 @@ export default async function AccountPage({
         </ul>
       </div>
     </div>
+  );
+}
+
+function FeatureCard({
+  icon: Icon,
+  title,
+  desc,
+  href,
+  locked,
+  lockedHint,
+  premium,
+}: {
+  icon: typeof User;
+  title: string;
+  desc: string;
+  href: string;
+  locked: boolean;
+  lockedHint: string;
+  premium?: boolean;
+}) {
+  const hoverBorder = premium ? "hover:border-violet-400" : "hover:border-slate-400";
+  const iconWrap = premium
+    ? "bg-violet-100 text-violet-700"
+    : "bg-slate-900 text-white";
+  return (
+    <Link
+      href={locked ? "/pricing" : href}
+      className={`flex items-center gap-3 rounded-2xl border-2 border-slate-200 bg-white p-4 transition ${hoverBorder} ${
+        locked ? "opacity-70" : ""
+      }`}
+    >
+      <div className={`flex h-10 w-10 items-center justify-center rounded-lg ${iconWrap}`}>
+        <Icon className="h-5 w-5" />
+      </div>
+      <div className="flex-1 min-w-0">
+        <div className="text-sm font-bold truncate">{title}</div>
+        <div className="text-[11px] text-slate-500 truncate">
+          {locked ? lockedHint : desc}
+        </div>
+      </div>
+    </Link>
   );
 }
 

@@ -1,0 +1,59 @@
+{
+  "externalKey": "r01aki_q50",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 50,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "ITサービスマネジメントのフレームワークはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "IEEE",
+      "isCorrect": false,
+      "whyAttractive": "IEEE=電気・電子技術者学会。規格を策定する団体名で、ITサービスマネジメントのフレームワーク名ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "IETF",
+      "isCorrect": false,
+      "whyAttractive": "IETF=インターネット技術の標準化団体。RFCを発行するがITサービス運用のベストプラクティス集ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ISMS",
+      "isCorrect": false,
+      "whyAttractive": "ISMS=情報セキュリティマネジメントシステム。『マネジメントシステム』の語感で選んでしまいそうだが、対象は情報セキュリティで、ITサービスの運用管理ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ITIL",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "ITIL=Information Technology Infrastructure Library。ITサービスマネジメントのベストプラクティスを体系化した世界的なフレームワーク。英国発で、運用・変更・インシデント・問題管理など複数プロセスを定義している。",
+  "keyInsight": "ITサービスマネジメント=ITIL、情報セキュリティ=ISMS。目的語で即判別。",
+  "topicSlugs": [
+    {
+      "slug": "itsm_itil",
+      "weight": 1
+    }
+  ],
+  "misconceptionSlugs": [
+    {
+      "slug": "confuse_similar_terms",
+      "weight": 1
+    }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 21,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問50 ©2019 独立行政法人情報処理推進機構"
+}

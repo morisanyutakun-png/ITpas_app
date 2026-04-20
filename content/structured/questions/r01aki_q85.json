@@ -1,0 +1,60 @@
+{
+  "externalKey": "r01aki_q85",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 85,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "電子メールの内容が改ざんされていないことの確認に利用するものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "IMAP",
+      "isCorrect": false,
+      "whyAttractive": "IMAPは受信用のメールプロトコル。『メール関連』という語感で選びたくなるが、IMAPはメール取得の仕組みで改ざん検知はしない。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    },
+    {
+      "label": "イ",
+      "body": "SMTP",
+      "isCorrect": false,
+      "whyAttractive": "SMTPは送信用のメールプロトコル。IMAPと同様、メール配送に関するプロトコルであり改ざんの検知は機能外。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    },
+    {
+      "label": "ウ",
+      "body": "情報セキュリティポリシ",
+      "isCorrect": false,
+      "whyAttractive": "組織のセキュリティ方針を定めた文書。『セキュリティ』のキーワードで選びたくなるが、文書は直接データを守る技術ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ディジタル署名",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "ディジタル署名は送信者の秘密鍵で署名し、受信者が公開鍵で検証することで『本人性(なりすまし防止)』と『完全性(改ざん検知)』を同時に確認できる。電子メールではS/MIMEなどで実装される。",
+  "keyInsight": "ディジタル署名=本人性+完全性の担保。機密性(盗み見防止)は別の暗号化が必要。",
+  "commonMistakeFlow": "『メールの話→メールプロトコル』と短絡するとIMAP/SMTPを選んでしまう。求められているのは『改ざん検知の技術』なので、プロトコルではなく暗号技術を選ぶ。",
+  "topicSlugs": [
+    {
+      "slug": "security_crypto",
+      "weight": 1
+    }
+  ],
+  "misconceptionSlugs": [
+    {
+      "slug": "confuse_crypto_method",
+      "weight": 1
+    }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 37,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問85 ©2019 独立行政法人情報処理推進機構"
+}

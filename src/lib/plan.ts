@@ -1,45 +1,62 @@
-import { eq, sql } from "drizzle-orm";
+import { desc, eq, sql } from "drizzle-orm";
 import { db } from "@/db/client";
-import { bookmarks, notes, users } from "@/db/schema";
+import { bookmarks, notes, questions, users } from "@/db/schema";
 
 export type Plan = "free" | "pro" | "premium";
 
+/**
+ * Source of truth for plan entitlements.
+ *
+ * Every gate — both server and client — MUST consult `PLAN_LIMITS` via
+ * `limitsFor()` / `hasFeature()`. Do not scatter plan enums around the codebase.
+ */
 export const PLAN_LIMITS = {
   free: {
     dailyQuestionAttempts: 10,
     maxSessionCount: 5,
     maxBookmarks: 3,
     maxNotes: 0,
+    /** How many most-recent exam years are visible. `null` = all years. */
+    yearWindow: 1 as number | null,
+    /** Max allowed size when creating a mock exam. 0 disables the mode. */
+    mockExamMaxCount: 0,
     mockExam: false,
     advancedAnalytics: false,
     pdfExport: false,
     unlimitedYears: false,
     aiExplanations: false,
     prioritySupport: false,
+    adFree: false,
   },
   pro: {
     dailyQuestionAttempts: Number.POSITIVE_INFINITY,
     maxSessionCount: 100,
     maxBookmarks: Number.POSITIVE_INFINITY,
     maxNotes: Number.POSITIVE_INFINITY,
+    yearWindow: 2 as number | null,
+    mockExamMaxCount: 100,
     mockExam: true,
     advancedAnalytics: true,
     pdfExport: true,
     unlimitedYears: false,
     aiExplanations: false,
     prioritySupport: false,
+    adFree: true,
   },
   premium: {
     dailyQuestionAttempts: Number.POSITIVE_INFINITY,
     maxSessionCount: 200,
     maxBookmarks: Number.POSITIVE_INFINITY,
     maxNotes: Number.POSITIVE_INFINITY,
+    yearWindow: null as number | null,
+    mockExamMaxCount: 200,
     mockExam: true,
     advancedAnalytics: true,
     pdfExport: true,
     unlimitedYears: true,
     aiExplanations: true,
     prioritySupport: true,
+    adFree: true,
   },
 } as const;
 
@@ -47,6 +64,9 @@ export const PRO_PRICE_JPY_MONTHLY = 780;
 export const PRO_PRICE_JPY_YEARLY = 6800;
 export const PREMIUM_PRICE_JPY_MONTHLY = 1980;
 export const PREMIUM_PRICE_JPY_YEARLY = 19800;
+
+/** Mock exam time limit in minutes — same for Pro and Premium. */
+export const MOCK_EXAM_DURATION_MIN = 120;
 
 export type PlanUser = {
   id: string;
@@ -79,6 +99,24 @@ export function planLabel(plan: Plan): string {
 
 export function limitsFor(plan: Plan) {
   return PLAN_LIMITS[plan];
+}
+
+/** Boolean feature flags surfaced on `PLAN_LIMITS`. */
+export type Feature =
+  | "mockExam"
+  | "advancedAnalytics"
+  | "pdfExport"
+  | "unlimitedYears"
+  | "aiExplanations"
+  | "prioritySupport"
+  | "adFree";
+
+export function hasFeature(
+  user: Pick<PlanUser, "plan"> | null | undefined,
+  feature: Feature
+): boolean {
+  const plan = user?.plan ?? "free";
+  return Boolean(PLAN_LIMITS[plan][feature]);
 }
 
 /**
@@ -137,6 +175,48 @@ export async function checkAttemptGate(user: PlanUser): Promise<AttemptGate> {
     limit: limit as number,
     plan: user.plan,
   };
+}
+
+// ---- Year archive gating --------------------------------------------------
+
+let latestYearCache: { at: number; year: number } | null = null;
+const LATEST_YEAR_TTL_MS = 60 * 1000;
+
+/**
+ * Newest `exam_year` in the questions table. Cached for 60s — the archive
+ * only changes on `pnpm seed`, so stale reads for a minute are fine and it
+ * keeps per-request gate checks cheap.
+ */
+export async function getLatestExamYear(): Promise<number> {
+  const now = Date.now();
+  if (latestYearCache && now - latestYearCache.at < LATEST_YEAR_TTL_MS) {
+    return latestYearCache.year;
+  }
+  const rows = await db
+    .select({ y: questions.examYear })
+    .from(questions)
+    .orderBy(desc(questions.examYear))
+    .limit(1);
+  const year = rows[0]?.y ?? new Date().getFullYear();
+  latestYearCache = { at: now, year };
+  return year;
+}
+
+/**
+ * Compute the oldest exam year the user is allowed to access.
+ * Premium → no restriction (returns `null`).
+ */
+export async function minAllowedExamYear(plan: Plan): Promise<number | null> {
+  const window = limitsFor(plan).yearWindow;
+  if (window === null) return null;
+  const latest = await getLatestExamYear();
+  return latest - window + 1;
+}
+
+export async function isYearAllowed(plan: Plan, examYear: number): Promise<boolean> {
+  const min = await minAllowedExamYear(plan);
+  if (min === null) return true;
+  return examYear >= min;
 }
 
 export async function setPlan(input: {

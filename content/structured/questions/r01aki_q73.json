@@ -1,0 +1,59 @@
+{
+  "externalKey": "r01aki_q73",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 73,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "IoT機器やPCに保管されているデータを暗号化するためのセキュリティチップであり、暗号化に利用する鍵などの情報をチップの内部に記憶しており、外部から内部の情報の取出しが困難な構造をもつものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "GPU",
+      "isCorrect": false,
+      "whyAttractive": "GPU=画像処理プロセッサ。『プロセッサ』『高性能チップ』の語感で選びたくなるが、暗号鍵を保管する役割はない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "NFC",
+      "isCorrect": false,
+      "whyAttractive": "NFC=近距離無線通信。カードや携帯のかざし決済で使う。『セキュアな通信』の語感に引き寄せられるが、鍵保管チップではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "TLS",
+      "isCorrect": false,
+      "whyAttractive": "TLS=通信の暗号化プロトコル。『暗号化』が共通するが、TLSはプロトコルでありハードウェアチップではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "TPM",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "TPM=Trusted Platform Module。PCやIoT機器のマザーボードに実装される耐タンパ性(物理的改ざん耐性)を持つセキュリティチップで、暗号鍵を内部で生成・保管する。Windowsのディスク暗号化(BitLocker)等で使われる。",
+  "keyInsight": "TPM=『鍵を外に出さず中で使う』ハードウェアチップ。ソフトだけの暗号化より強固。",
+  "topicSlugs": [
+    {
+      "slug": "security_crypto",
+      "weight": 1
+    }
+  ],
+  "misconceptionSlugs": [
+    {
+      "slug": "confuse_similar_terms",
+      "weight": 1
+    }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 31,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問73 ©2019 独立行政法人情報処理推進機構"
+}

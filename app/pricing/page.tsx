@@ -15,12 +15,71 @@ import { stripeConfigured } from "@/lib/stripe";
 
 export const dynamic = "force-dynamic";
 
+const REASON_BANNER: Record<string, { title: string; body: string; tier: "pro" | "premium" }> = {
+  mock_exam: {
+    title: "模擬試験はProプラン以上で解放されます",
+    body: "本番形式 100問 / 120分のシミュレーションで時間配分を鍛えます。",
+    tier: "pro",
+  },
+  mock_exam_size: {
+    title: "150問・200問の模擬試験はPremium限定です",
+    body: "直前の追い込みに、長時間の演習を。",
+    tier: "premium",
+  },
+  advanced_analytics: {
+    title: "詳細分析はProプラン以上で解放されます",
+    body: "誤解パターンのヒートマップ、論点別の強弱、学習経路の推薦。",
+    tier: "pro",
+  },
+  bookmarks: {
+    title: "ブックマーク上限 (3件) に達しました",
+    body: "Proなら気になる問題を無制限に保存できます。",
+    tier: "pro",
+  },
+  notes: {
+    title: "問題ノートはProプラン以上で解放されます",
+    body: "各問題に自分用メモを残し、復習時に一覧で見返せます。",
+    tier: "pro",
+  },
+  pdf_export: {
+    title: "PDF書き出しはProプラン以上で解放されます",
+    body: "弱点レポートと学習履歴を1枚のPDFに出力。",
+    tier: "pro",
+  },
+  daily_limit: {
+    title: "今日の無料回答数 (10問) に達しました",
+    body: "Proなら1日無制限。試験日が近いあなたへ。",
+    tier: "pro",
+  },
+  year_locked: {
+    title: "この年度はPremiumで解放されます",
+    body: "全年度の過去問フルアーカイブはPremium限定。",
+    tier: "premium",
+  },
+  ai_explanations: {
+    title: "AI個別解説はPremium限定です",
+    body: "あなたの誤答パターンに沿って追加解説を生成。",
+    tier: "premium",
+  },
+  priority_support: {
+    title: "優先サポートはPremium限定です",
+    body: "メールでの問い合わせに24時間以内で返信。",
+    tier: "premium",
+  },
+  ad_free: {
+    title: "広告非表示はProプラン以上で解放されます",
+    body: "集中できる学習画面に。",
+    tier: "pro",
+  },
+};
+
 export default async function PricingPage({
   searchParams,
 }: {
-  searchParams: Promise<{ canceled?: string; stripe?: string }>;
+  searchParams: Promise<{ canceled?: string; stripe?: string; reason?: string }>;
 }) {
   const sp = await searchParams;
+  const banner = sp.reason ? REASON_BANNER[sp.reason] : undefined;
   const user = await readCurrentUser();
   const plan: Plan = user?.plan ?? "free";
   const pro = isPro(user);
@@ -41,6 +100,19 @@ export default async function PricingPage({
           まずはFreeで毎日10問。慣れて本気で合格を狙うならPro、試験まで最短ルートで行きたい人向けにPremium。
         </p>
       </div>
+
+      {banner && (
+        <div
+          className={`rounded-2xl border-2 p-4 text-sm ${
+            banner.tier === "premium"
+              ? "border-violet-300 bg-violet-50 text-violet-900"
+              : "border-amber-300 bg-amber-50 text-amber-900"
+          }`}
+        >
+          <div className="font-bold">{banner.title}</div>
+          <p className="mt-0.5 text-xs">{banner.body}</p>
+        </div>
+      )}
 
       {sp.canceled && (
         <div className="rounded-xl border-2 border-slate-200 bg-white p-4 text-sm text-slate-700">

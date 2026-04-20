@@ -21,9 +21,11 @@ export async function selectQuestionIds(input: {
   mode: SelectorMode;
   filters?: SelectorFilters;
   count: number;
+  /** Plan-based floor: exclude questions with exam_year < minYear. */
+  minYear?: number | null;
 }): Promise<string[]> {
-  const { userId, mode, filters = {}, count } = input;
-  const limit = Math.max(1, Math.min(50, count));
+  const { userId, mode, filters = {}, count, minYear = null } = input;
+  const limit = Math.max(1, Math.min(200, count));
 
   const topicCsv = (filters.topicSlugs ?? []).join(",");
   const miscCsv = (filters.misconceptionSlugs ?? []).join(",");
@@ -45,6 +47,7 @@ export async function selectQuestionIds(input: {
       FROM questions q
       WHERE
         (${filters.examYear ?? null}::int IS NULL OR q.exam_year = ${filters.examYear ?? null})
+        AND (${minYear}::int IS NULL OR q.exam_year >= ${minYear}::int)
         AND (${filters.formatType ?? null}::text IS NULL OR q.format_type::text = ${filters.formatType ?? null})
         AND (
           ${topicCsv}::text = ''

@@ -83,6 +83,7 @@ export default function RootLayout({
             <nav className="flex gap-1 text-sm overflow-x-auto flex-1">
               <NavLink href="/learn" label="学習" />
               <NavLink href="/learn/questions" label="問題" />
+              <NavLink href="/learn/mock-exam" label="模試" />
               <NavLink href="/guides" label="ガイド" />
               <NavLink href="/topics" label="論点" />
               <NavLink href="/misconceptions" label="誤解" />

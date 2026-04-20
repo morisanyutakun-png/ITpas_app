@@ -1,0 +1,59 @@
+{
+  "externalKey": "r01aki_q10",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 10,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "企業のアライアンス戦略のうち、ジョイントベンチャの説明として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "2社以上の企業が共同出資して経営する企業のこと",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "企業間で相互に出資や株式の持合などの協力関係を結ぶこと",
+      "isCorrect": false,
+      "whyAttractive": "資本提携の説明。出資はしても『新会社を共同で立てる』点がジョイントベンチャの核心で、資本提携はあくまで既存企業同士の関係強化。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "企業の合併や買収によって相手企業の支配権を取得すること",
+      "isCorrect": false,
+      "whyAttractive": "M&A(合併・買収)の説明。ジョイントベンチャは『共同』で新会社を作るのであり、一方が他方を支配する構図ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "技術やブランド、販売活動などに関する権利の使用を認めること",
+      "isCorrect": false,
+      "whyAttractive": "ライセンス契約(フランチャイズ等)の説明。権利の使用許諾であって、共同で企業体を設立する話ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ジョイントベンチャ(Joint Venture)は『複数の企業が共同出資して設立する新会社』。単なる提携(イ)、買収(ウ)、ライセンス許諾(エ)とは区別する。『Joint=共同』の語感を維持すれば選びやすい。",
+  "keyInsight": "『新会社を共同で作る』のがJV。既存の関係強化(資本提携)や支配権獲得(M&A)とは別物。",
+  "topicSlugs": [
+    {
+      "slug": "biz_models",
+      "weight": 1
+    }
+  ],
+  "misconceptionSlugs": [
+    {
+      "slug": "confuse_similar_terms",
+      "weight": 1
+    }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 6,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問10 ©2019 独立行政法人情報処理推進機構"
+}

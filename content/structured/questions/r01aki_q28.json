@@ -1,0 +1,59 @@
+{
+  "externalKey": "r01aki_q28",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 28,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "業務の効率化を目指すために、SFAを導入するのに適した部門はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "営業",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "経理・会計",
+      "isCorrect": false,
+      "whyAttractive": "経理・会計は財務会計システムやERPの範囲。SFAの『F=Force(営業部隊)』を知らないと、汎用的な『業務効率化ツール』として経理も当てはまる気がしてしまう。",
+      "misconceptionSlug": "confuse_enterprise_systems"
+    },
+    {
+      "label": "ウ",
+      "body": "資材・購買",
+      "isCorrect": false,
+      "whyAttractive": "資材調達はSCMの守備範囲。SFAは営業活動に特化した支援ツールで、資材購買には向かない。",
+      "misconceptionSlug": "confuse_enterprise_systems"
+    },
+    {
+      "label": "エ",
+      "body": "製造",
+      "isCorrect": false,
+      "whyAttractive": "製造部門はFA(Factory Automation)やMES(Manufacturing Execution System)が該当。SFAとFAは2文字違いで混同しやすいが、SFAの対象は営業だけ。",
+      "misconceptionSlug": "confuse_enterprise_systems"
+    }
+  ],
+  "explanation": "SFA=Sales Force Automation(営業支援システム)。営業部隊(Sales Force)の活動を自動化・効率化するシステムで、案件管理・商談履歴・顧客訪問記録などを扱う。対象は『営業部門』一択。",
+  "keyInsight": "SFAの『F』はForce(軍隊/部隊)で、Sales Force=営業部隊の意。『営業に特化した』と覚える。",
+  "topicSlugs": [
+    {
+      "slug": "biz_enterprise_systems",
+      "weight": 1
+    }
+  ],
+  "misconceptionSlugs": [
+    {
+      "slug": "confuse_enterprise_systems",
+      "weight": 1
+    }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 13,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問28 ©2019 独立行政法人情報処理推進機構"
+}

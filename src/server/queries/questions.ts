@@ -1,4 +1,4 @@
-import { and, asc, eq, inArray } from "drizzle-orm";
+import { and, asc, eq, gte, inArray } from "drizzle-orm";
 import { db } from "@/db/client";
 import {
   choices,
@@ -18,10 +18,15 @@ export async function listQuestions(filters?: {
   topicSlug?: string;
   misconceptionSlug?: string;
   originType?: "ipa_actual" | "ipa_inspired" | "original";
+  /** Plan-derived floor. When set, rows with exam_year < minYear are hidden. */
+  minYear?: number | null;
 }) {
   const where = [] as ReturnType<typeof eq>[];
   if (filters?.examYear !== undefined) {
     where.push(eq(questions.examYear, filters.examYear));
+  }
+  if (filters?.minYear != null) {
+    where.push(gte(questions.examYear, filters.minYear));
   }
   if (filters?.majorCategory) {
     where.push(eq(questions.majorCategory, filters.majorCategory));

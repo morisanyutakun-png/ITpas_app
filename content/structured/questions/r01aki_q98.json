@@ -1,0 +1,59 @@
+{
+  "externalKey": "r01aki_q98",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 98,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "攻撃者が他人のPCにランサムウェアを感染させる狙いはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "PC内の個人情報をネットワーク経由で入手する。",
+      "isCorrect": false,
+      "whyAttractive": "スパイウェアや情報窃取型マルウェアの目的。ランサムウェアは情報を『取る』のではなく『使えなくして身代金を要求する』点が違う。",
+      "misconceptionSlug": "confuse_malware_types"
+    },
+    {
+      "label": "イ",
+      "body": "PC内のファイルを使用不能にし、解除と引換えに金銭を得る。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "PCのキーボードで入力された文字列を、ネットワーク経由で入手する。",
+      "isCorrect": false,
+      "whyAttractive": "キーロガーの説明。入力情報の盗聴が目的で、身代金要求というランサムウェア特有の目的はない。",
+      "misconceptionSlug": "confuse_malware_types"
+    },
+    {
+      "label": "エ",
+      "body": "PCへの動作指示をネットワーク経由で送り、PCを不正に操作する。",
+      "isCorrect": false,
+      "whyAttractive": "ボット(遠隔操作マルウェア)の説明。ランサムウェアは操作ではなく『データを人質に』することが目的。",
+      "misconceptionSlug": "confuse_malware_types"
+    }
+  ],
+  "explanation": "ランサムウェア(Ransomware)=Ransom(身代金)+Software。感染するとファイルを暗号化・ロックし、復号の引換えに金銭を要求する。他のマルウェア(情報窃取、遠隔操作、キーロガー等)とは『身代金要求』で区別する。",
+  "keyInsight": "Ransom=身代金。ファイルを人質にして金を要求するのがランサムウェア。",
+  "topicSlugs": [
+    {
+      "slug": "security_threats",
+      "weight": 1
+    }
+  ],
+  "misconceptionSlugs": [
+    {
+      "slug": "confuse_malware_types",
+      "weight": 1
+    }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 42,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問98 ©2019 独立行政法人情報処理推進機構"
+}

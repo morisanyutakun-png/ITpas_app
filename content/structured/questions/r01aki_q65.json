@@ -1,0 +1,63 @@
+{
+  "externalKey": "r01aki_q65",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 65,
+  "majorCategory": "technology",
+  "formatType": "network_basics",
+  "trapType": "similar_term",
+  "stem": "NATに関する次の記述中の a, b に入れる字句の適切な組合せはどれか。\nNATは、職場や家庭のLANをインターネットへ接続するときによく利用され、「a」と「b」を相互に変換する。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a: プライベートIPアドレス / b: MACアドレス",
+      "isCorrect": false,
+      "whyAttractive": "MACアドレスはハードウェア固有のアドレスで、NATが変換するのはIPアドレス同士。『アドレス』という共通点で紛らわしいが、NATはネットワーク層(IP)の話。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    },
+    {
+      "label": "イ",
+      "body": "a: プライベートIPアドレス / b: グローバルIPアドレス",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "a: ホスト名 / b: MACアドレス",
+      "isCorrect": false,
+      "whyAttractive": "ホスト名→MACはARPの仕事でもIPの仕事でもない。NATの動作層を把握していないと選んでしまう。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    },
+    {
+      "label": "エ",
+      "body": "a: ホスト名 / b: グローバルIPアドレス",
+      "isCorrect": false,
+      "whyAttractive": "ホスト名→IPアドレスはDNSの仕事。DNSとNATを混同してしまうパターン。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    }
+  ],
+  "explanation": "NAT(Network Address Translation)は、LAN内で使われる『プライベートIPアドレス』とインターネット側の『グローバルIPアドレス』を相互変換する仕組み。IPv4アドレス枯渇対策として広く使われる。",
+  "keyInsight": "NAT=IP↔IPの変換(内→外/外→内)。DNSは名前↔IP、ARPはIP↔MAC。層と対象が違う。",
+  "topicSlugs": [
+    {
+      "slug": "network_protocols",
+      "weight": 1
+    },
+    {
+      "slug": "network_basics_osi",
+      "weight": 0.5
+    }
+  ],
+  "misconceptionSlugs": [
+    {
+      "slug": "confuse_protocol_layer",
+      "weight": 1
+    }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 28,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問65 ©2019 独立行政法人情報処理推進機構"
+}

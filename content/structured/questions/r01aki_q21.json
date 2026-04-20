@@ -1,0 +1,59 @@
+{
+  "externalKey": "r01aki_q21",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 21,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "ディープラーニングに関する記述として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "営業、マーケティング、アフタサービスなどの顧客に関わる部門間で情報や業務の流れを統合する仕組み",
+      "isCorrect": false,
+      "whyAttractive": "CRMの説明。『学習』という語感ではなく『顧客関係』を統合する基幹業務システムなので、ディープラーニング(学習技術)とは全く別カテゴリ。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "イ",
+      "body": "コンピュータなどのディジタル機器、通信ネットワークを利用して実施される教育、学習、研修の形態",
+      "isCorrect": false,
+      "whyAttractive": "eラーニングの説明。『学習』という語感で人間の学習とAIの学習を混同。ディープラーニングは『機械が学習する』技術で、人間向けの教育形態ではない。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "組織内の各個人がもつ知識やノウハウを組織全体で共有し、有効活用する仕組み",
+      "isCorrect": false,
+      "whyAttractive": "ナレッジマネジメントの説明。知識の『共有』と機械の『学習』は似て非なるもの。ディープラーニングは人ではなくコンピュータが特徴を抽出する技術。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "エ",
+      "body": "大量のデータを人間の脳神経回路を模したモデルで解析することによって、コンピュータ自体がデータの特徴を抽出、学習する技術",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "ディープラーニング(深層学習)=脳神経回路(ニューラルネットワーク)を多層化したモデルで、大量データから特徴量をコンピュータ自身が抽出する技術。従来の機械学習が『人が特徴量を設計』していたのに対し、特徴量抽出まで自動化した点が革新。",
+  "keyInsight": "『Deep=深い(多層)』『Learning=学習』。鍵は『コンピュータが特徴を自動抽出する』こと。人の学習(eラーニング)と取り違えない。",
+  "topicSlugs": [
+    {
+      "slug": "ai_generative_basics",
+      "weight": 1
+    }
+  ],
+  "misconceptionSlugs": [
+    {
+      "slug": "confuse_ai_terms",
+      "weight": 1
+    }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 9,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問21 ©2019 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,60 @@
+{
+  "externalKey": "r01aki_q62",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 62,
+  "majorCategory": "technology",
+  "formatType": "case",
+  "trapType": "order_swap",
+  "stem": "下から上へ品物を積み上げて、上にある品物から順に取り出す装置がある。この装置に対する操作は、次の二つに限られる。\nPUSH x:品物xを1個積み上げる。\nPOP: 一番上の品物を1個取り出す。\n最初は何も積まれていない状態から開始して、a, b, c の順で三つの品物が到着する。一つの装置だけを使った場合、POP操作で取り出される品物の順番としてあり得ないものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a, b, c",
+      "isCorrect": false,
+      "whyAttractive": "PUSH a→POP(a)→PUSH b→POP(b)→PUSH c→POP(c) で到着順そのままに取り出せる。LIFOでも『1個ずつ入れて即取り出す』なら可能。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "b, a, c",
+      "isCorrect": false,
+      "whyAttractive": "PUSH a→PUSH b→POP(b)→POP(a)→PUSH c→POP(c)で実現可能。『途中まで積んで逆順に出してから続き』のパターン。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "c, a, b",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "c, b, a",
+      "isCorrect": false,
+      "whyAttractive": "PUSH a→PUSH b→PUSH c→POP(c)→POP(b)→POP(a)で、全部積んでから一気に逆順に取り出す典型的LIFO動作。可能。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "これはスタック(LIFO=Last In First Out)。『c,a,b』はcを最後に積んで最初に取り出した時点で、残りはa(下)→b(上)の順なので次に出るのはb。『c,a,b』のようにcの次にaが出るためにはbが先に出ている必要があり矛盾。他の選択肢は全てPUSH/POPの順序で構成可能。",
+  "keyInsight": "スタック=LIFO=『後入れ先出し』。一度積んだら下の品物は上を全部取り出さないと触れない。",
+  "commonMistakeFlow": "LIFOの定義を『全部積んで逆順に出す』だけと思い込むと、『c,b,a』以外は全部可能/不可能と短絡してしまう。実際は途中のPOPを混ぜられるため、もっと多様な順序が可能。",
+  "topicSlugs": [
+    {
+      "slug": "algo_pseudo_lang",
+      "weight": 1
+    }
+  ],
+  "misconceptionSlugs": [
+    {
+      "slug": "confuse_similar_terms",
+      "weight": 0.5
+    }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 27,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問62 ©2019 独立行政法人情報処理推進機構"
+}

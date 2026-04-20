@@ -1,0 +1,59 @@
+{
+  "externalKey": "r01aki_q15",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 15,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "自社の商品やサービスの情報を主体的に収集する見込み客の獲得を目的に、企業がSNSやブログ、検索エンジンなどを利用して商品やサービスに関連する情報を発信する。このようにして獲得した見込み客を、最終的に顧客に転換させることを目標とするマーケティング手法として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "アウトバウンドマーケティング",
+      "isCorrect": false,
+      "whyAttractive": "『Out=外へ押し出す』タイプのマーケティング(TV広告・DM・電話営業など)。企業から顧客へ一方的にアプローチする手法で、本問の『顧客が主体的に情報収集する』とは真逆。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "イ",
+      "body": "インバウンドマーケティング",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "ダイレクトマーケティング",
+      "isCorrect": false,
+      "whyAttractive": "『直接』取引するマーケティング(通販、ECなど)。顧客への直接的な販売・送付が主題で、『見込み客を情報発信で呼び込む』点とは軸が違う。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "エ",
+      "body": "テレマーケティング",
+      "isCorrect": false,
+      "whyAttractive": "電話を使ったマーケティング。典型的なアウトバウンドの一種で、本問の『顧客が自ら情報を取りに来る』とは逆向き。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    }
+  ],
+  "explanation": "インバウンドマーケティングは『見込み客が自ら情報を探しに来る状態を作る』手法。SNS・ブログ・SEOなどで有益な情報を発信し、検索→訪問→顧客化という流れを目指す。In=内へ(顧客側から企業へ)の矢印で覚える。",
+  "keyInsight": "Inbound=顧客→企業(引き寄せる)、Outbound=企業→顧客(押し出す)。矢印の向きで即判別できる。",
+  "topicSlugs": [
+    {
+      "slug": "biz_marketing_frameworks",
+      "weight": 1
+    }
+  ],
+  "misconceptionSlugs": [
+    {
+      "slug": "confuse_marketing_framework",
+      "weight": 1
+    }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 7,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問15 ©2019 独立行政法人情報処理推進機構"
+}

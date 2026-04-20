@@ -1,0 +1,63 @@
+{
+  "externalKey": "r01aki_q55",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 55,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "ソフトウェア開発におけるDevOpsに関する記述として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "開発側が重要な機能のプロトタイプを作成し、顧客とともにその性能を実測して妥当性を評価する。",
+      "isCorrect": false,
+      "whyAttractive": "プロトタイピングの説明。Dev(開発)とOps(運用)の連携というDevOps固有の論点を欠いている。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "イ",
+      "body": "開発側と運用側が密接に連携し、自動化ツールなどを活用して機能などの導入や更新を迅速に進める。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "開発側のプロジェクトマネージャが、開発の各工程でその工程の完了を判断した上で次工程に進む方式で、ソフトウェアの開発を行う。",
+      "isCorrect": false,
+      "whyAttractive": "ウォーターフォール開発の説明。工程を逐次進めるモデルで、開発と運用の連携というDevOpsの主題とは別軸。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "エ",
+      "body": "利用者のニーズの変化に柔軟に対応するために、開発側がソフトウェアを小さな単位に分割し、固定した期間で繰り返しながら開発する。",
+      "isCorrect": false,
+      "whyAttractive": "アジャイル開発(スクラムなど)の説明。DevOpsはアジャイルと親和性が高いが、本質は『開発×運用』の橋渡し。ここでは運用側の記述が抜けているので不正解。",
+      "misconceptionSlug": "confuse_pm_terms"
+    }
+  ],
+  "explanation": "DevOps=Development(開発) + Operations(運用)。開発と運用の壁を取り払い、CI/CD等の自動化で迅速かつ高頻度なリリースを実現する文化・手法。『運用側』という要素があるかが判別の鍵。",
+  "keyInsight": "Dev×Ops=開発と運用の連携。『運用』という単語が選択肢にあるか否かで見分ける。",
+  "topicSlugs": [
+    {
+      "slug": "pm_basics",
+      "weight": 1
+    },
+    {
+      "slug": "itsm_itil",
+      "weight": 0.5
+    }
+  ],
+  "misconceptionSlugs": [
+    {
+      "slug": "confuse_pm_terms",
+      "weight": 1
+    }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 23,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問55 ©2019 独立行政法人情報処理推進機構"
+}

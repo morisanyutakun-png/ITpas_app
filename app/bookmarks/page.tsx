@@ -2,8 +2,9 @@ import Link from "next/link";
 import { Bookmark } from "lucide-react";
 import { getCurrentUser } from "@/lib/currentUser";
 import { getBookmarksForUser } from "@/server/queries/personal";
-import { limitsFor } from "@/lib/plan";
+import { hasFeature, limitsFor } from "@/lib/plan";
 import { pickFormat, pickMajor } from "@/lib/design";
+import { AdSlot } from "@/components/AdSlot";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "ブックマーク" };
@@ -12,6 +13,9 @@ export default async function BookmarksPage() {
   const user = await getCurrentUser();
   const rows = await getBookmarksForUser(user.id);
   const limit = limitsFor(user.plan).maxBookmarks;
+  const atCap =
+    Number.isFinite(limit) && rows.length >= (limit as number);
+  const showAds = !hasFeature(user, "adFree");
 
   return (
     <div className="mx-auto max-w-3xl space-y-6">
@@ -36,6 +40,22 @@ export default async function BookmarksPage() {
           </Link>
         )}
       </div>
+
+      {atCap && (
+        <div className="rounded-xl border-2 border-amber-300 bg-amber-50 px-4 py-3 text-xs text-amber-900 flex items-center justify-between gap-2">
+          <span>
+            上限 <strong>{limit as number}件</strong> に達しています。さらに保存するにはProへ。
+          </span>
+          <Link
+            href="/pricing?reason=bookmarks"
+            className="rounded-md bg-amber-600 px-2.5 py-1 font-bold text-white"
+          >
+            Proを見る
+          </Link>
+        </div>
+      )}
+
+      {showAds && <AdSlot variant="banner" />}
 
       {rows.length === 0 ? (
         <div className="rounded-2xl border-2 border-dashed border-slate-200 bg-slate-50 p-10 text-center text-sm text-slate-600">

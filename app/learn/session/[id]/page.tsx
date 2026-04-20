@@ -7,8 +7,10 @@ import { QuestionCard } from "@/components/question/QuestionCard";
 import { QuestionPlayer } from "@/components/question/QuestionPlayer";
 import { AttributionNote } from "@/components/question/AttributionNote";
 import { SessionProgressBar } from "@/components/session/SessionProgressBar";
+import { MockExamTimer } from "@/components/session/MockExamTimer";
 import { getOrCreateAnonUser } from "@/lib/anonId";
 import { getQuestionFull } from "@/server/queries/questions";
+import { MOCK_EXAM_DURATION_MIN } from "@/lib/plan";
 
 export const dynamic = "force-dynamic";
 
@@ -55,8 +57,17 @@ export default async function SessionPage({
       ? `/learn/session/${id}?step=${step + 1}`
       : `/learn/session/${id}/result`;
 
+  const isMockExam = Boolean((s.filters as { mockExam?: boolean } | null)?.mockExam);
+
   return (
     <div className="space-y-5 max-w-3xl mx-auto">
+      {isMockExam && (
+        <MockExamTimer
+          sessionId={id}
+          startedAtIso={s.startedAt.toISOString()}
+          durationMin={MOCK_EXAM_DURATION_MIN}
+        />
+      )}
       <SessionProgressBar step={step} total={ids.length} mode={s.mode} />
       <QuestionCard
         examYear={full.question.examYear}

@@ -1,0 +1,59 @@
+{
+  "externalKey": "r01aki_q18",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 18,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "銀行などの預金者の資産を、AIが自動的に運用するサービスを提供するなど、金融業においてIT技術を活用して、これまでにない革新的なサービスを開拓する取組を示す用語はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "FA",
+      "isCorrect": false,
+      "whyAttractive": "FA=Factory Automation(工場の自動化)。製造業の文脈で、金融業とは無関係。頭字語2文字に反応してしまう引っかけ。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "FinTech",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "OA",
+      "isCorrect": false,
+      "whyAttractive": "OA=Office Automation(事務の自動化)。昭和のオフィス機器普及期の用語で、AI運用サービスという現代の金融文脈にはそぐわない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "シェアリングエコノミー",
+      "isCorrect": false,
+      "whyAttractive": "個人の遊休資産を共有する経済形態(民泊、カーシェアなど)。『革新的サービス』という語感で選びたくなるが、金融業のITによる革新という限定に当てはまらない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "FinTech=Financial Technology(金融×IT)。決済・資産運用・融資など金融サービスにIT(AI含む)を組み合わせた革新的な取組の総称。『金融業×IT』というキーワードの組合せがそのままFinTechの語源。",
+  "keyInsight": "Fin(金融) + Tech(技術) = FinTech。業種×技術の掛け算で作られる造語は頭を分解して意味を取ると誤答しにくい。",
+  "topicSlugs": [
+    {
+      "slug": "biz_dx_methods",
+      "weight": 1
+    }
+  ],
+  "misconceptionSlugs": [
+    {
+      "slug": "confuse_similar_terms",
+      "weight": 1
+    }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 8,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問18 ©2019 独立行政法人情報処理推進機構"
+}

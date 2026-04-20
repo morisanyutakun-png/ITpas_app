@@ -1,0 +1,59 @@
+{
+  "externalKey": "r01aki_q11",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 11,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "情報システム戦略において定義した目標の達成状況を測定するために、重要な業績評価の指標を示す用語はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "BPO",
+      "isCorrect": false,
+      "whyAttractive": "BPO=Business Process Outsourcing(業務の外部委託)。『業務の成果を出す仕組み』から指標系と誤認しやすいが、BPOは委託の概念で指標ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "CSR",
+      "isCorrect": false,
+      "whyAttractive": "CSR=Corporate Social Responsibility(企業の社会的責任)。企業活動を評価する観点の一つだが、業績評価指標そのものではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "KPI",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "ROA",
+      "isCorrect": false,
+      "whyAttractive": "ROA=Return On Assets(総資産利益率)。具体的な財務指標だが、一般に『重要業績評価指標』という用語でKPIを問うているので文脈が合わない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "KPI=Key Performance Indicator(重要業績評価指標)。目標(KGI=Key Goal Indicator)の達成に向けた途中経過を測る指標。問題文の『重要な業績評価の指標』というキーワードがそのままKPIの訳。",
+  "keyInsight": "KGI=ゴール指標(Goal)、KPI=プロセス指標(Performance)。『重要業績評価指標=KPI』は定番の対応関係。",
+  "topicSlugs": [
+    {
+      "slug": "biz_financial_metrics",
+      "weight": 1
+    }
+  ],
+  "misconceptionSlugs": [
+    {
+      "slug": "confuse_similar_terms",
+      "weight": 1
+    }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 6,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問11 ©2019 独立行政法人情報処理推進機構"
+}

@@ -1,5 +1,38 @@
 [
   {
+    "slug": "past_r07",
+    "sourceType": "past_exam",
+    "label": "令和7年度 過去問ドリル",
+    "description": "R7 公開問題から逐語出題。IPA原典そのまま。",
+    "count": 20,
+    "durationMin": 25,
+    "filter": { "kind": "year", "examYear": 7, "examSeason": "annual" },
+    "badge": "R7 過去問",
+    "tier": "premium"
+  },
+  {
+    "slug": "past_r06",
+    "sourceType": "past_exam",
+    "label": "令和6年度 過去問ドリル",
+    "description": "R6 公開問題から逐語出題。",
+    "count": 20,
+    "durationMin": 25,
+    "filter": { "kind": "year", "examYear": 6, "examSeason": "annual" },
+    "badge": "R6 過去問",
+    "tier": "premium"
+  },
+  {
+    "slug": "past_r05",
+    "sourceType": "past_exam",
+    "label": "令和5年度 過去問ドリル",
+    "description": "R5 公開問題から逐語出題。",
+    "count": 20,
+    "durationMin": 25,
+    "filter": { "kind": "year", "examYear": 5, "examSeason": "annual" },
+    "badge": "R5 過去問",
+    "tier": "premium"
+  },
+  {
     "slug": "past_r04",
     "sourceType": "past_exam",
     "label": "令和4年度 過去問ドリル",
@@ -19,6 +52,17 @@
     "durationMin": 25,
     "filter": { "kind": "year", "examYear": 3, "examSeason": "annual" },
     "badge": "R3 過去問",
+    "tier": "premium"
+  },
+  {
+    "slug": "past_r02aki",
+    "sourceType": "past_exam",
+    "label": "令和2年度秋 過去問ドリル",
+    "description": "令和2年秋の公開問題から逐語出題。",
+    "count": 20,
+    "durationMin": 25,
+    "filter": { "kind": "year", "examYear": 2, "examSeason": "autumn" },
+    "badge": "R2秋 過去問",
     "tier": "premium"
   },
   {

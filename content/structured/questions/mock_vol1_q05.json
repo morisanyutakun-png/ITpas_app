@@ -1,0 +1,54 @@
+{
+  "externalKey": "mock_vol1_q05",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 5,
+  "majorCategory": "management",
+  "formatType": "case",
+  "trapType": "similar_term",
+  "stem": "ITサービスマネジメントで発生した次の事象を、インシデント管理と問題管理の観点から分類したとき、『問題管理』で扱う活動として最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "システム障害で止まった業務を、回避策 (ワークアラウンド) の適用によって一時的にでも復旧させる。",
+      "isCorrect": false,
+      "whyAttractive": "インシデント管理の説明。『迅速な復旧』が目的で、根本原因追求は別。語感で混同しやすい。",
+      "misconceptionSlug": "confuse_incident_problem"
+    },
+    {
+      "label": "イ",
+      "body": "同じ障害が月に何度も発生していることに着目し、ログや設計を調査して根本原因を特定、恒久対策を立案する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "利用者から受けた問合せをサービスデスクが一元受付し、二次対応部門に引き継ぐ。",
+      "isCorrect": false,
+      "whyAttractive": "サービスデスク/エスカレーションの説明。『受付』は運用の入口であって問題管理 (原因追求) ではない。",
+      "misconceptionSlug": "confuse_incident_problem"
+    },
+    {
+      "label": "エ",
+      "body": "新機能の追加やパッチ適用に伴う変更がサービスに与える影響を評価し、承認を得て実施する。",
+      "isCorrect": false,
+      "whyAttractive": "変更管理の説明。ITIL の別プロセスで、問題管理とは並列の関係。『変更』と『問題』を混同する典型。",
+      "misconceptionSlug": "confuse_incident_problem"
+    }
+  ],
+  "explanation": "インシデント管理=『目の前で止まっているサービスを迅速に復旧』が目的。問題管理=『インシデントの根本原因を特定し再発防止』が目的。『復旧が先、再発防止は後から腰を据えて』の二段構えがITILの基本。",
+  "keyInsight": "インシデント=『とにかく動かす (速度優先)』、問題=『なぜ起きた (原因追求)』。時間軸も違う: インシデントは即時、問題は中長期。",
+  "commonMistakeFlow": "『問題が発生した=問題管理』と単純に結びつけると、インシデント管理を選べなくなる。ITILでは『発生した事象=インシデント』、『その背景にある根本原因=問題』と厳密に区別される。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_incident_problem", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": null,
+  "sourcePageNumber": null,
+  "originType": "original",
+  "sourceNote": "理解ノート模試 Vol.1 オリジナル問題。"
+}

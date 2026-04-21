@@ -91,7 +91,12 @@ export default async function HomePage() {
   const dateStr = `${jst.getUTCMonth() + 1}月${jst.getUTCDate()}日 ${["日", "月", "火", "水", "木", "金", "土"][jst.getUTCDay()]}曜日`;
   const greetingKicker = greetingFor(jst.getUTCHours());
 
-  const yearTemplates = templates.filter((t) => t.filter.kind === "year");
+  // Past-exam drills: year templates whose source is verbatim IPA (ipa_actual).
+  const pastExamTemplates = templates.filter(
+    (t) => t.sourceType === "past_exam" && t.filter.kind === "year"
+  );
+  // Original mock exams: everything tagged `mock` in the templates file.
+  const mockTemplates = templates.filter((t) => t.sourceType === "mock");
 
   return (
     <div className="space-y-8 pb-10">
@@ -301,24 +306,29 @@ export default async function HomePage() {
         </section>
       )}
 
-      {/* ── 6. Mock exam — past-paper album row ────── */}
+      {/* ── 6a. 年度別過去問 (IPA公開問題そのまま) ──────── */}
       <section className="space-y-3">
         <SectionHead
           kicker="Past Papers"
-          title="年度別模試"
-          sub="公開問題ベースのフル模試"
+          title="年度別過去問"
+          sub="IPA公開問題から逐語出題"
           rightHref="/learn/past-exams"
           rightLabel="すべて"
         />
         <div className="hscroll">
-          {yearTemplates.map((t) => {
+          {pastExamTemplates.map((t) => {
             if (t.filter.kind !== "year") return null;
             const y = t.filter.examYear;
-            const src = pastExams.find((p) => p.examYear === y);
+            const season = t.filter.examSeason;
+            const src = pastExams.find(
+              (p) =>
+                p.examYear === y &&
+                (season === undefined || p.examSeason === season)
+            );
             const locked =
               !canMock ||
               (minYear != null && y < minYear) ||
-              t.tier === "premium" && plan !== "premium";
+              (t.tier === "premium" && plan !== "premium");
             return (
               <YearAlbum
                 key={t.slug}
@@ -329,6 +339,26 @@ export default async function HomePage() {
                 total={src?.totalQuestions ?? 100}
                 locked={locked}
               />
+            );
+          })}
+        </div>
+      </section>
+
+      {/* ── 6b. 理解ノート模試 (オリジナル問題) ──────────── */}
+      <section className="space-y-3">
+        <SectionHead
+          kicker="Original Mocks"
+          title="理解ノート模試"
+          sub="本サイト作成のオリジナル問題から出題"
+          rightHref="/learn/mock-exam"
+          rightLabel="すべて"
+        />
+        <div className="hscroll">
+          {mockTemplates.map((t) => {
+            const locked =
+              !canMock || (t.tier === "premium" && plan !== "premium");
+            return (
+              <MockAlbum key={t.slug} template={t} locked={locked} />
             );
           })}
         </div>
@@ -597,6 +627,67 @@ function YearAlbum({
         </div>
         <div className="mt-1 text-[9.5px] opacity-80 num">
           収録 {coverage}%
+        </div>
+      </div>
+    </Link>
+  );
+}
+
+/**
+ * Card for an original mock exam template (sourceType=mock). Visually
+ * distinct from YearAlbum — no year badge, uses category-themed gradient
+ * so the user can tell at a glance this isn't a verbatim past paper.
+ */
+function MockAlbum({
+  template,
+  locked,
+}: {
+  template: MockExamTemplate;
+  locked: boolean;
+}) {
+  const grad =
+    template.filter.kind === "category"
+      ? template.filter.majorCategory === "strategy"
+        ? "bg-grad-strategy"
+        : template.filter.majorCategory === "management"
+          ? "bg-grad-management"
+          : "bg-grad-technology"
+      : "bg-grad-purple";
+
+  return (
+    <Link
+      href={locked ? "/pricing?reason=mock_exam" : "/learn/mock-exam"}
+      className={`relative flex h-[160px] w-[168px] flex-col justify-between overflow-hidden rounded-2xl ${grad} p-3.5 text-white shadow-hero transition-transform active:scale-[0.97] ${
+        locked ? "grayscale-[0.2]" : ""
+      }`}
+    >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage:
+            "radial-gradient(120% 80% at 100% 0%, rgba(255,255,255,0.24), transparent 55%), radial-gradient(100% 80% at 0% 100%, rgba(0,0,0,0.22), transparent 50%)",
+        }}
+      />
+      <div className="relative z-10 flex items-start justify-between">
+        <span className="glass-chip">オリジナル</span>
+        {locked ? (
+          <Lock className="h-3.5 w-3.5 opacity-85" />
+        ) : (
+          <PlayCircle className="h-4 w-4 opacity-90" />
+        )}
+      </div>
+      <div className="relative z-10">
+        {template.badge && (
+          <div className="text-[10px] font-semibold uppercase tracking-[0.1em] opacity-85">
+            {template.badge}
+          </div>
+        )}
+        <div className="mt-0.5 line-clamp-2 text-[15px] font-semibold leading-tight">
+          {template.label}
+        </div>
+        <div className="mt-1 text-[11px] opacity-90 num">
+          {template.count}問 · {template.durationMin}分
         </div>
       </div>
     </Link>

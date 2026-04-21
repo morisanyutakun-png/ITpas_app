@@ -1,7 +1,22 @@
 import { redirect } from "next/navigation";
 import { createSessionAction } from "@/server/actions/sessions";
+import type { OriginTypeFilter } from "@/server/selection/weaknessSelector";
 
 export const dynamic = "force-dynamic";
+
+/**
+ * Translate the `origin` query string to a concrete selector filter.
+ *
+ * - `actual`   → past-exam drills (IPA verbatim only)
+ * - `mock`     → original practice questions (ipa_inspired + original)
+ * - omitted    → no restriction
+ */
+function parseOrigin(value: string | undefined): OriginTypeFilter[] | undefined {
+  if (value === "actual") return ["ipa_actual"];
+  if (value === "mock" || value === "inspired")
+    return ["ipa_inspired", "original"];
+  return undefined;
+}
 
 export default async function NewSessionPage({
   searchParams,
@@ -14,6 +29,7 @@ export default async function NewSessionPage({
     year?: string;
     format?: string;
     mockExam?: string;
+    origin?: string;
   }>;
 }) {
   const sp = await searchParams;
@@ -33,6 +49,7 @@ export default async function NewSessionPage({
       topicSlugs: sp.topic ? [sp.topic] : undefined,
       examYear: sp.year ? Number(sp.year) : undefined,
       formatType: sp.format,
+      originTypes: parseOrigin(sp.origin),
     },
     count,
     mockExam: sp.mockExam === "1",

@@ -24,9 +24,18 @@ export const mockExamTemplateZ = z.object({
   description: z.string().default(""),
   count: z.number().int().positive(),
   durationMin: z.number().int().positive(),
+  /**
+   * `past_exam` = 公開過去問からそのまま出題 (originType: ipa_actual).
+   * `mock` = 本サイトが作成したオリジナル模試問題 (originType: ipa_inspired/original).
+   */
+  sourceType: z.enum(["past_exam", "mock"]).default("mock"),
   filter: z.discriminatedUnion("kind", [
     z.object({ kind: z.literal("all") }),
-    z.object({ kind: z.literal("year"), examYear: z.number().int() }),
+    z.object({
+      kind: z.literal("year"),
+      examYear: z.number().int(),
+      examSeason: z.enum(["spring", "autumn", "annual"]).optional(),
+    }),
     z.object({
       kind: z.literal("category"),
       majorCategory: z.enum(["strategy", "management", "technology"]),

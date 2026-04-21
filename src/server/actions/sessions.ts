@@ -144,6 +144,15 @@ export async function createMockExamFromTemplateAction(input: {
     filters.majorCategory = tpl.filter.majorCategory;
   }
 
+  // Source-type gate: past-exam templates draw only from IPA verbatim
+  // questions (`ipa_actual`); mock templates draw only from the site's
+  // original/inspired pool. This is what separates "年度別過去問" from
+  // "理解ノート模試" at the selector level.
+  filters.originTypes =
+    tpl.sourceType === "past_exam"
+      ? ["ipa_actual"]
+      : ["ipa_inspired", "original"];
+
   return createSessionAction({
     mode: "mixed",
     filters,

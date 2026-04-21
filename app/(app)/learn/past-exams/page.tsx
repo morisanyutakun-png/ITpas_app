@@ -44,7 +44,10 @@ export default async function PastExamsPage({
   const user = await readCurrentUser();
   const plan = user?.plan ?? "free";
   const minYear = await minAllowedExamYear(plan);
-  const exams = await listPastExams();
+  const allExams = await listPastExams();
+  // Hide sources whose verbatim IPA questions haven't been imported yet —
+  // they'd render as "0 / 100" placeholders and confuse the archive view.
+  const exams = allExams.filter((e) => e.importedCount > 0);
   const canMock = hasFeature(user, "mockExam");
 
   const totalImported = exams.reduce((a, e) => a + e.importedCount, 0);
@@ -345,7 +348,7 @@ function ExamAlbumCard({
           <Link
             href={
               exam.importedCount > 0 && !locked
-                ? `/learn/session/new?mode=year&year=${exam.examYear}&count=5`
+                ? `/learn/session/new?mode=year&year=${exam.examYear}&origin=actual&count=5`
                 : "#"
             }
             aria-disabled={exam.importedCount === 0 || locked}
@@ -390,7 +393,8 @@ async function startYearMockExam(formData: FormData): Promise<void> {
   const count = Number(formData.get("count") ?? 100);
   const res = await createSessionAction({
     mode: "mixed",
-    filters: { examYear },
+    // Past-exam drills must draw ONLY from verbatim IPA content.
+    filters: { examYear, originTypes: ["ipa_actual"] },
     count,
     mockExam: true,
   });

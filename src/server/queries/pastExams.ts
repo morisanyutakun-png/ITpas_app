@@ -20,6 +20,9 @@ export async function listPastExams(filters?: {
   minYear?: number | null;
 }): Promise<PastExamSummary[]> {
   const sources = getExamSources();
+  // Past-exam archive shows ONLY verbatim IPA questions (originType=ipa_actual).
+  // Inspired/original questions (e.g. r05_qXX, mock_vol1_qXX) are *mock*
+  // content — they live under /learn/mock-exam, not the past-exam archive.
   const rows = await db
     .select({
       examYear: questions.examYear,
@@ -29,9 +32,12 @@ export async function listPastExams(filters?: {
     })
     .from(questions)
     .where(
-      filters?.minYear != null
-        ? gte(questions.examYear, filters.minYear)
-        : undefined
+      and(
+        eq(questions.originType, "ipa_actual"),
+        filters?.minYear != null
+          ? gte(questions.examYear, filters.minYear)
+          : undefined
+      )
     )
     .groupBy(questions.examYear, questions.examSeason, questions.majorCategory);
 

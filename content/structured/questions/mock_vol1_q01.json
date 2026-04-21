@@ -1,0 +1,54 @@
+{
+  "externalKey": "mock_vol1_q01",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 1,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "アジャイル開発の手法として利用されるテスト駆動開発 (TDD) の最も適切な説明はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "2人のプログラマが1台のコンピュータに向かい、1人が書いたコードをもう1人が即座にレビューしながら開発する手法。",
+      "isCorrect": false,
+      "whyAttractive": "ペアプログラミングの説明。アジャイル関連ということで混同しやすいが、TDDの核心は『テストを先に書く』こと。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "イ",
+      "body": "プロダクトコードを先に実装し、完成後にまとめてテストコードを書いて検証する手法。",
+      "isCorrect": false,
+      "whyAttractive": "『従来型開発』の順番。TDDはこの順番を逆転させる点が革新なので、ここを取り違えるとTDDの意味が失われる。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "失敗するテストを先に書き、そのテストを通す最小限のコードを実装してからリファクタリングするサイクルを繰り返す手法。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "本番環境で運用中のシステムに対して、利用者の操作ログを収集して障害を予測する手法。",
+      "isCorrect": false,
+      "whyAttractive": "運用監視やAIOpsの説明。『テスト』という語感が近いが、TDDは開発フェーズの手法であって運用監視ではない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    }
+  ],
+  "explanation": "TDD (Test-Driven Development) は『Red (失敗するテストを書く) → Green (最小限の実装で通す) → Refactor (内部構造を改善)』の3ステップを短いサイクルで繰り返す開発手法。テストが先、コードは後という順序が定義の核心。",
+  "keyInsight": "TDD = テストを先に書く。Red→Green→Refactor の順序を1つのリズムとして覚える。",
+  "commonMistakeFlow": "『テスト駆動』という語感で『テストを自動化する』と誤解すると、テスト自動化ツール全般 (Seleniumなど) と混同する。TDDは『開発の順序』の話。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_pm_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": null,
+  "sourcePageNumber": null,
+  "originType": "original",
+  "sourceNote": "理解ノート模試 Vol.1 オリジナル問題。IPA公開問題の文言とは異なる、本サイト独自に作成した練習問題です。"
+}

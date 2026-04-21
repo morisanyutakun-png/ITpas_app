@@ -2,12 +2,19 @@ import { sql } from "drizzle-orm";
 import { db } from "@/db/client";
 
 export type SelectorMode = "weakness" | "topic" | "year" | "format" | "mixed";
+export type OriginTypeFilter = "ipa_actual" | "ipa_inspired" | "original";
 export type SelectorFilters = {
   topicSlugs?: string[];
   misconceptionSlugs?: string[];
   examYear?: number;
   formatType?: string;
   majorCategory?: "strategy" | "management" | "technology";
+  /**
+   * Restrict candidates to specific origin types. Used to distinguish
+   * past-exam drills (`ipa_actual`) from mock exams (`ipa_inspired` /
+   * `original`). `undefined` = no restriction.
+   */
+  originTypes?: OriginTypeFilter[];
 };
 
 /**
@@ -30,6 +37,7 @@ export async function selectQuestionIds(input: {
 
   const topicCsv = (filters.topicSlugs ?? []).join(",");
   const miscCsv = (filters.misconceptionSlugs ?? []).join(",");
+  const originCsv = (filters.originTypes ?? []).join(",");
 
   const rows = await db.execute(sql`
     WITH user_misc AS (
@@ -51,6 +59,10 @@ export async function selectQuestionIds(input: {
         AND (${minYear}::int IS NULL OR q.exam_year >= ${minYear}::int)
         AND (${filters.formatType ?? null}::text IS NULL OR q.format_type::text = ${filters.formatType ?? null})
         AND (${filters.majorCategory ?? null}::text IS NULL OR q.major_category::text = ${filters.majorCategory ?? null})
+        AND (
+          ${originCsv}::text = ''
+          OR q.origin_type::text = ANY(string_to_array(${originCsv}::text, ','))
+        )
         AND (
           ${topicCsv}::text = ''
           OR EXISTS (

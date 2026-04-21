@@ -122,12 +122,17 @@ export default async function MockExamEntryPage({
     );
   }
 
-  const fullTemplates = templates.filter(
-    (t) => t.filter.kind === "all" && t.count >= 50
+  // Mock (sourceType=mock) templates: original practice exams, split by shape.
+  const mockTemplates = templates.filter((t) => t.sourceType === "mock");
+  const fullTemplates = mockTemplates.filter(
+    (t) => t.filter.kind === "all" && t.count >= 30
   );
-  const yearTemplates = templates.filter((t) => t.filter.kind === "year");
-  const categoryTemplates = templates.filter(
+  const categoryTemplates = mockTemplates.filter(
     (t) => t.filter.kind === "category"
+  );
+  // Past-exam (sourceType=past_exam) templates: IPA verbatim drills by year.
+  const pastExamTemplates = templates.filter(
+    (t) => t.sourceType === "past_exam" && t.filter.kind === "year"
   );
 
   const isTplAvailable = (t: MockExamTemplate) => {
@@ -185,7 +190,7 @@ export default async function MockExamEntryPage({
         </ErrorBanner>
       )}
 
-      {/* ── Featured hero tile ─────────────────────── */}
+      {/* ── Featured hero tile (mock_full) ─────────── */}
       {fullTemplates[0] && (
         <section>
           <form
@@ -208,17 +213,17 @@ export default async function MockExamEntryPage({
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="text-[11px] font-semibold uppercase tracking-[0.14em] opacity-85">
-                    Featured · 本試験形式
+                    Featured · オリジナル模試
                   </div>
                   <div className="mt-1 text-[28px] font-semibold leading-tight tracking-tight">
-                    全国模試 100問
+                    理解ノート模試 フル
                   </div>
                   <div className="mt-1 flex flex-wrap items-center gap-2 text-[12px] opacity-90">
                     <span className="glass-chip">
-                      <Clock className="h-3 w-3" /> 120分
+                      <Clock className="h-3 w-3" /> {fullTemplates[0].durationMin}分
                     </span>
                     <span className="glass-chip">
-                      <Target className="h-3 w-3" /> 全年度ランダム
+                      <Target className="h-3 w-3" /> オリジナル問題のみ
                     </span>
                     <span className="glass-chip">
                       <Flame className="h-3 w-3" /> 苦手重み付け
@@ -235,42 +240,49 @@ export default async function MockExamEntryPage({
         </section>
       )}
 
-      {/* ── Year-based album tiles ─────────────────── */}
-      <section className="space-y-3">
-        <SectionHeader
-          kicker="Past Papers"
-          title="年度別模試"
-          sub="過去の本試験をそのまま再構成"
-          viewAllHref="/learn/past-exams"
-        />
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
-          {yearTemplates.map((t) => {
-            if (t.filter.kind !== "year") return null;
-            const y = t.filter.examYear;
-            const locked = !isTplAvailable(t);
-            const source = pastExams.find((p) => p.examYear === y);
-            return (
-              <YearAlbumTile
-                key={t.slug}
-                template={t}
-                year={y}
-                label={source?.shortLabel ?? `R${y}`}
-                coverage={source?.coveragePct ?? 0}
-                imported={source?.importedCount ?? 0}
-                total={source?.totalQuestions ?? 100}
-                locked={locked}
-              />
-            );
-          })}
-        </div>
-      </section>
+      {/* ── Past-exam drills (verbatim IPA) ────────── */}
+      {pastExamTemplates.length > 0 && (
+        <section className="space-y-3">
+          <SectionHeader
+            kicker="Past Papers"
+            title="年度別過去問"
+            sub="IPA公開問題を逐語出題 (原典まま)"
+            viewAllHref="/learn/past-exams"
+          />
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
+            {pastExamTemplates.map((t) => {
+              if (t.filter.kind !== "year") return null;
+              const y = t.filter.examYear;
+              const season = t.filter.examSeason;
+              const locked = !isTplAvailable(t);
+              const source = pastExams.find(
+                (p) =>
+                  p.examYear === y &&
+                  (season === undefined || p.examSeason === season)
+              );
+              return (
+                <YearAlbumTile
+                  key={t.slug}
+                  template={t}
+                  year={y}
+                  label={source?.shortLabel ?? `R${y}`}
+                  coverage={source?.coveragePct ?? 0}
+                  imported={source?.importedCount ?? 0}
+                  total={source?.totalQuestions ?? 100}
+                  locked={locked}
+                />
+              );
+            })}
+          </div>
+        </section>
+      )}
 
-      {/* ── Category cards ─────────────────────────── */}
+      {/* ── Category cards (original mock, by field) ─ */}
       <section className="space-y-3">
         <SectionHeader
           kicker="By Field"
           title="分野別模試"
-          sub="3大領域に絞って強化"
+          sub="オリジナル問題 / 3大領域に絞って強化"
         />
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
           {categoryTemplates.map((t) => {
@@ -297,7 +309,7 @@ export default async function MockExamEntryPage({
         <SectionHeader
           kicker="Quick Start"
           title="サイズを選ぶ"
-          sub="全範囲ランダム / 毎回違う出題"
+          sub="オリジナル問題 / 全範囲ランダム / 毎回違う出題"
         />
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {fullTemplates.map((t) => {
@@ -361,10 +373,10 @@ export default async function MockExamEntryPage({
           <Gauge className="h-3.5 w-3.5" /> Rules
         </div>
         <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+          <RulePill>年度別過去問=IPA公開問題そのまま / 模試=本サイトのオリジナル問題</RulePill>
           <RulePill>解答数はカウント対象外 (無制限)</RulePill>
           <RulePill>タイムアップで自動集計</RulePill>
           <RulePill>中断→再開可 (残時間は非保存)</RulePill>
-          <RulePill>全問に IPA 公開問題の出典を表示</RulePill>
         </ul>
       </section>
     </div>
@@ -440,7 +452,7 @@ function YearAlbumTile({
       </div>
       <div className="relative z-10 flex items-start justify-between">
         <span className="glass-chip">
-          {template.filter.kind === "year" ? "公開問題" : "Mix"}
+          {template.sourceType === "past_exam" ? "過去問そのまま" : "オリジナル"}
         </span>
         {locked ? (
           <Lock className="h-4 w-4 opacity-85" />

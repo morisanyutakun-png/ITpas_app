@@ -1,0 +1,54 @@
+{
+  "externalKey": "mock_vol1_q02",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 2,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "共通鍵暗号方式と公開鍵暗号方式の特徴として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "共通鍵暗号方式は送信者と受信者で異なる鍵を使い、公開鍵暗号方式は同じ鍵を使う。",
+      "isCorrect": false,
+      "whyAttractive": "『共通鍵と公開鍵』で区別の軸を真逆に取り違えた場合に選ぶパターン。共通鍵=同じ鍵、公開鍵=別鍵ペアが正解。",
+      "misconceptionSlug": "confuse_crypto_method"
+    },
+    {
+      "label": "イ",
+      "body": "共通鍵暗号方式は公開鍵暗号方式より暗号化・復号の処理が遅いが、鍵配送が容易である。",
+      "isCorrect": false,
+      "whyAttractive": "処理速度の記述が逆転している。共通鍵の方が『処理は速い』『鍵配送は難しい』が正しい。共通鍵配送問題を公開鍵で解決するのが現代のハイブリッド暗号の前提。",
+      "misconceptionSlug": "confuse_crypto_method"
+    },
+    {
+      "label": "ウ",
+      "body": "共通鍵暗号方式は処理が高速だが鍵配送に課題があり、公開鍵暗号方式は処理が低速だが鍵配送問題を解決できる。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "公開鍵暗号方式では、送信者が自分の秘密鍵で暗号化した通信文を、受信者が同じ秘密鍵で復号する。",
+      "isCorrect": false,
+      "whyAttractive": "秘密鍵の使い方を誤認。公開鍵暗号で『機密性』を確保する場合は、送信者が受信者の公開鍵で暗号化し、受信者が自分の秘密鍵で復号する。",
+      "misconceptionSlug": "confuse_crypto_method"
+    }
+  ],
+  "explanation": "共通鍵 (対称鍵) 暗号方式: AESなど。送受信者が同じ鍵を使うため処理は高速。ただし鍵を安全に届ける手段が課題。公開鍵 (非対称鍵) 暗号方式: RSAなど。暗号化用の公開鍵と復号用の秘密鍵のペアを使うため鍵配送問題は解決するが、計算コストが大きく低速。実用ではハイブリッド暗号 (公開鍵で共通鍵を共有→以降は共通鍵で通信) が使われる。",
+  "keyInsight": "共通鍵=『速い・鍵配送難』、公開鍵=『遅い・鍵配送解決』。対比軸は『速度』と『鍵配送』の2つ。",
+  "commonMistakeFlow": "『公開鍵=安全、共通鍵=危険』という単純化で選ぶと、具体的な処理速度や鍵配送の議論を見落とす。両者は用途が違うだけで『優劣』ではない。",
+  "topicSlugs": [
+    { "slug": "security_crypto", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_crypto_method", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": null,
+  "sourcePageNumber": null,
+  "originType": "original",
+  "sourceNote": "理解ノート模試 Vol.1 オリジナル問題。"
+}

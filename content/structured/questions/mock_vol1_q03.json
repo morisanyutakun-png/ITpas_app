@@ -1,0 +1,53 @@
+{
+  "externalKey": "mock_vol1_q03",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 3,
+  "majorCategory": "technology",
+  "formatType": "network_basics",
+  "trapType": "abbrev_mix",
+  "stem": "次のうち、DHCPの機能として最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ドメイン名とIPアドレスの対応付けを管理し、名前解決の要求に応答する。",
+      "isCorrect": false,
+      "whyAttractive": "DNSの機能。DHCPとDNSは『D』始まりで混同されがちだが、DNSは『名前↔IP』、DHCPは『IP自体を配る』。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    },
+    {
+      "label": "イ",
+      "body": "ネットワークに接続した端末にIPアドレスやデフォルトゲートウェイなどの設定を自動で配布する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "プライベートIPアドレスとグローバルIPアドレスを相互に変換する。",
+      "isCorrect": false,
+      "whyAttractive": "NATの機能。『アドレス関連』という共通点で引き寄せられるが、NATは変換器、DHCPは配布者と役割が違う。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    },
+    {
+      "label": "エ",
+      "body": "電子メールをメールサーバから受信端末に転送する。",
+      "isCorrect": false,
+      "whyAttractive": "POP3/IMAPの機能。メールプロトコルとネットワーク管理プロトコルの区別ができていない場合に選ぶ。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    }
+  ],
+  "explanation": "DHCP (Dynamic Host Configuration Protocol) は、新たにネットワークへ接続した端末に『IPアドレス』『サブネットマスク』『デフォルトゲートウェイ』『DNSサーバのアドレス』などを自動配布するプロトコル。家庭やオフィスの無線LAN接続時に自動でネット接続できるのはDHCPのおかげ。",
+  "keyInsight": "DHCP=『配布屋』(IPアドレス等を配る)、DNS=『翻訳家』(名前↔IP)、NAT=『両替所』(プライベート↔グローバルIP)。役割で区別。",
+  "topicSlugs": [
+    { "slug": "network_protocols", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_protocol_layer", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": null,
+  "sourcePageNumber": null,
+  "originType": "original",
+  "sourceNote": "理解ノート模試 Vol.1 オリジナル問題。"
+}

@@ -5,9 +5,7 @@ import {
   isPremium,
   isPro,
   PREMIUM_PRICE_JPY_MONTHLY,
-  PREMIUM_PRICE_JPY_YEARLY,
   PRO_PRICE_JPY_MONTHLY,
-  PRO_PRICE_JPY_YEARLY,
   type Plan,
 } from "@/lib/plan";
 import { startCheckoutAction } from "@/server/actions/checkout";
@@ -165,7 +163,7 @@ export default async function PricingPage({
           name="Pro"
           sub="人気"
           price={`¥${PRO_PRICE_JPY_MONTHLY.toLocaleString()}`}
-          priceSub={`/月 · 年払い ¥${PRO_PRICE_JPY_YEARLY.toLocaleString()}`}
+          priceSub="/ 月"
           tone="primary"
           current={plan === "pro"}
           features={[
@@ -202,7 +200,7 @@ export default async function PricingPage({
           name="Premium"
           sub="試験直前の追い込み"
           price={`¥${PREMIUM_PRICE_JPY_MONTHLY.toLocaleString()}`}
-          priceSub={`/月 · 年払い ¥${PREMIUM_PRICE_JPY_YEARLY.toLocaleString()}`}
+          priceSub="/ 月"
           tone="purple"
           current={plan === "premium"}
           features={[
@@ -272,24 +270,12 @@ function CheckoutButtons({
     <div className="space-y-2">
       <form action={startCheckoutAction}>
         <input type="hidden" name="tier" value={tier} />
-        <input type="hidden" name="interval" value="month" />
         <button
           type="submit"
           disabled={!configured}
           className={`inline-flex h-11 w-full items-center justify-center rounded-full ${primaryBg} text-[15px] font-semibold active:opacity-80 disabled:opacity-40`}
         >
-          月額でアップグレード
-        </button>
-      </form>
-      <form action={startCheckoutAction}>
-        <input type="hidden" name="tier" value={tier} />
-        <input type="hidden" name="interval" value="year" />
-        <button
-          type="submit"
-          disabled={!configured}
-          className="inline-flex h-11 w-full items-center justify-center rounded-full bg-muted text-[15px] font-semibold text-foreground active:opacity-80 disabled:opacity-40"
-        >
-          年額（お得）
+          アップグレード
         </button>
       </form>
       {!signedIn && (

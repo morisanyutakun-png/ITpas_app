@@ -353,7 +353,7 @@ export default async function HomePage() {
               </h2>
               <p className="mt-2 text-[13.5px] text-muted-foreground max-w-sm text-pretty">
                 1日無制限 / 模擬試験 / 詳細分析 / 広告非表示。
-                月額 ¥780 から。年間ならさらにお得。
+                月額 ¥780。いつでも解約可能。
               </p>
               <div className="mt-5 flex flex-wrap items-center gap-2">
                 <Link

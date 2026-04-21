@@ -607,7 +607,7 @@ function PricingTeaserSection() {
         ))}
       </div>
       <div className="px-1 text-center text-[12px] text-muted-foreground">
-        年額プランなら最大約30%オフ。詳細は{" "}
+        いつでも解約可能・自動更新。詳細は{" "}
         <Link href="/pricing" className="font-semibold text-primary hover:underline">
           料金ページ
         </Link>{" "}

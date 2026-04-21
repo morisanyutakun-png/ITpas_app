@@ -61,9 +61,7 @@ export const PLAN_LIMITS = {
 } as const;
 
 export const PRO_PRICE_JPY_MONTHLY = 780;
-export const PRO_PRICE_JPY_YEARLY = 6800;
 export const PREMIUM_PRICE_JPY_MONTHLY = 1980;
-export const PREMIUM_PRICE_JPY_YEARLY = 19800;
 
 /** Mock exam time limit in minutes — same for Pro and Premium. */
 export const MOCK_EXAM_DURATION_MIN = 120;

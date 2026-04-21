@@ -2,21 +2,14 @@
 
 const STRIPE_API = "https://api.stripe.com/v1";
 
-export type StripeInterval = "month" | "year";
 export type StripeTier = "pro" | "premium";
 
 export function stripeConfig() {
   return {
     secret: process.env.STRIPE_SECRET_KEY,
     prices: {
-      pro: {
-        month: process.env.STRIPE_PRICE_PRO_MONTHLY,
-        year: process.env.STRIPE_PRICE_PRO_YEARLY,
-      },
-      premium: {
-        month: process.env.STRIPE_PRICE_PREMIUM_MONTHLY,
-        year: process.env.STRIPE_PRICE_PREMIUM_YEARLY,
-      },
+      pro: process.env.STRIPE_PRICE_PRO_MONTHLY,
+      premium: process.env.STRIPE_PRICE_PREMIUM_MONTHLY,
     },
   };
 }
@@ -24,27 +17,18 @@ export function stripeConfig() {
 export function stripeConfigured(): boolean {
   const c = stripeConfig();
   if (!c.secret) return false;
-  return Boolean(
-    c.prices.pro.month ||
-      c.prices.pro.year ||
-      c.prices.premium.month ||
-      c.prices.premium.year
-  );
+  return Boolean(c.prices.pro || c.prices.premium);
 }
 
-export function priceIdFor(tier: StripeTier, interval: StripeInterval): string | undefined {
-  return stripeConfig().prices[tier][interval];
+export function priceIdFor(tier: StripeTier): string | undefined {
+  return stripeConfig().prices[tier];
 }
 
 export function planFromPriceId(priceId: string | undefined | null): StripeTier | null {
   if (!priceId) return null;
   const c = stripeConfig();
-  if (priceId === c.prices.premium.month || priceId === c.prices.premium.year) {
-    return "premium";
-  }
-  if (priceId === c.prices.pro.month || priceId === c.prices.pro.year) {
-    return "pro";
-  }
+  if (priceId === c.prices.premium) return "premium";
+  if (priceId === c.prices.pro) return "pro";
   return null;
 }
 

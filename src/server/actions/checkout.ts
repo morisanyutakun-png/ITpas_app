@@ -11,7 +11,6 @@ import {
   createBillingPortalSession,
   priceIdFor,
   stripeConfigured,
-  type StripeInterval,
   type StripeTier,
 } from "@/lib/stripe";
 
@@ -26,8 +25,6 @@ async function siteOrigin(): Promise<string> {
 export async function startCheckoutAction(formData: FormData): Promise<void> {
   const tier: StripeTier =
     formData.get("tier") === "premium" ? "premium" : "pro";
-  const interval: StripeInterval =
-    formData.get("interval") === "year" ? "year" : "month";
 
   const user = await getCurrentUser();
   if (!user.isSignedIn || !user.email) {
@@ -36,9 +33,9 @@ export async function startCheckoutAction(formData: FormData): Promise<void> {
   if (!stripeConfigured()) {
     redirect("/pricing?stripe=unconfigured");
   }
-  const priceId = priceIdFor(tier, interval);
+  const priceId = priceIdFor(tier);
   if (!priceId) {
-    redirect(`/pricing?stripe=missing_${tier}_${interval}`);
+    redirect(`/pricing?stripe=missing_${tier}`);
   }
 
   const origin = await siteOrigin();

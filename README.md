@@ -10,22 +10,63 @@
 - 苦手な誤解パターンに絞った再出題
 - Googleアカウントでログイン、端末をまたいで進捗保存
 
-## 料金モデル (フリーミアム)
+## 料金モデル (フリーミアム・月額のみ)
 
-| | Free | Pro |
+| | Free | Pro | Premium |
+|---|---|---|---|
+| 1日の回答数 | 10問 | 無制限 | 無制限 |
+| 誤答の魅力理由表示 | ○ | ○ | ○ |
+| セッション最大サイズ | 5問 | 100問 | 200問 |
+| 詳細ヒートマップ / 日次分析 | ✕ | ○ | ○ |
+| 模擬試験モード (100問/120分) | ✕ | ○ | ○ (最大200問) |
+| ブックマーク | 3件 | 無制限 | 無制限 |
+| 問題ノート | ✕ | 無制限 | 無制限 |
+| 学習レポートPDF書き出し | ✕ | ○ | ○ |
+| 過去問アーカイブ | 直近1年 | 直近2年 | 全年度 |
+| AI個別解説 | ✕ | ✕ | ○ |
+| 優先サポート | ✕ | ✕ | ○ |
+| 広告 | あり | 非表示 | 非表示 |
+| **月額** | ¥0 | ¥780 | ¥1,980 |
+
+※ 月額プランのみ。いつでも解約可能。料金の編集は `src/lib/plan.ts` の `PLAN_LIMITS` / `PRO_PRICE_JPY_MONTHLY` / `PREMIUM_PRICE_JPY_MONTHLY` で一元管理されています。
+
+## 環境変数 (.env)
+
+最小構成 (必須):
+
+| キー | 用途 | 取得方法 |
 |---|---|---|
-| 1日の回答数 | 10問 | 無制限 |
-| 誤答の魅力理由表示 | ○ | ○ |
-| セッション最大サイズ | 5問 | 100問 |
-| 詳細ヒートマップ / 日次分析 | ✕ | ○ |
-| 模擬試験モード (100問/120分) | ✕ | ○ |
-| ブックマーク | 3件 | 無制限 |
-| 問題ノート | ✕ | 無制限 |
-| 学習レポートPDF書き出し | ✕ | ○ |
+| `DATABASE_URL` | Neon Postgres 接続文字列 | [neon.tech](https://neon.tech) → Pooled connection |
+| `AUTH_SECRET` | セッション Cookie 署名鍵 (32文字以上) | `openssl rand -base64 48` |
+| `GOOGLE_CLIENT_ID` | Google OAuth Client ID | [Google Cloud Console](https://console.cloud.google.com/apis/credentials) |
+| `GOOGLE_CLIENT_SECRET` | Google OAuth Client Secret | 同上 |
 
-Pro: ¥780/月 or ¥6,800/年 (年払いで約27%お得)。
+任意:
 
-料金の編集は `src/lib/plan.ts` の `PLAN_LIMITS` / `PRO_PRICE_JPY_*` で一元管理されています。
+| キー | 用途 |
+|---|---|
+| `NEXT_PUBLIC_SITE_URL` | OG / sitemap 用の公開URL (Vercelでは未設定でOK) |
+| `GOOGLE_REDIRECT_URI` | OAuth リダイレクトを独自ドメインに固定したいとき |
+
+Stripe (マネタイズを有効にするとき):
+
+| キー | 用途 |
+|---|---|
+| `STRIPE_SECRET_KEY` | `sk_test_...` / 本番は `sk_live_...` |
+| `STRIPE_WEBHOOK_SECRET` | Webhook エンドポイントの署名シークレット (`whsec_...`) |
+| `STRIPE_PRICE_PRO_MONTHLY` | Pro 月額 (¥780) の Price ID |
+| `STRIPE_PRICE_PREMIUM_MONTHLY` | Premium 月額 (¥1,980) の Price ID |
+
+詳細コメント付きテンプレートは [.env.example](./.env.example) を参照。
+
+### Stripe Webhook エンドポイント
+
+本番 URL に下記を登録し、以下のイベントを購読:
+- `POST {SITE_URL}/api/stripe/webhook`
+- `checkout.session.completed`
+- `customer.subscription.created`
+- `customer.subscription.updated`
+- `customer.subscription.deleted`
 
 ## 技術スタック
 
@@ -58,7 +99,7 @@ npm install
 2. [Google Cloud Console](https://console.cloud.google.com/apis/credentials) で OAuth 2.0 クライアントIDを発行
    - Authorized redirect URI: `http://localhost:3000/api/auth/google/callback` (本番URLも追加)
 3. `AUTH_SECRET` は `openssl rand -base64 48` で生成
-4. (任意) Stripe の Subscription Price を2つ作成 (月額 / 年額) し `STRIPE_PRICE_PRO_*` に設定
+4. (任意) Stripe の Subscription Price を月額で作成 — Pro 用 `STRIPE_PRICE_PRO_MONTHLY` / Premium 用 `STRIPE_PRICE_PREMIUM_MONTHLY` に設定 (年額はサポート外)
 5. `.env.local` を作成
 
 ```bash

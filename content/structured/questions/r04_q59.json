@@ -1,0 +1,54 @@
+{
+  "externalKey": "r04_q59",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 59,
+  "majorCategory": "technology",
+  "formatType": "calculation",
+  "trapType": "none",
+  "stem": "次のデータの平均値と中央値の組合せはどれか。データ: 10, 20, 20, 20, 40, 50, 100, 440, 2000",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "平均値 20, 中央値 40",
+      "isCorrect": false,
+      "whyAttractive": "平均値と最頻値(20)を取り違えたケース。データに20が3回出るので最頻値は20だが、平均ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "平均値 40, 中央値 20",
+      "isCorrect": false,
+      "whyAttractive": "平均値と中央値の役割を逆にしたケース。中央値=データの真ん中=40、平均値=合計÷個数=300。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "平均値 300, 中央値 20",
+      "isCorrect": false,
+      "whyAttractive": "中央値で『最頻値20』を選んでしまったケース。中央値は『順に並べた真ん中の値』であって、最頻値ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "平均値 300, 中央値 40",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "平均値=(10+20+20+20+40+50+100+440+2000)÷9=2700÷9=300。中央値=データを昇順に並べた中央(9個なら5番目)=40。外れ値2000の影響で平均は中央値より大きく引っ張られる、典型的な分布。",
+  "keyInsight": "外れ値があると『平均≫中央値』になる。所得分布などでも同じ性質。中央値は外れ値に頑健。",
+  "commonMistakeFlow": "20が3個出ているので『最頻値20』に引きずられて中央値や平均と取り違える。3つの代表値(平均/中央/最頻)を区別する。",
+  "topicSlugs": [
+    { "slug": "spreadsheet_basics", "weight": 0.5 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 27,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問59 ©2022 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,54 @@
+{
+  "externalKey": "r03_q23",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 23,
+  "majorCategory": "strategy",
+  "formatType": "biz_analysis",
+  "trapType": "similar_term",
+  "stem": "プロダクトポートフォリオマネジメントは、企業の経営資源を最適配分するために使用する手法であり、製品やサービスの市場成長率と市場におけるシェアから、その戦略的な位置付けを四つの領域に分類する。市場シェアは低いが急成長市場にあり、将来の成長のために多くの資金投入が必要となる領域はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "金のなる木",
+      "isCorrect": false,
+      "whyAttractive": "『金のなる木』は高シェア×低成長率。安定収益源で資金を他領域へ回す原資だが、本問の『低シェア×急成長』とは真逆。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "花形",
+      "isCorrect": false,
+      "whyAttractive": "『花形』は高シェア×高成長。資金投入は必要だが売上も大きい。本問は『低シェア』なので条件に合わない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "負け犬",
+      "isCorrect": false,
+      "whyAttractive": "『負け犬』は低シェア×低成長。撤退候補。成長率が『急成長』という条件と合わない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "問題児",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "PPM の4象限: 縦軸=市場成長率, 横軸=市場シェア。『問題児』(低シェア×高成長)は資金を集中投入して花形(高シェア×高成長)に育てるか、見極めて撤退するかの分岐点。",
+  "keyInsight": "低シェア×高成長=問題児。『育てる価値のある未完成品』という語感で覚える。",
+  "commonMistakeFlow": "『急成長』という語で『花形』を選びたくなるが、花形はシェアも既に高い状態。『シェアは低いが』を見落とさない。",
+  "topicSlugs": [
+    { "slug": "biz_models", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 11,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問23 ©2021 独立行政法人情報処理推進機構"
+}

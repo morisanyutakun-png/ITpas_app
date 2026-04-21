@@ -1,0 +1,8 @@
+{
+  "slug": "tech_standards_orgs",
+  "title": "国際標準化機関・標準化団体",
+  "majorCategory": "technology",
+  "minorTopic": "法務・標準化",
+  "summary": "ITU=電気通信、IEEE=電気・電子技術者学会、IEC=電気電子分野の国際規格、ISO=工業全般の国際規格、ICANN=インターネットのドメインやIPアドレスの資源管理。頭文字と守備範囲で区別する。",
+  "body": "## 代表的な標準化機関\n\n| 略称 | 正式名 | 守備範囲 |\n|---|---|---|\n| ITU | International Telecommunication Union | **電気通信** (無線・電話・光通信等) |\n| IEEE | Institute of Electrical and Electronics Engineers | 電気・電子 (LAN規格IEEE802など) |\n| IEC | International Electrotechnical Commission | **電気・電子の国際規格** |\n| ISO | International Organization for Standardization | 工業全般 (ISO9001品質, ISO27001情報セキュリティ等) |\n| ICANN | Internet Corporation for Assigned Names and Numbers | **ドメイン名・IPアドレスの資源管理** |\n| W3C | World Wide Web Consortium | Web技術標準 (HTML/CSS等) |\n| IETF | Internet Engineering Task Force | インターネット技術標準 (RFC発行) |\n"
+}

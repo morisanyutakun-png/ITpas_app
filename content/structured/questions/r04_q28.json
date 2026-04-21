@@ -1,0 +1,54 @@
+{
+  "externalKey": "r04_q28",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 28,
+  "majorCategory": "strategy",
+  "formatType": "biz_analysis",
+  "trapType": "similar_term",
+  "stem": "A社のある期の資産、負債及び純資産が次のとおりであるとき、経営の安全性指標の一つで、短期の支払能力を示す流動比率は何%か。流動資産3,000百万円、固定資産4,500百万円、流動負債1,500百万円、固定負債4,000百万円、株主資本2,000百万円。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "50",
+      "isCorrect": false,
+      "whyAttractive": "分子分母を逆にして 1500 ÷ 3000 × 100 = 50% としたケース。『流動』の語感だけで雑に計算すると出る。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "100",
+      "isCorrect": false,
+      "whyAttractive": "流動資産=流動負債と勘違い、または ÷100 などの小数桁ミスで出やすい値。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "150",
+      "isCorrect": false,
+      "whyAttractive": "(流動資産 - 当座資産) など別の指標と混同して中途半端な値が出るパターン。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "200",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "流動比率 = 流動資産 ÷ 流動負債 × 100 = 3,000 ÷ 1,500 × 100 = 200%。1年以内に現金化できる資産で、1年以内に支払うべき負債をどれだけカバーできるかを示す指標。一般的に200%以上が望ましいとされる。",
+  "keyInsight": "流動比率=流動資産÷流動負債。固定資産・固定負債は使わない。『短期の支払能力』を見るので分母は流動負債。",
+  "commonMistakeFlow": "資産・負債の数字が4つあるので、どれを使うか迷って固定資産や株主資本を混ぜてしまうのが典型。流動比率は『流動』だけ使う。",
+  "topicSlugs": [
+    { "slug": "biz_financial_metrics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 13,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問28 ©2022 独立行政法人情報処理推進機構"
+}

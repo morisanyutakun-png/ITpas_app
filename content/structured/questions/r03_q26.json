@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q26",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 26,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "企業の人事機能の向上や、働き方改革を実現することなどを目的として、人事評価や人材採用などの人事関連業務に、AIやIoTといったITを活用する手法を表す用語として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "e-ラーニング",
+      "isCorrect": false,
+      "whyAttractive": "人事『教育』の文脈で『人材』関連の語感が共通するが、e-ラーニングは電子教材を使った学習手法であり、人事評価・採用にITを活用する手法ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "FinTech",
+      "isCorrect": false,
+      "whyAttractive": "Fin(金融)×Tech(技術)。『◯◯Tech』の造語系で紛らわしいが、対象は金融分野で人事ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "HRTech",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "コンピテンシ",
+      "isCorrect": false,
+      "whyAttractive": "コンピテンシは『高業績者に共通する行動特性』のこと。人事評価で活用される概念ではあるが、ITを活用する手法そのものではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "HRTech = HR (Human Resources=人事) + Technology。採用・評価・労務管理などの人事業務にAI/IoT/データ分析を活用する総称。FinTech(金融×IT)、EdTech(教育×IT) と同じ『業種×技術』の造語パターン。",
+  "keyInsight": "『業種×Tech』の造語は頭2文字で業種を特定: HR=人事、Fin=金融、Ed=教育、Med=医療。",
+  "topicSlugs": [
+    { "slug": "biz_dx_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 12,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問26 ©2021 独立行政法人情報処理推進機構"
+}

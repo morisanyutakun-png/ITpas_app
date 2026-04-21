@@ -1,0 +1,55 @@
+{
+  "externalKey": "r04_q43",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 43,
+  "majorCategory": "management",
+  "formatType": "calculation",
+  "trapType": "edge_case_miss",
+  "stem": "図のアローダイアグラムにおいて、作業Bが2日遅れて完了した。そこで、予定どおりの期間で全ての作業を完了させるために、作業Dに要員を追加することにした。作業Dに当初20名が割り当てられているとき、作業Dに追加する要員は最少で何名必要か。ここで、要員の作業効率は一律である。所要日数は A=5, B=10, C=5, D=10, E=4, F=4。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "2",
+      "isCorrect": false,
+      "whyAttractive": "10日分→8日分の比率(2割短縮)から雑に算出。実際は人数比で計算する必要があり、不足。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "3",
+      "isCorrect": false,
+      "whyAttractive": "短縮日数(2日)を要員数として直結したケース。日数と人数の換算を省略しているので不足。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "4",
+      "isCorrect": false,
+      "whyAttractive": "20÷10×8 = 16, 20-16 = 4 などの逆算ミス。実際の必要追加は5名なので少なめに見積もるパターン。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "5",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "Bが2日遅れ→Bは10+2=12日。当初クリティカルパスはA-C-D=20日 または B-D=20日。Bが12日になるとB-D=22日となり予定超過2日。Dを8日に短縮すれば B+D=12+8=20日に戻せる。Dの作業量=20名×10日=200人日。8日で完了させる必要人数=200÷8=25名。追加=25-20=5名。",
+  "keyInsight": "作業量(人日)は一定。日数を縮めるには『人数=作業量÷日数』で逆算する。",
+  "commonMistakeFlow": "短縮日数(2日)をそのまま追加人数と勘違いするのが頻出。必ず『人日』で計算する。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 20,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問43 ©2022 独立行政法人情報処理推進機構",
+  "modifiedNote": "図のアローダイアグラムは本文中の『所要日数』として要約しています(意味は不変)。"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q76",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 76,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "IoTデバイス群とそれを管理するIoTサーバで構成されるIoTシステムがある。全てのIoTデバイスは同一の鍵を用いて通信の暗号化を行い、IoTサーバではIoTデバイスがもつ鍵とは異なる鍵で通信の復号を行うとき、この暗号技術はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "共通鍵暗号方式",
+      "isCorrect": false,
+      "whyAttractive": "共通鍵=暗号化と復号で同一の鍵を使う方式。問題文で『暗号化と復号で異なる鍵』と明示されているので合わない。『全てのデバイスが同一の鍵』に引き寄せられて選びがち。",
+      "misconceptionSlug": "confuse_crypto_method"
+    },
+    {
+      "label": "イ",
+      "body": "公開鍵暗号方式",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "ハッシュ関数",
+      "isCorrect": false,
+      "whyAttractive": "ハッシュは復元不可能な要約変換で、暗号化(復号できる)とは別概念。通信の暗号化にハッシュ関数は使えない。",
+      "misconceptionSlug": "confuse_crypto_method"
+    },
+    {
+      "label": "エ",
+      "body": "ブロックチェーン",
+      "isCorrect": false,
+      "whyAttractive": "ブロックチェーンは分散型台帳技術。暗号技術を内部で使うが、それ自体は通信暗号化方式ではない。",
+      "misconceptionSlug": "confuse_crypto_method"
+    }
+  ],
+  "explanation": "公開鍵暗号方式: 暗号化用の鍵(公開鍵)と復号用の鍵(秘密鍵)が異なるペアになっている。デバイス側に公開鍵を配布(全部同じ)、サーバ側に秘密鍵を保持(異なる鍵)、という本問の構成にぴったり一致する。",
+  "keyInsight": "『暗号化と復号で異なる鍵』=公開鍵暗号方式。共通鍵は同一鍵、公開鍵は鍵ペアという基本対比で判別。",
+  "topicSlugs": [
+    { "slug": "security_crypto", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_crypto_method", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 36,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問76 ©2021 独立行政法人情報処理推進機構"
+}

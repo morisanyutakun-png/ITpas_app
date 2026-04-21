@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q64",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 64,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "CPU内部にある高速小容量の記憶回路であり、演算や制御に関わるデータを一時的に記憶するのに用いられるものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "GPU",
+      "isCorrect": false,
+      "whyAttractive": "GPUは画像処理プロセッサ。『高速』という共通項で引き寄せられるが、GPUは画像演算装置で、一時記憶用の回路ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "SSD",
+      "isCorrect": false,
+      "whyAttractive": "SSDは補助記憶装置。CPU外部にあり『高速』なストレージだが、CPU内部の一時記憶ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "主記憶",
+      "isCorrect": false,
+      "whyAttractive": "主記憶(メインメモリ/DRAM)はCPU『外部』にあり、レジスタより大容量・低速。『データを一時的に記憶』は共通だが『CPU内部』の条件を満たさない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "レジスタ",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "レジスタはCPU内部の最高速記憶回路。演算対象の値や命令アドレスなどを一時保持する。メモリ階層では レジスタ(最速) > キャッシュ > 主記憶 > 補助記憶 の順。",
+  "keyInsight": "『CPU内部』『高速』『小容量』の3キーワードが揃えばレジスタ。『一時記憶』だけなら主記憶も該当するので『CPU内部』を見落とさない。",
+  "topicSlugs": [
+    { "slug": "tech_computer_arch", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 30,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問64 ©2021 独立行政法人情報処理推進機構"
+}

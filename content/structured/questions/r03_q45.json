@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q45",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 45,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "ITILに関する記述として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ITサービスの提供とサポートに対して、ベストプラクティスを提供している。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "ITシステム開発とその取引の適正化に向けて、作業項目を一つ一つ定義し、標準化している。",
+      "isCorrect": false,
+      "whyAttractive": "共通フレームの説明。発注・受注の共通言語を定めた枠組みで、ITサービス運用のITILとは目的が違う。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ソフトウェア開発組織の成熟度を多段階のレベルで定義している。",
+      "isCorrect": false,
+      "whyAttractive": "CMMI の説明。組織の成熟度評価モデル。ITIL は成熟度モデルではなく運用のベストプラクティス集。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "プロジェクトマネジメントの知識を体系化している。",
+      "isCorrect": false,
+      "whyAttractive": "PMBOK の説明。PM知識体系。ITILは『運用』側の体系で、プロジェクト(立ち上げ→完了)のマネジメントとは対象フェーズが違う。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ITIL (Information Technology Infrastructure Library) は英国発のITサービスマネジメントのベストプラクティス集。インシデント管理・変更管理・問題管理など『日々の運用』のプロセスを定義している。",
+  "keyInsight": "ITIL=運用のベストプラクティス。CMMI=成熟度、PMBOK=PM知識、共通フレーム=開発取引 との対比で覚える。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 20,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問45 ©2021 独立行政法人情報処理推進機構"
+}

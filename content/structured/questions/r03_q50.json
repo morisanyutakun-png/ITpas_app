@@ -1,0 +1,54 @@
+{
+  "externalKey": "r03_q50",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 50,
+  "majorCategory": "management",
+  "formatType": "calculation",
+  "trapType": "order_swap",
+  "stem": "自分のデスクにあるPCと共有スペースにあるプリンタの起動を1人で行う。PCとプリンタの起動は図の条件で行い、それぞれの作業・処理は逐次実行する必要がある。自動処理の間は、移動やもう片方の作業を並行して行うことができる。自分のデスクにいる状態でPCの起動を開始し、移動してプリンタを起動した上で自分のデスクに戻り、PCの起動を終了するまでに必要な時間は、最短で何秒か。PC起動:A電源入れる(3秒手作業)→B(150秒自動)→Cログイン操作(10秒手作業)→D(60秒自動)。プリンタ起動:E電源入れる(3秒手作業)→F(60秒自動)。移動:片道60秒。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "223",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "256",
+      "isCorrect": false,
+      "whyAttractive": "自動処理中に移動できることを部分的に見落とすと、多めの時間が出る。特に『戻り移動60秒をBの自動処理中に含める』点を見落とした場合。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "286",
+      "isCorrect": false,
+      "whyAttractive": "手作業と自動処理の並行を全く考慮せず、移動も別々に加算すると266〜286秒付近になる。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "406",
+      "isCorrect": false,
+      "whyAttractive": "全工程を逐次実行すると計算: 3+150+10+60+60+3+60+60 = 406秒。『並行可能』条件を無視した最悪ケース。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "タイムライン: 0秒A開始→3秒B開始(自動150秒) → Bの間に移動(60秒)→63秒プリンタ到着→66秒F開始(自動60秒) → Fの間に戻り移動→126秒PC到着(Bはまだ27秒残る)→153秒B完了→163秒C完了→223秒D完了。自動処理中に移動・他作業を並行させ、最後の逐次作業がクリティカルパス。",
+  "keyInsight": "自動処理(Bの150秒)の中に『移動60秒 + プリンタE(3秒) + F(60秒) + 戻り移動60秒』=183秒が収まりきらない点に注意。Bの後にDを待つ構造が最短を決める。",
+  "commonMistakeFlow": "『並行可能』を全部足し算で見落とすとエ(406秒)。並行を考えても戻り時のBの残り時間を見落とすと短めに見積もる。実際はB=153秒終了を待つのがクリティカル。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 23,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問50 ©2021 独立行政法人情報処理推進機構"
+}

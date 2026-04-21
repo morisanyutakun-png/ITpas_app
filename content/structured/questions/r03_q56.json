@@ -1,0 +1,55 @@
+{
+  "externalKey": "r03_q56",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 56,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "インターネットにおいてドメイン名とIPアドレスの対応付けを行うサービスを提供しているサーバに保管されている管理情報を書き換えることによって、利用者を偽のサイトへ誘導する攻撃はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "DDoS攻撃",
+      "isCorrect": false,
+      "whyAttractive": "大量アクセスでサービス停止を狙う攻撃。『偽サイトへ誘導』という目的とは別で、そもそもDNS情報の書き換えは行わない。",
+      "misconceptionSlug": "confuse_malware_types"
+    },
+    {
+      "label": "イ",
+      "body": "DNSキャッシュポイズニング",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "SQLインジェクション",
+      "isCorrect": false,
+      "whyAttractive": "Webアプリの入力欄に悪意あるSQLを混入させる攻撃。データベース改ざんが目的で、DNSサーバは標的外。",
+      "misconceptionSlug": "confuse_malware_types"
+    },
+    {
+      "label": "エ",
+      "body": "フィッシング",
+      "isCorrect": false,
+      "whyAttractive": "『偽のサイトへ誘導』という結果面は近いが、フィッシングは偽メール等で直接誘導する手口。DNSサーバの情報書き換えではない。",
+      "misconceptionSlug": "confuse_malware_types"
+    }
+  ],
+  "explanation": "DNSキャッシュポイズニング(DNS cache poisoning) は、DNSサーバに誤った名前解決情報(ドメイン名↔IPの対応)をキャッシュさせ、利用者のアクセスを攻撃者が用意した偽サイトに誘導する攻撃。ドメイン名⇔IP の変換(DNSの仕事)を狙う点が核心。",
+  "keyInsight": "『DNSサーバの情報を汚染(poison)』=DNSキャッシュポイズニング。フィッシングはメール等で偽URLへ誘導、こちらは裏側のDNS情報そのものを書き換える。",
+  "commonMistakeFlow": "『偽サイトに誘導』というキーワードでフィッシングに引き寄せられるが、本問は『DNSサーバの管理情報の書き換え』という手口を限定しているのでキャッシュポイズニング。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 },
+    { "slug": "network_protocols", "weight": 0.5 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_malware_types", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 27,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問56 ©2021 独立行政法人情報処理推進機構"
+}

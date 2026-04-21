@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q72",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 72,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "情報セキュリティにおける機密性、完全性及び可用性と、①〜③のインシデントによって損なわれたものとの組合せとして、適切なものはどれか。①DDoS攻撃によって、Webサイトがダウンした。②キーボードの打ち間違いによって、不正確なデータが入力された。③PCがマルウェアに感染したことによって、個人情報が漏えいした。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "① 可用性 / ② 完全性 / ③ 機密性",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "① 可用性 / ② 機密性 / ③ 完全性",
+      "isCorrect": false,
+      "whyAttractive": "②と③を入れ替えたパターン。データの誤入力は機密性ではなく完全性、漏えいは機密性。間違える典型。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "① 完全性 / ② 可用性 / ③ 機密性",
+      "isCorrect": false,
+      "whyAttractive": "DDoS=Webダウンを完全性と取り違えたケース。Webサイトが『使えなくなる』のは可用性の喪失。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "① 完全性 / ② 機密性 / ③ 可用性",
+      "isCorrect": false,
+      "whyAttractive": "3要素を全て取り違えたケース。CIAの定義を1つずつ正確に押さえていないと出てしまう。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "CIAの3要素: 機密性(認可された人だけアクセスできる)、完全性(情報が正確で改ざんされていない)、可用性(必要なときに使える)。DDoS→使えない=可用性、誤入力→正確でない=完全性、漏えい→認可外に流出=機密性。",
+  "keyInsight": "C(機密)=漏れない、I(完全)=正しい、A(可用)=使える。インシデントを動詞で言い換えて『何が損なわれたか』を判定する。",
+  "topicSlugs": [
+    { "slug": "security_cia_triad", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 33,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問72 ©2022 独立行政法人情報処理推進機構"
+}

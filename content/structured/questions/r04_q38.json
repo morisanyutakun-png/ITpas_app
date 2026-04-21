@@ -1,0 +1,54 @@
+{
+  "externalKey": "r04_q38",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 38,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "XP(エクストリームプログラミング)の説明として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "テストプログラムを先に作成し、そのテストに合格するようにコードを記述する開発手法のことである。",
+      "isCorrect": false,
+      "whyAttractive": "TDD(テスト駆動開発)の説明。XPのプラクティスの『一つ』だが、XPの全体像ではない。XPは複数プラクティスを束ねたアジャイル手法。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "イ",
+      "body": "一つのプログラムを2人のプログラマが、1台のコンピュータに向かって共同で開発する方法のことである。",
+      "isCorrect": false,
+      "whyAttractive": "ペアプログラミングの説明。これもXPのプラクティスの一部だが、XPの定義そのものではない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "プログラムの振る舞いを変えずに、プログラムの内部構造を改善することである。",
+      "isCorrect": false,
+      "whyAttractive": "リファクタリングの説明。XPの重要プラクティスだが、XP自体ではなくその構成要素。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "エ",
+      "body": "要求の変化に対応した高品質のソフトウェアを短いサイクルでリリースする、アジャイル開発のアプローチの一つである。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "XP(eXtreme Programming) は、変化への対応を重視するアジャイル開発手法の代表格。短いリリースサイクルで動くソフトを継続的に届け、TDD・ペアプロ・リファクタリング・継続的インテグレーションなどのプラクティス群を組み合わせて運用する。",
+  "keyInsight": "XPはアジャイルの『手法名』。TDD/ペアプロ/リファクタリングはその中の『個別プラクティス』という階層関係を押さえる。",
+  "commonMistakeFlow": "XP内のプラクティスを単独でXPと答えてしまうのが典型ミス。問題が『XPの説明』ならば包括的なアジャイル定義(エ)を選ぶ。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_pm_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 18,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問38 ©2022 独立行政法人情報処理推進機構"
+}

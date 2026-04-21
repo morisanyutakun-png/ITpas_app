@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q22",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 22,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "SCMシステムを構築する目的はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "企業のもっている現在の強み、弱みを評価し、その弱みを補完するために、どの企業と提携すればよいかを決定する。",
+      "isCorrect": false,
+      "whyAttractive": "SWOT分析や提携戦略の説明。SCM(供給連鎖管理)の目的とは別軸。『S』が共通するので連想されやすい。",
+      "misconceptionSlug": "confuse_enterprise_systems"
+    },
+    {
+      "label": "イ",
+      "body": "商品の生産から消費に関係する部門や企業の間で、商品の生産、在庫、販売などの情報を相互に共有して管理することによって、商品の流通在庫の削減や顧客満足の向上を図る。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "顧客に提供する価値が調達、開発、製造、販売、サービスといった一連の企業活動のどこで生み出されているのかを明確化する。",
+      "isCorrect": false,
+      "whyAttractive": "バリューチェーン分析の説明。SCMと並んで『調達→販売』の流れを扱うので紛らわしいが、SCMは情報共有・在庫最適化、バリューチェーンは価値創出箇所の分析が目的。",
+      "misconceptionSlug": "confuse_enterprise_systems"
+    },
+    {
+      "label": "エ",
+      "body": "多種類の製品を生産及び販売している企業が、利益を最大化するために、最も効率的・効果的となる製品の製造・販売の組合せを決定する。",
+      "isCorrect": false,
+      "whyAttractive": "プロダクトミックス決定や線形計画法の話。SCMの目的(在庫削減・顧客満足)とは別。",
+      "misconceptionSlug": "confuse_enterprise_systems"
+    }
+  ],
+  "explanation": "SCM (Supply Chain Management) は、原材料調達から製造・物流・販売までの『供給連鎖』全体で情報を共有し、在庫削減と顧客満足向上を図る手法。『Supply Chain』のキーワードがそのまま訳語。",
+  "keyInsight": "SCM=供給連鎖の最適化。在庫削減・流通効率化が直接的な目的。バリューチェーン(価値創出分析)とは別物。",
+  "topicSlugs": [
+    { "slug": "biz_enterprise_systems", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_enterprise_systems", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 11,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問22 ©2022 独立行政法人情報処理推進機構"
+}

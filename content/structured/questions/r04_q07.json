@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q07",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 7,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "業務と情報システムを最適にすることを目的に、例えばビジネス、データ、アプリケーション及び技術の四つの階層において、まず現状を把握し、目標とする理想像を設定する。次に現状と理想との乖離を明確にし、目標とする理想像に向けた改善活動を移行計画として定義する。このような最適化の手法として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "BI (Business Intelligence)",
+      "isCorrect": false,
+      "whyAttractive": "BIは経営判断支援のためにデータを分析・可視化する技術・手法。『業務に役立てる』語感が共通するが、4階層で現状把握→理想設定という最適化フレームではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "EA (Enterprise Architecture)",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "MOT (Management of Technology)",
+      "isCorrect": false,
+      "whyAttractive": "技術経営。技術系企業の経営戦略・新技術活用を扱う考え方で、業務と情報システムの4階層最適化フレームではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "SOA (Service Oriented Architecture)",
+      "isCorrect": false,
+      "whyAttractive": "サービス指向アーキテクチャ。アプリ間連携の設計思想で、4階層全体の最適化手法ではない。『Architecture』の語感で引き寄せられる。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "EA (Enterprise Architecture) は組織を『ビジネス・データ・アプリケーション・技術』の4階層で捉え、現状(As-Is)と理想(To-Be)のギャップから移行計画を作る最適化フレームワーク。『4階層』『現状と理想』『移行計画』というキーワードで判別できる。",
+  "keyInsight": "『業務と情報システムを4階層で最適化』=EA。BI(分析)、SOA(連携設計)、MOT(技術経営)とは目的軸が違う。",
+  "topicSlugs": [
+    { "slug": "biz_models", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 4,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問7 ©2022 独立行政法人情報処理推進機構"
+}

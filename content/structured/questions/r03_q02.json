@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q02",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 2,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "国際標準化機関に関する記述のうち、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ICANNは、工業や科学技術分野の国際標準化機関である。",
+      "isCorrect": false,
+      "whyAttractive": "ICANN は Internet Corporation for Assigned Names and Numbers=インターネットのドメイン名・IPアドレスの資源管理を行う組織で、工業・科学技術の標準化機関ではない。『国際+英字略称』という響きで引き寄せられる。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "IECは、電子商取引分野の国際標準化機関である。",
+      "isCorrect": false,
+      "whyAttractive": "IEC は International Electrotechnical Commission=電気・電子分野の国際規格を策定する機関。『Eから始まる=Electronic Commerce』と短絡すると誤る。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "IEEEは、会計分野の国際標準化機関である。",
+      "isCorrect": false,
+      "whyAttractive": "IEEE は Institute of Electrical and Electronics Engineers=電気・電子技術者の学会で、LAN規格(IEEE802)などを策定する。会計分野は全く無関係。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ITUは、電気通信分野の国際標準化機関である。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "ITU (International Telecommunication Union) は国連傘下の電気通信分野の国際標準化機関。頭文字で分ける: T=Telecommunication(通信)、E=Electrotechnical/Electronics(電気電子)、C=Computer/Corporation(ICANN)。",
+  "keyInsight": "頭文字の『T』は Telecommunication。『通信なら ITU』と1対1で覚える。",
+  "topicSlugs": [
+    { "slug": "tech_standards_orgs", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 2,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問2 ©2021 独立行政法人情報処理推進機構"
+}

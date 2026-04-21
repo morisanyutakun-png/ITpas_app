@@ -1,0 +1,54 @@
+{
+  "externalKey": "r03_q08",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 8,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "画期的な製品やサービスが消費者に浸透するに当たり、イノベーションへの関心や活用の時期によって消費者をアーリーアダプタ、アーリーマジョリティ、イノベータ、ラガード、レイトマジョリティの五つのグループに分類することができる。このうち、活用の時期が2番目に早いグループとして位置付けられ、イノベーションの価値を自ら評価し、残る大半の消費者に影響を与えるグループはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "アーリーアダプタ",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "アーリーマジョリティ",
+      "isCorrect": false,
+      "whyAttractive": "『アーリー』の語感で2番目を連想するが、アーリーマジョリティは3番目 (約34%、前期追随層)。ロジャースの普及曲線では1位=イノベータ→2位=アーリーアダプタ→3位=アーリーマジョリティの順。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "ウ",
+      "body": "イノベータ",
+      "isCorrect": false,
+      "whyAttractive": "最初(約2.5%)に採用するグループ=1番目。『革新的』という強い響きで2番目と勘違いしがちだが、最速層。問題文の『2番目』に合わない。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "エ",
+      "body": "ラガード",
+      "isCorrect": false,
+      "whyAttractive": "ラガード(遅滞者)は最後に採用するグループ (約16%)。『Laggard=遅い』を知らないと語感で中盤と誤認しやすい。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    }
+  ],
+  "explanation": "ロジャースのイノベータ理論(普及曲線): 1.イノベータ(2.5%) → 2.アーリーアダプタ(13.5%) → 3.アーリーマジョリティ(34%) → 4.レイトマジョリティ(34%) → 5.ラガード(16%)。アーリーアダプタは『オピニオンリーダー』として後続層の判断に強い影響を与える。",
+  "keyInsight": "2番目=アーリーアダプタ=オピニオンリーダー。『イノベータが火を付け、アーリーアダプタが広める』の構図で覚える。",
+  "commonMistakeFlow": "『アーリー』が2つあるので『アーリーマジョリティ』を2番目と誤認する典型パターン。『Early Adopter=初期採用者』と『Early Majority=前期追随層』の役割差を押さえる。",
+  "topicSlugs": [
+    { "slug": "biz_marketing_frameworks", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_marketing_framework", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 4,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問8 ©2021 独立行政法人情報処理推進機構"
+}

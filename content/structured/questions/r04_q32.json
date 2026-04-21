@@ -1,0 +1,54 @@
+{
+  "externalKey": "r04_q32",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 32,
+  "majorCategory": "strategy",
+  "formatType": "comparison",
+  "trapType": "order_swap",
+  "stem": "コンカレントエンジニアリングを適用した後の業務の流れを表した図として、最も適したものはどれか。ここで、図の中の矢印は業務の流れを示し、その上に各作業名を記述する。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "仕様 → 製作図 → 工程図 → 製作 (完全に逐次)",
+      "isCorrect": false,
+      "whyAttractive": "従来のウォーターフォール型。前工程が完了してから次工程へ進む。コンカレント(並行)の対極。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "仕様 → 製作図 → 工程図 → 製作 (一部後戻りあり)",
+      "isCorrect": false,
+      "whyAttractive": "後戻り(手戻り)を表す図で、品質管理のスパイラル開発などに近い。並行実施を表していない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "仕様 → 製作図 → 工程図 → 製作 (大きく重なるが基本は逐次)",
+      "isCorrect": false,
+      "whyAttractive": "部分的に重なるが、基本構造は逐次。コンカレントは『各工程をできる限り並行させる』ので、もっと大胆に並行する図が正解。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "仕様, 製作図, 工程図, 製作 が時間をずらしながら並行進行",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "コンカレントエンジニアリングは、設計・製造・物流などの工程を可能な限り並行(Concurrent)に進めて開発期間を短縮する手法。次工程の準備を前工程の途中から始め、フィードバックを取り入れながら同時進行する。",
+  "keyInsight": "Concurrent=並行。逐次型(ウォーターフォール)に対して、複数工程を時間軸でずらしつつ重ねるのが核心。",
+  "topicSlugs": [
+    { "slug": "biz_innovation_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 15,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問32 ※選択肢の図はテキスト要約で記述 ©2022 独立行政法人情報処理推進機構",
+  "modifiedNote": "選択肢ア〜エは元PDFの矢印図を文字で要約しています(意味は不変)。"
+}

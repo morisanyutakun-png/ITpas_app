@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q04",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 4,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "エンタープライズサーチの説明として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "企業内の様々なシステムに蓄積されている定型又は非定型なデータを、一元的に検索するための仕組み",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "自然言語処理を実現するための基礎データとなる、電子化された大量の例文データベース",
+      "isCorrect": false,
+      "whyAttractive": "コーパスの説明。自然言語処理の基礎データで、エンタープライズサーチ(横断検索)とは機能軸が違う。『大量データ』の語感で引き寄せられる。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "写真や書類などを光学的に読み取り、ディジタルデータ化するための画像入力装置",
+      "isCorrect": false,
+      "whyAttractive": "イメージスキャナの説明。ハードウェアで、企業内データの検索とは別カテゴリ。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "情報システムや業務プロセスの現状を把握し、あるべき企業の姿とのギャップを埋めるための目標を設定し、全体最適化を図ること",
+      "isCorrect": false,
+      "whyAttractive": "EA (Enterprise Architecture) の説明。『エンタープライズ』という共通ワードで引き寄せられるが、EAは経営設計手法で、サーチ(検索)機能ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "エンタープライズサーチ(Enterprise Search)は、企業内に散在する文書・メール・DB・ファイルサーバなどの定型・非定型データを横断的に一元検索できる仕組み。社内版Google検索のイメージ。",
+  "keyInsight": "『エンタープライズ(企業)』+『サーチ(検索)』そのまま=社内横断検索。EA(アーキテクチャ)と取り違えない。",
+  "topicSlugs": [
+    { "slug": "biz_enterprise_systems", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 3,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問4 ©2021 独立行政法人情報処理推進機構"
+}

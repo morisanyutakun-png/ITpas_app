@@ -1,0 +1,55 @@
+{
+  "externalKey": "r04_q79",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 79,
+  "majorCategory": "technology",
+  "formatType": "pseudo_lang",
+  "trapType": "edge_case_miss",
+  "stem": "流れ図で示す処理を終了したとき、xの値はどれか。処理: x=98, y=42 で開始。繰返し条件 x=y なら終了。x>y なら x=x-y、x≤y なら y=y-x を新たな値とする。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "0",
+      "isCorrect": false,
+      "whyAttractive": "減算を続けると最終的に0になると思い込むケース。互除法は最大公約数で停止するので0にはならない。",
+      "misconceptionSlug": "wrong_pseudo_lang_flow"
+    },
+    {
+      "label": "イ",
+      "body": "14",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "28",
+      "isCorrect": false,
+      "whyAttractive": "途中の y=28 の値を最終値と取り違えたケース。トレースを最後まで追えていない。",
+      "misconceptionSlug": "wrong_pseudo_lang_flow"
+    },
+    {
+      "label": "エ",
+      "body": "56",
+      "isCorrect": false,
+      "whyAttractive": "1回目の x=98-42=56 だけ計算して止めたケース。ループの継続条件を見落としている。",
+      "misconceptionSlug": "wrong_pseudo_lang_flow"
+    }
+  ],
+  "explanation": "ユークリッド互除法で最大公約数を求める処理。トレース: (98,42)→(56,42)→(14,42)→(14,28)→(14,14) で x=y となり終了。最大公約数=14。",
+  "keyInsight": "x>y なら x を、x≤y なら y を減算 → 互除法。両者が等しくなった時点の値が最大公約数。",
+  "commonMistakeFlow": "1〜2ステップ計算してそれを答えにしてしまうのが典型。手元で5ステップ全部トレースする習慣をつける。",
+  "topicSlugs": [
+    { "slug": "algo_pseudo_lang", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "wrong_pseudo_lang_flow", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 36,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問79 ©2022 独立行政法人情報処理推進機構",
+  "modifiedNote": "流れ図は本文中の処理仕様として要約しています(意味は不変)。"
+}

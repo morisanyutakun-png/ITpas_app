@@ -60,6 +60,26 @@
     "tier": "premium"
   },
   {
+    "slug": "year_r04",
+    "label": "令和4年度 年度別模試",
+    "description": "R4の公開問題ベース。",
+    "count": 100,
+    "durationMin": 120,
+    "filter": { "kind": "year", "examYear": 4 },
+    "badge": "R4",
+    "tier": "premium"
+  },
+  {
+    "slug": "year_r03",
+    "label": "令和3年度 年度別模試",
+    "description": "R3の公開問題ベース。",
+    "count": 100,
+    "durationMin": 120,
+    "filter": { "kind": "year", "examYear": 3 },
+    "badge": "R3",
+    "tier": "premium"
+  },
+  {
     "slug": "year_r02_aki",
     "label": "令和2年度秋 年度別模試",
     "description": "R2秋の公開問題ベース。",

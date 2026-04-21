@@ -42,6 +42,34 @@
     "notes": "スキャンPDFをOCR抽出。原典はIPA公開PDF。"
   },
   {
+    "slug": "r04",
+    "examYear": 4,
+    "examSeason": "annual",
+    "label": "令和4年度 ITパスポート試験 公開問題",
+    "shortLabel": "R4",
+    "issuer": "独立行政法人 情報処理推進機構 (IPA)",
+    "sourceUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/_index_mondai2_ip.html",
+    "sourceFilePath": "content/raw/past_exams/r04.pdf",
+    "extractedTextPath": "content/extracted/r04.txt",
+    "extractedPagesDir": "content/extracted/r04.pages",
+    "totalQuestions": 100,
+    "notes": "原典はIPA公開PDF。"
+  },
+  {
+    "slug": "r03",
+    "examYear": 3,
+    "examSeason": "annual",
+    "label": "令和3年度 ITパスポート試験 公開問題",
+    "shortLabel": "R3",
+    "issuer": "独立行政法人 情報処理推進機構 (IPA)",
+    "sourceUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/_index_mondai2_ip.html",
+    "sourceFilePath": "content/raw/past_exams/r03.pdf",
+    "extractedTextPath": "content/extracted/r03.txt",
+    "extractedPagesDir": "content/extracted/r03.pages",
+    "totalQuestions": 100,
+    "notes": "原典はIPA公開PDF。"
+  },
+  {
     "slug": "r02_aki",
     "examYear": 2,
     "examSeason": "autumn",

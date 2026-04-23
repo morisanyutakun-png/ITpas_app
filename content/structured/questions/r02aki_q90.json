@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q90",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 90,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "ハードウェアなどに対して外部から不正に行われる内部データの改ざんや解読、取出しなどがされにくくなっている性質を表すものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "可用性",
+      "isCorrect": false,
+      "whyAttractive": "使いたいときに使える性質。外部改ざん耐性とは別の観点。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "信頼性",
+      "isCorrect": false,
+      "whyAttractive": "期待通り動く性質。内部データの改ざん耐性に特化した概念ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "責任追跡性",
+      "isCorrect": false,
+      "whyAttractive": "誰が何をしたか追跡可能な性質。改ざん『されにくい』性質とは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "耐タンパ性",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "耐タンパ性(tamper resistance)=物理的・論理的な改ざん・解析・取出しに耐える性質。ICカード・セキュリティチップ等で重視。tamper=不正にいじる、の意。",
+  "keyInsight": "耐タンパ性=改ざん・解析への耐性。ハードウェアセキュリティの用語。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 41,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問90 ©2020 独立行政法人情報処理推進機構"
+}

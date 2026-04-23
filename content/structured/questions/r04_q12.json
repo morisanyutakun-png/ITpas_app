@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q12",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 12,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "クラウドファンディングは、資金提供の形態や対価の受領の仕方の違いによって、貸付型、寄付型、購入型、投資型などの種類に分けられる。A社は新規事業の資金調達を行うために、クラウドファンディングを通じて資金提供者と匿名組合契約を締結し、利益の一部を配当金として資金提供者に支払うことにした。A社が利用したクラウドファンディングの種類として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "貸付型クラウドファンディング",
+      "isCorrect": false,
+      "whyAttractive": "貸付型=利息受取。匿名組合契約ではなく金銭消費貸借。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "寄付型クラウドファンディング",
+      "isCorrect": false,
+      "whyAttractive": "寄付型=対価なし。配当金の支払いはない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "購入型クラウドファンディング",
+      "isCorrect": false,
+      "whyAttractive": "購入型=製品/サービスを対価として受ける。配当金ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "投資型クラウドファンディング",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "投資型クラウドファンディング=匿名組合契約等で投資者が事業に出資し、事業の利益に応じた配当を受ける形態。『利益の配当』が特徴。貸付型(利息)・寄付型(無対価)・購入型(商品/サービス)とは対価が違う。",
+  "keyInsight": "投資型=配当金、貸付型=利息、購入型=商品、寄付型=なし。対価の種類で見分ける。",
+  "topicSlugs": [
+    { "slug": "biz_financial_metrics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 6,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問12 ©2022 独立行政法人情報処理推進機構"
+}

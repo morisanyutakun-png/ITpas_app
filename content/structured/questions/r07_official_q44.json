@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q44",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 44,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "システム開発の早い段階で、目に見える形で利用者の要求が確認できるように確認用のソフトウェアを作成するソフトウェア開発モデルとして、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "アジャイル",
+      "isCorrect": false,
+      "whyAttractive": "短期反復開発手法だが、『目に見える試作品』という点ではプロトタイピングが該当。アジャイルはより広い反復開発。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "ウォーターフォール",
+      "isCorrect": false,
+      "whyAttractive": "上流から下流へ順次進む伝統的開発。要件を早期に確認する仕組みはない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "スパイラル",
+      "isCorrect": false,
+      "whyAttractive": "反復+リスク管理の開発モデル。プロトタイプを含むこともあるが、試作品で要件確認に特化した手法ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "プロトタイピング",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "プロトタイピング=開発初期に試作品(プロトタイプ)を作り、利用者の要求を目に見える形で確認・検証する開発モデル。要件確定が困難な場合に有効。ウォーターフォール(順次)、アジャイル(反復)、スパイラル(反復+リスク)とは目的が違う。",
+  "keyInsight": "プロトタイピング=『試作品で早期要求確認』。目に見える形で確認できる点が特徴。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 20,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問44"
+}

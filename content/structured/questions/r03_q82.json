@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q82",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 82,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "ネットワークに接続した複数のコンピュータで並列処理を行うことによって、仮想的に高い処理能力をもつコンピュータとして利用する方式はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ウェアラブルコンピューティング",
+      "isCorrect": false,
+      "whyAttractive": "身に着けて使う小型コンピュータ。並列処理の方式ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "グリッドコンピューティング",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "モバイルコンピューティング",
+      "isCorrect": false,
+      "whyAttractive": "移動中のコンピュータ利用。並列処理方式ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ユビキタスコンピューティング",
+      "isCorrect": false,
+      "whyAttractive": "『いつでもどこでも』環境の概念。並列分散処理の方式ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "グリッドコンピューティング=ネット上の多数のコンピュータを結合し、仮想的に1台の高性能マシンのように扱う分散処理方式。科学計算(SETI@home等)・創薬で活用。",
+  "keyInsight": "グリッド=分散並列で高性能化。クラウドと似るがネットワーク接続の既存機を束ねる点が特徴。",
+  "topicSlugs": [
+    { "slug": "tech_computer_arch", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 38,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問82 ©2021 独立行政法人情報処理推進機構"
+}

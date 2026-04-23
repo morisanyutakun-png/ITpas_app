@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q34",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 34,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "order_swap",
+  "stem": "営業利益を求める計算式はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "(売上総利益) − (販売費及び一般管理費)",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "(売上高) − (売上原価)",
+      "isCorrect": false,
+      "whyAttractive": "これは『売上総利益(粗利)』の式。営業利益はここから販管費を引いた後の段階。『売上ー原価=利益』と直結すると粗利と混同する。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "(経常利益) + (特別利益) − (特別損失)",
+      "isCorrect": false,
+      "whyAttractive": "これは『税引前当期純利益』の式。営業利益は経常利益より1段階上流で、特別損益は無関係。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "(税引前当期純利益) − (法人税, 住民税及び事業税)",
+      "isCorrect": false,
+      "whyAttractive": "これは『当期純利益』の式。最下段の利益で、営業利益はもっと上の段階。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "損益計算書の利益は5段階: 売上総利益(粗利)=売上高ー売上原価 → 営業利益=売上総利益ー販管費 → 経常利益=営業利益+営業外損益 → 税引前当期純利益=経常利益+特別損益 → 当期純利益=税引前ー税金。各段階の式を順に覚える。",
+  "keyInsight": "P/L 5段階: 粗利 → 営業 → 経常 → 税引前 → 当期純。営業利益は2段階目で、粗利から販管費を引く。",
+  "topicSlugs": [
+    { "slug": "biz_financial_metrics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 15,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問34 ©2020 独立行政法人情報処理推進機構"
+}

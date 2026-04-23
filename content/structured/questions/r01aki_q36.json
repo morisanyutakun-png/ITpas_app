@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q36",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 36,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "scope_overgeneral",
+  "stem": "システム監査の目的はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "情報システム運用段階で、重要データのバックアップをとる。",
+      "isCorrect": false,
+      "whyAttractive": "運用業務そのもの。監査人はバックアップを『実施』する側ではなく『評価』する側。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "情報システム開発要員のスキルアップを図る。",
+      "isCorrect": false,
+      "whyAttractive": "人材育成の目的。監査の目的ではなく、組織管理の活動。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "情報システム企画段階で、ユーザニーズを調査し、システム化要件として文書化する。",
+      "isCorrect": false,
+      "whyAttractive": "要件定義フェーズの活動。監査は既存のコントロールを評価するもので、要件文書化ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "情報システムに係るリスクをコントロールし、情報システムを安全、有効かつ効率的に機能させる。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "システム監査の目的=情報システムのリスクに対するコントロールが適切に整備・運用されているかを独立第三者が評価し、安全・有効・効率性を確保すること。バックアップ実施・スキルアップ・要件定義は各々別の役割。",
+  "keyInsight": "システム監査=『リスクコントロールの評価』。実施側(バックアップ・開発)ではなく評価側の役割。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 16,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問36 ©2019 独立行政法人情報処理推進機構"
+}

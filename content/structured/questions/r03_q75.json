@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q75",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 75,
+  "majorCategory": "technology",
+  "formatType": "db_basics",
+  "trapType": "similar_term",
+  "stem": "DBMSに備わる機能として、a〜dのうち、適切なものだけを全て挙げたものはどれか。\n\na. アクセス権管理\nb.障害回復\nc. 同時実行制御\nd. ファイアウォール",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a, b, c",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "a, b, d",
+      "isCorrect": false,
+      "whyAttractive": "同時実行制御(c)を外し、ファイアウォール(d)を入れた誤り。FWはDBMSの機能ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "a, c, d",
+      "isCorrect": false,
+      "whyAttractive": "障害回復(b)を外し、ファイアウォール(d)を入れた誤り。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "b, c, d",
+      "isCorrect": false,
+      "whyAttractive": "アクセス権管理(a)を外し、ファイアウォール(d)を入れた誤り。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "DBMSの基本機能: アクセス権管理(認可)、障害回復(ロールバック/ロールフォワード)、同時実行制御(トランザクション/ロック)、機密保護、データ整合性。ファイアウォール=ネットワークセキュリティ機器で、DBMSの機能ではない。",
+  "keyInsight": "DBMS=データ管理・整合性・並行性・復旧。ファイアウォールはネットワーク層。",
+  "topicSlugs": [
+    { "slug": "db_normalization", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 34,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問75 ©2021 独立行政法人情報処理推進機構"
+}

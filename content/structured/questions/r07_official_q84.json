@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q84",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 84,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "ISMSにおける情報セキュリティ方針に関する記述として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "機密事項が記載されているので、伝達する範囲を社内に限定する必要がある。",
+      "isCorrect": false,
+      "whyAttractive": "情報セキュリティ方針=対外宣言文書で、社内外に公表することが求められる。機密事項を書き込むのではなく、取組姿勢を書く。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "情報セキュリティ対策は一度実施したら終わりではないので、ISMSを継続的に改善するコミットメントを含める必要がある。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "部門の特性に応じて最適化するので、ISMSを適用する組織全体ではなく、部門ごとに定める必要がある。",
+      "isCorrect": false,
+      "whyAttractive": "方針は組織全体で統一するもの。部門別に定めるのは下位の実施手順。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ボトムアップを前提としているので、各職場の管理者によって承認される必要がある。",
+      "isCorrect": false,
+      "whyAttractive": "情報セキュリティ方針はトップダウン。経営層(トップマネジメント)が承認・発信する。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "情報セキュリティ方針=組織のトップマネジメントが定める最上位の文書。『継続的改善のコミットメント』を含めるのがISMS(ISO/IEC 27001)の要求事項。組織全体で統一、トップダウン、公表が原則。",
+  "keyInsight": "情報セキュリティ方針=『トップマネジメントの継続的コミットメント』。組織全体・トップダウン・公表。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 39,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問84"
+}

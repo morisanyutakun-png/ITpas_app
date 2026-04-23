@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q63",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 63,
+  "majorCategory": "technology",
+  "formatType": "case",
+  "trapType": "scope_overgeneral",
+  "stem": "記述a〜dのうち、クライアントサーバシステムの応答時間を短縮するための施策として、適切なものだけを全て挙げたものはどれか。\n\na クライアントとサーバ間の回線を高速化し、データの送受信時間を短くする。\nb クライアントの台数を増やして、クライアントの利用待ち時間を短くする。\nc クライアントの入力画面で、利用者がデータを入力する時間を短くする。\nd サーバを高性能化して、サーバの処理時間を短くする。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a, b, c",
+      "isCorrect": false,
+      "whyAttractive": "b,cをシステムの応答時間要素と誤解。だがbは『利用待ち』で応答時間とは別軸。cは『利用者の入力時間』でシステム応答ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a, d",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "b, c",
+      "isCorrect": false,
+      "whyAttractive": "逆にa,dを除外する誤り。回線速度(a)・サーバ性能(d)は応答時間の主要要素。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "c, d",
+      "isCorrect": false,
+      "whyAttractive": "dは正しいがcを含めるのが誤り。『利用者が入力する時間』はシステムの応答時間ではなくユーザ操作時間。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "応答時間(Response Time)=システムが処理を受けてから結果を返すまでの時間。要素は(1)送受信時間=回線速度、(2)サーバ処理時間=サーバ性能。b(台数増)は利用待ち改善でスループット向上の話。c(入力時間)は利用者操作でシステム側ではない。",
+  "keyInsight": "応答時間 = 送受信時間(回線) + サーバ処理時間。利用者の入力や利用待ちは別指標(スループット等)。",
+  "topicSlugs": [
+    { "slug": "network_basics_osi", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 29,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問63 ©2020 独立行政法人情報処理推進機構"
+}

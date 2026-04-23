@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q78",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 78,
+  "majorCategory": "technology",
+  "formatType": "pseudo_lang",
+  "trapType": "edge_case_miss",
+  "stem": "手続calcMod3を呼び出したときの出力はどれか。\n\n[プログラム]\n○calcMod3()\n  整数型: totalValue, i\n  totalValue ← 0\n  for (i を 1 から 7 まで 1 ずつ増やす)\n    if (i ÷ 3 の余り が 0 と等しい)\n      totalValue ← totalValue + i\n    endif\n  endfor\n  totalValue を出力する",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "2",
+      "isCorrect": false,
+      "whyAttractive": "満たす要素が2個(3と6)あるがその数(2個)を出力と誤解。実際は値の合計を出力。",
+      "misconceptionSlug": "wrong_pseudo_lang_flow"
+    },
+    {
+      "label": "イ",
+      "body": "3",
+      "isCorrect": false,
+      "whyAttractive": "最初の該当値(i=3)だけを出力と誤解。ループの最後で総和を出す。",
+      "misconceptionSlug": "wrong_pseudo_lang_flow"
+    },
+    {
+      "label": "ウ",
+      "body": "7",
+      "isCorrect": false,
+      "whyAttractive": "ループの終了値iを出力と誤解。出力はtotalValue(累積和)。",
+      "misconceptionSlug": "wrong_pseudo_lang_flow"
+    },
+    {
+      "label": "エ",
+      "body": "9",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "i=1〜7で3の倍数(i%3==0)を加算。該当はi=3とi=6。totalValue=0+3+6=9を出力。",
+  "keyInsight": "for+if(剰余==0)=3の倍数だけ加算。1〜7の3の倍数は3,6で合計9。",
+  "topicSlugs": [
+    { "slug": "algo_pseudo_lang", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "wrong_pseudo_lang_flow", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 37,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問78"
+}

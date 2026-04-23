@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q57",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 57,
+  "majorCategory": "technology",
+  "formatType": "db_basics",
+  "trapType": "edge_case_miss",
+  "stem": "次に示す項目を使って関係データベースで管理する\"社員\"表を設計する。他の項目から導出できる、冗長な項目はどれか。\n\n社員表の項目: 社員番号、社員名、生年月日、現在の満年齢、住所、趣味",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "生年月日",
+      "isCorrect": false,
+      "whyAttractive": "『過去の情報』感から冗長と誤解しがち。だが生年月日は『不変の事実』で、年齢算出の元データ。冗長ではない。",
+      "misconceptionSlug": "confuse_db_normalization"
+    },
+    {
+      "label": "イ",
+      "body": "現在の満年齢",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "住所",
+      "isCorrect": false,
+      "whyAttractive": "他項目から導出できない独立情報。郵便番号から一部推測できる場合はあるが、本表に郵便番号はない。",
+      "misconceptionSlug": "confuse_db_normalization"
+    },
+    {
+      "label": "エ",
+      "body": "趣味",
+      "isCorrect": false,
+      "whyAttractive": "導出不可の独立情報。むしろ多値属性(複数の趣味)のため正規化の別課題はあるが、冗長ではない。",
+      "misconceptionSlug": "confuse_db_normalization"
+    }
+  ],
+  "explanation": "『現在の満年齢』は生年月日と現在日から計算できる(=他項目から導出可能)ため冗長。また時間経過で値が変わる『時変データ』を持つとメンテナンスコストも増える。生年月日さえあれば必要な時に年齢を計算する設計が正しい。",
+  "keyInsight": "導出可能な項目=冗長。時変データ(年齢・勤続年数等)は元データ(生年月日・入社日)だけ保存して都度計算。",
+  "topicSlugs": [
+    { "slug": "db_normalization", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_db_normalization", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 26,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問57 ©2020 独立行政法人情報処理推進機構"
+}

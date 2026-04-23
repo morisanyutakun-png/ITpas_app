@@ -58,8 +58,8 @@
       "role": "compare"
     }
   ],
-  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourceFilePath": null,
   "sourcePageNumber": null,
   "originType": "ipa_inspired",
-  "sourceNote": "IPA ITパスポート試験の出題範囲・頻出論点を元に作成したオリジナル問題です。実際の過去問の文言とは異なります。"
+  "sourceNote": "オリジナル模試問題（令和7年度 ITパスポート試験の出題範囲・論点を参考に本サイトが独自作成）。実際のIPA公開問題の文言ではありません。原典PDFからの引用ではなく、過去問検索には含まれません。"
 }

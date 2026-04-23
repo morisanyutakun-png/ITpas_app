@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q14",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 14,
+  "majorCategory": "strategy",
+  "formatType": "case",
+  "trapType": "similar_term",
+  "stem": "ウェアラブルデバイスを用いている事例として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "PCやタブレット端末を利用して、ネットワーク経由で医師の診療を受ける。",
+      "isCorrect": false,
+      "whyAttractive": "オンライン診療の事例。ITを使う医療だが、『身に着ける機器(ウェアラブル)』ではなくPC/タブレット。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "スマートウォッチで血圧や体温などの測定データを取得し、異常を早期に検知する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "複数の病院のカルテを電子化したデータをクラウドサーバで管理し、データの共有を行う。",
+      "isCorrect": false,
+      "whyAttractive": "EHR(電子カルテ共有)の事例。クラウドによる情報共有で、身に着ける機器は登場しない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ベッドに人感センサを設置し、一定期間センサに反応がない場合に通知を行う。",
+      "isCorrect": false,
+      "whyAttractive": "見守り用のIoTセンサ。センサを『設置』する事例で、身に着けるわけではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ウェアラブルデバイス=身に着けて使う情報機器(スマートウォッチ、活動量計、スマートグラス等)。『身体装着』が条件。PCもクラウドもベッドセンサもウェアラブルではない。",
+  "keyInsight": "ウェアラブル=wear+able=『着用可能』。身体装着の有無で判別。",
+  "topicSlugs": [
+    { "slug": "tech_iot_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 8,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問14 ©2020 独立行政法人情報処理推進機構"
+}

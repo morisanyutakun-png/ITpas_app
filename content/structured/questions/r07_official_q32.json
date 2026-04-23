@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q32",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 32,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "公共交通機関での移動履歴、Webサイトでの商品検索履歴、SNSやブログで発信したデータなど、個人の活動を記録する技術、又は記録そのものを表す用語として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "アクティビティ",
+      "isCorrect": false,
+      "whyAttractive": "『活動』一般を表す言葉だが、『個人の活動記録』の専門用語ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "トランザクション",
+      "isCorrect": false,
+      "whyAttractive": "1つのまとまった処理単位(DB用語)。履歴記録そのものではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ライフログ",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "レコードキーピング",
+      "isCorrect": false,
+      "whyAttractive": "記録保持全般を指す英語表現で、ITパスポート試験の標準用語ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ライフログ(Life Log)=個人の生活・活動を継続的にデジタル記録する技術・データ。移動履歴・検索履歴・SNS投稿等が含まれる。アクティビティ(活動全般)・トランザクション(処理単位)・レコードキーピング(記録保持)とは異なる専門用語。",
+  "keyInsight": "ライフログ=Life+Log=『生活記録』。個人の活動デジタル記録。",
+  "topicSlugs": [
+    { "slug": "biz_dx_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 15,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問32"
+}

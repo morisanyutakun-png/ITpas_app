@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q09",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 9,
+  "majorCategory": "strategy",
+  "formatType": "biz_analysis",
+  "trapType": "edge_case_miss",
+  "stem": "DFDにおいて、データフローや処理(機能)以外に記述されるものだけを全て挙げたものはどれか。\n\na データの処理に要する時間\nb データの蓄積場所\nc データの発生源や出力先",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a, b",
+      "isCorrect": false,
+      "whyAttractive": "aの処理時間はDFDの表現対象ではない。DFDは時間軸を持たない静的なデータフロー図。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a, b, c",
+      "isCorrect": false,
+      "whyAttractive": "aを誤って含む。処理時間を記述できると誤解しがち。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "b, c",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "c",
+      "isCorrect": false,
+      "whyAttractive": "bのデータストア(蓄積場所)を除外する誤り。DFDの4要素の1つ。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "DFDの4要素: (1)データフロー(矢印)、(2)処理(丸)、(3)データストア(二重線=蓄積場所)、(4)源泉/出力先(四角=外部エンティティ)。処理時間等の動的情報は表現しない(静的な業務モデル図)。",
+  "keyInsight": "DFD=データの流れを静的に描く図。時間は扱わない。4要素の内訳で判別。",
+  "topicSlugs": [
+    { "slug": "biz_models", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 5,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問9 ©2019 独立行政法人情報処理推進機構"
+}

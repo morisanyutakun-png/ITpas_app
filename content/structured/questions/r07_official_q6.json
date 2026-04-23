@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q6",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 6,
+  "majorCategory": "strategy",
+  "formatType": "law_ip",
+  "trapType": "edge_case_miss",
+  "stem": "特定電子メール法は、電子メールによる一方的な広告宣伝メールの送信を規制する法律である。企業担当者が行った次の電子メールの送信事例のうち、特定電子メール法の規制対象となり得るものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "広告宣伝メールの受信を拒否する旨の意思表示がないことを確認したのち、公表されている企業のメールアドレス宛てに広告宣伝メールを送信した。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "受信者から拒否通知があった場合には、それ以降の送信を禁止すればよいと考え、広告宣伝メールを送信した。",
+      "isCorrect": false,
+      "whyAttractive": "これも違反に見えるが、現行法はオプトイン方式(事前同意が原則)。ただし公開アドレス等の例外範囲もあるため、文面では消極的な姿勢で曖昧。アの方がより明確な違反。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "内容は事務連絡と料金請求なので問題ないと考え、受信者本人の同意なく、メールを送信した。",
+      "isCorrect": false,
+      "whyAttractive": "事務連絡・請求メールは『広告宣伝メール』ではないので特定電子メール法の規制対象外。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "長年の取引関係にある企業担当者に対して、これまで納入してきた製品の新バージョンが完成したので、その製品に関する広告宣伝メールを送信した。",
+      "isCorrect": false,
+      "whyAttractive": "取引関係にある相手への商品情報送付は、特定電子メール法の例外規定で同意不要とされる典型例。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "特定電子メール法は『原則事前同意(オプトイン)』方式。公表されているアドレスだから送っていいは誤り(公開=同意とは見なされない)。事前同意なしの広告メール送信は規制対象。事務連絡(ウ)・既存取引先(エ)は対象外か例外。",
+  "keyInsight": "特定電子メール法=オプトイン(事前同意)方式。『受信拒否表示がなければOK』は旧オプトアウト方式の発想で違反。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 4,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問6"
+}

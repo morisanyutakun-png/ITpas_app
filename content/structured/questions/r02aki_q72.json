@@ -1,0 +1,54 @@
+{
+  "externalKey": "r02aki_q72",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 72,
+  "majorCategory": "technology",
+  "formatType": "db_basics",
+  "trapType": "edge_case_miss",
+  "stem": "2台のPCから一つのファイルを並行して更新した。ファイル中のデータnに対する処理が①〜④の順に行われたとき、データnは最後にどの値になるか。ここで、データnの初期値は10であった。\n\n① PC-A: データnを読み込み、5を引く\n② PC-B: データnを読み込み、7を足す\n③ PC-A: 処理①の結果を、データnに書き込む\n④ PC-B: 処理②の結果を、データnに書き込む",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "5",
+      "isCorrect": false,
+      "whyAttractive": "10−5=5。PC-Aの結果が最後の値と誤解。だが④でPC-Bが17で上書きする。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "10",
+      "isCorrect": false,
+      "whyAttractive": "初期値のまま。処理が何も反映されないケースと誤解。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "12",
+      "isCorrect": false,
+      "whyAttractive": "10−5+7=12。もし排他制御されていれば12になるが、本問は並行更新で上書き問題(ロストアップデート)が発生する。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "17",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "排他制御がないため、両PCは初期値10を読み込み、それぞれ独立に計算。PC-A=5、PC-B=17を保持。書き込みは③でn=5、次の④でn=17に上書き。PC-Aの更新(5)は失われる=ロストアップデート。",
+  "keyInsight": "並行更新で排他制御がないと『後の書き込みが勝つ』=ロストアップデート。同時実行制御の必要性を示す典型例。",
+  "commonMistakeFlow": "『10−5+7=12』と直感で計算しがちだが、両PCは独立に10を読んでいるため、書き込み順の後勝ちになる。",
+  "topicSlugs": [
+    { "slug": "db_normalization", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_db_normalization", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 33,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問72 ©2020 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q52",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 52,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "A社がB社にシステム開発を発注し、システム開発プロジェクトを開始した。プロジェクトの関係者①〜④のうち、プロジェクトのステークホルダとなるものだけを全て挙げたものはどれか。\n\n① A社の経営者\n② A社の利用部門\n③ B社のプロジェクトマネージャ\n④ B社を技術支援する協力会社",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "①, ②, ④",
+      "isCorrect": false,
+      "whyAttractive": "③B社PMが中心的ステークホルダ。除外は誤り。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "イ",
+      "body": "①, ②, ③, ④",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "②, ③, ④",
+      "isCorrect": false,
+      "whyAttractive": "経営者も予算/方針で影響を及ぼすステークホルダ。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "エ",
+      "body": "②, ④",
+      "isCorrect": false,
+      "whyAttractive": "経営者もPMも除外は誤り。関与する全員がステークホルダ。",
+      "misconceptionSlug": "confuse_pm_terms"
+    }
+  ],
+  "explanation": "ステークホルダ=プロジェクトに影響を与える/受ける全ての利害関係者。発注側経営者・利用部門、受注側PM・協力会社、さらにエンドユーザまで広く含む。PMBOKでは広義に捉える。",
+  "keyInsight": "ステークホルダ=影響を与える/受ける全員。発注/受注問わず、協力会社や経営層も含む。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_pm_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 23,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問52 ©2022 独立行政法人情報処理推進機構"
+}

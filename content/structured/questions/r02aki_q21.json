@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q21",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 21,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "横軸に相対マーケットシェア、縦軸に市場成長率を用いて自社の製品や事業の戦略的位置付けを分析する手法はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ABC分析",
+      "isCorrect": false,
+      "whyAttractive": "売上等の指標で商品を上位から重点分類する手法。『分析』の語感で引き寄せられるが、2軸のマトリクスではない。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "イ",
+      "body": "PPM分析",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "SWOT分析",
+      "isCorrect": false,
+      "whyAttractive": "強み・弱み・機会・脅威の4要素分析。内部/外部×好影響/悪影響のマトリクスで、市場シェア×成長率とは軸が違う。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "エ",
+      "body": "バリューチェーン分析",
+      "isCorrect": false,
+      "whyAttractive": "事業活動を調達→生産→販売などの一連の連鎖で価値を分析する手法。マトリクス型ではない。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    }
+  ],
+  "explanation": "PPM (Product Portfolio Management) = 相対マーケットシェア(横軸)×市場成長率(縦軸)の2×2マトリクスで、製品を『花形』『金のなる木』『問題児』『負け犬』の4象限に分類する経営資源配分手法。",
+  "keyInsight": "『シェア×成長率』の2軸マトリクス = PPM。4象限の名前(花形/金のなる木/問題児/負け犬)も頻出。",
+  "topicSlugs": [
+    { "slug": "biz_marketing_frameworks", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_marketing_framework", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 10,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問21 ©2020 独立行政法人情報処理推進機構"
+}

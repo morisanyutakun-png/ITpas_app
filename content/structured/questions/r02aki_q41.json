@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q41",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 41,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "edge_case_miss",
+  "stem": "システム監査の目的に関して、次の記述中のa, bに入れる字句の適切な組合せはどれか。\n\n情報システムに関わるリスクに対するコントロールの適切な整備・運用について、a のシステム監査人が b することによって、ITガバナンスの実現に寄与する。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a=業務に精通した主管部門 / b=構築",
+      "isCorrect": false,
+      "whyAttractive": "主管部門自身が監査すると『独立性』が確保できない。また構築(実施側)と監査(評価側)は分離が原則。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a=業務に精通した主管部門 / b=評価",
+      "isCorrect": false,
+      "whyAttractive": "bの『評価』は正しいが、aの『主管部門』が自らを評価すると自己監査になり独立性に反する。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "a=独立かつ専門的な立場 / b=構築",
+      "isCorrect": false,
+      "whyAttractive": "aの『独立』は正しいが、bの『構築』はコントロールを作る側の役割で、監査人の役割ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "a=独立かつ専門的な立場 / b=評価",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "システム監査は『独立かつ専門的な立場』の監査人が、リスクコントロールの整備・運用を『評価』することで、ITガバナンスに貢献する。独立性(主観の排除)と評価(構築ではない)が2大要件。",
+  "keyInsight": "監査=独立+評価。自己監査はNG、構築(実施)と監査(評価)は分離。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 19,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問41 ©2020 独立行政法人情報処理推進機構"
+}

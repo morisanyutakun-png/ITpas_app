@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q56",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 56,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "edge_case_miss",
+  "stem": "次の作業a〜dのうち、リスクマネジメントにおける、リスクアセスメントに含まれるものだけを全て挙げたものはどれか。\n\na リスク特定\nb リスク分析\nc リスク評価\nd リスク対応",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a, b",
+      "isCorrect": false,
+      "whyAttractive": "評価(c)を除外している誤り。アセスメントは特定→分析→評価の3段階全部を含む。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a, b, c",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "b, c, d",
+      "isCorrect": false,
+      "whyAttractive": "特定(a)を除外し対応(d)を含めている。アセスメントは特定から始まり、対応は別段階。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "c, d",
+      "isCorrect": false,
+      "whyAttractive": "アセスメントを『評価と対応』と誤解。対応はアセスメント後の別プロセス。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "リスクマネジメントの全体プロセス: リスクアセスメント(特定→分析→評価)→リスク対応→モニタリング・レビュー。アセスメントは『リスクを洗い出して大きさを判定する』工程で、対応(d)は後続の別工程。",
+  "keyInsight": "リスクアセスメント=特定/分析/評価の3点セット。対応(d)は別工程(アセスメントの結果を受けて実施)。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 24,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問56 ©2019 独立行政法人情報処理推進機構"
+}

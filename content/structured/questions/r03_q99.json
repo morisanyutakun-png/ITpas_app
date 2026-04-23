@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q99",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 99,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "情報セキュリティのリスクマネジメントにおいて、リスク移転、リスク回避、リスク低減、リスク保有などが分類に用いられることがある。これらに関する記述として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "リスク対応において、リスクへの対応策を分類したものであり、リスクの顕在化に備えて保険を掛けることは、リスク移転に分類される。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "リスク特定において、保有資産の使用目的を分類したものであり、マルウェア対策ソフトのような情報セキュリティ対策で使用される資産は、リスク低減に分類される。",
+      "isCorrect": false,
+      "whyAttractive": "リスク特定は資産分類ではなくリスク洗い出し。低減は『リスク対応』の分類。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "リスク評価において、リスクの評価方法を分類したものであり、管理対象の資産がもつリスクについて、それを回避することが可能かどうかで評価することは、リスク回避に分類される。",
+      "isCorrect": false,
+      "whyAttractive": "リスク評価は重要度/許容可否の判定。リスク回避は『リスク対応』の分類。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "リスク分析において、リスクの分析手法を分類したものであり、管理対象の資産がもつ脆弱性を客観的な数値で表す手法は、リスク保有に分類される。",
+      "isCorrect": false,
+      "whyAttractive": "リスク分析はリスクレベル算出。リスク保有は『リスク対応』の分類(受容する)。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "リスク対応の4分類: リスク移転(保険・委託)、リスク回避(発生源を断つ)、リスク低減(対策で影響縮小)、リスク保有(受容)。保険=リスク移転の典型。これらはアセスメント(特定/分析/評価)の後に行うリスク対応の方針分類。",
+  "keyInsight": "リスク対応=移転/回避/低減/保有の4分類。保険=移転。アセスメントと対応を混同しない。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 45,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問99 ©2021 独立行政法人情報処理推進機構"
+}

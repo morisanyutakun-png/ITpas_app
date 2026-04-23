@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q65",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 65,
+  "majorCategory": "technology",
+  "formatType": "db_basics",
+  "trapType": "similar_term",
+  "stem": "DBMSにおいて、データの検索を高速に行う目的で、必要に応じて設定して利用する情報はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "インデックス",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "外部キー",
+      "isCorrect": false,
+      "whyAttractive": "別テーブルの主キーを参照する制約。データ整合性のためで、検索高速化ではない。",
+      "misconceptionSlug": "confuse_db_normalization"
+    },
+    {
+      "label": "ウ",
+      "body": "主キー",
+      "isCorrect": false,
+      "whyAttractive": "レコードを一意識別するための制約。結果的に検索は速いが、本来の目的は識別。",
+      "misconceptionSlug": "confuse_db_normalization"
+    },
+    {
+      "label": "エ",
+      "body": "スキーマ",
+      "isCorrect": false,
+      "whyAttractive": "DBの構造定義(テーブル定義等)。検索高速化の情報ではない。",
+      "misconceptionSlug": "confuse_db_normalization"
+    }
+  ],
+  "explanation": "インデックス(索引)=DBの検索高速化のために列に設定する補助データ構造。本の索引と同じ発想で、検索時にフルスキャンを避けられる。外部キー(整合性)・主キー(識別)・スキーマ(構造定義)とは目的が違う。",
+  "keyInsight": "インデックス=『検索高速化のための索引』。設定すれば検索は速いが、更新は遅くなるトレードオフあり。",
+  "topicSlugs": [
+    { "slug": "db_normalization", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_db_normalization", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 30,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問65"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q02",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 2,
+  "majorCategory": "strategy",
+  "formatType": "law_ip",
+  "trapType": "scope_overgeneral",
+  "stem": "企業が社会の信頼に応えていくために、法令を遵守することはもちろん、社会的規範などの基本的なルールに従って活動する、いわゆるコンプライアンスが求められている。a〜dのうち、コンプライアンスとして考慮しなければならないものだけを全て挙げたものはどれか。\n\na 交通ルールの遵守\nb 公務員接待の禁止\nc 自社の就業規則の遵守\nd 他者の知的財産権の尊重",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a, b, c",
+      "isCorrect": false,
+      "whyAttractive": "dを『知的財産権は民事問題』として除外しがち。だが他者の知財尊重は反社会的行為の防止に直結し、コンプライアンスの代表例。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a, b, c, d",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "a, c, d",
+      "isCorrect": false,
+      "whyAttractive": "bの公務員接待を『贈収賄は刑事問題であってコンプライアンスとは別』と切り分けがち。だが贈収賄防止は典型的なコンプライアンス項目。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "b, c, d",
+      "isCorrect": false,
+      "whyAttractive": "aの交通ルールを『業務と関係ない個人の話』と除外しがちだが、社用車運転時の交通違反は会社の信用失墜につながり、コンプライアンスの対象。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "コンプライアンスは法令遵守だけでなく、社会規範・倫理・企業内ルールまで含む広い概念。a(交通ルール=道路交通法)、b(公務員接待=贈収賄防止)、c(就業規則=社内規範)、d(知的財産権=法令)は全て該当する。『コンプライアンス=法律だけ』と狭く捉えないのがポイント。",
+  "keyInsight": "コンプライアンス = 法令 + 社会規範 + 社内規範 + 倫理。『含むか』で迷ったら基本『含む』方向で考える。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 2,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問2 ©2020 独立行政法人情報処理推進機構"
+}

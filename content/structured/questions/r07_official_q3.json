@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q3",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 3,
+  "majorCategory": "strategy",
+  "formatType": "law_ip",
+  "trapType": "scope_overgeneral",
+  "stem": "政府は、官民データ活用推進基本法に定められた\"官民データ活用推進基本計画\"を策定し、官民データの公開や活用の促進に取り組んでいる。次の組織体のうち、官民データを所有しているものだけを全て挙げたものはどれか。\n\na 県庁 / b 大学 / c 電力事業者 / d 独立行政法人",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a, b, c",
+      "isCorrect": false,
+      "whyAttractive": "dを除いている。独立行政法人(例: IPA, JAXA等)も公共性が高くデータを所有する対象。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a, b, c, d",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "a, b, d",
+      "isCorrect": false,
+      "whyAttractive": "電力事業者を除く誤り。電力・ガス等重要インフラ事業者も官民データを所有する。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "a, c, d",
+      "isCorrect": false,
+      "whyAttractive": "大学(公立・国立を含む)も研究データ・学生データ等官民データを所有する。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "官民データ活用推進基本法では『官民データ』=国・地方公共団体・独立行政法人・事業者が事務や事業で管理・収集するデータを指す。県庁(a=地方公共団体)、大学(b=高等教育機関)、電力事業者(c=重要インフラ事業者)、独立行政法人(d)全てが該当。",
+  "keyInsight": "官民データ=『公共性のある組織が持つ事務・事業データ』。範囲が広く、政府機関に限らない。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 3,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問3"
+}

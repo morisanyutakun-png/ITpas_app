@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q51",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 51,
+  "majorCategory": "management",
+  "formatType": "case",
+  "trapType": "edge_case_miss",
+  "stem": "社内で開発及び運用を行っている経理システムの内部監査を実施するとき、システム監査人として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "経理システムの運用担当者",
+      "isCorrect": false,
+      "whyAttractive": "運用当事者=自己監査。独立性の原則違反。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "経理システムの開発を担当した委託会社の従業員",
+      "isCorrect": false,
+      "whyAttractive": "開発当事者=利害関係者。独立性が保てない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "経理システムの利用者である経理担当者",
+      "isCorrect": false,
+      "whyAttractive": "業務の利用者=当事者。自分が使うシステムの監査は独立性に反する。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "経理とITの知識を有する経営者直轄組織の従業員",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "システム監査人は『被監査対象から独立』+『専門知識あり』が必須。運用・開発・利用の当事者は除外。経営者直轄の専門組織(内部監査室等)の従業員が最適。独立性と専門性の両方を満たす。",
+  "keyInsight": "監査人=独立性+専門性。当事者(運用・開発・利用)はNG。経営者直轄の独立組織が適任。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 23,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問51"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q12",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 12,
+  "majorCategory": "strategy",
+  "formatType": "law_ip",
+  "trapType": "edge_case_miss",
+  "stem": "労働者派遣に関する記述a〜cのうち、適切なものだけを全て挙げたものはどれか。\n\na 派遣契約の種類によらず、派遣労働者の選任は派遣先が行う。\nb 派遣労働者であった者を、派遣元との雇用期間が終了後、派遣先が雇用してもよい。\nc 派遣労働者の給与を派遣先が支払う。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a",
+      "isCorrect": false,
+      "whyAttractive": "aは誤り。派遣労働者の選任は派遣元が行う。派遣先は派遣元に『スキル要件』を要求するのみ。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a, b",
+      "isCorrect": false,
+      "whyAttractive": "bは正しいがaは誤り。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "b",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "b, c",
+      "isCorrect": false,
+      "whyAttractive": "cは誤り。給与は派遣元(雇用主)が支払う。派遣先ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "労働者派遣の基本関係: 派遣元=雇用主(給与支払・要員選任)、派遣先=業務指揮命令のみ。a=派遣元選任なのでNG、b=派遣元との雇用終了後に派遣先が直接雇用=合法、c=給与は派遣元が支払うのでNG。",
+  "keyInsight": "派遣の関係=派遣元(雇用+給与)、派遣先(指揮命令のみ)。直接雇用への移行はOK。",
+  "topicSlugs": [
+    { "slug": "biz_labor_contracts", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 6,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問12 ©2021 独立行政法人情報処理推進機構"
+}

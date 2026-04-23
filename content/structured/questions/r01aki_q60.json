@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q60",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 60,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "edge_case_miss",
+  "stem": "コンピュータの記憶階層におけるキャッシュメモリ、主記憶及び補助記憶と、それぞれに用いられる記憶装置の組合せとして、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "キャッシュ=DRAM / 主記憶=HDD / 補助記憶=DVD",
+      "isCorrect": false,
+      "whyAttractive": "階層が逆転。キャッシュは最速のSRAMが必要で、HDDやDVDは補助記憶の遅い側。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "キャッシュ=DRAM / 主記憶=SSD / 補助記憶=SRAM",
+      "isCorrect": false,
+      "whyAttractive": "補助記憶がSRAM(キャッシュ用)は誤り。SRAMは高速小容量で、補助記憶の用途ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "キャッシュ=SRAM / 主記憶=DRAM / 補助記憶=SSD",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "キャッシュ=SRAM / 主記憶=HDD / 補助記憶=DRAM",
+      "isCorrect": false,
+      "whyAttractive": "主記憶がHDDは遅すぎる(=仮想記憶でOSが補うレベル)。DRAMは揮発性で補助記憶不向き。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "記憶階層(高速小容量→低速大容量): レジスタ→キャッシュ(SRAM)→主記憶(DRAM)→補助記憶(SSD/HDD)。SRAMは高速小容量でキャッシュ向き、DRAMは中速大容量で主記憶向き、SSDは低速大容量で補助記憶向き。",
+  "keyInsight": "SRAM(速い・小さい)=キャッシュ、DRAM(中間)=主記憶、SSD/HDD(遅い・大きい)=補助記憶。速度/容量のトレードオフで階層化。",
+  "topicSlugs": [
+    { "slug": "tech_computer_arch", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 26,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問60 ©2019 独立行政法人情報処理推進機構"
+}

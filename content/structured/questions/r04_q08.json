@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q08",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 8,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "ある業務システムの再構築に関して、複数のベンダにその新システムの実現イメージの提出を求めるRFIを予定している。その際、同時にベンダからの提出を求める情報として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "現行システムの概要",
+      "isCorrect": false,
+      "whyAttractive": "現行システム情報はユーザ側からベンダに提供する情報。RFIで求める情報ではない。",
+      "misconceptionSlug": "confuse_procurement_docs"
+    },
+    {
+      "label": "イ",
+      "body": "システム再構築の狙い",
+      "isCorrect": false,
+      "whyAttractive": "再構築の狙いは発注側が示すべき情報。ベンダから求めるものではない。",
+      "misconceptionSlug": "confuse_procurement_docs"
+    },
+    {
+      "label": "ウ",
+      "body": "新システムに求める要件",
+      "isCorrect": false,
+      "whyAttractive": "要件定義は発注側が決める。RFPで提示する。",
+      "misconceptionSlug": "confuse_procurement_docs"
+    },
+    {
+      "label": "エ",
+      "body": "適用可能な技術とその動向",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "RFI(Request For Information)=調達前の情報提供依頼。ベンダから業界動向・適用可能技術・実績等を収集し、検討の材料にする。RFPより前段階で要件が固まっていない時点。要件はRFP(Request For Proposal)で提示。",
+  "keyInsight": "RFI=情報収集(技術動向・実績)、RFP=提案依頼(要件提示)。RFIで要件は求めない。",
+  "topicSlugs": [
+    { "slug": "biz_procurement_documents", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_procurement_docs", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 4,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問8 ©2022 独立行政法人情報処理推進機構"
+}

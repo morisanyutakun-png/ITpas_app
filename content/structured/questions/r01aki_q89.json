@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q89",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 89,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "edge_case_miss",
+  "stem": "OSS (Open Source Software) に関する記述のうち、適切なものだけを全て挙げたものはどれか。\n\n① WebサーバとしてApache HTTP ServerはOSSである。\n② WebブラウザであるInternet ExplorerはOSSである。\n③ ワープロソフトや表計算ソフト、プレゼンテーションソフトなどを含むビジネス統合パッケージは開発されていない。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "①",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "①, ②",
+      "isCorrect": false,
+      "whyAttractive": "IEはマイクロソフトのプロプライエタリソフトでOSSではない。②は誤り。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "②, ③",
+      "isCorrect": false,
+      "whyAttractive": "両方誤り。IEは非OSS、統合パッケージはLibreOfficeやOpenOfficeなどOSSが複数存在。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "③",
+      "isCorrect": false,
+      "whyAttractive": "LibreOffice・Apache OpenOffice等のOSS統合オフィスがあり、③は誤り。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "①Apache HTTP ServerはApacheソフトウェア財団のOSS。②Internet Explorerはマイクロソフトの商用ソフトで非OSS。③LibreOffice等のOSS統合オフィスが存在する。よって①のみが正しい。",
+  "keyInsight": "代表的OSS: Apache/nginx(Web)、Linux(OS)、LibreOffice(オフィス)。一方、Windows・IE・Office365はプロプライエタリ。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 38,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問89 ©2019 独立行政法人情報処理推進機構"
+}

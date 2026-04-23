@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q21",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 21,
+  "majorCategory": "strategy",
+  "formatType": "case",
+  "trapType": "similar_term",
+  "stem": "ABC分析の事例として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "顧客の消費行動を、時代、年齢、世代の三つの観点から分析する。",
+      "isCorrect": false,
+      "whyAttractive": "コーホート分析(APC分析)の説明。3Cと混同されるが、ABC(重要度)とは別。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "イ",
+      "body": "自社の商品を、売上高の高い順に三つのグループに分類して分析する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "マーケティング環境を、顧客、競合、自社の三つの観点から分析する。",
+      "isCorrect": false,
+      "whyAttractive": "3C分析の説明。マクロ環境分析で、ABC(重要度による分類)ではない。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "エ",
+      "body": "リピート顧客を、最新購買日、購買頻度、購買金額の三つの観点から分析する。",
+      "isCorrect": false,
+      "whyAttractive": "RFM分析の説明。顧客の購買分析で、ABCとは別の手法。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    }
+  ],
+  "explanation": "ABC分析=パレートの法則(80:20)に基づき、対象(売上・在庫等)を重要度でA/B/C(上位/中位/下位)の3グループに分類する手法。ABC=A群に重点管理集中。3C(環境)・RFM(顧客)・コーホート(時代)とは別フレーム。",
+  "keyInsight": "ABC分析=『重要度順に3分類』。Aに集中、Bを標準管理、Cは省力化。",
+  "topicSlugs": [
+    { "slug": "biz_marketing_frameworks", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_marketing_framework", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 11,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問21 ©2021 独立行政法人情報処理推進機構"
+}

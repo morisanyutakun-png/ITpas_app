@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q63",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 63,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "scope_overgeneral",
+  "stem": "チェーンメールの特徴として、適切なものだけを全て挙げたものはどれか。\n\na グループ内の連絡や情報共有目的で利用される。\nb ネットワークやサーバに、無駄な負荷をかける。\nc 返信に対する返信を、お互いに何度も繰り返す。\nd 本文中に、多数への転送を煽る文言が記されている。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a, c",
+      "isCorrect": false,
+      "whyAttractive": "aは誤り。チェーンメールはグループ連絡目的ではなく、無目的な拡散。cは返信合戦の説明でチェーンメールではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a, d",
+      "isCorrect": false,
+      "whyAttractive": "dは正しいがaは誤り。チェーンメールは情報共有目的ではなく、無目的転送を煽る。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "b, c",
+      "isCorrect": false,
+      "whyAttractive": "bは正しいがcは誤り。返信合戦とチェーンメールは別現象。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "b, d",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "チェーンメール=本文中に『これを10人に転送せよ』等と転送を煽る文言があり、不特定多数に拡散するメール。ネットワーク・サーバに無駄な負荷をかける(b, d)。グループ連絡(a)や返信合戦(c)とは別現象。",
+  "keyInsight": "チェーンメール=『転送を煽る』『無駄な負荷』が特徴。転送の鎖(chain)が続く迷惑メール。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 27,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問63 ©2019 独立行政法人情報処理推進機構"
+}

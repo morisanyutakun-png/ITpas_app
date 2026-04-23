@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q37",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 37,
+  "majorCategory": "management",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "システムによる内部統制を目的として、幾つかの機能を実装した。次の処理は、どの機能の実現例として適切か。\n\nログイン画面を表示して利用者IDとパスワードを入力する。利用者IDとパスワードの組合せがあらかじめ登録されている内容と一致する場合は業務メニュー画面に遷移する。一致しない場合は遷移せずにエラーメッセージを表示する。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "システム障害の検知",
+      "isCorrect": false,
+      "whyAttractive": "ログイン認証は障害検知機能ではない。",
+      "misconceptionSlug": "confuse_authn_authz"
+    },
+    {
+      "label": "イ",
+      "body": "システムによるアクセス制御",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "利用者に対するアクセス権の付与",
+      "isCorrect": false,
+      "whyAttractive": "アクセス権の付与は管理者の設定作業。ログイン時の制御ではない。",
+      "misconceptionSlug": "confuse_authn_authz"
+    },
+    {
+      "label": "エ",
+      "body": "利用者のパスワード設定の妥当性の確認",
+      "isCorrect": false,
+      "whyAttractive": "パスワード強度チェック(登録時)の話。ログイン認証ではない。",
+      "misconceptionSlug": "confuse_authn_authz"
+    }
+  ],
+  "explanation": "ID/パスワードでログイン制御=正規利用者のみ業務画面へ通す仕組み=アクセス制御(認証+認可)。内部統制の基本機能の一つ。権限付与(認可設計)やパスワード妥当性確認は別機能。",
+  "keyInsight": "ログイン認証による画面遷移制御=アクセス制御。権限付与(設計)・強度確認(登録時)と区別。",
+  "topicSlugs": [
+    { "slug": "security_authn_authz", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_authn_authz", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 17,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問37 ©2022 独立行政法人情報処理推進機構"
+}

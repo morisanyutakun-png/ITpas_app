@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q80",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 80,
+  "majorCategory": "technology",
+  "formatType": "calculation",
+  "trapType": "edge_case_miss",
+  "stem": "パスワードの解読方法の一つとして、全ての文字の組合せを試みる総当たり攻撃がある。\"A\"から\"Z\"の26種類の文字を使用できるパスワードにおいて、文字数を4文字から6文字に増やすと、総当たり攻撃でパスワードを解読するための最大の試行回数は何倍になるか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "2",
+      "isCorrect": false,
+      "whyAttractive": "文字数差(6-4=2)をそのまま倍率と誤解。指数的増加のスケールを理解していない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "24",
+      "isCorrect": false,
+      "whyAttractive": "26×26 の近似で曖昧に計算。正確には 26² = 676。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "52",
+      "isCorrect": false,
+      "whyAttractive": "26×2 = 52 で文字種×文字差。指数と乗算を混同。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "676",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "試行回数=文字種^文字数。4文字=26⁴、6文字=26⁶。倍率=26⁶/26⁴=26²=676倍。文字数が1増えると試行は文字種分(26倍)に増え、指数的に増加する。",
+  "keyInsight": "総当たり攻撃の回数=文字種の文字数乗(指数増加)。文字数+2なら文字種²倍。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 34,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問80 ©2019 独立行政法人情報処理推進機構"
+}

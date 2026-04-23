@@ -1,0 +1,56 @@
+{
+  "externalKey": "r01aki_q76",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 76,
+  "majorCategory": "technology",
+  "formatType": "spreadsheet",
+  "trapType": "edge_case_miss",
+  "stem": "ある商品の月別の販売数を基に売上に関する計算を行う。セルB1に商品の単価が、セルB3〜B7に各月の商品の販売数が入力されている。セルC3に計算式 \"B$1*合計(B$3:B3)/個数(B$3:B3)\" を入力して、セルC4〜C7に複写したとき、セルC5に表示される値は幾らか。\n\n[表] A1=単価, B1=1000 / A3=4月, B3=10 / A4=5月, B4=8 / A5=6月, B5=0 / A6=7月, B6=4 / A7=8月, B7=5",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "6",
+      "isCorrect": false,
+      "whyAttractive": "単価B1の絶対参照を忘れて単価を含めない誤り。18/3=6。",
+      "misconceptionSlug": "wrong_spreadsheet_reference"
+    },
+    {
+      "label": "イ",
+      "body": "6,000",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "9,000",
+      "isCorrect": false,
+      "whyAttractive": "B5=0を個数にカウントしない誤り。18/2=9 → 9000。『個数』は空白セルのみ除外、0は数値としてカウントされる。",
+      "misconceptionSlug": "wrong_spreadsheet_reference"
+    },
+    {
+      "label": "エ",
+      "body": "18,000",
+      "isCorrect": false,
+      "whyAttractive": "個数で割るのを忘れた単純な掛け算 1000×18=18000。",
+      "misconceptionSlug": "wrong_spreadsheet_reference"
+    }
+  ],
+  "explanation": "C5の式(C3をC5へ複写): B$1*合計(B$3:B5)/個数(B$3:B5)。B$1=1000(絶対参照保持)、合計(10+8+0)=18、個数=3(B5=0も空白セルでなく数値0なのでカウント)。1000×18/3=6000。",
+  "keyInsight": "個数関数は『空白セル以外をカウント』。数値の0は空白ではないのでカウント対象。$の有無で相対/絶対参照を区別。",
+  "commonMistakeFlow": "B5=0を『空だから個数に入らない』と誤解して18/2=9と計算しがち。個数は空白セルだけ除外、0はカウントする。",
+  "topicSlugs": [
+    { "slug": "spreadsheet_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "wrong_spreadsheet_reference", "weight": 1 }
+  ],
+  "materialSlugs": [
+    { "slug": "spreadsheet_reference_quickref", "role": "primary" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 33,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問76 ©2019 独立行政法人情報処理推進機構"
+}

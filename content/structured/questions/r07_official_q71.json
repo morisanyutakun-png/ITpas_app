@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q71",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 71,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "order_swap",
+  "stem": "携帯電話で用いられる電波に関する次の記述中のa, bに入れる字句の適切な組合せはどれか。\n\n電波には、周波数が a ほど回り込みやすくなり障害物の裏にも届きやすいという性質がある。日本国内の携帯電話で使用される周波数のうち、700 b 帯〜900 b 帯の周波数帯域はこの性質をもつながりやすいことなどから、プラチナバンドと呼ばれている。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a=高い / b=GHz",
+      "isCorrect": false,
+      "whyAttractive": "高周波は直進性が強く回り込みにくい。GHz帯も単位が大きすぎ。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a=高い / b=MHz",
+      "isCorrect": false,
+      "whyAttractive": "aが誤り。回り込みやすいのは低周波。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "a=低い / b=GHz",
+      "isCorrect": false,
+      "whyAttractive": "aは正しいがGHz単位が誤り。700〜900の値はMHz帯。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "a=低い / b=MHz",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "電波の性質: 低周波ほど波長が長く、障害物を回り込みやすい(回折しやすい)。携帯電話のプラチナバンド=700〜900 MHz帯は『つながりやすい黄金帯』と呼ばれる。高周波(GHz帯)は直進性が強く広帯域通信に向くが障害物に弱い。",
+  "keyInsight": "電波=低周波(MHz)→回り込み、高周波(GHz)→直進。プラチナバンド=700〜900 MHz。",
+  "topicSlugs": [
+    { "slug": "network_protocols", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 33,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問71"
+}

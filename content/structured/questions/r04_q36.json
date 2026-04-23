@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q36",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 36,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "プロジェクトで作成するWBSに関する記述のうち、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "WBSではプロジェクトで実施すべき作業内容と成果物を定義するので、作業工数を見積もるときの根拠として使用できる。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "WBSには、プロジェクトのスコープ外の作業も検討して含める。",
+      "isCorrect": false,
+      "whyAttractive": "WBSはスコープ内の作業のみ。スコープ管理の基盤。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "全てのプロジェクトにおいて、WBSは成果物と作業内容を同じ階層まで詳細化する。",
+      "isCorrect": false,
+      "whyAttractive": "詳細化レベルは作業特性に応じて調整。一律ではない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "エ",
+      "body": "プロジェクトの担当者がスコープ内の類似作業を実施する場合、WBSにはそれらの作業を記載しなくてよい。",
+      "isCorrect": false,
+      "whyAttractive": "類似でもスコープ内の全作業を記載する(抜け防止)。",
+      "misconceptionSlug": "confuse_pm_terms"
+    }
+  ],
+  "explanation": "WBS(Work Breakdown Structure)=プロジェクトの作業と成果物を階層的に分解した構造図。スコープ定義・工数見積・スケジュール作成の基礎。スコープ内のみ記載、全作業を網羅、詳細化レベルは作業特性で調整。",
+  "keyInsight": "WBS=作業/成果物の階層分解。スコープ内を網羅し工数見積の根拠に。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_pm_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 17,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問36 ©2022 独立行政法人情報処理推進機構"
+}

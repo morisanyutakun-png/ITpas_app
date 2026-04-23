@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q77",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 77,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "abbrev_mix",
+  "stem": "ネットワークやホストを監視することによって、不正アクセスや不審な通信を発見し、報告する仕組みはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "DMZ",
+      "isCorrect": false,
+      "whyAttractive": "非武装地帯=ネット分離。監視・報告の仕組みではなくネットワーク構成。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "IDS",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "アンチパスバック",
+      "isCorrect": false,
+      "whyAttractive": "入退室管理の共連れ防止機能。物理セキュリティで、ネットワーク監視ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ボット",
+      "isCorrect": false,
+      "whyAttractive": "自動化ソフト/マルウェア。監視の仕組みではなく攻撃側。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "IDS (Intrusion Detection System) = 不正侵入検知システム。ネットワーク・ホストを監視し、不正アクセス・不審通信を発見して管理者に報告する。発見止まりで、自動遮断まで行うのはIPS。DMZ(ネット構成)・アンチパスバック(物理)・ボット(攻撃)とは別。",
+  "keyInsight": "IDS=Intrusion Detection System=『侵入検知システム』。発見と報告まで。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 37,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問77"
+}

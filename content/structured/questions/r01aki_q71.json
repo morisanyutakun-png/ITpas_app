@@ -1,0 +1,54 @@
+{
+  "externalKey": "r01aki_q71",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 71,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "複数のIoTデバイスとそれらを管理するIoTサーバで構成されるIoTシステムにおける、エッジコンピューティングに関する記述として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "IoTサーバ上のデータベースの複製を別のサーバにも置き、両者を常に同期させて運用する。",
+      "isCorrect": false,
+      "whyAttractive": "レプリケーションの説明。データ冗長化で、エッジ分散処理とは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "IoTデバイス群の近くにコンピュータを配置して、IoTサーバの負荷低減とIoTシステムのリアルタイム性向上に有効な処理を行わせる。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "IoTデバイスとIoTサーバ間の通信負荷の状況に応じて、ネットワークの構成を自動的に最適化する。",
+      "isCorrect": false,
+      "whyAttractive": "SDN(Software-Defined Networking)の説明。ネット構成の動的制御で、エッジ処理ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "IoTデバイスを少ない電力で稼働させて、一般的な電池で長期間の連続運用を行う。",
+      "isCorrect": false,
+      "whyAttractive": "省電力通信(LPWA等)やエネルギーハーベスティングの話。電源の話で処理分散ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "エッジコンピューティング=データ発生源(IoTデバイス)の『近く(エッジ)』にコンピューティング資源を配置し、クラウドサーバの負荷軽減とリアルタイム応答を両立する方式。レプリケーション・SDN・省電力とは別概念。",
+  "keyInsight": "エッジ=端(デバイス近傍)で処理。中央サーバ(クラウド)との役割分担で負荷低減+低遅延を実現。",
+  "topicSlugs": [
+    { "slug": "tech_iot_basics", "weight": 1 },
+    { "slug": "cloud_service_models", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_cloud_models", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 31,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問71 ©2019 独立行政法人情報処理推進機構"
+}

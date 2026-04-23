@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q100",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 100,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "edge_case_miss",
+  "stem": "電子メールにディジタル署名を付与して送信するとき、信頼できる認証局から発行された電子証明書を使用することに比べて、送信者が自分で作成した電子証明書を使用した場合の受信側のリスクとして、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "電子メールが正しい相手から送られてきたかどうかが確認できなくなる。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "電子メールが途中で盗み見られている危険性が高まる。",
+      "isCorrect": false,
+      "whyAttractive": "盗聴は『機密性』の問題で、署名の役割は『真正性』。署名方式と盗聴の難易度は無関係。",
+      "misconceptionSlug": "confuse_crypto_method"
+    },
+    {
+      "label": "ウ",
+      "body": "電子メールが途中で紛失する危険性が高まる。",
+      "isCorrect": false,
+      "whyAttractive": "メール配信の到達性と電子証明書の種類は無関係。",
+      "misconceptionSlug": "confuse_crypto_method"
+    },
+    {
+      "label": "エ",
+      "body": "電子メールに文字化けが途中で発生しやすくなる。",
+      "isCorrect": false,
+      "whyAttractive": "文字エンコーディングの問題。電子証明書の種類とは無関係。",
+      "misconceptionSlug": "confuse_crypto_method"
+    }
+  ],
+  "explanation": "認証局(CA)発行の電子証明書は『送信者が本物であること』を第三者保証する。自己署名証明書は自分で作ったもので信頼の根拠がなく、なりすましの可能性を排除できない=真正性が検証できない。暗号化強度自体は変わらないので盗聴・紛失・文字化けには影響しない。",
+  "keyInsight": "電子証明書の役割=『本人証明』。認証局の信頼が、証明書の信頼性の根拠。自己署名は信頼の起点がない。",
+  "topicSlugs": [
+    { "slug": "security_crypto", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_crypto_method", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 45,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問100 ©2020 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,55 @@
+{
+  "externalKey": "r07_official_q100",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 100,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "個人の認証に用いる要素を、知識、所有物及びバイオメトリクスの三つに分類したとき、所有物を要素として用いた認証の例はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "SMSを用いた認証",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "虹彩の特徴を用いた認証",
+      "isCorrect": false,
+      "whyAttractive": "虹彩=身体的特徴=バイオメトリクス要素。所有物ではない。",
+      "misconceptionSlug": "confuse_authn_authz"
+    },
+    {
+      "label": "ウ",
+      "body": "筆跡や筆圧、スピードなど、文字を書くときの特徴を用いた認証",
+      "isCorrect": false,
+      "whyAttractive": "筆跡=行動的特徴=バイオメトリクス(動的)要素。所有物ではない。",
+      "misconceptionSlug": "confuse_authn_authz"
+    },
+    {
+      "label": "エ",
+      "body": "本人が事前に設定した質問とそれに対する答えを用いた認証",
+      "isCorrect": false,
+      "whyAttractive": "秘密の質問=知識認証要素。所有物ではない。",
+      "misconceptionSlug": "confuse_authn_authz"
+    }
+  ],
+  "explanation": "認証3要素: 知識(パスワード・秘密の質問)、所有物(SMS=携帯電話所有・ICカード・トークン)、バイオメトリクス(指紋・虹彩・筆跡等)。SMSはスマホ/携帯という『持ち物』を持っている前提で届くので所有物認証。",
+  "keyInsight": "認証要素: 知識(What you know)・所有物(What you have)・生体(What you are)。SMS=持ち物(携帯)=所有物。",
+  "topicSlugs": [
+    { "slug": "security_authn_authz", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_authn_authz", "weight": 1 }
+  ],
+  "materialSlugs": [
+    { "slug": "authn_vs_authz_table", "role": "helper" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 47,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問100"
+}

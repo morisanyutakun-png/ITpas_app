@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q78",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 78,
+  "majorCategory": "technology",
+  "formatType": "network_basics",
+  "trapType": "edge_case_miss",
+  "stem": "通信プロトコルとしてTCP/IPを用いるVPNには、インターネットを使用するインターネットVPNや通信事業者の独自ネットワークを使用するIP-VPNなどがある。インターネットVPNではできないが、IP-VPNではできることはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "IP電話を用いた音声通話",
+      "isCorrect": false,
+      "whyAttractive": "両方可能。VPNの種類に関係なく、VoIPはIP経由で通話できる。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "帯域幅などの通信品質の保証",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "盗聴、改ざんの防止",
+      "isCorrect": false,
+      "whyAttractive": "どちらのVPNでも暗号化で実現できる。VPNの基本機能で、差別化要素ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "動画の配信",
+      "isCorrect": false,
+      "whyAttractive": "どちらでも可能。単にデータを流せるかの問題で、動画配信ができないVPNはない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "IP-VPN=通信事業者の独自ネットワークを使うため、品質管理・帯域確保(QoS)を事業者が保証できる。インターネットVPNはベストエフォート型の公衆ネットのため品質保証は困難。音声/暗号化/動画配信は両方で可能。",
+  "keyInsight": "IP-VPNの優位点=『通信品質の保証』(事業者管理網)。インターネットVPNは安価だが品質はベストエフォート。",
+  "topicSlugs": [
+    { "slug": "network_protocols", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 35,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問78 ©2020 独立行政法人情報処理推進機構"
+}

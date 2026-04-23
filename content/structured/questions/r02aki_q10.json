@@ -1,0 +1,54 @@
+{
+  "externalKey": "r02aki_q10",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 10,
+  "majorCategory": "strategy",
+  "formatType": "case",
+  "trapType": "scope_overgeneral",
+  "stem": "IoTに関する事例として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "インターネット上に自分のプロファイルを公開し、コミュニケーションの輪を広げる。",
+      "isCorrect": false,
+      "whyAttractive": "SNSの事例。インターネットは使うが、対象が『人間の情報発信』であって『モノのネットワーク接続』ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "インターネット上の店舗や通信販売のWebサイトにおいて、ある商品を検索すると、類似商品の広告が表示される。",
+      "isCorrect": false,
+      "whyAttractive": "レコメンド広告の事例。Web・AIの応用だが、物理的な『モノ』がネットに接続されていない。IoTの条件を満たさない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "学校などにおける授業や講義をあらかじめ録画し、インターネットで配信する。",
+      "isCorrect": false,
+      "whyAttractive": "e-ラーニング/動画配信。コンテンツ配信であって、モノ(機器)のセンサデータをネット経由で活用しているわけではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "発電設備の運転状況をインターネット経由で遠隔監視し、発電設備の性能管理、不具合の予兆検知及び補修対応に役立てる。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "IoTの本質は『モノ(物理デバイス/機器) × インターネット × データ活用』。発電設備の遠隔監視はまさに機器からセンサデータを送信し分析活用するIoT事例。SNS・広告・動画配信は『人間同士/情報の流通』で、対象がモノではない。",
+  "keyInsight": "IoTかどうかは『物理的なモノがネットにつながってデータを送っているか』で判定。人間・コンテンツ中心は IoT ではない。",
+  "commonMistakeFlow": "『インターネット』という言葉に反応してSNS・通販・動画配信を選びがち。IoTは必ず物理的デバイスが絡む、と覚えれば絞れる。",
+  "topicSlugs": [
+    { "slug": "tech_iot_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 6,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問10 ©2020 独立行政法人情報処理推進機構"
+}

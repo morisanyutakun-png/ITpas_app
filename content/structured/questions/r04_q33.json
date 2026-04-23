@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q33",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 33,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "IT機器やソフトウェア、情報などについて、利用者の身体の特性や能力の違いなどにかかわらず、様々な人が同様に操作、入手、利用できる状態又は度合いを表す用語として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "アクセシビリティ",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "スケーラビリティ",
+      "isCorrect": false,
+      "whyAttractive": "拡張性(利用規模増加への対応性)。障害有無による利用可否ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ダイバーシティ",
+      "isCorrect": false,
+      "whyAttractive": "多様性(人材や組織の属性の多様さ)。製品の利用可能性とは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "トレーサビリティ",
+      "isCorrect": false,
+      "whyAttractive": "追跡可能性(食品・製品の履歴追跡)。アクセス性とは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "アクセシビリティ=障害・年齢・環境等を問わず、誰もがアクセス・利用できる度合い。JIS X 8341等で規格化。ユーザビリティ(使いやすさ)の基盤。",
+  "keyInsight": "アクセシビリティ=誰でも使える度合い。スケーラビリティ=拡張性、ダイバーシティ=多様性。混同注意。",
+  "topicSlugs": [
+    { "slug": "ui_accessibility", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 15,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問33 ©2022 独立行政法人情報処理推進機構"
+}

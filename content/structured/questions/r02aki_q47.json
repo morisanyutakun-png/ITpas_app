@@ -1,0 +1,55 @@
+{
+  "externalKey": "r02aki_q47",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 47,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "システム障害が発生した際、インシデント管理を担当するサービスデスクの役割として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "既知の障害事象とその回避策の利用者への紹介",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "システム障害対応後の利用者への教育",
+      "isCorrect": false,
+      "whyAttractive": "利用者教育は別の役割(研修部門等)。インシデント管理の目的は『迅速な復旧』で、教育は範囲外。",
+      "misconceptionSlug": "confuse_incident_problem"
+    },
+    {
+      "label": "ウ",
+      "body": "障害が発生している業務の代行処理",
+      "isCorrect": false,
+      "whyAttractive": "業務代行はサービスデスクの役割ではない。サービスデスクは情報・窓口であって業務実行者ではない。",
+      "misconceptionSlug": "confuse_incident_problem"
+    },
+    {
+      "label": "エ",
+      "body": "障害の根本原因調査",
+      "isCorrect": false,
+      "whyAttractive": "根本原因調査は『問題管理』の役割。インシデント管理は原因追求より『迅速復旧』を優先し、根本対処は問題管理に引き継ぐ。",
+      "misconceptionSlug": "confuse_incident_problem"
+    }
+  ],
+  "explanation": "インシデント管理の目的は『サービスの迅速な復旧』。既知のインシデントであれば回避策を利用者に伝えて業務継続を優先する。根本原因の解明は『問題管理』で別プロセス。サービスデスクは一次窓口としてインシデント管理を担当。",
+  "keyInsight": "インシデント管理=迅速復旧。問題管理=根本原因分析。サービスデスクの役割は前者。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_incident_problem", "weight": 1 }
+  ],
+  "materialSlugs": [
+    { "slug": "itil_process_compare", "role": "primary" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 21,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問47 ©2020 独立行政法人情報処理推進機構"
+}

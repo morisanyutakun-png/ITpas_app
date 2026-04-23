@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q77",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 77,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "PDCAモデルに基づいてISMSを運用している組織において、C(Check)で実施するものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "業務手順書の作成",
+      "isCorrect": false,
+      "whyAttractive": "P(計画)段階の活動。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "ISMSに関する情報セキュリティ方針の策定",
+      "isCorrect": false,
+      "whyAttractive": "P(計画)段階の活動。方針策定は最上流。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ISMSの運用状況の内部監査の実施",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "発生した問題への対策の是正・改善",
+      "isCorrect": false,
+      "whyAttractive": "A(Act)段階の活動。是正=Act、確認=Check。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "PDCA: P(Plan)=方針・計画策定、D(Do)=運用実施、C(Check)=監査・評価(内部監査・有効性測定)、A(Act)=是正・改善。内部監査はCの代表的活動。",
+  "keyInsight": "PDCA: P=計画、D=実行、C=評価/監査、A=改善。『改善』はAであり、監査/確認はC。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 35,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問77 ©2021 独立行政法人情報処理推進機構"
+}

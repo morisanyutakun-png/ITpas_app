@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q96",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 96,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "edge_case_miss",
+  "stem": "OSS (Open Source Software) に関する次の記述のうち、適切なものだけを全て挙げたものはどれか。\n\na 個人だけではなく、企業や団体が開発したソフトウェアもある。\nb 著作権が放棄されている。\nc 入手したソフトウェアは、自由に再配布してもよい。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a, b",
+      "isCorrect": false,
+      "whyAttractive": "bは誤り。OSSは著作権を保持しつつライセンスで利用許可する仕組み。著作権放棄とは違う。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a, b, c",
+      "isCorrect": false,
+      "whyAttractive": "bを含む誤り。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "a, c",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "b, c",
+      "isCorrect": false,
+      "whyAttractive": "aを除くのは誤り。企業・団体開発のOSSは多い(Linux Foundation、Apache等)。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "OSSの原則: (a)開発者は個人・企業・団体など多様(Linux=コミュニティ、Apache=財団、Kubernetes=Google発)。(c)再配布の自由はOSSの定義要件。ただし(b)著作権は『放棄』ではなく『保持しつつライセンスで利用許可』(GPL、MIT等)。",
+  "keyInsight": "OSS=『著作権は保持、ライセンスで自由利用と再配布を許可』。放棄ではない(放棄=パブリックドメイン)。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 44,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問96"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q14",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 14,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "CADの説明として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "アナログ信号をディジタル信号に変換する回路のこと",
+      "isCorrect": false,
+      "whyAttractive": "A/Dコンバータの説明。信号変換ハードウェアで、設計支援とは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "建築物、工業製品などの設計にコンピュータを用いること",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "光を電気信号に変換する撮像素子のこと",
+      "isCorrect": false,
+      "whyAttractive": "CCD/CMOSセンサの説明。カメラの部品で、設計支援ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "文字、画像、音声などのデータを組み合わせて一つのコンテンツを作ること",
+      "isCorrect": false,
+      "whyAttractive": "マルチメディアオーサリングの説明。コンテンツ制作であって設計ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "CAD (Computer Aided Design) = コンピュータ支援設計。建築物・工業製品・機械部品等の設計図面をデジタル作成する。信号変換・撮像素子・コンテンツ作成とは別の用途。",
+  "keyInsight": "CAD = Computer Aided Design = 『設計支援』。D=Designを覚える。",
+  "topicSlugs": [
+    { "slug": "biz_enterprise_systems", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_enterprise_systems", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 7,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問14 ©2019 独立行政法人情報処理推進機構"
+}

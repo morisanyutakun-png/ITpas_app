@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q99",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 99,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "edge_case_miss",
+  "stem": "ワイルドカードに関する次の記述中のa, bに入れる字句の適切な組合せはどれか。\n\n任意の1文字を表す\"?\"と、長さゼロ以上の任意の文字列を表す\"*\"を使った文字列の検索について考える。a では、\"データ\"を含む全ての文字列が該当する。また、b では、\"データ\"で終わる全ての文字列が該当する。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a=?データ* / b=?データ",
+      "isCorrect": false,
+      "whyAttractive": "『?』は任意の『1文字』なので、前に文字が必ず1文字必要な条件になる。『データ』自体だけの文字列は該当しない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a=?データ* / b=*データ",
+      "isCorrect": false,
+      "whyAttractive": "bは正しい(*データ)。aが誤り。?を使うと前に必ず1文字必要で、『データ』自体を捕捉できない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "a=*データ / b=?データ",
+      "isCorrect": false,
+      "whyAttractive": "aが『データで終わる』になってしまい、含むにはならない。bは前に1文字必須で、データのみを捕らえられない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "a=*データ* / b=*データ",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "ワイルドカード検索: ? = 任意の1文字(必ず1文字)、* = 0文字以上の任意文字列(空文字列も可)。a『データを含む』=前後に何文字でも可=*データ*。b『データで終わる』=前に何文字でも可+最後データ=*データ。",
+  "keyInsight": "? = 必ず1文字、* = 0文字以上。『含む』=両端に*、『で終わる』=先頭に*、『で始まる』=末尾に*。",
+  "topicSlugs": [
+    { "slug": "tech_computer_arch", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 43,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問99 ©2019 独立行政法人情報処理推進機構"
+}

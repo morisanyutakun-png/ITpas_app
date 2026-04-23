@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q74",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 74,
+  "majorCategory": "technology",
+  "formatType": "pseudo_lang",
+  "trapType": "edge_case_miss",
+  "stem": "流れ図に示す処理の結果として、表示される k の値はどれか。ここで、変数 i は初期値が 1 で、i は 1 ずつ増加する。k の初期値は 0。ループの中で k ← k + i を実行する。i ≦ 5 の間繰り返す。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "15",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "10",
+      "isCorrect": false,
+      "whyAttractive": "1+2+3+4=10。i=5を含まない場合の誤計算。",
+      "misconceptionSlug": "wrong_pseudo_lang_flow"
+    },
+    {
+      "label": "ウ",
+      "body": "21",
+      "isCorrect": false,
+      "whyAttractive": "1+2+3+4+5+6=21。終了条件をi≦6と誤読。",
+      "misconceptionSlug": "wrong_pseudo_lang_flow"
+    },
+    {
+      "label": "エ",
+      "body": "9",
+      "isCorrect": false,
+      "whyAttractive": "2+3+4=9等の中間計算誤り。",
+      "misconceptionSlug": "wrong_pseudo_lang_flow"
+    }
+  ],
+  "explanation": "i=1〜5でk=k+iを繰り返し実行。k=0+1+2+3+4+5=15。等差数列の和=n(n+1)/2=5×6/2=15。",
+  "keyInsight": "ループ回数を手書きでトレース。条件i≦nは『n回目を含む』。",
+  "topicSlugs": [
+    { "slug": "algo_pseudo_lang", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "wrong_pseudo_lang_flow", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 34,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問74 ©2021 独立行政法人情報処理推進機構"
+}

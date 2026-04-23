@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q05",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 5,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "製造業における標準化の事例として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "作業負荷の均衡を図り、かつ、前工程から引き取る部品の種類と量を平準化した。",
+      "isCorrect": false,
+      "whyAttractive": "平準化はJIT/かんばん方式の考え方で、『負荷を均す』こと。標準化(=統一・規格化)とは別概念。『化』の語感で混同される。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "生産活動を合理化するために、製造に必要な部品や手順を統一した。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "生産管理プログラムの実行速度を向上させるために、最適なアルゴリズムを選択した。",
+      "isCorrect": false,
+      "whyAttractive": "最適化(optimization)の話で標準化ではない。『最適な〜を選択』が『標準化』と誤解されやすいが、標準化は『統一』。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "製品の種類の削減や作業内容の見直しを通じて、生産計画、生産工程、作業方法を簡素化した。",
+      "isCorrect": false,
+      "whyAttractive": "簡素化(simplification)の事例。種類削減→標準化の前提にはなり得るが、『簡素化』そのものは標準化と別概念。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "標準化(standardization)は部品・手順・仕様などを『統一する』こと。製造業では部品共通化・手順マニュアル化が代表例。平準化(load leveling)、最適化(optimization)、簡素化(simplification)とは別の3S/4M改善。",
+  "keyInsight": "標準化=統一化。平準化(均す)・最適化(最善)・簡素化(単純化)と、末尾の『〜化』で混同しないこと。",
+  "topicSlugs": [
+    { "slug": "biz_models", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 4,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問5 ©2020 独立行政法人情報処理推進機構"
+}

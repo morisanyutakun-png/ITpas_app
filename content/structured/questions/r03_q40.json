@@ -1,0 +1,55 @@
+{
+  "externalKey": "r03_q40",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 40,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "同一難易度の複数のプログラムから成るソフトウェアのテスト工程での品質管理において、各プログラムの単位ステップ数当たりのバグ数をグラフ化し、上限・下限の限界線を超えるものを異常なプログラムとして検出したい。作成する図として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "管理図",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "特性要因図",
+      "isCorrect": false,
+      "whyAttractive": "魚の骨図(フィッシュボーン)。原因分析の図で、上下限による異常検出ではない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "パレート図",
+      "isCorrect": false,
+      "whyAttractive": "重要度順グラフ。分類集計で、限界線による異常検出ではない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "エ",
+      "body": "レーダチャート",
+      "isCorrect": false,
+      "whyAttractive": "多変量をレーダー状に表現。複数項目比較で、限界線による異常検出ではない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    }
+  ],
+  "explanation": "管理図=工程の安定性を管理する図。データ点を時系列プロットし、上下の管理限界線を超える点を異常として検出。QC7つ道具の一つ。特性要因図(原因分析)・パレート図(重点化)・レーダチャート(複数比較)は別用途。",
+  "keyInsight": "管理図=『上下限界線で異常検出』。工程の安定性監視が目的。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_pm_terms", "weight": 1 }
+  ],
+  "materialSlugs": [
+    { "slug": "pm_chart_compare_table", "role": "helper" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 19,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問40 ©2021 独立行政法人情報処理推進機構"
+}

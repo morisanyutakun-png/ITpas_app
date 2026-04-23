@@ -1,0 +1,54 @@
+{
+  "externalKey": "r07_official_q2",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 2,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "従来の情報セキュリティマネジメントシステム規格を基礎に追加で制定されたもので、クラウドサービスに対応した情報セキュリティ管理体制を構築するためのガイドライン規格として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ISO 14001",
+      "isCorrect": false,
+      "whyAttractive": "環境マネジメントシステムの規格。情報セキュリティとは別分野。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "JIS Q 15001",
+      "isCorrect": false,
+      "whyAttractive": "個人情報保護マネジメントシステム(プライバシーマーク)の規格。ISMSより特化した領域で、クラウド向けではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ISO/IEC 27017",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "ISO 9001",
+      "isCorrect": false,
+      "whyAttractive": "品質マネジメントシステムの規格。情報セキュリティではなく品質管理。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ISO/IEC 27017=ISO/IEC 27002(ISMS実践規範)を基礎にクラウドサービス向けの追加管理策を規定したガイドライン。クラウド事業者・利用者双方が対象。27001(ISMS)、14001(環境)、9001(品質)、JIS Q 15001(個人情報)と区別。",
+  "keyInsight": "27001=ISMS基本、27017=クラウド向け追加、27018=クラウドでの個人情報保護。番号で守備範囲を区別。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 },
+    { "slug": "cloud_service_models", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 2,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問2"
+}

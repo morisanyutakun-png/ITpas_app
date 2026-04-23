@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q53",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 53,
+  "majorCategory": "management",
+  "formatType": "case",
+  "trapType": "scope_overgeneral",
+  "stem": "内部統制の基本的要素の一つである\"ITへの対応\"に関する記述として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ITを活用すると業務処理を迅速化でき、不注意によるミスを全て防止できる。",
+      "isCorrect": false,
+      "whyAttractive": "『全てのミス防止』は過大評価。IT導入してもヒューマンエラーは残る。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "既存のITの利用者の拡大や、使い方の変更などで組織目標を達成できるのであれば、新たなITシステムの導入やITシステムの更新を強いるものではない。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "全ての業務プロセスをITで自動化することによって、業務プロセスを大幅に修正することが容易になる。",
+      "isCorrect": false,
+      "whyAttractive": "ITで自動化すると修正は『しにくくなる』のが一般(システム変更に手間)。矛盾した記述。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "組織の業務がITに大きく依存すると、内部統制の目的を達成することが難しくなる。",
+      "isCorrect": false,
+      "whyAttractive": "IT依存=困難 という断定。実際はIT統制で目的達成を支援できる。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "内部統制の『ITへの対応』=IT環境への対応とITの利用及び統制を適切に行うこと。必ず新規導入・更新を強いるものではなく、目的達成できるなら既存ITの活用も正解。ITに過度な期待(全ミス防止等)や過度な不信(IT依存で困難)はどちらも誤り。",
+  "keyInsight": "ITへの対応=『目的達成に合わせた適切なIT利用』。新規導入絶対/全自動化絶対ではなく、既存活用も選択肢。",
+  "topicSlugs": [
+    { "slug": "biz_dx_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 24,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問53"
+}

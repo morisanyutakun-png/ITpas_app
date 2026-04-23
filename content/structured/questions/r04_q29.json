@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q29",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 29,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "マネーロンダリングの対策に関する記述として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "金融取引に当たり、口座開設時の取引目的や本人確認を徹底し、資金の出所が疑わしい取引かどうかを監視する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "紙幣の印刷に当たり、コピー機では再現困難な文字や線、傾けることによって絵が浮かび上がるホログラムなどの技術を用いて、複製を困難にする。",
+      "isCorrect": false,
+      "whyAttractive": "偽造防止策。マネロン(資金洗浄)対策とは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "税金の徴収に当たり、外国にある子会社の利益を本国の親会社に配当されたものとみなして、本国で課税する。",
+      "isCorrect": false,
+      "whyAttractive": "タックスヘイブン対策税制。マネロンとは別の税制。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "投資に当たり、安全性や収益性などの特徴が異なる複数の金融商品を組み合わせることによって、一つの事象によって損失が大きくなるリスクを抑える。",
+      "isCorrect": false,
+      "whyAttractive": "分散投資(ポートフォリオ)。マネロン対策ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "マネーロンダリング=犯罪収益を金融システムを通じて出所をわからなくする資金洗浄行為。対策=KYC(Know Your Customer:本人確認)+取引目的の確認+異常取引の監視/届出。犯罪収益移転防止法で義務付け。",
+  "keyInsight": "マネロン対策=本人確認(KYC)+取引監視+疑わしい取引の届出。偽造防止や分散投資とは別。",
+  "topicSlugs": [
+    { "slug": "biz_financial_metrics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 14,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問29 ©2022 独立行政法人情報処理推進機構"
+}

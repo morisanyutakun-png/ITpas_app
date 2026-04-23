@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q55",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 55,
+  "majorCategory": "management",
+  "formatType": "case",
+  "trapType": "edge_case_miss",
+  "stem": "システム開発プロジェクトの開始に当たり、人的資源に関する計画書を作成することにした。この計画において、要員を適切に配置し、より良いパフォーマンスを得るために考慮すべき事項として、適切なものだけを全て挙げたものはどれか。\n\na プロジェクトに必要なスキルが要員に不足している場合は、トレーニングを計画する。\nb プロジェクトに必要なスキルよりも、要員の確保を常に優先するように計画する。\nc 要員をフレキシブルに配置するために、要員の役割と責任は、プロジェクトの計画段階では明確にせず、プロジェクトの開始後に定める。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "a, b, c",
+      "isCorrect": false,
+      "whyAttractive": "bとcも誤り。bはスキル軽視で品質悪化、cは計画段階で役割責任を明確にしないと混乱する。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "a, c",
+      "isCorrect": false,
+      "whyAttractive": "cを含める誤り。役割責任の曖昧化はプロジェクト管理の基本原則に反する。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "エ",
+      "body": "c",
+      "isCorrect": false,
+      "whyAttractive": "aを除外し、cだけ選ぶ誤り。トレーニング計画は基本、役割責任曖昧化は逆効果。",
+      "misconceptionSlug": "confuse_pm_terms"
+    }
+  ],
+  "explanation": "人的資源計画: a(スキル不足はトレーニング計画)=適切、b(スキルよりも人数確保優先)=品質軽視で誤り、c(役割責任を計画段階で明確にしない)=管理の基本に反し誤り。計画段階で役割・責任は明確にし、スキル要件が最優先。",
+  "keyInsight": "人的資源計画=『必要スキル確認→トレーニング計画→役割責任明確化』。スキル軽視・役割曖昧はNG。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_pm_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 26,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問55"
+}

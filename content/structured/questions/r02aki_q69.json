@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q69",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 69,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "order_swap",
+  "stem": "ISMSの確立、実施、維持及び継続的改善における次の実施項目のうち、最初に行うものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "情報セキュリティリスクアセスメント",
+      "isCorrect": false,
+      "whyAttractive": "リスクの特定・分析・評価。確立段階の活動だが、その前に組織の状況・利害関係者把握が先。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "情報セキュリティリスク対応",
+      "isCorrect": false,
+      "whyAttractive": "アセスメント結果に対する具体的対応の決定。アセスメントの後に来る。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "内部監査",
+      "isCorrect": false,
+      "whyAttractive": "『Check』段階の活動。PDCAの後半で、運用実績を監査する工程。最初ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "利害関係者のニーズと期待の理解",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "ISMS(ISO/IEC 27001)の最初は『組織の状況の理解』と『利害関係者のニーズと期待の理解』。これを土台に適用範囲を決定し、リスクアセスメント→リスク対応→運用→監査→改善へと進む。",
+  "keyInsight": "ISMSは『組織の状況把握』から始まる。リスク分析の前に、誰が何を求めているかを先に理解する。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 31,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問69 ©2020 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q33",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 33,
+  "majorCategory": "strategy",
+  "formatType": "case",
+  "trapType": "scope_overgeneral",
+  "stem": "RPA (Robotic Process Automation) の事例として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "高度で非定型な判断だけを人間の代わりに自動で行うソフトウェアが、求人サイトにエントリーされたデータから採用候補者を選定する。",
+      "isCorrect": false,
+      "whyAttractive": "AIの用途。『非定型判断』はRPAの適用範囲外で、AI/機械学習の領域。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "人間の形をしたロボットが、銀行の窓口での接客など非定型な業務を自動で行う。",
+      "isCorrect": false,
+      "whyAttractive": "人型ロボット(ヒューマノイド)の用途。RPAはソフトウェアロボットで物理ロボットではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ルール化された定型的な操作を人間の代わりに自動で行うソフトウェアが、インターネットで受け付けた注文データを配送システムに転記する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "ロボットが、工場の製造現場で組立てなどの定型的な作業を人間の代わりに自動で行う。",
+      "isCorrect": false,
+      "whyAttractive": "産業用ロボット(FA)の用途。物理的作業で、PC上のソフトウェアロボットとは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "RPA=PC上のソフトウェアロボットが定型的な事務作業(データ転記・入力等)を自動化する技術。キーワード: (1)ソフトウェア(物理ロボ×)、(2)定型処理(非定型=AI)。注文データの転記が典型事例。",
+  "keyInsight": "RPA=『ソフト+定型作業』。AI(非定型)や産業用ロボ(物理)とは別。",
+  "topicSlugs": [
+    { "slug": "biz_dx_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 15,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問33 ©2019 独立行政法人情報処理推進機構"
+}

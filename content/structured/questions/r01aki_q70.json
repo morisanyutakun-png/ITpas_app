@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q70",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 70,
+  "majorCategory": "technology",
+  "formatType": "calculation",
+  "trapType": "edge_case_miss",
+  "stem": "大文字の英字から成る文字列の暗号化を考える。暗号化の手順は以下のとおり。この手順で暗号化した結果が\"EGE\"であるとき、元の文字列はどれか。\n\n[手順]\n1. 表から英字を文字番号に変換する。\n2. 1文字目に1、2文字目に2、n文字目にnを加算する。\n3. 26で割った余りを新たな文字番号とする。\n4. 表から文字番号を英字に変換する。\n\n[例] FAX → (5,0,23) → (6,2,26) → (6,2,0) → GCA\n[表] A=0, B=1, C=2, D=3, E=4, F=5, G=6, H=7, ... Z=25",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "BED",
+      "isCorrect": false,
+      "whyAttractive": "1文字目だけ戻して他を戻さない等の誤り。3文字全て復号ステップが必要。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "DEB",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "FIH",
+      "isCorrect": false,
+      "whyAttractive": "暗号化を逆方向にするのではなく、もう一度正方向にかけてしまった誤り。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "HIF",
+      "isCorrect": false,
+      "whyAttractive": "各文字に加算する値を間違えた誤計算。1,2,3ではなく逆順で2,4,6等にすると近い結果に。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "EGE=(4,6,4)。復号は加算の逆=減算: 1文字目-1=3(D), 2文字目-2=4(E), 3文字目-3=1(B)。→DEB。",
+  "keyInsight": "暗号化の逆操作=各文字の位置に応じた減算。1,2,3を位置ごとに引く。",
+  "topicSlugs": [
+    { "slug": "security_crypto", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_crypto_method", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 30,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問70 ©2019 独立行政法人情報処理推進機構"
+}

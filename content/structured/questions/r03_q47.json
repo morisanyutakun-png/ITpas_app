@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q47",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 47,
+  "majorCategory": "management",
+  "formatType": "case",
+  "trapType": "similar_term",
+  "stem": "システム開発プロジェクトにおいて、成果物として定義された画面・帳票の一覧と、実際に作成された画面・帳票の数を比較して、開発中に生じた差異とその理由を確認するプロジェクトマネジメントの活動はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "プロジェクト資源マネジメント",
+      "isCorrect": false,
+      "whyAttractive": "人員・物資の管理。画面/帳票の数比較とは別。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "イ",
+      "body": "プロジェクトスコープマネジメント",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "プロジェクト調達マネジメント",
+      "isCorrect": false,
+      "whyAttractive": "外部調達・委託の管理。成果物の数管理ではない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "エ",
+      "body": "プロジェクト品質マネジメント",
+      "isCorrect": false,
+      "whyAttractive": "品質(性能・バグ等)の管理。数の差異ではなく質の管理。『数の確認』はスコープ管理。",
+      "misconceptionSlug": "confuse_pm_terms"
+    }
+  ],
+  "explanation": "プロジェクトスコープマネジメント=成果物の範囲(What)を管理する領域。画面・帳票の数の差異確認は『予定された成果物範囲が守られているか』のスコープチェック。資源(人物)・調達(外注)・品質(質)とは別領域。",
+  "keyInsight": "スコープ=成果物の範囲。『数・一覧の差異確認』はスコープ管理の典型。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_pm_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 21,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問47 ©2021 独立行政法人情報処理推進機構"
+}

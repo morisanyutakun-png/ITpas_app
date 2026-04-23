@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q50",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 50,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "チャットボットの説明として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "質問に対して、ソフトウェアがリアルタイムで自動応答する仕組み",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "センサーを搭載した機器や制御装置が直接インターネットにつながり、お互いに情報をやり取りする仕組み",
+      "isCorrect": false,
+      "whyAttractive": "IoTの説明。機器間通信で、対話型応答ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "人間に代わって荷物を運ぶなどの作業を行う機械的な仕組み",
+      "isCorrect": false,
+      "whyAttractive": "産業用ロボット・物流ロボットの説明。物理的作業で、チャット応答ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ルール化された定型的な操作を人間の代わりにソフトウェアが自動で行う仕組み",
+      "isCorrect": false,
+      "whyAttractive": "RPAの説明。定型業務自動化で、対話型応答ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "チャットボット=利用者の質問(文字・音声)にリアルタイムで自動応答するソフトウェア。IoT(機器間通信)・物理ロボット・RPA(業務自動化)とは別の用途。『質問→自動応答』が特徴。",
+  "keyInsight": "チャットボット=『質問応答型の自動応答ソフト』。対話が本質。",
+  "topicSlugs": [
+    { "slug": "ai_generative_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 23,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問50"
+}

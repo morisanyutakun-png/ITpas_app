@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q36",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 36,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "納入されたソフトウェアの一連のテストの中で、開発を発注した利用者が主体となって実施するテストはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "受入れテスト",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "結合テスト",
+      "isCorrect": false,
+      "whyAttractive": "モジュール間の連携を確認するテスト。開発側が行う内部テストで、発注者が主体ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "システムテスト",
+      "isCorrect": false,
+      "whyAttractive": "システム全体の機能・性能確認。開発完了直前に開発側が実施するもので、発注者主体ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "単体テスト",
+      "isCorrect": false,
+      "whyAttractive": "個々のモジュール・関数の動作確認。開発の最初期段階でプログラマが実施する。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "テスト工程は下流から: 単体→結合→システム→受入れ。前3つは開発側(ベンダ)が実施するが、受入れテスト(Acceptance Test)は発注者が『要求通りか』を検証する最終テスト。",
+  "keyInsight": "受入れテストは発注者(利用者)が主役。ソフトウェアを『受け入れるかどうか』を決める関門。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 17,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問36 ©2020 独立行政法人情報処理推進機構"
+}

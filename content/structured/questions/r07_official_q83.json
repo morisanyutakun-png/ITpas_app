@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q83",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 83,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "order_swap",
+  "stem": "ISMSの運用にPDCAモデルを採用している組織において、サーバ監視に関する次の作業を実施する。各作業とPDCAモデルの各フェーズの組合せとして、適切なものはどれか。\n\n(1) サーバ監視の具体的な目的及び手順を定める。\n(2) サーバ監視の作業内容を第三者が客観的に評価する。\n(3) 定められている手順に従ってサーバを監視する。\n(4) 発見された問題点の是正処置として、サーバの監視方法を変更する。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "P=(1) / D=(2) / C=(3) / A=(4)",
+      "isCorrect": false,
+      "whyAttractive": "DとCを取り違え。『評価』=C、『実行』=D。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "P=(1) / D=(2) / C=(4) / A=(3)",
+      "isCorrect": false,
+      "whyAttractive": "D/C/A全て混乱。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "P=(1) / D=(3) / C=(2) / A=(4)",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "P=(1) / D=(3) / C=(4) / A=(2)",
+      "isCorrect": false,
+      "whyAttractive": "C/Aを取り違え。是正処置=A、評価=C。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "PDCA対応: P(計画)=目的・手順を定める(1)、D(実行)=手順に従い実施(3)、C(評価)=第三者評価(2)、A(改善)=是正処置として方法変更(4)。",
+  "keyInsight": "PDCA=計画/実行/評価/改善。各作業の動詞で判別: 定める=P、実施=D、評価=C、是正=A。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 39,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問83"
+}

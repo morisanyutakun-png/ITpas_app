@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q26",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 26,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "自社が保有していない技術やノウハウを、他社から短期間で補完するための手段として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "BPR",
+      "isCorrect": false,
+      "whyAttractive": "業務プロセス再構築。内部改革で他社連携ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "アライアンス",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "インキュベーション",
+      "isCorrect": false,
+      "whyAttractive": "スタートアップ支援。他社から技術を補完する手段ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ベンチマーキング",
+      "isCorrect": false,
+      "whyAttractive": "優良企業を参考にする手法。補完ではなく比較学習。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "アライアンス(alliance)=企業連携・提携。自社にない技術・ノウハウを他社と組むことで短期に獲得できる。資本提携・業務提携・ジョイントベンチャー等の形態。M&Aより柔軟。",
+  "keyInsight": "短期間で他社の能力を活用=アライアンス(提携)。内部改革(BPR)や支援(インキュベーション)と区別。",
+  "topicSlugs": [
+    { "slug": "biz_innovation_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 12,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問26 ©2022 独立行政法人情報処理推進機構"
+}

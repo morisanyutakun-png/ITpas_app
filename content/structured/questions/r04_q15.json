@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q15",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 15,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "業務プロセスを、例示するUMLのアクティビティ図を使ってモデリングしたとき、表現できるものはどれか。ここで、アクティビティ図は業務群A/業務群Bの縦分割と、X/Yの横分割によるスイムレーン形式で描かれている。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "業務で必要となるコスト",
+      "isCorrect": false,
+      "whyAttractive": "アクティビティ図はフロー/分担を表現。コストは表現対象外。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "業務で必要となる時間",
+      "isCorrect": false,
+      "whyAttractive": "時間は基本的に表現しない。処理時間はシーケンス図等で扱うが、アクティビティ図の主目的ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "業務で必要となる成果物の品質指標",
+      "isCorrect": false,
+      "whyAttractive": "品質指標は業務フロー図では扱わない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "業務で必要となる人の役割",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "アクティビティ図のスイムレーン(パーティション)=業務を担う組織/役割ごとに活動を分けて表現する機能。どの役割が何をするかを可視化。コスト・時間・品質指標は別の図で扱う。",
+  "keyInsight": "アクティビティ図+スイムレーン=『誰が何をするか』の役割分担を可視化する業務フロー図。",
+  "topicSlugs": [
+    { "slug": "biz_dx_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 8,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問15 ©2022 独立行政法人情報処理推進機構"
+}

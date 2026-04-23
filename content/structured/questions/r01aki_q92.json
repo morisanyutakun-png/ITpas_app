@@ -1,0 +1,54 @@
+{
+  "externalKey": "r01aki_q92",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 92,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "edge_case_miss",
+  "stem": "外部と通信するメールサーバをDMZに設置する理由として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "機密ファイルが添付された電子メールが、外部に送信されるのを防ぐため",
+      "isCorrect": false,
+      "whyAttractive": "情報漏えい対策(DLP等)の話。DMZ配置とは別の機能。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "社員が外部の取引先へ送信する際に電子メールの暗号化を行うため",
+      "isCorrect": false,
+      "whyAttractive": "S/MIMEなどの暗号化の話。DMZ配置の目的ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "メーリングリストのメンバのメールアドレスが外部に漏れないようにするため",
+      "isCorrect": false,
+      "whyAttractive": "Bccの使い方など運用ルールの話。DMZ配置の意図ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "メールサーバを踏み台にして、外部から社内ネットワークに侵入させないため",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "DMZ(非武装地帯)=外部ネットワークと内部ネットワークの中間の独立領域。外部公開サーバ(メール・Web)をここに配置することで、仮にサーバが侵害されても内部ネットワークへの横展開を防ぐ。『踏み台化防止』がDMZの核心的目的。",
+  "keyInsight": "DMZ=『外部公開サーバと内部ネットワークを分離する緩衝地帯』。侵害された場合の被害拡大を防ぐ。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 },
+    { "slug": "network_protocols", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 39,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問92 ©2019 独立行政法人情報処理推進機構"
+}

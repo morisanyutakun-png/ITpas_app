@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q66",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 66,
+  "majorCategory": "technology",
+  "formatType": "db_basics",
+  "trapType": "similar_term",
+  "stem": "関係データベースにおいて、主キーを設定する理由はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "算術演算の対象とならないことが明確になる。",
+      "isCorrect": false,
+      "whyAttractive": "データ型の話。主キーの役割ではない。",
+      "misconceptionSlug": "confuse_db_normalization"
+    },
+    {
+      "label": "イ",
+      "body": "主キーを設定した列が検索できるようになる。",
+      "isCorrect": false,
+      "whyAttractive": "主キーなしでも列検索は可能。主キーの役割は一意性制約(+NOT NULL)にある。",
+      "misconceptionSlug": "confuse_db_normalization"
+    },
+    {
+      "label": "ウ",
+      "body": "他の表からの参照を防止できるようになる。",
+      "isCorrect": false,
+      "whyAttractive": "逆。主キーは他表から『参照される』(外部キー)対象。防止ではなく参照の基盤。",
+      "misconceptionSlug": "confuse_db_normalization"
+    },
+    {
+      "label": "エ",
+      "body": "表中のレコードを一意に識別できるようになる。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "主キー=表の各行を一意に識別する列(または列の組合せ)。一意性(重複不可)とNOT NULL(必須)が制約。関係データベースの基本構造を支える。検索高速化は副次効果で、主役割ではない。",
+  "keyInsight": "主キー=『一意識別』。テーブルの各行を特定するための識別子。",
+  "topicSlugs": [
+    { "slug": "db_normalization", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_db_normalization", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 29,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問66 ©2019 独立行政法人情報処理推進機構"
+}

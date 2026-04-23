@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q66",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 66,
+  "majorCategory": "technology",
+  "formatType": "db_basics",
+  "trapType": "edge_case_miss",
+  "stem": "関係データベースで管理している次の\"ログイン記録\"表及び\"部署\"表において、ログイン結果が失敗となったことのある、又は、2022年4月10日09:00:00以前にログイン結果が成功となったことのある従業員が所属する部署名だけを全て挙げたものはどれか。\n\n[ログイン記録(抜粋)]\n08:50:42 10004 003 失敗 / 08:53:15 10004 003 成功 / 08:55:48 10002 002 成功 / 09:00:15 10001 001 成功 / 09:39:22 10005 003 失敗 / 10:00:02 10011 001 失敗 等\n\n[部署] 001=営業部, 002=システム部, 003=人事部",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "営業部, システム部",
+      "isCorrect": false,
+      "whyAttractive": "人事部(003)を除外している。失敗した10004と10005は003=人事部所属。",
+      "misconceptionSlug": "confuse_db_normalization"
+    },
+    {
+      "label": "イ",
+      "body": "営業部, システム部, 人事部",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "営業部, 人事部",
+      "isCorrect": false,
+      "whyAttractive": "システム部を除外。10002は09:00以前に成功しているのでシステム部も対象。",
+      "misconceptionSlug": "confuse_db_normalization"
+    },
+    {
+      "label": "エ",
+      "body": "システム部, 人事部",
+      "isCorrect": false,
+      "whyAttractive": "営業部を除外。10011が失敗しており、10011は001=営業部所属。",
+      "misconceptionSlug": "confuse_db_normalization"
+    }
+  ],
+  "explanation": "対象従業員: (失敗したことがある)10004→003人事、10005→003人事、10011→001営業、(09:00以前に成功)10004→003人事、10002→002システム、10001は09:00:15なので対象外(09:00以前ではない)。所属部署=営業(001)+システム(002)+人事(003)の3部署。",
+  "keyInsight": "OR条件(失敗あり または 09:00以前成功)を満たす従業員を抽出→所属部署をUNIONで集約。",
+  "topicSlugs": [
+    { "slug": "db_normalization", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_db_normalization", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 31,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問66"
+}

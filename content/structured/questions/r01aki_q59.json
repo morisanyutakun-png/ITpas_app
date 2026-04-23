@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q59",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 59,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "複数の取引記録をまとめたデータを順次作成するときに、そのデータに直前のデータのハッシュ値を埋め込むことによって、データを相互に関連付け、取引記録を矛盾なく改ざんすることを困難にすることで、データの信頼性を高める技術はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "LPWA",
+      "isCorrect": false,
+      "whyAttractive": "低消費電力広域無線通信。IoTデバイス向け通信技術で、ハッシュチェーンとは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "SDN",
+      "isCorrect": false,
+      "whyAttractive": "Software-Defined Networking=ネットワーク制御技術。データ改ざん防止技術ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "エッジコンピューティング",
+      "isCorrect": false,
+      "whyAttractive": "分散処理アーキテクチャ。データの処理場所の話で、改ざん防止の仕組みではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ブロックチェーン",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "ブロックチェーン=取引記録(ブロック)を鎖のように連ね、各ブロックに直前のハッシュ値を埋め込んで改ざんを極めて困難にする分散台帳技術。暗号資産(ビットコイン等)の基盤技術。『ハッシュ連鎖』『改ざん困難』がキーワード。",
+  "keyInsight": "『前のブロックのハッシュを埋め込む』『改ざん困難』=ブロックチェーン。分散台帳技術の代表。",
+  "topicSlugs": [
+    { "slug": "security_crypto", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 25,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問59 ©2019 独立行政法人情報処理推進機構"
+}

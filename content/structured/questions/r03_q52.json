@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q52",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 52,
+  "majorCategory": "management",
+  "formatType": "case",
+  "trapType": "scope_overgeneral",
+  "stem": "自社の情報システムに関して、BCP(事業継続計画)に基づいて、マネジメントの視点から行う活動a〜dのうち、適切なものだけを全て挙げたものはどれか。\n\na 重要データのバックアップを定期的に取得する。\nb 非常時用の発電機と燃料を確保する。\nc 複数の通信網を確保する。\nd 復旧手順の訓練を実施する。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a, b, c",
+      "isCorrect": false,
+      "whyAttractive": "dの復旧訓練も必須活動。実行可能性を確認する『リハーサル』はBCP実効性確保の中核。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a, b, c, d",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "a, d",
+      "isCorrect": false,
+      "whyAttractive": "b,cも重要。発電機(電源確保)・通信網冗長化は災害時事業継続の基本。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "b, c, d",
+      "isCorrect": false,
+      "whyAttractive": "aのバックアップを除外する誤り。データ保全はBCPの大前提。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "BCP(事業継続計画)の活動は多面的: a(データバックアップ)・b(発電機・燃料確保)・c(通信網冗長化)・d(訓練)全て重要。準備(予防)+実行可能性確保(訓練)が揃って初めてBCPとして機能する。",
+  "keyInsight": "BCP=準備+訓練の両輪。計画だけでなく『いざという時に動けるか』の検証も含む。",
+  "topicSlugs": [
+    { "slug": "biz_models", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 24,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問52 ©2021 独立行政法人情報処理推進機構"
+}

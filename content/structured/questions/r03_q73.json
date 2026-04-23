@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q73",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 73,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "ICカードの耐タンパ性を高める対策として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "故障に備えてあらかじめ予備のICカードを作成しておく。",
+      "isCorrect": false,
+      "whyAttractive": "冗長化の対策。耐タンパ性(内部解析への耐性)とは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "偽造防止のために、カード内の情報を読み出そうとすると内部回路が破壊されるようにする。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "データ通信の暗号化を行う。",
+      "isCorrect": false,
+      "whyAttractive": "通信路の保護。耐タンパ性はカード内部の情報保護。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "利用者にPINコードを設定させる。",
+      "isCorrect": false,
+      "whyAttractive": "認証機能。耐タンパ性とは別の対策。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "耐タンパ性(tamper resistance)=不正な解析・改ざんに耐える性質。ICカードでは『内部を物理的に開けると回路が破壊される』『異常電圧で消去される』等の仕掛けで内部情報の読み出しを防ぐ。",
+  "keyInsight": "耐タンパ性=内部解析/物理攻撃への耐性。通信暗号化やPIN認証とは別レイヤー。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 34,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問73 ©2021 独立行政法人情報処理推進機構"
+}

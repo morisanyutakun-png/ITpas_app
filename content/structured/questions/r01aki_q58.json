@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q58",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 58,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "edge_case_miss",
+  "stem": "PCの周辺装置を利用可能にするためのデバイスドライバに関する記述のうち、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "HDDを初期化してOSを再インストールした場合、OSとは別にインストールしていたデバイスドライバは再インストールする必要がある。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "新しいアプリケーションソフトウェアをインストールした場合、そのソフトウェアが使用する全てのデバイスドライバを再インストールする必要がある。",
+      "isCorrect": false,
+      "whyAttractive": "アプリ追加時にドライバ再インストールは不要(既にOSに入っている)。誤り。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "不要になったデバイスドライバであっても、一度インストールしたデバイスドライバを利用者が削除することはできない。",
+      "isCorrect": false,
+      "whyAttractive": "削除は可能(デバイスマネージャ等から)。削除不可という記述は誤り。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "プリンタのデバイスドライバを一つだけインストールしていれば、メーカや機種を問わず全てのプリンタが使用できる。",
+      "isCorrect": false,
+      "whyAttractive": "プリンタは機種別にドライバが必要。汎用ドライバでも限界があり、全機種対応は誤り。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "デバイスドライバはOSが周辺装置と通信するためのソフト。OS再インストールで消えるため、OSに標準付属でないドライバは再インストールが必要。アプリ追加時は不要、削除は可能、プリンタは機種別必要。",
+  "keyInsight": "デバイスドライバ=OSに属する。OS再インストール=標準外ドライバは消える→再インストール必要。",
+  "topicSlugs": [
+    { "slug": "tech_computer_arch", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 25,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問58 ©2019 独立行政法人情報処理推進機構"
+}

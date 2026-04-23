@@ -1,0 +1,54 @@
+{
+  "externalKey": "r02aki_q98",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 98,
+  "majorCategory": "technology",
+  "formatType": "network_basics",
+  "trapType": "abbrev_mix",
+  "stem": "IoTエリアネットワークの構築に当たり、①〜③の通信規格の使用を検討している。これらの通信規格を有線と無線に分類したとき、無線ネットワークに分類されるものだけを全て挙げたものはどれか。\n\n① BLE\n② PLC\n③ ZigBee",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "①, ②",
+      "isCorrect": false,
+      "whyAttractive": "PLC(電力線通信)を無線と誤解。PLCは電力線=銅線を使う有線通信。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "①, ②, ③",
+      "isCorrect": false,
+      "whyAttractive": "全部無線と誤解。PLCだけは有線(電力線)。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "①, ③",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "②, ③",
+      "isCorrect": false,
+      "whyAttractive": "BLEを有線と誤解。BLE(Bluetooth Low Energy)は無線通信の代表格。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "分類: ①BLE(Bluetooth Low Energy)=無線、②PLC(Power Line Communication)=電力線を使う有線通信、③ZigBee=IoT向け近距離無線。無線は①と③。",
+  "keyInsight": "Bluetooth/BLE/ZigBee=無線。PLC=電力線=有線。『Line/線』が含まれれば有線の可能性大。",
+  "topicSlugs": [
+    { "slug": "tech_iot_basics", "weight": 1 },
+    { "slug": "network_protocols", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 44,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問98 ©2020 独立行政法人情報処理推進機構"
+}

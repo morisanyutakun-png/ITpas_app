@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q19",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 19,
+  "majorCategory": "strategy",
+  "formatType": "case",
+  "trapType": "scope_overgeneral",
+  "stem": "ビッグデータの分析に関する記述として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "大量のデータから未知の状況を予測するためには、統計学的な分析手法に加え、機械学習を用いた分析も有効である。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "テキストデータ以外の、動画や画像、音声データは、分析の対象として扱うことができない。",
+      "isCorrect": false,
+      "whyAttractive": "ビッグデータは多様なデータ型(動画・画像・音声含む)を扱う。テキスト限定は誤り。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "電子掲示板のコメントやSNSのメッセージ、Webサイトの検索履歴など、人間の発信する情報だけが、人間の行動を分析することに用いられる。",
+      "isCorrect": false,
+      "whyAttractive": "人間以外(IoTセンサ・機器ログ・GPS等)のデータも行動分析に使える。限定は誤り。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ブログの書き込みのような、分析されることを前提としていないデータについては、分析の目的にかかわらず、対象から除外する。",
+      "isCorrect": false,
+      "whyAttractive": "ビッグデータの価値は『二次利用』にもある。分析前提でないデータも対象。",
+      "misconceptionSlug": "confuse_ai_terms"
+    }
+  ],
+  "explanation": "ビッグデータ=量・多様性・速度が特徴。テキスト/画像/音声/ログ等あらゆるデータ型、人間/機器由来問わず、分析前提の有無も問わず活用できる。統計学+機械学習の組合せで未知状況予測が可能。",
+  "keyInsight": "ビッグデータ=『多様・大量・高速』。制限を設けず柔軟な分析アプローチが有効。",
+  "topicSlugs": [
+    { "slug": "ai_generative_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_ai_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 10,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問19 ©2021 独立行政法人情報処理推進機構"
+}

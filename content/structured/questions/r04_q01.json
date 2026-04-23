@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q01",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 1,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "著作権及び特許権に関する記述a〜cのうち、適切なものだけを全て挙げたものはどれか。\n\na. 偶然二つの同じようなものが生み出された場合、発明に伴う特許権は両方に認められるが、著作権は一方の著作者にだけ認められる。\nb. ソフトウェアの場合、特許権も著作権もソースプログラムリストに対して認められる。\nc. 特許権の取得には出願と登録が必要だが、著作権は出願や登録の必要はない。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a, b",
+      "isCorrect": false,
+      "whyAttractive": "aは誤り:同じ発明で先願主義により特許は先に出願した方のみ認められる。両方には与えられない。bも曖昧。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "b",
+      "isCorrect": false,
+      "whyAttractive": "特許は『技術的思想』、著作権は『表現』。ソースリスト自体への特許は直接与えられない。誤り。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "b, c",
+      "isCorrect": false,
+      "whyAttractive": "bが誤り(特許は思想、著作権は表現)。cは正しい。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "c",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "特許=出願+審査+登録で発生する方式主義。著作権=創作と同時に自動発生する無方式主義(ベルヌ条約)。aは特許の先願主義に反する誤り。bはソースリストは著作権で保護されるが、特許は『技術思想』が対象で表現(ソース)そのものではない。",
+  "keyInsight": "特許=方式主義(出願/登録要)、著作権=無方式主義(自動発生)。特許は思想、著作権は表現を保護。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 2,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問1 ©2022 独立行政法人情報処理推進機構"
+}

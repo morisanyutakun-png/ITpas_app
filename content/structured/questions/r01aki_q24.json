@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q24",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 24,
+  "majorCategory": "strategy",
+  "formatType": "law_ip",
+  "trapType": "edge_case_miss",
+  "stem": "著作権法における著作権に関する記述のうち、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "偶然に内容が類似している二つの著作物が同時期に創られた場合、著作権は一方の著作者だけに認められる。",
+      "isCorrect": false,
+      "whyAttractive": "特許と混同。特許は『先願主義』で一方のみ、著作権は独自に作ればそれぞれに発生。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "著作権は、権利を取得するための申請や登録などの手続が不要である。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "著作権法の保護対象には、技術的思想も含まれる。",
+      "isCorrect": false,
+      "whyAttractive": "技術的思想は特許法の対象。著作権は『表現』を保護し、アイディア・思想は対象外。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "著作物は、創作性に加え新規性も兼ね備える必要がある。",
+      "isCorrect": false,
+      "whyAttractive": "新規性は特許の要件。著作権は『創作性』のみで、新規性は不要(世界初である必要はない)。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "著作権は『無方式主義』=創作した時点で自動的に発生し、申請・登録不要。要件は『創作性』のみで新規性不要。保護対象は『表現』であり、技術的思想(アイディア)は特許法が担当。偶然類似の著作物は両者に著作権が発生。",
+  "keyInsight": "著作権=無方式(自動発生)・創作性のみ・表現を保護。特許(方式主義・新規性要・思想を保護)と対比で覚える。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 10,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問24 ©2019 独立行政法人情報処理推進機構"
+}

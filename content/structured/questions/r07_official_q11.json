@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q11",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 11,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "スマートファクトリーにおいても使用されている、FMS (Flexible Manufacturing System) に関する記述として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "技術革新を効果的に自社の経営に取り入れることによって、企業の成長を図る。",
+      "isCorrect": false,
+      "whyAttractive": "MOT(技術経営)の説明。FMSは技術経営ではなく製造システム。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "生産工程の各段階で、原材料から完成製品までの資材の流れを適時・適量に管理する。",
+      "isCorrect": false,
+      "whyAttractive": "MRP(資材所要量計画)の説明。資材管理で、工作機械・ロボット統合ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "生産時に必要となる部品などを必要な分だけ供給することによって、生産リードタイムを短縮する。",
+      "isCorrect": false,
+      "whyAttractive": "かんばん方式・JIT(ジャストインタイム)の説明。在庫最小化で、FMSとは別概念。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "複数の工作機械や産業用ロボットなどを有機的に結合し、生産プロセス全体を統括的に制御・管理する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "FMS (Flexible Manufacturing System)=柔軟な生産システム。複数の工作機械・ロボット・搬送装置をコンピュータで有機的に結合し、多品種少量生産にも対応できる製造ラインを構築する。MOT(経営)・MRP(資材)・JIT(在庫)とは別概念。",
+  "keyInsight": "FMS=『工作機械・ロボットを統合制御する製造システム』。Flexibleは多品種少量対応の意。",
+  "topicSlugs": [
+    { "slug": "biz_enterprise_systems", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_enterprise_systems", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 6,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問11"
+}

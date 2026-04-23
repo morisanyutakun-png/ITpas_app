@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q45",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 45,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "ITガバナンスの説明として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "企業が競争優位性構築を目的に、IT戦略の策定・実行をコントロールし、あるべき方向へ導く組織能力のこと",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "事業のニーズを満たす良質のITサービスを実施すること",
+      "isCorrect": false,
+      "whyAttractive": "ITサービスマネジメント(ITIL)の定義。運用フェーズの話で、戦略策定・実行のガバナンスとは異なる。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "情報システムにまつわるリスクに対するコントロールが、適切に整備、運用されていることを第三者が評価すること",
+      "isCorrect": false,
+      "whyAttractive": "システム監査の定義。ガバナンスの一部を支える評価活動で、ガバナンスそのものではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "情報セキュリティを確保、維持するために、技術的、物理的、人的、組織的な視点からの対策を、経営層を中心とした体制で組織的に行うこと",
+      "isCorrect": false,
+      "whyAttractive": "情報セキュリティガバナンス(ISMS)の定義。セキュリティ領域に限定した話で、IT全体のガバナンスではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ITガバナンス=経営層がIT戦略をあるべき方向にコントロール・評価する組織能力。ITIL(運用)、システム監査(評価)、ISMS(セキュリティ)はそれぞれ領域限定で、ガバナンスはIT全体の方向付けを担う上位概念。",
+  "keyInsight": "ITガバナンス=『経営層によるIT戦略の方向付け』。運用・監査・セキュリティはガバナンス配下の実行領域。",
+  "topicSlugs": [
+    { "slug": "biz_dx_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 21,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問45 ©2020 独立行政法人情報処理推進機構"
+}

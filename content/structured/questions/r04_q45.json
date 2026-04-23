@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q45",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 45,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "ブラックボックステストに関する記述として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "プログラムの全ての分岐についてテストする。",
+      "isCorrect": false,
+      "whyAttractive": "分岐網羅はホワイトボックステスト(内部構造テスト)。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "プログラムの全ての命令についてテストする。",
+      "isCorrect": false,
+      "whyAttractive": "命令網羅はホワイトボックステスト。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "プログラムの内部構造に基づいてテストする。",
+      "isCorrect": false,
+      "whyAttractive": "ホワイトボックスの定義。ブラックボックスは逆で内部を見ない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "プログラムの入力と出力に着目してテストする。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "ブラックボックステスト=内部を見ず、仕様(入力→出力の関係)だけに基づいて検証するテスト。同値分割・境界値分析等が技法。ホワイトボックス(内部構造)と対比される。",
+  "keyInsight": "ブラックボックス=仕様(入出力)に着目、ホワイトボックス=内部構造に着目。",
+  "topicSlugs": [
+    { "slug": "biz_validation_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 21,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問45 ©2022 独立行政法人情報処理推進機構"
+}

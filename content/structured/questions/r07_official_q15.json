@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q15",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 15,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "事業運営における意思決定の迅速化、組織の独立採算の推進を目的とし、一つの企業の中に事業領域ごとに独立した組織を設置する組織形態はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "カンパニー制組織",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "機能別組織",
+      "isCorrect": false,
+      "whyAttractive": "営業・製造・経理等の機能別に分けた組織。事業領域別の独立採算ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "プロジェクト組織",
+      "isCorrect": false,
+      "whyAttractive": "特定プロジェクト遂行のための一時的組織。恒常的な事業組織ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "マトリックス組織",
+      "isCorrect": false,
+      "whyAttractive": "機能別と事業別を格子状に重ねた組織。複数指揮命令系統があり、独立採算の単一組織ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "カンパニー制組織=事業領域ごとに『社内会社』として独立運営する組織形態。各カンパニーが自己の損益に責任を持ち、意思決定の迅速化と独立採算を実現する。機能別(縦割り)・プロジェクト(一時的)・マトリックス(格子)とは別。",
+  "keyInsight": "カンパニー制=社内に独立会社を作る形。事業ごとの責任明確化と意思決定迅速化が狙い。",
+  "topicSlugs": [
+    { "slug": "biz_models", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 7,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問15"
+}

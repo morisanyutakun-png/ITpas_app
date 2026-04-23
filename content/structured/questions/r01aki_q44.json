@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q44",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 44,
+  "majorCategory": "management",
+  "formatType": "case",
+  "trapType": "edge_case_miss",
+  "stem": "業務処理時間の短縮を目的として、運用中の業務システムの処理能力の改善を図った。この改善が有効であることを評価するためにシステム監査を実施するとき、システム監査人が運用部門に要求する情報として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "稼働統計資料",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "システム運用体制",
+      "isCorrect": false,
+      "whyAttractive": "体制情報は組織構造の話。処理時間の改善効果を定量的に示す証拠にならない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "システム運用マニュアル",
+      "isCorrect": false,
+      "whyAttractive": "運用手順書。作業手順であって実績データではない。効果評価の証拠にならない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ユーザマニュアル",
+      "isCorrect": false,
+      "whyAttractive": "利用者向け手順書。処理時間の改善効果を示すデータではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "『処理時間短縮が有効か』を評価するには実績値が必要。稼働統計資料(処理時間・CPU使用率・ログ等の実績データ)が改善効果の定量的証拠。体制・マニュアル類は手順情報で効果評価の直接証拠にはならない。",
+  "keyInsight": "改善効果の監査には『定量的実績データ(稼働統計)』が必要。手順書・体制図は間接情報。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 19,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問44 ©2019 独立行政法人情報処理推進機構"
+}

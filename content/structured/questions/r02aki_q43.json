@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q43",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 43,
+  "majorCategory": "management",
+  "formatType": "calculation",
+  "trapType": "edge_case_miss",
+  "stem": "あるコールセンタでは、顧客からの電話による問合せに対応するオペレータを支援するシステムとして、顧客とオペレータの会話の音声を認識し、顧客の問合せに対する回答の候補をオペレータのPCの画面に表示するAIを導入した。1日の対応件数は1,000件であり、問合せ内容によって二つのグループA、Bに分けた。AI導入前後の各グループの対応件数、対応時間が表のとおりであるとき、AI導入後に、1日分の1,000件に対応する時間は何%短縮できたか。\n\nAI導入前: A 500件(全体の80%)、B 500件(全体の20%)\nAI導入後: A 500件(AI導入前と比べて30%短縮)、B 500件(AI導入前と同じ時間)",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "15",
+      "isCorrect": false,
+      "whyAttractive": "『Aの時間が30%短縮』の30%を半分にしたと勘違いしがち。重みづけ(Aが全体の80%)を無視すると誤る。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "16",
+      "isCorrect": false,
+      "whyAttractive": "30%×0.8×半端な係数で出た中間値。計算過程で0.2を掛け忘れると近い値になる。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "20",
+      "isCorrect": false,
+      "whyAttractive": "Aの80%×25%などの誤計算。全体に占めるAの割合と短縮率の積を取り違えると20%になりうる。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "24",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "全体時間をTとすると、導入前: A=0.8T, B=0.2T。導入後: A=0.8T×0.7=0.56T、B=0.2T(不変)、合計=0.76T。短縮率=1−0.76=0.24=24%。『大きな割合(80%)を占めるAが30%短縮』→全体で0.8×0.3=0.24=24%短縮、と一瞬で求まる。",
+  "keyInsight": "『全体比×短縮率』で短縮量が出る。Aが80%×30%短縮=全体で24%短縮。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 20,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問43 ©2020 独立行政法人情報処理推進機構"
+}

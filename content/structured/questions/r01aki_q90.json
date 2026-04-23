@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q90",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 90,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "交通機関、店頭、公共施設などの場所で、ネットワークに接続したディスプレイなどの電子的な表示機器を使って情報を発信するシステムはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "cookie",
+      "isCorrect": false,
+      "whyAttractive": "Webブラウザに保存する小さなデータ。表示機器のシステムではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "RSS",
+      "isCorrect": false,
+      "whyAttractive": "Webサイト更新情報配信のフォーマット。ディスプレイ表示とは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ディジタルサイネージ",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "ディジタルデバイド",
+      "isCorrect": false,
+      "whyAttractive": "ITを使える層と使えない層の格差を示す社会問題の用語。表示機器システムではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ディジタルサイネージ=電子看板。ネット接続したディスプレイ等で情報配信するシステム。交通機関・店頭・公共施設で広告や案内を表示する。cookie・RSS・ディジタルデバイド(社会課題)とは別領域。",
+  "keyInsight": "サイネージ=看板。ディジタルサイネージ=電子看板。『ディスプレイで情報発信』の用途。",
+  "topicSlugs": [
+    { "slug": "biz_enterprise_systems", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 38,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問90 ©2019 独立行政法人情報処理推進機構"
+}

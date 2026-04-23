@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q17",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 17,
+  "majorCategory": "strategy",
+  "formatType": "law_ip",
+  "trapType": "edge_case_miss",
+  "stem": "プロバイダが提供したサービスにおいて発生した事例a〜cのうち、プロバイダ責任制限法によって、プロバイダの対応責任の対象となり得るものだけを全て挙げたものはどれか。\n\na 氏名などの個人情報が電子掲示板に掲載されて、個人の権利が侵害された。\nb 受信した電子メールの添付ファイルによってマルウェアに感染させられた。\nc 無断で利用者IDとパスワードを使われて、ショッピングサイトにアクセスされた。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "a, b, c",
+      "isCorrect": false,
+      "whyAttractive": "全て含む誤り。bはウイルス対策、cは不正アクセスでプロバイダ責任制限法の対象外。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "a, c",
+      "isCorrect": false,
+      "whyAttractive": "cは不正アクセス禁止法の領域。プロバイダ責任制限法は『情報発信による権利侵害』に限定。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "c",
+      "isCorrect": false,
+      "whyAttractive": "cは不正アクセス禁止法の対象。aこそがプロバイダ責任制限法の典型事例。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "プロバイダ責任制限法=インターネットでの情報流通による他人の権利侵害(名誉毀損・プライバシー侵害等)について、プロバイダの責任の範囲・発信者情報開示請求を定めた法律。a(電子掲示板での個人情報掲載→権利侵害)が典型対象。b(マルウェア)・c(不正アクセス)は別の法律の対象。",
+  "keyInsight": "プロバイダ責任制限法=『ネット上の情報発信による権利侵害』を扱う。マルウェア(別)・不正アクセス(別)とは区別。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 9,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問17 ©2021 独立行政法人情報処理推進機構"
+}

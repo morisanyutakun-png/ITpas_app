@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q14",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 14,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "市販のソフトウェアパッケージなどにおけるライセンス契約の一つであるシュリンクラップ契約に関する記述として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ソフトウェアパッケージの包装を開封してしまうと、使用許諾条件を理解していなかったとしても、契約は成立する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "ソフトウェアパッケージの包装を開封しても、一定期間内であれば、契約を無効にできる。",
+      "isCorrect": false,
+      "whyAttractive": "クーリングオフ制度の説明。シュリンクラップでは開封=契約成立。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ソフトウェアパッケージの包装を開封しても、購入から一定期間ソフトウェアの利用を開始しなければ、契約は無効になる。",
+      "isCorrect": false,
+      "whyAttractive": "利用開始に関係なく、開封時点で契約成立。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ソフトウェアパッケージの包装を開封しなくても、購入から一定期間が経過すると、契約は成立する。",
+      "isCorrect": false,
+      "whyAttractive": "開封しない=契約不成立。開封が契約成立の条件。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "シュリンクラップ契約=パッケージの透明フィルム(shrink wrap)を破った時点で、書面の使用許諾条件に同意したとみなす契約方式。市販ソフトで採用。知らなかったという抗弁は通らない。",
+  "keyInsight": "シュリンクラップ=包装開封=契約成立。使用許諾の簡便な同意方式。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 7,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問14 ©2022 独立行政法人情報処理推進機構"
+}

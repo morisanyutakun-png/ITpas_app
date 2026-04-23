@@ -1,0 +1,54 @@
+{
+  "externalKey": "r07_official_q14",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 14,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "事業、経営情報に知財情報を組み込んで分析し、現状の俯瞰や将来展望などの分析結果を事業責任者、経営者と共有し、事業戦略又は経営戦略に反映させることを表す用語として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "CVC (Corporate Venture Capital)",
+      "isCorrect": false,
+      "whyAttractive": "事業会社によるベンチャー投資活動。知財情報の戦略活用ではなく投資活動。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "IPランドスケープ (Intellectual Property Landscape)",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "MOT (Management of Technology)",
+      "isCorrect": false,
+      "whyAttractive": "技術経営。研究開発マネジメントで、知財の景観(Landscape)分析に特化してはいない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "SWOT分析",
+      "isCorrect": false,
+      "whyAttractive": "Strength/Weakness/Opportunity/Threatの4要素分析。知財特化ではない。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    }
+  ],
+  "explanation": "IPランドスケープ=知財情報(特許・商標・論文等)を事業・経営情報と統合分析し、戦略立案に反映する活動。Intellectual Property(知財)+Landscape(景観)=知財の全体像を俯瞰。CVC(投資)・MOT(技術経営)・SWOT(環境分析)とは別概念。",
+  "keyInsight": "IPランドスケープ=『知財の景観を経営に活用』。IP=知財、Landscape=俯瞰図。",
+  "topicSlugs": [
+    { "slug": "biz_marketing_frameworks", "weight": 1 },
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_marketing_framework", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 7,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問14"
+}

@@ -1,0 +1,54 @@
+{
+  "externalKey": "r02aki_q25",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 25,
+  "majorCategory": "strategy",
+  "formatType": "law_ip",
+  "trapType": "scope_overgeneral",
+  "stem": "サイバーセキュリティ基本法は、サイバーセキュリティに関する施策に関し、基本理念を定め、国や地方公共団体の責務などを定めた法律である。記述a〜dのうち、この法律が国の基本的施策として定めているものだけを全て挙げたものはどれか。\n\na 国の行政機関等におけるサイバーセキュリティの確保\nb サイバーセキュリティ関連産業の振興及び国際競争力の強化\nc サイバーセキュリティ関連犯罪の取締り及び被害の拡大の防止\nd サイバーセキュリティに係る人材の確保",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a",
+      "isCorrect": false,
+      "whyAttractive": "行政機関のセキュリティ確保だけを基本法の範疇と誤解。だが人材確保・産業振興・犯罪対策まで含む広範な施策が定められている。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a, b",
+      "isCorrect": false,
+      "whyAttractive": "a,bは含まれるが、c(犯罪取締り)とd(人材確保)も基本的施策に含まれる。取捨を絞りすぎ。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "a, b, c",
+      "isCorrect": false,
+      "whyAttractive": "人材(d)を別法の所管と誤解しがち。だがサイバーセキュリティ基本法には『人材の確保』も明記されている。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "a, b, c, d",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "サイバーセキュリティ基本法は包括的で、a(行政機関の確保)b(関連産業振興)c(犯罪取締り)d(人材確保)の全てを国の基本的施策として規定している。迷ったら『全部入り』が正解のことが多い基本法系の問題。",
+  "keyInsight": "基本法は理念を広く定めるため、範囲系の問題は『全て』が正解になりやすい。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 },
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 12,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問25 ©2020 独立行政法人情報処理推進機構"
+}

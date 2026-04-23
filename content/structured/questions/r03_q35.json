@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q35",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 35,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "ある製造業では、後工程から前工程への生産指示や、前工程から後工程への部品を引き渡す際の納品書として、部品の品番などを記録した電子式タグを用いる生産方式を採用している。サプライチェーンや内製におけるジャストインタイム生産方式の一つであるこのような生産方式として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "かんばん方式",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "クラフト生産方式",
+      "isCorrect": false,
+      "whyAttractive": "手工芸的な少量個別生産。大量生産のJITとは対極。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "セル生産方式",
+      "isCorrect": false,
+      "whyAttractive": "小グループ(セル)で工程を完結する生産方式。JITとは別の組織化方式。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "見込み生産方式",
+      "isCorrect": false,
+      "whyAttractive": "需要予測に基づく先行生産。JITの『必要な時に必要なだけ』とは逆の発想。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "かんばん方式=トヨタ生産方式の中核。後工程→前工程へ『かんばん』(現在は電子タグ)で生産指示を出し、必要な時に必要な量だけ作るJITを実現。クラフト(少量手作り)・セル(小組織単位)・見込み(需要予測)とは別方式。",
+  "keyInsight": "かんばん方式=『後工程からの指示で必要分だけ作る』。トヨタ生産方式・JITの実現手段。",
+  "topicSlugs": [
+    { "slug": "biz_enterprise_systems", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 16,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問35 ©2021 独立行政法人情報処理推進機構"
+}

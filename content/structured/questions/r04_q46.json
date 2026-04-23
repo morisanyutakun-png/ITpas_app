@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q46",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 46,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "a〜dのうち、ファシリティマネジメントに関する実施事項として、適切なものだけを全て挙げたものはどれか。\n\na. コンピュータを設置した建物への入退館の管理\nb. 社内のPCへのマルウェア対策ソフトの導入と更新管理\nc. 情報システムを構成するソフトウェアのライセンス管理\nd. 停電時のデータ消失防止のための無停電電源装置の設置",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a, c",
+      "isCorrect": false,
+      "whyAttractive": "cはソフト資産管理でファシリティ(施設)管理ではない。dが必須。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a, d",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "b, d",
+      "isCorrect": false,
+      "whyAttractive": "bはセキュリティ対策ソフトの管理で施設管理ではない。aが建物関連。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "c, d",
+      "isCorrect": false,
+      "whyAttractive": "cはソフトライセンスで施設管理ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ファシリティマネジメント=建物/設備/電源等の施設関連の総合管理。a=建物入退館管理、d=UPS設置=設備面の管理で該当。b=セキュリティ管理、c=ソフト資産管理で別領域。",
+  "keyInsight": "ファシリティ=施設/建物/電源。セキュリティ対策やソフト管理は別カテゴリ。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 21,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問46 ©2022 独立行政法人情報処理推進機構"
+}

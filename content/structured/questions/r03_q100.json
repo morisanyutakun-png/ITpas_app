@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q100",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 100,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "システムの経済性の評価において、TCOの概念が重要視されるようになった理由として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "システムの総コストにおいて、運用費に比べて初期費用の割合が増大した。",
+      "isCorrect": false,
+      "whyAttractive": "逆。運用費(教育・保守・サポート等)が増大したからTCOが重要になった。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "システムの総コストにおいて、初期費用に比べて運用費の割合が増大した。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "システムの総コストにおいて、初期費用に占めるソフトウェア費用の割合が増大した。",
+      "isCorrect": false,
+      "whyAttractive": "初期費用の内訳の話。TCOは初期vs運用の総合の話。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "システムの総コストにおいて、初期費用に占めるハードウェア費用の割合が増大した。",
+      "isCorrect": false,
+      "whyAttractive": "ハードウェアは安くなり比重が下がった。初期費用内訳の話でもあり別トピック。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "TCO(Total Cost of Ownership)=システムの初期費用+運用費(教育・保守・ユーザサポート・電気代等)の総コスト。運用費が総コストに占める割合が増大したため、初期費用だけでなく総合評価が重要視されるようになった。",
+  "keyInsight": "TCO=初期+運用の総コスト。運用費の肥大化でTCO重視に。購入時の安さだけ見るのは失敗。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 45,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問100 ©2021 独立行政法人情報処理推進機構"
+}

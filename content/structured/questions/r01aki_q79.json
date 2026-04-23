@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q79",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 79,
+  "majorCategory": "technology",
+  "formatType": "network_basics",
+  "trapType": "edge_case_miss",
+  "stem": "Aさんが、Pさん、Qさん及びRさんの3人に電子メールを送信した。Toの欄にはPさんのメールアドレスを、Ccの欄にはQさんのメールアドレスを、Bccの欄にはRさんのメールアドレスをそれぞれ指定した。電子メールを受け取ったPさん、Qさん及びRさんのうち、同じ内容の電子メールがPさん、Qさん及びRさんの3人に送られていることを知ることができる人だけを全て挙げたものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "Pさん, Qさん, Rさん",
+      "isCorrect": false,
+      "whyAttractive": "P・Qには Bcc(R)は見えないので、Rが送られていることを知らない。全員ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "Pさん, Rさん",
+      "isCorrect": false,
+      "whyAttractive": "Pに見えるのは To(自分P)と Cc(Q)のみで、Rの存在は見えない。PはRを知らない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "Qさん, Rさん",
+      "isCorrect": false,
+      "whyAttractive": "Qに見えるのは To(P)と自分が Cc に入っていることだけで、R の存在は見えない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "Rさん",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "To/Cc の宛先は受信者全員に見える。Bcc は他の受信者からは見えないが、Bcc 受信者自身は自分が Bcc で受けたことが分かる場合が多く(To/Cc 欄が見えるから3人全員の宛先を知る)。P/Q は Bcc=R を知らない。R だけが To(P)+Cc(Q)+自分(R)の3人配信を把握できる。",
+  "keyInsight": "Bcc 受信者は『To/Cc 欄+自分』を知るので全体像を把握できる。逆に To/Cc 受信者は Bcc の存在を知らない。",
+  "topicSlugs": [
+    { "slug": "network_protocols", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 34,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問79 ©2019 独立行政法人情報処理推進機構"
+}

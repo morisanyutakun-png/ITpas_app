@@ -1,0 +1,55 @@
+{
+  "externalKey": "r07_official_q41",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 41,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "edge_case_miss",
+  "stem": "システム開発プロジェクトで使用される技法のうち、スケジュール作成に用いる技法として、適切なものだけを全て挙げたものはどれか。\n\na DFD (Data Flow Diagram)\nb 回帰分析\nc クリティカルパス法\nd プレシデンスダイアグラム法",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a, b",
+      "isCorrect": false,
+      "whyAttractive": "DFDはデータの流れ図、回帰分析は統計手法。どちらもスケジュール作成技法ではない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a, d",
+      "isCorrect": false,
+      "whyAttractive": "dは正しいがaはデータ流れ図でスケジュールではない。混在している。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "b, c",
+      "isCorrect": false,
+      "whyAttractive": "cは正しいがbは統計技法でスケジュールではない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "エ",
+      "body": "c, d",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "スケジュール作成技法: クリティカルパス法(最長経路分析)、プレシデンスダイアグラム法(作業の順序関係を図示)等。DFD(データ流れ)は業務分析技法、回帰分析(統計)は見積技法等で、スケジュール作成そのものではない。",
+  "keyInsight": "スケジュール技法=『時間的な順序関係を扱う』: CPM(クリティカルパス)・PDM(プレシデンス)。DFD(データ)・統計技法は別カテゴリ。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_pm_terms", "weight": 1 }
+  ],
+  "materialSlugs": [
+    { "slug": "pm_chart_compare_table", "role": "helper" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 19,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問41"
+}

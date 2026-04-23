@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q56",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 56,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "ランサムウェアによる損害を受けてしまった場合を想定して、その損害を軽減するための対策例として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "PC内の重要なファイルは、PCから取外し可能な外部記憶装置に定期的にバックアップしておく。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "Webサービスごとに、使用するIDやパスワードを異なるものにしておく。",
+      "isCorrect": false,
+      "whyAttractive": "パスワードリスト攻撃対策。ランサムウェア被害軽減ではない。",
+      "misconceptionSlug": "confuse_malware_types"
+    },
+    {
+      "label": "ウ",
+      "body": "マルウェア対策ソフトを用いてPC内の全ファイルの検査をしておく。",
+      "isCorrect": false,
+      "whyAttractive": "感染予防策。被害が発生した後の『損害軽減』ではない。",
+      "misconceptionSlug": "confuse_malware_types"
+    },
+    {
+      "label": "エ",
+      "body": "無線LANを使用するときには、WPA2を用いて通信内容を暗号化しておく。",
+      "isCorrect": false,
+      "whyAttractive": "通信盗聴対策。ランサムウェア対策とは別。",
+      "misconceptionSlug": "confuse_malware_types"
+    }
+  ],
+  "explanation": "ランサムウェア=ファイルを暗号化し身代金要求するマルウェア。感染後の損害軽減=オフラインバックアップからの復旧が鉄則。PC常時接続ストレージは一緒に暗号化されるため、取外し可能な外部ストレージが重要。",
+  "keyInsight": "ランサム被害軽減=オフラインバックアップ。予防(検査)と混同しないこと。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_malware_types", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 25,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問56 ©2022 独立行政法人情報処理推進機構"
+}

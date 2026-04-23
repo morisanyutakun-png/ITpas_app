@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q08",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 8,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "人口減少や高齢化などを背景に、ICTを活用して、都市や地域の機能やサービスを効率化、高度化し、地域課題の解決や活性化を実現することが試みられている。このような街づくりのソリューションを示す言葉として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "キャパシティ",
+      "isCorrect": false,
+      "whyAttractive": "容量・収容力の意味。街づくりの概念ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "スマートシティ",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "ダイバーシティ",
+      "isCorrect": false,
+      "whyAttractive": "多様性。組織の属性多様化に関する概念で、ICT街づくりとは別方向。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ユニバーシティ",
+      "isCorrect": false,
+      "whyAttractive": "大学。街づくりとは関係がない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "スマートシティ=ICT/IoTを活用して都市機能を効率化・最適化する街づくり。交通・エネルギー・防災・医療等を統合的にデジタル化。ダイバーシティ(多様性)、キャパシティ(容量)、ユニバーシティ(大学)と区別。",
+  "keyInsight": "スマート=賢い、シティ=街。『ICTで賢い街』がスマートシティ。",
+  "topicSlugs": [
+    { "slug": "biz_dx_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 5,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問8 ©2019 独立行政法人情報処理推進機構"
+}

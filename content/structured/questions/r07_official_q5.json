@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q5",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 5,
+  "majorCategory": "strategy",
+  "formatType": "calculation",
+  "trapType": "edge_case_miss",
+  "stem": "A社ではB商品の仕入れと販売を行っている。ある期のB商品の仕入単価は期首から上昇し続け、期末に最も高くなった。当該期の売上原価を\"期首棚卸高+当期商品仕入高-期末棚卸高\"で計算するとき、期末棚卸高の計算に期末の仕入単価を用いると、B商品の期末棚卸高及び売上原価は、期中の仕入単価の平均値を用いる場合に比べてどのようになるか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "期末棚卸高、売上原価ともに上がる。",
+      "isCorrect": false,
+      "whyAttractive": "期末棚卸高が上がるのは正しいが、売上原価は『期首+仕入-期末』で期末を引くので、期末が高いと売上原価は下がる。両方上がるはおかしい。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "期末棚卸高、売上原価ともに変わらない。",
+      "isCorrect": false,
+      "whyAttractive": "期末単価(高)と平均単価で期末棚卸高が変わらないことはない。片方が上がれば他方は連動して動く。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "期末棚卸高は上がり、売上原価は下がる。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "期末棚卸高は下がり、売上原価は上がる。",
+      "isCorrect": false,
+      "whyAttractive": "逆の関係。期末単価が最高値なのに期末棚卸高が下がることはない。方向が逆。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "期末仕入単価が期中最高の場合、期末単価で期末棚卸高を評価すると平均単価より『高く』なる。売上原価=期首+仕入-期末なので、期末棚卸高が高くなると売上原価は『低く』なる。仕入価格上昇期の在庫評価は後入先出(LIFO)vs先入先出(FIFO)vs平均の典型的論点。",
+  "keyInsight": "売上原価=期首+仕入-期末。期末棚卸高と売上原価はシーソー関係。価格上昇期に期末単価で評価=期末高く/売上原価低く。",
+  "topicSlugs": [
+    { "slug": "biz_financial_metrics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 3,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問5"
+}

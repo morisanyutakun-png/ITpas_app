@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q82",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 82,
+  "majorCategory": "technology",
+  "formatType": "calculation",
+  "trapType": "edge_case_miss",
+  "stem": "次の体系をもつ電話番号において、80億個の番号を創出したい。番号の最低限必要な桁数は幾つか。ここで、桁数には\"020\"を含むこととする。\n\n020-□□...□\n最初の□: 1〜3及び5〜9のいずれかを指定(=8通り)\n以降の□: 0〜9のいずれかを指定(=10通り)",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "11",
+      "isCorrect": false,
+      "whyAttractive": "『020』を除いた8桁の計算。8×10⁷=8億 で80億に足りない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "12",
+      "isCorrect": false,
+      "whyAttractive": "『020』を除いた9桁=8×10⁸=80億。だが『020を含む』条件で合計12桁ではまだ足りない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "13",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "14",
+      "isCorrect": false,
+      "whyAttractive": "1桁多く計算した誤り。13桁で80億を達成できる。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "020以降の桁数をnとすると、組合せ数=8×10^(n-1)。80億以上必要: 8×10^(n-1) ≥ 8×10⁹ → n-1 ≥ 9 → n=10。『020』3桁を含めて合計 3+10=13 桁。",
+  "keyInsight": "組合せ数=(最初の選択肢)×(後続の10)^(残り桁数)。80億=8×10⁹ ぴったりなので、最初1桁8通り+後続9桁10通り=8×10⁹。合計10桁+020の3桁=13桁。",
+  "topicSlugs": [
+    { "slug": "tech_computer_arch", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 35,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問82 ©2019 独立行政法人情報処理推進機構"
+}

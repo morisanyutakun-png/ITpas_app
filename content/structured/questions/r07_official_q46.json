@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q46",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 46,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "開発が完了したソフトウェアを本番環境にインストールする手順を明確にし、それを実施する工程として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ソフトウェア統合",
+      "isCorrect": false,
+      "whyAttractive": "コンポーネント統合(結合テスト)の工程。本番環境への導入ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "ソフトウェア導入",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "妥当性確認",
+      "isCorrect": false,
+      "whyAttractive": "要件・仕様の妥当性を検証する工程(受入テスト等)。インストール作業ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "利用者教育",
+      "isCorrect": false,
+      "whyAttractive": "利用者への研修工程。インストール作業そのものではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ソフトウェア導入=完成したソフトを本番環境にインストール・配備する工程。開発と運用の橋渡し。ソフトウェア統合(結合)・妥当性確認(受入)・利用者教育(研修)とは別の工程。",
+  "keyInsight": "ソフトウェア導入=『本番環境へのインストール/配備』。工程の位置づけで区別。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 21,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問46"
+}

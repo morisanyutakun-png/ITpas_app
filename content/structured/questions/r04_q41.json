@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q41",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 41,
+  "majorCategory": "management",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "テレワークを推進しているある会社では、サテライトオフィスを構築している。サテライトオフィスで使用するネットワーク機器やPCを対象に、落雷による過電流を防止するための対策を検討した。有効な対策として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "グリーンITに対応した機器の設置",
+      "isCorrect": false,
+      "whyAttractive": "グリーンITは省エネ/環境対応。落雷対策ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "サージ防護に対応した機器の設置",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "無線LANルータの設置",
+      "isCorrect": false,
+      "whyAttractive": "無線化と落雷対策は関係ない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "無停電電源装置の設置",
+      "isCorrect": false,
+      "whyAttractive": "UPSは停電対策。過電流(落雷)防止ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "サージ防護=落雷等の瞬間的な過電圧・過電流から機器を守る装置(サージプロテクタ、雷サージ対応タップ)。UPSは停電対策で役割が違う。",
+  "keyInsight": "落雷の過電流=サージ防護、停電=UPS。脅威の種類に応じた対策を選ぶ。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 19,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問41 ©2022 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q64",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 64,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "WebサイトなどでRSSの表記を見かけることがある。このRSSの説明として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "Webページの統一的なデザインやレイアウトを定義するための規格",
+      "isCorrect": false,
+      "whyAttractive": "CSS(Cascading Style Sheets)の説明。見た目定義で、更新情報配信ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "Webページの見出しやリンク、要約などを記述するフォーマット",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "ネットワーク上にブックマークを登録することによって、利用価値の高いWebサイト情報を他の利用者と共有するサービス",
+      "isCorrect": false,
+      "whyAttractive": "ソーシャルブックマークの説明。ブックマーク共有サービスで、RSSとは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ブラウザとWebサーバ間で、データを暗号化して安全に送受信するためのプロトコル",
+      "isCorrect": false,
+      "whyAttractive": "HTTPS/TLSの説明。暗号化プロトコルで、コンテンツフォーマットではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "RSS (RDF Site Summary) = Webサイトの更新情報(見出し・リンク・要約)をXMLで構造化したフォーマット。RSSリーダで購読すれば多くのサイトの更新を効率的にチェックできる。CSS(デザイン)・ブックマーク共有・HTTPS(暗号化)とは別。",
+  "keyInsight": "RSS=『更新情報のXML配信フォーマット』。デザイン(CSS)・暗号化(HTTPS)・ブックマークとは別。",
+  "topicSlugs": [
+    { "slug": "network_protocols", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 30,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問64"
+}

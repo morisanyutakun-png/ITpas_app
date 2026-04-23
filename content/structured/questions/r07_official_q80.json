@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q80",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 80,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "AIにおいて、広範囲かつ大量のデータで訓練されたものであり、ファインチューニングなどによって文章生成AIのような様々な用途に適応できる特徴をもつものを何というか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "アノテーション",
+      "isCorrect": false,
+      "whyAttractive": "学習データにラベル付けする作業。モデルそのものではない。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "イ",
+      "body": "エキスパートシステム",
+      "isCorrect": false,
+      "whyAttractive": "専門家の知識をルール化したAI。ルールベースで大量データ訓練型ではない。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "基盤モデル",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "畳み込みニューラルネットワーク",
+      "isCorrect": false,
+      "whyAttractive": "CNNは画像認識向けの特定アーキテクチャ。広範囲データ+ファインチューニング転用が可能な『基盤』ではない。",
+      "misconceptionSlug": "confuse_ai_terms"
+    }
+  ],
+  "explanation": "基盤モデル(Foundation Model)=広範囲・大量のデータで事前学習され、ファインチューニングで様々な下流タスクに適応できるAIモデル。ChatGPT(GPT-4)・Claude等のLLMが典型例。アノテーション(ラベル付)・エキスパート(ルールAI)・CNN(画像向け)とは別概念。",
+  "keyInsight": "基盤モデル=『広範囲学習+ファインチューニング転用』。生成AIの基盤技術。",
+  "topicSlugs": [
+    { "slug": "ai_generative_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_ai_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 38,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問80"
+}

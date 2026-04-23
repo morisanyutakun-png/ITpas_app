@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q46",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 46,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "システム開発後にプログラムの修正や変更を行うことを何というか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "システム化の企画",
+      "isCorrect": false,
+      "whyAttractive": "開発前の構想段階。修正・変更とは時期が違う。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "システム運用",
+      "isCorrect": false,
+      "whyAttractive": "稼働中のシステムを動かす活動。運用中のプログラム修正そのものではなく、運用の一部として保守がある。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ソフトウェア保守",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "要件定義",
+      "isCorrect": false,
+      "whyAttractive": "新規システムの要件を確定する上流工程。修正・変更の段階ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ソフトウェア保守=リリース後のシステムに対する修正・変更活動。不具合修正(是正保守)・機能追加(適応保守)・予防保守などを含む。企画(開発前)・運用(稼働管理)・要件定義(上流)とは時期と目的が異なる。",
+  "keyInsight": "システム開発後の修正・変更=『ソフトウェア保守』。ライフサイクルの最終段階。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 20,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問46 ©2019 独立行政法人情報処理推進機構"
+}

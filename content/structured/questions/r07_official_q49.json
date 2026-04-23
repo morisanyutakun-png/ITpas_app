@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q49",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 49,
+  "majorCategory": "management",
+  "formatType": "case",
+  "trapType": "scope_overgeneral",
+  "stem": "クラウドサービスを提供するA社では、操作に関する質問に対して、サービスデスクのオペレーターが電話で対応するだけでなく、ホームページ上にFAQを公開している。サービスデスクの受付時間は午前9時から午後6時までである。このたびサービスデスクのサービスレベルを向上させるために、顧客向けのチャットボットを導入することにした。チャットボット導入の効果として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "オペレーターのチャットのスキルが向上する。",
+      "isCorrect": false,
+      "whyAttractive": "チャットボットはソフトウェアで、オペレーターのスキル向上とは関係ない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "オペレーターの電話対応のスキルが向上する。",
+      "isCorrect": false,
+      "whyAttractive": "電話対応とチャットボットは別チャネル。スキル向上効果はない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "問合せの受付時間を拡大することが可能になる。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "ホームページ上に掲載しているFAQの内容が充実する。",
+      "isCorrect": false,
+      "whyAttractive": "FAQはチャットボットとは別の静的情報。チャットボット導入でFAQが自動的に充実するわけではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "チャットボットは24時間自動応答可能。人間オペレーター(9時〜18時)と違い夜間や休日も対応でき、受付時間を実質拡大できる。オペレータースキル・FAQの充実は別施策。",
+  "keyInsight": "チャットボット導入の最大効果=『24時間対応可能→受付時間拡大』。オペレーターの代替/補完。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 23,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問49"
+}

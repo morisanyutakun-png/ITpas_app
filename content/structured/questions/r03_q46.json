@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q46",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 46,
+  "majorCategory": "management",
+  "formatType": "case",
+  "trapType": "similar_term",
+  "stem": "システム要件定義で明確にするもののうち、性能に関する要件はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "業務要件を実現するシステムの機能",
+      "isCorrect": false,
+      "whyAttractive": "機能要件。『何ができるか』の話で、性能(速度・応答)ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "システムの稼働率",
+      "isCorrect": false,
+      "whyAttractive": "可用性要件(RAS)。性能(応答時間等)とは別指標。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "照会機能の応答時間",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "障害の復旧時間",
+      "isCorrect": false,
+      "whyAttractive": "保守性/可用性要件。障害対応の指標で、通常時の性能ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "システム要件の分類: 機能要件(何ができるか)、非機能要件(性能・可用性・保守性・セキュリティ等)。応答時間は『性能』要件の典型。稼働率・復旧時間は可用性/保守性要件で別カテゴリ。",
+  "keyInsight": "性能要件=『速度・応答時間・スループット等』。機能(何)・可用性(使える)・保守性(直せる)と区別。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 21,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問46 ©2021 独立行政法人情報処理推進機構"
+}

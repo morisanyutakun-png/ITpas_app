@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q85",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 85,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "無線LANのセキュリティにおいて、アクセスポイントがPCなどの端末からの接続要求を受け取ったときに、接続を要求してきた端末固有の情報を基に接続制限を行う仕組みはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ESSID",
+      "isCorrect": false,
+      "whyAttractive": "無線LANのネットワーク識別子。端末固有ではなくAP側の識別子。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "MACアドレスフィルタリング",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "VPN",
+      "isCorrect": false,
+      "whyAttractive": "仮想専用線。通信の暗号化・認証で、端末固有情報による制限ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "WPA2",
+      "isCorrect": false,
+      "whyAttractive": "無線LANの暗号化規格。パスワード(PSK)ベースで、端末固有情報での制限ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "MACアドレス=NIC固有の物理アドレス(端末固有情報)。MACアドレスフィルタリング=特定MACのみ接続許可する仕組み。ESSIDは識別子、WPA2は暗号化、VPNはトンネリングで役割が違う。",
+  "keyInsight": "『端末固有』=MACアドレス。ESSID(AP識別子)・WPA2(暗号化)と区別。",
+  "topicSlugs": [
+    { "slug": "security_authn_authz", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 39,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問85 ©2021 独立行政法人情報処理推進機構"
+}

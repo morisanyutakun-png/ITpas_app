@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q35",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 35,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "持続可能な世界を実現するために国連が採択した、2030年までに達成されるべき開発目標を示す言葉として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "SDGs",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "SDK",
+      "isCorrect": false,
+      "whyAttractive": "Software Development Kit=ソフト開発キット。IT用語で、国連開発目標ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "SGA",
+      "isCorrect": false,
+      "whyAttractive": "Selling, General and Administrative expenses=販管費。財務用語で、国連目標ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "SGML",
+      "isCorrect": false,
+      "whyAttractive": "Standard Generalized Markup Language=汎用マークアップ言語の標準。XMLの先祖的規格で、国連目標ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "SDGs (Sustainable Development Goals) = 持続可能な開発目標。2015年国連採択、17ゴール×169ターゲット、2030年達成目標。SDK(開発キット)、SGA(販管費)、SGML(マークアップ)とは別領域。",
+  "keyInsight": "SDGs=Sustainable Development Goals=『持続可能な開発目標』。『s』が付くのはゴール(複数)を表す。",
+  "topicSlugs": [
+    { "slug": "biz_dx_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 15,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問35 ©2019 独立行政法人情報処理推進機構"
+}

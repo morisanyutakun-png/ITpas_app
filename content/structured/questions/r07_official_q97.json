@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q97",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 97,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "edge_case_miss",
+  "stem": "情報セキュリティにおいて、可用性が損なわれた事象だけを全て挙げたものはどれか。\n\na 関連取引先との電子決済システムがDoS攻撃を受け、処理ができなくなった。\nb 顧客情報管理システムの顧客情報が誤った内容のまま運用されていた。\nc 社内のサーバに不正侵入されて、社外秘の情報が漏えいした。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "a, b",
+      "isCorrect": false,
+      "whyAttractive": "bは誤った内容=完全性の喪失。可用性(使える状態)ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "b, c",
+      "isCorrect": false,
+      "whyAttractive": "bは完全性、cは機密性。aを除外する誤り。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "c",
+      "isCorrect": false,
+      "whyAttractive": "cは機密性喪失(漏えい)で、可用性ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "CIA対応: a=DoS攻撃で処理不能=使えない=『可用性喪失』。b=誤った内容=正確でない=『完全性喪失』。c=情報漏えい=見せるべきでない者が見た=『機密性喪失』。可用性だけがaに該当。",
+  "keyInsight": "CIA識別: 使える/使えない=可用性、正しい/誤り=完全性、秘密/漏れ=機密性。事象の本質を見分ける。",
+  "topicSlugs": [
+    { "slug": "security_cia_triad", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 44,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問97"
+}

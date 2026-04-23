@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q96",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 96,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "edge_case_miss",
+  "stem": "OSS (Open Source Software) に関する記述として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "製品によっては、企業の社員が業務として開発に参加している。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "ソースコードだけが公開されており、実行形式での配布は禁じられている。",
+      "isCorrect": false,
+      "whyAttractive": "実行形式の配布も一般に認められている。『ソースコード公開』=配布制限と誤解。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "どの製品も、ISOで定められたオープンソースライセンスによって同じ条件で提供されている。",
+      "isCorrect": false,
+      "whyAttractive": "OSSライセンスはGPL, MIT, BSD, Apache等複数あり、ISO規格で統一されているわけではない。OSI(Open Source Initiative)が定義するが条件は様々。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ビジネス用途での利用は禁じられている。",
+      "isCorrect": false,
+      "whyAttractive": "OSSは商用利用可能が基本。利用分野の制限はOSSの定義に反する。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "OSSは個人ボランティアだけでなく、Red Hat・Google・Microsoft等の企業社員が業務として開発・貢献している製品も多い(Linux、Kubernetes等)。ライセンスは多種、商用利用可、実行形式配布も可。",
+  "keyInsight": "OSS=『ソース公開+利用/改変/再配布の自由』。個人オンリーではなく企業参加が一般的、商用も自由、ライセンスは多種。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 44,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問96 ©2020 独立行政法人情報処理推進機構"
+}

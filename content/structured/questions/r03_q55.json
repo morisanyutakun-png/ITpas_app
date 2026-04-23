@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q55",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 55,
+  "majorCategory": "management",
+  "formatType": "case",
+  "trapType": "edge_case_miss",
+  "stem": "有料のメールサービスを提供している企業において、メールサービスに関する開発・設備投資の費用対効果の効率性を対象にしてシステム監査を実施するとき、システム監査人が所属している組織として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "社長直轄の品質保証部門",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "メールサービスに必要な機器の調達を行う運用部門",
+      "isCorrect": false,
+      "whyAttractive": "調達の当事者。独立性が保てない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "メールサービスの機能の選定や費用対効果の評価を行う企画部門",
+      "isCorrect": false,
+      "whyAttractive": "費用対効果評価を行う当事者。自己監査となり独立性なし。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "メールシステムの開発部門",
+      "isCorrect": false,
+      "whyAttractive": "開発当事者。費用対効果(自分の投資)を自ら監査するのは独立性違反。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "システム監査人は被監査対象から独立+専門性が必要。『社長直轄の品質保証部門』は経営層直属で、運用・企画・開発の各当事者から独立している。他の選択肢は全て当事者で独立性違反。",
+  "keyInsight": "監査人=『経営直轄+独立』。ライン部門(開発・運用・企画)からの独立が原則。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 26,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問55 ©2021 独立行政法人情報処理推進機構"
+}

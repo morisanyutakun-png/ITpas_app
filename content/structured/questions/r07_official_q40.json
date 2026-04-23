@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q40",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 40,
+  "majorCategory": "management",
+  "formatType": "case",
+  "trapType": "edge_case_miss",
+  "stem": "変更管理委員会が設置されているプロジェクトで変更要求が発生した場合の記述として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "変更管理委員会では、プロジェクトに関わるステークホルダ以外の第三者によって変更要求が審議される。",
+      "isCorrect": false,
+      "whyAttractive": "変更管理委員会はプロジェクト内部のメンバ(ステークホルダ)で構成される。外部第三者が審議するのではない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "イ",
+      "body": "変更管理委員会は、コストの増加や期日の延期を理由に変更要求を却下してよい。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "変更管理委員会は、スコープに変更が発生しない範囲で変更要求を受け付けなければならない。",
+      "isCorrect": false,
+      "whyAttractive": "スコープ変更を含む変更要求も委員会は扱う。承認か却下を判断するのが役割で、受付範囲を限定する話ではない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "エ",
+      "body": "変更要求は、全てプロジェクトマネージャが承認した後に変更管理委員会で審議される。",
+      "isCorrect": false,
+      "whyAttractive": "順序が逆。変更管理委員会が承認して、その決定に基づきPMが実行する。",
+      "misconceptionSlug": "confuse_pm_terms"
+    }
+  ],
+  "explanation": "変更管理委員会(CCB)=変更要求の承認/却下を判断する組織。プロジェクトへの影響(コスト増・期日延期等)を考慮して却下する権限を持つ。ステークホルダで構成、決定は委員会が行い、PMは実行を担う。",
+  "keyInsight": "変更管理委員会=『変更要求の承認/却下を判断』。コスト・納期への影響が大きければ却下して良い。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_pm_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 19,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問40"
+}

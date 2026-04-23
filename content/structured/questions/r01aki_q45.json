@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q45",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 45,
+  "majorCategory": "management",
+  "formatType": "case",
+  "trapType": "similar_term",
+  "stem": "会計システムの開発を受託した会社が、顧客と打合せを行って、必要な決算書の種類や、会計データの確定から決算書類の出力までの処理時間の目標値を明確にした。この作業を実施するのに適切な工程はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "システムテスト",
+      "isCorrect": false,
+      "whyAttractive": "完成後の検証工程。要件を確定する段階ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "システム要件定義",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "ソフトウェア詳細設計",
+      "isCorrect": false,
+      "whyAttractive": "プログラムレベルの設計。要件が固まった後の『どう作るか』の段階で、顧客と目標値合意する段階ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ソフトウェア方式設計",
+      "isCorrect": false,
+      "whyAttractive": "コンポーネント構成設計。要件の後段階で、要件確定そのものではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "顧客と打合せて『必要な機能・性能目標値』を明確化するのは『システム要件定義』の典型的活動。必要な決算書の種類(機能要件)と処理時間目標(非機能要件)を確定する作業。テスト・設計は要件定義の後工程。",
+  "keyInsight": "『顧客と合意して要件を確定』=システム要件定義。設計・テストは要件が固まってから。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 20,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問45 ©2019 独立行政法人情報処理推進機構"
+}

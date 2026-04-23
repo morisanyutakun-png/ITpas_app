@@ -1,0 +1,54 @@
+{
+  "externalKey": "r02aki_q11",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 11,
+  "majorCategory": "strategy",
+  "formatType": "biz_analysis",
+  "trapType": "edge_case_miss",
+  "stem": "あるレストランでは、受付時に来店した客の名前を来店客リストに記入し、座席案内時に来店客リストと空席状況の両方を参照している。この一連の業務をDFDで表現したものとして、最も適切なものはどれか。\n\n(凡例: 丸=処理、二重横線=データストア、矢印=データフロー)",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "受付→(来店客リストへ書込)、座席案内←(来店客リスト・空席状況から読込)、座席案内→(空席状況へ書込)",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "受付→(来店客リストへ書込)、受付↔(空席状況へ読書)、座席案内←(来店客リストから読込)",
+      "isCorrect": false,
+      "whyAttractive": "受付で空席状況を参照・更新する構造。問題文では空席状況を参照するのは『座席案内時』なので、処理の主体が合っていない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "受付→(来店客リストへ書込)、受付→(空席状況へ書込)、座席案内←(来店客リストから読込)",
+      "isCorrect": false,
+      "whyAttractive": "受付で空席状況を更新しているが、空席状況は座席案内の結果で変わるもの。受付では空席状況を変更しない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "受付→(来店客リストへ書込)、座席案内←(空席状況から読込)のみ (来店客リストからの読込を欠く)",
+      "isCorrect": false,
+      "whyAttractive": "座席案内が来店客リストを参照していない。問題文では両方参照が要件。参照関係を1本見落としている。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "DFDの要点は『どの処理がどのデータストアを読む/書くか』を正確に描くこと。本問の要件は (1)受付→来店客リストに書込 (2)座席案内→来店客リストと空席状況の両方を読込 (3)座席案内の結果で空席状況が更新される。これを全て満たすのがア。",
+  "keyInsight": "DFDは『処理主体とデータストアの入出力』が一致しているかで判別。処理文に『受付時に〜記入』『案内時に〜参照』とあるなら、その通りの矢印構造を探す。",
+  "topicSlugs": [
+    { "slug": "biz_models", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 6,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問11 ©2020 独立行政法人情報処理推進機構",
+  "modifiedNote": "原典のDFD図は選択肢の図解を文章化して構造化しています。設問の意味・正解選択肢は改変していません。"
+}

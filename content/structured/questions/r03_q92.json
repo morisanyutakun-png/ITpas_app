@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q92",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 92,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "IoT機器からのデータ収集などを行う際の通信に用いられる、数十kmまでの範囲で無線通信が可能な広域性と省電力性を備えるものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "BLE",
+      "isCorrect": false,
+      "whyAttractive": "Bluetooth Low Energy。数十mの近距離用。『数十km』には対応しない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "LPWA",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "MDM",
+      "isCorrect": false,
+      "whyAttractive": "モバイルデバイス管理。通信規格ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "MVNO",
+      "isCorrect": false,
+      "whyAttractive": "仮想移動体通信事業者。事業形態で通信規格ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "LPWA(Low Power Wide Area)=低消費電力・広域(数km〜数十km)無線。LoRa/Sigfox/NB-IoT等。IoTセンサが電池で年単位稼働する用途に最適。BLEは近距離。",
+  "keyInsight": "IoT無線: 近距離=BLE(数十m)、広域省電力=LPWA(数十km)。距離スケールで選ぶ。",
+  "topicSlugs": [
+    { "slug": "tech_iot_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 41,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問92 ©2021 独立行政法人情報処理推進機構"
+}

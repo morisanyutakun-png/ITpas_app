@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q66",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 66,
+  "majorCategory": "technology",
+  "formatType": "calculation",
+  "trapType": "edge_case_miss",
+  "stem": "RGBの各色の階調を、それぞれ3桁の2進数で表す場合、混色によって表すことができる色は何通りか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "8",
+      "isCorrect": false,
+      "whyAttractive": "2³=8(1色の階調数)と誤解。RGBの3色を考慮する必要あり。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "24",
+      "isCorrect": false,
+      "whyAttractive": "8×3=24(1色階調×色数)と誤解。色数は積ではなく乗算で組み合わせる。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "256",
+      "isCorrect": false,
+      "whyAttractive": "2⁸=256(1色8ビットの場合)と誤解。本問は各色3桁なので2³=8階調。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "512",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "各色3桁(3ビット)=2³=8階調。RGB3色の独立組合せ=8×8×8=512通り。色表現は各色の階調数の積。",
+  "keyInsight": "RGB色数=(1色の階調)³。ビット数nなら(2^n)³通り。",
+  "topicSlugs": [
+    { "slug": "tech_computer_arch", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 30,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問66 ©2021 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,54 @@
+{
+  "externalKey": "r02aki_q95",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 95,
+  "majorCategory": "technology",
+  "formatType": "calculation",
+  "trapType": "edge_case_miss",
+  "stem": "伝送速度が20 Mbps(ビット/秒)、伝送効率が80%である通信回線において、1Gバイトのデータを伝送するのに掛かる時間は何秒か。ここで、1Gバイト=10^3 Mバイトとする。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "0.625",
+      "isCorrect": false,
+      "whyAttractive": "バイトとビットの単位換算を逆にすると出る数値。1GB=10^3 MB=8000 Mbit を見落として 10/16=0.625 等と計算。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "50",
+      "isCorrect": false,
+      "whyAttractive": "伝送効率80%を掛け忘れて 1000MB / 20Mbps = 50 秒としてしまう計算。bit/byte 換算も忘れている。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "62.5",
+      "isCorrect": false,
+      "whyAttractive": "伝送効率を掛けるが単位換算が不完全。1GB=8Gbit と解釈して 8000/16/8 等の誤計算。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "500",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "1GB = 10^3 MB = 1000 × 8 Mbit = 8000 Mbit。実効伝送速度 = 20 Mbps × 0.8 = 16 Mbit/秒。伝送時間 = 8000 Mbit / 16 Mbit/秒 = 500 秒。",
+  "keyInsight": "単位換算の手順: データ量はバイト→ビットに(×8)、速度は効率を掛ける。同じ単位(ビット)に揃えてから割る。",
+  "commonMistakeFlow": "『バイトとビット』『10^3 と 10^6』『効率を掛けるか』の3点で間違えやすい。単位を明示して計算する。",
+  "topicSlugs": [
+    { "slug": "network_basics_osi", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 43,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問95 ©2020 独立行政法人情報処理推進機構"
+}

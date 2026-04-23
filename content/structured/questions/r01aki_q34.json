@@ -1,0 +1,54 @@
+{
+  "externalKey": "r01aki_q34",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 34,
+  "majorCategory": "strategy",
+  "formatType": "calculation",
+  "trapType": "edge_case_miss",
+  "stem": "売上高、変動費、固定費、営業日数が表のようなレストランで、年間400万円以上の利益を上げるためには、1営業日当たり少なくとも何人の来店客が必要か。\n\n客1人当たり売上高=3,000円 / 客1人当たり変動費=1,000円 / 年間の固定費=2,000万円 / 年間の営業日数=300日",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "14",
+      "isCorrect": false,
+      "whyAttractive": "固定費を無視して利益÷(客1人当たり売上×日数)で出した誤計算。固定費を回収できていない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "20",
+      "isCorrect": false,
+      "whyAttractive": "客1人当たり利益=3000-1000=2000円を忘れ、売上高3000円で割ると出る近似値。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "27",
+      "isCorrect": false,
+      "whyAttractive": "固定費を2000万+利益400万=2400万までにとどめ、客1人当たり利益3000で計算した中間値。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "40",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "客1人当たり限界利益=3,000-1,000=2,000円。年間必要な限界利益合計=固定費2,000万+目標利益400万=2,400万円。年間必要客数=2,400万÷2,000=12,000人。1日当たり=12,000÷300=40人。",
+  "keyInsight": "利益計算は『限界利益(売上-変動費)で固定費+目標を賄う』。客数=(固定費+目標利益)/1人当限界利益。",
+  "commonMistakeFlow": "客1人当たり売上高3,000円で割ると変動費を引き忘れる。限界利益=売上-変動費で計算する癖をつける。",
+  "topicSlugs": [
+    { "slug": "biz_financial_metrics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 15,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問34 ©2019 独立行政法人情報処理推進機構"
+}

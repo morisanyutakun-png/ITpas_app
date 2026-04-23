@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q11",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 11,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "RPA (Robotic Process Automation) の特徴として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "新しく設計した部品を少ロットで試作するなど、工場での非定型的な作業に適している。",
+      "isCorrect": false,
+      "whyAttractive": "工場の試作作業=産業用ロボ/3Dプリンタ系。RPAはPC上のソフトロボ。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "同じ設計の部品を大量に製造するなど、工場での定型的な作業に適している。",
+      "isCorrect": false,
+      "whyAttractive": "工場のFA(ファクトリーオートメーション)。物理的製造で、PC上の業務自動化ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "システムエラー発生時に、状況に応じて実行する処理を選択するなど、PCで実施する非定型的な作業に適している。",
+      "isCorrect": false,
+      "whyAttractive": "AI/自律判断が必要な領域。RPAはルールベース自動化で、状況判断の非定型業務には不向き。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "受注データの入力や更新など、PCで実施する定型的な作業に適している。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "RPA=PC上で行われる定型的な事務作業(入力・転記・帳票作成等)をソフトウェアロボットが自動化する技術。物理的製造(工場)・非定型判断(AI領域)とは別。『PC + 定型』がRPAの適用領域。",
+  "keyInsight": "RPA=『PC+ソフトウェア+定型作業』。工場ロボ(物理)・AI(非定型判断)と区別。",
+  "topicSlugs": [
+    { "slug": "biz_dx_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 6,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問11 ©2021 独立行政法人情報処理推進機構"
+}

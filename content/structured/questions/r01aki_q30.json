@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q30",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 30,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "デザイン思考の例として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "Webページのレイアウトなどを定義したスタイルシートを使用し、ホームページをデザインする。",
+      "isCorrect": false,
+      "whyAttractive": "CSS等でのWebデザインの話。ビジュアルデザインで、思考法ではない。『デザイン』の語感で引き寄せられる。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "アプローチの中心は常に製品やサービスの利用者であり、利用者の本質的なニーズに基づき、製品やサービスをデザインする。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "業務の迅速化や効率化を図ることを目的に、業務プロセスを抜本的に再デザインする。",
+      "isCorrect": false,
+      "whyAttractive": "BPR(業務改革)の説明。業務プロセス再設計であって、人間中心思考ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "データと手続を備えたオブジェクトの集まりとして捉え、情報システム全体をデザインする。",
+      "isCorrect": false,
+      "whyAttractive": "オブジェクト指向設計の説明。システム設計手法で、ユーザー視点の思考法ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "デザイン思考=利用者(ユーザ)を中心に据え、共感→定義→発想→試作→検証の反復でアイデアを具現化する問題解決アプローチ。CSS・BPR・オブジェクト指向は別の技術/手法。『利用者中心』がキーワード。",
+  "keyInsight": "デザイン思考=『人間中心』『共感から始まる』。見た目のデザインや業務再設計とは別次元の思考法。",
+  "topicSlugs": [
+    { "slug": "biz_innovation_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 14,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問30 ©2019 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q82",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 82,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "情報セキュリティの物理的対策として、取り扱う情報の重要性に応じて、オフィスなどの空間を物理的に区切り、オープンエリア、セキュリティエリア、受渡しエリアなどに分離することを何と呼ぶか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "サニタイジング",
+      "isCorrect": false,
+      "whyAttractive": "入力値のエスケープ処理(Webセキュリティ)。物理的エリア分離とは別。『〜化』の音感で混同。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "ソーシャルエンジニアリング",
+      "isCorrect": false,
+      "whyAttractive": "心理を突いた攻撃手法。空間分離とは無関係。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ゾーニング",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "ハッキング",
+      "isCorrect": false,
+      "whyAttractive": "不正侵入の行為。対策ではなく攻撃側。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ゾーニング(zoning)=情報の重要度に応じて物理空間を『ゾーン』に分ける対策。オープン→受渡→セキュリティエリアと段階的に区切る。サニタイジング(Web対策)、ソーシャルエンジニアリング(攻撃)、ハッキング(攻撃)とは別。",
+  "keyInsight": "ゾーニング=Zone(ゾーン)化。物理的な区画分けが本質。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 37,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問82 ©2020 独立行政法人情報処理推進機構"
+}

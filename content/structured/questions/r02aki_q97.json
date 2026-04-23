@@ -1,0 +1,55 @@
+{
+  "externalKey": "r02aki_q97",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 97,
+  "majorCategory": "technology",
+  "formatType": "calculation",
+  "trapType": "edge_case_miss",
+  "stem": "公開鍵暗号方式では、暗号化のための鍵と復号のための鍵が必要となる。4人が相互に通信内容を暗号化して送りたい場合は、全部で8個の鍵が必要である。このうち、非公開にする鍵は何個か。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "1",
+      "isCorrect": false,
+      "whyAttractive": "1人だけ秘密鍵を持つイメージ。だが4人全員がそれぞれ自分の秘密鍵を持つ必要がある。",
+      "misconceptionSlug": "confuse_crypto_method"
+    },
+    {
+      "label": "イ",
+      "body": "2",
+      "isCorrect": false,
+      "whyAttractive": "通信ペアごとに1個と誤解。だが公開鍵方式では相手ごとではなく本人ごとに秘密鍵を持つ。",
+      "misconceptionSlug": "confuse_crypto_method"
+    },
+    {
+      "label": "ウ",
+      "body": "4",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "6",
+      "isCorrect": false,
+      "whyAttractive": "4人のペア数 C(4,2)=6 で計算。共通鍵方式ならペア数=鍵数だが、公開鍵方式は本人ごと2個。",
+      "misconceptionSlug": "confuse_crypto_method"
+    }
+  ],
+  "explanation": "公開鍵暗号方式では、各人が『公開鍵+秘密鍵』の1ペア(2個)を持つ。4人なら合計8個。そのうち半分(4個=4人分の秘密鍵)が非公開。公開鍵は全員に公開してよい。",
+  "keyInsight": "公開鍵方式の鍵数=人数×2。半分が秘密鍵(非公開)、半分が公開鍵(公開)。共通鍵方式(ペア数)と計算が違う。",
+  "topicSlugs": [
+    { "slug": "security_crypto", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_crypto_method", "weight": 1 }
+  ],
+  "materialSlugs": [
+    { "slug": "crypto_compare_table", "role": "primary" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 44,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問97 ©2020 独立行政法人情報処理推進機構"
+}

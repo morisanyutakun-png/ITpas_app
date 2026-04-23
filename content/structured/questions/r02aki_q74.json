@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q74",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 74,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "IoTデバイスへの電力供給でも用いられ、周りの環境から光や熱(温度差)などの微小なエネルギーを集めて、電力に変換する技術はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "PLC",
+      "isCorrect": false,
+      "whyAttractive": "電力線通信(Power Line Communication)。電線を通信路として使う技術で、エネルギーを集めるものではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "PoE",
+      "isCorrect": false,
+      "whyAttractive": "Power over Ethernet。LANケーブルで電力供給する規格で、外部環境からの収集ではなく有線給電。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "エネルギーハーベスティング",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "スマートグリッド",
+      "isCorrect": false,
+      "whyAttractive": "IT活用の次世代電力網。需給調整や再生可能エネルギー統合が目的で、環境エネルギーの収穫とは違う概念。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "エネルギーハーベスティング(Energy Harvesting)=環境中の微小エネルギー(光、熱、振動、電波等)を『収穫』して電力に変換する技術。IoTデバイスの自立電源として注目されている。PLC(電線通信)、PoE(LAN給電)、スマートグリッド(電力網)と区別。",
+  "keyInsight": "ハーベスト=収穫。『環境の微小エネルギーを集める』のがエネルギーハーベスティング。",
+  "topicSlugs": [
+    { "slug": "tech_iot_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 34,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問74 ©2020 独立行政法人情報処理推進機構"
+}

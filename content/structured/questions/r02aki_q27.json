@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q27",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 27,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "企業間で商取引の情報の書式や通信手順を統一し、電子的に情報交換を行う仕組みはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "EDI",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "ETC",
+      "isCorrect": false,
+      "whyAttractive": "Electronic Toll Collection=有料道路料金自動収受。『電子取引』の響きが近いが、消費者向けサービスで企業間ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ERP",
+      "isCorrect": false,
+      "whyAttractive": "Enterprise Resource Planning=統合基幹業務システム。企業内部の基幹業務統合で、企業間情報交換ではない。",
+      "misconceptionSlug": "confuse_enterprise_systems"
+    },
+    {
+      "label": "エ",
+      "body": "ETL",
+      "isCorrect": false,
+      "whyAttractive": "Extract/Transform/Load=データ抽出・変換・格納の処理。データウェアハウス構築時の工程で、取引文書の電子交換ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "EDI (Electronic Data Interchange) = 企業間で商取引の伝票(発注・請求・納品書等)を標準フォーマットで電子交換する仕組み。『企業間』『商取引』『書式・手順統一』の3点が揃えばEDI。",
+  "keyInsight": "EDI=Electronic Data Interchange=『電子データ交換』。企業間の紙伝票の電子化、と覚える。",
+  "topicSlugs": [
+    { "slug": "biz_enterprise_systems", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 13,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問27 ©2020 独立行政法人情報処理推進機構"
+}

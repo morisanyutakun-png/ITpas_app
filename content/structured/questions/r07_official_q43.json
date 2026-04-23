@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q43",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 43,
+  "majorCategory": "management",
+  "formatType": "case",
+  "trapType": "edge_case_miss",
+  "stem": "営業部門の営業員が出張する際の出張旅費の手続に関して、組織間でけん制を日常的に実施している状況の記述として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "営業員が出張後に経理部門に提出した旅費精算の書類と証票類について、経理担当者が適切な内容であることを審査し、経理課長が承認する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "営業員が出張後に旅費の精算を行い、上長が承認を行う。経理部門では承認済みであるので支払を行う。",
+      "isCorrect": false,
+      "whyAttractive": "営業部内で完結(営業員→上長承認)し、経理は支払いのみ。組織をまたいだけん制が機能していない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "営業員は出張の事前申請を行って上長の承認を得た後に、切符や宿泊施設の手配を旅行会社に依頼する。",
+      "isCorrect": false,
+      "whyAttractive": "事前承認の説明で、組織間けん制(複数部署のチェック)ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "会計年度における営業部門の旅費精算の書類と証票類から、監査人がサンプリングして、営業員の処理内容の適切性を確認する。",
+      "isCorrect": false,
+      "whyAttractive": "事後監査の説明。日常的なけん制ではなく、年度単位の検証。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "組織間けん制=別の組織(部署)が相互に確認し合うことで不正・誤りを防ぐ統制。ア=営業員の精算を経理部門(別組織)が審査・承認=組織間けん制が日常的に機能。イは営業部内で完結、ウは単独承認、エは事後監査で、どれも日常的な組織間けん制ではない。",
+  "keyInsight": "組織間けん制=『別部署の相互チェック』。同一部署内の承認や事後監査とは区別。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 20,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問43"
+}

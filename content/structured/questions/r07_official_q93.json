@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q93",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 93,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "情報セキュリティにおける脅威の説明として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "攻撃者が付け込むことのできる情報システムの弱点",
+      "isCorrect": false,
+      "whyAttractive": "脆弱性の説明。脅威とは別概念(弱点=脆弱性、原因=脅威)。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "情報資産が被害に遭う確率と被害規模の組合せ",
+      "isCorrect": false,
+      "whyAttractive": "リスクの説明。『確率×影響』で表される被害の見込み。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "情報資産に損害を与える原因となるもの",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "情報システムの弱点を利用した攻撃によって被害を受ける可能性",
+      "isCorrect": false,
+      "whyAttractive": "リスクの別表現。『被害を受ける可能性』はリスクの概念。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "情報セキュリティ3要素の関係: 脅威(原因となるもの: マルウェア・災害・不正者)、脆弱性(弱点: バグ・設定不備)、リスク(被害の可能性)。『脅威×脆弱性→リスク』で、対策はこの3つのいずれかを減らすこと。",
+  "keyInsight": "脅威=『損害の原因』、脆弱性=『弱点』、リスク=『被害の見込み』。3語を混同しない。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 43,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問93"
+}

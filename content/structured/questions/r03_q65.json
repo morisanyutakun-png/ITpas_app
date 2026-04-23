@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q65",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 65,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "シャドーITの例として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "会社のルールに従い、災害時に備えて情報システムの重要なデータを遠隔地にバックアップした。",
+      "isCorrect": false,
+      "whyAttractive": "会社ルールに従った正規の活動。シャドー(非公式)の対極。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "他の社員がパスワードを入力しているところをのぞき見て入手したパスワードを使って、情報システムにログインした。",
+      "isCorrect": false,
+      "whyAttractive": "ショルダーハッキング/不正アクセス。シャドーITとは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "他の社員にPCの画面をのぞかれないように、離席する際にスクリーンロックを行った。",
+      "isCorrect": false,
+      "whyAttractive": "セキュリティの基本動作。シャドーITではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "データ量が多く電子メールで送れない業務で使うファイルを、会社が許可していないオンラインストレージサービスを利用して取引先に送付した。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "シャドーIT=IT部門の管理外で、従業員が業務に独自に導入・使用するITツールやサービス。『会社が許可していないオンラインストレージの業務利用』が典型。セキュリティ・ガバナンスのリスクとなる。",
+  "keyInsight": "シャドーIT=『非公式(管理外)のIT利用』。正規ルート・教育目的とは区別。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 30,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問65 ©2021 独立行政法人情報処理推進機構"
+}

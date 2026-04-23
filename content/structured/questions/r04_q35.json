@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q35",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 35,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "あるコールセンタでは、AIを活用した業務改革の検討を進めて、導入するシステムを絞り込んだ。しかし、想定している効果が得られるかなど不明点が多いので、試行して実現性の検証を行うことにした。このような検証を何というか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "IoT",
+      "isCorrect": false,
+      "whyAttractive": "モノのインターネット。検証手法ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "PoC",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "SoE",
+      "isCorrect": false,
+      "whyAttractive": "System of Engagement=顧客との接点重視システム。検証手法ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "SoR",
+      "isCorrect": false,
+      "whyAttractive": "System of Record=記録型基幹システム。検証手法ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "PoC(Proof of Concept)=概念実証。本格導入前に、試行・プロトタイプで実現性や効果を検証する作業。新技術・AI・IoT導入時によく実施される。",
+  "keyInsight": "PoC=概念実証。本番導入前に『試しにやってみて効くか確かめる』フェーズ。",
+  "topicSlugs": [
+    { "slug": "biz_validation_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 16,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問35 ©2022 独立行政法人情報処理推進機構"
+}

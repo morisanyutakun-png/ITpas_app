@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q88",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 88,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "バイオメトリクス認証の例として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "本人の手の指の静脈の形で認証する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "本人の電子証明書で認証する。",
+      "isCorrect": false,
+      "whyAttractive": "電子証明書認証(PKI)。『所有物』による認証で、生体ではない。",
+      "misconceptionSlug": "confuse_authn_authz"
+    },
+    {
+      "label": "ウ",
+      "body": "読みにくい文字列が写った画像から文字を正確に読み取れるかどうかで認証する。",
+      "isCorrect": false,
+      "whyAttractive": "CAPTCHA認証(ボット判別)。機械か人間か判別する仕組みで、個人識別ではない。",
+      "misconceptionSlug": "confuse_authn_authz"
+    },
+    {
+      "label": "エ",
+      "body": "ワンタイムパスワードを用いて認証する。",
+      "isCorrect": false,
+      "whyAttractive": "ワンタイムパスワード=所有物認証(トークン)。記憶でも生体でもない所有物系。",
+      "misconceptionSlug": "confuse_authn_authz"
+    }
+  ],
+  "explanation": "バイオメトリクス認証=身体的/行動的特徴による認証。指紋・静脈・虹彩・顔・声紋等が典型。電子証明書(所有物)・CAPTCHA(人間判別)・ワンタイムパスワード(所有物)とは別のカテゴリ。",
+  "keyInsight": "バイオメトリクス=生体認証。身体的特徴=指紋・静脈・虹彩・顔、行動的特徴=筆跡・声紋。",
+  "topicSlugs": [
+    { "slug": "security_authn_authz", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_authn_authz", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 38,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問88 ©2019 独立行政法人情報処理推進機構"
+}

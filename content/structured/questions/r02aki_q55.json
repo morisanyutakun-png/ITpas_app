@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q55",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 55,
+  "majorCategory": "management",
+  "formatType": "calculation",
+  "trapType": "edge_case_miss",
+  "stem": "図の工程の最短所要日数及び最長所要日数は何日か。\n\n経路: 開始→A(30〜35日)→中間→B(50〜60日)→終了、および 開始→C(70〜100日)→終了",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "最短=70 / 最長=95",
+      "isCorrect": false,
+      "whyAttractive": "Cの最短値70とA+Bの最長値95を選んでいる。経路を取り違えている。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "最短=70 / 最長=100",
+      "isCorrect": false,
+      "whyAttractive": "Cの最短70とCの最長100だけを見ている。A+Bの経路(最短80)を無視。並列経路は『遅い方』が全体を決める。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "最短=80 / 最長=95",
+      "isCorrect": false,
+      "whyAttractive": "A+Bの最短(30+50=80)と最長(35+60=95)で選んでいる。Cの最長100を無視している。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "最短=80 / 最長=100",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "並列経路では『遅い方』が全体の所要日数を決める(クリティカルパス)。経路1=A+B:最短30+50=80、最長35+60=95。経路2=C:最短70、最長100。全体=max(80,70)=80(最短)、max(95,100)=100(最長)。",
+  "keyInsight": "並列経路の合流点では『遅い方』で待つ → max() で集約。各経路の最短/最長を別々に求めて、最後に max をとる。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 25,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問55 ©2020 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q52",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 52,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "アジャイル開発において、短い間隔による開発工程の反復や、その開発サイクルを表す用語として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "イテレーション",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "スクラム",
+      "isCorrect": false,
+      "whyAttractive": "アジャイル開発の代表的手法(フレームワーク)の名称。手法名で、反復の単位そのものではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "プロトタイピング",
+      "isCorrect": false,
+      "whyAttractive": "試作品を作って評価する手法。反復サイクルの単位ではなく、1つの開発手法。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ペアプログラミング",
+      "isCorrect": false,
+      "whyAttractive": "2人で1台のPCを使う開発手法(XPの実践)。反復の単位ではなくコーディングの方法。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "イテレーション(iteration)=反復。アジャイル開発で短期間(1〜4週間)の開発サイクル1回分を指す単位。スクラムでは『スプリント』とも呼ばれる。手法(スクラム)・試作(プロトタイピング)・コーディング作法(ペアプロ)とは別。",
+  "keyInsight": "イテレーション=『反復の単位』。スクラムはその手法名、スプリントはスクラムでのイテレーション呼称。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 22,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問52 ©2019 独立行政法人情報処理推進機構"
+}

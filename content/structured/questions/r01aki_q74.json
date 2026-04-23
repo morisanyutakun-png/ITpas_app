@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q74",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 74,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "abbrev_mix",
+  "stem": "IoT機器やPCに保管されているデータを暗号化するためのセキュリティチップであり、暗号化に利用する鍵などの情報をチップの内部に記憶しており、外部から内部の情報の取出しが困難な構造をもつものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "GPU",
+      "isCorrect": false,
+      "whyAttractive": "画像処理プロセッサ。暗号化チップではない。『チップ』の共通語で混同。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "NFC",
+      "isCorrect": false,
+      "whyAttractive": "Near Field Communication=近距離無線通信。通信規格で、暗号化用チップではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "TLS",
+      "isCorrect": false,
+      "whyAttractive": "Transport Layer Security=通信暗号化プロトコル。チップではなくプロトコル。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "TPM",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "TPM (Trusted Platform Module) = PC・IoT機器のマザーボードに搭載される暗号化専用セキュリティチップ。鍵情報を内部保管、耐タンパ性あり。GPU(画像)、NFC(通信規格)、TLS(プロトコル)とは別。",
+  "keyInsight": "TPM=『チップ内部に暗号鍵を保持、外部取出し困難』。耐タンパ性が核心。",
+  "topicSlugs": [
+    { "slug": "security_crypto", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 31,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問74 ©2019 独立行政法人情報処理推進機構"
+}

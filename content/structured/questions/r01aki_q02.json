@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q02",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 2,
+  "majorCategory": "strategy",
+  "formatType": "calculation",
+  "trapType": "edge_case_miss",
+  "stem": "あるメーカの当期損益の見込みは表のとおりであったが、その後広告宣伝費が5億円、保有株式の受取配当金が3億円増加した。このとき、最終的な営業利益と経常利益はそれぞれ何億円になるか。ここで、広告宣伝費、保有株式の受取配当金以外は全て見込みどおりであったものとする。\n\n[見込み(億円)] 売上高=1,000 / 売上原価=780 / 販売費及び一般管理費=130 / 営業外収益=20 / 営業外費用=16 / 特別利益=2 / 特別損失=1 / 法人税等=50",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "営業利益=85 / 経常利益=92",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "営業利益=85 / 経常利益=93",
+      "isCorrect": false,
+      "whyAttractive": "営業利益は正しいが、経常利益の計算で受取配当金の扱いを誤る。85+23-16=92。計算ミスで93にしがち。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "営業利益=220 / 経常利益=92",
+      "isCorrect": false,
+      "whyAttractive": "販管費への広告宣伝費追加を忘れて、売上総利益(220)と営業利益を混同。販管費 130+5=135 を引く必要あり。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "営業利益=220 / 経常利益=93",
+      "isCorrect": false,
+      "whyAttractive": "両方誤り。販管費追加を忘れている。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "計算: (1)売上総利益=1000-780=220、(2)販管費=130+5(広告追加)=135、(3)営業利益=220-135=85、(4)営業外収益=20+3(配当追加)=23、(5)経常利益=85+23-16=92。",
+  "keyInsight": "広告費は販管費に加算→営業利益に影響。受取配当金は営業外収益に加算→経常利益に影響。項目の位置を間違えない。",
+  "topicSlugs": [
+    { "slug": "biz_financial_metrics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 3,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問2 ©2019 独立行政法人情報処理推進機構"
+}

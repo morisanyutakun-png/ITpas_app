@@ -1,0 +1,54 @@
+{
+  "externalKey": "r03_q32",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 32,
+  "majorCategory": "strategy",
+  "formatType": "law_ip",
+  "trapType": "scope_overgeneral",
+  "stem": "a〜cのうち、サイバーセキュリティ基本法に規定されているものだけを全て挙げたものはどれか。\n\na サイバーセキュリティに関して、国や地方公共団体が果たすべき責務\nb サイバーセキュリティに関して、国民が努力すべきこと\nc サイバーセキュリティに関する施策の推進についての基本理念",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a, b",
+      "isCorrect": false,
+      "whyAttractive": "cを除外。基本理念は基本法の核心で必ず規定される。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a, b, c",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "a, c",
+      "isCorrect": false,
+      "whyAttractive": "bを除外。基本法は国民の責務(努力義務)も明記する。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "b, c",
+      "isCorrect": false,
+      "whyAttractive": "aを除外。基本法の中核は国・地方公共団体の責務明記。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "サイバーセキュリティ基本法は(1)基本理念、(2)国・地方公共団体の責務、(3)国民の努力義務、(4)基本施策、(5)戦略本部設置等を規定する。a/b/c全て規定されている。基本法は理念・責務・努力・施策を一括で定めるのが典型パターン。",
+  "keyInsight": "基本法=理念+責務+国民努力+基本施策が包括的に規定される。『全て』が正解になりやすい。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 },
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 15,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問32 ©2021 独立行政法人情報処理推進機構"
+}

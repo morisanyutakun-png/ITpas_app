@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q50",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 50,
+  "majorCategory": "management",
+  "formatType": "calculation",
+  "trapType": "edge_case_miss",
+  "stem": "120kステップのソフトウェアを開発した。開発の各工程における生産性の実績が表のとおりであるとき、開発全体の工数は何人月か。ここで、生産性は1人月当たりのkステップとする。\n\n設計: 6.0kステップ/人月、製造: 4.0kステップ/人月。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "10",
+      "isCorrect": false,
+      "whyAttractive": "各工程の生産性(6+4=10)を総工数と誤解。工程ごとに120÷生産性で合算する。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "イ",
+      "body": "12",
+      "isCorrect": false,
+      "whyAttractive": "平均生産性(10÷2=5)や合計÷2の誤計算。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "24",
+      "isCorrect": false,
+      "whyAttractive": "120÷5=24(平均生産性使用)の誤り。工程別に足すのが正しい。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "エ",
+      "body": "50",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "工数=規模÷生産性を工程ごとに計算。設計=120÷6=20人月、製造=120÷4=30人月、合計=20+30=50人月。",
+  "keyInsight": "工程ごとに工数計算して合算。生産性の平均を使うのはNG。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_pm_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 22,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問50 ©2022 独立行政法人情報処理推進機構"
+}

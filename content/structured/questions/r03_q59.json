@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q59",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 59,
+  "majorCategory": "technology",
+  "formatType": "network_basics",
+  "trapType": "edge_case_miss",
+  "stem": "Aさんが、Pさん、Qさん及びRさんの3人に電子メールを送信した。Toの欄にはPさんのメールアドレスを、Ccの欄にはQさんのメールアドレスを、Bccの欄にはRさんのメールアドレスをそれぞれ指定した。電子メールを受け取った3人に関する記述として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "PさんとQさんは、同じ内容のメールがRさんにも送信されていることを知ることができる。",
+      "isCorrect": false,
+      "whyAttractive": "Bcc(R)はTo/Ccの受信者からは見えない。P/QはRの存在を知らない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "Pさんは、同じ内容のメールがQさんに送信されていることを知ることはできない。",
+      "isCorrect": false,
+      "whyAttractive": "Ccは受信者全員に見える。PはQがCcに入っていることを知れる。『知ることはできない』が誤り。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "Qさんは、同じ内容のメールがPさんにも送信されていることを知ることができる。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "Rさんは、同じ内容のメールがPさんとQさんに送信されていることを知ることはできない。",
+      "isCorrect": false,
+      "whyAttractive": "Bcc受信者もTo/Cc欄を確認できる。RはP/Qへの送信を把握できる。『できない』が誤り。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "To/Cc欄の受信者は他のTo/Cc受信者を相互に把握できる(Qの欄でPが見える、Pの欄でQが見える)。Bcc欄の受信者は他のTo/Cc受信者を見ることができる一方、To/Cc受信者はBcc欄の存在を見ることができない。したがって『QがPを知る』は正しい、『P/QがRを知る』は誤り。",
+  "keyInsight": "To/Cc=相互公開、Bcc=一方的隠蔽。Bcc受信者だけが全員を把握できる。",
+  "topicSlugs": [
+    { "slug": "network_protocols", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 28,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問59 ©2021 独立行政法人情報処理推進機構"
+}

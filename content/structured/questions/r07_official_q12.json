@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q12",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 12,
+  "majorCategory": "strategy",
+  "formatType": "law_ip",
+  "trapType": "similar_term",
+  "stem": "商標法におけるサービスマークを説明したものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "企業が、企業そのものを他社と区別するために表示する商標である。",
+      "isCorrect": false,
+      "whyAttractive": "ハウスマーク(企業を表す商標)の説明。サービスマークは『役務』に対する商標。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "製造業者、販売業者が提供する商品を、他社の商品と区別するために表示する商標である。",
+      "isCorrect": false,
+      "whyAttractive": "商品商標(トレードマーク)の説明。サービスマークは『商品』ではなく『役務』用。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "大規模小売業者が開発したプライベートブランドの商品を、他社の商品と区別するために表示する商標である。",
+      "isCorrect": false,
+      "whyAttractive": "PB(プライベートブランド)商標の説明。特殊な商品商標で、役務商標ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "輸送業者、金融業者などが提供する役務を、他社の役務と区別するために表示する商標である。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "商標法では『商品商標(trade mark)』と『役務商標(service mark)』を区別。サービスマーク=輸送・金融・通信など形のないサービス(役務)を他社と区別する商標。1992年の商標法改正で役務も登録対象になった。",
+  "keyInsight": "サービスマーク=サービス(役務)の商標。商品商標(形ある物)との区別で判別。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 6,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問12"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q62",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 62,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "order_swap",
+  "stem": "OSの仮想記憶方式に関する次の記述中のa〜cに入れる字句の適切な組合せはどれか。\n\nプログラムの実行時に、コンピュータの a 装置の b な容量に制約されない、c なアドレス空間を提供する。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a=主記憶 / b=物理的 / c=論理的",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "a=主記憶 / b=論理的 / c=物理的",
+      "isCorrect": false,
+      "whyAttractive": "物理・論理の語が逆。仮想記憶は『物理的制約を超えた論理的空間』を提供するもの。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "a=補助記憶 / b=物理的 / c=論理的",
+      "isCorrect": false,
+      "whyAttractive": "仮想記憶が制約を回避するのは『主記憶』の物理容量。補助記憶(HDD/SSD)は仮想記憶の退避先。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "a=補助記憶 / b=論理的 / c=物理的",
+      "isCorrect": false,
+      "whyAttractive": "全て誤り。仮想記憶は主記憶の物理的容量を論理的アドレス空間で拡張する。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "仮想記憶=主記憶(物理メモリ)の物理容量に制約されず、論理的に広いアドレス空間を提供する方式。足りない分は補助記憶(スワップ)で補う。『主記憶の物理制約→論理空間で解決』がポイント。",
+  "keyInsight": "仮想記憶=『物理的制約を論理的に拡張』。主記憶の制限を超えた論理アドレス空間を提供。",
+  "topicSlugs": [
+    { "slug": "tech_computer_arch", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 29,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問62"
+}

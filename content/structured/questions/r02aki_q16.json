@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q16",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 16,
+  "majorCategory": "strategy",
+  "formatType": "law_ip",
+  "trapType": "scope_overgeneral",
+  "stem": "新製品の開発に当たって生み出される様々な成果a〜cのうち、特許法による保護の対象となり得るものだけを全て挙げたものはどれか。\n\na 機能を実現するために考え出された独創的な発明\nb 新製品の形状、模様、色彩など、斬新的な発想で創作されたデザイン\nc 新製品発表に向けて考え出された新製品のブランド名",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "a, b",
+      "isCorrect": false,
+      "whyAttractive": "デザインも広義の発明と考えがち。だが形状・模様・色彩のデザインは『意匠法』の対象で、特許法の対象ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "a, b, c",
+      "isCorrect": false,
+      "whyAttractive": "知的財産はすべて特許法で守られるという誤解。知財法は発明=特許、デザイン=意匠、ブランド名=商標、創作物=著作、と対象ごとに法が分かれている。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "b, c",
+      "isCorrect": false,
+      "whyAttractive": "aを外す判断は誤り。技術的発明こそ特許法の中核対象。デザイン(意匠)とブランド名(商標)は別法。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "特許法の対象は『自然法則を利用した技術的思想の創作のうち高度なもの』=発明。デザインは意匠法、ブランド名は商標法、創作表現は著作権法が担当。4つの産業財産権を区別するのが重要。",
+  "keyInsight": "知財4法の対象: 特許=発明(技術)、実用新案=考案(軽度の技術)、意匠=デザイン、商標=ブランド名。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 9,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問16 ©2020 独立行政法人情報処理推進機構"
+}

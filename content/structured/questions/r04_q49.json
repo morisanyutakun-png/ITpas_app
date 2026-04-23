@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q49",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 49,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "ITサービスの利用者からの問合せに自動応答で対応するために、チャットボットを導入することにした。このようにチャットボットによる自動化が有効な管理プロセスとして、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "インシデント管理",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "構成管理",
+      "isCorrect": false,
+      "whyAttractive": "CMDBの維持管理。利用者問合せとは別プロセス。",
+      "misconceptionSlug": "confuse_incident_problem"
+    },
+    {
+      "label": "ウ",
+      "body": "変更管理",
+      "isCorrect": false,
+      "whyAttractive": "サービス変更のリスク管理。自動応答の対象ではない。",
+      "misconceptionSlug": "confuse_incident_problem"
+    },
+    {
+      "label": "エ",
+      "body": "問題管理",
+      "isCorrect": false,
+      "whyAttractive": "根本原因分析で、自動応答に適さない専門分析プロセス。",
+      "misconceptionSlug": "confuse_incident_problem"
+    }
+  ],
+  "explanation": "インシデント管理=利用者からの問合せ/障害連絡の一次受付と迅速解決。FAQ型の問合せは定型化しやすく、チャットボットによる自動応答の効果が高い。",
+  "keyInsight": "チャットボット=定型的問合せに有効=インシデント管理(サービスデスク)と相性◎。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_incident_problem", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 22,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問49 ©2022 独立行政法人情報処理推進機構"
+}

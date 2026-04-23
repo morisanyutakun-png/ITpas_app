@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q26",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 26,
+  "majorCategory": "strategy",
+  "formatType": "case",
+  "trapType": "edge_case_miss",
+  "stem": "全国に複数の支社をもつ大企業のA社は、大規模災害によって本社建物の全壊を想定したBCPを立案した。BCPの目的に照らし、A社のBCPとして、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "被災後に発生する火事による被害を防ぐために、カーテンなどの燃えやすいものを防災品に取り替え、定期的な防火設備の点検を計画する。",
+      "isCorrect": false,
+      "whyAttractive": "防災対策ではあるが『事業継続』計画ではない。BCP=災害発生後の事業継続、BCMと混同しないよう注意。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "被災時に本社からの指示に対して迅速に対応するために、全支社の業務を停止して、本社から指示があるまで全社員を待機させる手順を整備する。",
+      "isCorrect": false,
+      "whyAttractive": "『全業務停止』はBCPの目的(事業継続)と真逆。被災時こそ重要業務を継続するべき。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "被災時にも事業を継続するために、本社機能を代替する支社を規定し、限られた状況で対応すべき重要な業務に絞り、その業務の実施手順を整備する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "毎年の予算に本社建物への保険料を組み込み、被災前の本社建物と同規模の建物への移転に備える。",
+      "isCorrect": false,
+      "whyAttractive": "財務的リスク移転(保険)は災害後の経済的回復には貢献するが、事業継続そのもの(BCP)ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "BCP (Business Continuity Plan) = 災害等で被災しても重要業務を継続・早期復旧するための計画。本社代替拠点の指定・重要業務の絞り込み・実施手順の明文化が中核。防災・保険はBCPの目的(事業継続)とは別次元。",
+  "keyInsight": "BCPは『被災後も業務を続ける』計画。防災(予防)・保険(経済回復)と区別。",
+  "topicSlugs": [
+    { "slug": "biz_models", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 13,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問26 ©2020 独立行政法人情報処理推進機構"
+}

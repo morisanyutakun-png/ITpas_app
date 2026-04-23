@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q54",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 54,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "顧客からの電話による問合せに対応しているサービスデスクが、次のようなオペレータ支援システムを導入した。このシステム導入で期待できる効果a〜cのうち、適切なものだけを全て挙げたものはどれか。\n\n顧客とオペレータの会話をシステムが認識し、瞬時に知識データベースと照合、次に確認すべき事項や最適な回答の候補をオペレータのディスプレイに表示する。\n\na. 経験の浅いオペレータでも最適な回答候補を基に顧客対応することができるので、オペレータによる対応のばらつきを抑えることができる。\nb. 顧客の用件を自動的に把握して回答するので、電話による問合せに24時間対応することができる。\nc. 対応に必要な情報をオペレータが探す必要がなくなるので、個々の顧客対応時間を短縮することができる。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a, b",
+      "isCorrect": false,
+      "whyAttractive": "bは誤り:オペレータが対応する前提で『自動応答』ではない。24時間対応は別要件。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a, b, c",
+      "isCorrect": false,
+      "whyAttractive": "bが誤り。オペレータ支援で、無人自動応答ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "a, c",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "b, c",
+      "isCorrect": false,
+      "whyAttractive": "aの対応品質均一化(ばらつき抑制)が重要。bは不正確。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "システムはオペレータ『支援』で、オペレータの対応前提。a=ベテラン/新人の差を縮める効果(品質均一化)、c=検索時間短縮=対応時間短縮。bは24時間対応の根拠にならない(人員体制の話)。",
+  "keyInsight": "オペレータ支援システム=品質均一+時間短縮が直接効果。24時間対応は人員体制で別要素。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 24,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問54 ©2022 独立行政法人情報処理推進機構"
+}

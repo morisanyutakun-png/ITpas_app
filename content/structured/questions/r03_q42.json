@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q42",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 42,
+  "majorCategory": "management",
+  "formatType": "case",
+  "trapType": "edge_case_miss",
+  "stem": "システム開発プロジェクトにおいて、利用者から出た要望に対応するために、プログラムを追加で作成することになった。このプログラムを作成するために、先行するプログラムの作成を終えたプログラマを割り当てることにした。そして、結合テストの開始予定日までに全てのプログラムが作成できるようにスケジュールを変更し、新たな計画をプロジェクト内に周知した。このように、変更要求をマネジメントする活動はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "プロジェクト資源マネジメント",
+      "isCorrect": false,
+      "whyAttractive": "資源マネジメントも関連するが、本問は『スコープ変更+スケジュール変更+資源再配分』を統合調整している=統合マネジメント。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "イ",
+      "body": "プロジェクトスコープマネジメント",
+      "isCorrect": false,
+      "whyAttractive": "プログラム追加(スコープ変更)の側面のみに注目した誤答。実際は複数領域をまたいだ統合。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "プロジェクトスケジュールマネジメント",
+      "isCorrect": false,
+      "whyAttractive": "スケジュール変更の側面のみの誤答。要求→スコープ→資源→スケジュールの統合調整。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "エ",
+      "body": "プロジェクト統合マネジメント",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "プロジェクト統合マネジメント=複数領域(スコープ・スケジュール・資源・コスト等)を横断し、変更要求を統合的に管理するプロセス。『プログラム追加』『メンバ再配置』『スケジュール変更』『周知』を一体で扱うのが統合管理。単一領域の活動ではない。",
+  "keyInsight": "変更要求の統合調整=プロジェクト統合マネジメント。単一領域の変更(スコープ/スケジュール単独)との区別。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_pm_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 19,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問42 ©2021 独立行政法人情報処理推進機構"
+}

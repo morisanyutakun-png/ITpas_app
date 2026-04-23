@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q48",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 48,
+  "majorCategory": "management",
+  "formatType": "case",
+  "trapType": "scope_overgeneral",
+  "stem": "顧客から委託されたシステム開発プロジェクトのスコープの対象として、適切なものだけを全て挙げたものはどれか。\n\na プロジェクトで作成する成果物\nb プロジェクトで使用する市販のスケジュール管理ツール\nc プロジェクトの要求事項を顧客が記載した文書",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "a, b",
+      "isCorrect": false,
+      "whyAttractive": "bの市販ツールはプロジェクト管理のために使う『使用物』であり、プロジェクトのスコープ(=作成範囲)ではない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "b, c",
+      "isCorrect": false,
+      "whyAttractive": "aを外す誤り。プロジェクトで作成する成果物は明らかにスコープの中心。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "エ",
+      "body": "c",
+      "isCorrect": false,
+      "whyAttractive": "cは顧客が『記載した』要求事項文書=入力資料でプロジェクトスコープ(作業範囲)の対象ではない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    }
+  ],
+  "explanation": "プロジェクトスコープ=『プロジェクトで作成する成果物+そのための作業』の範囲。aの成果物は典型的なスコープ。b(市販ツール)は『使用する道具』でスコープの外。c(顧客記載の要求事項)はプロジェクトへの『入力』で、プロジェクトが作成するものではない。",
+  "keyInsight": "スコープ=『プロジェクトが作る範囲』。使うツール・外部入力文書はスコープではない。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_pm_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 22,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問48"
+}

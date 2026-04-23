@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q73",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 73,
+  "majorCategory": "technology",
+  "formatType": "db_basics",
+  "trapType": "similar_term",
+  "stem": "関係データベースにおいて、表Aと表Bの積集合演算を実行した結果はどれか。\n\n表A: (ガム,100), (せんべい,250), (チョコレート,150)\n表B: (せんべい,250), (チョコレート,150), (どら焼き,100)",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "(ガム,100), (せんべい,250), (チョコレート,150), (どら焼き,100)",
+      "isCorrect": false,
+      "whyAttractive": "和集合(UNION)の結果。『両方を合わせた』とイメージしがちだが、積集合は『両方に共通』。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "(ガム,100), (せんべい,500), (チョコレート,300), (どら焼き,100)",
+      "isCorrect": false,
+      "whyAttractive": "価格を合算した誤演算。集合演算では価格を足さない(集合要素は行そのもの)。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "(せんべい,500), (チョコレート,300)",
+      "isCorrect": false,
+      "whyAttractive": "共通する行の価格を足した誤演算。積集合は行の価格合算ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "(せんべい,250), (チョコレート,150)",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "積集合(INTERSECT)=両方の表に共通する行だけを取り出す。表A・Bともに(せんべい,250)、(チョコレート,150)が含まれるのでこの2行が結果。価格の合算はしない。和集合(UNION)・差集合(EXCEPT)と区別。",
+  "keyInsight": "積集合=『両方にある行』。和(両方合わせる)、差(片方だけ)と異なる。価格等の属性は足さない。",
+  "topicSlugs": [
+    { "slug": "db_normalization", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_db_normalization", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 34,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問73 ©2020 独立行政法人情報処理推進機構"
+}

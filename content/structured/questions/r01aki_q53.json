@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q53",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 53,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "edge_case_miss",
+  "stem": "企業におけるITガバナンスを構築し、推進する責任者として、適切な者は誰か。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "株主",
+      "isCorrect": false,
+      "whyAttractive": "企業の所有者だがITガバナンスの推進者ではなく、監督者・期待する側。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "経営者",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "従業員",
+      "isCorrect": false,
+      "whyAttractive": "現場実行者。ガバナンスを受ける側であって構築・推進の責任者ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "情報システム部門",
+      "isCorrect": false,
+      "whyAttractive": "IT実行部門。IT戦略の実装側であって経営視点でのガバナンス推進者ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ITガバナンス=経営層がIT活用を適切に方向付け・コントロールする組織能力。構築・推進の責任者は経営者(経営トップ)。株主は監督側、情報システム部門は実行側、従業員は現場。",
+  "keyInsight": "ITガバナンス=経営層の責任。IT戦略の推進・評価は経営者が担う。",
+  "topicSlugs": [
+    { "slug": "biz_dx_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 22,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問53 ©2019 独立行政法人情報処理推進機構"
+}

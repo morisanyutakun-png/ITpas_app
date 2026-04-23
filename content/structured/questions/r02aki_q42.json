@@ -1,0 +1,54 @@
+{
+  "externalKey": "r02aki_q42",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 42,
+  "majorCategory": "management",
+  "formatType": "case",
+  "trapType": "edge_case_miss",
+  "stem": "情報システム開発の詳細設計が終了し、プログラミングを外部のベンダに委託することにした。仕様、成果物及び作業の範囲を明確に定義した上で、プログラミングを委託先に請負契約で発注することにした。発注元のプロジェクトマネージャのマネジメント活動として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "委託先に定期的な進捗報告を求めるとともに、完成したプログラムの品質を確認する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "委託先の作業内容を詳細に確認し、生産性の低い要員の交代を指示する。",
+      "isCorrect": false,
+      "whyAttractive": "要員交代の指示=『指揮命令』。請負契約では発注元は受託先の要員に指揮命令できない。偽装請負となる。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "委託先の作業場所で、要員の出退勤を管理し、稼働状況を確認する。",
+      "isCorrect": false,
+      "whyAttractive": "出退勤管理=労働時間の管理=指揮命令の典型例。請負では受託先が自社要員を管理する。偽装請負リスク。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "委託先の要員に余力がある場合、仕様変更に伴うプログラミングの作業を担当者に直接指示する。",
+      "isCorrect": false,
+      "whyAttractive": "担当者への直接指示=指揮命令で、請負契約では禁止。追加作業は委託先との契約変更で対応する。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "請負契約は『成果物の完成責任を委託先が負う』契約。発注元は要員個人に指揮命令できず、進捗と成果物の品質確認のみが関与。要員管理・直接指示は全て偽装請負に該当し法令違反。",
+  "keyInsight": "請負契約の発注元=『成果物と進捗の確認のみ』。要員管理・直接指示はNG(偽装請負)。派遣契約との違い。",
+  "topicSlugs": [
+    { "slug": "biz_labor_contracts", "weight": 1 },
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 19,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問42 ©2020 独立行政法人情報処理推進機構"
+}

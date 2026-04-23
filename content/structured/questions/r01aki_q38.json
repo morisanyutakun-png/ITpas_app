@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q38",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 38,
+  "majorCategory": "management",
+  "formatType": "case",
+  "trapType": "edge_case_miss",
+  "stem": "システム開発プロジェクトの開始時に、開発途中で利用者から仕様変更要求が多く出てプロジェクトの進捗に影響が出ることが予想された。品質悪化や納期遅れにならないようにする対応策として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "設計完了後は変更要求を受け付けないことを顧客に宣言する。",
+      "isCorrect": false,
+      "whyAttractive": "変更を全て遮断する対応。現実には事業環境や要件は変わるため、硬直的な姿勢はプロジェクト失敗の原因になる。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "途中で遅れが発生した場合にはテストを省略してテスト期間を短縮する。",
+      "isCorrect": false,
+      "whyAttractive": "テスト省略は品質悪化の直接原因。『品質悪化にならないように』という問題の条件と矛盾。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "変更要求が多く発生した場合には機能の実装を取りやめることを計画に盛り込む。",
+      "isCorrect": false,
+      "whyAttractive": "機能削減も選択肢だが、事前合意なしに一方的に実装を取りやめると顧客との対立を招く。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "変更要求の優先順位の決め方と対応範囲を顧客と合意しておく。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "変更が多いと予想される場合、事前に『変更要求の優先順位付けルール』と『対応範囲』を顧客と合意しておくのが定石。変更自体は受けるが管理されたプロセスで捌く。完全禁止・テスト省略・一方的削減はいずれも弊害が大きい。",
+  "keyInsight": "変更対応は『完全禁止』でも『無条件受諾』でもなく『ルールに沿った管理』が正解。事前合意が品質・納期を守る。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_pm_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 17,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問38 ©2019 独立行政法人情報処理推進機構"
+}

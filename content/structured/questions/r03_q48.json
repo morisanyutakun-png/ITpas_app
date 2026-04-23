@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q48",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 48,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "既存のプログラムを、外側から見たソフトウェアの動きを変えずに内部構造を改善する活動として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "テスト駆動開発",
+      "isCorrect": false,
+      "whyAttractive": "テストを先に書く開発手法。内部構造改善ではなく開発プロセス。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "ペアプログラミング",
+      "isCorrect": false,
+      "whyAttractive": "2人で1台のPCを使う開発手法。内部構造改善とは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "リバースエンジニアリング",
+      "isCorrect": false,
+      "whyAttractive": "既存プログラムから設計情報を抽出する技術。内部構造改善そのものではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "リファクタリング",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "リファクタリング=『外部動作を変えずに内部構造を改善』する活動。可読性・保守性向上が目的。アジャイル開発で重視される実践。テスト駆動(先にテスト)・ペアプロ(2人開発)・リバース(設計抽出)とは別概念。",
+  "keyInsight": "リファクタリング=『動作不変+内部改善』。コードの整理整頓。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 21,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問48 ©2021 独立行政法人情報処理推進機構"
+}

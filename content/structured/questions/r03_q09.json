@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q09",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 9,
+  "majorCategory": "strategy",
+  "formatType": "law_ip",
+  "trapType": "edge_case_miss",
+  "stem": "不適切な行為a〜cのうち、不正競争防止法で規制されているものだけを全て挙げたものはどれか。\n\na キャンペーンの応募者の個人情報を、応募者に無断で他の目的のために利用する行為\nb 他人のIDとパスワードを不正に入手し、それらを使用してインターネット経由でコンピュータにアクセスする行為\nc 不正な利益を得ようとして、他社の商品名や社名に類似したドメイン名を使用する行為",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a",
+      "isCorrect": false,
+      "whyAttractive": "aは個人情報保護法違反で、不正競争防止法ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a, c",
+      "isCorrect": false,
+      "whyAttractive": "cは正しいがaは個人情報保護法の対象。法律を取り違え。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "b",
+      "isCorrect": false,
+      "whyAttractive": "bは不正アクセス禁止法。不正競争防止法ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "c",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "各行為の所管法: a=個人情報保護法(目的外利用禁止)、b=不正アクセス禁止法(ID/PW不正使用)、c=不正競争防止法(ドメイン名の不正取得・使用/商標混同)。不正競争防止法はcのみ該当。",
+  "keyInsight": "法律の守備範囲: 個人情報保護法=個人情報、不正アクセス禁止法=ネット経由不正ログイン、不正競争防止法=営業秘密/商標混同。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 5,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問9 ©2021 独立行政法人情報処理推進機構"
+}

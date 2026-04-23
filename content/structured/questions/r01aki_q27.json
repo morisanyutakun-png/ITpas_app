@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q27",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 27,
+  "majorCategory": "strategy",
+  "formatType": "law_ip",
+  "trapType": "edge_case_miss",
+  "stem": "取得した個人情報の管理に関する行為a〜cのうち、個人情報保護法において、本人に通知又は公表が必要となるものだけを全て挙げたものはどれか。\n\na 個人情報の入力業務の委託先の変更\nb 個人情報の利用目的の合理的な範囲での変更\nc 利用しなくなった個人情報の削除",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a",
+      "isCorrect": false,
+      "whyAttractive": "委託先変更は通知・公表の明示義務なし(適切な監督義務はある)。通知不要の行為を含めている。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a, b",
+      "isCorrect": false,
+      "whyAttractive": "bは正しいがaを誤って含む。委託先変更は通知義務ではなく監督義務。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "b",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "b, c",
+      "isCorrect": false,
+      "whyAttractive": "cの削除は通知不要。むしろ削除は本人にとって不利にならないため、通知義務はない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "個人情報保護法で通知/公表が必要なのは利用目的の変更(b)。ただし『合理的な範囲』であれば変更可、変更後の目的を本人に通知or公表が必要。a(委託先変更)は適切な監督義務のみ、c(削除)は本人に不利益がないため通知不要。",
+  "keyInsight": "通知・公表義務の基本は『利用目的の明示・変更時の通知』。削除や委託先変更はそれ自体では通知義務にならない。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 13,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問27 ©2019 独立行政法人情報処理推進機構"
+}

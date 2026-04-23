@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q67",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 67,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "3次元画像処理の高速化や、動画をなめらかにするなどの機能をもつ、描画処理のためのハードウェアはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "CGI",
+      "isCorrect": false,
+      "whyAttractive": "Common Gateway Interface=Webサーバ上でプログラム実行する仕組み。ハードウェアではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "GPU",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "GUI",
+      "isCorrect": false,
+      "whyAttractive": "Graphical User Interface=アイコン等を使ったユーザインタフェース。描画するハードウェアではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "UPS",
+      "isCorrect": false,
+      "whyAttractive": "Uninterruptible Power Supply=無停電電源装置。電源系ハードウェアで、描画ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "GPU (Graphics Processing Unit) = 3D画像処理・動画の高速描画を担う専用プロセッサ。並列処理に特化、ゲーム・CAD・AI計算でも使用。CGI(Webサーバ)・GUI(UI)・UPS(電源)とは全く別分野。",
+  "keyInsight": "GPU=Graphics Processing Unit=『描画専用プロセッサ』。ハードウェア名。",
+  "topicSlugs": [
+    { "slug": "tech_computer_arch", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 32,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問67"
+}

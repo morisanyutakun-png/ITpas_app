@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q68",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 68,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "edge_case_miss",
+  "stem": "全ての通信区間で盗聴されるおそれがある通信環境において、受信者以外に内容を知られたくないファイルを電子メールに添付して送る方法として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "S/MIMEを利用して電子メールを暗号化する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "SSL/TLSを利用してプロバイダのメールサーバとの通信を暗号化する。",
+      "isCorrect": false,
+      "whyAttractive": "SSL/TLSは『端末〜メールサーバ』区間のみ暗号化。サーバ間の通信は保護されない。全区間盗聴環境では不十分。",
+      "misconceptionSlug": "confuse_crypto_method"
+    },
+    {
+      "label": "ウ",
+      "body": "WPA2を利用して通信を暗号化する。",
+      "isCorrect": false,
+      "whyAttractive": "WPA2は無線LAN区間のみ。メール送信経路の全区間は保護されない。",
+      "misconceptionSlug": "confuse_crypto_method"
+    },
+    {
+      "label": "エ",
+      "body": "パスワードで保護されたファイルを電子メールに添付して送信した後、別の電子メールでパスワードを相手に知らせる。",
+      "isCorrect": false,
+      "whyAttractive": "いわゆるPPAP方式。同じ経路で両方送ると盗聴者が両方取得可能。実質的な保護にならない。",
+      "misconceptionSlug": "confuse_crypto_method"
+    }
+  ],
+  "explanation": "S/MIME=メール本文・添付を送信者が暗号化し、受信者だけが復号できる方式(エンドツーエンド)。全区間盗聴環境でも、中間では暗号化状態を保つ。SSL/TLS(区間限定)・WPA2(無線のみ)・PPAP(同経路で鍵送信)は不適切。",
+  "keyInsight": "S/MIME=メールのエンドツーエンド暗号化。区間暗号化(SSL/TLS・WPA2)では不十分な場合に使う。",
+  "topicSlugs": [
+    { "slug": "security_crypto", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_crypto_method", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 31,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問68 ©2021 独立行政法人情報処理推進機構"
+}

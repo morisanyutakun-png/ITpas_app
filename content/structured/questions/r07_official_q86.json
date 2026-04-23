@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q86",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 86,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "動物が写っている大量の画像から犬や猫などの特徴を自動的に抽出して、動物の種類を識別できるようにするAIの技術はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "e-ラーニング",
+      "isCorrect": false,
+      "whyAttractive": "電子学習。人間向けの教育形態で、AIの学習技術ではない。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "イ",
+      "body": "アクティブラーニング",
+      "isCorrect": false,
+      "whyAttractive": "学習者主体の教育手法(人間向け)または機械学習のサンプル効率化手法。動物識別の中核ではない。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "アダプティブラーニング",
+      "isCorrect": false,
+      "whyAttractive": "学習者に合わせて調整する教育手法(人間向け)。AI画像認識ではない。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ディープラーニング",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "ディープラーニング(深層学習)=多層ニューラルネットで大量データから特徴を自動抽出・分類する技術。画像認識(犬猫分類等)で大きな成果。e-ラーニング・アクティブラーニング・アダプティブラーニングは人間の学習手法で、AI技術ではない。",
+  "keyInsight": "『大量画像から特徴を自動抽出』=ディープラーニング。他のラーニング系用語は人間教育手法。",
+  "topicSlugs": [
+    { "slug": "ai_generative_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_ai_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 40,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問86"
+}

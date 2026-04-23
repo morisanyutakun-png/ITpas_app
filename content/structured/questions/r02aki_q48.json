@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q48",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 48,
+  "majorCategory": "management",
+  "formatType": "case",
+  "trapType": "edge_case_miss",
+  "stem": "委託に基づき他社のシステム監査を実施するとき、システム監査人の行動として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "委託元の経営者にとって不利にならないように監査を実施する。",
+      "isCorrect": false,
+      "whyAttractive": "依頼主への忖度はシステム監査の『独立性・客観性』と真逆。どの立場にも偏らず公正に評価するのが監査人の役割。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "システム監査を実施する上で知り得た情報は、全て世間へ公開する。",
+      "isCorrect": false,
+      "whyAttractive": "『透明性』の美名で選びそうだが、監査人には守秘義務がある。委託元の機密情報を世間公開するのは契約違反。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "指摘事項の多寡によって報酬を確定できる契約を結び監査を実施する。",
+      "isCorrect": false,
+      "whyAttractive": "成果報酬型に見えるが、報酬が指摘件数に依存すると『独立性』を失う(多く指摘するインセンティブが働く)。独立性保持のため禁止。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "十分かつ適切な監査証拠を基に判断する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "システム監査人の原則: 独立性(誰にも偏らない)、公正性(事実に基づく判断)、専門性(十分な知識)、守秘義務。判断の根拠は『十分かつ適切な監査証拠』のみ。依頼主忖度(ア)、情報公開(イ)、成果報酬(ウ)は全て原則違反。",
+  "keyInsight": "監査人は『独立・公正・専門・守秘』。判断は証拠に基づく。忖度・公開・出来高制はNG。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 22,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問48 ©2020 独立行政法人情報処理推進機構"
+}

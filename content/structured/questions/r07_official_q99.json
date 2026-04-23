@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q99",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 99,
+  "majorCategory": "technology",
+  "formatType": "pseudo_lang",
+  "trapType": "edge_case_miss",
+  "stem": "関数calculateAmountOfPrizeは、業務改善の効果における改善額と短縮期間を、それぞれimprovementとperiodで受け取り、賞金額を戻り値とする。改善額が20万円で短縮期間が3日の業務改善と、改善額が5万円で短縮期間が14日の業務改善があった。この二つの賞金額の合計は何円か。ここで、改善額と短縮期間の値はそれぞれ0以上とする。\n\n[プログラム]\n○整数型: calculateAmountOfPrize(整数型: improvement, 整数型: period)\n  整数型: prize\n  if (improvement が 100000 より小さい)\n    if (period が 7 より小さい) prize ← 500\n    else prize ← 1000\n    endif\n  else\n    if (period が 7 より小さい) prize ← 2000\n    else prize ← 5000\n    endif\n  endif\n  return prize",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "1,000",
+      "isCorrect": false,
+      "whyAttractive": "片方の計算漏れ。2つの結果を合計する必要あり。",
+      "misconceptionSlug": "wrong_pseudo_lang_flow"
+    },
+    {
+      "label": "イ",
+      "body": "1,500",
+      "isCorrect": false,
+      "whyAttractive": "分岐の判定を誤った結果。境界値(7日)の扱い等で誤りがち。",
+      "misconceptionSlug": "wrong_pseudo_lang_flow"
+    },
+    {
+      "label": "ウ",
+      "body": "3,000",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "5,500",
+      "isCorrect": false,
+      "whyAttractive": "2000+5000=7000とかの誤計算。または2000+3500等の途中計算ミス。",
+      "misconceptionSlug": "wrong_pseudo_lang_flow"
+    }
+  ],
+  "explanation": "改善20万(=200000)+3日: improvement≥100000&period<7 → prize=2000。改善5万(=50000)+14日: improvement<100000&period≥7 → prize=1000。合計=2000+1000=3000円。",
+  "keyInsight": "2重if分岐: 改善額×短縮期間の4象限。具体値を代入して分岐を順に辿る。境界値(7日未満/以上)に注意。",
+  "topicSlugs": [
+    { "slug": "algo_pseudo_lang", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "wrong_pseudo_lang_flow", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 46,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問99"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q09",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 9,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "国連が中心となり、持続可能な世界を実現するために設定した17のゴールから成る国際的な開発目標はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "COP21",
+      "isCorrect": false,
+      "whyAttractive": "気候変動枠組条約第21回締約国会議(パリ協定の採択会合)。気候変動分野に限定されており、17ゴール全体ではない。『国連系の国際会議』という枠で混同される。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "SDGs",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "UNESCO",
+      "isCorrect": false,
+      "whyAttractive": "国連教育科学文化機関。文化・教育・科学分野の専門機関で、17の開発目標を定めた枠組みではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "WHO",
+      "isCorrect": false,
+      "whyAttractive": "世界保健機関。保健分野の国連専門機関。SDGsのゴール3(健康)だけに関わる機関で、17ゴール全体の枠組みではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "SDGs (Sustainable Development Goals) = 持続可能な開発目標。2015年国連総会で採択、17ゴール×169ターゲットで構成。COP21は気候変動の国際会議、UNESCOは教育・科学・文化の専門機関、WHOは保健の専門機関で、SDGsの『包括的17ゴール』とは別。",
+  "keyInsight": "『17ゴール』という数字 = SDGs の決定打。略語に惑わされず、数字で判別できる。",
+  "topicSlugs": [
+    { "slug": "biz_dx_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 5,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問9 ©2020 独立行政法人情報処理推進機構"
+}

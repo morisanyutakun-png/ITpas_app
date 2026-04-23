@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q68",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 68,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "order_swap",
+  "stem": "1年前に作成した情報セキュリティポリシについて、適切に運用されていることを確認するための監査を行った。この活動はPDCAサイクルのどれに該当するか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "P",
+      "isCorrect": false,
+      "whyAttractive": "Plan=計画段階。セキュリティポリシの策定がP段階。運用後の監査は別段階。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "D",
+      "isCorrect": false,
+      "whyAttractive": "Do=実行段階。ポリシを運用する段階。監査(確認)はDではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "C",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "A",
+      "isCorrect": false,
+      "whyAttractive": "Act=改善段階。監査結果を受けての改善活動はA。監査そのものはC(評価)。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "PDCA: P(策定)→D(運用)→C(評価・監査)→A(改善)。『運用されていることを確認する監査』はC段階の典型。結果を受けた改善策はAで実施。",
+  "keyInsight": "監査=評価=C(Check)。改善実施(A)とは分ける。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 29,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問68 ©2019 独立行政法人情報処理推進機構"
+}

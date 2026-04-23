@@ -1,0 +1,54 @@
+{
+  "externalKey": "r07_official_q33",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 33,
+  "majorCategory": "strategy",
+  "formatType": "case",
+  "trapType": "edge_case_miss",
+  "stem": "自動運転の水準は、一般的に\"レベル1\"から\"レベル5\"に分けられている。\"条件付運転自動化\"と呼ばれる\"レベル3\"が示す自動運転の水準に関する記述として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "運転の主体はシステムであり、人間が運転する必要はないが、システムによる自動運転の継続が難しい場合は、人間が運転しなければならない。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "運転の主体はシステムであり、人間が運転する必要はないので、ハンドルやペダルなどの運転装置は不要だが、自動運転できる地域は限られる。",
+      "isCorrect": false,
+      "whyAttractive": "レベル4(高度自動運転)の説明。特定条件下でハンドル不要、だがレベル3では運転席に人間必要。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "運転の主体は人間であり、高速道路で車線を維持しながら前の自動車に付いて走る機能のように、ハンドルと加減速の操作をシステムが支援する。",
+      "isCorrect": false,
+      "whyAttractive": "レベル2(部分運転自動化)の説明。複数操作を支援するが運転主体は人間。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "運転の主体は人間であり、自動ブレーキや急発進防止システムのように、前方又は後方の状況によって、システムが運転の一部を支援する。",
+      "isCorrect": false,
+      "whyAttractive": "レベル1(運転支援)の説明。単一操作の支援で、運転主体は人間。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "自動運転レベル: L1=単一機能支援、L2=複数機能支援(運転主体=人間)、L3=特定条件下でシステムが主体(ただし継続困難時は人間が引き継ぐ)、L4=高度自動化(特定領域内で完全自動)、L5=完全自動化。L3の特徴=『システム主体だが引き継ぎ必要』。",
+  "keyInsight": "L3=『条件付運転自動化』。運転主体がシステムに移る最初のレベル、ただし引き継ぎ義務あり。",
+  "topicSlugs": [
+    { "slug": "tech_iot_basics", "weight": 1 },
+    { "slug": "ai_generative_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 15,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問33"
+}

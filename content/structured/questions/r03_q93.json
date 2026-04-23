@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q93",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 93,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "ブログのサービスで使用されるRSSリーダが表示する内容として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ブログから収集した記事の情報",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "ブログにアクセスした利用者の数",
+      "isCorrect": false,
+      "whyAttractive": "アクセス解析ツールの機能。RSSの目的ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ブログに投稿した記事の管理画面",
+      "isCorrect": false,
+      "whyAttractive": "CMS管理画面。RSSリーダは閲覧側ツール。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ブログ用のデザインテンプレート",
+      "isCorrect": false,
+      "whyAttractive": "テーマ・テンプレート機能。RSSとは無関係。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "RSS(RDF Site Summary / Really Simple Syndication)=サイト更新情報の配信フォーマット。RSSリーダ=複数サイトのRSSを購読し、新着記事を一覧表示するアプリ。『記事の情報』を収集表示するツール。",
+  "keyInsight": "RSSリーダ=購読した複数ブログの新着記事を一括閲覧する閲覧者向けツール。",
+  "topicSlugs": [
+    { "slug": "network_protocols", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 42,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問93 ©2021 独立行政法人情報処理推進機構"
+}

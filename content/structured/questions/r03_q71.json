@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q71",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 71,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "MVNOの事業者を説明したものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "自らは通信回線設備を所有せず、他社から借りて通信サービスを提供する事業者",
+      "isCorrect": false,
+      "whyAttractive": "MVNEの業務説明に近い。MVNOは借りて提供するが、『仮想移動体通信事業者』の定義をもっと正確に言うとウ。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "通信回線設備を所有し、通信サービスを提供する事業者",
+      "isCorrect": false,
+      "whyAttractive": "MNO(移動体通信事業者、ドコモ/au/SoftBank等)の説明。MVNOとは逆。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "無線通信設備を他の事業者から借りて、独自のブランドで移動体通信サービスを提供する事業者",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "インターネット接続サービスを提供する事業者",
+      "isCorrect": false,
+      "whyAttractive": "ISP(プロバイダ)の説明。移動体通信とは別業態。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "MVNO=Mobile Virtual Network Operator=仮想移動体通信事業者。自社で無線設備を持たず、MNO(ドコモ等)から設備を借りて独自ブランドで携帯サービスを提供(例:IIJmio、mineo、UQ mobile初期)。格安SIM業者が該当。",
+  "keyInsight": "MVNO=設備を持たずにMNOから借りて独自ブランド提供。MNO=設備保有。",
+  "topicSlugs": [
+    { "slug": "network_protocols", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 33,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問71 ©2021 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q12",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 12,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "企業の経営理念を策定する意義として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "企業の経営戦略を実現するための行動計画を具体的に示すことができる。",
+      "isCorrect": false,
+      "whyAttractive": "行動計画は戦術レベルの話で、経営理念より下位。理念は『なぜやるか』、行動計画は『どうやるか』。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "企業の経営目標を実現するためのシナリオを明確にすることができる。",
+      "isCorrect": false,
+      "whyAttractive": "経営戦略の説明。戦略=シナリオ、理念=存在意義。別のレイヤー。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "企業の存在理由や価値観を明確にすることができる。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "企業の到達したい将来像を示すことができる。",
+      "isCorrect": false,
+      "whyAttractive": "ビジョンの説明。将来像の提示がビジョン、存在意義の宣言が理念。しばしば混同される。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "経営理念=企業の存在理由・価値観・信条を言語化したもの。ミッションとも呼ぶ。ビジョン(将来像)・戦略(シナリオ)・行動計画(実行)より上位の基盤。『何のために存在するか』を答えるのが理念。",
+  "keyInsight": "理念(なぜ)→ビジョン(何を)→戦略(どう)→行動計画(いつ)。階層で区別。",
+  "topicSlugs": [
+    { "slug": "biz_models", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 6,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問12 ©2019 独立行政法人情報処理推進機構"
+}

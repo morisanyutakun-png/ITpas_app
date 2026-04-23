@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q47",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 47,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "ソフトウェア保守に関する記述のうち、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "本番環境で運用中のシステムに対して、ソフトウェアの潜在不良を発見し、障害が発生する前に修正を行うことはソフトウェア保守には含まれない。",
+      "isCorrect": false,
+      "whyAttractive": "予防保守もソフトウェア保守に含まれる。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "本番環境で運用中のシステムに対して、ソフトウェアの不具合を修正することがソフトウェア保守であり、仕様変更に伴う修正はソフトウェア保守には含まれない。",
+      "isCorrect": false,
+      "whyAttractive": "仕様変更(完全化保守)も保守に含まれる。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "本番環境で運用中のシステムに対して、法律改正に伴うソフトウェア修正もソフトウェア保守に含まれる。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "本番環境で運用中のシステムに対する修正だけでなく、納入前のシステム開発期間中に実施した不具合の修正もソフトウェア保守に含まれる。",
+      "isCorrect": false,
+      "whyAttractive": "納入前の修正は開発段階の活動で、保守ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ソフトウェア保守=納入後の運用中システムに対する修正/改善活動。是正(不具合修正)・予防(潜在不良の予防修正)・適応(法律/OS変更への対応)・完全化(機能強化)の4種。法律改正対応=適応保守で該当。",
+  "keyInsight": "ソフト保守=納入後。是正/予防/適応/完全化の4分類。開発中修正は保守ではない。",
+  "topicSlugs": [
+    { "slug": "biz_validation_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 21,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問47 ©2022 独立行政法人情報処理推進機構"
+}

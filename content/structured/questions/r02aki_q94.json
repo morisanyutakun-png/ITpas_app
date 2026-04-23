@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q94",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 94,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "IoTデバイス群とそれらを管理するIoTサーバで構成されるIoTシステムがある。このシステムの情報セキュリティにおける①〜③のインシデントと、それによって損なわれる、機密性、完全性及び可用性との組合せとして、適切なものはどれか。\n\n① IoTデバイスが、電池切れによって動作しなくなった。\n② IoTデバイスとIoTサーバ間の通信を暗号化していなかったので、情報が漏えいした。\n③ システムの不具合によって、誤ったデータが記録された。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "①=可用性 / ②=完全性 / ③=機密性",
+      "isCorrect": false,
+      "whyAttractive": "②③を逆に覚えている。情報漏えいは機密性、誤ったデータ記録は完全性。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "①=可用性 / ②=機密性 / ③=完全性",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "①=完全性 / ②=可用性 / ③=機密性",
+      "isCorrect": false,
+      "whyAttractive": "全て別要素。電池切れ=使えない=可用性のはず。完全性・可用性・機密性の定義を取り違え。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "①=機密性 / ②=可用性 / ③=完全性",
+      "isCorrect": false,
+      "whyAttractive": "①②を取り違え。電池切れは使えない=可用性、情報漏えいは機密性。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "CIA対応: ①電池切れ=動作不能=『可用性』損失。②暗号化未実施で漏えい=『機密性』損失。③誤データ記録=整合性崩壊=『完全性』損失。各インシデントの本質を3要素に割り当てる。",
+  "keyInsight": "機密性=情報秘匿、完全性=正確性、可用性=使える状態。インシデントごとに『何が壊れたか』で判別。",
+  "topicSlugs": [
+    { "slug": "security_cia_triad", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 43,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問94 ©2020 独立行政法人情報処理推進機構"
+}

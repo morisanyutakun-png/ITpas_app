@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q91",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 91,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "次の作業a〜dのうち、リスクマネジメントにおける、リスクアセスメントに含まれるものだけを全て挙げたものはどれか。\n\na. 脅威や脆弱性などを使ってリスクレベルを決定する。\nb. リスクとなる要因を特定する。\nc. リスクに対してどのように対応するかを決定する。\nd. リスクについて対応する優先順位を決定する。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a, b",
+      "isCorrect": false,
+      "whyAttractive": "優先順位決定(d)も評価の一部で含まれる。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a, b, d",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "a, c, d",
+      "isCorrect": false,
+      "whyAttractive": "リスク対応(c)はアセスメント後の作業。要因特定(b)が抜けている。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "c, d",
+      "isCorrect": false,
+      "whyAttractive": "cはアセスメント外。bが必須だが抜けている。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "リスクアセスメント=①リスク特定(b:要因洗い出し)+②リスク分析(a:レベル決定)+③リスク評価(d:優先順位付け)。cの『どう対応するか決定』はリスク対応でアセスメント外。",
+  "keyInsight": "アセスメント=特定+分析+評価(対応は含まず)。『どう対処するか決定』=対応=アセスメント後。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 41,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問91 ©2021 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q49",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 49,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "edge_case_miss",
+  "stem": "ITガバナンスに関する次の記述中のaに入れる、最も適切な字句はどれか。\n\na は、現在及び将来のITの利用についての評価とIT利用が事業の目的に合致することを確実にする役割がある。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "株主",
+      "isCorrect": false,
+      "whyAttractive": "企業の所有者。IT利用の評価者ではなく、経営を監督する立場。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "監査人",
+      "isCorrect": false,
+      "whyAttractive": "監査・評価する役割。ITガバナンスを『確実にする』役割は経営者。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "経営者",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "情報システム責任者",
+      "isCorrect": false,
+      "whyAttractive": "IT部門のトップ。ITガバナンスは経営層全体の責任で、IT部門単独ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ITガバナンス=経営者がITの現在・将来の利用を評価し、事業目的との整合を確実にする役割。JIS Q 38500では経営陣(Directors)の責任として定義。情報システム責任者はIT部門管理者で、経営層全体によるガバナンスとは別。",
+  "keyInsight": "ITガバナンス=『経営者の役割』。IT部門責任者・監査人・株主ではなく、経営層の責任。",
+  "topicSlugs": [
+    { "slug": "biz_dx_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 22,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問49 ©2021 独立行政法人情報処理推進機構"
+}

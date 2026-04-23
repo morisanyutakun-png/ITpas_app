@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q94",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 94,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "特定のPCから重要情報を不正に入手するといった標的型攻撃に利用され、攻撃対象のPCに対して遠隔から操作を行って、ファイルの送受信やコマンドなどを実行させるものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "RAT",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "VPN",
+      "isCorrect": false,
+      "whyAttractive": "正規の仮想専用線。攻撃ツールではない(名前が似るだけ)。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "デバイスドライバ",
+      "isCorrect": false,
+      "whyAttractive": "周辺機器を制御する正規のソフトウェア。遠隔操作マルウェアではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ランサムウェア",
+      "isCorrect": false,
+      "whyAttractive": "ファイルを暗号化し身代金を要求するマルウェア。遠隔操作機能が主目的ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "RAT(Remote Access Tool/Trojan)=遠隔操作マルウェア。感染PCを外部から操作し、ファイル送受信・コマンド実行・画面キャプチャ・キーロガー機能を持つ。標的型攻撃で典型的に使われる。",
+  "keyInsight": "RAT=遠隔操作用マルウェア。ランサム=身代金型、VPN=正規トンネル、ドライバ=周辺機器制御。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 42,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問94 ©2021 独立行政法人情報処理推進機構"
+}

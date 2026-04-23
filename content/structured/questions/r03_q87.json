@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q87",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 87,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "単語を読みやすくするために、表示したり印刷したりするときの文字幅が、文字ごとに異なるフォントを何と呼ぶか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "アウトラインフォント",
+      "isCorrect": false,
+      "whyAttractive": "拡大しても滑らかな曲線で表示する形式(ベクタ)。『文字幅』とは別の概念。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "等幅フォント",
+      "isCorrect": false,
+      "whyAttractive": "全ての文字幅が同じ(Courier等)。プロポーショナルと対義。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ビットマップフォント",
+      "isCorrect": false,
+      "whyAttractive": "ドット集合で表現する形式(ラスタ)。表示方法の分類で、幅の概念ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "プロポーショナルフォント",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "プロポーショナルフォント=文字ごとに幅を変える(例: i は狭く、w は広く)。読みやすさUP。対義語が等幅フォント(monospace)。アウトライン/ビットマップは形状のデータ表現方式の分類。",
+  "keyInsight": "幅: プロポーショナル(可変) vs 等幅(固定)。データ形式: アウトライン(ベクタ) vs ビットマップ(ラスタ)。別軸の分類。",
+  "topicSlugs": [
+    { "slug": "tech_computer_arch", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 40,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問87 ©2021 独立行政法人情報処理推進機構"
+}

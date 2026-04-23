@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q21",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 21,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "政府が定める『人間中心のAI社会原則』では、三つの価値を理念として尊重し、その実現を追求する社会を構築していくべきとしている。実現を追求していくべき社会の姿だけを全て挙げたものはどれか。\n\na. 持続性ある社会\nb. 多様な背景を持つ人々が多様な幸せを追求できる社会\nc. 人間があらゆる労働から解放される社会\nd. 人間の尊厳が尊重される社会",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a, b, c",
+      "isCorrect": false,
+      "whyAttractive": "cは原則ではない。3原則はdを含む。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a, b, d",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "a, c, d",
+      "isCorrect": false,
+      "whyAttractive": "cが誤り。bの多様性尊重が3原則の一つ。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "b, c, d",
+      "isCorrect": false,
+      "whyAttractive": "cが誤り。aの持続性が3原則の一つ。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "人間中心のAI社会原則(内閣府)で尊重すべき3つの価値=①人間の尊厳(dignity)、②多様性と包摂(diversity & inclusion)、③持続可能性(sustainability)。『労働解放』は掲げていない(AIは人間の補助)。",
+  "keyInsight": "AI社会原則の3価値=尊厳+多様性+持続性。人間中心であり労働代替ではない。",
+  "topicSlugs": [
+    { "slug": "ai_generative_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_ai_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 10,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問21 ©2022 独立行政法人情報処理推進機構"
+}

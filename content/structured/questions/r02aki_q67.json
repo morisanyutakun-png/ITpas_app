@@ -1,0 +1,56 @@
+{
+  "externalKey": "r02aki_q67",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 67,
+  "majorCategory": "technology",
+  "formatType": "network_basics",
+  "trapType": "similar_term",
+  "stem": "TCP/IPにおけるポート番号によって識別されるものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "LANに接続されたコンピュータや通信機器のLANインタフェース",
+      "isCorrect": false,
+      "whyAttractive": "MACアドレスが識別するもの。ネットワークインタフェースカード(NIC)単位の識別子で、TCP/IPの下位層(データリンク層)。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    },
+    {
+      "label": "イ",
+      "body": "インターネットなどのIPネットワークに接続したコンピュータや通信機器",
+      "isCorrect": false,
+      "whyAttractive": "IPアドレスが識別するもの。機器(ホスト)単位で、ネットワーク層。ポート番号より1段下位。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    },
+    {
+      "label": "ウ",
+      "body": "コンピュータ上で動作している通信アプリケーション",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "無線LANのネットワーク",
+      "isCorrect": false,
+      "whyAttractive": "SSIDが識別する範囲。ポート番号とは別の識別子で、物理層/データリンク層の概念。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    }
+  ],
+  "explanation": "TCP/IPの識別階層: MACアドレス=ネットワークインタフェース(L2)、IPアドレス=ホスト/機器(L3)、ポート番号=アプリケーション/サービス(L4)。ポート80=HTTP、443=HTTPS等、ポート番号でアプリを区別する。",
+  "keyInsight": "識別の階層: MAC(L2:NIC)→IP(L3:機器)→ポート(L4:アプリ)。上に行くほど細かい識別。",
+  "topicSlugs": [
+    { "slug": "network_protocols", "weight": 1 },
+    { "slug": "network_basics_osi", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_protocol_layer", "weight": 1 }
+  ],
+  "materialSlugs": [
+    { "slug": "osi_layer_quickref", "role": "primary" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 30,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問67 ©2020 独立行政法人情報処理推進機構"
+}

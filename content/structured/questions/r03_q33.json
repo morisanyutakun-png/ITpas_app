@@ -1,0 +1,55 @@
+{
+  "externalKey": "r03_q33",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 33,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "order_swap",
+  "stem": "コンピュータシステム開発の外部への発注において、発注金額の確定後に請負契約を締結した。契約後、支払までに発注側と受注側の間で交わされる書類の組合せのうち、適切なものはどれか。ここで、契約内容の変更はないものとする。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "提案書, 納品書, 検収書",
+      "isCorrect": false,
+      "whyAttractive": "提案書は契約前段階の書類。契約締結後には交わさない。",
+      "misconceptionSlug": "confuse_procurement_docs"
+    },
+    {
+      "label": "イ",
+      "body": "提案書, 見積書, 請求書",
+      "isCorrect": false,
+      "whyAttractive": "提案書・見積書は契約前の書類。契約後ではない。",
+      "misconceptionSlug": "confuse_procurement_docs"
+    },
+    {
+      "label": "ウ",
+      "body": "納品書, 検収書, 請求書",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "見積書, 納品書, 請求書",
+      "isCorrect": false,
+      "whyAttractive": "見積書は契約前段階。契約後には既に金額が確定済み。",
+      "misconceptionSlug": "confuse_procurement_docs"
+    }
+  ],
+  "explanation": "契約後の流れ: 納品書(受注側→発注側)で成果物を納品、検収書(発注側→受注側)で受入確認、請求書(受注側→発注側)で代金請求、支払。提案書・見積書は契約前の段階で交わす文書。",
+  "keyInsight": "契約〜支払フロー: 納品→検収→請求→支払。契約前は提案・見積・注文、契約後は納品・検収・請求。",
+  "topicSlugs": [
+    { "slug": "biz_procurement_documents", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_procurement_docs", "weight": 1 }
+  ],
+  "materialSlugs": [
+    { "slug": "procurement_docs_flow", "role": "helper" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 15,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問33 ©2021 独立行政法人情報処理推進機構"
+}

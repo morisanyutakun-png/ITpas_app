@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q53",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 53,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "プロジェクトのゴールなどを検討するに当たり、集団でアイディアを出し合った結果をグループ分けして体系的に整理する手法はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "インタビュー",
+      "isCorrect": false,
+      "whyAttractive": "個別に話を聞く手法。グループ分けして体系化するのではなく、情報収集の段階。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "親和図法",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "ブレーンストーミング",
+      "isCorrect": false,
+      "whyAttractive": "集団でアイディアを出し合う手法。本問の前半(アイディア創出)には該当するが、後半の『グループ分けして体系化』は親和図法の役割。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "プロトタイプ",
+      "isCorrect": false,
+      "whyAttractive": "試作品。ソフトウェア開発の手法で、アイディア整理法ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "親和図法(KJ法)=発散したアイディアを類似性(親和性)に従ってグループ化し、構造化する手法。ブレーンストーミング(発散)の後工程として使うことが多い。『グループ分けして体系的に整理』がキーワード。",
+  "keyInsight": "発散=ブレスト、収束=親和図法。アイディアを『出す』段階と『まとめる』段階を区別。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 24,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問53 ©2020 独立行政法人情報処理推進機構"
+}

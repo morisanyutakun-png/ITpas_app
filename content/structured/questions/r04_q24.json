@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q24",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 24,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "教師あり学習の事例に関する記述として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "衣料品を販売するサイトで、利用者が気に入った服の画像を送信すると、画像の特徴から利用者の好みを自動的に把握し、好みに合った商品を提案する。",
+      "isCorrect": false,
+      "whyAttractive": "特徴抽出・類似度計算の事例(教師なしクラスタリング等)。ラベル付きデータでの学習ではない。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "イ",
+      "body": "気温、天候、積雪、風などの条件を与えて、あらかじめ準備しておいたルールベースのプログラムによって、ゲレンデの状態がスキーに適しているか判断する。",
+      "isCorrect": false,
+      "whyAttractive": "ルールベース=エキスパートシステムの考え方。機械学習ではない。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "麺類の山からアームを使って一人分を取り、容器に盛り付ける動作の訓練を繰り返したロボットが、弁当の盛り付けを上手に行う。",
+      "isCorrect": false,
+      "whyAttractive": "強化学習(試行錯誤と報酬)の事例。ラベル付き教師データではない。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "エ",
+      "body": "録音された乳児の泣き声と、泣いている原因から成るデータを収集して入力することによって、乳児が泣いている原因を泣き声から推測する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "教師あり学習=入力データ(泣き声)と正解ラベル(原因)のペアで学習し、新データの予測をする方式。分類・回帰タスクで使用。教師なし(ラベルなしクラスタリング)・強化学習(報酬で学習)と区別。",
+  "keyInsight": "教師あり=入力+正解ラベルペアで学習。強化=報酬、教師なし=ラベルなし。3種の学習方式を区別。",
+  "topicSlugs": [
+    { "slug": "ai_generative_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_ai_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 12,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問24 ©2022 独立行政法人情報処理推進機構"
+}

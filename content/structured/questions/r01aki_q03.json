@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q03",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 3,
+  "majorCategory": "strategy",
+  "formatType": "case",
+  "trapType": "scope_overgeneral",
+  "stem": "IoTの事例として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "オークション会場と会員のPCをインターネットで接続することによって、会員の自宅からでもオークションに参加できる。",
+      "isCorrect": false,
+      "whyAttractive": "PCとインターネットの遠隔接続。電子商取引(オンラインサービス)でありモノ(物理デバイス)の接続ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "社内のサーバ上にあるグループウェアを外部のデータセンタのサーバに移すことによって、社員はインターネット経由でいつでもどこでも利用できる。",
+      "isCorrect": false,
+      "whyAttractive": "クラウド移行の事例。サービスの場所を変える話で、物理デバイスの接続ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "飲み薬の容器にセンサを埋め込むことによって、薬局がインターネット経由で服用履歴を管理し、服薬指導に役立てることができる。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "予備校が授業映像をWebサイトで配信することによって、受講者はスマートフォンやPCを用いて、いつでもどこでも授業を受けることができる。",
+      "isCorrect": false,
+      "whyAttractive": "動画配信サービス。コンテンツ配信であり、物理的な『モノ』のネット接続ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "IoTの本質=物理的な『モノ』(センサ付き容器)がインターネット経由でデータを送り、情報活用される。飲み薬容器のセンサは典型的IoT事例。PC/スマホを介した人間のサービス利用はIoTではない。",
+  "keyInsight": "IoTは『物理的な物体にセンサ/通信機能を埋め込んで、ネット経由で活用』。人間が主役のサービスはIoTではない。",
+  "topicSlugs": [
+    { "slug": "tech_iot_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 4,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問3 ©2019 独立行政法人情報処理推進機構"
+}

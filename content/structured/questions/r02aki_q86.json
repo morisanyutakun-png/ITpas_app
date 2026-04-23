@@ -1,0 +1,55 @@
+{
+  "externalKey": "r02aki_q86",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 86,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "二要素認証の説明として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "所有物、記憶及び生体情報の3種類のうち2種類を使用して認証する方式",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "人間の生体器官や筆跡などを使った認証で、認証情報の2か所以上の特徴点を使用して認証する方式",
+      "isCorrect": false,
+      "whyAttractive": "バイオメトリクス認証内の複数特徴点利用。これは同じ要素(生体)の中の話で、二『要素』ではない。",
+      "misconceptionSlug": "confuse_authn_authz"
+    },
+    {
+      "label": "ウ",
+      "body": "文字、数字及び記号のうち2種類以上を組み合わせたパスワードを用いて利用者を認証する方式",
+      "isCorrect": false,
+      "whyAttractive": "複雑なパスワード。これは同じ要素(記憶)内の文字種の話で、二要素ではない。",
+      "misconceptionSlug": "confuse_authn_authz"
+    },
+    {
+      "label": "エ",
+      "body": "利用者を一度認証することで二つ以上のシステムやサービスなどを利用できるようにする方式",
+      "isCorrect": false,
+      "whyAttractive": "シングルサインオン(SSO)の説明。1度の認証で複数サービス利用で、認証強度とは別。",
+      "misconceptionSlug": "confuse_authn_authz"
+    }
+  ],
+  "explanation": "二要素認証=3大要素(所有物=SMS・ICカード、記憶=パスワード、生体=指紋・顔)のうち『異なる要素』を2つ組み合わせる方式。同じ要素の中で2つ使っても二要素にはならない(イ・ウはNG)。",
+  "keyInsight": "3大要素: 所有物・記憶・生体。『違う要素を2つ』が二要素認証の条件。同じ要素で重ねても二要素にならない。",
+  "topicSlugs": [
+    { "slug": "security_authn_authz", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_authn_authz", "weight": 1 }
+  ],
+  "materialSlugs": [
+    { "slug": "authn_vs_authz_table", "role": "helper" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 39,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問86 ©2020 独立行政法人情報処理推進機構"
+}

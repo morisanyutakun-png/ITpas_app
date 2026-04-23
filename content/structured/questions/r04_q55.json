@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q55",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 55,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "情報セキュリティにおけるPCI DSSの説明として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "クレジットカード情報を取り扱う事業者に求められるセキュリティ基準",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "コンピュータなどに内蔵されるセキュリティ関連の処理を行う半導体チップ",
+      "isCorrect": false,
+      "whyAttractive": "TPMの説明。PCI DSSは基準名。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "コンピュータやネットワークのセキュリティ事故に対応する組織",
+      "isCorrect": false,
+      "whyAttractive": "CSIRTの説明。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "サーバやネットワークの通信を監視し、不正なアクセスを検知して攻撃を防ぐシステム",
+      "isCorrect": false,
+      "whyAttractive": "IDS/IPSの説明。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "PCI DSS(Payment Card Industry Data Security Standard)=クレジットカード業界の国際セキュリティ基準。カード会員データを取り扱う事業者に遵守が求められる。12要件で構成。",
+  "keyInsight": "PCI DSS=クレカ業界の標準セキュリティ要件。TPM(チップ)・CSIRT(組織)・IDS(仕組み)と区別。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 25,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問55 ©2022 独立行政法人情報処理推進機構"
+}

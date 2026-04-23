@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q51",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 51,
+  "majorCategory": "management",
+  "formatType": "case",
+  "trapType": "similar_term",
+  "stem": "アジャイル開発を実施している事例として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "AIシステムの予測精度を検証するために、開発に着手する前にトライアルを行い、有効なアルゴリズムを選択する。",
+      "isCorrect": false,
+      "whyAttractive": "PoC(概念実証)の事例。開発前の検証で、アジャイル開発そのものではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "IoTの様々な技術を幅広く採用したいので、技術を保有するベンダに開発を委託する。",
+      "isCorrect": false,
+      "whyAttractive": "外部委託の話。開発手法(アジャイル)ではなく調達形態。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "IoTを採用した大規模システムの開発を、上流から下流までの各工程における完了の承認を行いながら順番に進める。",
+      "isCorrect": false,
+      "whyAttractive": "ウォーターフォールの説明。順次進める手法でアジャイルの対極。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "分析システムの開発において、分析の精度の向上を図るために、固定された短期間のサイクルを繰り返しながら分析プログラムの機能を順次追加する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "アジャイル開発=『短期間の反復サイクル』で機能を順次追加する手法。固定スプリント(1-4週間)で動くソフトを届けながら漸進的に作る。PoC(検証)・委託(調達)・ウォーターフォール(順次)とは別。",
+  "keyInsight": "アジャイル=『短期間反復+漸進的機能追加』。繰り返し開発がキーワード。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 24,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問51 ©2021 独立行政法人情報処理推進機構"
+}

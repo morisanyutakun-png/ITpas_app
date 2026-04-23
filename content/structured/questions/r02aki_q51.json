@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q51",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 51,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "リバースエンジニアリングで実施する作業として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "開発中のソフトウェアに対する変更要求などに柔軟に対応するために、短い期間の開発を繰り返す。",
+      "isCorrect": false,
+      "whyAttractive": "アジャイル開発(特にイテレーション)の説明。逆(reverse)ではなく前進(forward)の開発手法。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "試作品のソフトウェアを作成して、利用者による評価をフィードバックして開発する。",
+      "isCorrect": false,
+      "whyAttractive": "プロトタイピングの説明。試作→評価→改善のサイクルで、既存ソフト解析ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ソフトウェア開発において、上流から下流までを順番に実施する。",
+      "isCorrect": false,
+      "whyAttractive": "ウォータフォール開発の説明。順方向(上流→下流)の話で、逆工学とは真逆。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "プログラムを解析することで、ソフトウェアの仕様を調査して設計情報を抽出する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "リバースエンジニアリング=既存のプログラムを解析し、設計情報や仕様を『逆方向』に抽出する手法。既存システムの保守・移行・再設計の前段階で使う。アジャイル・プロトタイピング・ウォータフォールは順方向の開発プロセス。",
+  "keyInsight": "リバース=逆。プログラム(完成品)→設計情報の順で抽出するのが『逆工学』。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 23,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問51 ©2020 独立行政法人情報処理推進機構"
+}

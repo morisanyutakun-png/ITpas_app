@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q88",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 88,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "情報セキュリティ対策を、\"技術的セキュリティ対策\"、\"人的セキュリティ対策\"及び\"物理的セキュリティ対策\"に分類したとき、\"物理的セキュリティ対策\"の例として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "業務に関係のない掲示板やSNSなどへの従業員による書込み、閲覧を防止するために、Webサーバへのアクセスログを取得し、必要に応じて通信を遮断する。",
+      "isCorrect": false,
+      "whyAttractive": "ログ取得+遮断=技術的セキュリティ対策。ソフトウェア・ネットワーク技術での制御。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "サーバ室、執務室などの場所ごとにセキュリティレベルを設定し、従業員ごとのアクセス権が付与されたICカードで入退室管理を行う。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "従業員の採用時には、守秘義務に関する契約書を取り交わし、在籍中は機密情報の取扱いに関する教育、啓発を実施する。",
+      "isCorrect": false,
+      "whyAttractive": "契約・教育=人的セキュリティ対策。人間への働きかけであって物理的対策ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "退職者が、在籍中のアカウントを用いた不正アクセスを行わないように、従業員の退職時にアカウントを削除する。",
+      "isCorrect": false,
+      "whyAttractive": "アカウント削除=技術的セキュリティ対策(認証情報の管理)。物理対策ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "セキュリティ対策3分類: 技術的(システム・ソフト・ログ)、人的(教育・契約)、物理的(入退室管理・施錠・監視カメラ)。ICカード入退室管理は典型的な物理的対策。",
+  "keyInsight": "物理的対策=『物理空間・物体』の対策: 入退室管理・施錠・監視カメラ・耐火金庫等。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 41,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問88"
+}

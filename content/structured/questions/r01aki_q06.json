@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q06",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 6,
+  "majorCategory": "strategy",
+  "formatType": "law_ip",
+  "trapType": "similar_term",
+  "stem": "行政機関の保有する資料について、開示を請求する権利とその手続などについて定めた法律はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "公益通報者保護法",
+      "isCorrect": false,
+      "whyAttractive": "内部告発者の保護法。不正行為通報の保護が目的で、一般市民の情報開示請求とは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "個人情報保護法",
+      "isCorrect": false,
+      "whyAttractive": "個人情報の取扱いを定める法律。個人の情報保護が目的で、行政文書の開示請求ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "情報公開法",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "不正アクセス禁止法",
+      "isCorrect": false,
+      "whyAttractive": "ネットワーク経由の不正ログインを禁じる法律。情報公開とは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "情報公開法(正式名:行政機関の保有する情報の公開に関する法律)=国民の知る権利を保障し、行政機関が保有する文書の開示を請求できる権利と手続を定める法律。公益通報・個人情報・不正アクセスとは別の法律。",
+  "keyInsight": "『行政文書の開示請求』=情報公開法。一言一句の対応で覚える。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 4,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問6 ©2019 独立行政法人情報処理推進機構"
+}

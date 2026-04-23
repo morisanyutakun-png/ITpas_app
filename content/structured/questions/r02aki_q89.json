@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q89",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 89,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "order_swap",
+  "stem": "PDCAモデルに基づいてISMSを運用している組織の活動において、PDCAモデルのA(Act)に相当するプロセスで実施するものとして、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "運用状況の監視や運用結果の測定及び評価で明らかになった不備などについて、見直しと改善策を決定する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "運用状況の監視や運用結果の測定及び評価を行う。",
+      "isCorrect": false,
+      "whyAttractive": "C(Check)のプロセス。監視・測定・評価は確認工程であり改善ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "セキュリティポリシの策定や組織内の体制の確立、セキュリティポリシで定めた目標を達成するための手順を策定する。",
+      "isCorrect": false,
+      "whyAttractive": "P(Plan)のプロセス。策定・確立・計画段階の活動。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "セキュリティポリシの周知徹底やセキュリティ装置の導入などを行い、具体的に運用する。",
+      "isCorrect": false,
+      "whyAttractive": "D(Do)のプロセス。計画を実行する工程。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "PDCAモデル: P(Plan=計画)→D(Do=実行)→C(Check=評価)→A(Act=改善)。A段階では評価結果を受けて改善策を決定する。各段階が各選択肢に対応: ウ=P, エ=D, イ=C, ア=A。",
+  "keyInsight": "P/D/C/A = 計画/実行/評価/改善。A(Act)=『改善策の決定』が中核。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 40,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問89 ©2020 独立行政法人情報処理推進機構"
+}

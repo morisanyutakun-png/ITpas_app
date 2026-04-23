@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q39",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 39,
+  "majorCategory": "management",
+  "formatType": "case",
+  "trapType": "edge_case_miss",
+  "stem": "プロジェクトマネジメントのプロセスには、プロジェクトコストマネジメント、プロジェクトコミュニケーションマネジメント、プロジェクト資源マネジメント、プロジェクトスケジュールマネジメントなどがある。システム開発プロジェクトにおいて、テストを実施するメンバを追加するときのプロジェクトコストマネジメントの活動として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "新規に参加するメンバに対して情報が効率的に伝達されるように、メーリングリストなどを更新する。",
+      "isCorrect": false,
+      "whyAttractive": "プロジェクトコミュニケーションマネジメントの活動。情報伝達は別領域。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "イ",
+      "body": "新規に参加するメンバに対する、テストツールのトレーニングをベンダに依頼する。",
+      "isCorrect": false,
+      "whyAttractive": "プロジェクト資源マネジメントの活動。人材育成で、コストではない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "新規に参加するメンバに担当させる作業を追加して、スケジュールを変更する。",
+      "isCorrect": false,
+      "whyAttractive": "プロジェクトスケジュールマネジメントの活動。時間配分の話。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "エ",
+      "body": "新規に参加するメンバの人件費を見積もり、その計画を変更する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "プロジェクトコストマネジメント=予算・コスト計画の管理。メンバ追加時は人件費見積り+計画変更がコストマネジメントの活動。コミュニケーション(情報伝達)・資源(人材育成)・スケジュール(時間)は別領域。",
+  "keyInsight": "PMの領域: コスト=お金、スケジュール=時間、スコープ=範囲、資源=人・物、コミュニケーション=情報。活動の本質で区別。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_pm_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 18,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問39 ©2021 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,55 @@
+{
+  "externalKey": "r01aki_q87",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 87,
+  "majorCategory": "technology",
+  "formatType": "db_basics",
+  "trapType": "similar_term",
+  "stem": "売上伝票のデータを関係データベースの表で管理することを考える。売上伝票の表を設計するときに、表を構成するフィールドの関連性を分析し、データの重複及び不整合が発生しないように、複数の表に分ける作業はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "結合",
+      "isCorrect": false,
+      "whyAttractive": "表を統合する演算(JOIN)で、分割ではなく逆の演算。",
+      "misconceptionSlug": "confuse_db_normalization"
+    },
+    {
+      "label": "イ",
+      "body": "射影",
+      "isCorrect": false,
+      "whyAttractive": "列を選択する演算(列の取出し)で、表の分割=正規化ではない。",
+      "misconceptionSlug": "confuse_db_normalization"
+    },
+    {
+      "label": "ウ",
+      "body": "正規化",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "排他制御",
+      "isCorrect": false,
+      "whyAttractive": "同時実行時のロック制御。設計作業ではなく運用時の並行処理制御。",
+      "misconceptionSlug": "confuse_db_normalization"
+    }
+  ],
+  "explanation": "正規化=データの重複・不整合を防ぐため、表を適切な粒度に分割する設計作業。第1正規形〜第3正規形(およびBCNF等)の基準がある。結合(表統合)・射影(列選択)・排他制御(同時実行)とは別の概念。",
+  "keyInsight": "正規化=『表の分割によるデータ重複排除』。設計段階の作業で、重複と更新時異常を防ぐ。",
+  "topicSlugs": [
+    { "slug": "db_normalization", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_db_normalization", "weight": 1 }
+  ],
+  "materialSlugs": [
+    { "slug": "db_normalization_steps", "role": "primary" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 37,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問87 ©2019 独立行政法人情報処理推進機構"
+}

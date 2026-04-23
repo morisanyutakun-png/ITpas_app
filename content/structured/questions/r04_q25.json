@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q25",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 25,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "a〜dのうち、業務プロセスの改善に当たり、業務プロセスを表記するために用いられる図表だけを全て挙げたものはどれか。\n\na. DFD\nb. アクティビティ図\nc. パレート図\nd. レーダチャート",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a, b",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "a, c",
+      "isCorrect": false,
+      "whyAttractive": "パレート図は分析用(要因/件数)で業務フロー記述ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "b, d",
+      "isCorrect": false,
+      "whyAttractive": "レーダチャートは複数項目の比較評価用で業務フロー記述ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "c, d",
+      "isCorrect": false,
+      "whyAttractive": "パレート・レーダは分析図で業務プロセス記述ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "業務プロセスの記述: DFD(データの流れ図)、アクティビティ図(UMLの業務フロー)、BPMN、フローチャート等。パレート図(優先度分析)・レーダチャート(複数指標比較)は分析用で業務フローの表記ではない。",
+  "keyInsight": "業務フロー記述=DFD/アクティビティ図。パレート・レーダは分析グラフで別用途。",
+  "topicSlugs": [
+    { "slug": "biz_dx_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 12,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問25 ©2022 独立行政法人情報処理推進機構"
+}

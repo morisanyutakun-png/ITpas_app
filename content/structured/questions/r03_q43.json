@@ -1,0 +1,54 @@
+{
+  "externalKey": "r03_q43",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 43,
+  "majorCategory": "management",
+  "formatType": "case",
+  "trapType": "edge_case_miss",
+  "stem": "A社で新規にシステムを開発するプロジェクトにおいて、システムの開発をシステム要件定義、設計、プログラミング、結合テスト、総合テスト、運用テストの順に行う。A社は、外部ベンダのB社と設計、プログラミング及び結合テストを委託範囲とする請負契約を結んだ。A社が実施する受入れ検収はどの工程とどの工程の間で実施するのが適切か。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "システム要件定義と設計の間",
+      "isCorrect": false,
+      "whyAttractive": "委託前の段階。受入れ検収は委託成果物の納品後に行う。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "プログラミングと結合テストの間",
+      "isCorrect": false,
+      "whyAttractive": "B社の委託範囲の途中。結合テストもB社に含まれるので、結合テスト終了後に受入れ検収。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "結合テストと総合テストの間",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "総合テストと運用テストの間",
+      "isCorrect": false,
+      "whyAttractive": "総合テスト(A社実施)後は既に受入れ済み。受入れは委託範囲(結合テスト)完了直後。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "受入れ検収=委託範囲の成果物を発注側が確認する工程。B社委託範囲=設計・プログラミング・結合テスト。その終了後、A社が受入れ検収を行い、合格すれば総合テストへ進む。よって『結合テストと総合テストの間』。",
+  "keyInsight": "受入れ検収=『委託範囲の終わり』=『委託側・発注側の境界』。委託範囲の直後に実施。",
+  "topicSlugs": [
+    { "slug": "biz_procurement_documents", "weight": 1 },
+    { "slug": "biz_labor_contracts", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 20,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問43 ©2021 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q60",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 60,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "情報システムにおける二段階認証の例として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "画面に表示されたゆがんだ文字列の画像を読み取って入力した後、利用者IDとパスワードを入力することによって認証を行える。",
+      "isCorrect": false,
+      "whyAttractive": "CAPTCHA(ボット判別)+ID/PW。CAPTCHAは人間判別で認証要素ではない。二段階認証にならない。",
+      "misconceptionSlug": "confuse_authn_authz"
+    },
+    {
+      "label": "イ",
+      "body": "サーバ室への入室時と退室時に生体認証を行い、認証によって入室した者だけが退室の認証を行える。",
+      "isCorrect": false,
+      "whyAttractive": "入退室管理(アンチパスバック)。二段階認証(認証を重ねる)ではなく物理セキュリティ。",
+      "misconceptionSlug": "confuse_authn_authz"
+    },
+    {
+      "label": "ウ",
+      "body": "利用者IDとパスワードを入力して認証を行った後、秘密の質問への答えを入力することによってログインできる。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "利用者IDの入力画面へ利用者IDを入力するとパスワードの入力画面に切り替わり、パスワードを入力することによってログインできる。",
+      "isCorrect": false,
+      "whyAttractive": "二段階入力(ID→PW)だが、これは通常の一段階認証の入力を分けただけ。認証プロセスは一段階。",
+      "misconceptionSlug": "confuse_authn_authz"
+    }
+  ],
+  "explanation": "二段階認証=認証を2回重ねる仕組み。ID/PWで1段階目認証後、さらに秘密の質問で2段階目を行う。CAPTCHAは人間判別、入退室管理は物理認証、ID→PW分離は1段階認証の入力分割で、どれも二段階認証ではない。",
+  "keyInsight": "二段階認証=『認証を2回重ねる』。入力画面の分割や別目的の確認(CAPTCHA)とは違う。",
+  "topicSlugs": [
+    { "slug": "security_authn_authz", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_authn_authz", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 28,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問60 ©2021 独立行政法人情報処理推進機構"
+}

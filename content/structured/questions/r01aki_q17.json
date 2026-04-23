@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q17",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 17,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "イノベーションのジレンマに関する記述として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "最初に商品を消費したときに感じた価値や満足度が、消費する量が増えるに従い、徐々に低下していく現象",
+      "isCorrect": false,
+      "whyAttractive": "限界効用逓減の法則の説明。経済学用語でイノベーションのジレンマではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "自社の既存商品がシェアを占めている市場に、自社の新商品を導入することで、既存商品のシェアを奪ってしまう現象",
+      "isCorrect": false,
+      "whyAttractive": "カニバリゼーション(共食い)の説明。自社新商品が自社既存を食う現象で、別概念。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "全売上の大部分を、少数の顧客が占めている状態",
+      "isCorrect": false,
+      "whyAttractive": "パレートの法則(80:20の法則)の説明。顧客集中度の話で、技術革新のジレンマではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "優良な大企業が、革新的な技術の追求よりも、既存技術の向上でシェアを確保することに注力してしまい、結果的に市場でのシェアの確保に失敗する現象",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "イノベーションのジレンマ(C.クリステンセン)=業界のリーダー企業が既存顧客の要求に応えることを優先するあまり、破壊的イノベーションへの対応が遅れ、新興企業に追い抜かれる現象。限界効用・カニバリゼーション・パレートは別概念。",
+  "keyInsight": "イノベーションのジレンマ=『優等生の大企業が新技術で負ける』現象。既存の合理的経営が仇となる。",
+  "topicSlugs": [
+    { "slug": "biz_innovation_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 8,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問17 ©2019 独立行政法人情報処理推進機構"
+}

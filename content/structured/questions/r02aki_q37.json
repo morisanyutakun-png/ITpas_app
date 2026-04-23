@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q37",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 37,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "開発対象のソフトウェアを、比較的短い期間で開発できる小さな機能の単位に分割しておき、各機能の開発が終了するたびにそれをリリースすることを繰り返すことで、ソフトウェアを完成させる。一つの機能の開発終了時に、次の開発対象とする機能の優先順位や内容を見直すことで、ビジネス環境の変化や利用者からの要望に対して、迅速に対応できることに主眼を置く開発手法はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "アジャイル",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "ウォータフォール",
+      "isCorrect": false,
+      "whyAttractive": "要件定義→設計→実装→テストと上流から順に進める伝統的手法。『見直し』『反復』という本問の特徴と対極。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "構造化",
+      "isCorrect": false,
+      "whyAttractive": "構造化プログラミング=制御構造を順次・選択・反復に限定する手法。開発プロセスそのものではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "リバースエンジニアリング",
+      "isCorrect": false,
+      "whyAttractive": "既存ソフトから設計情報を取り出す手法。新規開発のプロセスではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "アジャイル開発=短い反復サイクル(イテレーション)で機能を段階リリースし、優先順位・要件を都度見直して変化に対応する開発手法。ウォータフォール(一方向)の対極。",
+  "keyInsight": "『短い反復』『頻繁なリリース』『途中で見直し』の3点が揃えばアジャイル。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 17,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問37 ©2020 独立行政法人情報処理推進機構"
+}

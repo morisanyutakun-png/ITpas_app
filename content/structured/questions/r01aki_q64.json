@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q64",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 64,
+  "majorCategory": "technology",
+  "formatType": "db_basics",
+  "trapType": "similar_term",
+  "stem": "データベース管理システムにおける排他制御の目的として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "誤ってデータを修正したり、データを故意に改ざんされたりしないようにする。",
+      "isCorrect": false,
+      "whyAttractive": "アクセス権管理の目的。排他制御は『同時アクセス時の整合性』で、改ざん防止とは別。",
+      "misconceptionSlug": "confuse_db_normalization"
+    },
+    {
+      "label": "イ",
+      "body": "データとプログラムを相互に独立させることによって、システムの維持管理を容易にする。",
+      "isCorrect": false,
+      "whyAttractive": "データ独立性の目的。スキーマ3層構造の話で、排他制御ではない。",
+      "misconceptionSlug": "confuse_db_normalization"
+    },
+    {
+      "label": "ウ",
+      "body": "データの機密のレベルに応じて、特定の人しかアクセスできないようにする。",
+      "isCorrect": false,
+      "whyAttractive": "アクセス制御の目的。権限管理で、排他制御(同時実行制御)ではない。",
+      "misconceptionSlug": "confuse_db_normalization"
+    },
+    {
+      "label": "エ",
+      "body": "複数のプログラムが同一のデータを同時にアクセスしたときに、データの不整合が生じないようにする。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "排他制御=同時実行制御の中核。複数トランザクションが同じデータを同時に読み書きする際、不整合(ロストアップデート・ダーティリード等)を防ぐためロックで逐次化する。アクセス権・データ独立性とは別の目的。",
+  "keyInsight": "排他制御=同時アクセス時の整合性保証。権限制御(誰が)・独立性(仕組み)とは別。",
+  "topicSlugs": [
+    { "slug": "db_normalization", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_db_normalization", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 28,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問64 ©2019 独立行政法人情報処理推進機構"
+}

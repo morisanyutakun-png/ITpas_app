@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q19",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 19,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "特定の目的の達成や課題の解決をテーマとして、ソフトウェアの開発者や企画者などが短期集中的にアイディアを出し合い、ソフトウェアの開発などの共同作業を行い、成果を競い合うイベントはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "コンベンション",
+      "isCorrect": false,
+      "whyAttractive": "大会・集会全般。特にソフト開発競争の意味ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "トレードフェア",
+      "isCorrect": false,
+      "whyAttractive": "見本市・展示会。製品展示で、開発イベントではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ハッカソン",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "レセプション",
+      "isCorrect": false,
+      "whyAttractive": "歓迎・祝賀の会合。社交イベントで、ソフト開発ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ハッカソン=Hack+Marathonの造語。短期集中でソフトウェア開発を行い、成果を競い合うイベント。コンベンション(大会)・トレードフェア(見本市)・レセプション(歓迎会)とは目的が違う。",
+  "keyInsight": "ハッカソン=『短期集中開発+成果を競う』。Hack(作る)+Marathon(連続)の合成語。",
+  "topicSlugs": [
+    { "slug": "biz_innovation_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 9,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問19 ©2019 独立行政法人情報処理推進機構"
+}

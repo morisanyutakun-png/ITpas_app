@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q17",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 17,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "複数の企業が、研究開発を共同で行って新しい事業を展開したいと思っている。共同出資によって、新しい会社を組織する形態として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "M&A",
+      "isCorrect": false,
+      "whyAttractive": "合併・買収。新会社設立を伴う場合もあるが、基本は『既存企業の統合または取得』。共同出資による新会社設立という定義とは違う。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "クロスライセンス",
+      "isCorrect": false,
+      "whyAttractive": "特許権等の相互ライセンス供与。技術共有だが会社設立はしない。『共同』という語感で選ばされやすい。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ジョイントベンチャ",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "スピンオフ",
+      "isCorrect": false,
+      "whyAttractive": "会社の一部事業を分離独立させる形態。単一企業が分社化する話で、複数社の共同出資ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ジョイントベンチャ(Joint Venture, JV) = 複数企業が共同出資し、特定事業のために新会社を設立する形態。M&A(既存企業の統合/取得)、クロスライセンス(権利相互利用)、スピンオフ(分社化)とは目的構造が違う。",
+  "keyInsight": "ジョイント=『合同』ベンチャ=『新事業体』。共同出資で新会社、と覚える。",
+  "topicSlugs": [
+    { "slug": "biz_innovation_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 9,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問17 ©2020 独立行政法人情報処理推進機構"
+}

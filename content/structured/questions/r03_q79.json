@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q79",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 79,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "SECURITY ACTIONに関する記述として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ECサイトを運営する中小企業が、個人情報の漏えい事故を起こした場合に備える損害保険制度である。",
+      "isCorrect": false,
+      "whyAttractive": "サイバー保険の説明。SECURITY ACTIONは宣言制度であり保険ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "IoT製品の開発を行う中小企業が、IoT製品のセキュリティ規格への適合性を評価する制度である。",
+      "isCorrect": false,
+      "whyAttractive": "認証制度の説明。SECURITY ACTIONは自己宣言。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "中小企業自らが、情報セキュリティ対策に取り組むことを自己宣言する制度である。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "プライバシーマークの取得を目指す中小企業が、取得に必要な費用の一部について支援を受けられる制度である。",
+      "isCorrect": false,
+      "whyAttractive": "補助金制度。SECURITY ACTIONは費用支援ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "SECURITY ACTION=IPA(独立行政法人情報処理推進機構)による中小企業向けの情報セキュリティ対策自己宣言制度。『情報セキュリティ5か条』に取り組む『一つ星』と、5分間診断+基本方針策定の『二つ星』がある。第三者認証ではなく自己宣言。",
+  "keyInsight": "SECURITY ACTION=中小企業の自己宣言制度(IPA)。認証・保険・補助金ではない。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 36,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問79 ©2021 独立行政法人情報処理推進機構"
+}

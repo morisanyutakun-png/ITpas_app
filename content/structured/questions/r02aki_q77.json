@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q77",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 77,
+  "majorCategory": "technology",
+  "formatType": "network_basics",
+  "trapType": "edge_case_miss",
+  "stem": "IP電話で使用されている技術に関する記述のうち、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "インターネットだけでなく、企業内LANのような閉じたネットワーク上にも構築することができる。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "音声をIPパケットに変換する技術としてIP-VPNを使用している。",
+      "isCorrect": false,
+      "whyAttractive": "IP-VPNは仮想閉域網の技術で、音声→IPパケットの変換はVoIP技術。『IPが付く』で混同される。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "公衆電話網への発信を行うことはできない。",
+      "isCorrect": false,
+      "whyAttractive": "ゲートウェイ経由で公衆電話網へ発信可能。IP電話単独で閉じているわけではなく、相互接続が現実の運用。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "利用するにはISDN回線が引かれていることが前提となる。",
+      "isCorrect": false,
+      "whyAttractive": "IP電話はIPネットワーク上で動作。ISDN(従来のデジタル電話網)とは別技術で、前提にならない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "IP電話=音声をIPパケットに変換してIPネットワーク上で通話する技術。VoIP(Voice over IP)が基盤。インターネットでも企業内LANでも構築可。公衆電話網とはゲートウェイ経由で相互接続。ISDNは別の古い電話網技術で前提ではない。",
+  "keyInsight": "IP電話=IPパケット化した音声通話。LAN上にもインターネット上にも構築可能で、公衆網とも接続可能。",
+  "topicSlugs": [
+    { "slug": "network_protocols", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 35,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問77 ©2020 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,54 @@
+{
+  "externalKey": "r01aki_q47",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 47,
+  "majorCategory": "management",
+  "formatType": "calculation",
+  "trapType": "edge_case_miss",
+  "stem": "ソフトウェアの品質を判定する指標として、機能単位の不良件数をその開発規模で割った値を\"不良密度\"と定義する。不良密度の下限値と上限値を設定し、実績値がその範囲を逸脱した場合に問題ありと判定するとき、A工程では問題がなく、B工程で問題があると判定される機能はどれか。ここで、不良密度の下限値は0.25件/KS、上限値は0.65件/KSとする。また、不良密度の下限値、上限値及び開発規模は、両工程とも同じとする。\n\n機能1: 規模10KS, A=6件, B=3件\n機能2: 規模20KS, A=14件, B=10件\n機能3: 規模50KS, A=10件, B=40件\n機能4: 規模80KS, A=32件, B=8件",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "機能1",
+      "isCorrect": false,
+      "whyAttractive": "機能1: A=6/10=0.60 OK、B=3/10=0.30 OK。両方正常で、問題ありにならない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "機能2",
+      "isCorrect": false,
+      "whyAttractive": "機能2: A=14/20=0.70 NG(上限超)、B=10/20=0.50 OK。A工程で既に問題あり。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "機能3",
+      "isCorrect": false,
+      "whyAttractive": "機能3: A=10/50=0.20 NG(下限下回)、B=40/50=0.80 NG。A工程も問題ありなので条件外。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "機能4",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "各機能の不良密度を算出: 機能4: A=32/80=0.40(0.25〜0.65内)→A OK、B=8/80=0.10(下限下回)→B NG。『A問題なし、B問題あり』の条件を満たすのは機能4だけ。",
+  "keyInsight": "不良密度=件数/規模。範囲内/外を個別に判定。各工程で個別に確認して組合せを決める。",
+  "commonMistakeFlow": "『不良が多い=問題』と単純に考えて機能3を選びがち。だが不良が少なすぎる(下限下回)のもテスト不足の兆候として問題視される。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 20,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問47 ©2019 独立行政法人情報処理推進機構"
+}

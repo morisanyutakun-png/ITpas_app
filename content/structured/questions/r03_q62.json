@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q62",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 62,
+  "majorCategory": "technology",
+  "formatType": "db_basics",
+  "trapType": "similar_term",
+  "stem": "金融システムの口座振替では、振替元の口座からの出金処理と振替先の口座への入金処理について、両方の処理が実行されるか、両方とも実行されないかのどちらかであることを保証することによってデータベースの整合性を保っている。データベースに対するこのような一連の処理をトランザクションとして扱い、矛盾なく処理が完了したときに、データベースの更新内容を確定することを何というか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "コミット",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "スキーマ",
+      "isCorrect": false,
+      "whyAttractive": "DBの構造定義。更新確定の動作ではなくデータ構造の定義。",
+      "misconceptionSlug": "confuse_db_normalization"
+    },
+    {
+      "label": "ウ",
+      "body": "ロールフォワード",
+      "isCorrect": false,
+      "whyAttractive": "障害復旧で前進復旧(ログから再現)。通常の確定とは別。",
+      "misconceptionSlug": "confuse_db_normalization"
+    },
+    {
+      "label": "エ",
+      "body": "ロック",
+      "isCorrect": false,
+      "whyAttractive": "排他制御の仕組み。確定ではなく同時実行制御。",
+      "misconceptionSlug": "confuse_db_normalization"
+    }
+  ],
+  "explanation": "トランザクション処理: トランザクション開始→処理実行→コミット(確定)/ロールバック(取消)。コミットで更新内容が永続化される。スキーマ(構造)・ロールフォワード(障害復旧)・ロック(排他)は別概念。",
+  "keyInsight": "コミット=『トランザクションの成功確定』。対義語はロールバック(取消)。",
+  "topicSlugs": [
+    { "slug": "db_normalization", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_db_normalization", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 29,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問62 ©2021 独立行政法人情報処理推進機構"
+}

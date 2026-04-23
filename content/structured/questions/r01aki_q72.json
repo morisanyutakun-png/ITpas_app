@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q72",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 72,
+  "majorCategory": "technology",
+  "formatType": "calculation",
+  "trapType": "edge_case_miss",
+  "stem": "3人の候補者の中から兼任も許す方法で委員長と書記を1名ずつ選ぶ場合、3人の中から委員長1名の選び方が3通りで、3人の中から書記1名の選び方が3通りであるので、委員長と書記の選び方は全部で9通りある。5人の候補者の中から兼任も許す方法で委員長と書記を1名ずつ選ぶ場合、選び方は何通りあるか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "5",
+      "isCorrect": false,
+      "whyAttractive": "5人×1役で5通りの誤解。2役あるので両方の掛け算が必要。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "10",
+      "isCorrect": false,
+      "whyAttractive": "5C2=10で『兼任なし(組合せ)』の計算。兼任可かつ役割区別ありなら順列で5×5=25。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "20",
+      "isCorrect": false,
+      "whyAttractive": "5P2=5×4=20で『兼任不可・順列』。兼任を許すので自分自身も書記候補=5×5=25。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "25",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "兼任許可=同じ人が両役を兼ねられる。委員長=5通り、書記=5通り(兼任可なので同じ人も可)、組合せ=5×5=25通り。兼任なしなら5×4=20(2つ目は1人除く)。",
+  "keyInsight": "兼任可→掛け算は両方その数(n×n)。兼任不可→順列(n×(n-1))。",
+  "topicSlugs": [
+    { "slug": "tech_computer_arch", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 31,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問72 ©2019 独立行政法人情報処理推進機構"
+}

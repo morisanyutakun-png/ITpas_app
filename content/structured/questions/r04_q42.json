@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q42",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 42,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "システムの開発側と運用側がお互いに連携し合い、運用や本番移行を自動化する仕組みなどを積極的に取り入れ、新機能をリリースしてサービスの改善を行う取組を表す用語として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "DevOps",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "RAD",
+      "isCorrect": false,
+      "whyAttractive": "Rapid Application Development=高速開発手法。開発/運用連携ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "オブジェクト指向開発",
+      "isCorrect": false,
+      "whyAttractive": "プログラミングパラダイム。組織/プロセスの取組ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "テスト駆動開発",
+      "isCorrect": false,
+      "whyAttractive": "TDD=テストファーストのコード開発手法。開発/運用連携とは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "DevOps=Development+Operationsの造語。開発と運用の連携を強化し、CI/CD(継続的インテグレーション/デリバリ)や自動化で頻繁・高品質リリースを実現する文化/プラクティス。",
+  "keyInsight": "DevOps=開発と運用の融合+自動化。サイロ解消で高速リリースを実現する組織文化。",
+  "topicSlugs": [
+    { "slug": "biz_dx_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 19,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問42 ©2022 独立行政法人情報処理推進機構"
+}

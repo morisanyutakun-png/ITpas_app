@@ -1,0 +1,54 @@
+{
+  "externalKey": "r02aki_q49",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 49,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "ある会社ではサービスデスクのサービス向上のために、チャットボットを導入することにした。チャットボットに関する記述として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "PCでの定型的な入力作業を、ソフトウェアのロボットによって代替することができる仕組み",
+      "isCorrect": false,
+      "whyAttractive": "RPAの説明。『ロボットで自動化』の語感が近いが、RPAは業務自動化、チャットボットは対話型応答で役割が違う。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "人の会話の言葉を聞き取り、リアルタイムに文字に変換する仕組み",
+      "isCorrect": false,
+      "whyAttractive": "音声認識(speech-to-text)の説明。チャットボットは会話の応答側で、音声認識はその前処理技術。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "頻繁に寄せられる質問とそれに対する回答をまとめておき、利用者が自分で検索できる仕組み",
+      "isCorrect": false,
+      "whyAttractive": "FAQ(よくある質問)の説明。静的な検索であって、対話形式の自動応答ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "文字や音声による問合せ内容に対して、会話形式でリアルタイムに自動応答する仕組み",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "チャットボット=文字/音声の問合せに『会話形式でリアルタイム自動応答』する仕組み。RPA(業務自動化)、音声認識(言葉→文字)、FAQ(静的検索)と別概念。『会話』と『自動応答』が揃えばチャットボット。",
+  "keyInsight": "チャットボット=『対話型の自動応答』。一方向の検索(FAQ)でも単一処理(RPA)でもなく、会話のやり取り。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 },
+    { "slug": "ai_generative_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 22,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問49 ©2020 独立行政法人情報処理推進機構"
+}

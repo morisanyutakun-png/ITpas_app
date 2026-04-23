@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q26",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 26,
+  "majorCategory": "strategy",
+  "formatType": "calculation",
+  "trapType": "edge_case_miss",
+  "stem": "4月1日から5月31日までに、取引①から取引⑤があった。各取引の受注、売上計上、現金回収の状況が表のとおりであるとき、この取引先に対する5月31日時点の売掛金は何万円か。ここで、4月1日時点で売掛金残高はないものとする。\n\n取引①: 4/2受注800万円、4/10売上計上800万円、4/30現金回収800万円\n取引②: 4/5受注500万円、4/15売上計上500万円、4/30現金回収500万円\n取引③: 5/1受注1300万円、5/10売上計上1300万円、6/30回収予定\n取引④: 5/6受注1000万円、5/15売上計上1000万円、回収予定日未定\n取引⑤: 5/20受注400万円",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "1,000",
+      "isCorrect": false,
+      "whyAttractive": "取引④のみを計上する誤り。取引③も5/31時点で売掛金として残っている。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "1,400",
+      "isCorrect": false,
+      "whyAttractive": "取引④+取引⑤=1,400万円と誤算。取引⑤は受注だけで売上計上なし→売掛金に含めない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "2,300",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "2,700",
+      "isCorrect": false,
+      "whyAttractive": "取引③+取引④+取引⑤=2,700万円と誤算。取引⑤は受注のみで売掛金計上なし。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "売掛金=売上計上したが未回収の金額。取引①②は4/30に回収済=0。取引③は5/10売上計上で6/30回収予定=5/31時点で1,300万円の売掛。取引④は5/15売上計上で回収未定=1,000万円の売掛。取引⑤は受注のみで売上計上なし=売掛金に含めない。合計1,300+1,000=2,300万円。",
+  "keyInsight": "売掛金=『売上計上済&未回収』の金額。受注のみ(売上未計上)は含めない、回収済も除く。",
+  "topicSlugs": [
+    { "slug": "biz_financial_metrics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 12,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問26"
+}

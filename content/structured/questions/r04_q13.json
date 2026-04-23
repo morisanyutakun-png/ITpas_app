@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q13",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 13,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "情報公開法に基づいて公開請求することができる文書として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "国会などの立法機関が作成、保有する立法文書",
+      "isCorrect": false,
+      "whyAttractive": "立法文書は情報公開法の対象外。国会独自の公開制度。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "最高裁判所などの司法機関が作成、保有する司法文書",
+      "isCorrect": false,
+      "whyAttractive": "司法文書も情報公開法の対象外。司法独自の公開制度。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "証券取引所に上場している企業が作成、保有する社内文書",
+      "isCorrect": false,
+      "whyAttractive": "民間企業は情報公開法の対象外。金融商品取引法で開示規制は別立て。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "総務省などの行政機関が作成、保有する行政文書",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "情報公開法(正式名: 行政機関の保有する情報の公開に関する法律)=行政機関(省庁等)が保有する行政文書の開示請求権を国民に認める法律。立法・司法・民間は対象外。",
+  "keyInsight": "情報公開法=『行政』機関の文書が対象。立法・司法・民間は別制度。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 7,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問13 ©2022 独立行政法人情報処理推進機構"
+}

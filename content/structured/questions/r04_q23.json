@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q23",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 23,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "オプトアウトに関する記述として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "SNSの事業者が、お知らせメールの配信を希望した利用者だけに、新機能を紹介するメールを配信した。",
+      "isCorrect": false,
+      "whyAttractive": "オプトイン(事前同意)の事例。オプトアウトとは逆。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "住宅地図の利用者が、地図上の自宅の位置に自分の氏名が掲載されているのを見つけたので、住宅地図の作製業者に連絡して、掲載を中止させた。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "通信販売の利用者が、Webサイトで商品を購入するための操作を進めていたが、決済の手続が面倒だったので、画面を閉じて購入を中止した。",
+      "isCorrect": false,
+      "whyAttractive": "カゴ落ちの事例で、オプトアウトではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ドラッグストアの事業者が、販売予測のために顧客データを分析する際に、氏名や住所などの情報をランダムな値に置き換え、顧客を特定できないようにした。",
+      "isCorrect": false,
+      "whyAttractive": "匿名加工情報の処理。オプトアウトではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "オプトアウト=事前同意なしに情報提供を行う前提で、本人の申出により中止する仕組み。住宅地図掲載中止の例。オプトイン(事前同意)の対義。",
+  "keyInsight": "オプトイン=『先に同意』、オプトアウト=『後から停止』。個人情報保護法での利用停止権。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 11,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問23 ©2022 独立行政法人情報処理推進機構"
+}

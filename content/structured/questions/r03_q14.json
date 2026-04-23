@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q14",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 14,
+  "majorCategory": "strategy",
+  "formatType": "case",
+  "trapType": "similar_term",
+  "stem": "ソフトウェアライフサイクルを、企画プロセス、要件定義プロセス、開発プロセス、運用プロセスに分けるとき、システム化計画を踏まえて、利用者及び他の利害関係者が必要とするシステムの機能を明確にし、合意を形成するプロセスはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "企画プロセス",
+      "isCorrect": false,
+      "whyAttractive": "システム化構想・計画段階。要件確定の前段階で、機能明確化ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "要件定義プロセス",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "開発プロセス",
+      "isCorrect": false,
+      "whyAttractive": "要件後の設計・実装段階。機能を明確化・合意する段階ではなく実現段階。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "運用プロセス",
+      "isCorrect": false,
+      "whyAttractive": "稼働後の管理段階。要件定義とは全く別のフェーズ。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ライフサイクル: 企画(構想)→要件定義(機能明確化・合意)→開発(設計・実装)→運用(稼働後管理)。『利害関係者が必要とする機能を明確化し合意形成』は要件定義プロセスの目的。",
+  "keyInsight": "要件定義=『何を作るかを利害関係者と合意』。企画は手前、開発はその後。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 7,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問14 ©2021 独立行政法人情報処理推進機構"
+}

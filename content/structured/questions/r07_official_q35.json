@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q35",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 35,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "マーケティング戦略の策定プロセスのうち、自社製品の差別化ポイントを明確化するものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "セグメンテーション",
+      "isCorrect": false,
+      "whyAttractive": "市場を細分化する工程。STP最初のステップで、差別化ポイント明確化ではない。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "イ",
+      "body": "ターゲティング",
+      "isCorrect": false,
+      "whyAttractive": "標的市場を選定する工程。セグメントの選択で、差別化ポイント明確化ではない。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "ウ",
+      "body": "プロモーション",
+      "isCorrect": false,
+      "whyAttractive": "販促活動。4P(Product/Price/Place/Promotion)のPで、差別化明確化ではない。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "エ",
+      "body": "ポジショニング",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "STP分析: Segmentation(市場細分化)→Targeting(標的選定)→Positioning(自社の立ち位置・差別化ポイント明確化)。ポジショニングで競合との差別化を明確にし、4P(プロモーション等)で実行に移す。",
+  "keyInsight": "STPのPositioning=『差別化ポイントを市場の中で明確化』。どう位置付けるかを決める。",
+  "topicSlugs": [
+    { "slug": "biz_marketing_frameworks", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_marketing_framework", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 16,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問35"
+}

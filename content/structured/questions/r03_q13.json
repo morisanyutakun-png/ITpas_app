@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q13",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 13,
+  "majorCategory": "strategy",
+  "formatType": "case",
+  "trapType": "similar_term",
+  "stem": "FinTechの事例として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "銀行において、災害や大規模障害が発生した場合に勘定系システムが停止することがないように、障害発生時には即時にバックアップシステムに切り替える。",
+      "isCorrect": false,
+      "whyAttractive": "BCP(事業継続計画)/冗長化の事例。従来のIT運用で、FinTech(革新的金融サービス)の事例ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "クレジットカード会社において、消費者がクレジットカードの暗証番号を規定回数連続で間違えて入力した場合に、クレジットカードを利用できなくなるようにする。",
+      "isCorrect": false,
+      "whyAttractive": "不正利用防止の基本的セキュリティ対策。FinTech特有の革新的サービスではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "証券会社において、顧客がPCの画面上で株式売買を行うときに、顧客に合った投資信託を提案したり自動で資産運用を行ったりする、ロボアドバイザのサービスを提供する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "損害保険会社において、事故の内容や回数に基づいた等級を設定しておき、インターネット自動車保険の契約者ごとに、1年間の事故履歴に応じて等級を上下させるとともに、保険料を変更する。",
+      "isCorrect": false,
+      "whyAttractive": "従来の等級別保険料の電子化で、IT革新度は低い。FinTechの『革新的金融サービス』とは言い難い。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "FinTech=Finance+Technology=IT活用による革新的金融サービス。ロボアドバイザ(AIで自動資産運用提案)は代表事例。BCP・セキュリティ対策・料金計算は従来のIT活用で、FinTech特有の革新性ではない。",
+  "keyInsight": "FinTech=『革新的金融サービス』。AI・ブロックチェーン・モバイル決済等、新技術を金融に応用した事例。",
+  "topicSlugs": [
+    { "slug": "biz_dx_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 7,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問13 ©2021 独立行政法人情報処理推進機構"
+}

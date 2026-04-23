@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q53",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 53,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "ITサービスにおけるSLMに関する説明のうち、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "SLMでは、SLAで合意したサービスレベルを維持することが最優先課題となるので、サービスの品質の改善は補助的な活動となる。",
+      "isCorrect": false,
+      "whyAttractive": "SLMの本質は継続的改善。維持優先・改善補助は逆で、改善が中核。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "SLMでは、SLAで合意した定量的な目標の達成状況を確認するために、サービスの提供状況のモニタリングやレビューを行う。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "SLMの目的は、顧客とサービスの内容、要求水準などの共通認識を得ることであり、SLAの作成が活動の最終目的である。",
+      "isCorrect": false,
+      "whyAttractive": "SLA作成は起点で、最終目的ではない。SLMはPDCAで継続的に回すプロセス。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "SLMを効果的な活動にするために、SLAで合意するサービスレベルを容易に達成できるレベルにしておくことが重要である。",
+      "isCorrect": false,
+      "whyAttractive": "易しい目標は意味がない。SLAは現実的・挑戦的な目標が適切。容易達成目標は改善意欲を失わせる。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "SLM(Service Level Management)=SLAで合意した定量目標の達成状況を継続的にモニタリング・レビューし、サービス品質を改善するマネジメント活動。PDCAサイクルで回す。",
+  "keyInsight": "SLM=『SLA達成のモニタリング+レビュー+改善』。PDCAで継続的に回す。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 25,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問53 ©2021 独立行政法人情報処理推進機構"
+}

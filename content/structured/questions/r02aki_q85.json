@@ -1,0 +1,55 @@
+{
+  "externalKey": "r02aki_q85",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 85,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "edge_case_miss",
+  "stem": "ファイルサーバに保存されている文書ファイルの内容をPCで直接編集した後、上書き保存しようとしたら \"権限がないので保存できません\" というメッセージが表示された。この文書ファイルとそれが保存されていたフォルダに設定されていた権限の組合せとして、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ファイル読取り=あり / ファイル書込み=あり / フォルダ読取り=なし",
+      "isCorrect": false,
+      "whyAttractive": "フォルダ読取りがないとファイルの存在が見えず編集画面に到達できない。前提矛盾。",
+      "misconceptionSlug": "confuse_authn_authz"
+    },
+    {
+      "label": "イ",
+      "body": "ファイル読取り=あり / ファイル書込み=なし / フォルダ読取り=あり",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "ファイル読取り=なし / ファイル書込み=あり / フォルダ読取り=なし",
+      "isCorrect": false,
+      "whyAttractive": "ファイル読取りがないと開けない(内容編集不可)。前提と矛盾。",
+      "misconceptionSlug": "confuse_authn_authz"
+    },
+    {
+      "label": "エ",
+      "body": "ファイル読取り=なし / ファイル書込み=なし / フォルダ読取り=あり",
+      "isCorrect": false,
+      "whyAttractive": "読取り権限がないのでそもそも内容編集できない。",
+      "misconceptionSlug": "confuse_authn_authz"
+    }
+  ],
+  "explanation": "前提から必要な権限を逆算する: (1)フォルダ内のファイルを見つけた=フォルダ読取あり、(2)ファイルを開いて編集できた=ファイル読取あり、(3)保存できなかった=ファイル書込なし。したがって読取あり/書込なし/フォルダ読取ありの組合せ。",
+  "keyInsight": "権限の問題は『できた操作』と『できなかった操作』を1つずつ追って必要権限を確定する。",
+  "topicSlugs": [
+    { "slug": "security_authn_authz", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_authn_authz", "weight": 1 }
+  ],
+  "materialSlugs": [
+    { "slug": "authn_vs_authz_table", "role": "helper" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 38,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問85 ©2020 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,54 @@
+{
+  "externalKey": "r07_official_q85",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 85,
+  "majorCategory": "technology",
+  "formatType": "calculation",
+  "trapType": "edge_case_miss",
+  "stem": "問題を解いて解答群の中から正解を選ぶ、あるAIシステムがある。このシステムは、1回の学習の過程を経るごとに、学習の過程の前後の比較において、誤り率が5%低下する(前回の誤り率の95%になる)。現在の正解率が30%であるとき、正解率が35%を超えるためには、少なくともあと何回の学習の過程が必要か。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "1",
+      "isCorrect": false,
+      "whyAttractive": "1回目: 誤り率=70%×0.95=66.5% → 正解率=33.5% (35%未達)。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "2",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "3",
+      "isCorrect": false,
+      "whyAttractive": "2回で既に35%を超えるので、3回は過剰。『少なくとも』の条件を読み違え。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "4",
+      "isCorrect": false,
+      "whyAttractive": "2回で達成できる。過剰な回数を選んでいる。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "初期誤り率70%(正解30%)。各回誤り率×0.95。1回:70×0.95=66.5→正解33.5%(未達)。2回:66.5×0.95=63.175→正解36.825%(>35%達成)。2回で条件を満たす。",
+  "keyInsight": "正解率計算=1-誤り率。誤り率を累乗減衰で計算して正解率に戻す。",
+  "commonMistakeFlow": "『正解率が5%増える』と誤解すると1回で達成と計算してしまう。誤り率×0.95=正解率+約1.75%程度の増加。",
+  "topicSlugs": [
+    { "slug": "ai_generative_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 40,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問85"
+}

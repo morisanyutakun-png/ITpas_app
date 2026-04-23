@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q86",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 86,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "店内に設置した多数のネットワークカメラから得たデータを、インターネットを介してIoTサーバに送信し、顧客の行動を分析するシステムを構築する。このとき、IoTゲートウェイを店舗内に配置し、映像解析処理を実行して映像から人物の座標データだけを抽出することによって、データ量を減らしてから送信するシステム形態をとった。このようなシステム形態を何と呼ぶか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "MDM",
+      "isCorrect": false,
+      "whyAttractive": "モバイルデバイス管理(Mobile Device Management)。システム形態ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "SDN",
+      "isCorrect": false,
+      "whyAttractive": "ソフトウェア定義ネットワーク。ネットワーク制御技術でIoT配置パターンではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "エッジコンピューティング",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "デュプレックスシステム",
+      "isCorrect": false,
+      "whyAttractive": "主系と待機系の二重化システム。信頼性向上の形態で、IoT配置とは別概念。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "エッジコンピューティング=端末/現場(エッジ)側で一次処理してからクラウドへ送る形態。帯域節約・低遅延・プライバシ保護が利点。IoTゲートウェイで映像を座標データに変換=典型例。",
+  "keyInsight": "エッジ=現場で処理してクラウドへ必要な情報だけ送る。対義:全データをクラウドへ送る集中処理。",
+  "topicSlugs": [
+    { "slug": "tech_iot_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 39,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問86 ©2021 独立行政法人情報処理推進機構"
+}

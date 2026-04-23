@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q03",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 3,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "技術経営における新事業創出のプロセスを、研究、開発、事業化、産業化の四つに分類したとき、事業化から産業化を達成し、企業の業績に貢献するためには、新市場の立上げや競合製品の登場などの障壁がある。この障壁を意味する用語として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "囚人のジレンマ",
+      "isCorrect": false,
+      "whyAttractive": "ゲーム理論の用語で、互いに協力できない状況を表す。競合製品の登場と混同しそうだが、新事業創出プロセスの障壁を表す用語ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "ダーウィンの海",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "ファイアウォール",
+      "isCorrect": false,
+      "whyAttractive": "ネットワークセキュリティ用語。『障壁』という語感から引き寄せられるが、技術経営のプロセス障壁ではなく通信を制御する仕組み。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ファイブフォース",
+      "isCorrect": false,
+      "whyAttractive": "ポーターの競争戦略フレームワーク。『業界構造の分析』であり、事業化→産業化間の障壁そのものではない。経営戦略の響きで選ばされやすい。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    }
+  ],
+  "explanation": "技術経営(MOT)の新事業創出プロセスには3つの難関がある: (1)『魔の川』=研究→開発の障壁、(2)『死の谷』=開発→事業化の障壁、(3)『ダーウィンの海』=事業化→産業化の障壁(市場立上げ・競合との生き残り競争)。『ダーウィン(適者生存)』=競合との生存競争、という連想で覚える。",
+  "keyInsight": "MOT 3つの関門:『魔の川→死の谷→ダーウィンの海』。最後(事業化→産業化)がダーウィンの海。",
+  "topicSlugs": [
+    { "slug": "biz_innovation_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 3,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問3 ©2020 独立行政法人情報処理推進機構"
+}

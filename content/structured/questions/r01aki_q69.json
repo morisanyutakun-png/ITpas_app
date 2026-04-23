@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q69",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 69,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "ブログにおけるトラックバックの説明として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "一般利用者が、気になるニュースへのリンクやコメントなどを投稿するサービス",
+      "isCorrect": false,
+      "whyAttractive": "ソーシャルニュースサイトの説明。トラックバックは相手ブログへの通知の仕組み。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "ネットワーク上にブックマークを登録することによって、利用価値の高いWebサイト情報を他の利用者と共有するサービス",
+      "isCorrect": false,
+      "whyAttractive": "ソーシャルブックマークの説明(Delicious等)。トラックバックとは別機能。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ブログに貼り付けたボタンをクリックすることで、SNSなどのソーシャルメディア上でリンクなどの情報を共有する機能",
+      "isCorrect": false,
+      "whyAttractive": "SNSシェアボタンの説明。こちらはSNSへの共有で、ブログ間の通知ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "別の利用者のブログ記事へのリンクを張ると、リンクが張られた相手に対してその旨を通知する仕組み",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "トラックバック=ブログ記事にリンクを張った際に、リンク先のブログ主に自動通知する仕組み。ブログ間の参照関係を可視化する。ソーシャルブックマーク・SNSシェア・ニュース投稿とは別機能。",
+  "keyInsight": "トラックバック=『リンクを張ったら相手に通知』。ブログ同士をつなぐ通知機能。",
+  "topicSlugs": [
+    { "slug": "network_protocols", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 30,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問69 ©2019 独立行政法人情報処理推進機構"
+}

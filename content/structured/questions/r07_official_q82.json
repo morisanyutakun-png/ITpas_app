@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q82",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 82,
+  "majorCategory": "technology",
+  "formatType": "db_basics",
+  "trapType": "similar_term",
+  "stem": "あるコンピュータのデータベースの内容を他のコンピュータのデータベースに複製して、両者の内容が一致するように同期させるDBMSの機能はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "アーカイブ",
+      "isCorrect": false,
+      "whyAttractive": "古いデータをまとめて保管する機能。複製同期ではない。",
+      "misconceptionSlug": "confuse_db_normalization"
+    },
+    {
+      "label": "イ",
+      "body": "バックアップ",
+      "isCorrect": false,
+      "whyAttractive": "障害対策のデータコピー。一時点のコピーで、継続的同期ではない。",
+      "misconceptionSlug": "confuse_db_normalization"
+    },
+    {
+      "label": "ウ",
+      "body": "レプリケーション",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "ロールバック",
+      "isCorrect": false,
+      "whyAttractive": "トランザクション失敗時に元に戻す処理。複製とは無関係。",
+      "misconceptionSlug": "confuse_db_normalization"
+    }
+  ],
+  "explanation": "レプリケーション=DBの内容を別のDBに複製し、変更を継続的に同期させる機能。可用性向上・負荷分散・災害対策に使う。アーカイブ(保管)・バックアップ(一時点コピー)・ロールバック(巻き戻し)とは別機能。",
+  "keyInsight": "レプリケーション=『継続的な複製と同期』。バックアップ(一時点)との違いは継続同期の有無。",
+  "topicSlugs": [
+    { "slug": "db_normalization", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_db_normalization", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 38,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問82"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q44",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 44,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "ITサービスマネジメントにおいて、サービスデスクが受け付けた難度の高いインシデントを解決するために、サービスデスクの担当者が専門技術をもつ二次サポートに解決を委ねることはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "FAQ",
+      "isCorrect": false,
+      "whyAttractive": "よくある質問集。ナレッジ参照で、引継ぎではない。",
+      "misconceptionSlug": "confuse_incident_problem"
+    },
+    {
+      "label": "イ",
+      "body": "SLA",
+      "isCorrect": false,
+      "whyAttractive": "サービス品質合意書。文書で、引継ぎプロセスではない。",
+      "misconceptionSlug": "confuse_incident_problem"
+    },
+    {
+      "label": "ウ",
+      "body": "エスカレーション",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "ワークアラウンド",
+      "isCorrect": false,
+      "whyAttractive": "暫定的な回避策。根本解決でない応急対応で、引継ぎではない。",
+      "misconceptionSlug": "confuse_incident_problem"
+    }
+  ],
+  "explanation": "エスカレーション=一次サポートで対応困難なインシデントを、専門技術を持つ二次(上位)サポートに引き継ぐプロセス。階層型サポートの基本動作。FAQ(知識集)・SLA(合意書)・ワークアラウンド(回避策)とは別概念。",
+  "keyInsight": "エスカレーション=『上位/専門者への引継ぎ』。段階的サポートの標準動作。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_incident_problem", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 20,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問44 ©2021 独立行政法人情報処理推進機構"
+}

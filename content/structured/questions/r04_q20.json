@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q20",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 20,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "あるデータを表現するために、1個のJANコードか1個のQRコードのどちらかの利用を検討する。表現できる最大のデータ量の大きい方を採用する場合、検討結果として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "JANコードを採用する。",
+      "isCorrect": false,
+      "whyAttractive": "JAN=13桁または8桁のみ。容量が小さい。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "QRコードを採用する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "表現する内容によって最大のデータ量は変化するので決められない。",
+      "isCorrect": false,
+      "whyAttractive": "QRは様々な情報種別に対応するが、最大容量はJANより大きいので決定可能。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "表現できる最大のデータ量は同じなので決められない。",
+      "isCorrect": false,
+      "whyAttractive": "容量は大きく異なる(JAN=13桁、QR=数千桁相当)。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "JANコード=1次元バーコードで13桁または8桁の数字のみ。QRコード=2次元コードで数字最大7,089文字・英数4,296文字・漢字1,817文字を格納可能。QRの容量が圧倒的に大きい。",
+  "keyInsight": "1次元(JAN等)=容量小、2次元(QR等)=容量大。2次元が圧倒的に多い情報を持てる。",
+  "topicSlugs": [
+    { "slug": "biz_enterprise_systems", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 10,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問20 ©2022 独立行政法人情報処理推進機構"
+}

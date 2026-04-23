@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q30",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 30,
+  "majorCategory": "strategy",
+  "formatType": "law_ip",
+  "trapType": "scope_overgeneral",
+  "stem": "情報の取扱いに関する不適切な行為a〜cのうち、不正アクセス禁止法で定められている禁止行為に該当するものだけを全て挙げたものはどれか。\n\na オフィス内で拾った手帳に記載されていた他人の利用者IDとパスワードを無断で使って、自社のサーバにネットワークを介してログインし、格納されていた人事評価情報を閲覧した。\nb 同僚が席を離れたときに、同僚のPCの画面に表示されていた、自分にはアクセスする権限のない人事評価情報を閲覧した。\nc 部門の保管庫に保管されていた人事評価情報が入ったUSBメモリを上司に無断で持ち出し、自分のPCで人事評価情報を閲覧した。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "a, b",
+      "isCorrect": false,
+      "whyAttractive": "bは画面閲覧(のぞき見)でネットワーク経由ではない。不正アクセス禁止法の対象外。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "a, b, c",
+      "isCorrect": false,
+      "whyAttractive": "cはUSBの物理持ち出しでネット経由ではない。不正アクセス禁止法の対象は『ネットワーク経由』に限定。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "a, c",
+      "isCorrect": false,
+      "whyAttractive": "cは物理窃取(USB持ち出し)で、不正アクセス禁止法の対象ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "不正アクセス禁止法=『ネットワークを介した』ID/PWによる不正ログイン行為等を禁じる法律。a=他人のID/PWでサーバにネット経由ログイン=典型対象。b=のぞき見(ネット経由でない)、c=USB物理持ち出し(ネット経由でない)は対象外。",
+  "keyInsight": "不正アクセス禁止法=『ネットワーク経由』が絶対条件。のぞき見・物理窃取は別の法律(窃視防止条例・窃盗罪等)。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 14,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問30 ©2021 独立行政法人情報処理推進機構"
+}

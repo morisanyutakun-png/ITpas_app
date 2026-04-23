@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q22",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 22,
+  "majorCategory": "strategy",
+  "formatType": "case",
+  "trapType": "scope_overgeneral",
+  "stem": "営業部のAさんは、営業担当者10人の営業成績が一目で分かるように、各営業担当者が提出する営業見込みと実績を毎月集計してグラフ化したいと考えている。この問題を解決するために適用する技術やツールとして、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "データを学習し、分析するAI",
+      "isCorrect": false,
+      "whyAttractive": "AIは未知パターンの推論・予測が強み。単純な集計グラフ化にはオーバースペック。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "イ",
+      "body": "データを自動収集し、データベースに蓄積するIoT",
+      "isCorrect": false,
+      "whyAttractive": "IoTはセンサ等で現場データ収集。営業報告はIoTで収集するものではない。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "入力したデータを、加工して見せるオフィスツール",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "ビッグデータを、様々な手法で分析するデータサイエンス",
+      "isCorrect": false,
+      "whyAttractive": "10人の営業データは『ビッグデータ』ではない。データサイエンスは大量データ向け。",
+      "misconceptionSlug": "confuse_ai_terms"
+    }
+  ],
+  "explanation": "10人規模の営業データを毎月集計・グラフ化するだけなら、表計算ソフト(オフィスツール)で十分。AI・IoT・ビッグデータ分析はそれぞれ目的が違う(未知パターン推論・センサ収集・大量データ分析)。『解決したい問題の規模・性質』に合った技術を選ぶのが大切。",
+  "keyInsight": "技術選定は『問題の規模と性質』に合わせる。小規模集計に AI・ビッグデータは過剰。",
+  "topicSlugs": [
+    { "slug": "spreadsheet_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_ai_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 10,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問22"
+}

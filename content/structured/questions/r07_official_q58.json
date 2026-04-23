@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q58",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 58,
+  "majorCategory": "technology",
+  "formatType": "network_basics",
+  "trapType": "similar_term",
+  "stem": "DNSの説明として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "IPネットワークに接続しようとするコンピュータに、IPアドレスなどを自動的に割り当てるプロトコルである。",
+      "isCorrect": false,
+      "whyAttractive": "DHCPの説明。IPアドレス動的割当で、DNSとは別プロトコル。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    },
+    {
+      "label": "イ",
+      "body": "ブラウザとWebサーバ間の通信を暗号化して、セキュリティを高めるために利用されるプロトコルである。",
+      "isCorrect": false,
+      "whyAttractive": "HTTPS/TLSの説明。暗号化通信で、DNSとは別。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    },
+    {
+      "label": "ウ",
+      "body": "ホスト名やドメイン名と、IPアドレスを対応付ける仕組みである。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "ホスト名やドメイン名と、MACアドレスを対応付ける仕組みである。",
+      "isCorrect": false,
+      "whyAttractive": "DNSはIPアドレス対応。MACアドレスとの対応はARP(Address Resolution Protocol)。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    }
+  ],
+  "explanation": "DNS (Domain Name System) = ホスト名・ドメイン名(www.example.com)とIPアドレス(192.0.2.1)を対応付ける仕組み。ブラウザがURLを入力するとDNSで名前解決→IPアドレス取得→通信開始。DHCP(IP割当)・HTTPS(暗号化)・ARP(IP→MAC)とは別。",
+  "keyInsight": "DNS=『ドメイン名↔IPアドレス』の変換。MACアドレス対応はARP。",
+  "topicSlugs": [
+    { "slug": "network_protocols", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_protocol_layer", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 28,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問58"
+}

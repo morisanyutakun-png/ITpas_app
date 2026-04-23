@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q43",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 43,
+  "majorCategory": "management",
+  "formatType": "case",
+  "trapType": "scope_overgeneral",
+  "stem": "AIを利用したチャットボットに関する事例として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "あらゆる物がインターネットを介してつながることによって、外出先でスマートデバイスから自宅のエアコンのスイッチを入れることなどができるようになる。",
+      "isCorrect": false,
+      "whyAttractive": "IoTの事例。機器のネット接続であってチャットボット(会話型自動応答)ではない。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "イ",
+      "body": "コンピュータが様々な動物の画像を大量に認識して学習することによって、犬と猫の画像を判別できるようになる。",
+      "isCorrect": false,
+      "whyAttractive": "画像認識のAI事例だが、チャットボット(対話)ではなく画像判別。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "商品の操作方法などの質問を書き込むと、詳しい知識をもった人が回答や助言を投稿してくれる。",
+      "isCorrect": false,
+      "whyAttractive": "Q&Aサイト・コミュニティの事例。『人』が回答するのでAIチャットボットではない。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "エ",
+      "body": "商品の販売サイトで、利用者が求める商品の機能などを入力すると、その内容に応じて推奨する商品をコンピュータが会話型で紹介してくれる。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "チャットボット=会話形式で自動応答するシステム。AIチャットボットは特に、自然言語処理で利用者の入力を理解し、文脈に応じた推奨・回答を返す。IoT(機器接続)・画像認識・人間によるQ&Aとは別。",
+  "keyInsight": "AIチャットボット=『会話型』『自動』『コンピュータが応答』の3点揃いが必要。",
+  "topicSlugs": [
+    { "slug": "ai_generative_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_ai_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 19,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問43 ©2019 独立行政法人情報処理推進機構"
+}

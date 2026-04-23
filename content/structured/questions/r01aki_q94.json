@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q94",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 94,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "NTPの利用によって実現できることとして、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "OSの自動バージョンアップ",
+      "isCorrect": false,
+      "whyAttractive": "Windows Updateなどの機能。時刻合わせとは別機能。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "PCのBIOSの設定",
+      "isCorrect": false,
+      "whyAttractive": "BIOS設定はハードウェアレベル。NTPと無関係。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "PCやサーバなどの時刻合わせ",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "ネットワークに接続されたPCの遠隔起動",
+      "isCorrect": false,
+      "whyAttractive": "Wake-on-LAN(WoL)の機能。時刻合わせとは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "NTP (Network Time Protocol) = ネットワーク経由で時刻を同期するプロトコル。PC・サーバの時刻を標準時刻サーバに合わせる。自動アップデート・BIOS設定・WoLとは別機能。",
+  "keyInsight": "NTP=Network Time Protocol=『ネット時刻合わせ』。Time(時刻)を覚える。",
+  "topicSlugs": [
+    { "slug": "network_protocols", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 40,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問94 ©2019 独立行政法人情報処理推進機構"
+}

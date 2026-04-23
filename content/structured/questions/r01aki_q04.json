@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q04",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 4,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "情報を縦横2次元の図形パターンに保存するコードはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ASCIIコード",
+      "isCorrect": false,
+      "whyAttractive": "英数字を7ビットで表す文字コード。図形パターンではなく数値符号化。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "Gコード",
+      "isCorrect": false,
+      "whyAttractive": "工作機械(NC機器)の命令コード。図形パターンとは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "JANコード",
+      "isCorrect": false,
+      "whyAttractive": "1次元バーコード。縦縞のみで2次元ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "QRコード",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "QRコード=Quick Response Code。縦横2次元のドットパターンで情報を符号化する。1次元バーコード(JAN)より大容量。ASCIIは文字コード、GコードはNC命令。",
+  "keyInsight": "2次元=QR、1次元=JAN(バーコード)。次元数で区別。",
+  "topicSlugs": [
+    { "slug": "biz_enterprise_systems", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 4,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問4 ©2019 独立行政法人情報処理推進機構"
+}

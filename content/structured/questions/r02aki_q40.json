@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q40",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 40,
+  "majorCategory": "management",
+  "formatType": "case",
+  "trapType": "edge_case_miss",
+  "stem": "プロジェクトマネジメントの活動には、プロジェクト統合マネジメント、プロジェクトスコープマネジメント、プロジェクトスケジュールマネジメント、プロジェクトコストマネジメントなどがある。プロジェクト統合マネジメントの活動には、資源配分を決め、競合する目標や代替案間のトレードオフを調整することが含まれる。システム開発プロジェクトにおいて、当初の計画にない機能の追加を行う場合のプロジェクト統合マネジメントの活動として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "機能追加に掛かる費用を見積もり、必要な予算を確保する。",
+      "isCorrect": false,
+      "whyAttractive": "プロジェクトコストマネジメントの活動。特定の1領域(コスト)の話で、統合マネジメントの『トレードオフ調整』ではない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "イ",
+      "body": "機能追加に対応するために、納期を変更するか要員を追加するかを検討する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "機能追加のために必要な作業や成果物を明確にし、WBSを更新する。",
+      "isCorrect": false,
+      "whyAttractive": "プロジェクトスコープマネジメントの活動。WBS=作業範囲の話で、スコープ領域。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "エ",
+      "body": "機能追加のための所要期間を見積もり、スケジュールを変更する。",
+      "isCorrect": false,
+      "whyAttractive": "プロジェクトスケジュールマネジメントの活動。スケジュール領域の話で、統合ではない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    }
+  ],
+  "explanation": "プロジェクト統合マネジメント=複数領域(スコープ・スケジュール・コスト・品質等)を横断し、トレードオフを調整する活動。『納期を変えるか、要員を増やすか』のような複数選択肢からの意思決定がまさに統合。個別領域(コスト・スコープ・スケジュール単独)とは別。",
+  "keyInsight": "統合マネジメント=『複数の領域をまたぐトレードオフ調整』。単一領域の活動(コスト見積・WBS更新・スケジュール変更)は別の管理領域。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_pm_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 18,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問40 ©2020 独立行政法人情報処理推進機構"
+}

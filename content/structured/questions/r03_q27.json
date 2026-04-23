@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q27",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 27,
+  "majorCategory": "strategy",
+  "formatType": "case",
+  "trapType": "similar_term",
+  "stem": "BYODの事例として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "大手通信事業者から回線の卸売を受け、自社ブランドの通信サービスを開始した。",
+      "isCorrect": false,
+      "whyAttractive": "MVNO(仮想移動体通信事業者)の事例。BYODとは別概念。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "ゴーグルを通してあたかも現実のような映像を見せることで、ゲーム世界の臨場感を高めた。",
+      "isCorrect": false,
+      "whyAttractive": "VR(仮想現実)の事例。私物機器の業務利用ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "私物のスマートフォンから会社のサーバにアクセスして、電子メールやスケジューラを利用することができるようにした。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "図書館の本にICタグを付け、簡単に蔵書の管理ができるようにした。",
+      "isCorrect": false,
+      "whyAttractive": "RFID導入事例。物品管理で、私物機器の業務利用ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "BYOD (Bring Your Own Device) = 私物のデバイス(スマホ・PC)を業務に利用する形態。私物スマホで会社サーバアクセスが典型事例。MVNO・VR・RFIDとは別分野。",
+  "keyInsight": "BYOD=『私物機器の業務利用』。Bring Your Own=『自分の持ち込む』が字義。",
+  "topicSlugs": [
+    { "slug": "biz_dx_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 13,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問27 ©2021 独立行政法人情報処理推進機構"
+}

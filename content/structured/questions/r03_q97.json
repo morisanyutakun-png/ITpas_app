@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q97",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 97,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "複数のコンピュータが同じ内容のデータを保持し、各コンピュータがデータの正当性を検証して担保することによって、矛盾なくデータを改ざんすることが困難となる、暗号資産の基盤技術として利用されている分散型台帳を実現したものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "クラウドコンピューティング",
+      "isCorrect": false,
+      "whyAttractive": "ネット経由のサービス提供形態。分散型台帳の具体技術ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "ディープラーニング",
+      "isCorrect": false,
+      "whyAttractive": "多層ニューラルネットによる機械学習。台帳とは無関係。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ブロックチェーン",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "リレーショナルデータベース",
+      "isCorrect": false,
+      "whyAttractive": "表形式DBで中央集権型(1箇所管理)。分散型台帳ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ブロックチェーン=取引履歴をブロックで連鎖し、ハッシュ値と分散合意(PoW等)で改ざん困難にする分散型台帳技術。Bitcoin等の暗号資産の基盤。",
+  "keyInsight": "ブロックチェーン=分散型台帳、改ざん困難、暗号資産の基盤。中央管理型DBと対極。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 44,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問97 ©2021 独立行政法人情報処理推進機構"
+}

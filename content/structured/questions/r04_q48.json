@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q48",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 48,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "システム開発プロジェクトの品質マネジメントにおいて、品質上の問題と原因との関連付けを行って根本原因を追究する方法の説明として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "管理限界を設定し、上限と下限を逸脱する事象から根本原因を推定する。",
+      "isCorrect": false,
+      "whyAttractive": "管理図の説明。時系列品質監視で根本原因追究ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "原因の候補リストから原因に該当しないものを削除し、残った項目から根本原因を絞り込む。",
+      "isCorrect": false,
+      "whyAttractive": "消去法的アプローチ。関連付けと構造化が不足。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "候補となる原因を魚の骨の形で整理し、根本原因を検討する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "複数の原因を分類し、件数が多かった原因の順に対処すべき根本原因の優先度を決めていく。",
+      "isCorrect": false,
+      "whyAttractive": "パレート分析の説明。件数ベースの優先度付けで根本原因追究とは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "特性要因図(フィッシュボーン図/石川ダイアグラム)=背骨に問題、大骨に主要因(例:人/設備/方法/材料)、小骨に細かい原因を整理し根本原因を追究するQC七つ道具の一つ。",
+  "keyInsight": "特性要因図=魚の骨で原因を構造化。『なぜなぜ分析』を可視化する典型手法。",
+  "topicSlugs": [
+    { "slug": "biz_validation_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 22,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問48 ©2022 独立行政法人情報処理推進機構"
+}

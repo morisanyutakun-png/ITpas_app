@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q51",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 51,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "プロジェクトマネジメントにおいて、プロジェクトスコープを定義したプロジェクトスコープ記述書に関する説明として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "成果物と作業の一覧及びプロジェクトからの除外事項を記述している。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "成果物を作るための各作業の開始予定日と終了予定日を記述している。",
+      "isCorrect": false,
+      "whyAttractive": "スケジュール表の記述。スコープ(範囲)ではなく時間計画の話。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "プロジェクトが完了するまでのコスト見積りを記述している。",
+      "isCorrect": false,
+      "whyAttractive": "コスト計画書の記述。予算管理であってスコープではない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "エ",
+      "body": "プロジェクトにおける役割、責任、必要なスキルを特定して記述している。",
+      "isCorrect": false,
+      "whyAttractive": "資源計画書(役割分担表)の記述。人的資源の話でスコープではない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    }
+  ],
+  "explanation": "プロジェクトスコープ記述書=プロジェクトの『範囲』(成果物と作業一覧+除外事項)を定義する文書。スコープの誤解・スコープクリープを防ぐ。スケジュール・コスト・役割は別の計画書。",
+  "keyInsight": "スコープ=範囲(何を作るか+何を作らないか)。時間・コスト・人員は別の計画書。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_pm_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 22,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問51 ©2019 独立行政法人情報処理推進機構"
+}

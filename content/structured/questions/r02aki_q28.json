@@ -1,0 +1,55 @@
+{
+  "externalKey": "r02aki_q28",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 28,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "新しい概念やアイディアの実証を目的とした、開発の前段階における検証を表す用語はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "CRM",
+      "isCorrect": false,
+      "whyAttractive": "Customer Relationship Management=顧客関係管理。マーケティング手法で、概念検証とは無関係。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "KPI",
+      "isCorrect": false,
+      "whyAttractive": "Key Performance Indicator=重要業績評価指標。目標管理の指標で、検証手法ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "PoC",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "SLA",
+      "isCorrect": false,
+      "whyAttractive": "Service Level Agreement=サービス品質合意。運用フェーズの契約文書で、開発前の検証ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "PoC (Proof of Concept) = 概念実証。新しいアイディアが技術的に実現可能か、開発本格着手前に試作・検証する活動。類似概念: PoV(価値検証)、MVP(最小機能製品)、プロトタイプ(UI/体験検証)。",
+  "keyInsight": "PoC=Proof of Concept=『実現可能性の検証』。Cの「Concept(概念)」を覚える。",
+  "topicSlugs": [
+    { "slug": "biz_validation_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [
+    { "slug": "biz_validation_compare_table", "role": "primary" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 13,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問28 ©2020 独立行政法人情報処理推進機構"
+}

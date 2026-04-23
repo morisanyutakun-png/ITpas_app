@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q16",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 16,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "マイナンバーに関する説明のうち、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "海外居住者を含め、日本国籍を有する者だけに付与される。",
+      "isCorrect": false,
+      "whyAttractive": "国籍ではなく『住民票のある者』全員に付与。外国人住民も対象、海外居住者は対象外。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "企業が従業員番号として利用しても構わない。",
+      "isCorrect": false,
+      "whyAttractive": "マイナンバー法で目的外利用は厳しく禁止。従業員番号への転用は違法。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "申請をすれば、希望するマイナンバーを取得できる。",
+      "isCorrect": false,
+      "whyAttractive": "番号は自動付与で任意選択不可。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "付与されたマイナンバーを、自由に変更することはできない。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "マイナンバー=住民票を有する全員に付与される12桁の番号。生涯不変が原則(漏洩等の特別な理由でのみ変更可)。番号選択不可、目的外利用禁止(社会保障・税・災害対策の3分野のみ)。",
+  "keyInsight": "マイナンバー=住民に付与、生涯不変、目的外利用禁止。国籍条件ではなく住民票条件。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 8,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問16 ©2022 独立行政法人情報処理推進機構"
+}

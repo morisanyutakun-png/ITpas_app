@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q50",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 50,
+  "majorCategory": "management",
+  "formatType": "case",
+  "trapType": "similar_term",
+  "stem": "プロジェクトメンバ間のコミュニケーションのルールを明確にするための施策として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "作成すべき成果物を定義する。",
+      "isCorrect": false,
+      "whyAttractive": "スコープマネジメントの活動。『何を作るか』の話で、メンバ間のコミュニケーションルールとは別領域。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "イ",
+      "body": "実際に使った費用を把握し、計画とのずれがあれば対策を講じる。",
+      "isCorrect": false,
+      "whyAttractive": "コストマネジメントの活動。予算管理の話で、コミュニケーションではない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "スケジュールを作成し、進捗管理を行う。",
+      "isCorrect": false,
+      "whyAttractive": "スケジュールマネジメントの活動。時間計画の話で、コミュニケーションとは別。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "エ",
+      "body": "プロジェクト情報の作成や配布の方法を明確にする。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "プロジェクトコミュニケーションマネジメント=情報の作成・配布・共有・報告の方法を明確化する活動。『誰が誰に何をいつどう伝えるか』を整備する。スコープ・コスト・スケジュールとは別の管理領域。",
+  "keyInsight": "コミュニケーションマネジメント=『情報の流れ』の設計。成果物(スコープ)・費用(コスト)・時間(スケジュール)と区別。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_pm_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 23,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問50 ©2020 独立行政法人情報処理推進機構"
+}

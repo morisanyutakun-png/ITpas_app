@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q57",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 57,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "CPU、主記憶、HDDなどのコンピュータを構成する要素を1枚の基板上に実装し、複数枚の基板をラック内部に搭載するなどの形態がある、省スペース化を実現しているサーバを何と呼ぶか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "DNSサーバ",
+      "isCorrect": false,
+      "whyAttractive": "役割別分類(DNSサービス提供)。物理形態の名称ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "FTPサーバ",
+      "isCorrect": false,
+      "whyAttractive": "役割別分類(ファイル転送)。物理形態ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "Webサーバ",
+      "isCorrect": false,
+      "whyAttractive": "役割別分類(Web提供)。物理形態ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ブレードサーバ",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "ブレードサーバ=1枚の薄い基板(ブレード=刃)にサーバ機能を実装し、複数枚をラックに差し込んで集約する物理形態のサーバ。省スペース・省電力・集中管理が特徴。DNS/FTP/Webは役割別分類で、物理形態とは別軸。",
+  "keyInsight": "ブレードサーバ=『薄板(ブレード)型の集約サーバ』。物理形態の名称。",
+  "topicSlugs": [
+    { "slug": "tech_computer_arch", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 27,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問57 ©2021 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q10",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 10,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "特許戦略を策定する上で重要な『特許ポートフォリオ』について述べたものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "企業が保有や出願している特許を、事業への貢献や特許間のシナジー、今後適用が想定される分野などを分析するためにまとめたもの",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "技術イノベーションが発生した当初は特許出願が多くなる傾向だが、市場に支配的な製品の出現によって工程イノベーションにシフトし、特許出願が減少すること",
+      "isCorrect": false,
+      "whyAttractive": "イノベーションのS字カーブ/ドミナントデザイン理論の説明。特許ポートフォリオとは別概念。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "自社製品のシェアと市場の成長率を軸にしたマトリックスに、市場における自社や競争相手の位置付けを示したもの",
+      "isCorrect": false,
+      "whyAttractive": "PPM(Product Portfolio Management)の説明。製品ポートフォリオであり特許ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "複数の特許権者同士が、それぞれの保有する特許の実施権を相互に許諾すること",
+      "isCorrect": false,
+      "whyAttractive": "クロスライセンスの説明。特許ポートフォリオ自体ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "特許ポートフォリオ=自社が保有/出願中の特許群を一覧化し、事業貢献度・相互シナジー・今後の活用可能性で分析する経営資料。戦略的な特許活用・棚卸しに使う。PPM(製品)とは別。",
+  "keyInsight": "ポートフォリオ=『まとまり』の分析。特許ポートフォリオ=特許群の戦略分析、PPM=製品群の分析。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 5,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問10 ©2022 独立行政法人情報処理推進機構"
+}

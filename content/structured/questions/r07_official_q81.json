@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q81",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 81,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "イメージスキャナーで読み取った紙の書類の画像から、印刷文字や手書きの文字を読み取り、テキストデータに変換する技術を何と呼ぶか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "CCD",
+      "isCorrect": false,
+      "whyAttractive": "Charge Coupled Device=光→電気変換する撮像素子。文字→テキスト変換技術ではない(画像化の素子)。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "DVI",
+      "isCorrect": false,
+      "whyAttractive": "Digital Visual Interface=ディスプレイ接続規格。文字認識とは無関係。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "GPU",
+      "isCorrect": false,
+      "whyAttractive": "画像処理プロセッサ(ハードウェア)。OCR処理を加速するためには使うが、OCR技術そのものではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "OCR",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "OCR (Optical Character Recognition) = 光学的文字認識。画像上の印刷文字・手書き文字を解析してテキストデータに変換する技術。CCD(撮像素子)・DVI(表示規格)・GPU(処理ハードウェア)とは別概念。",
+  "keyInsight": "OCR=Optical Character Recognition=『光学文字認識』。画像→テキスト変換。",
+  "topicSlugs": [
+    { "slug": "ai_generative_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 38,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問81"
+}

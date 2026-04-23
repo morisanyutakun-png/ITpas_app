@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q39",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 39,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "提供するITサービスの価値を高めるためには、サービスの提供価格、どのようなことができるかというサービスの機能、及び可用性などを維持するサービスの保証の三つのバランスを考慮する必要がある。インスタントメッセンジャのサービスに関する記述のうち、サービスの保証に当たるものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "24時間365日利用可能である。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "ゲームなどの他のソフトウェアと連携可能である。",
+      "isCorrect": false,
+      "whyAttractive": "機能(ユーティリティ)の記述。連携性は機能。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "無料で利用可能である。",
+      "isCorrect": false,
+      "whyAttractive": "価格の記述で、保証ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "文字の代わりに自分で作成したアイコンも利用可能である。",
+      "isCorrect": false,
+      "whyAttractive": "機能(ユーティリティ)の記述。カスタマイズ機能。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ITILのサービスの価値=『機能(Utility:何ができるか)』+『保証(Warranty:どれだけ信頼できるか)』。保証=可用性/容量/継続性/セキュリティ等の品質面。24時間365日=可用性=保証。無料=価格。",
+  "keyInsight": "サービス価値=機能(Utility)+保証(Warranty)。可用性/品質=保証、できること=機能。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 18,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問39 ©2022 独立行政法人情報処理推進機構"
+}

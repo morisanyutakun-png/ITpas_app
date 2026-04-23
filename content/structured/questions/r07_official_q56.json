@@ -1,0 +1,54 @@
+{
+  "externalKey": "r07_official_q56",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 56,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "Bluetoothに追加された仕様の一つであり、省電力性に優れているので、IoTシステムを長期間運用でき、送受信デバイス間の距離を知ることにも使われているものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "BLE",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "IrDA",
+      "isCorrect": false,
+      "whyAttractive": "赤外線通信規格。Bluetooth追加仕様ではなく、独立した規格。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "NFC",
+      "isCorrect": false,
+      "whyAttractive": "近距離無線通信(10cm程度)。Bluetoothとは別規格。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "PLC",
+      "isCorrect": false,
+      "whyAttractive": "電力線通信。電線を使う有線通信で、Bluetoothとは無関係。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "BLE (Bluetooth Low Energy) = Bluetooth 4.0で追加された省電力仕様。ボタン電池で数年動作可能、距離測定(RSSI)にも利用。IoT/ビーコン用途で普及。IrDA(赤外線)・NFC(近距離)・PLC(電力線)はそれぞれ別の通信規格。",
+  "keyInsight": "BLE=Bluetooth Low Energy=『Bluetooth+省電力』。IoT/ビーコン向け。",
+  "topicSlugs": [
+    { "slug": "tech_iot_basics", "weight": 1 },
+    { "slug": "network_protocols", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 27,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問56"
+}

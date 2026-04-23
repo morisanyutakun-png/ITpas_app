@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q40",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 40,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "ITガバナンスに関する記述として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ITサービスマネジメントに関して、広く利用されているベストプラクティスを集めたもの",
+      "isCorrect": false,
+      "whyAttractive": "ITIL(IT Infrastructure Library)の説明。ガバナンスとは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "システム及びソフトウェア開発とその取引の適正化に向けて、それらのベースとなる作業項目の一つ一つを定義して標準化したもの",
+      "isCorrect": false,
+      "whyAttractive": "共通フレーム(SLCP)の説明。ガバナンスではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "経営陣が組織の価値を高めるために実践する行動であり、情報システム戦略の策定及び実現に必要な組織能力のこと",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "プロジェクトの要求事項を満足させるために、知識、スキル、ツール、技法をプロジェクト活動に適用すること",
+      "isCorrect": false,
+      "whyAttractive": "プロジェクトマネジメントの定義。ガバナンスとは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ITガバナンス=経営陣が主導してIT投資・IT戦略が企業価値に貢献するよう統治する仕組み・組織能力。JIS Q 38500等で規定。ITIL(運用)・SLCP(開発標準)・PM(個別プロジェクト)とは異なる。",
+  "keyInsight": "ITガバナンス=経営陣主導のIT統治。ITIL(運用)/PM(プロジェクト)より上位の経営レイヤー。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 19,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問40 ©2022 独立行政法人情報処理推進機構"
+}

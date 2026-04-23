@@ -1,0 +1,55 @@
+{
+  "externalKey": "r03_q37",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 37,
+  "majorCategory": "management",
+  "formatType": "case",
+  "trapType": "similar_term",
+  "stem": "システムの利用者数が当初の想定よりも増えてシステムのレスポンスが悪化したので、増強のためにサーバを1台追加することにした。動作テストが終わったサーバをシステムに組み入れて稼働させた。この作業を実施するITサービスマネジメントのプロセスとして、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "インシデント管理",
+      "isCorrect": false,
+      "whyAttractive": "障害対応プロセス。今回は計画的な増強なのでインシデントではない。",
+      "misconceptionSlug": "confuse_incident_problem"
+    },
+    {
+      "label": "イ",
+      "body": "変更管理",
+      "isCorrect": false,
+      "whyAttractive": "変更の承認・評価プロセス。今回の問題は『組み入れ稼働』の実行段階で、事前承認ではない。",
+      "misconceptionSlug": "confuse_incident_problem"
+    },
+    {
+      "label": "ウ",
+      "body": "問題管理",
+      "isCorrect": false,
+      "whyAttractive": "インシデント原因分析・恒久対策プロセス。原因は判明済(利用者増)で、対策の実施段階。",
+      "misconceptionSlug": "confuse_incident_problem"
+    },
+    {
+      "label": "エ",
+      "body": "リリース及び展開管理",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "リリース及び展開管理=テスト済みの変更を本番環境に配備・稼働させるプロセス。サーバ追加の本番組み入れはまさにこの範疇。変更管理は事前承認、インシデント管理は障害対応、問題管理は根本原因分析と別役割。",
+  "keyInsight": "リリース/展開管理=『変更の本番配備』。承認(変更管理)→実装(開発)→配備(リリース)の流れ。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_incident_problem", "weight": 1 }
+  ],
+  "materialSlugs": [
+    { "slug": "itil_process_compare", "role": "helper" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 17,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問37 ©2021 独立行政法人情報処理推進機構"
+}

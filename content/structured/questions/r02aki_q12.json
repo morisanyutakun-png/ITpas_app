@@ -1,0 +1,54 @@
+{
+  "externalKey": "r02aki_q12",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 12,
+  "majorCategory": "strategy",
+  "formatType": "law_ip",
+  "trapType": "edge_case_miss",
+  "stem": "A社では、設計までをA社で行ったプログラムの開発を、請負契約に基づきB社に委託して行う形態と、B社から派遣契約に基づき派遣されたC氏が行う形態を比較検討している。開発されたプログラムの著作権の帰属に関する規定が会社間の契約で定められていないとき、著作権の帰属先はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "請負契約ではA社に帰属し、派遣契約ではA社に帰属する。",
+      "isCorrect": false,
+      "whyAttractive": "両方発注元(A社)に帰属すると考えがち。だが請負は『成果物の作成責任は受託者』が原則で、何も定めなければ著作権は作成した側(B社)に帰属する。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "請負契約ではA社に帰属し、派遣契約ではC氏に帰属する。",
+      "isCorrect": false,
+      "whyAttractive": "請負を発注者帰属と誤解。派遣で個人帰属と誤解。両方間違っている。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "請負契約ではB社に帰属し、派遣契約ではA社に帰属する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "請負契約ではB社に帰属し、派遣契約ではC氏に帰属する。",
+      "isCorrect": false,
+      "whyAttractive": "請負=B社帰属は正しい。だが派遣のC氏はA社の指揮命令下で職務として作成しているため、『職務著作』の考え方で指揮命令を行うA社に帰属するのが通説。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "著作権は原則『作成者』に帰属する。契約で別途定めなければ: (1)請負契約=B社の従業員がB社の業務として作成→B社に帰属 (2)派遣契約=C氏はA社の指揮命令下で職務として作成→A社に帰属(職務著作)。『誰が作成者の指揮命令者か』が分岐点。",
+  "keyInsight": "請負=受託者が作成主体→受託者(B社)に帰属。派遣=派遣先が指揮命令→派遣先(A社)に帰属。",
+  "topicSlugs": [
+    { "slug": "biz_labor_contracts", "weight": 1 },
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 7,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問12 ©2020 独立行政法人情報処理推進機構"
+}

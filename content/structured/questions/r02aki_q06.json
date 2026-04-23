@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q06",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 6,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "BSC (Balanced Scorecard) に関する記述として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "企業や組織のビジョンと戦略を、四つの視点 (\"財務の視点\"、\"顧客の視点\"、\"業務プロセスの視点\"、\"成長と学習の視点\") から具体的な行動へと変換して計画・管理し、戦略の立案と実行・評価を支援するための経営管理手法である。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "製品やサービスを顧客に提供するという企業活動を、調達、開発、製造、販売、サービスといったそれぞれの業務が、一連の流れの中で順次、価値とコストを付加・蓄積していくものと捉え、この連鎖的活動によって顧客に向けた最終的な\"価値\"が生み出されるとする考え方のことである。",
+      "isCorrect": false,
+      "whyAttractive": "バリューチェーンの説明。同じ『経営戦略の手法』カテゴリで、複数業務を連鎖的に捉える点が似ているため混同されやすい。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "ウ",
+      "body": "多種類の製品を生産・販売したり、複数の事業を行ったりしている企業が、戦略的観点から経営資源の配分が最も効率的・効果的となる製品・事業相互の組合せを決定するための経営分析手法のことである。",
+      "isCorrect": false,
+      "whyAttractive": "PPM(プロダクト・ポートフォリオ・マネジメント)の説明。『複数事業の組合せ決定』という論点で、BSCの『四視点』とは別物。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "エ",
+      "body": "目標を達成するために意思決定を行う組織や個人の、プロジェクトやベンチャービジネスなどにおける、強み、弱み、機会、脅威を評価するのに用いられる経営戦略手法のことである。",
+      "isCorrect": false,
+      "whyAttractive": "SWOT分析の説明。BSCも『4視点』SWOTも『4要素』で4つある点で混同しやすいが、BSC=財務/顧客/業務/学習、SWOT=強み/弱み/機会/脅威。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    }
+  ],
+  "explanation": "BSC(バランススコアカード)=ビジョンと戦略を『財務・顧客・業務プロセス・学習と成長』の4視点でKPI化する戦略管理手法。『バランス』=財務偏重ではなく非財務指標も含める、がポイント。バリューチェーン(イ)、PPM(ウ)、SWOT(エ)と区別する。",
+  "keyInsight": "BSCの4視点=『財務／顧客／業務プロセス／学習と成長』。『バランス』の語源が『財務以外もバランス良く』。",
+  "topicSlugs": [
+    { "slug": "biz_marketing_frameworks", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_marketing_framework", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 4,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問6 ©2020 独立行政法人情報処理推進機構"
+}

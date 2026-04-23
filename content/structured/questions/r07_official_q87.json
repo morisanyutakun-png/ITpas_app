@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q87",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 87,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "edge_case_miss",
+  "stem": "PKIにおいて、ある条件に当てはまるデジタル証明書の情報が公開されているリストとしてCRLがある。このリストに掲載される条件として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "有効期間が満了している。",
+      "isCorrect": false,
+      "whyAttractive": "期限切れは証明書自体が無効なのでリスト不要。CRLは『期間内に失効した』例外を示すリスト。",
+      "misconceptionSlug": "confuse_crypto_method"
+    },
+    {
+      "label": "イ",
+      "body": "有効期間が無期限である。",
+      "isCorrect": false,
+      "whyAttractive": "通常、証明書には有効期限があり無期限はない。",
+      "misconceptionSlug": "confuse_crypto_method"
+    },
+    {
+      "label": "ウ",
+      "body": "有効期間内に失効している。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "有効期間を延長している。",
+      "isCorrect": false,
+      "whyAttractive": "証明書は再発行するもので延長しない。延長という概念はPKIに適さない。",
+      "misconceptionSlug": "confuse_crypto_method"
+    }
+  ],
+  "explanation": "CRL (Certificate Revocation List) = 証明書失効リスト。本来有効期間内だが、秘密鍵漏洩等の理由で途中で失効した証明書を公開するリスト。検証者はCRLを参照して期限切れでなくても失効していないか確認する。",
+  "keyInsight": "CRL=『有効期間内に失効した証明書』のリスト。期限切れは自動的に無効なので載せない。",
+  "topicSlugs": [
+    { "slug": "security_crypto", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_crypto_method", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 40,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問87"
+}

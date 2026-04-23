@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q38",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 38,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "order_swap",
+  "stem": "システム監査の手順に関して、次の記述中のa, bに入れる字句の適切な組合せはどれか。\n\nシステム監査は、a に基づき b の手順によって実施しなければならない。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a=監査計画 / b=結合テスト, システムテスト, 運用テスト",
+      "isCorrect": false,
+      "whyAttractive": "bがテスト工程の名称。システム監査の手順ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a=監査計画 / b=予備調査, 本調査, 評価・結論",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "a=法令 / b=結合テスト, システムテスト, 運用テスト",
+      "isCorrect": false,
+      "whyAttractive": "aもbも誤り。監査の基礎は監査計画であり、手順はテストではなく調査。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "a=法令 / b=予備調査, 本調査, 評価・結論",
+      "isCorrect": false,
+      "whyAttractive": "bは正しいがaが誤り。監査は計画文書に基づき実施。法令は監査基準の根拠だが直接の基づく対象は計画。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "システム監査の手順: 監査計画策定→予備調査(全体把握)→本調査(詳細確認)→評価・結論(監査所見)→報告。監査計画に基づいて、予備調査・本調査・評価の順で実施する。",
+  "keyInsight": "監査手順: 計画→予備→本→評価・結論。テスト工程ではなく調査工程。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 18,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問38 ©2021 独立行政法人情報処理推進機構"
+}

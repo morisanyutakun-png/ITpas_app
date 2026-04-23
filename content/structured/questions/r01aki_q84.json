@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q84",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 84,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "内外に宣言する最上位の情報セキュリティポリシに記載することとして、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "経営陣が情報セキュリティに取り組む姿勢",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "情報資産を守るための具体的で詳細な手順",
+      "isCorrect": false,
+      "whyAttractive": "実施手順書の内容。最上位の『基本方針』ではなく、最下層の実務手順。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "セキュリティ対策に掛ける費用",
+      "isCorrect": false,
+      "whyAttractive": "予算は事業計画に含める情報で、対外宣言文書の中核ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "守る対象とする具体的な個々の情報資産",
+      "isCorrect": false,
+      "whyAttractive": "対策基準や資産管理台帳の内容。最上位の基本方針ではなく中間層。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "情報セキュリティポリシの3層構造: 最上位=基本方針(経営陣の姿勢・宣言)、中位=対策基準(何をどう守るか)、最下位=実施手順(具体的手順)。最上位には『経営の姿勢』を記載し内外に宣言する。詳細手順や個別資産は下位文書の役割。",
+  "keyInsight": "基本方針=『経営者の宣言』、対策基準=『ルール』、実施手順=『手順書』。階層で書く内容が違う。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 36,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問84 ©2019 独立行政法人情報処理推進機構"
+}

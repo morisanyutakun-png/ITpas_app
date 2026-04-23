@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q04",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 4,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "ITの活用によって、個人の学習履歴を蓄積、解析し、学習者一人一人の学習進行度や理解度に応じて最適なコンテンツを提供することによって、学習の効率と効果を高める仕組みとして、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "アダプティブラーニング",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "タレントマネジメント",
+      "isCorrect": false,
+      "whyAttractive": "人材の能力・スキル管理。学習の個別最適化ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ディープラーニング",
+      "isCorrect": false,
+      "whyAttractive": "AIの機械学習手法。学習者向けの仕組みではなく『機械の学習』。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ナレッジマネジメント",
+      "isCorrect": false,
+      "whyAttractive": "組織内の知識共有・活用の仕組み。個人の学習最適化ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "アダプティブラーニング(適応学習)=学習者の進行度・理解度を分析し、個別に最適化されたコンテンツを提供する学習方式。AI/データ活用でつまずきポイント検知→補強問題提示。",
+  "keyInsight": "アダプティブ=適応。個人別最適化の学習。ディープラーニングは機械の学習方法で別概念。",
+  "topicSlugs": [
+    { "slug": "biz_dx_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 3,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問4 ©2022 独立行政法人情報処理推進機構"
+}

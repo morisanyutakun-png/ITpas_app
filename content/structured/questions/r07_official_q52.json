@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q52",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 52,
+  "majorCategory": "management",
+  "formatType": "case",
+  "trapType": "edge_case_miss",
+  "stem": "A社は会計システムの再構築のプロジェクトを立ち上げ、システム開発をB社に外部委託している。B社から納品される成果物の検収において、プロジェクトの品質管理に係る手続を遵守しているかどうかのシステム監査を行う監査人として、適切な者は誰か。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "会計システムの再構築に関与しないA社の管理部門のリーダー",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "会計システムの再構築を担当するA社のプロジェクトマネージャ",
+      "isCorrect": false,
+      "whyAttractive": "A社PMは検収の当事者。独立性を欠く。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "会計システムの再構築を担当するB社のシステム開発リーダー",
+      "isCorrect": false,
+      "whyAttractive": "被監査側(B社)の当事者。監査の原則に反する。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "会計システムの再構築を担当するB社の品質管理責任者",
+      "isCorrect": false,
+      "whyAttractive": "被監査側(B社)の品質担当。実施側組織内で独立性が確保できない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "監査人は被監査対象から独立した立場が必須。A社・B社のプロジェクト関係者は全て当事者で不適格。『再構築に関与しないA社管理部門リーダー』が独立性を確保できる唯一の選択肢。",
+  "keyInsight": "外部委託プロジェクトの監査人=『委託側・受託側いずれの当事者でもない者』。関与しない管理部門が適任。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 24,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問52"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q30",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 30,
+  "majorCategory": "strategy",
+  "formatType": "law_ip",
+  "trapType": "edge_case_miss",
+  "stem": "著作権に関して、次の記述中のa, bに入れる字句の適切な組合せはどれか。\n\n a は著作権法による保護の対象になるが、b は対象にならない。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a=アルゴリズム / b=操作マニュアル",
+      "isCorrect": false,
+      "whyAttractive": "aが逆。アルゴリズム=『解法のアイデア』で著作権の保護対象外(特許の対象)。操作マニュアルは著作物。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a=アルゴリズム / b=通信プロトコル",
+      "isCorrect": false,
+      "whyAttractive": "aが誤り。アルゴリズムもプロトコルも保護対象外(両方とも思想・方式)。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "a=ソースプログラム / b=操作マニュアル",
+      "isCorrect": false,
+      "whyAttractive": "bが誤り。操作マニュアルは文章の創作物で著作権の保護対象。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "a=ソースプログラム / b=通信プロトコル",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "著作権法はソースプログラム(創作的表現)を保護する。一方、アルゴリズム・通信プロトコル・プログラム言語・規約は『アイデア・方式』なので著作権の保護対象外(保護したい場合は特許で)。操作マニュアル・設計書は文章の創作物で著作権保護対象。",
+  "keyInsight": "著作権=『表現』を保護、『アイデア・方式』は対象外。ソースプログラム=表現=OK、プロトコル=方式=NG。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 14,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問30"
+}

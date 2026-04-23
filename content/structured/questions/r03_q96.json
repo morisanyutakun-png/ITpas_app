@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q96",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 96,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "情報セキュリティ方針に関する記述として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "一度定めた内容は、運用が定着するまで変更してはいけない。",
+      "isCorrect": false,
+      "whyAttractive": "ISMSは継続的改善(PDCA)が前提。環境変化に応じて定期的に見直す。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "企業が目指す情報セキュリティの理想像を記載し、その理想像に近づくための活動を促す。",
+      "isCorrect": false,
+      "whyAttractive": "理想像ではなく、企業の方針・取組みの宣言。『理想像』は曖昧。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "企業の情報資産を保護するための重要な事項を記載しているので、社外に非公開として厳重に管理する。",
+      "isCorrect": false,
+      "whyAttractive": "対外公開して企業姿勢を示すのが基本(顧客・取引先へのコミットメント)。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "自社の事業内容、組織の特性及び所有する情報資産の特徴を考慮して策定する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "情報セキュリティ方針=組織のセキュリティに対する基本方針宣言。自社の事業・組織・情報資産の特徴に即して策定し、社内外に周知する。環境変化に応じて見直す。",
+  "keyInsight": "方針=組織の実態に即して策定+公開+定期見直し。画一テンプレではなく自社事情を反映。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 44,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問96 ©2021 独立行政法人情報処理推進機構"
+}

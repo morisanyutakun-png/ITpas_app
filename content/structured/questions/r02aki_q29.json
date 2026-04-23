@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q29",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 29,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "人間が行っていた定型的な事務作業を、ソフトウェアのロボットに代替させることによって、自動化や効率化を図る手段を表す用語として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ROA",
+      "isCorrect": false,
+      "whyAttractive": "Return On Assets=総資産利益率。財務指標で自動化手段ではない。略語3文字+Aで混同される。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "RPA",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "SFA",
+      "isCorrect": false,
+      "whyAttractive": "Sales Force Automation=営業支援システム。営業担当者の活動を情報化する仕組みで、汎用的な事務自動化ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "SOA",
+      "isCorrect": false,
+      "whyAttractive": "Service Oriented Architecture=サービス指向アーキテクチャ。システム設計思想で、事務作業の自動化ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "RPA (Robotic Process Automation) = PC上の定型業務(入力、転記、帳票作成等)をソフトウェアロボットに代替させる自動化技術。ROA(財務指標)・SFA(営業支援)・SOA(設計思想)と区別。",
+  "keyInsight": "RPA=Robotic Process Automation=『ロボットによる業務自動化』。Rの後のPが『Process(業務)』。",
+  "topicSlugs": [
+    { "slug": "biz_dx_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 14,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問29 ©2020 独立行政法人情報処理推進機構"
+}

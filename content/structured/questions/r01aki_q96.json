@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q96",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 96,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "edge_case_miss",
+  "stem": "販売管理システムに関する記述のうち、TCOに含まれる費用だけを全て挙げたものはどれか。\n\n① 販売管理システムで扱う商品の仕入高\n② 販売管理システムで扱う商品の配送費\n③ 販売管理システムのソフトウェア保守費\n④ 販売管理システムのハードウェア保守費",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "①, ②",
+      "isCorrect": false,
+      "whyAttractive": "商品の仕入・配送は事業の物流費用であって、システム総所有費用(TCO)ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "①, ④",
+      "isCorrect": false,
+      "whyAttractive": "①(仕入高)は商品費用でシステム費用ではない。TCOに含めるのは誤り。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "②, ③",
+      "isCorrect": false,
+      "whyAttractive": "②(配送費)は商品物流費。システムのTCOには含まれない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "③, ④",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "TCO (Total Cost of Ownership) = システムの『総所有費用』。導入〜廃棄までのシステム関連全費用: ハード・ソフト購入費、運用費、保守費、教育費等。③(ソフト保守)・④(ハード保守)は該当。①(商品仕入高)・②(配送費)は事業費用でTCOには含めない。",
+  "keyInsight": "TCO=『システム自体の所有コスト』。商品仕入・物流などの事業費は含まない。",
+  "topicSlugs": [
+    { "slug": "biz_financial_metrics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 41,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問96 ©2019 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q91",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 91,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "edge_case_miss",
+  "stem": "IoT機器やスマートフォンなどの端末に搭載されているGPS機能を利用して、この端末が自らの位置情報を得る仕組みとして、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "端末の位置情報の通知要求を電波に乗せて人工衛星に送信し、これに対する応答を受信することによって位置情報を得る。",
+      "isCorrect": false,
+      "whyAttractive": "端末から衛星へ送信するという双方向通信の誤解。GPSは端末側は受信のみ、衛星への送信はしない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "端末の位置情報の通知要求を電波に乗せて地上の無線基地局に送信し、これに対する応答を受信することによって位置情報を得る。",
+      "isCorrect": false,
+      "whyAttractive": "基地局測位の説明。携帯電話の位置把握方式で、GPSではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "三つ以上の人工衛星が発信している電波を受信して、電波の発信時刻と受信時刻の差などから端末の位置情報を得る。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "三つ以上の地上の無線基地局が発信している電波を受信して、電波の発信時刻と受信時刻の差などから端末の位置情報を得る。",
+      "isCorrect": false,
+      "whyAttractive": "地上基地局からの電波時刻差による測位。TDOA系の携帯基地局測位の説明で、GPSは衛星を使う。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "GPS (Global Positioning System) = 3つ以上の人工衛星から発信される電波を受信し、電波到達時刻の差から距離を求めて位置を算出。端末は『受信のみ』で衛星に送信しない。基地局測位とは電波源が違う。",
+  "keyInsight": "GPS=『衛星電波を受信のみ、時刻差で測位』。双方向通信でも基地局利用でもない。",
+  "topicSlugs": [
+    { "slug": "tech_iot_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 41,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問91 ©2020 独立行政法人情報処理推進機構"
+}

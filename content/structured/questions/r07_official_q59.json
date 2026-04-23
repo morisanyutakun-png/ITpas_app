@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q59",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 59,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "edge_case_miss",
+  "stem": "ISMSにおける内部監査に関する記述のうち、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "JIS Q 27001の要求事項及び組織自体が規定した要求事項によって定める監査基準への適合性だけでなく、ISMS活動の組織に対する有効性も判定する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "JIS Q 27001の要求事項ではなく、組織自体が規定した要求事項を監査基準とする。",
+      "isCorrect": false,
+      "whyAttractive": "JIS Q 27001の要求事項も含めて監査する。規格要求事項を除外するのは誤り。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "内部監査の実施のためのプログラムを確立するときには、前回の内部監査の結果は考慮しない。",
+      "isCorrect": false,
+      "whyAttractive": "PDCAサイクルで前回結果を踏まえて改善するのが本質。考慮しないのは逆。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "不定期かつ抜き打ちでの実施を原則とする。",
+      "isCorrect": false,
+      "whyAttractive": "内部監査は計画的に実施するのが原則。抜き打ちは例外対応。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ISMS内部監査=JIS Q 27001(規格要求)と組織自身の要求事項の両方への適合性と、ISMS活動の有効性を評価する。計画的実施、前回結果を考慮したPDCAが原則。",
+  "keyInsight": "ISMS内部監査=『適合性+有効性』の評価。規格+組織規定の両方で、計画的に実施。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 28,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問59"
+}

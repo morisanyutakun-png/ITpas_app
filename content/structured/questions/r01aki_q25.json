@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q25",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 25,
+  "majorCategory": "strategy",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "経営戦略上、ITの利活用が不可欠な企業の経営者を対象として、サイバー攻撃から企業を守る観点で経営者が認識すべき原則や取り組むべき項目を記載したものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "IT基本法",
+      "isCorrect": false,
+      "whyAttractive": "IT社会の基本方針を定める法律。経営者向けの具体的な行動指針ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "ITサービス継続ガイドライン",
+      "isCorrect": false,
+      "whyAttractive": "BCP・災害対策のガイドライン。サイバー攻撃特化ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "サイバーセキュリティ基本法",
+      "isCorrect": false,
+      "whyAttractive": "国の責務・施策を定める法律。経営者向けではなく国の基本施策。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "サイバーセキュリティ経営ガイドライン",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "サイバーセキュリティ経営ガイドライン=経済産業省・IPA策定。経営者が認識すべき3原則と、実行すべき重要10項目を記載。経営者向けに特化した実践指針。基本法(国の施策)・IT基本法(社会方針)とは文書の性格が違う。",
+  "keyInsight": "『経営者向け』+『サイバー攻撃』=サイバーセキュリティ経営ガイドライン。基本法(国の施策)と区別。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 11,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問25 ©2019 独立行政法人情報処理推進機構"
+}

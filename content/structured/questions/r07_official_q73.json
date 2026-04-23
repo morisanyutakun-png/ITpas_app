@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q73",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 73,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "Webサービスを狙った攻撃に関する記述と攻撃の名称の適切な組合せはどれか。\n\na Webサービスが利用しているソフトウェアに脆弱性の存在が判明したとき、その修正プログラムが提供される前に、この脆弱性を突いて攻撃する。\nb 複数のコンピュータから大量のパケットを一斉に送り付けることによって、Webサービスを正常に提供できなくさせる。\nc 理論的にあり得るパスワードのパターンを順次試すことによって、正しいパスワードを見つけ、攻撃対象のWebサービスに侵入する。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a=DDoS攻撃 / b=ゼロデイ攻撃 / c=ブルートフォース攻撃",
+      "isCorrect": false,
+      "whyAttractive": "aとbを逆に理解。aは『修正前に脆弱性を突く』=ゼロデイ、bは『大量パケット』=DDoS。",
+      "misconceptionSlug": "confuse_malware_types"
+    },
+    {
+      "label": "イ",
+      "body": "a=DDoS攻撃 / b=ブルートフォース攻撃 / c=ゼロデイ攻撃",
+      "isCorrect": false,
+      "whyAttractive": "3つ全て誤った対応。",
+      "misconceptionSlug": "confuse_malware_types"
+    },
+    {
+      "label": "ウ",
+      "body": "a=ゼロデイ攻撃 / b=DDoS攻撃 / c=ブルートフォース攻撃",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "a=ゼロデイ攻撃 / b=ブルートフォース攻撃 / c=DDoS攻撃",
+      "isCorrect": false,
+      "whyAttractive": "aは正しいがb/cが逆。大量パケット=DDoS、パスワード総当たり=ブルートフォース。",
+      "misconceptionSlug": "confuse_malware_types"
+    }
+  ],
+  "explanation": "攻撃名の対応: a=ゼロデイ攻撃(パッチ提供前の脆弱性攻撃)、b=DDoS攻撃(分散サービス妨害)、c=ブルートフォース攻撃(総当たり)。各攻撃の特徴的な記述を対応付ける。",
+  "keyInsight": "ゼロデイ=『ゼロ日=パッチ未提供時』、DDoS=『D分散+DoS妨害』、ブルートフォース=『総当たり』。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_malware_types", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 35,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問73"
+}

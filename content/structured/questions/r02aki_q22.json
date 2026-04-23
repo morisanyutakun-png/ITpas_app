@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q22",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 22,
+  "majorCategory": "strategy",
+  "formatType": "case",
+  "trapType": "edge_case_miss",
+  "stem": "AIの活用領域には音声認識、画像認識、自然言語処理などがある。音声認識と自然言語処理の両方が利用されているシステムの事例として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ドアをノックする音を検知して、カメラの前に立っている人の顔を認識し、ドアのロックを解除する。",
+      "isCorrect": false,
+      "whyAttractive": "ノック音=音の検知、顔認識=画像認識。音声は扱っているが『言語処理』ではない(単なる音検出)。自然言語処理が不足。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "イ",
+      "body": "人から話しかけられた天気や交通情報などの質問を解釈して、ふさわしい内容を回答する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "野外コンサートに来場する人の姿や話し声を検知して、会場の入り口を通過する人数を記録する。",
+      "isCorrect": false,
+      "whyAttractive": "姿=画像認識、話し声=音の検知。人数カウントが目的で、言葉の意味解釈(自然言語処理)は使っていない。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "エ",
+      "body": "洋書に記載されている英文をカメラで読み取り、要約された日本文として編集する。",
+      "isCorrect": false,
+      "whyAttractive": "OCR(画像)+機械翻訳(自然言語処理)。自然言語処理はあるが『音声認識』がない。音声の要件を欠く。",
+      "misconceptionSlug": "confuse_ai_terms"
+    }
+  ],
+  "explanation": "音声認識=話した音を文字に変換、自然言語処理=文字の意味を理解/生成。スマートスピーカ型の質問応答は両方使う。ア(音検出+画像)/ウ(画像+音検出)は言葉の意味解釈がない。エは画像+言語処理で音声を欠く。",
+  "keyInsight": "AIの4領域(音声認識/画像認識/自然言語処理/機械学習)を明確に分離して判定する。『音を検知』だけでは音声認識ではなく、『言葉を理解』まで必要。",
+  "topicSlugs": [
+    { "slug": "ai_generative_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_ai_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 11,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問22 ©2020 独立行政法人情報処理推進機構"
+}

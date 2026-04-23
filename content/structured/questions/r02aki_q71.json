@@ -1,0 +1,55 @@
+{
+  "externalKey": "r02aki_q71",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 71,
+  "majorCategory": "technology",
+  "formatType": "spreadsheet",
+  "trapType": "edge_case_miss",
+  "stem": "表計算ソフトを用いて、ワークシートに示す各商品の月別売上額データを用いた計算を行う。セルE2に式 \"条件付個数(B2:D2, >15000)\" を入力した後、セルE3とE4に複写したとき、セルE4に表示される値はどれか。\n\nワークシート:\n行1 見出し: A=商品名, B=1月売上額, C=2月売上額, D=3月売上額, E=条件付個数\n行2 商品A: 10,000 / 15,000 / 20,000\n行3 商品B: 5,000 / 10,000 / 5,000\n行4 商品C: 10,000 / 20,000 / 30,000",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "0",
+      "isCorrect": false,
+      "whyAttractive": "相対参照を誤って絶対参照のように固定し、B2:D2のまま計算して誤ったと思って0を選ぶ。しかし実際の複写で参照はB4:D4に移動。",
+      "misconceptionSlug": "wrong_spreadsheet_reference"
+    },
+    {
+      "label": "イ",
+      "body": "1",
+      "isCorrect": false,
+      "whyAttractive": "15000『以上』と読み違えて>ではなく>=として3個中1個と計算しがち。条件は >15000(超過)で等号含まない。",
+      "misconceptionSlug": "wrong_spreadsheet_reference"
+    },
+    {
+      "label": "ウ",
+      "body": "2",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "3",
+      "isCorrect": false,
+      "whyAttractive": "行4全てが>15000と誤解。B4=10,000は15000以下なので該当外。3個中2個が正解。",
+      "misconceptionSlug": "wrong_spreadsheet_reference"
+    }
+  ],
+  "explanation": "E2の式 条件付個数(B2:D2,>15000) をE4に複写すると相対参照で 条件付個数(B4:D4,>15000) になる。B4=10,000、C4=20,000、D4=30,000 のうち >15000 を満たすのは C4とD4の2個。",
+  "keyInsight": "相対参照の複写は『行番号が一緒に動く』。複写後の式を書き下してから、セル値で判定する。",
+  "topicSlugs": [
+    { "slug": "spreadsheet_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "wrong_spreadsheet_reference", "weight": 1 }
+  ],
+  "materialSlugs": [
+    { "slug": "spreadsheet_reference_quickref", "role": "primary" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 32,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問71 ©2020 独立行政法人情報処理推進機構"
+}

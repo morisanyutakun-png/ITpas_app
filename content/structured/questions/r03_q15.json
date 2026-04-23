@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q15",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 15,
+  "majorCategory": "strategy",
+  "formatType": "case",
+  "trapType": "edge_case_miss",
+  "stem": "A社の情報システム部門は、B社のソフトウェアパッケージを活用して、営業部門が利用する営業支援システムを構築することにした。構築に合わせて、EUC (End User Computing) を推進するとき、業務データの抽出や加工、統計資料の作成などの運用を行う組織として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "A社の営業部門",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "A社の情報システム部門",
+      "isCorrect": false,
+      "whyAttractive": "EUCの本来目的と反する。情報システム部門ではなくエンドユーザ自身が行う形態がEUC。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "B社のソフトウェアパッケージ開発部門",
+      "isCorrect": false,
+      "whyAttractive": "パッケージ提供側。利用者側の業務運用ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "B社のソフトウェアパッケージ導入担当部門",
+      "isCorrect": false,
+      "whyAttractive": "ベンダの導入支援担当。利用者自身ではないのでEUCではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "EUC (End User Computing) = エンドユーザ(=現場の業務部門)が自ら情報技術を使いこなす形態。営業部門が自部門のデータを抽出・加工・分析するのがEUC。情報システム部門は環境整備・支援を担当。",
+  "keyInsight": "EUC=『エンドユーザ自身がコンピュータを使う』。営業は自部門の業務のためにEUCを実施。",
+  "topicSlugs": [
+    { "slug": "biz_enterprise_systems", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_enterprise_systems", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 8,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問15 ©2021 独立行政法人情報処理推進機構"
+}

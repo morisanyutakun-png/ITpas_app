@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q97",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 97,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "情報セキュリティの三大要素である機密性、完全性及び可用性に関する記述のうち、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "可用性を確保することは、利用者が不用意に情報漏えいをしてしまうリスクを下げることになる。",
+      "isCorrect": false,
+      "whyAttractive": "可用性と機密性(漏えい防止)を混同。可用性は『使える状態』、漏えい防止は機密性の領域。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "完全性を確保する方法の例として、システムや設備を二重化して利用者がいつでも利用できるような環境を維持することがある。",
+      "isCorrect": false,
+      "whyAttractive": "完全性と可用性を混同。二重化=可用性、完全性は改ざん防止・整合性。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "機密性と可用性は互いに反する側面をもっているので、実際の運用では両者をバランスよく確保することが求められる。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "機密性を確保する方法の例として、データの滅失を防ぐためのバックアップや誤入力を防ぐための入力チェックがある。",
+      "isCorrect": false,
+      "whyAttractive": "機密性と可用性/完全性を混同。バックアップ=可用性、入力チェック=完全性。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "CIAはトレードオフ関係。機密性を厳格にすると(暗号化・多段認証)、可用性(アクセス容易性)が低下しがち。3要素をバランスさせる設計が重要。各要素の定義を混同しないこと: 機密性=秘匿、完全性=正確、可用性=利用可能。",
+  "keyInsight": "CIAの3要素は独立ではなくトレードオフを持つ。運用では『バランス』が鍵。",
+  "topicSlugs": [
+    { "slug": "security_cia_triad", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 42,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問97 ©2019 独立行政法人情報処理推進機構"
+}

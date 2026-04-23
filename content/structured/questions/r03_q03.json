@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q03",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 3,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "人間の脳神経の仕組みをモデルにして、コンピュータプログラムで模したものを表す用語はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ソーシャルネットワーク",
+      "isCorrect": false,
+      "whyAttractive": "人間同士のネットワーク(SNS等)。脳神経モデルとは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "デジタルトランスフォーメーション",
+      "isCorrect": false,
+      "whyAttractive": "DX(デジタル化による変革)。経営概念で、脳神経モデルではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ニューラルネットワーク",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "ブレーンストーミング",
+      "isCorrect": false,
+      "whyAttractive": "アイデア発想法(人間の会議技法)。脳神経のプログラムモデルではない。『ブレーン=脳』から連想される誤り。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ニューラルネットワーク(Neural Network)=神経細胞(ニューロン)の結合を数学モデル化した情報処理方式。ディープラーニングの基盤。ソーシャル(社会)・DX(経営)・ブレスト(発想法)とは別の技術概念。",
+  "keyInsight": "Neural=神経の。脳神経のモデル=ニューラルネットワーク。AI/機械学習の基盤。",
+  "topicSlugs": [
+    { "slug": "ai_generative_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_ai_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 2,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問3 ©2021 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q04",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 4,
+  "majorCategory": "strategy",
+  "formatType": "case",
+  "trapType": "similar_term",
+  "stem": "コンビニエンスストアを全国にチェーン展開するA社では、過去10年間にわたる各店舗の詳細な販売データが本部に蓄積されている。これらの販売データと、過去10年間の気象データ、及び各店舗近隣のイベント情報との関係を分析して、気象条件、イベント情報と商品の販売量との関連性を把握し、1週間先までの天気予報とイベント情報から店舗ごとの販売予想をより高い精度で行うシステムを構築したい。このとき活用する技術として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "IoTを用いたセンサなどからの自動データ収集技術",
+      "isCorrect": false,
+      "whyAttractive": "データ収集は重要に聞こえるが、問題は『既に蓄積された10年分のデータと外部データの関連性を分析して予測』したい。収集済みデータを活用する話で、センサによる新規収集ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "仮想空間で現実のような体験を感じることができる仮想現実技術",
+      "isCorrect": false,
+      "whyAttractive": "VRは体験提供技術で、販売予測とは目的が違う。『コンビニ』の語感で来店体験と結びつけると誤るが、データ分析→予測の問題。",
+      "misconceptionSlug": "confuse_vr_ar"
+    },
+    {
+      "label": "ウ",
+      "body": "ディープラーニングなどのAI技術",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "表計算ソフトを用いて統計分析などを行う技術",
+      "isCorrect": false,
+      "whyAttractive": "統計分析自体は正しい方向だが、10年分×多次元(販売・気象・イベント)の大量データから非線形な関連性を『より高い精度で』見つけるには表計算では力不足。AIが適切。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "複数の関連しうる要因(気象・イベント・販売履歴)を組み合わせ、大量データから予測精度を高めるのは機械学習・ディープラーニングの得意分野。単純な回帰や平均では取りきれない非線形な関係をAIは捉えられる。",
+  "keyInsight": "『大量データ × 多要因 × 予測精度向上』= AI/ディープラーニング。表計算・BIは集計/可視化止まりで、予測モデルとは役割が違う。",
+  "topicSlugs": [
+    { "slug": "ai_generative_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_ai_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 3,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問4 ©2020 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q61",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 61,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "abbrev_mix",
+  "stem": "クレジットカードの会員データを安全に取り扱うことを目的として策定された、クレジットカード情報の保護に関するセキュリティ基準はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "NFC",
+      "isCorrect": false,
+      "whyAttractive": "Near Field Communication=近距離無線通信規格。セキュリティ基準ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "PCI DSS",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "PCI Express",
+      "isCorrect": false,
+      "whyAttractive": "コンピュータ内部のバス規格(拡張カード用)。セキュリティ基準ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "RFID",
+      "isCorrect": false,
+      "whyAttractive": "電波によるIC無線識別。ICタグ技術で、セキュリティ基準ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "PCI DSS (Payment Card Industry Data Security Standard) = カード業界が策定したカード会員データ保護のセキュリティ基準。Visa・Mastercard等の国際ブランドが共同策定。カード情報を扱う事業者は準拠必須。NFC(無線通信)・PCI Express(バス規格)・RFID(ICタグ)は全く別概念。",
+  "keyInsight": "PCI DSS=Payment Card Industry Data Security Standard=カード業界のセキュリティ標準。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 29,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問61 ©2021 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q41",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 41,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "クラスや継承という概念を利用して、ソフトウェアを部品化したり再利用することで、ソフトウェア開発の生産性向上を図る手法として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "オブジェクト指向",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "構造化",
+      "isCorrect": false,
+      "whyAttractive": "構造化プログラミング=制御構造(順次・選択・反復)で設計。クラス・継承は関係ない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "プロセス中心アプローチ",
+      "isCorrect": false,
+      "whyAttractive": "業務プロセス中心の分析設計。クラス・継承のオブジェクト指向とは別手法。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "プロトタイピング",
+      "isCorrect": false,
+      "whyAttractive": "試作品主体の開発手法。生産性向上というより要件確認手法。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "オブジェクト指向=データと手続を一体化した『クラス』と、既存クラスから派生する『継承』の概念でソフトウェアを部品化・再利用する手法。構造化(制御構造)・プロセス中心(業務分析)・プロトタイピング(試作)とは別アプローチ。",
+  "keyInsight": "クラス+継承=オブジェクト指向の2大概念。再利用性と保守性の向上に寄与。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 19,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問41 ©2021 独立行政法人情報処理推進機構"
+}

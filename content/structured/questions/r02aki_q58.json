@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q58",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 58,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "受信した電子メールに添付されていた文書ファイルを開いたところ、PCの挙動がおかしくなった。疑われる攻撃として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "SQLインジェクション",
+      "isCorrect": false,
+      "whyAttractive": "Webフォーム経由でDBにSQLを注入する攻撃。メール添付ファイル開封とは攻撃経路が違う。",
+      "misconceptionSlug": "confuse_malware_types"
+    },
+    {
+      "label": "イ",
+      "body": "クロスサイトスクリプティング",
+      "isCorrect": false,
+      "whyAttractive": "Webページにスクリプトを埋め込む攻撃。添付ファイル開封で発動するものではない。",
+      "misconceptionSlug": "confuse_malware_types"
+    },
+    {
+      "label": "ウ",
+      "body": "ショルダーハッキング",
+      "isCorrect": false,
+      "whyAttractive": "肩越しの盗み見でIDやパスワードを窃取する物理的攻撃。PCの挙動異常の原因ではない。",
+      "misconceptionSlug": "confuse_malware_types"
+    },
+    {
+      "label": "エ",
+      "body": "マクロウイルス",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "マクロウイルス=Word/Excel等の文書ファイルに埋め込まれた悪意のマクロ(自動実行スクリプト)。文書ファイルを開いた瞬間にマクロが動作しPCを感染させる。メール添付の文書ファイル経由で拡散するのが典型的。",
+  "keyInsight": "『添付文書ファイルを開いたら挙動異常』=マクロウイルス。オフィス文書のマクロ経由の攻撃。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_malware_types", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 26,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問58 ©2020 独立行政法人情報処理推進機構"
+}

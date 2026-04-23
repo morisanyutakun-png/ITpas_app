@@ -1,0 +1,54 @@
+{
+  "externalKey": "r01aki_q77",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 77,
+  "majorCategory": "technology",
+  "formatType": "network_basics",
+  "trapType": "scope_overgeneral",
+  "stem": "無線LANに関する記述のうち、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "アクセスポイントの不正利用対策が必要である。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "暗号化の規格はWPA2に限定されている。",
+      "isCorrect": false,
+      "whyAttractive": "WPA/WPA2/WPA3等、複数規格がある。WEPも古いがある。限定との記述は誤り。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "端末とアクセスポイント間の距離に関係なく通信できる。",
+      "isCorrect": false,
+      "whyAttractive": "無線は電波距離に強く依存する。減衰・障害物で距離制限あり。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "無線LANの規格は複数あるが、全て相互に通信できる。",
+      "isCorrect": false,
+      "whyAttractive": "規格間の互換性は部分的。古い規格と新規格は後方互換だが、全規格が相互通信できるわけではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "無線LANは電波が傍受・侵入されやすいため、アクセスポイント(AP)の不正利用対策(暗号化、MACフィルタ、ESSID管理等)が必須。暗号化はWPA2以外も複数規格、通信距離には制限あり、規格間の完全互換ではない。",
+  "keyInsight": "無線LAN=電波到達範囲内なら誰でも受信可=セキュリティ対策必須。",
+  "topicSlugs": [
+    { "slug": "network_protocols", "weight": 1 },
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 33,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問77 ©2019 独立行政法人情報処理推進機構"
+}

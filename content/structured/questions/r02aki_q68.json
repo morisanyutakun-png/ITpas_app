@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q68",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 68,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "リスク対応を、移転、回避、低減及び保有に分類するとき、次の対応はどれに分類されるか。\n\n[対応]\n職場における机上の書類からの情報漏えい対策として、退社時のクリアデスクを導入した。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "移転",
+      "isCorrect": false,
+      "whyAttractive": "他者(保険・委託先)にリスクの損害を負わせる対応。クリアデスクは自分で対策しており移転ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "回避",
+      "isCorrect": false,
+      "whyAttractive": "リスクの原因そのものを取り除く対応。『書類を使わない』なら回避だが、『書類を片付ける』は使い続ける前提で影響を下げる対応。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "低減",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "保有",
+      "isCorrect": false,
+      "whyAttractive": "リスクをそのまま受け入れる対応。何も対策せず受容する意味で、クリアデスクという能動的対策とは逆。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "リスク対応4分類: 回避(原因除去)、低減(影響/頻度を下げる)、移転(他者へ)、保有(受け入れる)。クリアデスクは『書類が見える時間・機会を減らす』=発生頻度を下げる=低減。",
+  "keyInsight": "低減=『起きにくく、被害を小さく』する対策。クリアデスク・アクセス制御・暗号化は全て低減。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 31,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問68 ©2020 独立行政法人情報処理推進機構"
+}

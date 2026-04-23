@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q07",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 7,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "事業環境の分析などに用いられる3C分析の説明として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "顧客、競合、自社の三つの観点から分析する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "最新購買日、購買頻度、購買金額の三つの観点から分析する。",
+      "isCorrect": false,
+      "whyAttractive": "RFM分析の説明。顧客分析手法だが3Cではない。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "ウ",
+      "body": "時代、年齢、世代の三つの要因に分解して分析する。",
+      "isCorrect": false,
+      "whyAttractive": "コーホート分析(APC分析)の説明。消費者の購買行動を説明する手法で、3Cではない。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "エ",
+      "body": "総売上高の高い順に三つのグループに分類して分析する。",
+      "isCorrect": false,
+      "whyAttractive": "ABC分析の説明。重要度別のグループ分析で、3Cとは別。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    }
+  ],
+  "explanation": "3C分析=Customer(顧客)、Competitor(競合)、Company(自社)の3つのCから事業環境を分析するフレームワーク。RFM(購買履歴分析)、ABC(重要度分類)、コーホート(世代分析)とは別のフレーム。",
+  "keyInsight": "3C = Customer/Competitor/Company の3つのC。『C』から始まる3語を思い出す。",
+  "topicSlugs": [
+    { "slug": "biz_marketing_frameworks", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_marketing_framework", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 5,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問7 ©2019 独立行政法人情報処理推進機構"
+}

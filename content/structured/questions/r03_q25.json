@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q25",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 25,
+  "majorCategory": "strategy",
+  "formatType": "case",
+  "trapType": "edge_case_miss",
+  "stem": "暗号資産に関する記述として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "暗号資産交換業の登録業者であっても、利用者の情報管理が不適切なケースがあるので、登録が無くても信頼できる業者を選ぶ。",
+      "isCorrect": false,
+      "whyAttractive": "未登録業者を信頼するのは危険。登録業者は金融庁の監督下にあり、無登録は違法業者の可能性。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "暗号資産の価格変動には制限が設けられているので、価値が急落したり、突然無価値になるリスクは考えなくてよい。",
+      "isCorrect": false,
+      "whyAttractive": "暗号資産は価格制限なく自由変動。急落・無価値化リスクは現実に存在。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "暗号資産の利用者は、暗号資産交換業者から契約の内容などの説明を受け、取引内容やリスク、手数料などについて把握しておくとよい。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "金融庁や財務局などの官公署は、安全性が優れた暗号資産の情報提供を行っているので、官公署の職員から勧められた暗号資産を主に取引する。",
+      "isCorrect": false,
+      "whyAttractive": "官公署は特定暗号資産を推奨しない。職員からの勧誘は詐欺の典型パターンで警戒すべき。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "暗号資産の利用者保護: (1)登録業者のみと取引(金融庁登録)、(2)価格変動リスクを理解、(3)契約内容・取引内容・リスク・手数料を事前把握、(4)官公署職員からの勧誘は詐欺の可能性。『契約内容を把握』が適切な姿勢。",
+  "keyInsight": "暗号資産=高リスク資産。事前に契約内容・リスク・手数料を把握する自衛が必要。",
+  "topicSlugs": [
+    { "slug": "biz_dx_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 12,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問25 ©2021 独立行政法人情報処理推進機構"
+}

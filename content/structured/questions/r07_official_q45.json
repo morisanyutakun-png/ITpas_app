@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q45",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 45,
+  "majorCategory": "management",
+  "formatType": "calculation",
+  "trapType": "edge_case_miss",
+  "stem": "計画時の予算が2,000万円で、40日間で100本のプログラムを作成するプロジェクトがある。プロジェクトが20日経過した時点で全体の40%である40本のプログラムが完成し、1,000万円のコストが掛かった。プロジェクトの指標を次の評価式で算出する場合、プロジェクトの指標として適切な組合せはどれか。ここで、各プログラムの作成に必要な日数及びコストは全て同一で、プロジェクト期間中は常に同じ量の作業が実施されるものとする。\n\n[評価式]\nスケジュール(%): (完成したプログラム本数 ÷ 評価時点での完成見込みプログラム本数) × 100\nコスト(%): (完成したプログラムに掛かったコスト ÷ 完成したプログラム分として計画したコスト) × 100",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "スケジュール=80% / コスト=125%",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "スケジュール=80% / コスト=100%",
+      "isCorrect": false,
+      "whyAttractive": "スケジュールは正しいが、コスト計算誤り。1,000万円で40本完成だが計画は800万円なので、125%のオーバー。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "スケジュール=90% / コスト=125%",
+      "isCorrect": false,
+      "whyAttractive": "スケジュール計算誤り。20日経過時点の計画完成本数=50本、実績40本なので40÷50=80%。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "スケジュール=90% / コスト=100%",
+      "isCorrect": false,
+      "whyAttractive": "両方誤り。スケジュール80%、コスト125%が正解。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "スケジュール: 20日経過時点の計画完成本数=100×(20/40)=50本、実績=40本 → 40÷50=80%(遅れ)。コスト: 40本分の計画コスト=2,000×(40/100)=800万、実績=1,000万 → 1,000÷800=125%(超過)。進捗遅れ&コスト超過の状態。",
+  "keyInsight": "スケジュール/コスト指標=(実績÷計画)×100。100%未満=遅れ(コストは100%超が超過)。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 21,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問45"
+}

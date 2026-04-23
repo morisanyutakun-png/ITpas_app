@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q93",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 93,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "無線LANにおいて、PCとアクセスポイント間の電波傍受による盗聴の対策として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "MACアドレスフィルタリングを設定する。",
+      "isCorrect": false,
+      "whyAttractive": "不正接続対策(特定機器しか接続できない)。盗聴=通信の中身を見る攻撃への直接対策ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "アクセスポイントからのESSID通知を停止する。",
+      "isCorrect": false,
+      "whyAttractive": "ステルスAP設定。APを見えにくくする接続抑止策で、通信の暗号化は行わないので電波傍受対策にはならない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "アクセスポイントのESSIDを推定しにくい値に設定する。",
+      "isCorrect": false,
+      "whyAttractive": "ESSID推測防止。接続要求を困難にする副次効果はあるが、電波自体の盗聴対策ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "セキュリティの設定で、WPA2を選択する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "盗聴=電波を傍受して通信内容を覗く攻撃。対策は通信の『暗号化』。WPA2は無線LAN通信を強力に暗号化する規格で、盗聴されても内容は解読困難。MACフィルタやESSID非通知は接続制御の対策で、盗聴対策ではない。",
+  "keyInsight": "盗聴対策=暗号化(WPA2/WPA3)。不正接続対策(MACフィルタ・ESSID)とは対処範囲が違う。",
+  "topicSlugs": [
+    { "slug": "security_crypto", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_crypto_method", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 42,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問93 ©2020 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q51",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 51,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "ITサービスマネジメントにおけるSLAに関する次の記述において、a, bに当てはまる語句の組合せとして、適切なものはどれか。\n\nSLAは、 a と b との間で交わされる合意文書である。 a が期待するサービスの目標値を定量化して合意した上でSLAに明記し、 b はこれを測定・評価した上でサービスの品質を改善していく。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a=経営者 / b=システム監査人",
+      "isCorrect": false,
+      "whyAttractive": "監査人とSLAは直接関係ない。監査は独立評価。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a=顧客 / b=サービスの供給者",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "a=システム開発の発注者 / b=システム開発の受託者",
+      "isCorrect": false,
+      "whyAttractive": "SLAは運用中のサービスで結ぶ。システム開発契約とは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "a=データの分析者 / b=データの提供者",
+      "isCorrect": false,
+      "whyAttractive": "SLAと無関係な役割。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "SLA(Service Level Agreement)=サービスの顧客(利用者側)と供給者(ベンダ/提供者)の間で、可用性・応答時間等の品質水準を合意する文書。供給者が測定評価し改善する。",
+  "keyInsight": "SLA=顧客⇔供給者のサービス品質合意。開発契約ではなく運用品質の契約。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 23,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問51 ©2022 独立行政法人情報処理推進機構"
+}

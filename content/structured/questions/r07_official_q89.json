@@ -1,0 +1,55 @@
+{
+  "externalKey": "r07_official_q89",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 89,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "edge_case_miss",
+  "stem": "AさんはBさんから次の4種類のメッセージを受け取った。Aさんが、受け取ったメッセージを復号して読むことができるものだけを全て挙げたものはどれか。\n\na AさんとBさんとの共通鍵で暗号化したメッセージ\nb Aさんの公開鍵で暗号化したメッセージ\nc Bさんの公開鍵で暗号化したメッセージ\nd Bさんの秘密鍵で暗号化したメッセージ",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a, b, d",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "a, c, d",
+      "isCorrect": false,
+      "whyAttractive": "cを含む誤り。Bの公開鍵で暗号化=Bの秘密鍵でのみ復号可。Aは復号できない。",
+      "misconceptionSlug": "confuse_crypto_method"
+    },
+    {
+      "label": "ウ",
+      "body": "b, d",
+      "isCorrect": false,
+      "whyAttractive": "aを除く誤り。共通鍵で暗号化されたメッセージは、共有された共通鍵で復号可。",
+      "misconceptionSlug": "confuse_crypto_method"
+    },
+    {
+      "label": "エ",
+      "body": "c, d",
+      "isCorrect": false,
+      "whyAttractive": "a,bを除き、c,dを含む誤り。cは復号不可、a,bは復号可。",
+      "misconceptionSlug": "confuse_crypto_method"
+    }
+  ],
+  "explanation": "Aが復号できる条件: a=共通鍵はA,B両者が持つので復号可、b=A公開鍵で暗号化→A秘密鍵で復号可、c=B公開鍵で暗号化→B秘密鍵でのみ復号可→Aは不可、d=B秘密鍵で暗号化→B公開鍵で誰でも復号可(署名検証的)。よってa,b,dが復号可。",
+  "keyInsight": "公開鍵方式: 公開鍵で暗号化→秘密鍵で復号(本人のみ)、秘密鍵で暗号化→公開鍵で誰でも復号可(署名)。",
+  "topicSlugs": [
+    { "slug": "security_crypto", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_crypto_method", "weight": 1 }
+  ],
+  "materialSlugs": [
+    { "slug": "crypto_compare_table", "role": "primary" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 41,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問89"
+}

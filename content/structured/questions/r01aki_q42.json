@@ -1,0 +1,55 @@
+{
+  "externalKey": "r01aki_q42",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 42,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "システム開発において使用するアローダイアグラムの説明として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "業務のデータの流れを表した図である。",
+      "isCorrect": false,
+      "whyAttractive": "DFDの説明。データの流れ図であって作業スケジュールではない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "イ",
+      "body": "作業の関連をネットワークで表した図である。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "作業を縦軸にとって、作業の所要期間を横棒で表した図である。",
+      "isCorrect": false,
+      "whyAttractive": "ガントチャートの説明。横棒グラフで進捗を表す図で、アローダイアグラムとは別。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ソフトウェアのデータ間の関係を表した図である。",
+      "isCorrect": false,
+      "whyAttractive": "E-R図等のデータモデル図。データ構造の話で、作業関連ではない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    }
+  ],
+  "explanation": "アローダイアグラム(PERT図)=作業(矢印)と節点(ノード)でプロジェクトの作業順序と依存関係をネットワーク型に表した図。クリティカルパス分析に使う。DFD(データの流れ)・ガント(時間横棒)・ERD(データ関係)とは役割が違う。",
+  "keyInsight": "アローダイアグラム=作業のネットワーク図。『矢印=作業』『ノード=工程の境目』。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_pm_terms", "weight": 1 }
+  ],
+  "materialSlugs": [
+    { "slug": "pm_chart_compare_table", "role": "primary" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 19,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問42 ©2019 独立行政法人情報処理推進機構"
+}

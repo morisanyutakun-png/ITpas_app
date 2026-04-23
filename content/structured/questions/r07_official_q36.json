@@ -1,0 +1,54 @@
+{
+  "externalKey": "r07_official_q36",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 36,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "合意したサービス提供時間帯のうち、実際に顧客がITサービスを利用できた時間の割合で表されるものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "可用性",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "機能性",
+      "isCorrect": false,
+      "whyAttractive": "システムが提供する機能の充実度。利用できた時間の割合ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "効率性",
+      "isCorrect": false,
+      "whyAttractive": "リソースに対する成果の比。時間可用性とは別指標。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "使用性",
+      "isCorrect": false,
+      "whyAttractive": "ユーザが使いやすいか(ユーザビリティ)。使える時間の長さではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "可用性(Availability) = 合意されたサービス時間のうち、実際に利用できた時間の割合。稼働率とも呼ぶ。式: 可用性 = (合意時間 - 停止時間) ÷ 合意時間。機能性(機能数)・効率性(リソース効率)・使用性(使いやすさ)とは別指標。",
+  "keyInsight": "可用性=『使える時間の割合』。SLAで99.9%等と合意されることが多い。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 },
+    { "slug": "security_cia_triad", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 17,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問36"
+}

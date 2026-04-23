@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q56",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 56,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "HTML形式の電子メールの特徴を悪用する攻撃はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "DoS攻撃",
+      "isCorrect": false,
+      "whyAttractive": "サービス妨害攻撃。大量トラフィックでサービスを停止させる攻撃で、HTMLメール特有の攻撃ではない。",
+      "misconceptionSlug": "confuse_malware_types"
+    },
+    {
+      "label": "イ",
+      "body": "SQLインジェクション",
+      "isCorrect": false,
+      "whyAttractive": "WebアプリのDBへSQLを注入する攻撃。メールではなくWebフォームの脆弱性を悪用。",
+      "misconceptionSlug": "confuse_malware_types"
+    },
+    {
+      "label": "ウ",
+      "body": "悪意のあるスクリプトの実行",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "辞書攻撃",
+      "isCorrect": false,
+      "whyAttractive": "辞書に載っている単語を順に試すパスワード攻撃。HTMLメールとは無関係。",
+      "misconceptionSlug": "confuse_malware_types"
+    }
+  ],
+  "explanation": "HTML形式の電子メールはテキスト形式と異なり、JavaScript等のスクリプトやリンクを埋め込める。これを悪用し、メールを開いた瞬間にスクリプトが実行されて情報を抜き取る等の攻撃が成立する。テキスト形式ならスクリプトが動作しないため、セキュリティ上はテキスト形式推奨。",
+  "keyInsight": "HTMLメール=スクリプト実行可能、テキストメール=実行不可。この差を悪用するのがスクリプト攻撃。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_malware_types", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 26,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問56 ©2020 独立行政法人情報処理推進機構"
+}

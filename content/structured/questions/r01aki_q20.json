@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q20",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 20,
+  "majorCategory": "strategy",
+  "formatType": "law_ip",
+  "trapType": "similar_term",
+  "stem": "事業活動における重要な技術情報について、営業秘密とするための要件を定めている法律はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "著作権法",
+      "isCorrect": false,
+      "whyAttractive": "創作表現の保護法。技術情報の『秘密』性の要件ではなく、表現の独占を定める。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "特定商取引法",
+      "isCorrect": false,
+      "whyAttractive": "消費者保護法。通販・訪問販売等の取引適正化で、営業秘密とは別分野。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "不正アクセス禁止法",
+      "isCorrect": false,
+      "whyAttractive": "ネット経由の不正ログインを禁じる法。営業秘密自体の要件定義ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "不正競争防止法",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "不正競争防止法=営業秘密の3要件(秘密管理性・有用性・非公知性)を定め、不正取得・使用・開示を禁じる法律。秘密情報を保護する法律は知財4法(特許/意匠/商標/著作)のほかに、この法律で担保される。",
+  "keyInsight": "営業秘密の3要件(秘密管理性/有用性/非公知性)=不正競争防止法。単純な著作権/特許ではない。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 9,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問20 ©2019 独立行政法人情報処理推進機構"
+}

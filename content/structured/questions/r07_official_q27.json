@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q27",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 27,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "業務と情報システムを最適にすることを目的として、業務と情報システムの現状の把握と目標とする理想像の設定から現状と理想との乖離を明確にし、目標に向けた改善活動を移行計画として定義したい。このときに用いられる手法として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "BI (Business Intelligence)",
+      "isCorrect": false,
+      "whyAttractive": "データ分析による意思決定支援。業務システムの階層的最適化フレームワークではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "EA (Enterprise Architecture)",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "MOT (Management of Technology)",
+      "isCorrect": false,
+      "whyAttractive": "技術経営。技術戦略と経営の統合で、業務×情報システムの整合化フレームワークではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "SOA (Service Oriented Architecture)",
+      "isCorrect": false,
+      "whyAttractive": "サービス指向アーキテクチャ。システム設計思想で、業務と情報システムの階層的最適化全体を扱うEAとは守備範囲が違う。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "EA (Enterprise Architecture) = 業務・データ・アプリ・技術の4階層で組織を捉え、現状(As-Is)→理想(To-Be)→移行計画を作る最適化フレーム。『現状と理想の乖離→移行計画』がEAの特徴。BI(分析)・MOT(技術経営)・SOA(設計思想)とは別。",
+  "keyInsight": "EA=『4階層×As-Is/To-Beで移行計画』。業務と情報システムを俯瞰する手法。",
+  "topicSlugs": [
+    { "slug": "biz_models", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 13,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問27"
+}

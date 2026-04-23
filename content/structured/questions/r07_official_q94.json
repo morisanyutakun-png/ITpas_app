@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q94",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 94,
+  "majorCategory": "technology",
+  "formatType": "calculation",
+  "trapType": "edge_case_miss",
+  "stem": "稼働率0.9の装置で並列システムを構成したい。このシステムの稼働率を0.999とするためには、最低何台の装置で並列システムを構成する必要があるか。ここで、並列システムを構成したときに、少なくとも1台の装置が稼働していればシステムは正常に稼働しているものとする。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "2",
+      "isCorrect": false,
+      "whyAttractive": "2台なら稼働率=1-0.1²=0.99。目標0.999に未達。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "3",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "4",
+      "isCorrect": false,
+      "whyAttractive": "3台で既に達成なので、4台は過剰。『最低何台』の条件を満たさない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "5",
+      "isCorrect": false,
+      "whyAttractive": "3台で達成可能なので過剰。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "並列システムの稼働率=1-(全台故障の確率)=1-(1-稼働率)^n。装置稼働率0.9なので故障率0.1。n=1:0.9、n=2:1-0.01=0.99、n=3:1-0.001=0.999(達成)、n=4:1-0.0001=0.9999(過剰)。最低3台で0.999達成。",
+  "keyInsight": "並列系稼働率=1-(1-稼働率)^台数。台数を増やすと故障率は指数的に低下。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 43,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問94"
+}

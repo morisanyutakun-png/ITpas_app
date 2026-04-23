@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q92",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 92,
+  "majorCategory": "technology",
+  "formatType": "network_basics",
+  "trapType": "edge_case_miss",
+  "stem": "AさんがXさん宛ての電子メールを送るときに、参考までにYさんとZさんにも送ることにした。ただし、Zさんに送ったことは、XさんとYさんには知られたくない。このときに指定する宛先として、適切な組合せはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "To=X / Cc=Y / Bcc=Z",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "To=X / Cc=Y, Z / Bcc=Z",
+      "isCorrect": false,
+      "whyAttractive": "ZをCcとBccの両方に指定。CcにZがいるとX・Yに知られてしまうので条件違反。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "To=X / Cc=Z / Bcc=Y",
+      "isCorrect": false,
+      "whyAttractive": "CcとBccのZ・Yを逆に配置。ZがCcだとX・Yに知られ条件違反。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "To=X, Y, Z / Cc=Y / Bcc=Z",
+      "isCorrect": false,
+      "whyAttractive": "ZをToに含めているので全員にZも宛先として見える。条件違反。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "To=主要宛先、Cc=参考送信(全員に公開)、Bcc=参考送信(他の受信者に非公開)。Zを隠したい→Bcc。参考はY→Cc。主宛先X→To。To=X, Cc=Y, Bcc=Zが条件を満たす唯一の組合せ。",
+  "keyInsight": "Bcc=Blind Carbon Copy=『見えないカーボンコピー』。他の受信者に知られたくない相手はBcc。",
+  "topicSlugs": [
+    { "slug": "network_protocols", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 42,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問92 ©2020 独立行政法人情報処理推進機構"
+}

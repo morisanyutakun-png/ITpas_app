@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q26",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 26,
+  "majorCategory": "strategy",
+  "formatType": "calculation",
+  "trapType": "edge_case_miss",
+  "stem": "製品Aの生産計画量、部品Bの総所要量及び在庫量が表のとおりであるとき、第2週における部品Bの発注量aは何個か。\n\n[条件]\n・製品Aの生産リードタイムは無視する。\n・製品A 1個に部品B 2個必要、部品Bは他用途なし。\n・部品Bの発注は各週の生産終了後に行い、翌週の生産開始までに入荷する。\n・部品Bの安全在庫=当該週の総所要量の25%。\n・部品Bの第1週生産開始前在庫量=100個。\n\n[表] 第1週: 生産計画40, 総所要80, 在庫20(生産終了後) / 第2週: 生産計画40, 総所要80, 発注=a / 第3週: 生産計画20, 総所要40",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "30",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "40",
+      "isCorrect": false,
+      "whyAttractive": "第3週の総所要量40をそのまま発注量と誤解。安全在庫と在庫からの引き算を考慮していない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "60",
+      "isCorrect": false,
+      "whyAttractive": "第3週所要40+第2週末在庫20を足している誤計算。発注=所要-在庫+安全在庫の引き方を誤った。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "80",
+      "isCorrect": false,
+      "whyAttractive": "第2週総所要80を発注量と勘違い。発注は次週分で、しかも在庫を差し引く。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "第2週末在庫=第2週総所要の25%=20(表の値)。第3週開始前に在庫20+発注a入荷。第3週で40使用、第3週末残=40×25%=10。式: 20+a-40=10 → a=30。",
+  "keyInsight": "発注量=(次週総所要)+(次週末安全在庫)-(今週末在庫)。式を書き下してから数値代入。",
+  "topicSlugs": [
+    { "slug": "biz_models", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 12,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問26 ©2019 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q84",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 84,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "PCにメールソフトを新規にインストールした。その際に設定が必要となるプロトコルに該当するものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "DNS",
+      "isCorrect": false,
+      "whyAttractive": "ドメイン名解決プロトコル。OS側で設定済みで、メールソフトで個別設定はしない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "FTP",
+      "isCorrect": false,
+      "whyAttractive": "ファイル転送プロトコル。メールとは別用途。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "MIME",
+      "isCorrect": false,
+      "whyAttractive": "メール添付形式の規格。『プロトコル設定』項目ではなく内部処理で使用。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "POP3",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "メールソフト設定で指定するのは受信プロトコル(POP3/IMAP)と送信プロトコル(SMTP)。POP3=Post Office Protocol ver3で受信用。DNSは名前解決(OS)、FTPはファイル、MIMEはメール本文形式。",
+  "keyInsight": "メール=受信(POP3/IMAP)+送信(SMTP)のプロトコル設定が必要。DNS/FTPは別用途。",
+  "topicSlugs": [
+    { "slug": "network_protocols", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 39,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問84 ©2021 独立行政法人情報処理推進機構"
+}

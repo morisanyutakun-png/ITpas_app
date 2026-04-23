@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q65",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 65,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "PCやスマートフォンなどの表示画面の画像処理用のチップとして用いられているほか、AIにおける膨大な計算処理にも利用されているものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "AR",
+      "isCorrect": false,
+      "whyAttractive": "Augmented Reality=拡張現実。現実映像にデジタル情報を重ねる技術で、画像処理チップではない。",
+      "misconceptionSlug": "confuse_vr_ar"
+    },
+    {
+      "label": "イ",
+      "body": "DVI",
+      "isCorrect": false,
+      "whyAttractive": "Digital Visual Interface=PCとディスプレイを繋ぐ映像信号の規格。ケーブル/コネクタ規格であり処理チップではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "GPU",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "MPEG",
+      "isCorrect": false,
+      "whyAttractive": "動画圧縮の規格。ハードウェアチップではなく符号化方式。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "GPU (Graphics Processing Unit) = グラフィックス処理専用プロセッサ。並列処理に強く、画像描画だけでなくAIの行列演算や深層学習の大量並列計算にも転用されている。AR(拡張現実)・DVI(ケーブル規格)・MPEG(圧縮規格)とは別層の概念。",
+  "keyInsight": "GPU=画像処理+AI計算。並列処理能力が高いためAIの大量計算に向く。",
+  "topicSlugs": [
+    { "slug": "tech_computer_arch", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 29,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問65 ©2020 独立行政法人情報処理推進機構"
+}

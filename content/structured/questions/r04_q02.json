@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q02",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 2,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "年齢、性別、家族構成などによって顧客を分類し、それぞれのグループの購買行動を分析することによって、集中すべき顧客層を絞り込むマーケティング戦略として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "サービスマーケティング",
+      "isCorrect": false,
+      "whyAttractive": "無形サービス全般のマーケティング。顧客分類による絞り込みとは別。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "イ",
+      "body": "セグメントマーケティング",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "ソーシャルマーケティング",
+      "isCorrect": false,
+      "whyAttractive": "社会貢献を前面に出すマーケティング。顧客細分化とは別概念。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "エ",
+      "body": "マスマーケティング",
+      "isCorrect": false,
+      "whyAttractive": "全顧客を対象とする一律的な戦略。セグメント化とは逆の概念。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    }
+  ],
+  "explanation": "セグメントマーケティング=年齢・性別・地域・嗜好等で顧客を細分化(セグメント化)し、特定セグメントに絞り込んでアプローチ。マスマーケ(全顧客一括)の対極。STP(Segmentation→Targeting→Positioning)の最初の段階。",
+  "keyInsight": "セグメント=分割、マス=全体。顧客分類による絞り込み=セグメンテーション。",
+  "topicSlugs": [
+    { "slug": "biz_marketing_frameworks", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_marketing_framework", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 2,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問2 ©2022 独立行政法人情報処理推進機構"
+}

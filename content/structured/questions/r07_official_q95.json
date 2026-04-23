@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q95",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 95,
+  "majorCategory": "technology",
+  "formatType": "db_basics",
+  "trapType": "similar_term",
+  "stem": "データベース設計におけるデータ分析で行うこととして、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "データウェアハウスから業務ごとに必要な情報を抽出する。",
+      "isCorrect": false,
+      "whyAttractive": "データマート構築の説明。運用段階の活動で、DB設計時のデータ分析ではない。",
+      "misconceptionSlug": "confuse_db_normalization"
+    },
+    {
+      "label": "イ",
+      "body": "データ項目の内容が、指定された条件を満足する行だけを抽出する。",
+      "isCorrect": false,
+      "whyAttractive": "SQLの選択演算(SELECT WHERE)の説明。運用時のクエリで、設計時の分析ではない。",
+      "misconceptionSlug": "confuse_db_normalization"
+    },
+    {
+      "label": "ウ",
+      "body": "必要なデータ項目を洗い出し、項目間の関連を整理する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "膨大な情報から統計的手法などを用いて、ビジネスに活用できる情報を探索する。",
+      "isCorrect": false,
+      "whyAttractive": "データマイニングの説明。運用段階のデータ活用で、DB設計時の分析ではない。",
+      "misconceptionSlug": "confuse_db_normalization"
+    }
+  ],
+  "explanation": "データベース設計のデータ分析=業務で扱うデータ項目を洗い出し、項目間の関連(1対多、多対多等)を整理してER図等で表現する作業。正規化の前段階。データマート抽出・SQL選択・マイニングは運用段階の活動。",
+  "keyInsight": "DB設計のデータ分析=『項目洗い出し+関連整理』。運用段階のクエリ・抽出とは別。",
+  "topicSlugs": [
+    { "slug": "db_normalization", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_db_normalization", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 44,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問95"
+}

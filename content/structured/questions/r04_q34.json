@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q34",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 34,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "あるオンラインサービスでは、新たに作成したデザインと従来のデザインのWebサイトを実験的に並行稼働し、どちらのWebサイトの利用者がより有料サービスの申込みに至りやすいかを比較、検証した。このとき用いた手法として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "A/Bテスト",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "ABC分析",
+      "isCorrect": false,
+      "whyAttractive": "売上や在庫の重要度分類(80/20)の分析。A/Bテストとは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "クラスタ分析",
+      "isCorrect": false,
+      "whyAttractive": "データを類似度でグループ化する統計手法。比較検証ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "リグレッションテスト",
+      "isCorrect": false,
+      "whyAttractive": "回帰テスト(修正による悪影響確認)。デザイン比較ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "A/Bテスト=2パターン(A/B)を並行提示し、CV率(コンバージョン)等の指標で優位な方を検証する手法。Webデザイン・広告・UXで定番。",
+  "keyInsight": "A/Bテスト=2案を並行提示して効果比較。UI/マーケの定量評価手法。",
+  "topicSlugs": [
+    { "slug": "biz_marketing_frameworks", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_marketing_framework", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 15,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問34 ©2022 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q01",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 1,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "E-R図を使用してデータモデリングを行う理由として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "業務上でのデータのやり取りを把握し、ワークフローを明らかにする。",
+      "isCorrect": false,
+      "whyAttractive": "ワークフロー図/業務フロー図の目的。データの流れ(動的)であって、E-R図の『関係』ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "現行業務でのデータの流れを把握し、業務遂行上の問題点を明らかにする。",
+      "isCorrect": false,
+      "whyAttractive": "DFDの目的。データの流れで問題点把握で、E-R図(関係分析)とは違う。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "顧客や製品といった業務の管理対象間の関係を図示し、その業務上の意味を明らかにする。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "データ項目を詳細に検討し、データベースの実装方法を明らかにする。",
+      "isCorrect": false,
+      "whyAttractive": "物理設計(テーブル設計)の目的。E-R図は概念設計で実装詳細ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "E-R図(Entity-Relationship Diagram)=エンティティ(管理対象)とリレーションシップ(関係)を図示し、業務上の意味を明らかにする概念モデリング手法。DFD(データ流れ)・ワークフロー(業務流れ)・物理設計(実装)とは目的が違う。",
+  "keyInsight": "E-R=Entity(実体)とRelationship(関係)。『業務管理対象の関係を図示』が目的。",
+  "topicSlugs": [
+    { "slug": "db_normalization", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 2,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問1 ©2021 独立行政法人情報処理推進機構"
+}

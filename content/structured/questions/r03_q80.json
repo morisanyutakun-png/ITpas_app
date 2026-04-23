@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q80",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 80,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "IoT機器同士が直接通信する無線通信の一つで、IoT機器の接続に適した低消費電力で低速な通信規格はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "BLE",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "LTE",
+      "isCorrect": false,
+      "whyAttractive": "4G携帯通信規格。広域・高速で、低消費電力の小型IoT用ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "MVNO",
+      "isCorrect": false,
+      "whyAttractive": "MVNOは事業者、通信規格ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "PLC",
+      "isCorrect": false,
+      "whyAttractive": "電力線通信(Power Line Communication)。有線で無線ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "BLE(Bluetooth Low Energy)=Bluetooth 4.0で導入された低消費電力版。ボタン電池で数年動作する設計。ビーコン・フィットネストラッカー・IoTセンサに広く使われる。LTEは広域携帯、PLCは電力線有線。",
+  "keyInsight": "IoT向け低消費電力無線=BLE(近距離)、LoRa/LPWA(広域)。LTEは広域大容量、PLCは有線。",
+  "topicSlugs": [
+    { "slug": "tech_iot_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 37,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問80 ©2021 独立行政法人情報処理推進機構"
+}

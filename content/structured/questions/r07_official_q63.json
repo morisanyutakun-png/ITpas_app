@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q63",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 63,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "データの尺度を名義尺度、順序尺度、間隔尺度、比例尺度の四つに分類したとき、間隔尺度に該当するものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "学年",
+      "isCorrect": false,
+      "whyAttractive": "順序尺度。順序に意味があるが、1年と2年の差と2年と3年の差が等しいとは断言できない(学年はカテゴリ的順序)。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "血液型",
+      "isCorrect": false,
+      "whyAttractive": "名義尺度。A/B/O/ABはカテゴリで、大小関係なし。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "時刻",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "睡眠時間",
+      "isCorrect": false,
+      "whyAttractive": "比例尺度。絶対0点(睡眠0時間)があり、『2倍長い』と言える。間隔尺度は絶対0点なし。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "尺度の4分類: 名義(カテゴリ)・順序(大小)・間隔(等間隔+絶対0なし)・比例(絶対0+等間隔)。時刻は等間隔があるが0時=『無』ではない=間隔尺度。睡眠時間は0=無睡眠で絶対0点あり=比例尺度。",
+  "keyInsight": "間隔尺度=『等間隔あり、絶対0点なし』。時刻・気温(摂氏)が典型。絶対0がある時間幅(睡眠時間等)は比例。",
+  "topicSlugs": [
+    { "slug": "ai_generative_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 30,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問63"
+}

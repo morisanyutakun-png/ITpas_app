@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q38",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 38,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "情報セキュリティ監査の説明として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "一定の基準に基づいてITシステムの利活用に係る検証・評価を行い、ガバナンスの適切性などに対する保証や改善のための助言を行うもの",
+      "isCorrect": false,
+      "whyAttractive": "システム監査の説明。IT全般の監査で、情報セキュリティに特化していない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "コンピュータの盗難や不正な持出しを物理的に防止し、情報セキュリティを確保するためのツール",
+      "isCorrect": false,
+      "whyAttractive": "物理セキュリティツール(ワイヤーロック等)の説明。監査(=評価活動)ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "組織体の価値及び組織体への信頼を向上させるために、組織体におけるITシステムの利活用のあるべき姿を示すIT戦略と方針の策定及びその実現のための活動",
+      "isCorrect": false,
+      "whyAttractive": "ITガバナンスの説明。戦略策定で、監査(評価活動)ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "組織の情報資産に関わるリスクマネジメントが効果的に実施されているかどうかの検証又は評価",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "情報セキュリティ監査=組織の情報資産に関するリスクマネジメント(ISMS等)が効果的に実施されているかを独立第三者が検証・評価する活動。システム監査(IT全般)との違いは『情報セキュリティに特化』。物理ツール・ITガバナンス(戦略)とは別。",
+  "keyInsight": "情報セキュリティ監査=『情報セキュリティに特化した監査』。システム監査の一部分野。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 18,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問38"
+}

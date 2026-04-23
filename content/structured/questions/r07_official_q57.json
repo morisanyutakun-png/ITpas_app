@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q57",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 57,
+  "majorCategory": "technology",
+  "formatType": "network_basics",
+  "trapType": "similar_term",
+  "stem": "HTTPプロキシサーバの機能に関する記述として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "IPアドレス割当て要求をPCから受け付けて、割り当てるグローバルIPアドレスを返す。",
+      "isCorrect": false,
+      "whyAttractive": "DHCPサーバの機能。IPアドレス動的割当てで、HTTPプロキシではない。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    },
+    {
+      "label": "イ",
+      "body": "PCから、インターネット上のWebサーバへの接続要求を中継役として受けて、PCに代わって当該のWebサーバに接続し、送受信データを中継する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "WebサーバのURLに対応するIPアドレスを求める要求をPCから受け付けて、そのIPアドレスを返す。",
+      "isCorrect": false,
+      "whyAttractive": "DNSサーバの機能。ドメイン名解決で、プロキシの中継とは別。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    },
+    {
+      "label": "エ",
+      "body": "Webサーバのコンテンツが検索結果の上位に表示されるように、そのWebサーバが管理するコンテンツを書き換える。",
+      "isCorrect": false,
+      "whyAttractive": "SEO(検索エンジン最適化)の話。プロキシサーバ機能ではない。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    }
+  ],
+  "explanation": "HTTPプロキシサーバ=クライアント(PC)とWebサーバの間に立ち、通信を中継する代理サーバ。PCに代わってサーバ接続・データ送受信を行う。キャッシュ・アクセス制御・匿名化等の用途。DHCP(IP割当)・DNS(名前解決)・SEO(検索最適化)とは別機能。",
+  "keyInsight": "プロキシ=代理。『PCに代わってWebサーバにアクセスして中継』がHTTPプロキシの役割。",
+  "topicSlugs": [
+    { "slug": "network_protocols", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_protocol_layer", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 27,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問57"
+}

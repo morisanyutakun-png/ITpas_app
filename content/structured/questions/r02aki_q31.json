@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q31",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 31,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "利用者と提供者をマッチングさせることによって、個人や企業が所有する自動車、住居、衣服などの使われていない資産を他者に貸与したり、提供者の空き時間に買い物代行、語学レッスンなどの役務を提供したりするサービスや仕組みはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "クラウドコンピューティング",
+      "isCorrect": false,
+      "whyAttractive": "IT系サービスとしての『共有』と語感が近いが、IT資源(CPU・ストレージ)を提供するインフラ概念で、個人資産の共有ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "シェアリングエコノミー",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "テレワーク",
+      "isCorrect": false,
+      "whyAttractive": "遠隔勤務の働き方。『場所にとらわれない』という意味では近いが、資産や役務の共有ではなく勤務形態の話。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ワークシェアリング",
+      "isCorrect": false,
+      "whyAttractive": "雇用を分割して複数人で分担する労働形態。『シェア』で引き寄せられるが、資産共有ではなく仕事分担。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "シェアリングエコノミー=個人や企業が持つ遊休資産・スキル・時間を、マッチングプラットフォームを介して他者に提供する経済モデル。Airbnb(民泊)、Uber(配車)、メルカリ(物品)等が代表例。",
+  "keyInsight": "シェアリングエコノミー=『遊休資産+マッチング+対価』の3点セット。",
+  "topicSlugs": [
+    { "slug": "biz_dx_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 14,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問31 ©2020 独立行政法人情報処理推進機構"
+}

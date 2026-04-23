@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q99",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 99,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "IoTデバイスとIoTサーバで構成され、IoTデバイスが計測した外気温をIoTサーバへ送り、IoTサーバからの指示でIoTデバイスに搭載されたモータが窓を開閉するシステムがある。このシステムにおけるアクチュエータの役割として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "IoTデバイスから送られてくる外気温のデータを受信する。",
+      "isCorrect": false,
+      "whyAttractive": "IoTサーバの役割。データを受け取って分析するのはサーバ側。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "IoTデバイスに対して窓の開閉指示を送信する。",
+      "isCorrect": false,
+      "whyAttractive": "IoTサーバの役割。指示を送信するのはサーバ側の処理。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "外気温を電気信号に変換する。",
+      "isCorrect": false,
+      "whyAttractive": "センサの役割。物理量を電気信号に変える=センサ。アクチュエータは逆方向(電気信号→物理動作)。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "窓を開閉する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "アクチュエータ=電気信号を受けて物理的動作(モータ駆動・弁開閉など)を行う装置。窓を開閉するモータがアクチュエータ。センサ(物理→電気)とは変換方向が逆。",
+  "keyInsight": "センサ=入力(物理→電気)、アクチュエータ=出力(電気→物理動作)。方向で区別。",
+  "topicSlugs": [
+    { "slug": "tech_iot_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 45,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問99 ©2020 独立行政法人情報処理推進機構"
+}

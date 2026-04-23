@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q32",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 32,
+  "majorCategory": "strategy",
+  "formatType": "case",
+  "trapType": "abbrev_mix",
+  "stem": "ある会社のECサイトでは、利用者からのチャットでの多様な問合せについて、オペレータが対応する仕組みから、ソフトウェアによる自動対応に変更した。このとき、利用者の過去のチャットの内容などを学習して、会話の流れから適切な回答を推測できる仕組みに変更するために使われた技術として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "AI",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "AR",
+      "isCorrect": false,
+      "whyAttractive": "Augmented Reality=拡張現実。現実の映像にデジタル情報を重ねる技術で、チャットボットとは無関係。",
+      "misconceptionSlug": "confuse_vr_ar"
+    },
+    {
+      "label": "ウ",
+      "body": "CRM",
+      "isCorrect": false,
+      "whyAttractive": "顧客関係管理。チャット対応の『顧客関係』の枠で混同されやすいが、CRMは管理手法であって学習・推測する技術ではない。",
+      "misconceptionSlug": "confuse_enterprise_systems"
+    },
+    {
+      "label": "エ",
+      "body": "ERP",
+      "isCorrect": false,
+      "whyAttractive": "統合基幹業務システム。社内業務管理のシステムで、対話型AIとは別。",
+      "misconceptionSlug": "confuse_enterprise_systems"
+    }
+  ],
+  "explanation": "過去データを学習し、会話から『適切な回答を推測』する技術=AI(機械学習・自然言語処理)。チャットボット自体は仕組みで、中身の知能化はAIが担う。AR(拡張現実)・CRM(顧客管理)・ERP(基幹統合)とは技術層が違う。",
+  "keyInsight": "『学習』『推測』のキーワード=AI。単なる定型応答(ルールベース)ではなく、文脈から答えを導く=AI。",
+  "topicSlugs": [
+    { "slug": "ai_generative_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_ai_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 14,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問32 ©2020 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q30",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 30,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "企業の収益性を測る指標の一つであるROEの\"E\"が表すものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "Earnings (所得)",
+      "isCorrect": false,
+      "whyAttractive": "『収益性』と『Earnings(収益)』の語感で選ばされやすい。だがROEの分子がEarnings(当期純利益)で、分母がEquity(自己資本)。『E』は分母側の指標。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "Employee (従業員)",
+      "isCorrect": false,
+      "whyAttractive": "人的資本の指標と誤解。だがROEは財務指標で、従業員数とは無関係。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "Enterprise (企業)",
+      "isCorrect": false,
+      "whyAttractive": "『Return On 企業』と直訳で選びがち。だがROEは『自己資本』への利益率が定義。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "Equity (自己資本)",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "ROE (Return On Equity) = 自己資本利益率 = 当期純利益 ÷ 自己資本。株主が出資した資本でどれだけ利益を生んだかを示す。Equity=『株主資本/自己資本』を覚える。ROA(総資産利益率)と対比で出題される。",
+  "keyInsight": "ROE=Return on Equity=自己資本。ROA=Return on Assets=総資産。AとEで分母が違う。",
+  "topicSlugs": [
+    { "slug": "biz_financial_metrics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 14,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問30 ©2020 独立行政法人情報処理推進機構"
+}

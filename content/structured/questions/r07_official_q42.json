@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q42",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 42,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "床下にネットワーク配線などのために一定の高さの空間をとり、容易に取外しが可能なパネルを床板として並べたものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "フリーアクセスフロア",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "フリーアドレス",
+      "isCorrect": false,
+      "whyAttractive": "固定席を持たないオフィス運用。物理床ではなく座席ルール。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "フリースペース",
+      "isCorrect": false,
+      "whyAttractive": "空きスペースの意味の一般語。床下空間の技術用語ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "フリースポット",
+      "isCorrect": false,
+      "whyAttractive": "無料Wi-Fiスポットの意味。ネットワーク配線技術ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "フリーアクセスフロア=オフィスやサーバ室で床下にケーブル配線スペースを設け、取り外し可能なパネルを床として敷き詰める方式。配線変更や保守が容易。フリーアドレス(座席)・フリースポット(Wi-Fi)とは別概念。",
+  "keyInsight": "フリーアクセスフロア=『床下配線対応のパネル床』。ファシリティマネジメント用語。",
+  "topicSlugs": [
+    { "slug": "biz_enterprise_systems", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 19,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問42"
+}

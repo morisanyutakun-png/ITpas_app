@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q98",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 98,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "インターネットで用いるドメイン名に関する記述のうち、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ドメイン名には、アルファベット、数字、ハイフンを使うことができるが、漢字、平仮名を使うことはできない。",
+      "isCorrect": false,
+      "whyAttractive": "国際化ドメイン名(IDN)で日本語ドメインも取得可能(例: 日本語.jp)。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "ドメイン名は、Webサーバを指定するときのURLで使用されるものであり、電子メールアドレスには使用できない。",
+      "isCorrect": false,
+      "whyAttractive": "メールアドレスの@以降はドメイン名(例: user@example.com)。URLだけの専用ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ドメイン名は、個人で取得することはできず、企業や団体だけが取得できる。",
+      "isCorrect": false,
+      "whyAttractive": "個人でも.comや.jp等を取得可能。制限なし。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ドメイン名は、接続先を人が識別しやすい文字列で表したものであり、IPアドレスの代わりに用いる。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "ドメイン名=IPアドレス(数字の列)を人間にわかりやすい文字列で表現(例: www.ipa.go.jp)。DNSで変換される。メール・Web両用、個人取得可、日本語ドメインも存在。",
+  "keyInsight": "ドメイン=IPの『別名』。DNSで名前解決。URL/メール両方で使用、個人も取得可。",
+  "topicSlugs": [
+    { "slug": "network_protocols", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 44,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問98 ©2021 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q70",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 70,
+  "majorCategory": "technology",
+  "formatType": "db_basics",
+  "trapType": "similar_term",
+  "stem": "出版社、著者、本の各エンティティ間の関係を表すE-R図として、最も適切なものはどれか。ここで、出版社は複数の著者と契約し、著者は複数の本を執筆するが、1冊の本は1人の著者によって執筆されるものとする。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "出版社→著者→本(逆向き)",
+      "isCorrect": false,
+      "whyAttractive": "関係の向きが逆。1対多の関係を逆に描いている。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "出版社→著者←本",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "出版社←著者→本",
+      "isCorrect": false,
+      "whyAttractive": "出版社と著者の関係を逆に捉えている。契約する側=出版社が親(1)。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "出版社←著者←本",
+      "isCorrect": false,
+      "whyAttractive": "全ての関係を逆に描いている。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "出版社1:多著者(1社が多数と契約)、著者1:多本(1人が複数執筆、1冊は1人の著者)。矢印は『多』側から『1』側へ伸びる(または1側に●等)。この条件だと著者が中心で、出版社と本の両方から矢印が集まる構造(出版社→著者←本)が正解。",
+  "keyInsight": "1対多の関係は『多』→『1』で描く。文章から『複数の〜』の主語を判定。",
+  "topicSlugs": [
+    { "slug": "db_normalization", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 33,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問70 ©2021 独立行政法人情報処理推進機構"
+}

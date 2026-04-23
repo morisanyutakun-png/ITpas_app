@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q24",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 24,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "CADの導入効果として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "資材の所要量を把握して最適な発注ができる。",
+      "isCorrect": false,
+      "whyAttractive": "MRP(資材所要量計画)の効果。製造業の生産管理システムで、CADとは別システム。",
+      "misconceptionSlug": "confuse_enterprise_systems"
+    },
+    {
+      "label": "イ",
+      "body": "生産工程の自動化と作業の無人化ができる。",
+      "isCorrect": false,
+      "whyAttractive": "FA(ファクトリーオートメーション)やFMSの効果。CADは『設計支援』で、工程の自動化ではない。",
+      "misconceptionSlug": "confuse_enterprise_systems"
+    },
+    {
+      "label": "ウ",
+      "body": "生産に関連する一連のプロセスを統合的に管理できる。",
+      "isCorrect": false,
+      "whyAttractive": "CIM(コンピュータ統合製造)の説明。CADはそれに含まれる要素の1つで、上位概念ではない。",
+      "misconceptionSlug": "confuse_enterprise_systems"
+    },
+    {
+      "label": "エ",
+      "body": "設計データを再利用して作業を効率化しやすくする。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "CAD (Computer Aided Design) = コンピュータ支援設計。図面をデジタルデータ化することで再利用・修正・流用が容易になる。MRP(資材計画)、FA(工程自動化)、CIM(統合製造)とは別の支援領域。",
+  "keyInsight": "CAD=設計支援(Design)。CAM=製造(Manufacturing)、CAE=解析(Engineering)。各Aの意味で区別。",
+  "topicSlugs": [
+    { "slug": "biz_enterprise_systems", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_enterprise_systems", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 12,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問24 ©2020 独立行政法人情報処理推進機構"
+}

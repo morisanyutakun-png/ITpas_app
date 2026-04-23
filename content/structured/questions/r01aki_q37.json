@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q37",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 37,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "内部統制におけるモニタリングの説明として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "内部統制が有効に働いていることを継続的に評価するプロセス",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "内部統制に関わる法令その他の規範の遵守を促進するプロセス",
+      "isCorrect": false,
+      "whyAttractive": "コンプライアンス管理。遵守促進のプロセスで、モニタリング(評価)とは役割が違う。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "内部統制の体制を構築するプロセス",
+      "isCorrect": false,
+      "whyAttractive": "統制活動の整備。『構築』は設計・整備の段階で、モニタリングは運用後の評価。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "内部統制を阻害するリスクを分析するプロセス",
+      "isCorrect": false,
+      "whyAttractive": "リスクアセスメント。分析段階で、モニタリングは運用後の継続評価。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "モニタリング=内部統制の6基本要素の1つ。内部統制が有効に機能しているかを継続的に評価するプロセス。日常業務内での監視と、独立監査による評価に分かれる。構築(整備)・リスク評価(分析)・遵守(コンプライアンス)とは別役割。",
+  "keyInsight": "モニタリング=『継続的な評価』。構築=作る段階、モニタリング=運用中の評価段階。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 16,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問37 ©2019 独立行政法人情報処理推進機構"
+}

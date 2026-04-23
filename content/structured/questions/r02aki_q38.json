@@ -1,0 +1,55 @@
+{
+  "externalKey": "r02aki_q38",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 38,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "サービス提供者と顧客双方の観点から、提供されるITサービスの品質の継続的な測定と改善に焦点を当てているベストプラクティスをまとめたものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ITIL",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "共通フレーム",
+      "isCorrect": false,
+      "whyAttractive": "IPAが策定したソフトウェア開発プロセスの共通基準。開発工程の標準化で、ITサービス管理のベストプラクティスではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "システム管理基準",
+      "isCorrect": false,
+      "whyAttractive": "経済産業省が策定した情報システム運用の管理基準。『基準』であり『ベストプラクティス集』ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "内部統制",
+      "isCorrect": false,
+      "whyAttractive": "業務の適正を確保する組織の仕組み。ITサービス品質の測定・改善のベストプラクティスではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ITIL (IT Infrastructure Library) = 英国政府が起源。ITサービスマネジメントのベストプラクティス集。インシデント管理・問題管理・変更管理等の運用プロセスを体系化。共通フレーム(開発)とは目的が違う。",
+  "keyInsight": "ITIL=IT運用のベストプラクティス。共通フレーム=ソフトウェア開発の共通基準。守備範囲が違う。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [
+    { "slug": "itil_process_compare", "role": "primary" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 17,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問38 ©2020 独立行政法人情報処理推進機構"
+}

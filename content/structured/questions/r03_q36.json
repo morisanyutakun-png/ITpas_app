@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q36",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 36,
+  "majorCategory": "management",
+  "formatType": "calculation",
+  "trapType": "edge_case_miss",
+  "stem": "開発期間10か月、開発の人件費予算1,000万円のプロジェクトがある。5か月経過した時点で、人件費の実績は600万円であり、成果物は全体の40%が完成していた。このままの生産性で完成まで開発を続けると、人件費の予算超過はいくらになるか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "100万円",
+      "isCorrect": false,
+      "whyAttractive": "予算1000/進捗率40%=2500, 実績600をそのまま差し引いた誤計算。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "200万円",
+      "isCorrect": false,
+      "whyAttractive": "単純な線形推定誤り。正しくは1500万円必要で、500万円超過。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "250万円",
+      "isCorrect": false,
+      "whyAttractive": "半端な計算誤り。40%で600万→100%で1500万、超過は500万。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "500万円",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "40%完成で600万円使用 → 1%当たり15万円 → 100%(完成)には1500万円必要。予算1000万円なので、超過=1500-1000=500万円。",
+  "keyInsight": "『同じ生産性で完成まで』=線形推定。(実績÷進捗率)で完成時予測コストを計算。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_pm_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 17,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問36 ©2021 独立行政法人情報処理推進機構"
+}

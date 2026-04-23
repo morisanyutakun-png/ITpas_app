@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q58",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 58,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "サーバルームへの共連れによる不正入室を防ぐ物理的セキュリティ対策の例として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "サークル型のセキュリティゲートを設置する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "サーバの入ったラックを施錠する。",
+      "isCorrect": false,
+      "whyAttractive": "ラック内のサーバ保護。入室自体は防げないので共連れ対策ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "サーバルーム内にいる間は入室証を着用するルールとする。",
+      "isCorrect": false,
+      "whyAttractive": "入室後のルール。入口で共連れを物理的に防ぐ対策ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "サーバルームの入り口に入退室管理簿を置いて記録させる。",
+      "isCorrect": false,
+      "whyAttractive": "記録・事後追跡の対策。リアルタイムに共連れを物理的に防ぐものではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "共連れ=認証者と一緒に認証されていない者が入ってしまう現象。物理的対策として1人ずつしか通過できない『サークル型ゲート(回転式セキュリティゲート)』が有効。ラック施錠・入室証着用・記録簿は共連れを直接防がない。",
+  "keyInsight": "共連れ防止=『1人ずつ通過できる物理的仕組み』。サークルゲート・アンチパスバックが典型。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 27,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問58 ©2021 独立行政法人情報処理推進機構"
+}

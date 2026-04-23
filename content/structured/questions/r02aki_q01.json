@@ -1,0 +1,56 @@
+{
+  "externalKey": "r02aki_q01",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 1,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "情報システムの調達の際に作成される文書に関して、次の記述中のa, bに入れる字句の適切な組合せはどれか。\n\n調達する情報システムの概要や提案依頼事項、調達条件などを明示して提案書の提出を依頼する文書は a である。また、システム化の目的や業務概要などを示すことによって、関連する情報の提供を依頼する文書は b である。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a=RFI / b=RFP",
+      "isCorrect": false,
+      "whyAttractive": "RFIとRFPを逆に覚えていると選んでしまう。Iは Information(情報提供)、Pは Proposal(提案書)。語順が逆。",
+      "misconceptionSlug": "confuse_procurement_docs"
+    },
+    {
+      "label": "イ",
+      "body": "a=RFI / b=SLA",
+      "isCorrect": false,
+      "whyAttractive": "SLAは Service Level Agreement=運用フェーズでの品質合意。調達前の情報収集文書ではない。『調達=SLA』と短絡すると誤る。",
+      "misconceptionSlug": "confuse_procurement_docs"
+    },
+    {
+      "label": "ウ",
+      "body": "a=RFP / b=RFI",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "a=RFP / b=SLA",
+      "isCorrect": false,
+      "whyAttractive": "aのRFPは正しいが、bのSLAは運用時の合意文書で『情報の提供依頼』ではない。前半だけ正解で後半を間違えやすい。",
+      "misconceptionSlug": "confuse_procurement_docs"
+    }
+  ],
+  "explanation": "RFP (Request for Proposal)=提案依頼書。提案書の提出を依頼する調達文書。RFI (Request for Information)=情報提供依頼書。ベンダから関連情報を集める事前調査文書。一般的には RFI → RFP → 見積 → 契約 の順に進む。SLAは契約後のサービス品質合意で、調達文書ではない。",
+  "keyInsight": "Information=情報、Proposal=提案。RFIで情報収集 → RFPで提案依頼、の順を覚える。",
+  "commonMistakeFlow": "『最初に出す=RFI』という順序感と『調達=依頼=RFP』のキーワード感を取り違えて組合せを逆にしがち。a/bそれぞれで『何を依頼するか』を直訳すれば正答できる。",
+  "topicSlugs": [
+    { "slug": "biz_procurement_documents", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_procurement_docs", "weight": 1 }
+  ],
+  "materialSlugs": [
+    { "slug": "procurement_docs_flow", "role": "primary" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 2,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問1 ©2020 独立行政法人情報処理推進機構"
+}

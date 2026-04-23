@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q83",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 83,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "多くのファイルの保存や保管のために、複数のファイルを一つにまとめることを何と呼ぶか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "アーカイブ",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "関係データベース",
+      "isCorrect": false,
+      "whyAttractive": "データを表形式で管理するDB。ファイルまとめ機能ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ストライピング",
+      "isCorrect": false,
+      "whyAttractive": "RAID 0の分散書込み。ファイルまとめではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "スワッピング",
+      "isCorrect": false,
+      "whyAttractive": "メモリ不足時の仮想記憶の退避処理。ファイル結合ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "アーカイブ=複数のファイルを1つにまとめる処理(例: .zip, .tar)。保存・保管・配布を効率化。圧縮とは別概念だが併用されることが多い。",
+  "keyInsight": "アーカイブ=ファイルの束ね。ストライピング=RAID分散、スワップ=仮想メモリ退避と区別。",
+  "topicSlugs": [
+    { "slug": "tech_computer_arch", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 38,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問83 ©2021 独立行政法人情報処理推進機構"
+}

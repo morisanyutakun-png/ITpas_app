@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q25",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 25,
+  "majorCategory": "strategy",
+  "formatType": "case",
+  "trapType": "similar_term",
+  "stem": "ブロックチェーンを適用した事例として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "証券会社が、取引の改ざんや不整合の発生を防止することを目的として、従来の社債に代わり電子的手段を用いたデジタル社債を発行した。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "商品先物取引所を運営する認可法人が、取引量を拡大することを目的として、現在およそ1秒以上要している注文受付の応答時間を、1秒未満に改善した。",
+      "isCorrect": false,
+      "whyAttractive": "応答時間改善=インフラ改善・高速処理技術。ブロックチェーンは遅い処理で、速度改善の適用ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ビジネス路線を中心に運航する航空会社が、顧客の利便性向上と競合他社に対する競争力強化を目的として、出発1時間前まで何回でも予約の変更を可能とする新しいサービスを開始した。",
+      "isCorrect": false,
+      "whyAttractive": "予約サービスの改善で、分散台帳技術ではない。通常のWeb/DBシステムで実現可能。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "服飾雑貨製造会社が、自社の商品企画に活用することを目的として、過去の全ての自社商品に関する大量の画像及び社内会議の音声データをデータベースに保存し、従業員がいつでも検索できるようにした。",
+      "isCorrect": false,
+      "whyAttractive": "単なるデータベース+検索システムで、分散台帳・改ざん困難性は関係ない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ブロックチェーンの強み=『改ざん困難』『分散管理』『取引の信頼性』。デジタル社債・暗号資産・NFT等、取引の真正性が重要な金融・資産領域で活用される。応答時間改善・予約サービス・単なるDBは別の技術で実現可能で、ブロックチェーン特有の価値ではない。",
+  "keyInsight": "ブロックチェーン適用=『改ざん防止+取引記録』が本質価値の場面。金融・資産・契約系が代表。",
+  "topicSlugs": [
+    { "slug": "security_crypto", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 12,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問25"
+}

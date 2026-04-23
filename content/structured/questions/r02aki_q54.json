@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q54",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 54,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "システム開発プロジェクトにおいて、テスト工程で使用するPCの納入が遅れることでテスト工程の終了が遅れるリスクがあり、対応策を決めた。リスク対応を回避、軽減、受容、転嫁の四つに分類するとき、受容に該当する記述として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "全体のスケジュール遅延を防止するために、テスト要員を増員する。",
+      "isCorrect": false,
+      "whyAttractive": "影響を小さくする対策=軽減。要員増員でリスクを和らげるが、受け入れる(受容)ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "テスト工程の終了が遅れても本番稼働に影響を与えないように、プロジェクトに予備の期間を設ける。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "テスト工程の遅延防止対策を実施する費用を納入業者が補償する契約を業者と結ぶ。",
+      "isCorrect": false,
+      "whyAttractive": "損失を他者に移す対策=転嫁。契約や保険でリスクの金銭負担を他者に移転する例。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "テスト工程用のPCがなくてもテストを行える方法を準備する。",
+      "isCorrect": false,
+      "whyAttractive": "代替手段でリスクそのものを避ける=回避。別の方法でPC納入遅延の影響を受けないようにする。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "リスク対応の4分類: 回避(原因を取り除く)、軽減(影響を小さく)、受容(そのまま受け入れる/予備を持つ)、転嫁(他者に移転)。『予備期間を設ける』=リスクは起きる前提でバッファで吸収する=受容。",
+  "keyInsight": "受容=『リスクをそのまま受け入れる』。何もしない(消極的受容) or バッファ確保(積極的受容)で対応。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 25,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問54 ©2020 独立行政法人情報処理推進機構"
+}

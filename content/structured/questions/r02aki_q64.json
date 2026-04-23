@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q64",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 64,
+  "majorCategory": "technology",
+  "formatType": "db_basics",
+  "trapType": "scope_overgeneral",
+  "stem": "データ処理に関する記述a〜cのうち、DBMSを導入することによって得られる効果だけを全て挙げたものはどれか。\n\na 同じデータに対して複数のプログラムから同時にアクセスしても、一貫性が保たれる。\nb 各トランザクションの優先度に応じて、処理する順番をDBMSが決めるので、リアルタイム処理の応答時間が短くなる。\nc 仮想記憶のページ管理の効率が良くなるので、データ量にかかわらずデータへのアクセス時間が一定になる。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "a, c",
+      "isCorrect": false,
+      "whyAttractive": "cを効果と誤解。仮想記憶ページ管理はOSの役割で、DBMSの効果ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "b",
+      "isCorrect": false,
+      "whyAttractive": "bを優先度制御と誤解。だがDBMSは一般的にトランザクション優先度によるスケジューリングを行わない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "b, c",
+      "isCorrect": false,
+      "whyAttractive": "b,c両方誤りで、aを除外している。DBMSの基本機能(同時実行制御で一貫性保持)を外している。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "DBMSの主要効果=同時実行制御(排他制御で一貫性確保)、障害回復、アクセス権管理、データ独立性等。a=典型的な同時実行制御の効果。bの優先度スケジューリングはDBMSの基本機能ではない。cの仮想記憶管理はOSの仕事。",
+  "keyInsight": "DBMS=『データの一貫性・整合性保証』が中核。OS機能(仮想記憶)やスケジューラ(優先度)と区別。",
+  "topicSlugs": [
+    { "slug": "db_normalization", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_db_normalization", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 29,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問64 ©2020 独立行政法人情報処理推進機構"
+}

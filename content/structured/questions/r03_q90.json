@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q90",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 90,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "CPUのクロックに関する説明のうち、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "USB接続された周辺機器とCPUの間のデータ転送速度は、クロックの周波数によって決まる。",
+      "isCorrect": false,
+      "whyAttractive": "USB転送速度はUSB規格(1.0/2.0/3.0等)で決まる。CPUクロックとは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "クロックの間隔が短いほど命令実行に時間が掛かる。",
+      "isCorrect": false,
+      "whyAttractive": "逆。間隔が短い=周波数が高い=1命令あたり時間が短い=高速。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "クロックは、次に実行すべき命令の格納位置を記録する。",
+      "isCorrect": false,
+      "whyAttractive": "プログラムカウンタ(PC)の説明。クロックは時刻信号であり位置記録ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "クロックは、命令実行のタイミングを調整する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "CPUクロック=一定周期のパルス信号で命令実行タイミングを刻む指揮者役。周波数(Hz/GHz)が高いほど高速。USB速度はUSB規格、命令位置記録はプログラムカウンタで別。",
+  "keyInsight": "クロック=CPU内部の同期信号(メトロノーム)。高周波=高速。周辺機器速度やPC機能とは別。",
+  "topicSlugs": [
+    { "slug": "tech_computer_arch", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 41,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問90 ©2021 独立行政法人情報処理推進機構"
+}

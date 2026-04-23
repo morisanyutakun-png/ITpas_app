@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q88",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 88,
+  "majorCategory": "technology",
+  "formatType": "network_basics",
+  "trapType": "edge_case_miss",
+  "stem": "無線LANに関する記述のうち、適切なものだけを全て挙げたものはどれか。\n\na 使用する暗号化技術によって、伝送速度が決まる。\nb 他の無線LANとの干渉が起こると、伝送速度が低下したり通信が不安定になったりする。\nc 無線LANでTCP/IPの通信を行う場合、IPアドレスの代わりにESSIDが使われる。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a, b",
+      "isCorrect": false,
+      "whyAttractive": "a『暗号化で伝送速度決定』を正しいと誤解。伝送速度は主に無線規格(11a/b/g/n/ac/ax)と電波環境で決まる。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    },
+    {
+      "label": "イ",
+      "body": "b",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "b, c",
+      "isCorrect": false,
+      "whyAttractive": "c『ESSIDがIPアドレスの代わり』は誤り。ESSIDはネットワーク識別で、IPアドレス(機器識別)とは別層。TCP/IP通信には必ずIPアドレスが必要。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    },
+    {
+      "label": "エ",
+      "body": "c",
+      "isCorrect": false,
+      "whyAttractive": "唯一正しいbを外す誤り。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    }
+  ],
+  "explanation": "b=無線電波は干渉に弱く、他のAPや電子レンジ等で速度低下する=正しい。a=暗号化は伝送速度を直接決定しない(規格と環境が決める)=誤り。c=ESSIDはネットワーク識別子で、IPアドレスの代替にはならない(TCP/IPにはIPアドレスが必須)=誤り。",
+  "keyInsight": "無線LANの識別階層: SSID(ネットワーク) → MAC(機器) → IP(TCP/IP層)。ESSID=IPではない。",
+  "topicSlugs": [
+    { "slug": "network_protocols", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_protocol_layer", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 40,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問88 ©2020 独立行政法人情報処理推進機構"
+}

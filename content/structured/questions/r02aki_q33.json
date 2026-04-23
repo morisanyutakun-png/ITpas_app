@@ -1,0 +1,54 @@
+{
+  "externalKey": "r02aki_q33",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 33,
+  "majorCategory": "strategy",
+  "formatType": "calculation",
+  "trapType": "edge_case_miss",
+  "stem": "インターネット上で通信販売を行っているA社は、販売促進策として他社が発行するメールマガジンに自社商品Yの広告を出すことにした。広告は、メールマガジンの購読者が広告中のURLをクリックすると、その商品ページが表示される仕組みになっている。この販売促進策の前提を表のとおりとしたとき、この販売促進策での収支がマイナスとならないようにするためには、商品Yの販売価格は少なくとも何円以上である必要があるか。ここで、購入者による商品Yの購入は1人1個に限定されるものとする。また、他のコストは考えないものとする。\n\n① メールマガジンの購読者数: 100,000人\n② ①のうち、広告中のURLをクリックする割合: 2%\n③ ②のうち、商品Yを購入する割合: 10%\n④ 商品Yの1個当たりの原価: 1,000円\n⑤ 販売促進策に掛かる費用の総額: 200,000円",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "1,020",
+      "isCorrect": false,
+      "whyAttractive": "原価1,000円に広告費を1人当たり20円(200,000÷100,000)加算しただけ。購入者数は200人なので、広告費を購入者数で割らないと正しい1人当たり広告費にならない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "1,100",
+      "isCorrect": false,
+      "whyAttractive": "原価1,000+費用総額÷クリック人数2,000=100。だが『クリックした人全員が買う』訳ではなく、購入者は200人。分母を間違えている。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "1,500",
+      "isCorrect": false,
+      "whyAttractive": "計算過程で小数点や割合を取り違えて中間値になりがち。正確に『購入人数×(価格−原価)≥費用』を立式する必要がある。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "2,000",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "購入者数 = 100,000 × 0.02 × 0.10 = 200人。収支 ≥ 0 の条件は 200×(P−1,000) − 200,000 ≥ 0 → 200P ≥ 400,000 → P ≥ 2,000。したがって2,000円以上必要。",
+  "keyInsight": "販促計算の王道: (購入者数)×(販売価格−原価) ≥ 費用総額。割合は全体→絞込の順に掛ける。",
+  "commonMistakeFlow": "広告費を『購読者全員』や『クリック者』で割ると誤る。実際にお金を払う=購入者が分母。絞り込み後の人数を使うのが鉄則。",
+  "topicSlugs": [
+    { "slug": "biz_financial_metrics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 15,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問33 ©2020 独立行政法人情報処理推進機構"
+}

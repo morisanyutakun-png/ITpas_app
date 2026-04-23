@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q61",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 61,
+  "majorCategory": "technology",
+  "formatType": "db_basics",
+  "trapType": "similar_term",
+  "stem": "DBMSのトランザクションに関する記述として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "あるデータベースの内容を他のデータベースに複製し、内容の同期をとる。",
+      "isCorrect": false,
+      "whyAttractive": "レプリケーションの説明。データ複製同期で、トランザクションとは別機能。",
+      "misconceptionSlug": "confuse_db_normalization"
+    },
+    {
+      "label": "イ",
+      "body": "データベースに対して行った操作を、順次記録する。",
+      "isCorrect": false,
+      "whyAttractive": "トランザクションログの説明。記録の仕組みであって、トランザクションそのものではない。",
+      "misconceptionSlug": "confuse_db_normalization"
+    },
+    {
+      "label": "ウ",
+      "body": "データベースに対する一連の処理が全て成功したら変更結果を確定し、途中で失敗したら処理前の状態に戻す。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "データベースの表の索引を作成し、検索時には索引を使用する。",
+      "isCorrect": false,
+      "whyAttractive": "インデックスの説明。検索高速化の機能で、トランザクションではない。",
+      "misconceptionSlug": "confuse_db_normalization"
+    }
+  ],
+  "explanation": "トランザクション=DBに対する一連の処理をひとつの論理単位として扱う仕組み。ACID特性(原子性・一貫性・独立性・永続性)を満たし、全成功でコミット、失敗でロールバック。レプリケーション(複製)・ログ(記録)・インデックス(索引)とは別機能。",
+  "keyInsight": "トランザクション=『All or Nothing』の一括処理。成功で確定、失敗で元に戻す。",
+  "topicSlugs": [
+    { "slug": "db_normalization", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_db_normalization", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 29,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問61"
+}

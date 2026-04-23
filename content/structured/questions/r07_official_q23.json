@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q23",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 23,
+  "majorCategory": "strategy",
+  "formatType": "case",
+  "trapType": "edge_case_miss",
+  "stem": "コーポレートガバナンスの強化に有効な施策だけを全て挙げたものはどれか。\n\na 株式公開買付けによる企業の買収\nb 執行役員制度の導入による経営と執行の分離\nc 独立性の高い社外取締役の選任",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a, b",
+      "isCorrect": false,
+      "whyAttractive": "aはM&A戦略(事業戦略)で、ガバナンス強化ではない。買収自体はガバナンスとは別次元。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a, b, c",
+      "isCorrect": false,
+      "whyAttractive": "aを含める誤り。買収はガバナンス施策ではなく企業戦略。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "b, c",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "c",
+      "isCorrect": false,
+      "whyAttractive": "bを除外する誤り。経営と執行の分離はガバナンス強化の典型施策。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "コーポレートガバナンス=経営の監督と規律。典型的強化策: 執行役員制度(経営と執行の分離)、社外取締役(独立性の高い第三者監督)、内部監査、情報開示等。株式公開買付による買収(a)は成長戦略・M&Aで、ガバナンスそのものではない。",
+  "keyInsight": "コーポレートガバナンス=『経営を適切に監督・規律する仕組み』。社外取締役・執行役員分離が定番施策、買収は別カテゴリ。",
+  "topicSlugs": [
+    { "slug": "biz_models", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 11,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問23"
+}

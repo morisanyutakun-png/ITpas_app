@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q16",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 16,
+  "majorCategory": "strategy",
+  "formatType": "law_ip",
+  "trapType": "scope_overgeneral",
+  "stem": "他人の電子メールの利用者IDとパスワードの取扱いに関する記述のうち、不正アクセス禁止法で規制されている行為だけを全て挙げたものはどれか。\n\na 正当な理由なく本人に無断で第三者に提供する。\nb 他人の電子メールの利用者IDとパスワードを無効にするマルウェアを作成する。\nc 本人に無断で使用して、メールサーバ上の電子メールを閲覧する。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a, b, c",
+      "isCorrect": false,
+      "whyAttractive": "bを含む誤り。マルウェア作成は刑法(不正指令電磁的記録作成罪)の対象で、不正アクセス禁止法の対象外。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a, c",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "b, c",
+      "isCorrect": false,
+      "whyAttractive": "aを除外。ID/PWの第三者提供(2012年改正で追加)は不正アクセス助長行為として禁止対象。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "c",
+      "isCorrect": false,
+      "whyAttractive": "cだけに絞るのは狭すぎ。a(提供)も禁止対象。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "不正アクセス禁止法の主な禁止行為: (1)不正アクセス(cの典型)、(2)ID/PWの不正取得・保管、(3)ID/PWの不正提供(a)、(4)不正アクセスを助長する行為。b(マルウェア作成)は刑法の対象で、不正アクセス禁止法には含まれない。",
+  "keyInsight": "不正アクセス禁止法=『ID/PWの不正使用・提供』+『ネットワーク経由の不正ログイン』。マルウェア作成は別の法律(刑法)。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 8,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問16"
+}

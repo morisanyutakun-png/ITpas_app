@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q27",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 27,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "個人情報保護法で定められた、特に取扱いに配慮が必要となる『要配慮個人情報』に該当するものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "学歴",
+      "isCorrect": false,
+      "whyAttractive": "一般的な個人情報だが要配慮ではない。差別・偏見につながる属性(病歴・前科等)が要配慮。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "国籍",
+      "isCorrect": false,
+      "whyAttractive": "人種と似るが、国籍自体は要配慮個人情報の明記項目外。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "資産額",
+      "isCorrect": false,
+      "whyAttractive": "要配慮個人情報には含まれない。センシティブだが法定列挙外。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "信条",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "要配慮個人情報=人種、信条、社会的身分、病歴、犯罪の経歴、犯罪被害、身体/精神の障害等(法2条3項)。差別・偏見の原因となる機微情報。取得に原則同意必要。信条(宗教・政治信念等)は明記されている。",
+  "keyInsight": "要配慮=差別/偏見につながる機微情報(人種・信条・病歴・前科等)。取得に同意必須。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 13,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問27 ©2022 独立行政法人情報処理推進機構"
+}

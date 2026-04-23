@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q53",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 53,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "a〜dのうち、システム監査人が、合理的な評価・結論を得るために予備調査や本調査のときに利用する調査手段に関する記述として、適切なものだけを全て挙げたものはどれか。\n\na. EA(Enterprise Architecture)の活用\nb. コンピュータを利用した監査技法の活用\nc. 資料や文書の閲覧\nd. ヒアリング",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a, b, c",
+      "isCorrect": false,
+      "whyAttractive": "aのEAは経営最適化の枠組みで、監査手段ではない。dのヒアリングが必須。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a, b, d",
+      "isCorrect": false,
+      "whyAttractive": "aのEAは監査手段ではない。cの文書閲覧が基本手段。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "a, c, d",
+      "isCorrect": false,
+      "whyAttractive": "aのEAは監査の手段ではない。bのCAATs(コンピュータ利用監査)が重要。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "b, c, d",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "システム監査の調査手段=資料/文書の閲覧(c)、ヒアリング(d)、CAATs(Computer Assisted Audit Techniques:b)。EAは経営×IT最適化の設計フレームで監査手段ではない。",
+  "keyInsight": "監査手段=文書閲覧+ヒアリング+CAATs。EA(設計手法)は監査ツールではない。",
+  "topicSlugs": [
+    { "slug": "biz_validation_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 24,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問53 ©2022 独立行政法人情報処理推進機構"
+}

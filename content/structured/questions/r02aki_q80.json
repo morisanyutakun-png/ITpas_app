@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q80",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 80,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "HyperTextの特徴を説明したものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "いろいろな数式を作成・編集できる機能をもっている。",
+      "isCorrect": false,
+      "whyAttractive": "数式エディタの機能。HyperTextはリンク構造の概念で、数式処理とは無関係。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "いろいろな図形を作成・編集できる機能をもっている。",
+      "isCorrect": false,
+      "whyAttractive": "描画ソフトの機能。HyperTextはテキスト中心の概念。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "多様なテンプレートが用意されており、それらを利用できるようにしている。",
+      "isCorrect": false,
+      "whyAttractive": "文書作成ソフトの機能。HyperTextの本質はテンプレートではなくリンク。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "文中の任意の場所にリンクを埋め込むことで関連した情報をたどれるようにした仕組みをもっている。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "HyperText=文中の任意箇所にハイパーリンクを埋め込み、関連情報を非線形に辿れる仕組み。WWWの基盤概念(HTML=HyperText Markup Language)。数式・図形・テンプレートは別のソフト機能。",
+  "keyInsight": "HyperText=『リンクで関連情報を辿れる』。Webの基盤。",
+  "topicSlugs": [
+    { "slug": "network_protocols", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 36,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問80 ©2020 独立行政法人情報処理推進機構"
+}

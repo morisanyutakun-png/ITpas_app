@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q20",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 20,
+  "majorCategory": "strategy",
+  "formatType": "case",
+  "trapType": "order_swap",
+  "stem": "ソフトウェアライフサイクルを企画プロセス、要件定義プロセス、開発プロセス、保守プロセスに分けたとき、企画プロセスのシステム化構想の立案時にベンダー企業から収集する情報として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "システム化計画に基づいた開発コストの見積り",
+      "isCorrect": false,
+      "whyAttractive": "コスト見積りは要件定義の後、開発段階前の見積段階の情報。構想立案時はもっと手前の情報収集。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "システム化する業務の分野に関する情報技術動向",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "システム構築を進めるに当たっての発注元企業の役割",
+      "isCorrect": false,
+      "whyAttractive": "発注元の役割は発注側が定めるもの。ベンダから収集する情報ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ベンダー企業の技術者が保有している技術資格",
+      "isCorrect": false,
+      "whyAttractive": "ベンダ選定段階(要件定義後)の情報。構想立案時の情報収集ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "企画プロセスのシステム化構想立案時は『何を作るか』の大枠を描く段階。ベンダからは業界の情報技術動向(どんな新技術で何ができるか)を収集して構想に活かす。コスト見積(開発前)・役割分担(発注者側)・資格(ベンダ選定)は別段階の情報。",
+  "keyInsight": "企画プロセス=『構想段階』。技術動向などマクロ情報を集める段階で、具体的見積やベンダ選定はもっと後。",
+  "topicSlugs": [
+    { "slug": "biz_procurement_documents", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 10,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問20"
+}

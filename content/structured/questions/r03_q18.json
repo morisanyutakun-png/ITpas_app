@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q18",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 18,
+  "majorCategory": "strategy",
+  "formatType": "case",
+  "trapType": "similar_term",
+  "stem": "戦略目標の達成状況を評価する指標には、目標達成のための手段を評価する先行指標と目標達成度を評価する結果指標の二つがある。戦略目標が\"新規顧客の開拓\"であるとき、先行指標として適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "売上高増加額",
+      "isCorrect": false,
+      "whyAttractive": "結果指標(開拓の成果)。先行指標ではなく、達成度を後から評価する指標。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "イ",
+      "body": "新規契約獲得率",
+      "isCorrect": false,
+      "whyAttractive": "結果指標。新規契約は『開拓できたか』の結果であって、開拓のための行動量ではない。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "ウ",
+      "body": "総顧客増加率",
+      "isCorrect": false,
+      "whyAttractive": "結果指標(最終的な顧客数変化)。開拓活動の結果であって、先行指標ではない。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "エ",
+      "body": "見込み客訪問件数",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "先行指標=『目標達成のための手段/行動を測る指標』、結果指標=『目標達成度を測る指標』。新規顧客開拓のために『見込み客を訪問する』のが行動=先行指標。売上増・契約獲得・顧客増はその結果。",
+  "keyInsight": "先行指標=行動量(訪問件数等)、結果指標=成果(売上・契約数)。原因と結果の関係。",
+  "topicSlugs": [
+    { "slug": "biz_marketing_frameworks", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_marketing_framework", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 9,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問18 ©2021 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,54 @@
+{
+  "externalKey": "r01aki_q78",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 78,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "部外秘とすべき電子ファイルがある。このファイルの機密性を確保するために使用するセキュリティ対策技術として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "アクセス制御",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "タイムスタンプ",
+      "isCorrect": false,
+      "whyAttractive": "文書の時刻証明。存在証明・完全性の補強で、機密性ではない。",
+      "misconceptionSlug": "confuse_authn_authz"
+    },
+    {
+      "label": "ウ",
+      "body": "ディジタル署名",
+      "isCorrect": false,
+      "whyAttractive": "送信者の真正性と改ざん検出。完全性・真正性の技術で、機密性(秘匿)ではない。",
+      "misconceptionSlug": "confuse_authn_authz"
+    },
+    {
+      "label": "エ",
+      "body": "ホットスタンバイ",
+      "isCorrect": false,
+      "whyAttractive": "システム冗長化。可用性の対策で、機密性ではない。",
+      "misconceptionSlug": "confuse_authn_authz"
+    }
+  ],
+  "explanation": "機密性=権限のない者にファイルを見せない性質。対策はアクセス制御(誰が読めるかの制御)。タイムスタンプ(時刻証明)・ディジタル署名(真正性・完全性)・ホットスタンバイ(可用性)は各々別の性質を守る。",
+  "keyInsight": "CIA対応: 機密性=アクセス制御/暗号、完全性=署名/ハッシュ、可用性=冗長化/バックアップ。",
+  "topicSlugs": [
+    { "slug": "security_authn_authz", "weight": 1 },
+    { "slug": "security_cia_triad", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_authn_authz", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 34,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問78 ©2019 独立行政法人情報処理推進機構"
+}

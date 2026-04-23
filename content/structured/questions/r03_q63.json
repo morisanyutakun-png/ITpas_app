@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q63",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 63,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "edge_case_miss",
+  "stem": "PCやスマートフォンのブラウザから無線LANのアクセスポイントを経由して、インターネット上のWebサーバにアクセスする。このときの通信の暗号化に利用するSSL/TLSとWPA2に関する記述のうち、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "SSL/TLSの利用の有無にかかわらず、WPA2を利用することによって、ブラウザとWebサーバ間の通信を暗号化できる。",
+      "isCorrect": false,
+      "whyAttractive": "WPA2は無線LAN区間(端末↔AP)の暗号化のみ。ブラウザ〜Webサーバ間全体はカバーしない。",
+      "misconceptionSlug": "confuse_crypto_method"
+    },
+    {
+      "label": "イ",
+      "body": "WPA2の利用の有無にかかわらず、SSL/TLSを利用することによって、ブラウザとWebサーバ間の通信を暗号化できる。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "ブラウザとWebサーバ間の通信を暗号化するためには、PCの場合はSSL/TLSを利用し、スマートフォンの場合はWPA2を利用する。",
+      "isCorrect": false,
+      "whyAttractive": "端末の種類で使い分けは誤り。WPA2は無線LAN区間、SSL/TLSはエンドツーエンドで役割が違う。",
+      "misconceptionSlug": "confuse_crypto_method"
+    },
+    {
+      "label": "エ",
+      "body": "ブラウザとWebサーバ間の通信を暗号化するためには、PCの場合はWPA2を利用し、スマートフォンの場合はSSL/TLSを利用する。",
+      "isCorrect": false,
+      "whyAttractive": "ウと逆で同様に誤り。端末別ではなく技術の守備範囲で使い分ける。",
+      "misconceptionSlug": "confuse_crypto_method"
+    }
+  ],
+  "explanation": "SSL/TLS=ブラウザ〜Webサーバ間をエンドツーエンドで暗号化。WPA2=無線LAN区間(端末〜AP)のみ暗号化。両者は補完関係で守備範囲が違う。ブラウザ〜Webサーバ間の暗号化を保証するのはSSL/TLSの役割で、WPA2の有無とは無関係。",
+  "keyInsight": "SSL/TLS=エンドツーエンド、WPA2=無線区間のみ。暗号化の範囲が違うため補完的に使う。",
+  "topicSlugs": [
+    { "slug": "security_crypto", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_crypto_method", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 29,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問63 ©2021 独立行政法人情報処理推進機構"
+}

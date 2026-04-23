@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q31",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 31,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "APIエコノミーに関する記述として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "インターネットを通じて、様々な事業者が提供するサービスを連携させて、より付加価値の高いサービスを提供する仕組み",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "著作権者がインターネットなどを通じて、ソフトウェアのソースコードを無料公開する仕組み",
+      "isCorrect": false,
+      "whyAttractive": "OSS(オープンソースソフトウェア)の説明。API連携ではなくコード公開。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "定型的な事務作業などを、ソフトウェアロボットを活用して効率化する仕組み",
+      "isCorrect": false,
+      "whyAttractive": "RPAの説明。業務自動化で、APIによるサービス連携ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "複数のシステムで取引履歴を分散管理する仕組み",
+      "isCorrect": false,
+      "whyAttractive": "ブロックチェーンの説明。分散台帳で、APIとは別技術。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "APIエコノミー=API(Application Programming Interface)を介して様々な事業者のサービスを連携し、より付加価値の高いサービスを生み出す経済圏。例: 決済API+地図API+配送API で総合サービスを構築。OSS(公開)・RPA(自動化)・ブロックチェーン(分散)とは別。",
+  "keyInsight": "APIエコノミー=『サービス連携による付加価値創出』。APIを通じて事業者が互いの機能を利用。",
+  "topicSlugs": [
+    { "slug": "biz_dx_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 14,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問31 ©2021 独立行政法人情報処理推進機構"
+}

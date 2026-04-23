@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q89",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 89,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "情報の表現方法に関する次の記述中のa〜cに入れる字句の組合せはどれか。\n\n情報を、連続する可変な物理量(長さ、角度、電圧など)で表したものを a データといい、離散的な数値で表したものを b データという。音楽や楽曲などの配布に利用されるCDは、情報を c データとして格納する光ディスク媒体の一つである。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a=アナログ / b=ディジタル / c=アナログ",
+      "isCorrect": false,
+      "whyAttractive": "cを誤り。CDはディジタル媒体。レコードはアナログ。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a=アナログ / b=ディジタル / c=ディジタル",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "a=ディジタル / b=アナログ / c=アナログ",
+      "isCorrect": false,
+      "whyAttractive": "a/bを逆。連続=アナログ、離散=ディジタル。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "a=ディジタル / b=アナログ / c=ディジタル",
+      "isCorrect": false,
+      "whyAttractive": "a/bを逆。CDはディジタルで正しいがa/bの理解誤り。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "アナログ=連続量(レコード、針式時計、電圧波形)。ディジタル=離散量(0/1の数値)。CD=1982年登場の光ディスクでPCM方式のディジタル音源。レコード(ビニール)はアナログ。",
+  "keyInsight": "アナログ=連続、ディジタル=離散。CDはディジタル、レコードはアナログ。",
+  "topicSlugs": [
+    { "slug": "tech_computer_arch", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 40,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問89 ©2021 独立行政法人情報処理推進機構"
+}

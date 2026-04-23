@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q20",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 20,
+  "majorCategory": "strategy",
+  "formatType": "case",
+  "trapType": "scope_overgeneral",
+  "stem": "画像認識システムにおける機械学習の事例として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "オフィスのドアの解錠に虹彩の画像による認証の仕組みを導入することによって、セキュリティが強化できるようになった。",
+      "isCorrect": false,
+      "whyAttractive": "虹彩認証の導入事例。画像を使うが、既知のパターン照合で『機械学習で特徴を学習』している事例ではない。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "イ",
+      "body": "果物の写真をコンピュータに大量に入力することで、コンピュータ自身が果物の特徴を自動的に抽出することができるようになった。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "スマートフォンが他人に利用されるのを防止するために、指紋の画像認識でロック解除できるようになった。",
+      "isCorrect": false,
+      "whyAttractive": "指紋認証の導入事例。既存技術の活用で、機械学習による特徴学習事例ではない。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ヘルプデスクの画面に、システムの使い方についての問合せを文字で入力すると、会話形式で応答を得ることができるようになった。",
+      "isCorrect": false,
+      "whyAttractive": "チャットボット(自然言語処理)の事例。画像認識ではなくテキスト処理。",
+      "misconceptionSlug": "confuse_ai_terms"
+    }
+  ],
+  "explanation": "画像認識×機械学習の本質=『大量の画像からコンピュータが自動的に特徴を抽出・学習する』こと。既存技術の利用(虹彩・指紋認証)やチャットボットとは別。『自ら特徴抽出』がポイント。",
+  "keyInsight": "機械学習=『コンピュータ自身がパターン/特徴を学習する』。既存パターンの単純利用とは違う。",
+  "topicSlugs": [
+    { "slug": "ai_generative_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_ai_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 10,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問20 ©2021 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q30",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 30,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "営業利益を求める計算式はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "(売上高) - (売上原価)",
+      "isCorrect": false,
+      "whyAttractive": "売上総利益(粗利)の式。営業利益はここから販管費を引く。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "(売上総利益) - (販売費及び一般管理費)",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "(経常利益) + (特別利益) - (特別損失)",
+      "isCorrect": false,
+      "whyAttractive": "税引前当期純利益の式。営業利益の後の段階。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "(税引前当期純利益) - (法人税、住民税及び事業税)",
+      "isCorrect": false,
+      "whyAttractive": "当期純利益の式。営業利益とは別の段階。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "利益の階層: 売上高-売上原価=売上総利益、-販管費=営業利益、±営業外損益=経常利益、±特別損益=税引前当期純利益、-税=当期純利益。営業利益=本業の儲け。",
+  "keyInsight": "営業利益=粗利(売上総利益)-販管費。本業の利益で、経常/純利益より手前の段階。",
+  "topicSlugs": [
+    { "slug": "biz_financial_metrics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 14,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問30 ©2022 独立行政法人情報処理推進機構"
+}

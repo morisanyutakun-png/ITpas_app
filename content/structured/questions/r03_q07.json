@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q07",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 7,
+  "majorCategory": "strategy",
+  "formatType": "law_ip",
+  "trapType": "edge_case_miss",
+  "stem": "著作権法によって保護の対象と成り得るものだけを、全て挙げたものはどれか。\n\na インターネットに公開されたフリーソフトウェア\nb データベースの操作マニュアル\nc プログラム言語\nd プログラムのアルゴリズム",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a, b",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "a, d",
+      "isCorrect": false,
+      "whyAttractive": "dのアルゴリズムはアイデアで著作権対象外。意匠でも特許要件を満たせばカバーされる程度。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "b, c",
+      "isCorrect": false,
+      "whyAttractive": "cの『プログラム言語』は規約で著作権対象外。bのマニュアルは文章の創作物で対象。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "c, d",
+      "isCorrect": false,
+      "whyAttractive": "c(言語)もd(アルゴリズム)も著作権法の保護対象外。規約・アイデアは保護対象ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "著作権法の保護対象=『表現』。a(フリーソフトウェア=プログラム表現)・b(操作マニュアル=文章の創作物)は対象。c(プログラム言語=規約)・d(アルゴリズム=アイデア/思想)は著作権法第10条で保護対象外と明記。",
+  "keyInsight": "著作権=『表現』を保護、『規約・アイデア・プログラム言語・アルゴリズム』は対象外。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 4,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問7 ©2021 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q69",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 69,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "edge_case_miss",
+  "stem": "バイオメトリクス認証における認証精度に関する次の記述中のa, bに入れる字句の適切な組合せはどれか。\n\nバイオメトリクス認証において、誤って本人を拒否する確率を本人拒否率といい、誤って他人を受け入れる確率を他人受入率という。また、認証の装置又はアルゴリズムが生体情報を認識できない割合を未対応率という。認証精度の設定において、a が低くなるように設定すると利便性が高まり、b が低くなるように設定すると安全性が高まる。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a=他人受入率 / b=本人拒否率",
+      "isCorrect": false,
+      "whyAttractive": "他人受入率と本人拒否率を逆にした誤り。他人受入率低=安全性up、本人拒否率低=利便性up。",
+      "misconceptionSlug": "confuse_authn_authz"
+    },
+    {
+      "label": "イ",
+      "body": "a=他人受入率 / b=未対応率",
+      "isCorrect": false,
+      "whyAttractive": "bの未対応率は安全性とは別の指標。未対応率は装置/アルゴリズムの問題。",
+      "misconceptionSlug": "confuse_authn_authz"
+    },
+    {
+      "label": "ウ",
+      "body": "a=本人拒否率 / b=他人受入率",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "a=未対応率 / b=本人拒否率",
+      "isCorrect": false,
+      "whyAttractive": "未対応率と本人拒否率は別の指標で、利便性・安全性の文脈で使う2大指標は『本人拒否率(FRR)』と『他人受入率(FAR)』。",
+      "misconceptionSlug": "confuse_authn_authz"
+    }
+  ],
+  "explanation": "本人拒否率(FRR)を低くする→本人がスムーズに認証される→利便性up。他人受入率(FAR)を低くする→他人を受け入れない→安全性up。両者はトレードオフで、閾値で調整する。",
+  "keyInsight": "利便性=本人拒否率低(本人通過しやすい)、安全性=他人受入率低(他人通過しにくい)。逆の効果。",
+  "topicSlugs": [
+    { "slug": "security_authn_authz", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_authn_authz", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 32,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問69 ©2021 独立行政法人情報処理推進機構"
+}

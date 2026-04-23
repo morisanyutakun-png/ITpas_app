@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q75",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 75,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "アクティビティトラッカの説明として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "PCやタブレットなどのハードウェアのROMに組み込まれたソフトウェア",
+      "isCorrect": false,
+      "whyAttractive": "ファームウェアの説明。ROM組込ソフトで、活動量計ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "一定期間は無料で使用できるが、継続して使用する場合は、著作権者が金品などの対価を求めるソフトウェアの配布形態の一つ、又はそのソフトウェア",
+      "isCorrect": false,
+      "whyAttractive": "シェアウェアの説明。配布形態で、ウェアラブル機器ではない。",
+      "misconceptionSlug": "confuse_free_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ソーシャルメディアで提供される、友人や知人の活動状況や更新履歴を配信する機能",
+      "isCorrect": false,
+      "whyAttractive": "SNSのアクティビティフィード機能。ソフト機能で、ウェアラブル機器ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "歩数や運動時間、睡眠時間などを、搭載された各種センサによって計測するウェアラブル機器",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "アクティビティトラッカ=歩数・運動量・心拍数・睡眠時間などをセンサで計測するウェアラブル機器(活動量計)。Fitbitやスマートウォッチの健康機能が代表例。ファームウェア・シェアウェア・SNS機能とは別。",
+  "keyInsight": "アクティビティトラッカ=活動量計(ウェアラブル)。『アクティビティ=活動』『トラッカ=追跡』。",
+  "topicSlugs": [
+    { "slug": "tech_iot_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 32,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問75 ©2019 独立行政法人情報処理推進機構"
+}

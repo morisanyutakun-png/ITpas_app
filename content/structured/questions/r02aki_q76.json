@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q76",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 76,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "従業員に貸与するスマートフォンなどのモバイル端末を遠隔から統合的に管理する仕組みであり、セキュリティの設定や、紛失時にロックしたり初期化したりする機能をもつものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "DMZ",
+      "isCorrect": false,
+      "whyAttractive": "De-Militarized Zone=非武装地帯。外部と内部の中間に置くネットワークエリアで、モバイル管理とは別概念。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "MDM",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "SDN",
+      "isCorrect": false,
+      "whyAttractive": "Software-Defined Networking=ネットワークをソフトウェアで制御する技術。モバイル端末管理ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "VPN",
+      "isCorrect": false,
+      "whyAttractive": "Virtual Private Network=仮想専用網。通信の暗号化で、端末管理とは別の技術。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "MDM (Mobile Device Management) = 企業が従業員に貸与するモバイル端末(スマホ・タブレット)を遠隔管理する仕組み。設定配布、紛失時のリモートロック/ワイプ、アプリ管理等を担う。DMZ(ネットワーク分離)、SDN(ネットワーク制御)、VPN(通信暗号化)とは別役割。",
+  "keyInsight": "MDM=Mobile Device Management=『モバイル端末管理』。紛失時のロック・ワイプはMDMの代表機能。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 35,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問76 ©2020 独立行政法人情報処理推進機構"
+}

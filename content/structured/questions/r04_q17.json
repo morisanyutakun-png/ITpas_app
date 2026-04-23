@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q17",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 17,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "BYODの事例として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "会社から貸与されたスマートフォンを業務中に私的に使用する。",
+      "isCorrect": false,
+      "whyAttractive": "会社所有の私的利用で目的外利用。BYODは『私物』が前提。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "会社から貸与されたスマートフォンを業務で使用する。",
+      "isCorrect": false,
+      "whyAttractive": "一般的な会社貸与の業務利用。BYOD(私物持込)の定義ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "会社が利用を許可した私物のスマートフォンを業務で使用する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "私物のスマートフォンを業務中に私的に使用する。",
+      "isCorrect": false,
+      "whyAttractive": "私物の私的利用で業務利用ではない。BYODは『私物を業務に使う』。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "BYOD(Bring Your Own Device)=私物の端末を業務利用すること。会社の許可とMDM等の管理策が前提。コスト削減/利便性向上がメリット、情報漏洩リスク管理が課題。",
+  "keyInsight": "BYOD=『私物』を『業務で』使う。会社貸与や私的利用は該当しない。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 9,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問17 ©2022 独立行政法人情報処理推進機構"
+}

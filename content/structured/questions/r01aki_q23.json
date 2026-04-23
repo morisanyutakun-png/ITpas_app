@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q23",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 23,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "統計学や機械学習などの手法を用いて大量のデータを解析して、新たなサービスや価値を生み出すためのヒントやアイディアを抽出する役割が重要となっている。その役割を担う人材として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ITストラテジスト",
+      "isCorrect": false,
+      "whyAttractive": "経営戦略・IT戦略立案人材。経営視点の戦略家で、統計解析の専門家ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "システムアーキテクト",
+      "isCorrect": false,
+      "whyAttractive": "システム設計担当。アーキテクチャ設計者で、データ解析の専門家ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "システムアナリスト",
+      "isCorrect": false,
+      "whyAttractive": "情報システム企画・要件定義担当。業務分析で、統計解析・機械学習専門ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "データサイエンティスト",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "データサイエンティスト=統計学・機械学習・ドメイン知識を駆使し、大量データから価値を抽出する専門人材。他の役割(ストラテジスト=戦略、アーキテクト=設計、アナリスト=業務分析)とはスキルセットが異なる。",
+  "keyInsight": "『統計学+機械学習+大量データ』=データサイエンティスト。職種名にData Scienceが付くのは一目瞭然。",
+  "topicSlugs": [
+    { "slug": "ai_generative_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 10,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問23 ©2019 独立行政法人情報処理推進機構"
+}

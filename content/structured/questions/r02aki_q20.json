@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q20",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 20,
+  "majorCategory": "strategy",
+  "formatType": "law_ip",
+  "trapType": "edge_case_miss",
+  "stem": "労働者派遣は、通常の派遣と、将来の雇用を想定した紹介予定派遣の二つに分けられる。前者の労働者派遣の契約に当たり、派遣先が派遣元に要求する派遣労働者の受入条件として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "候補者が備えるべきスキルの指定",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "候補者の年齢及び性別の指定",
+      "isCorrect": false,
+      "whyAttractive": "『業務遂行能力』の指定と混同しやすい。だが年齢・性別による条件指定は雇用機会均等法・年齢差別禁止の観点で原則不可。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "候補者の派遣先による事前面接",
+      "isCorrect": false,
+      "whyAttractive": "受け入れる側が面接したいのは自然だが、通常の労働者派遣では派遣先による事前面接・特定行為は派遣法で禁止。紹介予定派遣のみ例外的に可能。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "候補者の履歴書の派遣先への事前提出",
+      "isCorrect": false,
+      "whyAttractive": "事前情報収集として妥当に見えるが、派遣先が個人を特定する行為は禁止。履歴書事前提出も『特定行為』に該当し不可。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "通常の労働者派遣では『派遣先による労働者特定行為』が禁止されている(事前面接、履歴書提出、年齢・性別指定等)。派遣先が要求できるのは『業務に必要なスキル・資格』等の労働条件のみ。紹介予定派遣だけは面接等が例外的に認められる。",
+  "keyInsight": "派遣先は『個人の特定』不可・『業務要件』のみ可。事前面接・履歴書・年齢性別の指定は全て特定行為でNG。",
+  "topicSlugs": [
+    { "slug": "biz_labor_contracts", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 10,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問20 ©2020 独立行政法人情報処理推進機構"
+}

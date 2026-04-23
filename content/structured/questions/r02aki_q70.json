@@ -1,0 +1,54 @@
+{
+  "externalKey": "r02aki_q70",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 70,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "LPWAの特徴として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "AIに関する技術であり、ルールなどを明示的にプログラミングすることなく、入力されたデータからコンピュータが新たな知識やルールなどを獲得できる。",
+      "isCorrect": false,
+      "whyAttractive": "機械学習の説明。LPWAは通信技術で、AIとは別の分野。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "低消費電力型の広域無線ネットワークであり、通信速度は携帯電話システムと比較して低速なものの、一般的な電池で数年以上の運用が可能な省電力性と、最大で数十kmの通信が可能な広域性を有している。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "分散型台帳技術の一つであり、複数の取引記録をまとめたデータを順次作成し、直前のデータのハッシュ値を埋め込むことによって、データを相互に関連付け、矛盾なく改ざんすることを困難にして、データの信頼性を高めている。",
+      "isCorrect": false,
+      "whyAttractive": "ブロックチェーンの説明。分散台帳で、通信技術ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "無線LANの暗号化方式であり、脆弱性が指摘されているWEPに代わって利用が推奨されている。",
+      "isCorrect": false,
+      "whyAttractive": "WPA2/WPA3の説明。暗号化方式で、LPWAの広域通信技術とは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "LPWA (Low Power Wide Area) = 低消費電力×広域通信のIoT向け無線通信。電池で数年動作、最大数十kmカバーの代わりに通信速度は遅い(数百bps〜数十kbps)。IoTデバイスの大量配置に最適。",
+  "keyInsight": "LPWA=『低電力+広域』。速度を犠牲にして電池寿命と通信距離を取るIoT向け通信。",
+  "topicSlugs": [
+    { "slug": "tech_iot_basics", "weight": 1 },
+    { "slug": "network_protocols", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 32,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問70 ©2020 独立行政法人情報処理推進機構"
+}

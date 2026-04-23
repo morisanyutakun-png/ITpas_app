@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q31",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 31,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "コールセンタの顧客サービスレベルを改善するために、顧客から寄せられたコールセンタ対応に関する苦情を分類集計する。苦情の多い順に、件数を棒グラフ、累積百分率を折れ線グラフで表し、対応の優先度を判断するのに適した図はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "PERT図",
+      "isCorrect": false,
+      "whyAttractive": "プロジェクトの工程順序と所要時間を表す図。件数集計ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "管理図",
+      "isCorrect": false,
+      "whyAttractive": "品質の時系列変動+管理限界線で品質監視。苦情の優先度判断ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "特性要因図",
+      "isCorrect": false,
+      "whyAttractive": "原因の構造を魚の骨形式で表現する図。件数集計ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "パレート図",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "パレート図=項目を件数の多い順に棒グラフで並べ、累積百分率を折れ線で表す複合図。80/20の法則に基づき、少数の項目で大半を占めることを可視化し、優先対策項目を特定する。QC七つ道具の一つ。",
+  "keyInsight": "パレート図=多い順の棒+累積折れ線=優先度判断。PERT(工程)・管理図(品質)と区別。",
+  "topicSlugs": [
+    { "slug": "biz_validation_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 14,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問31 ©2022 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,55 @@
+{
+  "externalKey": "r02aki_q83",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 83,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "建物や物体などの立体物に、コンピュータグラフィックスを用いた映像などを投影し、様々な視覚効果を出す技術を何と呼ぶか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ディジタルサイネージ",
+      "isCorrect": false,
+      "whyAttractive": "電子看板。ディスプレイを使った広告表示で、立体物への投影ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "バーチャルリアリティ",
+      "isCorrect": false,
+      "whyAttractive": "VR。仮想空間の体験を作り出す技術で、実物への投影とは別方向。",
+      "misconceptionSlug": "confuse_vr_ar"
+    },
+    {
+      "label": "ウ",
+      "body": "プロジェクションマッピング",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "ポリゴン",
+      "isCorrect": false,
+      "whyAttractive": "3DCGの構成要素(多角形)。技術の部品で、投影技術そのものではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "プロジェクションマッピング=建物・立体物の形状に合わせてCG映像をプロジェクタで投影する技術。建物の外壁に動画を投影するイベントで知られる。サイネージ(看板)、VR(仮想空間)、ポリゴン(CG部品)と区別。",
+  "keyInsight": "プロジェクション(投影)+マッピング(立体形状への対応付け)。実物に投影するのが特徴。",
+  "topicSlugs": [
+    { "slug": "vr_ar_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_vr_ar", "weight": 1 }
+  ],
+  "materialSlugs": [
+    { "slug": "vr_ar_compare", "role": "helper" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 37,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問83 ©2020 独立行政法人情報処理推進機構"
+}

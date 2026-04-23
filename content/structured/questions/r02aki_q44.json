@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q44",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 44,
+  "majorCategory": "management",
+  "formatType": "case",
+  "trapType": "similar_term",
+  "stem": "次の作業はシステム開発プロセスのどの段階で実施されるか。\n\n実務に精通している利用者に参画してもらい、開発するシステムの具体的な利用方法について分析を行う。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "システム要件定義",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "システム設計",
+      "isCorrect": false,
+      "whyAttractive": "設計段階は『どう作るか』の段階。『具体的な利用方法の分析』は要件段階の活動で、設計はその結果を受けて実施する。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "テスト",
+      "isCorrect": false,
+      "whyAttractive": "テストは完成後の検証段階。分析ではなく動作確認。利用者が参加することはあるが、本問の『利用方法の分析』とは時期が違う。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "プログラミング",
+      "isCorrect": false,
+      "whyAttractive": "コードを書く工程。利用方法の分析と全く別の技術工程。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "システム要件定義=利用者のニーズを具体化し、システムが提供すべき機能・利用方法を確定する段階。実務に精通した利用者の参画が肝心で、『具体的な利用方法』を分析する。設計はその後に『どう実現するか』を決める。",
+  "keyInsight": "要件定義=『何を作るか(利用者視点)』、設計=『どう作るか(技術者視点)』。利用者の参画は要件定義段階が中心。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 20,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問44 ©2020 独立行政法人情報処理推進機構"
+}

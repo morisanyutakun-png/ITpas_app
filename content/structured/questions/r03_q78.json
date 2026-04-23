@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q78",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 78,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "OSS(Open Source Software)に関する記述として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "OSSの利用に当たっては、ソフトウェアの機能が制限される代わりに、使用料が無料となる契約をベンダーと取り交わす必要がある。",
+      "isCorrect": false,
+      "whyAttractive": "OSSはライセンス同意はあるが、ベンダー契約は不要。機能制限もない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "OSSを改良したソフトウェアは、ライセンスによらず有償で販売してはならない。",
+      "isCorrect": false,
+      "whyAttractive": "ライセンスによっては販売可能(GPL等でも販売OK、ソース開示義務あり)。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "OSSを配布するときには、有償の保守契約を締結することが義務付けられている。",
+      "isCorrect": false,
+      "whyAttractive": "保守契約は任意。OSSは通常無保証。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ベンダーなどが有償で保守サポートを行うOSSもある。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "OSS=ソースコード公開・自由利用。『無料』ではなく『自由』が本質。Red Hat Enterprise Linux等、有償保守サポート付きで提供するビジネスモデルもある。販売・改変・再配布は各ライセンス(GPL/MIT/Apache等)の条件に従う。",
+  "keyInsight": "OSS=自由(free as in freedom)。有償サポート付きOSSは実務で一般的。",
+  "topicSlugs": [
+    { "slug": "biz_models", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 36,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問78 ©2021 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q19",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 19,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "ディープラーニングを構成する技術の一つであり、人間の脳内にある神経回路を数学的なモデルで表現したものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "コンテンツデリバリネットワーク",
+      "isCorrect": false,
+      "whyAttractive": "CDN=Webコンテンツ配信を高速化するサーバ網。『ネットワーク』の語感で引き寄せられるが、AI技術ではなく配信インフラ。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "ストレージエリアネットワーク",
+      "isCorrect": false,
+      "whyAttractive": "SAN=ストレージ専用ネットワーク。ハードウェア側の接続技術でAIとは無関係。『ネットワーク』の共通語で混同される。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ニューラルネットワーク",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "ユビキタスネットワーク",
+      "isCorrect": false,
+      "whyAttractive": "『いつでもどこでも』のネット接続概念。ITの基盤理念で、脳神経モデルではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ニューラルネットワーク(Neural Network)=神経細胞(ニューロン)を模した数学モデル。多層に重ねたものがディープラーニング。Neural=『神経の』という語を覚えれば一発。",
+  "keyInsight": "Neural=神経。脳の仕組み模倣ならニューラルネットワーク。他の3つは全てIT基盤/通信用語。",
+  "topicSlugs": [
+    { "slug": "ai_generative_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_ai_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 10,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問19 ©2020 独立行政法人情報処理推進機構"
+}

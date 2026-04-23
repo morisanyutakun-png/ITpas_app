@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q28",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 28,
+  "majorCategory": "strategy",
+  "formatType": "calculation",
+  "trapType": "edge_case_miss",
+  "stem": "次の当期末損益計算資料から求められる経常利益は何百万円か。\n\n[資料(単位:百万円)] 売上高=3,000 / 売上原価=1,500 / 販売費及び一般管理費=500 / 営業外費用=15 / 特別損失=300 / 法人税=300",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "385",
+      "isCorrect": false,
+      "whyAttractive": "特別損失・法人税も引いた当期純利益 985-300-300=385 の可能性がある誤計算。経常利益はそこまで引かない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "685",
+      "isCorrect": false,
+      "whyAttractive": "特別損失だけ引いて法人税は引かない誤計算 985-300=685。経常利益は特別損益の前。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "985",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "1,000",
+      "isCorrect": false,
+      "whyAttractive": "営業外費用15を引き忘れる誤計算 3000-1500-500=1000(=営業利益)。経常利益は営業外損益まで反映。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "経常利益=売上総利益-販管費-営業外費用(+営業外収益)。計算: (3000-1500)-500-15 = 985。特別損失と法人税は経常利益の後(特別損益→税引前→当期純利益)。",
+  "keyInsight": "経常利益=営業利益±営業外損益。特別損益・法人税は経常利益より後の段階。",
+  "topicSlugs": [
+    { "slug": "biz_financial_metrics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 13,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問28 ©2021 独立行政法人情報処理推進機構"
+}

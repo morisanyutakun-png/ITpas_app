@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q49",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 49,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "アジャイル開発の特徴として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "各工程間の情報はドキュメントによって引き継がれるので、開発全体の進捗が把握しやすい。",
+      "isCorrect": false,
+      "whyAttractive": "ウォータフォールの特徴。ドキュメント中心の工程遷移で、アジャイルは逆に『動くソフト』優先。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "各工程でプロトタイピングを実施するので、潜在している問題や要求を見つけ出すことができる。",
+      "isCorrect": false,
+      "whyAttractive": "プロトタイピング型開発の特徴。試作品中心でアジャイルとは異なる。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "段階的に開発を進めるので、最後の工程で不具合が発生すると、遡って修正が発生し、手戻り作業が多くなる。",
+      "isCorrect": false,
+      "whyAttractive": "ウォータフォールのデメリット。アジャイルは短期反復なので手戻りの影響範囲が小さい。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ドキュメントの作成よりもソフトウェアの作成を優先し、変化する顧客の要望を素早く取り入れることができる。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "アジャイルソフトウェア開発宣言の価値観に『包括的なドキュメントよりも動くソフトウェア』『計画に従うことよりも変化への対応』とある。変化する要望を短期反復で取り込む。ドキュメント重視・プロトタイピング中心・遡り手戻り多発はアジャイルの特徴ではない。",
+  "keyInsight": "アジャイル=『動くソフト優先』『変化に対応』『短期反復』。ドキュメント中心・長期計画型のウォータフォールの対極。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 21,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問49 ©2019 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q86",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 86,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "情報セキュリティのリスクマネジメントにおけるリスク対応を、リスクの移転、回避、受容及び低減の四つに分類するとき、リスクの低減の例として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "インターネット上で、特定利用者に対して、機密に属する情報の提供サービスを行っていたが、情報漏えいのリスクを考慮して、そのサービスから撤退する。",
+      "isCorrect": false,
+      "whyAttractive": "サービス撤退=リスクの原因を取り除く=回避。低減ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "個人情報が漏えいした場合に備えて、保険に加入する。",
+      "isCorrect": false,
+      "whyAttractive": "保険=損害を他者に移す=移転(転嫁)。低減ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "サーバ室には限られた管理者しか入室できず、機器盗難のリスクは低いので、追加の対策は行わない。",
+      "isCorrect": false,
+      "whyAttractive": "対策しない=リスクを受け入れる=受容(保有)。低減ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "ノートPCの紛失、盗難による情報漏えいに備えて、ノートPCのHDDに保存する情報を暗号化する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "リスク対応4分類: 回避(原因除去)、移転(他者へ)、低減(影響/頻度を下げる)、受容(受け入れる)。暗号化=紛失しても情報を読めなくする=影響を下げる=低減。撤退(回避)、保険(移転)、対策しない(受容)とは別。",
+  "keyInsight": "低減=『起きても被害を小さく、起きる確率を下げる』対策。暗号化・アクセス制御・監視等が典型。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 37,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問86 ©2019 独立行政法人情報処理推進機構"
+}

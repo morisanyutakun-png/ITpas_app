@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q62",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 62,
+  "majorCategory": "technology",
+  "formatType": "calculation",
+  "trapType": "edge_case_miss",
+  "stem": "10進数155を2進数で表したものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "10011011",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "10110011",
+      "isCorrect": false,
+      "whyAttractive": "各ビットの桁を1つずらして変換した誤り。128+32+16+2+1=179 で155ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "11001101",
+      "isCorrect": false,
+      "whyAttractive": "128+64+8+4+1=205 で155ではない。上位ビットの置き方を間違えている。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "11011001",
+      "isCorrect": false,
+      "whyAttractive": "128+64+16+8+1=217 で155ではない。上位ビットを2つ立てる誤り。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "155 = 128 + 16 + 8 + 2 + 1 = 10011011(2)。各桁の重み(128,64,32,16,8,4,2,1)に分解して当てはめる。2で割り続ける方法でも同じ結果。",
+  "keyInsight": "2進変換は『桁重み128,64,32,16,8,4,2,1への分解』が最短。155なら128,16,8,2,1で丁度。",
+  "topicSlugs": [
+    { "slug": "tech_computer_arch", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 28,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問62 ©2020 独立行政法人情報処理推進機構"
+}

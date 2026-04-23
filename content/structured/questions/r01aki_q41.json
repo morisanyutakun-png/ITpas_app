@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q41",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 41,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "プロジェクトマネジメントの進め方に関する説明として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "企画、要件定義、システム開発、保守の順番で、開発を行う。",
+      "isCorrect": false,
+      "whyAttractive": "ソフトウェアライフサイクルの説明。開発工程であってプロジェクトマネジメントのプロセスではない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "イ",
+      "body": "戦略、設計、移行、運用、改善のライフサイクルで、ITサービスを維持する。",
+      "isCorrect": false,
+      "whyAttractive": "ITIL(ITサービスライフサイクル)の説明。サービス管理であってプロジェクトではない。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "目標を達成するための計画を作成し、実行中は品質、進捗、コストなどをコントロールし、目標の達成に導く。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "予備調査、本調査、評価、結論の順番で、リスクの識別、コントロールが適切に実施されているかの確認を行う。",
+      "isCorrect": false,
+      "whyAttractive": "システム監査の進め方。評価の話で、プロジェクトマネジメントとは別。",
+      "misconceptionSlug": "confuse_pm_terms"
+    }
+  ],
+  "explanation": "プロジェクトマネジメント=特定目標のために計画を立て、品質・進捗・コスト等をコントロールしながら実行・完了させる活動。開発工程(ライフサイクル)、ITサービス運用(ITIL)、監査とは別カテゴリ。",
+  "keyInsight": "プロジェクトマネジメント=『計画と実行制御(QCD等)』。工程の順序や監査手順とは違う。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_pm_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 18,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問41 ©2019 独立行政法人情報処理推進機構"
+}

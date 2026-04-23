@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q67",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 67,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "scope_overgeneral",
+  "stem": "重要な情報を保管している部屋がある。この部屋への不正な入室及び室内での重要な情報への不正アクセスに関する対策として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "警備員や監視カメラによって、入退室確認と室内での作業監視を行う。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "室内では、入室の許可証をほかの人から見えない場所に着用させる。",
+      "isCorrect": false,
+      "whyAttractive": "許可証は通常『見える場所』に着用させて相互確認を促す。見えないとむしろ成りすまし確認が困難。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "入退室管理は有人受付とはせず、カード認証などの電子的方法だけにする。",
+      "isCorrect": false,
+      "whyAttractive": "電子認証+有人の両方が望ましい。電子だけにすると共連れや成りすまし検知が弱まる。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "部屋の存在とそこで保管している情報を、全社員に周知する。",
+      "isCorrect": false,
+      "whyAttractive": "重要情報の存在を全公開すると、むしろ攻撃目標として認知される。機密保持の観点で逆効果。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "物理的セキュリティの基本: (1)入退室管理(警備員・監視カメラ・カード認証の併用)、(2)許可証は見える場所に着用、(3)存在や内容は必要最小限に開示(Need-to-Know原則)。アは正しく、他は原則に反する。",
+  "keyInsight": "物理セキュリティ=『可視性+監視+最小限の開示』。隠す許可証・全社員周知・電子のみ管理はいずれも逆。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 29,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問67 ©2019 独立行政法人情報処理推進機構"
+}

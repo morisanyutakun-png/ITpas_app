@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q75",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 75,
+  "majorCategory": "technology",
+  "formatType": "network_basics",
+  "trapType": "edge_case_miss",
+  "stem": "PCに設定するIPv4のIPアドレスの表記の例として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "00.00.11.aa.bb.cc",
+      "isCorrect": false,
+      "whyAttractive": "16進数表記で6つのグループ→MACアドレスの形式。IPv4ではなくネットワークインタフェースの識別子。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    },
+    {
+      "label": "イ",
+      "body": "050-1234-5678",
+      "isCorrect": false,
+      "whyAttractive": "電話番号。IP電話風の番号だが、IPアドレスではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "10.123.45.67",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "http://www.example.co.jp/",
+      "isCorrect": false,
+      "whyAttractive": "URL。『アドレス』の語感で混同されるが、URLとIPアドレスは別。URLは人間向けのリソース指定。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "IPv4アドレス=4つの10進数(0〜255)をドット区切り。合計32ビット。10.123.45.67 は典型的な形式。MAC=6つの16進数グループ、URL=ドメイン名、電話番号=ハイフン区切り、と表記形式で区別。",
+  "keyInsight": "IPv4=『10進4つ・ドット区切り』。MAC=6つの16進、IPv6=8つの16進コロン区切り。表記の形で判別。",
+  "topicSlugs": [
+    { "slug": "network_protocols", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_protocol_layer", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 35,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問75 ©2020 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q1",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 1,
+  "majorCategory": "strategy",
+  "formatType": "law_ip",
+  "trapType": "edge_case_miss",
+  "stem": "A社がB社に作業の一部を請負契約で委託している。作業形態a〜cのうち、いわゆる偽装請負とみなされる状態だけを全て挙げたものはどれか。\n\na B社の従業員が、A社内において、A社の責任者の指揮命令の下で、請負契約で取り決めた作業を行っている。\nb B社の従業員が、A社内において、B社の責任者の指揮命令の下で、請負契約で取り決めた作業を行っている。\nc B社の従業員が、B社内において、A社の責任者の指揮命令の下で、請負契約で取り決めた作業を行っている。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a",
+      "isCorrect": false,
+      "whyAttractive": "aだけと誤解。cも偽装請負(発注元A社が指揮命令しているため、場所に関係なく偽装)。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a, b",
+      "isCorrect": false,
+      "whyAttractive": "bは正規の請負(B社が自社従業員を指揮命令している)。偽装とは判定されない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "a, c",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "b, c",
+      "isCorrect": false,
+      "whyAttractive": "bは正規、aが抜けている。判定軸が誤っている。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "偽装請負の判定軸は『誰が指揮命令しているか』。請負契約では受託側(B社)が自社従業員を指揮命令するのが正しい。発注元(A社)が直接指揮命令すると、形式は請負でも実態は労働者派遣(=偽装請負)。作業場所は関係ない。",
+  "keyInsight": "偽装請負=『発注者が受託者の従業員に指揮命令』。場所ではなく『誰が指揮』で判定。",
+  "topicSlugs": [
+    { "slug": "biz_labor_contracts", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 2,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問1"
+}

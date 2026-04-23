@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q91",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 91,
+  "majorCategory": "technology",
+  "formatType": "network_basics",
+  "trapType": "similar_term",
+  "stem": "ネットワークにおけるDNSの役割として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "クライアントからのIPアドレス割当て要求に対し、プールされたIPアドレスの中から未使用のIPアドレスを割り当てる。",
+      "isCorrect": false,
+      "whyAttractive": "DHCPの役割。IPアドレス動的割当てサーバで、DNSではない。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    },
+    {
+      "label": "イ",
+      "body": "クライアントからのファイル転送要求を受け付け、クライアントへファイルを転送したり、クライアントからのファイルを受け取って保管したりする。",
+      "isCorrect": false,
+      "whyAttractive": "FTPサーバの役割。ファイル転送であってDNS(名前解決)ではない。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    },
+    {
+      "label": "ウ",
+      "body": "ドメイン名とIPアドレスの対応付けを行う。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "メール受信者からの読出し要求に対して、メールサーバが受信したメールを転送する。",
+      "isCorrect": false,
+      "whyAttractive": "POP/IMAPメールサーバの役割。メール受信で、DNSではない。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    }
+  ],
+  "explanation": "DNS (Domain Name System) = ドメイン名(www.example.com等)とIPアドレス(192.0.2.1等)を相互変換する仕組み。DHCP(IP自動割当)・FTP(ファイル転送)・POP/IMAP(メール受信)とは別プロトコル。",
+  "keyInsight": "DNS=『名前(人間向け) ↔ IP(機械向け)』の変換。電話帳のような役割。",
+  "topicSlugs": [
+    { "slug": "network_protocols", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_protocol_layer", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 39,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問91 ©2019 独立行政法人情報処理推進機構"
+}

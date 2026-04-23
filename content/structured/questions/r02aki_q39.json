@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q39",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 39,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "A社のIT部門では、ヘルプデスクの可用性の向上を図るために、対応時間を24時間に拡大することを検討している。ヘルプデスク業務をA社から受託しているB社は、これを実現するためにチャットボットをB社が導入し、活用することによって、深夜時間帯は自動応答で対応する旨を提案したところ、A社は24時間対応が可能であるのでこれに合意した。合意に用いる文書として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "BCP",
+      "isCorrect": false,
+      "whyAttractive": "事業継続計画。災害対応の計画で、サービスレベル合意文書ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "NDA",
+      "isCorrect": false,
+      "whyAttractive": "秘密保持契約。情報漏洩防止の契約で、サービスレベルの合意文書ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "RFP",
+      "isCorrect": false,
+      "whyAttractive": "提案依頼書。調達前にベンダへ提案を依頼する文書で、合意(契約)段階の文書ではない。",
+      "misconceptionSlug": "confuse_procurement_docs"
+    },
+    {
+      "label": "エ",
+      "body": "SLA",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "SLA (Service Level Agreement) = サービス提供者と顧客が、サービスレベル(可用性、応答時間、稼働率等)を定量的に合意する文書。『24時間対応』のような具体的なサービスレベルを取り決めるのがまさにSLA。",
+  "keyInsight": "SLA=サービスレベルの合意。BCP(災害対応)・NDA(秘密保持)・RFP(調達前)とは文書の役割が違う。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 18,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問39 ©2020 独立行政法人情報処理推進機構"
+}

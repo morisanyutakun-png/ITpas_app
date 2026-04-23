@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q10",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 10,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "技術ロードマップの説明として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "カーナビゲーションシステムなどに用いられている最短経路の探索機能の実現に必要な技術を示したもの",
+      "isCorrect": false,
+      "whyAttractive": "『ロードマップ』という語感で道路関連(ナビ)を連想するが、技術ロードマップは技術計画の用語。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "業務システムの開発工程で用いるソフトウェア技術の一覧を示したもの",
+      "isCorrect": false,
+      "whyAttractive": "技術スタック一覧。一覧表で、時間軸を伴う計画ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "情報システム部門の人材が習得すべき技術をキャリアとともに示したもの",
+      "isCorrect": false,
+      "whyAttractive": "キャリアパス/スキル標準の説明。人材育成の計画で、技術ロードマップとは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "対象とする分野において、実現が期待されている技術を時間軸とともに示したもの",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "技術ロードマップ=特定分野の技術進展を時間軸に沿って示した計画図。『いつ頃どんな技術が実用化されるか』の見通しを示す。技術スタック・キャリアパス・最短経路とは別概念。『Road+Map=道のり地図』でも、対象は技術の進展。",
+  "keyInsight": "技術ロードマップ=『技術進展の時間軸地図』。いつ何が実現されるかの計画。",
+  "topicSlugs": [
+    { "slug": "biz_innovation_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 5,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問10 ©2021 独立行政法人情報処理推進機構"
+}

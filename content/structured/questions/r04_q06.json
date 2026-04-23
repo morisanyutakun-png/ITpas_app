@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q06",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 6,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "自社開発した技術の特許化に関する記述a〜cのうち、直接的に得られることが期待できる効果として、適切なものだけを全て挙げたものはどれか。\n\na. 当該技術に関連した他社とのアライアンスの際に、有利な条件を設定できる。\nb. 当該技術の開発費用の一部をライセンスによって回収できる。\nc. 当該技術を用いた商品や事業に対して、他社の参入を阻止できる。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a",
+      "isCorrect": false,
+      "whyAttractive": "aは正しいが、b,cも正しい効果。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a, b",
+      "isCorrect": false,
+      "whyAttractive": "cの参入阻止も特許の直接効果。不十分。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "a, b, c",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "b, c",
+      "isCorrect": false,
+      "whyAttractive": "aのアライアンス交渉優位も重要な特許効果。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "特許取得の直接効果: a=クロスライセンス等でのアライアンス交渉力、b=実施料収入、c=独占排他権による競合参入阻止。全て特許化による典型的効果。",
+  "keyInsight": "特許=独占排他権+交渉カード+ライセンス収入の3つが直接効果。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 3,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問6 ©2022 独立行政法人情報処理推進機構"
+}

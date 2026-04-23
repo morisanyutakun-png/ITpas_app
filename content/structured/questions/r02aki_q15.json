@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q15",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 15,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "SCMの説明として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "営業、マーケティング、アフターサービスなど、部門間で情報や業務の流れを統合し、顧客満足度と自社利益を最大化する。",
+      "isCorrect": false,
+      "whyAttractive": "CRM(顧客関係管理)の説明。『統合』『顧客満足度』の語感が近く混同されやすいが、SCMは『供給連鎖』であり、対象が異なる。",
+      "misconceptionSlug": "confuse_enterprise_systems"
+    },
+    {
+      "label": "イ",
+      "body": "調達、生産、流通を経て消費者に至るまでの一連の業務を、取引先を含めて全体最適の視点から見直し、納期短縮や在庫削減を図る。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "顧客ニーズに適合した製品及びサービスを提供することを目的として、業務全体を最適な形に革新・再設計する。",
+      "isCorrect": false,
+      "whyAttractive": "BPR(業務改革)の説明。『業務の再設計』はBPRの定義。SCMは供給連鎖に限定した最適化。",
+      "misconceptionSlug": "confuse_enterprise_systems"
+    },
+    {
+      "label": "エ",
+      "body": "調達、生産、販売、財務・会計、人事などの基幹業務を一元的に管理し、経営資源の最適化と経営の効率化を図る。",
+      "isCorrect": false,
+      "whyAttractive": "ERP(統合基幹業務システム)の説明。『基幹業務一元管理』はERP。SCMは取引先を含む供給連鎖に特化。",
+      "misconceptionSlug": "confuse_enterprise_systems"
+    }
+  ],
+  "explanation": "SCM (Supply Chain Management) = 調達→生産→流通→消費者の供給連鎖全体を最適化する仕組み。取引先企業をまたぐ広い範囲が対象。CRM=顧客、BPR=業務再設計、ERP=社内基幹業務、それぞれ対象範囲が異なる。",
+  "keyInsight": "SCM=Supply Chain(供給連鎖)。『調達〜消費者まで』『取引先を含む』がキーワード。",
+  "topicSlugs": [
+    { "slug": "biz_enterprise_systems", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_enterprise_systems", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 8,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問15 ©2020 独立行政法人情報処理推進機構"
+}

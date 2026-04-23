@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q16",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 16,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "マーチャンダイジングの説明として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "消費者のニーズや欲求、購買動機などの基準によって全体市場を幾つかの小さな市場に区分し、標的とする市場を絞り込むこと",
+      "isCorrect": false,
+      "whyAttractive": "市場セグメンテーションの説明。マーケティング戦略の1工程で、マーチャンダイジングの定義ではない。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "イ",
+      "body": "製品の出庫から販売に至るまでの物の流れを統合的に捉え、物流チャネル全体を効果的に管理すること",
+      "isCorrect": false,
+      "whyAttractive": "ロジスティクス/物流管理の説明。物の流れの管理で、『商品企画・陳列』とは別。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "ウ",
+      "body": "店舗などにおいて、商品やサービスを購入者のニーズに合致するような形態で提供するために行う一連の活動のこと",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "配送コストの削減と、消費者への接触頻度増加によるエリア密着性向上を狙って、同一エリア内に密度の高い店舗展開を行うこと",
+      "isCorrect": false,
+      "whyAttractive": "ドミナント戦略の説明。出店戦略で、商品提供活動ではない。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    }
+  ],
+  "explanation": "マーチャンダイジング=『商品化計画』。店舗で商品・サービスを購入者のニーズに合う形で提供する一連の活動(仕入・品揃え・陳列・価格設定等)。セグメンテーション・ロジスティクス・ドミナント戦略とは別分野。",
+  "keyInsight": "マーチャンダイジング=『店舗で顧客ニーズに合う商品提供活動』。小売業の中核活動。",
+  "topicSlugs": [
+    { "slug": "biz_marketing_frameworks", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_marketing_framework", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 8,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問16 ©2021 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q54",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 54,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "WBSを作成するときに、作業の記述や完了基準などを記述した補助文書を作成する。この文書の目的として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "WBSで定義した作業で使用するデータの意味を明確に定義する。",
+      "isCorrect": false,
+      "whyAttractive": "データ定義(データディクショナリ)の目的。作業の記述・完了基準とは別。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "イ",
+      "body": "WBSで定義した作業の進捗を管理する。",
+      "isCorrect": false,
+      "whyAttractive": "進捗管理表の目的。補助文書(WBS辞書)の役割ではなく実行段階の管理。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "WBSで定義した作業のスケジュールのクリティカルパスを求める。",
+      "isCorrect": false,
+      "whyAttractive": "スケジュール分析の目的。クリティカルパスはアローダイアグラムで求める。",
+      "misconceptionSlug": "confuse_pm_terms"
+    },
+    {
+      "label": "エ",
+      "body": "WBSで定義した作業の内容と意味を明確に定義する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "WBS辞書(補助文書)=WBSの各作業(ワークパッケージ)について、作業の詳細内容・完了基準・担当者等を明確に定義する文書。WBSは階層図で一覧性はあるが詳細を補完するのが辞書の役割。",
+  "keyInsight": "WBS辞書=『各作業の内容・完了基準の詳細定義』。WBS本体の補完文書。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_pm_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 25,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問54 ©2021 独立行政法人情報処理推進機構"
+}

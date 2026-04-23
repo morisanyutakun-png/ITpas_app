@@ -1,0 +1,54 @@
+{
+  "externalKey": "r07_official_q90",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 90,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "abbrev_mix",
+  "stem": "無線LANのセキュリティ対策に関する記述として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "APIは、複数のアクセスポイントをグループ化して管理するIDである。",
+      "isCorrect": false,
+      "whyAttractive": "APIは Application Programming Interface。複数APのグループ化ID=ESSIDであって、APIではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "SSHは、アクセスポイントをステルス化することで無線LANネットワークを隠蔽する機能である。",
+      "isCorrect": false,
+      "whyAttractive": "SSH=Secure Shell=遠隔ログインの暗号化プロトコル。APステルス化の機能ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "VPNは、アクセスポイントに登録したMACアドレスをもつ機器以外からの接続を拒否する機能である。",
+      "isCorrect": false,
+      "whyAttractive": "VPN=Virtual Private Network=仮想専用網。MACアドレスフィルタの説明と混同。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "WPA2は、WEPよりも高い信頼性をもつ、無線通信の暗号化技術である。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "WPA2=無線LAN暗号化の標準規格で、旧来のWEP(脆弱性有)より強固。AES暗号化を標準使用。API(プログラム連携)・SSH(リモートログイン)・VPN(仮想網)とは別概念。",
+  "keyInsight": "無線LAN暗号化規格: WEP(脆弱・非推奨)→WPA→WPA2(標準)→WPA3(最新)。世代進化で強度向上。",
+  "topicSlugs": [
+    { "slug": "security_crypto", "weight": 1 },
+    { "slug": "network_protocols", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 42,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問90"
+}

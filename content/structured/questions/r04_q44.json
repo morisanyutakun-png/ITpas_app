@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q44",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 44,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "ITサービスマネジメントにおけるインシデント管理の目的として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "インシデントの原因を分析し、根本的な原因を解決することによって、インシデントの再発を防止する。",
+      "isCorrect": false,
+      "whyAttractive": "問題管理の目的。原因究明と再発防止は別プロセス。",
+      "misconceptionSlug": "confuse_incident_problem"
+    },
+    {
+      "label": "イ",
+      "body": "サービスに対する全ての変更を一元的に管理することによって、変更に伴う障害発生などのリスクを低減する。",
+      "isCorrect": false,
+      "whyAttractive": "変更管理の目的。",
+      "misconceptionSlug": "confuse_incident_problem"
+    },
+    {
+      "label": "ウ",
+      "body": "サービスを構成する全ての機器やソフトウェアに関する情報を最新、正確に維持管理する。",
+      "isCorrect": false,
+      "whyAttractive": "構成管理(CMDB)の目的。",
+      "misconceptionSlug": "confuse_incident_problem"
+    },
+    {
+      "label": "エ",
+      "body": "インシデントによって中断しているサービスを可能な限り迅速に回復する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "インシデント管理=サービス中断・品質低下が発生した時に『迅速にサービスを回復させる』目的のプロセス。原因究明は問題管理の責任範囲(役割分担)。",
+  "keyInsight": "インシデント管理=迅速復旧、問題管理=根本原因解決。インシデント→問題→既知のエラーの順で処理。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_incident_problem", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 20,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問44 ©2022 独立行政法人情報処理推進機構"
+}

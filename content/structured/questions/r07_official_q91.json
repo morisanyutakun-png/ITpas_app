@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q91",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 91,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "情報セキュリティのリスクマネジメントにおけるリスク対応を、リスク移転、リスク回避、リスク低減及びリスク保有の四つに分けて実施することにしたとき、これらに関する記述として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "リスク対応の実施手順であり、リスク回避、リスク移転、リスク低減、リスク保有の順番で進める。",
+      "isCorrect": false,
+      "whyAttractive": "リスク対応4分類は『対応の選択肢』であって実施順序ではない。リスクごとに適した対応を選ぶ。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "リスク対応の実施手順であり、リスク保有、リスク低減、リスク移転、リスク回避の順番で進める。",
+      "isCorrect": false,
+      "whyAttractive": "順序ではなく選択肢。アと同じ誤認。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "リスク対応の選択肢であり、管理対象としたリスクの顕在化に備えて保険を掛けておくことは、リスク回避に該当する。",
+      "isCorrect": false,
+      "whyAttractive": "分類『選択肢』は正しいが、保険=リスク移転で、リスク回避ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "リスク対応の選択肢であり、ノートPCの紛失や盗難に備えて社外への持出しをより厳重に管理することは、リスク低減に該当する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "リスク対応の4分類は『選択肢』(順序ではない)。保険=リスク移転(他者へ損害を移す)。厳重管理で紛失リスクを下げる=リスク低減。リスクの性質に応じて適した対応を選ぶのが正しい考え方。",
+  "keyInsight": "リスク対応=選択肢(順序ではない)。保険=移転、管理強化=低減、対策しない=保有、原因除去=回避。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 42,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問91"
+}

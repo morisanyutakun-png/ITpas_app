@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q95",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 95,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "プロセッサに関する次の記述中のa, bに入れる字句の適切な組合せはどれか。\n\n a は b 処理用に開発されたプロセッサである。CPUに内蔵されている場合も多いが、より高度な b 処理を行う場合には、高性能な a を搭載した拡張ボードを用いることもある。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a=GPU / b=暗号化",
+      "isCorrect": false,
+      "whyAttractive": "aは正しいがbが誤り。GPUの本来用途は画像処理で、暗号化ではない(TPM等が暗号化専用)。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a=GPU / b=画像",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "a=VGA / b=暗号化",
+      "isCorrect": false,
+      "whyAttractive": "VGAはディスプレイ接続規格・表示方式の名称で、プロセッサ名ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "a=VGA / b=画像",
+      "isCorrect": false,
+      "whyAttractive": "bは画像で正しいが、VGAはプロセッサではなく表示規格。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "GPU (Graphics Processing Unit) = 画像処理専用プロセッサ。CPU内蔵もあるが、高性能GPUは拡張ボード(ビデオカード)として搭載する。近年はAIの行列演算にも転用される。VGA=表示規格で、プロセッサではない。",
+  "keyInsight": "GPU=Graphics Processing Unit=画像処理プロセッサ。VGAは表示規格でGPUとは別カテゴリ。",
+  "topicSlugs": [
+    { "slug": "tech_computer_arch", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 41,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問95 ©2019 独立行政法人情報処理推進機構"
+}

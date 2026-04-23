@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q32",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 32,
+  "majorCategory": "strategy",
+  "formatType": "case",
+  "trapType": "scope_overgeneral",
+  "stem": "一般消費者向けの製品を製造しているA社では、新製品の開発に当たって、市場を取り巻くマクロ環境を政治、経済、社会、技術の観点について分析することにした。このときに収集すべき情報として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "競合企業の経営戦略",
+      "isCorrect": false,
+      "whyAttractive": "3C分析やポーター5Forcesで扱うミクロ環境情報。マクロ環境のPESTとは別層。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "イ",
+      "body": "競合企業の財務状況",
+      "isCorrect": false,
+      "whyAttractive": "競合分析=ミクロ環境。マクロ(PEST)は業界外の大きな環境要因。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "ウ",
+      "body": "主要仕入先の原材料価格",
+      "isCorrect": false,
+      "whyAttractive": "サプライチェーン分析=ミクロ環境。個別取引先の話で、マクロではない。",
+      "misconceptionSlug": "confuse_marketing_framework"
+    },
+    {
+      "label": "エ",
+      "body": "我が国の高齢化率",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "PEST分析=P(Politics)・E(Economy)・S(Society)・T(Technology)の4観点でマクロ環境を分析。高齢化率は『社会(Society)』の代表指標。競合分析・仕入先分析はミクロ環境で、PESTではない。",
+  "keyInsight": "マクロ環境=業界・自社を超えた全体的な環境要因(PEST)。ミクロ環境(競合・仕入先)と区別。",
+  "topicSlugs": [
+    { "slug": "biz_marketing_frameworks", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_marketing_framework", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 14,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問32 ©2019 独立行政法人情報処理推進機構"
+}

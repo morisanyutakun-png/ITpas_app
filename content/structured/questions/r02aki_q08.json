@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q08",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 8,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "電力会社において、人による検針の代わりに、インターネットに接続された電力メータと通信することで、各家庭の電力使用量を遠隔計測するといったことが行われている。この事例のように、様々な機器をインターネットに接続して情報を活用する仕組みを表す用語はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "EDI",
+      "isCorrect": false,
+      "whyAttractive": "Electronic Data Interchange=企業間の商取引データを電子交換する仕組み。企業間取引限定で、機器の遠隔計測ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "IoT",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "ISP",
+      "isCorrect": false,
+      "whyAttractive": "Internet Service Provider=インターネット接続業者。通信接続の提供者であって、機器接続の仕組みそのものではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "RFID",
+      "isCorrect": false,
+      "whyAttractive": "電波で非接触にIDを読み取る技術(ICタグ)。機器をインターネットに繋ぐ広い概念ではなく、ID認識技術の一つ。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "IoT (Internet of Things) = 様々なモノをインターネットに接続し、データ収集・遠隔制御する仕組み。スマートメーター(電力計)は代表事例。EDI(企業間データ交換)、ISP(通信事業者)、RFID(ICタグ)とは対象/役割が違う。",
+  "keyInsight": "IoT=『モノのインターネット』。機器 → ネット → データ活用、の流れが揃えば IoT。",
+  "topicSlugs": [
+    { "slug": "tech_iot_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 5,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問8 ©2020 独立行政法人情報処理推進機構"
+}

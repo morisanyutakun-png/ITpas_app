@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q07",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 7,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "蓄積されている会計、販売、購買、顧客などの様々なデータを、迅速かつ効果的に検索、分析する機能をもち、経営者などの意思決定を支援することを目的としたものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "BIツール",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "POSシステム",
+      "isCorrect": false,
+      "whyAttractive": "販売時点情報管理=店舗のレジで売上データを記録するシステム。『販売データ』というキーワードで引き寄せられるが、データ収集側で、全社の意思決定支援ツールではない。",
+      "misconceptionSlug": "confuse_enterprise_systems"
+    },
+    {
+      "label": "ウ",
+      "body": "電子ファイリングシステム",
+      "isCorrect": false,
+      "whyAttractive": "書類を電子化して保存・検索するシステム。『迅速に検索』という言葉で近いが、分析による意思決定支援までは担わない。",
+      "misconceptionSlug": "confuse_enterprise_systems"
+    },
+    {
+      "label": "エ",
+      "body": "ワークフローシステム",
+      "isCorrect": false,
+      "whyAttractive": "承認・稟議などの業務フローを電子化するシステム。業務遂行の仕組みで、データ分析による意思決定支援が目的ではない。",
+      "misconceptionSlug": "confuse_enterprise_systems"
+    }
+  ],
+  "explanation": "BI(Business Intelligence)ツールは、社内各所に蓄積された多様なデータ(会計・販売・購買・顧客)を横断的に検索・分析し、ダッシュボードやレポートで経営判断を支援するツール。POS=販売現場の記録、電子ファイリング=文書管理、ワークフロー=業務の流れ、それぞれ目的が違う。",
+  "keyInsight": "『多様なデータを集めて分析→経営者の意思決定支援』= BI。データ『収集』は POS/センサ、『保管』は DWH、『分析』は BI と役割を分ける。",
+  "topicSlugs": [
+    { "slug": "biz_enterprise_systems", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_enterprise_systems", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 5,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問7 ©2020 独立行政法人情報処理推進機構"
+}

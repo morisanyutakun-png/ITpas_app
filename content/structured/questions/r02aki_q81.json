@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q81",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 81,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "Webサイトに関する記述中のa, bに入れる字句の適切な組合せはどれか。\n\nWebサイトの提供者が、Webブラウザを介して利用者のPCに一時的にデータを保存させる仕組みを a という。これを用いて、利用者の識別が可能となる。Webサイトの見出しや要約などのメタデータを構造化して記述するフォーマットを b という。これを用いて、利用者にWebサイトの更新情報を知らせることができる。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a=CGI / b=CSS",
+      "isCorrect": false,
+      "whyAttractive": "CGI=サーバ側のプログラム実行の仕組み、CSS=スタイル指定言語。どちらも文脈と合わない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a=CGI / b=RSS",
+      "isCorrect": false,
+      "whyAttractive": "bのRSSは正解だが、aのCGIは誤り。CGIは利用者側にデータを保存する仕組みではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "a=cookie / b=CSS",
+      "isCorrect": false,
+      "whyAttractive": "aのcookieは正解だが、bのCSSはスタイル指定で更新情報配信とは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "a=cookie / b=RSS",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "cookie=Webサイト提供者がブラウザ経由でPCに一時データを保存する仕組み(識別に使用)。RSS (RDF Site Summary)=Webサイトの見出し・要約をXMLで構造化し、更新情報を配信するフォーマット。CGI(サーバ処理)・CSS(見た目)とは別。",
+  "keyInsight": "cookie=ブラウザにデータ保存、RSS=更新情報配信。『保存』『配信』の役割で判別。",
+  "topicSlugs": [
+    { "slug": "network_protocols", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 37,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問81 ©2020 独立行政法人情報処理推進機構"
+}

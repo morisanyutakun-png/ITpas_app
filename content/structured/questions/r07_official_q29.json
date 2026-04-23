@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q29",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 29,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "企業経営の中核となる考え方を、ミッション、ビジョン、バリューの三つに分けて示す場合、ビジョンとして示すものとして、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "企業の存在意義や使命",
+      "isCorrect": false,
+      "whyAttractive": "ミッションの説明。『何のために存在するか』で、ビジョンの前提となる概念。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "企業の存在意義や使命をふまえた、ある時点でのありたい姿",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "戦略を実現するために重要となる業績管理指標",
+      "isCorrect": false,
+      "whyAttractive": "KPIの説明。実行段階の業績指標で、ビジョンではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "戦略を実現するために重要となる成功要因",
+      "isCorrect": false,
+      "whyAttractive": "KSF/CSF(重要成功要因)の説明。戦略実行の着眼点で、ありたい姿(ビジョン)ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "経営の3本柱: ミッション(存在意義・使命=なぜ存在するか)、ビジョン(ありたい姿=どこを目指すか)、バリュー(価値観・行動指針=どう振る舞うか)。KPI(業績指標)・KSF(成功要因)は戦略実行の手段で、ビジョンとは別階層。",
+  "keyInsight": "ミッション=『なぜ』、ビジョン=『どこへ』、バリュー=『どう』。この3つの視点で経営の核を示す。",
+  "topicSlugs": [
+    { "slug": "biz_models", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 13,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問29"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q28",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 28,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "生成AIに関する記述として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "一切の学習を必要とせずに、新しいコンテンツを生成する。",
+      "isCorrect": false,
+      "whyAttractive": "AIは学習なしには動作しない。学習データを必要としないAIは存在しない。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "イ",
+      "body": "過去のデータから項目間の相関などを学習したモデルを用いて、現在のデータから将来の値を予測して出力する。",
+      "isCorrect": false,
+      "whyAttractive": "予測モデル(回帰分析等)の説明。生成AIは『新しいコンテンツ生成』で予測とは別の目的。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "作成したシナリオに基づいて動作するソフトウェアロボットによって、業務を自動化する。",
+      "isCorrect": false,
+      "whyAttractive": "RPA(Robotic Process Automation)の説明。定型業務自動化で、生成AIとは別。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "エ",
+      "body": "自然言語で指示された内容に従って、事前に学習したデータを基に、新しいコンテンツを生成する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "生成AI (Generative AI) = 事前学習した大量データを基に、自然言語プロンプト等の指示に従い『新しいコンテンツ』(文章・画像・音声・コード等)を生成するAI。ChatGPT・DALL-E等が代表。予測AI(イ)・RPA(ウ)とは目的が違う。",
+  "keyInsight": "生成AI=『学習+指示→新コンテンツ生成』。予測や自動化とは別目的。",
+  "topicSlugs": [
+    { "slug": "ai_generative_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_ai_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 13,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問28"
+}

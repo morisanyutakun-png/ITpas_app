@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q19",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 19,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "製造販売業A社は、バランススコアカードの考え方を用いて戦略テーマを設定した。業務プロセス(内部ビジネスプロセス)の視点に基づく戦略テーマとして、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "売上高の拡大",
+      "isCorrect": false,
+      "whyAttractive": "財務の視点のテーマ。業務プロセス視点ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "顧客ロイヤルティの拡大",
+      "isCorrect": false,
+      "whyAttractive": "顧客の視点のテーマ。業務プロセス視点ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "従業員の技術力強化",
+      "isCorrect": false,
+      "whyAttractive": "学習と成長の視点のテーマ。業務プロセス視点ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "部品の共有化比率の向上",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "BSCの4視点: ①財務(売上・利益)、②顧客(ロイヤリティ・満足度)、③業務プロセス(内部効率・品質・部品共有化等)、④学習と成長(人材育成)。部品共有化はプロセス改善=内部プロセス視点。",
+  "keyInsight": "BSC=財務/顧客/業務プロセス/学習成長の4視点。業務プロセス=社内の運営効率化の施策。",
+  "topicSlugs": [
+    { "slug": "biz_marketing_frameworks", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_marketing_framework", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 9,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問19 ©2022 独立行政法人情報処理推進機構"
+}

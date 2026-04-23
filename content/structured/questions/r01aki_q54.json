@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q54",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 54,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "利用者からの問合せの窓口となるサービスデスクでは、電話や電子メールに加え、自動応答技術を用いてリアルタイムで会話形式のコミュニケーションを行うツールが活用されている。このツールとして、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "FAQ",
+      "isCorrect": false,
+      "whyAttractive": "『よくある質問と回答集』。静的な検索で、リアルタイム会話ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "RPA",
+      "isCorrect": false,
+      "whyAttractive": "ソフトウェアロボットによる業務自動化。対話型応答ではなく定型作業の自動化。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "エスカレーション",
+      "isCorrect": false,
+      "whyAttractive": "対応を上位者(二次サポート)に引き継ぐプロセス。ツールではなく手順概念。",
+      "misconceptionSlug": "confuse_incident_problem"
+    },
+    {
+      "label": "エ",
+      "body": "チャットボット",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "チャットボット=自動応答技術で利用者と会話形式のコミュニケーションを行うツール。FAQ(静的Q&A)、RPA(業務自動化)、エスカレーション(引継ぎプロセス)とは別。『会話形式』『リアルタイム』がキーワード。",
+  "keyInsight": "チャットボット=対話型自動応答。『会話』『リアルタイム』『自動』で識別。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 23,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問54 ©2019 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q68",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 68,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "CSIRTとして行う活動の例として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "OSやアプリケーションソフトウェアのセキュリティパッチを定期的に適用する。",
+      "isCorrect": false,
+      "whyAttractive": "システム運用部門の通常業務。CSIRTはインシデント対応専門組織。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "地震や洪水などの自然災害を想定し、情報資産を守るために全社的な事業継続計画を策定する。",
+      "isCorrect": false,
+      "whyAttractive": "BCPの活動。事業継続計画で、サイバーセキュリティインシデント対応ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "セキュリティ事故の発生時に影響範囲を調査して、被害拡大を防止するための対策実施を支援する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "保守業者がサーバ室で作業した日に、作業員の入退出が適切に記録されていたことを監査する。",
+      "isCorrect": false,
+      "whyAttractive": "システム監査の活動。物理的記録の監査で、CSIRTの役割ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "CSIRT (Computer Security Incident Response Team) = セキュリティインシデント対応の専門チーム。事故発生時の影響調査・封じ込め・対策支援が主役割。パッチ適用(運用)・BCP(事業継続)・監査(監査部門)とは別役割。",
+  "keyInsight": "CSIRT=『セキュリティインシデント対応専門チーム』。発生時の影響調査・被害拡大防止が核心。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 32,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問68"
+}

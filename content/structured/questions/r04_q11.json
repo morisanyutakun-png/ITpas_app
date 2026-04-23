@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q11",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 11,
+  "majorCategory": "strategy",
+  "formatType": "calculation",
+  "trapType": "edge_case_miss",
+  "stem": "与信限度額が3,000万円に設定されている取引先の5月31日業務終了時までの全取引が表のとおりであるとき、その時点での取引先の与信の余力は何万円か。ここで、受注分も与信に含めるものとし、満期日前の手形回収は回収とはみなさないものとする。\n\n取引①4/2 売上計上400万/5/31 現金回収400万、取引②4/10 売上計上300万/5/10 手形回収300万(満期日6/10)、取引③5/15 売上計上600万、取引④5/20 受注200万。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "1,100",
+      "isCorrect": false,
+      "whyAttractive": "与信使用額(1,100万)を余力と誤答。限度-使用=余力。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "1,900",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "2,200",
+      "isCorrect": false,
+      "whyAttractive": "手形回収300万を回収済と扱った誤計算。満期前なので与信残として扱う。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "2,400",
+      "isCorrect": false,
+      "whyAttractive": "受注200万を与信に含めない誤り。問題文で『受注も与信に含める』と指定。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "与信使用額: ①0(回収済)+②300(満期前なので未回収扱い)+③600(未回収)+④200(受注)=1,100万円。余力=3,000-1,100=1,900万円。",
+  "keyInsight": "与信余力=限度額-使用中。手形は満期到来で回収済扱い。受注も与信枠使用。",
+  "topicSlugs": [
+    { "slug": "biz_financial_metrics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 6,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問11 ©2022 独立行政法人情報処理推進機構"
+}

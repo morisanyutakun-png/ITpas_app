@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q59",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 59,
+  "majorCategory": "technology",
+  "formatType": "case",
+  "trapType": "edge_case_miss",
+  "stem": "仮想記憶を利用したコンピュータで、主記憶と補助記憶の間で内容の入替えが頻繁に行われていることが原因で処理性能が低下していることが分かった。この処理性能が低下している原因を除去する対策として、最も適切なものはどれか。ここで、このコンピュータの補助記憶装置は1台だけである。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "演算能力の高いCPUと交換する。",
+      "isCorrect": false,
+      "whyAttractive": "CPU強化は全般的な高速化だが、スラッシング(入替え頻発)の原因は主記憶不足であって演算能力ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "仮想記憶の容量を増やす。",
+      "isCorrect": false,
+      "whyAttractive": "仮想記憶を広げると逆効果。プログラムがさらに広く展開されて物理メモリ不足が加速し、スラッシングが悪化する。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "主記憶装置の容量を増やす。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "補助記憶装置を大きな容量の装置に交換する。",
+      "isCorrect": false,
+      "whyAttractive": "補助記憶の容量は入替え頻度とは無関係。補助記憶を大きくしても、主記憶に乗り切らないデータは変わらず入替えが続く。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "主記憶と補助記憶の頻繁な入替え=『スラッシング』。原因は主記憶(物理メモリ)不足。対策は主記憶の増設で、プログラム全体を主記憶に乗せてページング頻度を下げる。CPU強化・仮想記憶拡大・補助記憶拡大では解決しない。",
+  "keyInsight": "スラッシング=主記憶不足の症状。治療は『主記憶を増やす』のみ。",
+  "topicSlugs": [
+    { "slug": "tech_computer_arch", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 27,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問59 ©2020 独立行政法人情報処理推進機構"
+}

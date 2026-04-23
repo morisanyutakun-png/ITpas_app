@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q03",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 3,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "ゲーム機、家電製品などに搭載されている、ハードウェアの基本的な制御を行うためのソフトウェアはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "グループウェア",
+      "isCorrect": false,
+      "whyAttractive": "組織内のコミュニケーション・共同作業支援ソフト。家電/ゲーム機の制御用途ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "シェアウェア",
+      "isCorrect": false,
+      "whyAttractive": "試用期間後に料金支払い型のソフト配布形態。ソフト種類の分類ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ファームウェア",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "ミドルウェア",
+      "isCorrect": false,
+      "whyAttractive": "OSとアプリケーションの間に位置するソフト(DBMS、Webサーバ等)。機器組込制御ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ファームウェア=家電・ゲーム機・周辺機器のROMに書き込まれる基本制御ソフト。ハードとソフトの中間でfirm(堅い)と表現。アップデートで機能追加・不具合修正可能。",
+  "keyInsight": "ファームウェア=機器組込の基本制御ソフト。ミドルウェア(OS-アプリ間)と区別。",
+  "topicSlugs": [
+    { "slug": "tech_computer_arch", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 2,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問3 ©2022 独立行政法人情報処理推進機構"
+}

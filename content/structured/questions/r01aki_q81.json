@@ -1,0 +1,54 @@
+{
+  "externalKey": "r01aki_q81",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 81,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "IoTシステム向けに使われる無線ネットワークであり、一般的な電池で数年以上の運用が可能な省電力性と、最大で数十kmの通信が可能な広域性を有するものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "LPWA",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "MDM",
+      "isCorrect": false,
+      "whyAttractive": "Mobile Device Management=モバイル端末管理。管理手法で、無線通信規格ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "SDN",
+      "isCorrect": false,
+      "whyAttractive": "Software-Defined Networking=ソフトウェア定義ネットワーク。IoT向け省電力無線ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "WPA2",
+      "isCorrect": false,
+      "whyAttractive": "無線LANの暗号化規格。通信規格ではなく暗号化プロトコル。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "LPWA (Low Power Wide Area) = 低消費電力+広域通信の無線ネットワーク。数年の電池動作+数十km通信(低速)でIoT向け。MDM(端末管理)・SDN(ネット制御)・WPA2(暗号化)とは別カテゴリ。",
+  "keyInsight": "LPWA=『低電力+広域』の無線。速度を犠牲にして電池寿命と距離を取る IoT 向け。",
+  "topicSlugs": [
+    { "slug": "tech_iot_basics", "weight": 1 },
+    { "slug": "network_protocols", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 35,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問81 ©2019 独立行政法人情報処理推進機構"
+}

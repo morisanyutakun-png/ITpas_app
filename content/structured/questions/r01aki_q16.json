@@ -1,0 +1,55 @@
+{
+  "externalKey": "r01aki_q16",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 16,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "システム導入を検討している企業や官公庁などがRFIを実施する目的として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ベンダ企業からシステムの詳細な見積金額を入手し、契約金額を確定する。",
+      "isCorrect": false,
+      "whyAttractive": "見積依頼=RFQ(Request for Quote)。RFIはもっと手前の情報収集段階。",
+      "misconceptionSlug": "confuse_procurement_docs"
+    },
+    {
+      "label": "イ",
+      "body": "ベンダ企業から情報収集を行い、システムの技術的な課題や実現性を把握する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "ベンダ企業との認識のずれをなくし、取引を適正化する。",
+      "isCorrect": false,
+      "whyAttractive": "SLAや契約書の役割。取引適正化はRFIの目的ではない。",
+      "misconceptionSlug": "confuse_procurement_docs"
+    },
+    {
+      "label": "エ",
+      "body": "ベンダ企業に提案書の提出を求め、発注先を決定する。",
+      "isCorrect": false,
+      "whyAttractive": "提案依頼=RFP(Request for Proposal)。RFIはその前段階の情報収集。",
+      "misconceptionSlug": "confuse_procurement_docs"
+    }
+  ],
+  "explanation": "RFI (Request for Information) = 情報提供依頼書。調達の初期段階で、技術動向・実現性・ベンダの能力等の情報を収集するための依頼。RFP(提案依頼)→RFQ(見積依頼)と進むが、RFIはその前の予備調査。",
+  "keyInsight": "RFI=Information(情報収集)、RFP=Proposal(提案依頼)、RFQ=Quote(見積)。Iの意味で区別。",
+  "topicSlugs": [
+    { "slug": "biz_procurement_documents", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_procurement_docs", "weight": 1 }
+  ],
+  "materialSlugs": [
+    { "slug": "procurement_docs_flow", "role": "primary" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 8,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問16 ©2019 独立行政法人情報処理推進機構"
+}

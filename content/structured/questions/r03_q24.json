@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q24",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 24,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "テレワークに関する記述として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ITを活用した、場所や時間にとらわれない柔軟な働き方のこと",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "ある業務に対して従来割り当てていた人数を増員し、業務を細分化して配分すること",
+      "isCorrect": false,
+      "whyAttractive": "ワークシェアリングの説明。人員分散であって、場所・時間の柔軟化ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "個人が所有するPCやスマートデバイスなどの機器を、会社が許可を与えた上でオフィスでの業務に利用させること",
+      "isCorrect": false,
+      "whyAttractive": "BYODの説明。私物機器の業務利用で、働き方の柔軟化とは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "仕事の時間と私生活の時間の調和に取り組むこと",
+      "isCorrect": false,
+      "whyAttractive": "ワークライフバランスの説明。テレワークはその実現手段の1つだが、テレワーク自体の定義ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "テレワーク=Tele(遠隔)+Work=ITを活用した『場所・時間にとらわれない柔軟な働き方』。在宅勤務、モバイルワーク、サテライトオフィス等を含む。ワークシェアリング(人員配分)・BYOD(私物機器)・ワークライフバランス(調和)とは別概念。",
+  "keyInsight": "テレワーク=『場所・時間の柔軟化』。手段としてIT、実現形態として在宅・モバイル・サテライト。",
+  "topicSlugs": [
+    { "slug": "biz_dx_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 12,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問24 ©2021 独立行政法人情報処理推進機構"
+}

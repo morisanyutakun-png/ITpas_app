@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q70",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 70,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "情報セキュリティにおける脅威のうち、脆弱性を是正するセキュリティパッチをソフトウェアに適用することが最も有効な対策になるものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "総当たり攻撃",
+      "isCorrect": false,
+      "whyAttractive": "全パスワードパターンを試す攻撃。対策はパスワード強度/アカウントロック等で、パッチ適用ではない。",
+      "misconceptionSlug": "confuse_malware_types"
+    },
+    {
+      "label": "イ",
+      "body": "ソーシャルエンジニアリング",
+      "isCorrect": false,
+      "whyAttractive": "人間心理を突く攻撃。対策は教育・認識向上で、ソフトのパッチでは防げない。",
+      "misconceptionSlug": "confuse_malware_types"
+    },
+    {
+      "label": "ウ",
+      "body": "パスワードリスト攻撃",
+      "isCorrect": false,
+      "whyAttractive": "他所から漏洩したID/PW組合せを使う攻撃。対策は多要素認証等で、パッチではない。",
+      "misconceptionSlug": "confuse_malware_types"
+    },
+    {
+      "label": "エ",
+      "body": "バッファオーバーフロー",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "バッファオーバーフロー=プログラムのメモリバッファ境界チェック不備という『脆弱性』を悪用する攻撃。対策はソフトのパッチ適用で脆弱性を塞ぐ。総当たり・ソーシャル・パスワードリストはソフトの脆弱性ではなく人間/認証の問題。",
+  "keyInsight": "脆弱性を是正=プログラムのバグ修正=パッチ適用で防ぐのはバッファオーバーフロー等のコード脆弱性。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_malware_types", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 33,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問70"
+}

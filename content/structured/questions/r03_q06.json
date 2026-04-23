@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q06",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 6,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "インターネットに接続できる機能が搭載されており、車載センサで計測した情報をサーバへ送信し、そのサーバから運転に関する情報のフィードバックを受けて運転の支援などに活用することができる自動車を表す用語として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "カーシェアリング",
+      "isCorrect": false,
+      "whyAttractive": "車の共同利用。ビジネスモデルで、IoT型自動車そのものではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "カーナビゲーションシステム",
+      "isCorrect": false,
+      "whyAttractive": "道案内システム(GPS+地図)。単機能で、双方向クラウド連携のコネクテッドカーではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "コネクテッドカー",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "電気自動車",
+      "isCorrect": false,
+      "whyAttractive": "動力源が電気の自動車(EV)。動力の話で、インターネット接続の話ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "コネクテッドカー=インターネット常時接続機能を持ち、センサで計測した情報をクラウドに送り、運転支援や各種サービスを受ける自動車。カーシェアリング(利用形態)・カーナビ(単機能)・EV(動力源)とは異なる概念。",
+  "keyInsight": "コネクテッドカー=『常時接続+双方向連携』の自動車。IoT化した車。",
+  "topicSlugs": [
+    { "slug": "tech_iot_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 4,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問6 ©2021 独立行政法人情報処理推進機構"
+}

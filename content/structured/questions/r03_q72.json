@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q72",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 72,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "IoTシステムにおいて、センサで計測した温度データを基に、エアコンを自動的に制御する仕組みに関する記述として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "計測したデータを処理して得られた情報に基づき、エアコンの電源のON/OFFや温度調整を行う装置をアクチュエータという。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "計測したデータを処理する機能をセンサという。",
+      "isCorrect": false,
+      "whyAttractive": "センサは『計測する』機能。『処理する』ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "データを計測する機能をアクチュエータという。",
+      "isCorrect": false,
+      "whyAttractive": "アクチュエータとセンサを逆に説明。計測=センサ、動作=アクチュエータ。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "制御を行う装置をセンサという。",
+      "isCorrect": false,
+      "whyAttractive": "センサは計測する装置。制御=アクチュエータ。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "IoT三要素: センサ(計測=温度を測る)→処理/判断(クラウド/AI)→アクチュエータ(動作=エアコンON/OFF)。アクチュエータは物理的な動作を行う装置全般(モーター・バルブ・ヒーター等含む)。",
+  "keyInsight": "センサ=計測(入力)、アクチュエータ=動作(出力)。IoTは入力→処理→出力の流れ。",
+  "topicSlugs": [
+    { "slug": "tech_iot_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 33,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問72 ©2021 独立行政法人情報処理推進機構"
+}

@@ -1,0 +1,54 @@
+{
+  "externalKey": "r02aki_q84",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 84,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "negation_miss",
+  "stem": "ISMSの情報セキュリティリスク対応における、人的資源に関するセキュリティ管理策の記述として、適切でないものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "雇用する候補者全員に対する経歴などの確認は、関連する法令、規制及び倫理に従って行う。",
+      "isCorrect": false,
+      "whyAttractive": "雇用前の背景調査は人的セキュリティの正しい実践。適切な記述。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "情報セキュリティ違反を犯した従業員に対する正式な懲戒手続を定めて、周知する。",
+      "isCorrect": false,
+      "whyAttractive": "違反時の懲戒手続の整備は人的セキュリティの基本。適切な記述。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "組織の確立された方針及び手順に従った情報セキュリティの適用を自社の全ての従業員に要求するが、業務を委託している他社には要求しないようにする。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "退職する従業員に対し、退職後も有効な情報セキュリティに関する責任事項及び義務を定めてその従業員に伝え、退職後もそれを守らせる。",
+      "isCorrect": false,
+      "whyAttractive": "退職後の守秘義務継続も人的セキュリティの重要項目。適切な記述。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "設問は『適切でないもの』。ウは委託先には要求しないとしているが、実際は委託先にも同等のセキュリティ遵守を契約で要求する必要がある(サプライチェーンセキュリティ)。自社内だけ守っても委託先が漏洩源になればリスクは残る。",
+  "keyInsight": "セキュリティは委託先・パートナーにも及ぼす。『自社だけ』の線引きはサプライチェーン脆弱性を生む。『否定形の問題』は1つだけ異質な選択肢を探す。",
+  "commonMistakeFlow": "『適切でないもの』を見落とし、適切な選択肢(ア・イ・エ)を選んでしまう誤り。否定形の問題文に注意。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 38,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問84 ©2020 独立行政法人情報処理推進機構"
+}

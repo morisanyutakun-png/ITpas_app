@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q23",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 23,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "order_swap",
+  "stem": "経営戦略と情報システム戦略の関係性の説明として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "経営戦略と情報システム戦略は、それぞれが相互に独立したものとして策定される。",
+      "isCorrect": false,
+      "whyAttractive": "部門の独立性から独立関係と考えがち。だが両者は主従関係にあり、独立ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "経営戦略の内容を踏まえて情報システム戦略が策定される。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "情報システム戦略の内容を踏まえて経営戦略が策定される。",
+      "isCorrect": false,
+      "whyAttractive": "IT主導の時代感から逆転構造を選びがち。だが情報システムは『経営の道具』で、経営戦略が上位概念。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "情報システム戦略はIT部門の戦略であり、経営戦略は経営企画部門の戦略である。",
+      "isCorrect": false,
+      "whyAttractive": "部門別の戦略と見なす分割論。だが『情報システム戦略』は企業全体の戦略であって、IT部門限定ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "経営戦略(何を実現するか)が先に決まり、それを実現するために情報システム戦略(どんなIT基盤で支えるか)が策定される。情報システム戦略は経営戦略の『手段』という位置づけ。",
+  "keyInsight": "経営戦略=目的、情報システム戦略=手段。上位→下位の順で策定。",
+  "topicSlugs": [
+    { "slug": "biz_dx_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 11,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問23 ©2020 独立行政法人情報処理推進機構"
+}

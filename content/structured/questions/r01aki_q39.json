@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q39",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 39,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "共通フレームの定義に含まれているものとして、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "各工程で作成する成果物の文書化に関する詳細な規定",
+      "isCorrect": false,
+      "whyAttractive": "文書化規定はISO 29110や個別組織標準。共通フレームは『作業項目のひな形』で、文書化詳細までは規定しない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "システムの開発や保守の各工程の作業項目",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "システムを構成するソフトウェアの信頼性レベルや保守性レベルなどの尺度の規定",
+      "isCorrect": false,
+      "whyAttractive": "品質特性(ISO/IEC 25010)の話。品質尺度であって作業項目ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "システムを構成するハードウェアの開発に関する詳細な作業項目",
+      "isCorrect": false,
+      "whyAttractive": "共通フレームはソフトウェアライフサイクル中心。ハードウェア詳細までは規定しない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "共通フレーム(SLCP-JCF)=ソフトウェア開発・保守で取引上必要な作業項目を共通の物差しとして定義したもの。各工程(企画・要件・設計・実装・テスト・保守等)の作業項目が中核。文書化規定・品質尺度・ハードウェアの詳細は別の規格が担当。",
+  "keyInsight": "共通フレーム=『ソフトウェア開発・保守の作業項目ひな形』。取引上の物差しとして使う。",
+  "topicSlugs": [
+    { "slug": "pm_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 17,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問39 ©2019 独立行政法人情報処理推進機構"
+}

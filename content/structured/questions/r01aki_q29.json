@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q29",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 29,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "SEOに関する説明として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "SNSに立ち上げたコミュニティの参加者に、そのコミュニティの目的に合った検索結果を表示する。",
+      "isCorrect": false,
+      "whyAttractive": "SNS機能の一部で、検索エンジンのSEOとは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "自社のWebサイトのアクセスログを、検索エンジンを使って解析し、不正アクセスの有無をチェックする。",
+      "isCorrect": false,
+      "whyAttractive": "アクセスログ解析・SIEMの話。SEOは検索順位最適化で、セキュリティ分析ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "利用者が検索エンジンを使ってキーワード検索を行ったときに、自社のWebサイトを検索結果の上位に表示させるよう工夫する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "利用者がどのような検索エンジンを望んでいるかを調査し、要望にあった検索エンジンを開発する。",
+      "isCorrect": false,
+      "whyAttractive": "検索エンジン製品開発の話。SEOは既存検索エンジンへの『対策』側。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "SEO (Search Engine Optimization) = 検索エンジン最適化。自社サイトが検索キーワードで上位に表示されるようにコンテンツ・構造を工夫する施策。検索エンジン『を』作るのではなく『に対する』最適化。",
+  "keyInsight": "SEO=Search Engine Optimization=検索エンジン『向け』最適化。ウェブサイト運営者側の施策。",
+  "topicSlugs": [
+    { "slug": "biz_dx_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 13,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問29 ©2019 独立行政法人情報処理推進機構"
+}

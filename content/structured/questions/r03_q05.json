@@ -1,0 +1,55 @@
+{
+  "externalKey": "r03_q05",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 5,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "クラウドコンピューティングの説明として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "システム全体を管理する大型汎用機などのコンピュータに、データを一極集中させて処理すること",
+      "isCorrect": false,
+      "whyAttractive": "集中処理システム(メインフレーム)の説明。クラウドは分散/ネットワーク提供で対極。",
+      "misconceptionSlug": "confuse_cloud_models"
+    },
+    {
+      "label": "イ",
+      "body": "情報システム部門以外の人が自らコンピュータを操作し、自分や自部門の業務に役立てること",
+      "isCorrect": false,
+      "whyAttractive": "EUC(エンドユーザコンピューティング)の説明。利用形態で、インフラ提供形態ではない。",
+      "misconceptionSlug": "confuse_cloud_models"
+    },
+    {
+      "label": "ウ",
+      "body": "ソフトウェアやハードウェアなどの各種リソースを、インターネットなどのネットワークを経由して、オンデマンドでスケーラブルに利用すること",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "ネットワークを介して、複数台のコンピュータに処理を分散させ、処理結果を共有すること",
+      "isCorrect": false,
+      "whyAttractive": "グリッドコンピューティング/分散処理の説明。クラウドも分散だが、本質は『ネット経由でオンデマンド利用』。",
+      "misconceptionSlug": "confuse_cloud_models"
+    }
+  ],
+  "explanation": "クラウドコンピューティング=IT資源(ソフト・ハード・ストレージ)をネットワーク(通常インターネット)経由でオンデマンド・スケーラブルに利用する形態。AWS/Azure/GCP等。集中処理(メインフレーム)・EUC(利用形態)・グリッド(計算力集約)とは別概念。",
+  "keyInsight": "クラウド=『ネット経由+オンデマンド+スケーラブル』のIT資源利用。『所有』から『利用』への発想転換。",
+  "topicSlugs": [
+    { "slug": "cloud_service_models", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_cloud_models", "weight": 1 }
+  ],
+  "materialSlugs": [
+    { "slug": "cloud_service_models_table", "role": "helper" }
+  ],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 3,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問5 ©2021 独立行政法人情報処理推進機構"
+}

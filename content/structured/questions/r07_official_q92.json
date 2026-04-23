@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q92",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 92,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "従業員が使用するPCがランサムウェアに感染した場合の損害を軽減する対策例として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "PCが接続するファイルサーバのHDDのバックアップデータを定期的に取得し、ネットワークから切り離して保管する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "PCに多要素認証の仕組みを導入する。",
+      "isCorrect": false,
+      "whyAttractive": "不正ログイン対策。ランサムウェア感染時の『損害軽減』ではなく、感染予防(ログイン型)の対策。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "PCのHDDを暗号化する。",
+      "isCorrect": false,
+      "whyAttractive": "紛失・盗難時の情報漏えい対策。ランサムウェアによる暗号化・身代金要求には無力(攻撃者はさらに暗号化してしまう)。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "PCへのログイン時に、パスワードを複数回間違えたら、当該IDをロックする。",
+      "isCorrect": false,
+      "whyAttractive": "総当たり攻撃対策。ランサムウェア感染後の損害軽減ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ランサムウェア=ファイルを暗号化し身代金要求。損害軽減の本質は『暗号化されないバックアップからの復旧』。ネット切り離し保管(オフライン)が鉄則で、ネット接続中のバックアップも攻撃者に暗号化される危険あり。",
+  "keyInsight": "ランサムウェア対策=『オフラインバックアップ』。多要素認証・暗号化・ロックは感染後の損害軽減には効果なし。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_malware_types", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 43,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問92"
+}

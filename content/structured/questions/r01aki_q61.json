@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q61",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 61,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "edge_case_miss",
+  "stem": "IPA『組織における内部不正防止ガイドライン(第4版)』にも記載されている、内部不正防止の取組として適切なものだけを全て挙げたものはどれか。\n\na システム管理者を決めるときには、高い規範意識をもつ者を一人だけ任命し、全ての権限をその管理者に集中させる。\nb 重大な不正を犯した内部不正者に対しては組織としての処罰を検討するとともに、再発防止の措置を実施する。\nc 内部不正対策は経営者の責任であり、経営者は基本となる方針を組織内外に示す\"基本方針\"を策定し、役職員に周知徹底する。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a, b",
+      "isCorrect": false,
+      "whyAttractive": "aの『権限集中』は内部統制の『職務分離原則』に反する。高い規範意識でも権限集中はリスク。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a, b, c",
+      "isCorrect": false,
+      "whyAttractive": "aを適切と誤解。『権限集中』は不正防止には逆効果で、職務分離が原則。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "a, c",
+      "isCorrect": false,
+      "whyAttractive": "a(権限集中)を適切と誤解。職務分離の基本原則を破る。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "b, c",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "a=権限集中は『職務分離原則』に反し、不正防止には不適切(人間の規範意識に頼る設計はNG)。b=処罰と再発防止策は適切。c=経営者責任での方針策定は内部不正防止の基本。よって b, c が正解。",
+  "keyInsight": "内部不正防止=『職務分離』が基本。『人を信じる』のではなく『仕組みで防ぐ』。権限集中はどんな理由でもNG。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 26,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問61 ©2019 独立行政法人情報処理推進機構"
+}

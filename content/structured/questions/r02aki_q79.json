@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q79",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 79,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "abbrev_mix",
+  "stem": "次の①〜④のうち、電源供給が途絶えると記憶内容が消える揮発性のメモリだけを全て挙げたものはどれか。\n\n① DRAM\n② ROM\n③ SRAM\n④ SSD",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "①, ②",
+      "isCorrect": false,
+      "whyAttractive": "ROMを揮発性と誤解しがちだが、ROM(Read Only Memory)は不揮発性(電源切っても残る)。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "①, ③",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "②, ④",
+      "isCorrect": false,
+      "whyAttractive": "両方不揮発性。逆の組合せ。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "③, ④",
+      "isCorrect": false,
+      "whyAttractive": "SRAMは揮発性で正しいが、SSDは不揮発性(電源切っても残る)。SSDをRAMと混同する誤り。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "揮発性=電源切ると消える: DRAM(主記憶)、SRAM(キャッシュ)。不揮発性=電源切っても残る: ROM(ファーム)、SSD(ストレージ)、HDD、フラッシュメモリ。『RAM系』は基本揮発性、『ROM/ストレージ』は不揮発性と覚える。",
+  "keyInsight": "RAM=揮発性、ROM/SSD=不揮発性。DRAM/SRAMはどちらもRAMで揮発性。",
+  "topicSlugs": [
+    { "slug": "tech_computer_arch", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 36,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問79 ©2020 独立行政法人情報処理推進機構"
+}

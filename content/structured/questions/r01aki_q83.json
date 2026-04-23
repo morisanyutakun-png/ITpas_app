@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q83",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 83,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "order_swap",
+  "stem": "ファイルの階層構造に関する次の記述中のa, bに入れる字句の適切な組合せはどれか。\n\n階層型ファイルシステムにおいて、最上位の階層のディレクトリを a ディレクトリという。ファイルの指定方法として、カレントディレクトリを基点として目的のファイルまでのすべてのパスを記述する方法と、ルートディレクトリを基点として目的のファイルまでの全てのパスを記述する方法がある。ルートディレクトリを基点としたファイルの指定方法を b パス指定という。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a=カレント / b=絶対",
+      "isCorrect": false,
+      "whyAttractive": "aのカレントは『今いるディレクトリ』で最上位ではない。最上位はルート。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a=カレント / b=相対",
+      "isCorrect": false,
+      "whyAttractive": "両方誤り。最上位=ルート、ルートから指定=絶対パス。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "a=ルート / b=絶対",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "a=ルート / b=相対",
+      "isCorrect": false,
+      "whyAttractive": "aは正しいがbが誤り。ルートから指定=絶対パス。相対はカレント基点。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "階層型ファイルシステムの最上位=ルートディレクトリ。絶対パス=ルートから記述(/home/user/file.txt等)、相対パス=カレントから記述(../data.txt等)。ルート=固定点、カレント=現在位置の区別が核心。",
+  "keyInsight": "ルート=最上位(固定)、カレント=現在位置(可変)。絶対=ルート基点、相対=カレント基点。",
+  "topicSlugs": [
+    { "slug": "tech_computer_arch", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 36,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問83 ©2019 独立行政法人情報処理推進機構"
+}

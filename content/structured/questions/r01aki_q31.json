@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q31",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 31,
+  "majorCategory": "strategy",
+  "formatType": "case",
+  "trapType": "similar_term",
+  "stem": "RFIDの活用によって可能となる事柄として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "移動しているタクシーの現在位置をリアルタイムで把握する。",
+      "isCorrect": false,
+      "whyAttractive": "GPSの用途。衛星測位技術で、RFID(非接触ICタグ)ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "インターネット販売などで情報を暗号化して通信の安全性を確保する。",
+      "isCorrect": false,
+      "whyAttractive": "SSL/TLSの用途。暗号化通信で、RFIDとは無関係。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "入館時に指紋や虹彩といった身体的特徴を識別して個人を認証する。",
+      "isCorrect": false,
+      "whyAttractive": "バイオメトリクス認証の用途。RFIDはICタグで身体的特徴ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "本の貸出時や返却時に複数の本を一度にまとめて処理する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "RFID=電波で非接触にICタグを読み取る技術。複数タグを同時に一括読取できるのが特徴(図書館の返却機で本を一度に読取等)。GPS(位置)・SSL(暗号)・バイオメトリクス(生体)とは別技術。",
+  "keyInsight": "RFIDの強み=『非接触+複数同時読取』。電波範囲内のタグを一括で読める。",
+  "topicSlugs": [
+    { "slug": "tech_iot_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 14,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問31 ©2019 独立行政法人情報処理推進機構"
+}

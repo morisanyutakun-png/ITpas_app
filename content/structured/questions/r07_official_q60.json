@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q60",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 60,
+  "majorCategory": "technology",
+  "formatType": "network_basics",
+  "trapType": "abbrev_mix",
+  "stem": "TCP/IPネットワークで用いられるプロトコルであるFTPの役割として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "正確な現在時刻を取得する。",
+      "isCorrect": false,
+      "whyAttractive": "NTP(時刻同期)の役割。Time関連のプロトコルで、FTPとは別。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    },
+    {
+      "label": "イ",
+      "body": "電子メールを転送する。",
+      "isCorrect": false,
+      "whyAttractive": "SMTP(メール送信)の役割。メール系プロトコルで、ファイル転送ではない。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    },
+    {
+      "label": "ウ",
+      "body": "ネットワーク接続に必要なIPアドレスなどの情報を自動的に割り当てる。",
+      "isCorrect": false,
+      "whyAttractive": "DHCPの役割。IP自動割当で、FTPとは別。",
+      "misconceptionSlug": "confuse_protocol_layer"
+    },
+    {
+      "label": "エ",
+      "body": "ファイルをPC間で転送する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "FTP (File Transfer Protocol) = TCP/IPネットワーク上でファイルを転送するプロトコル。NTP(時刻)・SMTP(メール)・DHCP(IP割当)とは役割が違う。Transfer Protocolの『F』=File。",
+  "keyInsight": "FTP=File Transfer Protocol=『ファイル転送』。名前通りの役割。",
+  "topicSlugs": [
+    { "slug": "network_protocols", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_protocol_layer", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 28,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問60"
+}

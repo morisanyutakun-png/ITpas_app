@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q88",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 88,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "ISMSのリスクアセスメントにおいて、最初に行うものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "リスク対応",
+      "isCorrect": false,
+      "whyAttractive": "リスクアセスメント全体の後(最終段階)で行う作業。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "リスク特定",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "リスク評価",
+      "isCorrect": false,
+      "whyAttractive": "分析したレベルを基準と比較。特定→分析→評価の順で後工程。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "リスク分析",
+      "isCorrect": false,
+      "whyAttractive": "特定されたリスクのレベルを算出。特定の次(2番目)。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ISMS(ISO/IEC 27001)のリスクマネジメント手順: ①リスク特定(何があるか洗い出し)→②リスク分析(レベル算出)→③リスク評価(許容可否判定)→リスク対応(処置)。アセスメント=①〜③。",
+  "keyInsight": "リスクアセスメント=特定→分析→評価。最初は特定(何があるか)。対応はアセスメント後。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 40,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問88 ©2021 独立行政法人情報処理推進機構"
+}

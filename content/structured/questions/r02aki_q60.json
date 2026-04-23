@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q60",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 60,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "暗号資産(仮想通貨)を入手するためのマイニングと呼ばれる作業を、他人のコンピュータを使って気付かれないように行うことを何と呼ぶか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "クリプトジャッキング",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "ソーシャルエンジニアリング",
+      "isCorrect": false,
+      "whyAttractive": "人の心理や行動の隙をついて情報を聞き出す攻撃。暗号資産マイニングとは関係ない。",
+      "misconceptionSlug": "confuse_malware_types"
+    },
+    {
+      "label": "ウ",
+      "body": "バッファオーバフロー",
+      "isCorrect": false,
+      "whyAttractive": "プログラムのメモリバッファに想定を超えるデータを送り込む脆弱性攻撃。マイニング行為ではない。",
+      "misconceptionSlug": "confuse_malware_types"
+    },
+    {
+      "label": "エ",
+      "body": "フィッシング",
+      "isCorrect": false,
+      "whyAttractive": "偽サイトや偽メールで認証情報を盗む詐欺。資産を『盗む』つながりで選ばされやすいが、マイニングではない。",
+      "misconceptionSlug": "confuse_malware_types"
+    }
+  ],
+  "explanation": "クリプトジャッキング=crypto(暗号資産)+hijacking(乗っ取り)。他人のPC/サーバのCPUリソースを無断で使い、気付かれないように仮想通貨のマイニング(計算処理)を行う攻撃。",
+  "keyInsight": "クリプト=暗号資産、ジャック=乗っ取り。他人の計算リソースでマイニング、が特徴。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_malware_types", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 27,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問60 ©2020 独立行政法人情報処理推進機構"
+}

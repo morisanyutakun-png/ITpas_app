@@ -1,0 +1,54 @@
+{
+  "externalKey": "r07_official_q34",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 34,
+  "majorCategory": "strategy",
+  "formatType": "calculation",
+  "trapType": "edge_case_miss",
+  "stem": "ある商品を5,000個販売したところ、売上げが6,000万円、利益が400万円となった。商品1個当たりの変動費が7,000円であるとき、利益を1,000万円以上にするためには、少なくともあと何個販売すればよいか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "500",
+      "isCorrect": false,
+      "whyAttractive": "利益差600万円を単純計算。1個当たり限界利益を使わず、平均単価で割ると過小計算。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "1,200",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "6,200",
+      "isCorrect": false,
+      "whyAttractive": "目標販売総数(5,000+1,200=6,200)を『追加販売数』と混同する誤り。問いは『あと何個』。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "7,500",
+      "isCorrect": false,
+      "whyAttractive": "利益1,000万までの追加目標ではなく累計目標の計算間違い。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "単価=6,000万÷5,000=12,000円/個。変動費=7,000円/個。限界利益=12,000-7,000=5,000円/個。固定費=売上-変動費-利益=6,000万-3,500万-400万=2,100万。利益1,000万達成: 5,000円×販売数=2,100万+1,000万=3,100万 → 販売数=6,200個 → 追加6,200-5,000=1,200個。",
+  "keyInsight": "限界利益(売上-変動費)で固定費+目標利益を賄う。追加販売数=(目標利益-現利益)÷1個当限界利益。",
+  "commonMistakeFlow": "600万/12,000=500個と計算すると誤る。変動費を引いた限界利益で割る必要あり。",
+  "topicSlugs": [
+    { "slug": "biz_financial_metrics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 15,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問34"
+}

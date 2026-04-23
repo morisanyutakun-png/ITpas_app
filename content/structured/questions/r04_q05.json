@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q05",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 5,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "NDAに関する記述として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "企業などにおいて、情報システムへの脅威の監視や分析を行う専門組織",
+      "isCorrect": false,
+      "whyAttractive": "CSIRT/SOCの説明。NDA(契約)とは別のもの。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "契約当事者がもつ営業秘密などを特定し、相手の秘密情報を管理する意思を合意する契約",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "提供するサービス内容に関して、サービスの提供者と利用者が合意した、客観的な品質基準の取決め",
+      "isCorrect": false,
+      "whyAttractive": "SLAの説明。品質基準の合意でありNDA(秘密保持)とは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "プロジェクトにおいて実施する作業を細分化し、階層構造で整理したもの",
+      "isCorrect": false,
+      "whyAttractive": "WBS(作業分解構成図)の説明。NDAとは別。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "NDA(Non-Disclosure Agreement/秘密保持契約)=取引や共同開発時に、相手から得た機密情報を第三者に開示しない/目的外利用しない旨を合意する契約。SLA(品質合意)・WBS(作業分解)とは別概念。",
+  "keyInsight": "NDA=秘密保持契約、SLA=サービス品質合意、WBS=作業分解。略称の違いに注意。",
+  "topicSlugs": [
+    { "slug": "biz_labor_contracts", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 3,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問5 ©2022 独立行政法人情報処理推進機構"
+}

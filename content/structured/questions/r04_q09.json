@@ -1,0 +1,53 @@
+{
+  "externalKey": "r04_q09",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 9,
+  "majorCategory": "strategy",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "不適切な行為a〜cのうち、不正アクセス禁止法において規制されている行為だけを全て挙げたものはどれか。\n\na. 他人の電子メールの利用者IDとパスワードを、正当な理由なく本人に無断で第三者に提供する。\nb. 他人の電子メールの利用者IDとパスワードを本人に無断で使用して、ネットワーク経由でメールサーバ上のその人の電子メールを閲覧する。\nc. メールサーバにアクセスできないよう、電子メールの利用者IDとパスワードを無効にするマルウェアを作成する。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a, b",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "a, b, c",
+      "isCorrect": false,
+      "whyAttractive": "cはマルウェア作成で『不正指令電磁的記録作成罪』(刑法)。不正アクセス禁止法ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "b",
+      "isCorrect": false,
+      "whyAttractive": "aの『ID/パスワードの無断提供』も不正アクセス禁止法で禁止(識別符号提供罪)。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "b, c",
+      "isCorrect": false,
+      "whyAttractive": "cはマルウェア作成で別の法律(刑法)。aは対象。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "不正アクセス禁止法=a:他人のID/Pwを第三者提供(識別符号の不正提供)、b:他人のID/Pwで不正アクセスを規制。c:マルウェア作成は『不正指令電磁的記録に関する罪』(刑法168条の2)の範疇で、法律が異なる。",
+  "keyInsight": "不正アクセス禁止法=ID/Pwの不正使用/提供/保管を規制。マルウェア作成は刑法(別法)。",
+  "topicSlugs": [
+    { "slug": "law_privacy_ip", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": 5,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問9 ©2022 独立行政法人情報処理推進機構"
+}

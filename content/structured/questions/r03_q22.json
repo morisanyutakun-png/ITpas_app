@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q22",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 22,
+  "majorCategory": "strategy",
+  "formatType": "case",
+  "trapType": "order_swap",
+  "stem": "業務パッケージを活用したシステム化を検討している。情報システムのライフサイクルを、システム化計画プロセス、要件定義プロセス、開発プロセス、保守プロセスに分けたとき、システム化計画プロセスで実施する作業として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "機能、性能、価格などの観点から業務パッケージを評価する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "業務パッケージの標準機能だけでは実現できないので、追加開発が必要なシステム機能の範囲を決定する。",
+      "isCorrect": false,
+      "whyAttractive": "要件定義の活動。Fit&Gap分析で追加開発範囲を決める。システム化計画ではもっと上流の評価段階。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "システム運用において発生した障害に関する分析、対応を行う。",
+      "isCorrect": false,
+      "whyAttractive": "保守プロセスの活動。運用後の障害対応で、計画段階ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "システム機能を実現するために必要なパラメタを業務パッケージに設定する。",
+      "isCorrect": false,
+      "whyAttractive": "開発プロセスの設定作業。具体的な実装段階で、計画段階ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "システム化計画プロセス=導入する業務パッケージを選定するための上流評価。機能・性能・価格等の観点で評価し、採用候補を絞る段階。要件定義(Fit&Gap)・開発(パラメータ設定)・保守(障害対応)は後段の活動。",
+  "keyInsight": "システム化計画=『パッケージ選定の評価』。要件定義前の上流活動。",
+  "topicSlugs": [
+    { "slug": "biz_procurement_documents", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 11,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問22 ©2021 独立行政法人情報処理推進機構"
+}

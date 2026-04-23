@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q75",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 75,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "edge_case_miss",
+  "stem": "次の記憶媒体のうち、記憶素子として半導体メモリを用いているものだけを全て挙げたものはどれか。\n\na CD-ROM / b DVD-RAM / c RAM / d SSD / e USBメモリ",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a, b, c",
+      "isCorrect": false,
+      "whyAttractive": "a(CD)とb(DVD)は光ディスクで半導体ではない。cのRAMだけが半導体。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a, b, e",
+      "isCorrect": false,
+      "whyAttractive": "aとbは光ディスク。eは半導体。混合は誤り。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "c, d, e",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "c, e",
+      "isCorrect": false,
+      "whyAttractive": "dのSSDも半導体(フラッシュメモリ)を使用している。dを外すのは誤り。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "半導体メモリ=電子的に記憶するメモリ。c(RAM)・d(SSD=NAND型フラッシュ)・e(USBメモリ=フラッシュ)が該当。a(CD-ROM)・b(DVD-RAM)は光学ディスクで、レーザーで読み書きする別原理。",
+  "keyInsight": "半導体メモリ=電子回路で記憶(RAM/SSD/USBメモリ)。光ディスク(CD/DVD)とは別原理。",
+  "topicSlugs": [
+    { "slug": "tech_computer_arch", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 36,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問75"
+}

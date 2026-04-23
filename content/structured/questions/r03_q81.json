@@ -1,0 +1,53 @@
+{
+  "externalKey": "r03_q81",
+  "examYear": 3,
+  "examSeason": "annual",
+  "questionNumber": 81,
+  "majorCategory": "technology",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "J-CRATに関する記述として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "企業などに対して、24時間体制でネットワークやデバイスを監視するサービスを提供する。",
+      "isCorrect": false,
+      "whyAttractive": "SOC(Security Operation Center)の説明。J-CRATは相談対応。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "コンピュータセキュリティに関わるインシデントが発生した組織に赴いて、自らが主体となって対応の方針や手順の策定を行う。",
+      "isCorrect": false,
+      "whyAttractive": "CSIRT(組織内)またはインシデント対応事業者の説明。J-CRATは支援活動で『主体』にはならない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "重工、重電など、重要インフラで利用される機器の製造業者を中心に、サイバー攻撃に関する情報共有と早期対応の場を提供する。",
+      "isCorrect": false,
+      "whyAttractive": "J-CSIP(サイバー情報共有イニシアティブ)の説明。J-CRATと名称が似るが目的が違う。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "相談を受けた組織に対して、標的型サイバー攻撃の被害低減と攻撃の連鎖の遮断を支援する活動を行う。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "J-CRAT(Cyber Rescue and Advice Team)=IPAのサイバーレスキュー隊。標的型攻撃を受けた(または疑われる)組織からの相談に応じ、被害低減と攻撃連鎖(踏み台化)の遮断を支援する。J-CSIP(情報共有)、SOC(常時監視)とは役割が異なる。",
+  "keyInsight": "J-CRAT=標的型攻撃の相談受付・支援(レスキュー)。J-CSIP=情報共有、SOC=監視。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r03.pdf",
+  "sourcePageNumber": 38,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和3年度 ITパスポート試験 公開問題 問81 ©2021 独立行政法人情報処理推進機構"
+}

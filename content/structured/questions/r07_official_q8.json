@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q8",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 8,
+  "majorCategory": "strategy",
+  "formatType": "case",
+  "trapType": "edge_case_miss",
+  "stem": "AIの機械学習で利用するデータの取扱いに関する記述のうち、バイアスの低減やデータの品質を確保するために考えられる対策として、適切なものだけを全て挙げたものはどれか。\n\na 学習の目的に適したデータであることを確認する。\nb データの入手元・作成来歴を確認する。\nc データへのアノテーションの付与は学習目的に合わせて実施する。\nd 人間の目でも同定が困難と考えられる画像認識用のデータは除外する。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a, b",
+      "isCorrect": false,
+      "whyAttractive": "c,dも品質確保の重要な対策。アノテーション方針や同定困難データの除外は正攻法。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "イ",
+      "body": "a, b, c, d",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "a, d",
+      "isCorrect": false,
+      "whyAttractive": "b(来歴確認)・c(アノテーション方針)も不可欠。バイアスの原因となるデータ素性の把握は基本中の基本。",
+      "misconceptionSlug": "confuse_ai_terms"
+    },
+    {
+      "label": "エ",
+      "body": "b, c, d",
+      "isCorrect": false,
+      "whyAttractive": "a(目的適合性確認)を除くのは誤り。目的に合わないデータで学習するとバイアスの温床。",
+      "misconceptionSlug": "confuse_ai_terms"
+    }
+  ],
+  "explanation": "機械学習のデータ品質対策は多面的: a(目的適合性)・b(来歴確認=信頼性)・c(適切なアノテーション)・d(困難データ除外=ノイズ除去)全てが品質・バイアス低減に寄与する。どれか1つを軽視すると学習モデルの品質が落ちる。",
+  "keyInsight": "AI学習データの品質対策=『目的適合性+来歴+アノテーション+ノイズ除去』。多角的なチェックが必要。",
+  "topicSlugs": [
+    { "slug": "ai_generative_basics", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_ai_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 5,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問8"
+}

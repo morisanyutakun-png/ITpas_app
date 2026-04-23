@@ -1,0 +1,53 @@
+{
+  "externalKey": "r02aki_q35",
+  "examYear": 2,
+  "examSeason": "autumn",
+  "questionNumber": 35,
+  "majorCategory": "strategy",
+  "formatType": "definition",
+  "trapType": "similar_term",
+  "stem": "ある企業が、フィンテックを活用した新サービスを実現するためのプログラムを開発しようとしている。そこで、デザイナ、プログラマなどを集めてチームを編成し、数日を掛けて集中的にプログラム開発作業に取り組み、その成果を競い合うイベントを企画した。このようなイベントを表す用語として、最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "ウォークスルー",
+      "isCorrect": false,
+      "whyAttractive": "ソフトウェアレビューの手法。仕様書・ソースコードを参加者で読み通す確認作業で、競争型プログラミングイベントではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "ゲーミフィケーション",
+      "isCorrect": false,
+      "whyAttractive": "ゲーム要素を業務・学習に応用する手法。『競い合う』で引き寄せられるが、ゲーミフィケーションは手法であってイベント名ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "ハッカソン",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "ブレーンストーミング",
+      "isCorrect": false,
+      "whyAttractive": "アイデアを自由に出し合う発想法。『集まって何かする』点が近いが、短期集中の開発競争ではなくアイデア出し。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "ハッカソン(hackathon) = hack + marathon の造語。エンジニア・デザイナが集中的に開発・成果を競うイベント。『短期集中』『プログラム開発』『競い合う』の3点が揃えばハッカソン。",
+  "keyInsight": "ハッカソン = 開発マラソン。アイデアソン(アイデア競争)と類似で、『何を競うか』で区別。",
+  "topicSlugs": [
+    { "slug": "biz_innovation_methods", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r02_aki.pdf",
+  "sourcePageNumber": 16,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和2年度 秋期 ITパスポート試験 公開問題 問35 ©2020 独立行政法人情報処理推進機構"
+}

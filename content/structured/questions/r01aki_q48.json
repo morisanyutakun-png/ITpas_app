@@ -1,0 +1,53 @@
+{
+  "externalKey": "r01aki_q48",
+  "examYear": 1,
+  "examSeason": "autumn",
+  "questionNumber": 48,
+  "majorCategory": "management",
+  "formatType": "definition",
+  "trapType": "order_swap",
+  "stem": "サービスレベル管理のPDCAサイクルのうち、C (Check) で実施する内容はどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "SLAに基づくサービスを提供する。",
+      "isCorrect": false,
+      "whyAttractive": "D(Do)=実行の活動。サービスを実際に提供する段階。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "イ",
+      "body": "サービス提供結果の報告とレビューに基づき、サービスの改善計画を作成する。",
+      "isCorrect": false,
+      "whyAttractive": "A(Act)=改善の活動。評価結果を受けた改善計画作成。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "サービス要件及びサービス改善計画を基に、目標とするサービス品質を合意し、SLAを作成する。",
+      "isCorrect": false,
+      "whyAttractive": "P(Plan)=計画の活動。SLA(目標)を定める段階。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "提供したサービスを監視・測定し、サービス報告書を作成する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "PDCA対応: P(計画)=SLA作成(ウ)、D(実行)=サービス提供(ア)、C(評価)=監視・測定・報告書作成(エ)、A(改善)=改善計画作成(イ)。Cは『測って報告する』段階。",
+  "keyInsight": "C(Check)=監視・測定・評価。実行結果を客観的に把握する工程で、改善策の策定はA段階。",
+  "topicSlugs": [
+    { "slug": "itsm_itil", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r01_aki.pdf",
+  "sourcePageNumber": 21,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和元年度 秋期 ITパスポート試験 公開問題 問48 ©2019 独立行政法人情報処理推進機構"
+}

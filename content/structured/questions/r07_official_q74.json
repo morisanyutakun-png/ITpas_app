@@ -1,0 +1,53 @@
+{
+  "externalKey": "r07_official_q74",
+  "examYear": 7,
+  "examSeason": "annual",
+  "questionNumber": 74,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "similar_term",
+  "stem": "デジタルフォレンジックスの説明として、適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "コンピュータに関する犯罪や法的紛争が生じた際に、コンピュータから削除された電子メールを復元するなどして、証拠を収集し保全すること",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "システムを実際に攻撃して脆弱性の有無を調べること",
+      "isCorrect": false,
+      "whyAttractive": "ペネトレーションテストの説明。脆弱性評価で、証拠収集ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "ウ",
+      "body": "通信経路を暗号化するなどして、公衆回線をあたかも専用回線であるかのように利用すること",
+      "isCorrect": false,
+      "whyAttractive": "VPNの説明。仮想専用網で、フォレンジックスではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    },
+    {
+      "label": "エ",
+      "body": "電子メールやファイルなどのハッシュデータを本人の秘密鍵で暗号化すること",
+      "isCorrect": false,
+      "whyAttractive": "ディジタル署名の説明。送信者認証・改ざん検出で、犯罪捜査の証拠収集ではない。",
+      "misconceptionSlug": "confuse_similar_terms"
+    }
+  ],
+  "explanation": "デジタルフォレンジックス(Digital Forensics)=犯罪捜査・法的紛争でデジタル証拠を収集・保全・分析する技術/活動。削除データ復元、ログ解析、改ざん検出等を含む。『Forensics=法科学』の語源。",
+  "keyInsight": "デジタルフォレンジックス=『デジタル証拠の収集・保全・分析』。犯罪捜査・訴訟対応の技術。",
+  "topicSlugs": [
+    { "slug": "security_threats", "weight": 1 }
+  ],
+  "misconceptionSlugs": [
+    { "slug": "confuse_similar_terms", "weight": 1 }
+  ],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r07.pdf",
+  "sourcePageNumber": 35,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和7年度 ITパスポート試験 公開問題 問74"
+}

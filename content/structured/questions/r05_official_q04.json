@@ -1,0 +1,51 @@
+{
+  "externalKey": "r05_official_q04",
+  "examYear": 5,
+  "examSeason": "annual",
+  "questionNumber": 4,
+  "majorCategory": "strategy",
+  "formatType": "calculation",
+  "trapType": "none",
+  "stem": "ASP利用方式と自社開発の自社センター利用方式(以下\"自社方式\"という)の採算性を比較する。次の条件のとき，ASP利用方式の期待利益(効果額－費用)が自社方式よりも大きくなるのは，自社方式の初期投資額が何万円を超えたときか。ここで，比較期間は5年とする。\n〔条件〕\n- 両方式とも，システム利用による効果額は500万円／年とする。\n- ASP利用方式の場合，初期費用は0円，利用料は300万円／年とする。\n- 自社方式の場合，初期投資額は定額法で減価償却計算を行い，5年後の残存簿価は0円とする。また，運用費は100万円／年とする。\n- 金利やその他の費用は考慮しないものとする。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "500",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢イとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "1,000",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "1,500",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢イとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "2,000",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢イとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はイです。設問の条件に最も適合する選択肢がイであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r05.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和5年度 ITパスポート試験 公開問題 問4",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

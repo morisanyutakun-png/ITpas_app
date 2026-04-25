@@ -1,0 +1,51 @@
+{
+  "externalKey": "r06_official_q75",
+  "examYear": 6,
+  "examSeason": "annual",
+  "questionNumber": 75,
+  "majorCategory": "technology",
+  "formatType": "table_read",
+  "trapType": "none",
+  "stem": "情報セキュリティの3要素である機密性，完全性及び可用性と，それらを確保するための対策の例a～cの適切な組合せはどれか。\n- アクセス制御\n- デジタル署名\n- ディスクの二重化",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "画像選択肢（OCR）ア: a: b / 可用性: 機密性｜完全性\nOCR全体: ア / イ / ウ / エ / a / b / c / 可用性 / 完全性機密性 / 可用性 / 機密性｜完全性 / 完全性 / 機密性 / 可用性 / 機密性 / 完全性 / 可用性",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "画像選択肢（OCR）イ: a: c / 可用性: 完全性\nOCR全体: ア / イ / ウ / エ / a / b / c / 可用性 / 完全性機密性 / 可用性 / 機密性｜完全性 / 完全性 / 機密性 / 可用性 / 機密性 / 完全性 / 可用性",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "画像選択肢（OCR）ウ: a: 可用性 / 可用性: 機密性\nOCR全体: ア / イ / ウ / エ / a / b / c / 可用性 / 完全性機密性 / 可用性 / 機密性｜完全性 / 完全性 / 機密性 / 可用性 / 機密性 / 完全性 / 可用性",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "画像選択肢（OCR）エ: a: 完全性機密性 / 可用性: 可用性\nOCR全体: ア / イ / ウ / エ / a / b / c / 可用性 / 完全性機密性 / 可用性 / 機密性｜完全性 / 完全性 / 機密性 / 可用性 / 機密性 / 完全性 / 可用性",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はエです。設問の条件に最も適合する選択肢がエであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r06.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和6年度 ITパスポート試験 公開問題 問75",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

@@ -1,0 +1,51 @@
+{
+  "externalKey": "r06_official_q40",
+  "examYear": 6,
+  "examSeason": "annual",
+  "questionNumber": 40,
+  "majorCategory": "management",
+  "formatType": "comparison",
+  "trapType": "none",
+  "stem": "アジャイル開発に関する記述として，最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "開発する機能を小さい単位に分割して，優先度の高いものから短期間で開発とリリースを繰り返す。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "共通フレームを適用して要件定義，設計などの工程名及び作成する文書を定義する。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "システム開発を上流工程から下流工程まで順番に進めて，全ての開発工程が終了してからリリースする。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "プロトタイプを作成して利用者に確認を求め，利用者の評価とフィードバックを行いながら開発を進めていく。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はアです。設問の条件に最も適合する選択肢がアであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r06.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和6年度 ITパスポート試験 公開問題 問40",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

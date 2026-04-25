@@ -1,0 +1,51 @@
+{
+  "externalKey": "r05_official_q37",
+  "examYear": 5,
+  "examSeason": "annual",
+  "questionNumber": 37,
+  "majorCategory": "management",
+  "formatType": "calculation",
+  "trapType": "none",
+  "stem": "システム監査人の行動規範に関して，次の記述中のa，bに入れる字句の適切な組合せはどれか。\nシステム監査人は，監査対象となる組織と同一の指揮命令系統に属していないなど，a上の独立性が確保されている必要がある。また，システム監査人はb立場で公正な判断を行うという精神的な態度が求められる。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "画像選択肢（OCR）ア: a: 外観 / b: 客観的な\nOCR全体: ア / イ / ウ / エ / a / 外観 / 経営 / 契約 / 取引 / b / 客観的な / 被監査側の / 経営者側の / 良心的な",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "画像選択肢（OCR）イ: a: 経営 / b: 被監査側の\nOCR全体: ア / イ / ウ / エ / a / 外観 / 経営 / 契約 / 取引 / b / 客観的な / 被監査側の / 経営者側の / 良心的な",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "画像選択肢（OCR）ウ: a: 契約 / b: 経営者側の\nOCR全体: ア / イ / ウ / エ / a / 外観 / 経営 / 契約 / 取引 / b / 客観的な / 被監査側の / 経営者側の / 良心的な",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "画像選択肢（OCR）エ: a: 取引 / b: 良心的な\nOCR全体: ア / イ / ウ / エ / a / 外観 / 経営 / 契約 / 取引 / b / 客観的な / 被監査側の / 経営者側の / 良心的な",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はアです。設問の条件に最も適合する選択肢がアであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r05.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和5年度 ITパスポート試験 公開問題 問37",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

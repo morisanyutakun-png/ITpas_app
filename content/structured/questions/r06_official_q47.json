@@ -1,0 +1,51 @@
+{
+  "externalKey": "r06_official_q47",
+  "examYear": 6,
+  "examSeason": "annual",
+  "questionNumber": 47,
+  "majorCategory": "management",
+  "formatType": "comparison",
+  "trapType": "none",
+  "stem": "ソフトウェアの開発におけるDevOpsに関する記述として，最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "開発側が重要な機能のプロトタイプを作成し，顧客とともにその性能を実測して妥当性を評価する。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢ウとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "開発側では，開発の各工程でその工程の完了を判断した上で次工程に進み，総合テストで利用者が参加して操作性の確認を実施した後に運用側に引き渡す。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢ウとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "開発側と運用側が密接に連携し，自動化ツールなどを活用して機能の導入や更新などを迅速に進める。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "システム開発において，機能の拡張を図るために，固定された短期間のサイクルを繰り返しながらプログラムを順次追加する。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢ウとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はウです。設問の条件に最も適合する選択肢がウであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r06.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和6年度 ITパスポート試験 公開問題 問47",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

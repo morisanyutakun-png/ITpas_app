@@ -1,0 +1,51 @@
+{
+  "externalKey": "r04_official_q61",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 61,
+  "majorCategory": "technology",
+  "formatType": "table_read",
+  "trapType": "none",
+  "stem": "大学のキャンパス案内のWebページ内に他のWebサービスが提供する地図情報を組み込んで表示するなど，公開されているWebページやWebサービスを組み合わせて一つの新しいコンテンツを作成する手法を何と呼ぶか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "シングルサインオン",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "デジタルフォレンジックス",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "トークン",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "マッシュアップ",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はエです。設問の条件に最も適合する選択肢がエであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問61",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

@@ -1,0 +1,51 @@
+{
+  "externalKey": "r06_official_q07",
+  "examYear": 6,
+  "examSeason": "annual",
+  "questionNumber": 7,
+  "majorCategory": "strategy",
+  "formatType": "comparison",
+  "trapType": "none",
+  "stem": "システム開発の上流工程において，業務プロセスのモデリングを行う目的として，最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "業務プロセスで取り扱う大量のデータを，統計的手法やAI手法などを用いて分析し，データ間の相関関係や隠れたパターンなどを見いだすため",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢イとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "業務プロセスを可視化することによって，適切なシステム設計のベースとなる情報を整備し，関係者間で解釈を共有できるようにするため",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "個々の従業員がもっている業務に関する知識・経験やノウハウを社内全体で共有し，創造的なアイディアを生み出すため",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢イとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "プロジェクトに必要な要員を調達し，チームとして組織化して，プロジェクトの目的の達成に向けて一致団結させるため",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢イとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はイです。設問の条件に最も適合する選択肢がイであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r06.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和6年度 ITパスポート試験 公開問題 問7",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

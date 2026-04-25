@@ -1,0 +1,51 @@
+{
+  "externalKey": "r06_official_q99",
+  "examYear": 6,
+  "examSeason": "annual",
+  "questionNumber": 99,
+  "majorCategory": "technology",
+  "formatType": "comparison",
+  "trapType": "none",
+  "stem": "GPSの電波を捕捉しにくいビルの谷間や狭い路地などでも位置を計測することができるように，特定の地域の上空に比較的長く留まる軌道をとり，GPSと併用することによって，より高い測位精度を実現するものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "アシストGPS",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢ウとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "ジャイロセンサー",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢ウとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "準天頂衛星",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "プローブカー",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢ウとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はウです。設問の条件に最も適合する選択肢がウであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r06.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和6年度 ITパスポート試験 公開問題 問99",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

@@ -1,0 +1,51 @@
+{
+  "externalKey": "r06_official_q09",
+  "examYear": 6,
+  "examSeason": "annual",
+  "questionNumber": 9,
+  "majorCategory": "strategy",
+  "formatType": "biz_analysis",
+  "trapType": "none",
+  "stem": "企業の戦略立案やマーケティングなどで使用されるフェルミ推定に関する記述として，最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "正確に算出することが極めて難しい数量に対して，把握している情報と論理的な思考プロセスによって概数を求める手法である。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "特定の集団と活動を共にしたり，人々の動きを観察したりすることによって，慣習や嗜好，地域や組織を取り巻く文化を類推する手法である。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "入力データと出力データから，その因果関係を統計的に推定する手法である。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "有識者のグループに繰り返し同一のアンケート調査とその結果のフィードバックを行うことによって，ある分野の将来予測に関する総意を得る手法である。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はアです。設問の条件に最も適合する選択肢がアであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r06.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和6年度 ITパスポート試験 公開問題 問9",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

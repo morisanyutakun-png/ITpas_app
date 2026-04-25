@@ -1,0 +1,51 @@
+{
+  "externalKey": "r06_official_q41",
+  "examYear": 6,
+  "examSeason": "annual",
+  "questionNumber": 41,
+  "majorCategory": "management",
+  "formatType": "table_read",
+  "trapType": "none",
+  "stem": "あるプロジェクトの作業間の関係と所要時間がアローダイアグラムで示されている。このアローダイアグラムのBからEの四つの結合点のうち，工程全体の完了時間に影響を与えることなく，その結合点から始まる全ての作業の開始を最も遅らせることができるものはどれか。ここで，各結合点から始まる作業はその結合点に至る作業が全て完了するまで開始できず，作業から次の作業への段取り時間は考えないものとする。\n\n図表1 OCR: £ / 1a",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "B",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢イとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "C",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "D",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢イとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "E",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢イとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はイです。設問の条件に最も適合する選択肢がイであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r06.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和6年度 ITパスポート試験 公開問題 問41",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

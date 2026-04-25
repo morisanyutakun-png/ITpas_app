@@ -1,0 +1,51 @@
+{
+  "externalKey": "r06_official_q17",
+  "examYear": 6,
+  "examSeason": "annual",
+  "questionNumber": 17,
+  "majorCategory": "strategy",
+  "formatType": "comparison",
+  "trapType": "none",
+  "stem": "技術開発戦略において作成されるロードマップを説明しているものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "技術の競争力レベルと技術のライフサイクルを2軸としたマトリックス上に，自社の技術や新しい技術をプロットする。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "研究開発への投資とその成果を2軸とした座標上に，技術の成長過程をグラフ化し，旧技術から新技術への転換状況を表す。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "市場面からの有望度と技術面からの有望度を2軸としたマトリックス上に，技術開発プロジェクトをプロットする。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "横軸に時間，縦軸に市場，商品，技術などを示し，研究開発成果の商品化，事業化の方向性をそれらの要素間の関係で表す。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はエです。設問の条件に最も適合する選択肢がエであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r06.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和6年度 ITパスポート試験 公開問題 問17",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

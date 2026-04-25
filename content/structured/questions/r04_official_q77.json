@@ -1,0 +1,51 @@
+{
+  "externalKey": "r04_official_q77",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 77,
+  "majorCategory": "technology",
+  "formatType": "db_basics",
+  "trapType": "none",
+  "stem": "トランザクション処理のACID特性に関する記述として，適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "索引を用意することによって，データの検索時の検索速度を高めることができる。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢イとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "データの更新時に，一連の処理が全て実行されるか，全く実行されないように制御することによって，原子性を保証することができる。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "データベースの複製を複数のサーバに分散配置することによって，可用性を高めることができる。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢イとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "テーブルを正規化することによって，データに矛盾や重複が生じるのを防ぐことができる。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢イとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はイです。設問の条件に最も適合する選択肢がイであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問77",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

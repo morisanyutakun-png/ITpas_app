@@ -1,0 +1,51 @@
+{
+  "externalKey": "r05_official_q75",
+  "examYear": 5,
+  "examSeason": "annual",
+  "questionNumber": 75,
+  "majorCategory": "technology",
+  "formatType": "spreadsheet",
+  "trapType": "none",
+  "stem": "表計算ソフトを用いて，二つの科目X，Yの点数を評価して合否を判定する。それぞれの点数はワークシートのセル A2，B2 に入力する。合格判定条件(1)又は(2)に該当するときはセル C2 に\"合格\"，それ以外のときは\"不合格\"を表示する。セル C2 に入力する式はどれか。\n〔合格判定条件〕\n- 科目Xと科目Yの合計が120点以上である。\n- 科目X又は科目Yのうち，少なくとも一つが100点である。\n\n図表1 OCR: 2 / A / 科目X / 50 / B / 科目Y / 80 / C / 合否 / 合格",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "IF(論理積((A2＋B2)≧120，A2＝100，B2＝100)，'合格'，'不合格')",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢ウとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "IF(論理積((A2＋B2)≧120，A2＝100，B2＝100)，'不合格'，'合格')",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢ウとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "IF(論理和((A2＋B2)≧120，A2＝100，B2＝100)，'合格'，'不合格')",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "IF(論理和((A2＋B2)≧120，A2＝100，B2＝100)，'不合格'，'合格')",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢ウとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はウです。設問の条件に最も適合する選択肢がウであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r05.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和5年度 ITパスポート試験 公開問題 問75",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

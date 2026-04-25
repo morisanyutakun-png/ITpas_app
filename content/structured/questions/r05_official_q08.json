@@ -1,0 +1,51 @@
+{
+  "externalKey": "r05_official_q08",
+  "examYear": 5,
+  "examSeason": "annual",
+  "questionNumber": 8,
+  "majorCategory": "strategy",
+  "formatType": "table_read",
+  "trapType": "none",
+  "stem": "A社の営業部門では，成約件数を増やすことを目的として，営業担当者が企画を顧客に提案する活動を始めた。この営業活動の達成度を測るための指標としてKGI(Key Goal Indicator)とKPI(Key Performance Indicator)を定めたい。本活動におけるKGIとKPIの組合せとして，最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "画像選択肢（OCR）ア: KGI: 成約件数 / KPI: 売上高\nOCR全体: ア / イ / ウ / エ / KGI / 成約件数 / 成約件数 / 提案件数 / 提案件数 / KPI / 売上高 / 提案件数 / 売上高 / 成約件数",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢イとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "画像選択肢（OCR）イ: KGI: 成約件数 / KPI: 提案件数\nOCR全体: ア / イ / ウ / エ / KGI / 成約件数 / 成約件数 / 提案件数 / 提案件数 / KPI / 売上高 / 提案件数 / 売上高 / 成約件数",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "画像選択肢（OCR）ウ: KGI: 提案件数 / KPI: 売上高\nOCR全体: ア / イ / ウ / エ / KGI / 成約件数 / 成約件数 / 提案件数 / 提案件数 / KPI / 売上高 / 提案件数 / 売上高 / 成約件数",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢イとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "画像選択肢（OCR）エ: KGI: 提案件数 / KPI: 成約件数\nOCR全体: ア / イ / ウ / エ / KGI / 成約件数 / 成約件数 / 提案件数 / 提案件数 / KPI / 売上高 / 提案件数 / 売上高 / 成約件数",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢イとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はイです。設問の条件に最も適合する選択肢がイであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r05.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和5年度 ITパスポート試験 公開問題 問8",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

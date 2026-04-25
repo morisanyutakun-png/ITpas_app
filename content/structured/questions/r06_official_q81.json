@@ -1,0 +1,51 @@
+{
+  "externalKey": "r06_official_q81",
+  "examYear": 6,
+  "examSeason": "annual",
+  "questionNumber": 81,
+  "majorCategory": "technology",
+  "formatType": "table_read",
+  "trapType": "none",
+  "stem": "一つの表で管理されていた受注データを，受注に関する情報と商品に関する情報に分割して，正規化を行った上で関係データベースの表で管理する。正規化を行った結果の表の組合せとして，最も適切なものはどれか。ここで，同一商品で単価が異なるときは商品番号も異なるものとする。また，発注者名には同姓同名はいないものとする。\n\n図表1 OCR: ※速データ / 受注番号 / T0001 / T0002 / T0003 / 発注者名 / 試験花子 / 情報太郎 / 高度秋子 / 商品番号 / M0001 / M0002 / M0001 / 商品名 / 商品1 / 商品2 / 商品1 / 個数 / 単価 / 5 / 3,000 / 3 / 4,000 / 2 / 3,000",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "画像選択肢（OCR）: 受注番号 / 商品番号 / 発注者名 / 商品名 / 個数 / 単価",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "画像選択肢（OCR）: 受注番号 / 商品番号 / 発注者名 / 商品名 / ｜商品番号 / 個数単価",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "画像選択肢（OCR）: 受注番号 / 商品番号 / 発注者名 / 商品名 / 商品番号 / 個数 / 単価",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "画像選択肢（OCR）: 受注番号 / 商品番号 / 発注者名商品番号 / 個数 / 商品名 / 単価",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はエです。設問の条件に最も適合する選択肢がエであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r06.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和6年度 ITパスポート試験 公開問題 問81",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

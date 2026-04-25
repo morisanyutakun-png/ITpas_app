@@ -1,0 +1,51 @@
+{
+  "externalKey": "r06_official_q05",
+  "examYear": 6,
+  "examSeason": "annual",
+  "questionNumber": 5,
+  "majorCategory": "strategy",
+  "formatType": "comparison",
+  "trapType": "none",
+  "stem": "ベンチャーキャピタルに関する記述として，最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "新しい技術の獲得や，規模の経済性の追求などを目的に，他の企業と共同出資会社を設立する手法",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢イとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "株式売却による利益獲得などを目的に，新しい製品やサービスを武器に市場に参入しようとする企業に対して出資などを行う企業",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "新サービスや技術革新などの創出を目的に，国や学術機関，他の企業など外部の組織と共創関係を結び，積極的に技術や資源を交換し，自社に取り込む手法",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢イとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "特定された課題の解決を目的に，一定の期間を定めて企業内に立ち上げられ，構成員を関連部門から招集し，目的が達成された時点で解散する組織",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢イとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はイです。設問の条件に最も適合する選択肢がイであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r06.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和6年度 ITパスポート試験 公開問題 問5",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

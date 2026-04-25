@@ -1,0 +1,51 @@
+{
+  "externalKey": "r05_official_q74",
+  "examYear": 5,
+  "examSeason": "annual",
+  "questionNumber": 74,
+  "majorCategory": "technology",
+  "formatType": "network_basics",
+  "trapType": "none",
+  "stem": "ニューラルネットワークに関する記述として，最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "PC，携帯電話，情報家電などの様々な情報機器が，社会の至る所に存在し，いつでもどこでもネットワークに接続できる環境",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "国立情報学研究所が運用している，大学や研究機関などを結ぶ学術研究用途のネットワーク",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "全国の自治体が，氏名，生年月日，性別，住所などの情報を居住地以外の自治体から引き出せるようにネットワーク化したシステム",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "ディープラーニングなどで用いられる，脳神経系の仕組みをコンピュータで模したモデル",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はエです。設問の条件に最も適合する選択肢がエであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r05.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和5年度 ITパスポート試験 公開問題 問74",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

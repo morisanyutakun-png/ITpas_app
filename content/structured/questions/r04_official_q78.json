@@ -1,0 +1,51 @@
+{
+  "externalKey": "r04_official_q78",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 78,
+  "majorCategory": "technology",
+  "formatType": "pseudo_lang",
+  "trapType": "none",
+  "stem": "関数 checkDigit は，10進9桁の整数の各桁の数字が上位の桁から順に格納された整数型の配列 originalDigit を引数として，次の手順で計算したチェックデジットを戻り値とする。プログラム中のaに入れる字句として，適切なものはどれか。ここで，配列の要素番号は1から始まる。\n〔手順〕\n- 配列 originalDigit の要素番号1～9の要素の値を合計する。\n- 合計した値が9より大きい場合は，合計した値を10進の整数で表現したときの各桁の数字を合計する。この操作を，合計した値が9以下になるまで繰り返す。\n- (2)で得られた値をチェックデジットとする。〔プログラム〕",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "j ← j－10×k",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢イとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "j ← k＋(j－10×k)",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "j ← k＋(j－10)×k",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢イとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "j ← k＋j",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢イとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はイです。設問の条件に最も適合する選択肢がイであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問78",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

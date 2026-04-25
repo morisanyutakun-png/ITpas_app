@@ -1,0 +1,51 @@
+{
+  "externalKey": "r06_official_q65",
+  "examYear": 6,
+  "examSeason": "annual",
+  "questionNumber": 65,
+  "majorCategory": "technology",
+  "formatType": "table_read",
+  "trapType": "none",
+  "stem": "AIにおける機械学習の学習方法に関する次の記述中のa～cに入れる字句の適切な組合せはどれか。\n教師あり学習は，正解を付けた学習データを入力することによって，aと呼ばれる手法で未知のデータを複数のクラスに分けたり，bと呼ばれる手法でデータの関係性を見つけたりすることができるようになる学習方法である。教師なし学習は，正解を付けない学習データを入力することによって，cと呼ばれる手法などで次第にデータを正しくグループ分けできるようになる学習方法である。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "画像選択肢（OCR）ア: a: 回帰 / b: 分類\nOCR全体: ア / イ / ウ / エ / a / 回帰 / クラスタリング / 分類 / 分類 / b / 分類 / 分類 / 回帰 / クラスタリング / クラスタリング / 回帰 / クラスタリング / 回帰",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢ウとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "画像選択肢（OCR）イ: a: クラスタリング / b: 分類\nOCR全体: ア / イ / ウ / エ / a / 回帰 / クラスタリング / 分類 / 分類 / b / 分類 / 分類 / 回帰 / クラスタリング / クラスタリング / 回帰 / クラスタリング / 回帰",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢ウとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "画像選択肢（OCR）ウ: a: 分類 / b: 回帰\nOCR全体: ア / イ / ウ / エ / a / 回帰 / クラスタリング / 分類 / 分類 / b / 分類 / 分類 / 回帰 / クラスタリング / クラスタリング / 回帰 / クラスタリング / 回帰",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "画像選択肢（OCR）エ: a: 分類 / b: クラスタリング\nOCR全体: ア / イ / ウ / エ / a / 回帰 / クラスタリング / 分類 / 分類 / b / 分類 / 分類 / 回帰 / クラスタリング / クラスタリング / 回帰 / クラスタリング / 回帰",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢ウとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はウです。設問の条件に最も適合する選択肢がウであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r06.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和6年度 ITパスポート試験 公開問題 問65",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

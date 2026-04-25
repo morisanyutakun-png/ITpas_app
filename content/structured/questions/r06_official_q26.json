@@ -1,0 +1,51 @@
+{
+  "externalKey": "r06_official_q26",
+  "examYear": 6,
+  "examSeason": "annual",
+  "questionNumber": 26,
+  "majorCategory": "strategy",
+  "formatType": "biz_analysis",
+  "trapType": "none",
+  "stem": "データサイエンティストの役割に関する記述として，最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "機械学習や統計などの手法を用いてビッグデータを解析することによって，ビジネスに活用するための新たな知見を獲得する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "企業が保有する膨大なデータを高速に検索できるように，パフォーマンスの高いデータベースを運用するためのシステム基盤を構築する。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "企業における情報システムに関するリスクを評価するために，現場でのデータの取扱いや管理についての実態を調査する。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "企業や組織における安全な情報システムの企画，設計，開発，運用を，サイバーセキュリティに関する専門的な知識や技能を活用して支援する。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はアです。設問の条件に最も適合する選択肢がアであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r06.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和6年度 ITパスポート試験 公開問題 問26",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

@@ -1,0 +1,51 @@
+{
+  "externalKey": "r05_official_q42",
+  "examYear": 5,
+  "examSeason": "annual",
+  "questionNumber": 42,
+  "majorCategory": "management",
+  "formatType": "pseudo_lang",
+  "trapType": "none",
+  "stem": "ソフトウェア開発における，テストに関する記述a～cとテスト工程の適切な組合せはどれか。\n- 運用予定時間内に処理が終了することを確認する。\n- ソフトウェア間のインタフェースを確認する。\n- プログラムの内部パスを網羅的に確認する。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "画像選択肢（OCR）ア: 単体テスト: a / 結合テスト: b / システムテスト: c\nOCR全体: ア / イ / ウ / エ / 単体テスト / a / a / b / c / 結合テスト / b / c / a / b / システムテスト / c / b / c / a",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "画像選択肢（OCR）イ: 単体テスト: a / 結合テスト: c / システムテスト: b\nOCR全体: ア / イ / ウ / エ / 単体テスト / a / a / b / c / 結合テスト / b / c / a / b / システムテスト / c / b / c / a",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "画像選択肢（OCR）ウ: 単体テスト: b / 結合テスト: a / システムテスト: c\nOCR全体: ア / イ / ウ / エ / 単体テスト / a / a / b / c / 結合テスト / b / c / a / b / システムテスト / c / b / c / a",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "画像選択肢（OCR）エ: 単体テスト: c / 結合テスト: b / システムテスト: a\nOCR全体: ア / イ / ウ / エ / 単体テスト / a / a / b / c / 結合テスト / b / c / a / b / システムテスト / c / b / c / a",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はエです。設問の条件に最も適合する選択肢がエであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r05.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和5年度 ITパスポート試験 公開問題 問42",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

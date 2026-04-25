@@ -1,0 +1,51 @@
+{
+  "externalKey": "r05_official_q47",
+  "examYear": 5,
+  "examSeason": "annual",
+  "questionNumber": 47,
+  "majorCategory": "management",
+  "formatType": "table_read",
+  "trapType": "none",
+  "stem": "あるホスティングサービスのSLAの内容にa～cがある。これらと関連するITサービスマネジメントの管理との適切な組合せはどれか。\n- サーバが稼働している時間\n- ディスクの使用量が設定したしきい値に達したことを検出した後に，指定された担当者に通知するまでの時間\n- 不正アクセスの検知後に，指定された担当者に通知するまでの時間",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "画像選択肢（OCR）ア: サービス可用性管理: a / b: ¢ / 情報セキュリティ管理: C\nOCR全体: ア / イ / ウ / エ / サービス可用性管理 / a / a / b / c / b / ¢ / a / b / 容量・能力管理 / 情報セキュリティ管理 / C / b / c / a",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "画像選択肢（OCR）イ: サービス可用性管理: a / b: a / 情報セキュリティ管理: b\nOCR全体: ア / イ / ウ / エ / サービス可用性管理 / a / a / b / c / b / ¢ / a / b / 容量・能力管理 / 情報セキュリティ管理 / C / b / c / a",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "画像選択肢（OCR）ウ: サービス可用性管理: b / b: b / 情報セキュリティ管理: c\nOCR全体: ア / イ / ウ / エ / サービス可用性管理 / a / a / b / c / b / ¢ / a / b / 容量・能力管理 / 情報セキュリティ管理 / C / b / c / a",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "画像選択肢（OCR）エ: サービス可用性管理: c / b: 容量・能力管理 / 情報セキュリティ管理: a\nOCR全体: ア / イ / ウ / エ / サービス可用性管理 / a / a / b / c / b / ¢ / a / b / 容量・能力管理 / 情報セキュリティ管理 / C / b / c / a",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はアです。設問の条件に最も適合する選択肢がアであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r05.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和5年度 ITパスポート試験 公開問題 問47",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

@@ -1,0 +1,51 @@
+{
+  "externalKey": "r04_official_q68",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 68,
+  "majorCategory": "technology",
+  "formatType": "network_basics",
+  "trapType": "none",
+  "stem": "無線LANルータにおいて，外部から持ち込まれた端末用に設けられた，\"ゲストポート\"や\"ゲストSSID\"などと呼ばれる機能によって実現できることの説明として，適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "端末から内部ネットワークには接続をさせず，インターネットにだけ接続する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "端末がマルウェアに感染していないかどうかを検査し，安全が確認された端末だけを接続する。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "端末と無線LANルータのボタン操作だけで，端末から無線LANルータへの接続設定ができる。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "端末のSSIDの設定欄を空欄にしておけば，SSIDが分からなくても無線LANルータに接続できる。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はアです。設問の条件に最も適合する選択肢がアであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問68",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

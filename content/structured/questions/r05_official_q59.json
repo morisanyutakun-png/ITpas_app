@@ -1,0 +1,51 @@
+{
+  "externalKey": "r05_official_q59",
+  "examYear": 5,
+  "examSeason": "annual",
+  "questionNumber": 59,
+  "majorCategory": "technology",
+  "formatType": "table_read",
+  "trapType": "none",
+  "stem": "関係データベースで管理された\"会員管理\"表を正規化して，\"店舗\"表，\"会員種別\"表及び\"会員\"表に分割した。\"会員\"表として，適切なものはどれか。ここで，表中の下線は主キーを表し，一人の会員が複数の店舗に登録した場合は，会員番号を店舗ごとに付与するものとする。\n\n図表1 OCR: 会員管選 / 店舗コード / 001 / 001 / 802 / 002 / 003 / 店舗名 / 札幌 / 札幌 / 東京 / 東京 / 大阪 / 会員番号 / 1 / 2 / 1 / 2 / 1 / 店舗 / 店舗コード / 店舗名 / 会員種別コード / 会員種別名 / 会員名 / 試験 花子 / 情報 太郎 / 高度 次郎 / 午前 桜子 / 午前桜子 / 会員種別コード / 02 / 02 / 80 / 01 / 83 / 会員種別名 / ゴールド / ゴールド / 一般 / プラチナ / 一般",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "画像選択肢（OCR）: 会員番号 / 会員名",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "画像選択肢（OCR）: 会員番号 / 会員名 / 会員種別コード",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "画像選択肢（OCR）: 会員番号 / 店舗コード / 会員名",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "画像選択肢（OCR）: 会員番号 / 店舗コード / 会員名 / 会員種別コード",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はエです。設問の条件に最も適合する選択肢がエであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r05.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和5年度 ITパスポート試験 公開問題 問59",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

@@ -1,0 +1,51 @@
+{
+  "externalKey": "r04_official_q99",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 99,
+  "majorCategory": "technology",
+  "formatType": "comparison",
+  "trapType": "none",
+  "stem": "1台の物理的なコンピュータ上で，複数の仮想サーバを同時に動作させることによって得られる効果に関する記述a～cのうち，適切なものだけを全て挙げたものはどれか。\n- 仮想サーバ上で，それぞれ異なるバージョンのOSを動作させることができ，物理的なコンピュータのリソースを有効活用できる。\n- 仮想サーバの数だけ，物理的なコンピュータを増やしたときと同じ処理能力を得られる。\n- 物理的なコンピュータがもつHDDの容量と同じ容量のデータを，全ての仮想サーバで同時に記録できる。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "a，c",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "b",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "c",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はアです。設問の条件に最も適合する選択肢がアであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問99",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

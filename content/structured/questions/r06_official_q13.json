@@ -1,0 +1,51 @@
+{
+  "externalKey": "r06_official_q13",
+  "examYear": 6,
+  "examSeason": "annual",
+  "questionNumber": 13,
+  "majorCategory": "strategy",
+  "formatType": "table_read",
+  "trapType": "none",
+  "stem": "金融機関では，同一の顧客で複数の口座をもつ個人や法人について，氏名又は法人名，生年月日又は設立年月日，電話番号，住所又は所在地などを手掛かりに集約し，顧客ごとの預金の総額を正確に把握する作業が行われる。このように顧客がもつ複数の口座を，顧客ごとに取りまとめて一元管理する手続を表す用語として，最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "アカウントアグリゲーション",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "キーマッピング",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "垂直統合",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "名寄せ",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はエです。設問の条件に最も適合する選択肢がエであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r06.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和6年度 ITパスポート試験 公開問題 問13",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

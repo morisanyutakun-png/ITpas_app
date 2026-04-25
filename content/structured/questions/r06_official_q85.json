@@ -1,0 +1,51 @@
+{
+  "externalKey": "r06_official_q85",
+  "examYear": 6,
+  "examSeason": "annual",
+  "questionNumber": 85,
+  "majorCategory": "technology",
+  "formatType": "pseudo_lang",
+  "trapType": "none",
+  "stem": "関数 binaryToInteger は，1桁以上の符号なし2進数を文字列で表した値を引数 binaryStr で受け取り，その値を整数に変換した結果を戻り値とする。例えば，引数として\"100\"を受け取ると，4を返す。プログラム中のa，bに入れる字句の適切な組合せはどれか。\n〔プログラム〕\n\n図表1 OCR: ：hinaryTaIntegar京子列： hinaryStr） / 発型：intagerfun， digi eM， aspananee / fori 1 0ら binarystr の文字数まで1ずつ増やす / digizu ← binarystrの末尾からi番目の文字を数型に変換した位 / 11例：文字 M1”であれば艶1に密疫 / Qsnent / ← / ink&weriun / andiar / ← / intageribrz",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "画像選択肢（OCR）ア: a: （2の（乗）-1 / b: integerNum X digitNum X exponent\nOCR全体: ア / イ / ウ / エ / a / （2の（乗）-1 / （2のi乗）-1 / 2の（i- 1） 乗 / 2の（i-1）乗 / b / integerNum X digitNum X exponent / integerNum + digitNum X exponent / integerNum X digitNum X exponent / integerNum + digitNum X exponent",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "画像選択肢（OCR）イ: a: （2のi乗）-1 / b: integerNum + digitNum X exponent\nOCR全体: ア / イ / ウ / エ / a / （2の（乗）-1 / （2のi乗）-1 / 2の（i- 1） 乗 / 2の（i-1）乗 / b / integerNum X digitNum X exponent / integerNum + digitNum X exponent / integerNum X digitNum X exponent / integerNum + digitNum X exponent",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "画像選択肢（OCR）ウ: a: 2の（i- 1） 乗 / b: integerNum X digitNum X exponent\nOCR全体: ア / イ / ウ / エ / a / （2の（乗）-1 / （2のi乗）-1 / 2の（i- 1） 乗 / 2の（i-1）乗 / b / integerNum X digitNum X exponent / integerNum + digitNum X exponent / integerNum X digitNum X exponent / integerNum + digitNum X exponent",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "画像選択肢（OCR）エ: a: 2の（i-1）乗 / b: integerNum + digitNum X exponent\nOCR全体: ア / イ / ウ / エ / a / （2の（乗）-1 / （2のi乗）-1 / 2の（i- 1） 乗 / 2の（i-1）乗 / b / integerNum X digitNum X exponent / integerNum + digitNum X exponent / integerNum X digitNum X exponent / integerNum + digitNum X exponent",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はエです。設問の条件に最も適合する選択肢がエであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r06.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和6年度 ITパスポート試験 公開問題 問85",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

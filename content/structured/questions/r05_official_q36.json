@@ -1,0 +1,51 @@
+{
+  "externalKey": "r05_official_q36",
+  "examYear": 5,
+  "examSeason": "annual",
+  "questionNumber": 36,
+  "majorCategory": "management",
+  "formatType": "comparison",
+  "trapType": "none",
+  "stem": "サービスデスクの業務改善に関する記述のうち，最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "サービスデスクが受け付けた問合せの内容や回答，費やした時間などを記録して分析を行う。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "障害の問合せに対して一時的な回避策は提示せず，根本原因及び解決策の検討に注力する体制を組む。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "利用者が問合せを速やかに実施できるように，問合せ窓口は問合せの種別ごとにできるだけ細かく分ける。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "利用者に対して公平性を保つように，問合せ内容の重要度にかかわらず受付順に回答を実施するように徹底する。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はアです。設問の条件に最も適合する選択肢がアであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r05.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和5年度 ITパスポート試験 公開問題 問36",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

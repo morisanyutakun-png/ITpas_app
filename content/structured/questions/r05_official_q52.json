@@ -1,0 +1,51 @@
+{
+  "externalKey": "r05_official_q52",
+  "examYear": 5,
+  "examSeason": "annual",
+  "questionNumber": 52,
+  "majorCategory": "management",
+  "formatType": "comparison",
+  "trapType": "none",
+  "stem": "会計監査の目的として，最も適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "経理システムを含め，利用しているITに関するリスクをコントロールし，ITガバナンスが実現されていることを確認する。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "経理部門が保有しているPCの利用方法をはじめとして，情報のセキュリティに係るリスクマネジメントが効果的に実施されていることを確認する。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "組織内の会計業務などを含む諸業務が組織の方針に従って，合理的かつ効率的な運用が実現されていることを確認する。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "日常の各種取引の発生から決算報告書への集計に至るまで，不正や誤りのない処理が行われていることを確認する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はエです。設問の条件に最も適合する選択肢がエであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r05.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和5年度 ITパスポート試験 公開問題 問52",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

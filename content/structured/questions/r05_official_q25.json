@@ -1,0 +1,51 @@
+{
+  "externalKey": "r05_official_q25",
+  "examYear": 5,
+  "examSeason": "annual",
+  "questionNumber": 25,
+  "majorCategory": "strategy",
+  "formatType": "table_read",
+  "trapType": "none",
+  "stem": "企業の行為に関する記述a～cのうち，コンプライアンスにおいて問題となるおそれのある行為だけを全て挙げたものはどれか。\n- 新商品の名称を消費者に浸透させるために，誰でも応募ができて，商品名の一部を答えさせるだけの簡単なクイズを新聞や自社ホームページ，雑誌などに広く掲載し，応募者の中から抽選で現金10万円が当たるキャンペーンを実施した。\n- 人気のあるWebサイトを運営している企業が，広告主から宣伝の依頼があった特定の商品を好意的に評価する記事を，広告であることを表示することなく一般の記事として掲載した。\n- フランスをイメージしてデザインしたバッグを国内で製造し，原産国の国名は記載せず，パリの風景写真とフランス国旗だけを印刷したタグを添付して，販売した。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a，b",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "a，b，c",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "a，c",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "b，c",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はエです。設問の条件に最も適合する選択肢がエであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r05.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和5年度 ITパスポート試験 公開問題 問25",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

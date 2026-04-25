@@ -1,0 +1,51 @@
+{
+  "externalKey": "r05_official_q79",
+  "examYear": 5,
+  "examSeason": "annual",
+  "questionNumber": 79,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "none",
+  "stem": "PDCAモデルに基づいてISMSを運用している組織の活動において，次のような調査報告があった。この調査はPDCAモデルのどのプロセスで実施されるか。\n社外からの電子メールの受信に対しては，情報セキュリティポリシーに従ってマルウェア検知システムを導入し，維持運用されており，日々数十件のマルウェア付き電子メールの受信を検知し，破棄するという効果を上げている。しかし，社外への電子メールの送信に関するセキュリティ対策のための規定や明確な運用手順がなく，社外秘の資料を添付した電子メールの社外への誤送信などが発生するリスクがある。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "P",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢ウとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "D",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢ウとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "C",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "A",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢ウとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はウです。設問の条件に最も適合する選択肢がウであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r05.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和5年度 ITパスポート試験 公開問題 問79",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

@@ -1,0 +1,51 @@
+{
+  "externalKey": "r04_official_q81",
+  "examYear": 4,
+  "examSeason": "annual",
+  "questionNumber": 81,
+  "majorCategory": "technology",
+  "formatType": "comparison",
+  "trapType": "none",
+  "stem": "CPUの性能に関する記述のうち，適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "32ビットCPUと64ビットCPUでは，64ビットCPUの方が一度に処理するデータ長を大きくできる。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "CPU内のキャッシュメモリの容量は，少ないほどCPUの処理速度が向上する。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "同じ構造のCPUにおいて，クロック周波数を下げると処理速度が向上する。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "デュアルコアCPUとクアッドコアCPUでは，デュアルコアCPUの方が同時に実行する処理の数を多くできる。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はアです。設問の条件に最も適合する選択肢がアであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r04.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和4年度 ITパスポート試験 公開問題 問81",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

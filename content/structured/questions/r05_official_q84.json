@@ -1,0 +1,51 @@
+{
+  "externalKey": "r05_official_q84",
+  "examYear": 5,
+  "examSeason": "annual",
+  "questionNumber": 84,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "none",
+  "stem": "メッセージダイジェストを利用した送信者のデジタル署名が付与された電子メールに関する記述のうち，適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "デジタル署名を受信者が検証することによって，不正なメールサーバから送信された電子メールであるかどうかを判別できる。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "デジタル署名を送信側メールサーバのサーバ証明書で受信者が検証することによって，送信者のなりすましを検知できる。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "デジタル署名を付与すると，同時に電子メール本文の暗号化も行われるので，電子メールの内容の漏えいを防ぐことができる。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "電子メール本文の改ざんの防止はできないが，デジタル署名をすることによって，受信者は改ざんが行われたことを検知することはできる。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はエです。設問の条件に最も適合する選択肢がエであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r05.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和5年度 ITパスポート試験 公開問題 問84",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

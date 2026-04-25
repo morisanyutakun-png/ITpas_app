@@ -1,0 +1,51 @@
+{
+  "externalKey": "r05_official_q43",
+  "examYear": 5,
+  "examSeason": "annual",
+  "questionNumber": 43,
+  "majorCategory": "management",
+  "formatType": "comparison",
+  "trapType": "none",
+  "stem": "ソフトウェア導入作業に関する記述a～dのうち，適切なものだけを全て挙げたものはどれか。\n- 新規開発の場合，導入計画書の作成はせず，期日までに速やかに導入する。\n- ソフトウェア導入作業を実施した後，速やかに導入計画書と導入報告書を作成し，合意を得る必要がある。\n- ソフトウェアを自社開発した場合，影響範囲が社内になるので導入計画書の作成後に導入し，導入計画書の合意は導入後に行う。\n- 本番稼働中のソフトウェアに機能追加する場合，機能追加したソフトウェアの導入計画書を作成し，合意を得てソフトウェア導入作業を実施する。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "a，c",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "b，c，d",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "b，d",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢エとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "d",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はエです。設問の条件に最も適合する選択肢がエであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r05.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和5年度 ITパスポート試験 公開問題 問43",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

@@ -1,0 +1,51 @@
+{
+  "externalKey": "r05_official_q45",
+  "examYear": 5,
+  "examSeason": "annual",
+  "questionNumber": 45,
+  "majorCategory": "management",
+  "formatType": "calculation",
+  "trapType": "none",
+  "stem": "プロジェクトマネジメントでは，スケジュール，コスト，品質といった競合する制約条件のバランスをとることが求められる。計画していた開発スケジュールを短縮することになった場合の対応として，適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "資源の追加によってコストを増加させてでもスケジュールを遵守することを検討する。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "提供するシステムの高機能化を図ってスケジュールを遵守することを検討する。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "プロジェクトの対象スコープを拡大してスケジュールを遵守することを検討する。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "プロジェクトメンバーを削減してスケジュールを遵守することを検討する。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢アとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はアです。設問の条件に最も適合する選択肢がアであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r05.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和5年度 ITパスポート試験 公開問題 問45",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

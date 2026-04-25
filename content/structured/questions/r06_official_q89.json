@@ -1,0 +1,51 @@
+{
+  "externalKey": "r06_official_q89",
+  "examYear": 6,
+  "examSeason": "annual",
+  "questionNumber": 89,
+  "majorCategory": "technology",
+  "formatType": "security_case",
+  "trapType": "none",
+  "stem": "システムの利用者認証に関する記述のうち，適切なものはどれか。",
+  "choices": [
+    {
+      "label": "ア",
+      "body": "1回の認証で，複数のサーバやアプリケーションなどへのログインを実現する仕組みを，チャレンジレスポンス認証という。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢ウとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "イ",
+      "body": "指紋や声紋など，身体的な特徴を利用して本人認証を行う仕組みを，シングルサインオンという。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢ウとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    },
+    {
+      "label": "ウ",
+      "body": "情報システムが利用者の本人確認のために用いる，数字列から成る暗証番号のことを，PINという。",
+      "isCorrect": true,
+      "whyAttractive": null,
+      "misconceptionSlug": null
+    },
+    {
+      "label": "エ",
+      "body": "特定の数字や文字の並びではなく，位置についての情報を覚えておき，認証時には画面に表示された表の中で，自分が覚えている位置に並んでいる数字や文字をパスワードとして入力する方式を，多要素認証という。",
+      "isCorrect": false,
+      "whyAttractive": "正解の選択肢ウとは異なります。設問の条件や用語の定義に照らすと、この選択肢は最も適切ではありません。",
+      "misconceptionSlug": null
+    }
+  ],
+  "explanation": "正解はウです。設問の条件に最も適合する選択肢がウであり、他の選択肢は用語の定義、条件の範囲、又は組合せが一致しません。",
+  "keyInsight": "公式問題では、設問中の条件語と選択肢の定義・対応関係を照合して、最も適切なものを選びます。",
+  "commonMistakeFlow": null,
+  "topicSlugs": [],
+  "misconceptionSlugs": [],
+  "materialSlugs": [],
+  "sourceFilePath": "content/raw/past_exams/r06.pdf",
+  "sourcePageNumber": null,
+  "originType": "ipa_actual",
+  "sourceNote": "出典：令和6年度 ITパスポート試験 公開問題 問89",
+  "modifiedNote": "原典の公開問題を構造化しました。HTML化された公開過去問本文及び画像選択肢のOCRを利用し、改行・空白・記号の表記を整えています。設問の意味・正解は変更していません。"
+}

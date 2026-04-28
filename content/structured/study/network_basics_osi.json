@@ -1,0 +1,31 @@
+{
+  "slug": "network_basics_osi",
+  "title": "OSI参照モデルとTCP/IPモデル",
+  "hook": "通信機能を「層」に分けて整理する考え方。試験では『どの層の機器・プロトコルか』が頻出。",
+  "figure": {
+    "kind": "layered",
+    "caption": "上に行くほど人間に近く、下に行くほど物理に近い。各層は『1つ下の層のサービス』だけを使う。",
+    "layers": [
+      { "label": "1. 物理層", "items": ["ケーブル", "リピータハブ"], "accent": "neutral" },
+      { "label": "2. データリンク層", "items": ["Ethernet", "MACアドレス", "スイッチ"], "accent": "cool" },
+      { "label": "3. ネットワーク層", "items": ["IP", "ICMP", "ルータ"], "accent": "primary" },
+      { "label": "4. トランスポート層", "items": ["TCP (信頼)", "UDP (高速)"], "accent": "primary" },
+      { "label": "5-6. セッション/プレゼン", "items": ["SSL/TLS"], "accent": "warm" },
+      { "label": "7. アプリケーション層", "items": ["HTTP", "SMTP", "DNS"], "accent": "warm" }
+    ]
+  },
+  "keyPoints": [
+    { "term": "ルータ", "body": "ネットワーク層 (3層)。IP アドレスを見て異なるネットワーク間を中継する。" },
+    { "term": "スイッチ", "body": "データリンク層 (2層)。MAC アドレスを見て同一ネットワーク内で転送する。" },
+    { "term": "TCP", "body": "トランスポート層。コネクションを張って『届いたか』を保証 (信頼性)。" },
+    { "term": "UDP", "body": "トランスポート層。コネクションレスで高速。動画・音声・DNS で使う。" },
+    { "term": "HTTP / SMTP / DNS", "body": "アプリケーション層。トランスポート層と混同しやすいので注意。" }
+  ],
+  "pitfalls": [
+    "「ルータ＝データリンク層」は典型的な引っかけ。ルータはネットワーク層。",
+    "TCP/UDP は『トランスポート層』であって『ネットワーク層』ではない。",
+    "DNS はアプリケーション層 (UDP/TCP の上)。"
+  ],
+  "questionCount": 5,
+  "estimatedSeconds": 60
+}

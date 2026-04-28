@@ -75,6 +75,44 @@
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
   }
+
+  /* ── Pointer affordance ─────────────────────────────────────────────
+     Anything that responds to a click should feel clickable on hover.
+     Browsers default `<button>` to text cursor in some contexts and
+     `<a>` only switches when `href` is present. We apply `pointer`
+     globally to interactive elements + the role-based variants used
+     across the app, so authors don't have to remember per-component.
+  */
+  a[href],
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [role="link"],
+  [role="tab"],
+  [role="menuitem"],
+  [role="option"],
+  summary,
+  label[for],
+  select:not(:disabled),
+  input[type="submit"]:not(:disabled),
+  input[type="button"]:not(:disabled),
+  input[type="reset"]:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled),
+  input[type="file"]:not(:disabled) {
+    cursor: pointer;
+  }
+  button:disabled,
+  [aria-disabled="true"],
+  a[aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+  /* Disable text-cursor inheritance inside clickable wrappers so children
+     (icons, spans) don't break the affordance. */
+  a[href] *,
+  button:not(:disabled) *,
+  [role="button"]:not([aria-disabled="true"]) * {
+    cursor: inherit;
+  }
   body {
     @apply bg-background text-foreground;
     font-family:
@@ -123,7 +161,17 @@
 
   /* Primary card surface. */
   .surface-card {
-    @apply rounded-2xl bg-card ring-1 ring-black/[0.04] shadow-surface dark:ring-white/[0.06];
+    @apply rounded-2xl bg-card ring-1 ring-black/[0.04] shadow-surface transition-[transform,box-shadow,background-color] duration-200 ease-out dark:ring-white/[0.06];
+  }
+  /* Cards used as links/buttons get a subtle lift on hover — the same
+     gesture Apple Music uses on its featured tiles. */
+  a.surface-card:hover,
+  button.surface-card:hover {
+    @apply -translate-y-[2px] shadow-ios-lg;
+  }
+  a.surface-card:active,
+  button.surface-card:active {
+    @apply translate-y-0;
   }
   /* Elevated surface (sheets, popovers). */
   .surface-elevated {
@@ -141,36 +189,44 @@
   .ios-list > * + * {
     @apply border-t border-border/60;
   }
+  /* Each row is a tap target — hover shows a soft tinted wash like the
+     "now playing" rows in Apple Music. Active state stays as scale only;
+     the wash does the affordance work. */
   .ios-row {
-    @apply flex min-h-[56px] items-center gap-3 px-4 py-3 text-[15px];
+    @apply relative flex min-h-[56px] items-center gap-3 px-4 py-3 text-[15px] transition-colors duration-150 ease-out hover:bg-muted/60;
+  }
+  a.ios-row,
+  button.ios-row {
+    @apply active:bg-muted/80;
   }
   .ios-section-label {
     @apply px-4 pb-1.5 pt-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-muted-foreground;
   }
 
-  /* Pill button (iOS-style). */
+  /* Pill button (iOS-style).
+     The hover lift + shadow bump is what makes a flat pill read as a real
+     button — Apple Music does this on its play/queue chips. */
   .pill {
-    @apply inline-flex items-center justify-center whitespace-nowrap rounded-full font-semibold transition-[transform,opacity,background-color] duration-150 ease-out active:scale-[0.97] disabled:pointer-events-none disabled:opacity-50;
+    @apply inline-flex items-center justify-center whitespace-nowrap rounded-full font-semibold transition-[transform,opacity,background-color,box-shadow,filter] duration-200 ease-out hover:-translate-y-[1px] active:translate-y-0 active:scale-[0.97] disabled:pointer-events-none disabled:opacity-50;
   }
   .pill-primary {
-    @apply pill bg-primary text-primary-foreground shadow-tint-blue hover:brightness-110 active:opacity-90;
+    @apply pill bg-primary text-primary-foreground shadow-tint-blue hover:brightness-[1.08] hover:shadow-[0_10px_26px_rgba(0,122,255,0.38)] active:opacity-95;
   }
   .pill-neutral {
-    @apply pill bg-foreground text-background hover:brightness-110;
+    @apply pill bg-foreground text-background hover:brightness-110 hover:shadow-ios-lg;
   }
   .pill-ghost {
-    @apply pill bg-muted text-foreground hover:bg-muted/80;
+    @apply pill bg-muted text-foreground hover:bg-muted/70 hover:shadow-ios-sm;
   }
 
-  /* Nav pill used in desktop header. */
+  /* Nav pill used in desktop header. Hover swaps fill + slightly bumps
+     letter weight via shadow — keeps the bar serene at rest, decisive on
+     intent. */
   .nav-pill {
-    @apply inline-flex items-center rounded-full px-3.5 py-1.5 text-[13.5px] font-medium text-muted-foreground transition-colors;
-  }
-  .nav-pill:hover {
-    @apply bg-muted text-foreground;
+    @apply relative inline-flex items-center rounded-full px-3.5 py-1.5 text-[13.5px] font-medium text-muted-foreground transition-[color,background-color,transform] duration-150 ease-out hover:bg-muted hover:text-foreground active:scale-[0.97];
   }
   .nav-pill[data-active="true"] {
-    @apply bg-foreground text-background;
+    @apply bg-foreground text-background hover:bg-foreground hover:text-background;
   }
 
   /* Glass bar (header / tab bar). */
@@ -190,7 +246,7 @@
 
   /* Gradient hero tile (large CTA card). */
   .hero-tile {
-    @apply relative overflow-hidden rounded-3xl p-5 text-white shadow-hero transition-transform duration-200 ease-out active:scale-[0.985];
+    @apply relative overflow-hidden rounded-3xl p-5 text-white shadow-hero transition-[transform,box-shadow,filter] duration-200 ease-out hover:-translate-y-[2px] hover:brightness-[1.04] hover:shadow-[0_26px_56px_rgba(15,23,42,0.24)] active:translate-y-0 active:scale-[0.985];
   }
   .hero-tile::after {
     content: "";
@@ -232,9 +288,11 @@
 
   /* ── Album-art tiles (toC catalog feel) ───────────────────────────── */
 
-  /* Square tile with a huge year/label as typographic art. */
+  /* Square tile with a huge year/label as typographic art. Hover lifts
+     and brightens — mirrors Apple Music's album art tiles where the
+     entire artwork subtly responds. */
   .album-tile {
-    @apply relative flex aspect-[4/5] flex-col overflow-hidden rounded-3xl p-5 text-white shadow-hero transition-transform duration-200 ease-out active:scale-[0.98];
+    @apply relative flex aspect-[4/5] flex-col overflow-hidden rounded-3xl p-5 text-white shadow-hero transition-[transform,box-shadow,filter] duration-200 ease-out hover:-translate-y-[3px] hover:shadow-[0_28px_56px_rgba(15,23,42,0.28)] hover:brightness-[1.04] active:translate-y-0 active:scale-[0.98];
   }
   .album-tile::before {
     /* Diagonal light sweep */
@@ -330,6 +388,13 @@
       url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
     pointer-events: none;
     mix-blend-mode: multiply;
+  }
+
+  /* Editorial card — interactive variants get the same lift-on-hover
+     vocabulary so the whole catalog feels consistent. */
+  a.editorial-card,
+  button.editorial-card {
+    @apply transition-[transform,box-shadow,filter] duration-200 ease-out hover:-translate-y-[2px] hover:shadow-[0_28px_60px_rgba(15,23,42,0.18)] hover:brightness-[1.02] active:translate-y-0 active:scale-[0.99];
   }
 
   /* Editorial kicker — small-caps label with a leading dot. */

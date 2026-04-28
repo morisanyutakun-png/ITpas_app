@@ -36,6 +36,19 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  // Explicit icon URLs with a version tag — combined with the
+  // `generateImageMetadata` id in app/icon.tsx and app/apple-icon.tsx,
+  // this changes the URL whenever the icon is updated so browsers,
+  // proxies and PWA installs cannot serve a stale 「理」 favicon.
+  icons: {
+    icon: [
+      { url: "/icon/itpass-v2?v=2", type: "image/png", sizes: "64x64" },
+    ],
+    apple: [
+      { url: "/apple-icon/itpass-v2?v=2", sizes: "180x180" },
+    ],
+    shortcut: ["/icon/itpass-v2?v=2"],
+  },
 };
 
 // Session/anon cookies are read in nested layouts — keep dynamic.

@@ -2,13 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, BookOpen, Timer, AlertTriangle, BarChart3 } from "lucide-react";
+import { Home, BookOpen, Target, BarChart3 } from "lucide-react";
 
 const TABS = [
   { href: "/home", label: "ホーム", icon: Home, matchPrefix: false },
-  { href: "/learn/questions", label: "問題", icon: BookOpen, matchPrefix: true },
-  { href: "/learn/mock-exam", label: "模試", icon: Timer, matchPrefix: true },
-  { href: "/misconceptions", label: "誤解", icon: AlertTriangle, matchPrefix: true },
+  { href: "/learn/study", label: "学習", icon: BookOpen, matchPrefix: true },
+  { href: "/learn", label: "演習", icon: Target, matchPrefix: false },
   { href: "/dashboard", label: "分析", icon: BarChart3, matchPrefix: true },
 ] as const;
 
@@ -38,8 +37,10 @@ export function MobileTabBar() {
               className="group flex min-w-0 flex-1 flex-col items-center justify-center gap-1 py-1.5 text-[10.5px] font-semibold"
             >
               <span
-                className={`relative flex h-8 w-14 items-center justify-center rounded-full transition-colors duration-200 ${
-                  active ? "bg-primary/12 text-primary" : "text-muted-foreground group-active:text-foreground"
+                className={`relative flex h-8 w-14 items-center justify-center rounded-full transition-colors duration-200 group-hover:bg-muted group-active:scale-95 ${
+                  active
+                    ? "bg-primary/12 text-primary group-hover:bg-primary/[0.18]"
+                    : "text-muted-foreground group-hover:text-foreground group-active:text-foreground"
                 }`}
               >
                 <Icon

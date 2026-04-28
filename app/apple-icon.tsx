@@ -1,12 +1,9 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const size = { width: 64, height: 64 };
+export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
 
-// Generate a unique id so a fresh URL is produced when the icon changes —
-// browsers and CDNs key on the URL, not just file mtime, so this is the
-// most reliable way to break a stale favicon cache.
 export function generateImageMetadata() {
   return [
     {
@@ -17,7 +14,7 @@ export function generateImageMetadata() {
   ];
 }
 
-export default function Icon() {
+export default function AppleIcon() {
   return new ImageResponse(
     (
       <div
@@ -29,11 +26,12 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          fontSize: 28,
+          fontSize: 86,
           fontWeight: 800,
-          letterSpacing: -1.2,
+          letterSpacing: -3,
           fontFamily:
             "ui-sans-serif, system-ui, -apple-system, 'Helvetica Neue', sans-serif",
+          borderRadius: 36,
         }}
       >
         iP

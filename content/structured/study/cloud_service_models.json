@@ -1,0 +1,27 @@
+{
+  "slug": "cloud_service_models",
+  "title": "IaaS / PaaS / SaaS の使い分け",
+  "hook": "クラウドの提供範囲を3階層に分けたモデル。下に行くほど自社で管理する範囲が広い。",
+  "figure": {
+    "kind": "layered",
+    "caption": "上に行くほど『すぐ使える』が自由度は下がる。下に行くほど自由度は高いが、運用責任も増える。",
+    "layers": [
+      { "label": "オンプレミス (参考)", "items": ["全部自社"], "accent": "neutral" },
+      { "label": "IaaS", "items": ["AWS EC2", "GCE", "サーバ・OS をユーザが管理"], "accent": "cool" },
+      { "label": "PaaS", "items": ["Heroku", "App Engine", "アプリだけ用意すればよい"], "accent": "primary" },
+      { "label": "SaaS", "items": ["Gmail", "Salesforce", "そのまま使える"], "accent": "warm" }
+    ]
+  },
+  "keyPoints": [
+    { "term": "IaaS (Infrastructure)", "body": "仮想サーバ・ストレージを提供。OS から上はユーザが管理する。" },
+    { "term": "PaaS (Platform)", "body": "OS・ミドルウェアまで提供。アプリのコードと設定だけを用意する。" },
+    { "term": "SaaS (Software)", "body": "完成したアプリを提供。ユーザは設定とデータだけを持ち込む。" },
+    { "term": "判別の鍵", "body": "「ユーザが何を管理するか」で見分ける。OS まで管理 → IaaS。" }
+  ],
+  "pitfalls": [
+    "「Gmail は PaaS」── 誤り。完成アプリを使うので SaaS。",
+    "「EC2 は SaaS」── 誤り。OS から自分で入れるので IaaS。"
+  ],
+  "questionCount": 5,
+  "estimatedSeconds": 50
+}

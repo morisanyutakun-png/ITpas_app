@@ -28,10 +28,10 @@ export default async function MarketingLayout({
             href="/"
             className="flex items-center gap-2.5 text-[15.5px] font-semibold tracking-tight"
           >
-            <span className="flex h-7 w-7 items-center justify-center rounded-[9px] bg-grad-ink text-[12px] font-bold text-white shadow-tile">
-              理
+            <span className="flex h-7 w-7 items-center justify-center rounded-[9px] bg-grad-ink text-[10.5px] font-bold tracking-tight text-white shadow-tile">
+              iP
             </span>
-            <span>理解ノート</span>
+            <span>ITpass</span>
           </Link>
           <nav className="ml-auto flex items-center gap-1">
             <Link

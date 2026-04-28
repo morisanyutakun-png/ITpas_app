@@ -62,7 +62,7 @@ function HeroSection() {
         <div className="relative z-10 animate-fade-up">
           <div className="inline-flex items-center gap-2 rounded-full bg-card/70 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground ring-1 ring-black/[0.04] backdrop-blur dark:ring-white/[0.08]">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary" />
-            ITパスポート 理解ノート
+            ITpass — ITパスポート学習
           </div>
           <h1 className="mt-4 text-[40px] font-semibold leading-[1.05] tracking-tight text-balance sm:text-[54px]">
             覚えない。
@@ -130,7 +130,7 @@ function WhySection() {
         />
         <WhyCard
           tone="good"
-          label="理解ノートのやり方"
+          label="ITpassのやり方"
           title="誤解の形を崩す"
           body="すべての誤答に『なぜ魅力的に見えたか』が書かれている。ひっかかった『引き寄せ』を言語化し、誤解パターン単位で潰す。"
           items={[

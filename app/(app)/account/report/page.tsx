@@ -90,7 +90,7 @@ export default async function ReportPage() {
         <header className="flex items-end justify-between border-b pb-4">
           <div>
             <div className="text-xs font-bold uppercase tracking-wider text-slate-500">
-              理解ノート — 学習レポート
+              ITpass — 学習レポート
             </div>
             <h1 className="text-2xl font-black tracking-tight">
               {user.displayName ?? user.email ?? "学習者"}さんの現在地

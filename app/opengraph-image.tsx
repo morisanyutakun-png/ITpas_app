@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "ITパス理解ノート";
+export const alt = "ITpass";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -22,7 +22,7 @@ export default function OG() {
         }}
       >
         <div style={{ fontSize: 28, color: "#fbbf24", marginBottom: 24 }}>
-          ITパス理解ノート
+          ITpass
         </div>
         <div
           style={{
@@ -32,10 +32,10 @@ export default function OG() {
             letterSpacing: -1,
           }}
         >
-          「過去問は解けるけど、なぜ間違えたかは説明できない」
+          カリキュラム地図で現在地を見て、過去問で攻める。
         </div>
         <div style={{ fontSize: 32, marginTop: 24, color: "#cbd5e1" }}>
-          を終わらせる、理解特化型の学習ノート。
+          ITパスポート学習の地図と現在地を、ひとつのアプリで。
         </div>
       </div>
     ),

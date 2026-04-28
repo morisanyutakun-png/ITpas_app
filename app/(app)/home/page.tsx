@@ -1,13 +1,21 @@
 import Link from "next/link";
 import {
   AlertTriangle,
+  ArrowUpRight,
+  BarChart3,
+  BookOpen,
   Bookmark,
   ChevronRight,
-  Clock,
+  Compass,
   Flame,
   Lock,
+  Network,
   PlayCircle,
+  Shuffle,
+  Skull,
   Target,
+  Timer,
+  type LucideIcon,
 } from "lucide-react";
 import { getCurrentUser } from "@/lib/currentUser";
 import {
@@ -29,6 +37,8 @@ import { Roadmap } from "@/components/home/Roadmap";
 
 export const dynamic = "force-dynamic";
 
+export const metadata = { title: "ITpassホーム" };
+
 const YEAR_GRAD: Record<number, string> = {
   7: "bg-grad-r07",
   6: "bg-grad-r06",
@@ -38,8 +48,11 @@ const YEAR_GRAD: Record<number, string> = {
 };
 
 /**
- * Signed-in home. Six sections — header, stats, today's hero, continue,
- * practice pool (past papers + original mocks), roadmap.
+ * ITpassホーム — 4 章構成。
+ *  1. 学習地図 / 現在地 (Roadmap)
+ *  2. アウトプット (ランダム演習・模試・過去問)
+ *  3. インプット (学習ガイド・論点マップ・誤解辞典)
+ *  4. フィードバック (進捗・分析)
  */
 export default async function HomePage() {
   const user = await getCurrentUser();
@@ -61,8 +74,6 @@ export default async function HomePage() {
       listMisconceptionsWithStats(user.id),
     ]);
 
-  // Top "trap" — biggest user-specific weakness (>=2 attempts, highest
-  // incorrect rate). Cold start: most-linked misconception across questions.
   const enemy =
     miscAll
       .filter((m) => m.attempted >= 2)
@@ -89,16 +100,25 @@ export default async function HomePage() {
   const dateStr = `${jst.getUTCMonth() + 1}月${jst.getUTCDate()}日 ${["日", "月", "火", "水", "木", "金", "土"][jst.getUTCDay()]}曜日`;
   const greetingKicker = greetingFor(jst.getUTCHours());
 
-  // Past-exam drills: year templates whose source is verbatim IPA (ipa_actual).
+  const totals = roadmap.reduce(
+    (a, m) => ({
+      topics: a.topics + m.topicCount,
+      mastered: a.mastered + m.masteredCount,
+      attempted: a.attempted + m.attemptedCount,
+    }),
+    { topics: 0, mastered: 0, attempted: 0 }
+  );
+  const overallPct =
+    totals.topics > 0 ? Math.round((totals.mastered / totals.topics) * 100) : 0;
+
   const pastExamTemplates = templates.filter(
     (t) => t.sourceType === "past_exam" && t.filter.kind === "year"
   );
-  // Original mock exams: everything tagged `mock` in the templates file.
   const mockTemplates = templates.filter((t) => t.sourceType === "mock");
 
   return (
-    <div className="space-y-8 pb-10">
-      {/* ── 1. Editorial header ──────────────────────── */}
+    <div className="space-y-10 pb-10">
+      {/* ── Header ───────────────────────────────────── */}
       <header className="space-y-1.5 pt-1">
         <div className="flex items-baseline justify-between">
           <div className="text-[11.5px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
@@ -108,97 +128,50 @@ export default async function HomePage() {
             {greetingKicker}
           </div>
         </div>
+        <div className="kicker">ITpass Home</div>
         <h1 className="text-ios-large font-semibold leading-[1.05] tracking-tight text-balance">
-          <span className="text-muted-foreground/75">こんにちは、</span>
-          <br />
-          {firstName}さん。
+          ITpassホーム
         </h1>
         <p className="text-[13.5px] text-muted-foreground">
+          {firstName}さん、こんにちは。
           {pro
-            ? "今日は何から攻めますか。"
+            ? "地図で現在地を見て、今日の一手を選びましょう。"
             : `今日の無料枠は ${dailyCap ?? 10} 問。残り ${Math.max(0, (dailyCap ?? 10) - todayTotal)} 問。`}
         </p>
       </header>
 
-      {/* ── 2. Stats panel (ring + week bars) ────────── */}
-      <section
-        aria-label="学習ダッシュボード"
-        className="editorial-card p-5"
-      >
-        <div className="relative z-10 grid gap-5 sm:grid-cols-[auto_1px_1fr]">
-          <div className="flex items-center gap-4">
-            <AccuracyRing
-              percent={accuracy}
-              size={96}
-              thickness={8}
-              label="ACCURACY"
-            />
-            <div className="space-y-1.5">
-              <StatLine
-                icon={<Flame className="h-3.5 w-3.5 text-ios-orange" />}
-                label="連続"
-                value={summary.streakDays}
-                unit="日"
-              />
-              <StatLine
-                icon={<Target className="h-3.5 w-3.5 text-ios-blue" />}
-                label="累計"
-                value={summary.totalAttempts}
-                unit="問"
-              />
-              <StatLine
-                icon={<Bookmark className="h-3.5 w-3.5 text-ios-purple" />}
-                label="ブックマーク"
-                value={summary.bookmarkCount}
-                unit="件"
-              />
-            </div>
-          </div>
-          <div
-            aria-hidden
-            className="hidden h-full w-px bg-border sm:block"
-          />
-          <div className="min-h-[150px]">
-            <ActivityWeek data={daily} />
-          </div>
+      {/* ─────────────────────────────────────────────────────────────
+          CHAPTER 1 — 学習地図 / 現在地
+         ───────────────────────────────────────────────────────────── */}
+      <ChapterDivider
+        index="01"
+        kicker="The Map"
+        title="学習地図と、あなたの現在地"
+        sub="ITパスポートの全領域を俯瞰し、いまどこに立っているかを確認します"
+      />
+
+      {roadmap && roadmap.length > 0 ? (
+        <Roadmap majors={roadmap} signedIn />
+      ) : (
+        <div className="surface-card p-6 text-center text-[13px] text-muted-foreground">
+          地図データを読み込めませんでした。
         </div>
-        {dailyCap && !pro && (
-          <div className="relative z-10 mt-5 border-t border-border pt-4">
-            <div className="flex items-baseline justify-between text-[11.5px]">
-              <span className="font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-                今日の枠
-              </span>
-              <span className="num text-muted-foreground">
-                <span className="font-semibold text-foreground">
-                  {todayTotal}
-                </span>
-                {" / "}
-                {dailyCap} 問
-              </span>
-            </div>
-            <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-muted">
-              <div
-                className="h-full rounded-full bg-grad-sunset transition-[width] duration-500"
-                style={{ width: `${Math.max(3, todayPct)}%` }}
-              />
-            </div>
-          </div>
-        )}
-      </section>
+      )}
 
-      {/* ── 3. "Today's Practice" editorial hero ─────── */}
-      <section>
-        <EditorialHero
-          rec={rec}
-          fallbackTitle="弱点5問チャレンジ"
-          fallbackSub="誤解パターン重み付きで、今日のあなたに刺さる5問"
-        />
-      </section>
+      {/* ─────────────────────────────────────────────────────────────
+          CHAPTER 2 — アウトプット (演習で試す)
+         ───────────────────────────────────────────────────────────── */}
+      <ChapterDivider
+        index="02"
+        kicker="Output · Practice"
+        title="演習で力を試す"
+        sub="豊富な過去問をベースに、ランダム演習・模試・年度別過去問へ"
+      />
 
-      {/* ── 4. Continue / For You ─────────────────── */}
+      {/* 続きから / おすすめ — 短いリスト */}
       {(last || rec || enemy) && (
         <section className="space-y-3">
-          <SectionHead kicker="For You" title="続きから" sub="迷ったらここから" />
+          <RuleLabel title="続きから / あなたへ" />
           <div className="ios-list shadow-ios-sm">
             {last && (
               <Link
@@ -286,70 +259,280 @@ export default async function HomePage() {
         </section>
       )}
 
-      {/* ── 5. 演習プール (年度別過去問 + オリジナル模試) ── */}
-      <section className="space-y-4">
-        <SectionHead
-          kicker="Practice Pool"
-          title="演習プール"
-          sub="年度別過去問と、理解ノート模試"
-          rightHref="/learn/mock-exam"
-          rightLabel="すべて"
+      {/* 主要3導線: ランダム / 模試 / 弱点 */}
+      <section className="space-y-3">
+        <RuleLabel title="演習モード" />
+        <div className="grid gap-3 sm:grid-cols-3">
+          <ModeTile
+            href="/learn/random"
+            grad="bg-grad-purple"
+            icon={Shuffle}
+            kicker="Random"
+            title="ランダム1問"
+            sub="全範囲からランダム抽選"
+          />
+          <ModeTile
+            href={canMock ? "/learn/mock-exam" : "/pricing?reason=mock_exam"}
+            grad="bg-grad-ocean"
+            icon={Timer}
+            kicker="Mock Exam"
+            title="模擬試験"
+            sub="本番形式で力試し"
+            lockedLabel={canMock ? undefined : "Pro"}
+          />
+          <ModeTile
+            href="/learn/session/new?mode=weakness&count=5"
+            grad="bg-grad-sunset"
+            icon={Target}
+            kicker="Sharpen"
+            title="弱点5問"
+            sub="誤解パターン重みで自動抽選"
+          />
+        </div>
+      </section>
+
+      {/* 過去問アーカイブ */}
+      {(pastExamTemplates.length > 0 || mockTemplates.length > 0) && (
+        <section className="space-y-4">
+          <SectionHead
+            kicker="Past Papers · Originals"
+            title="過去問・オリジナル模試"
+            sub="年度別の収録 + ITpass オリジナル"
+            rightHref="/learn/mock-exam"
+            rightLabel="すべて"
+          />
+          {pastExamTemplates.length > 0 && (
+            <div className="space-y-2">
+              <RuleLabel title="年度別 · IPA公開" />
+              <div className="hscroll">
+                {pastExamTemplates.map((t) => {
+                  if (t.filter.kind !== "year") return null;
+                  const y = t.filter.examYear;
+                  const season = t.filter.examSeason;
+                  const src = pastExams.find(
+                    (p) =>
+                      p.examYear === y &&
+                      (season === undefined || p.examSeason === season)
+                  );
+                  const locked =
+                    !canMock ||
+                    (minYear != null && y < minYear) ||
+                    (t.tier === "premium" && plan !== "premium");
+                  return (
+                    <YearAlbum
+                      key={t.slug}
+                      template={t}
+                      year={y}
+                      label={src?.shortLabel ?? `R${y}`}
+                      imported={src?.importedCount ?? 0}
+                      total={src?.totalQuestions ?? 100}
+                      locked={locked}
+                    />
+                  );
+                })}
+              </div>
+            </div>
+          )}
+          {mockTemplates.length > 0 && (
+            <div className="space-y-2">
+              <RuleLabel title="ITpass · オリジナル" />
+              <div className="hscroll">
+                {mockTemplates.map((t) => {
+                  const locked =
+                    !canMock || (t.tier === "premium" && plan !== "premium");
+                  return (
+                    <MockAlbum key={t.slug} template={t} locked={locked} />
+                  );
+                })}
+              </div>
+            </div>
+          )}
+        </section>
+      )}
+
+      {/* ─────────────────────────────────────────────────────────────
+          CHAPTER 3 — インプット (学んで理解する)
+         ───────────────────────────────────────────────────────────── */}
+      <ChapterDivider
+        index="03"
+        kicker="Input · Study"
+        title="学んで理解する"
+        sub="参考書のように体系的に読み、論点を掘り下げる"
+      />
+
+      <section className="grid gap-3 sm:grid-cols-3">
+        <StudyEntry
+          href="/guides"
+          accent="#34C759"
+          icon={BookOpen}
+          kicker="Reading Guide"
+          title="学習ガイド"
+          desc="3大領域を参考書のように体系的に読む"
         />
-        {pastExamTemplates.length > 0 && (
-          <div className="space-y-2">
-            <RuleLabel title="年度別 · IPA公開" />
-            <div className="hscroll">
-              {pastExamTemplates.map((t) => {
-                if (t.filter.kind !== "year") return null;
-                const y = t.filter.examYear;
-                const season = t.filter.examSeason;
-                const src = pastExams.find(
-                  (p) =>
-                    p.examYear === y &&
-                    (season === undefined || p.examSeason === season)
-                );
-                const locked =
-                  !canMock ||
-                  (minYear != null && y < minYear) ||
-                  (t.tier === "premium" && plan !== "premium");
-                return (
-                  <YearAlbum
-                    key={t.slug}
-                    template={t}
-                    year={y}
-                    label={src?.shortLabel ?? `R${y}`}
-                    imported={src?.importedCount ?? 0}
-                    total={src?.totalQuestions ?? 100}
-                    locked={locked}
-                  />
-                );
-              })}
+        <StudyEntry
+          href="/topics"
+          accent="#0A84FF"
+          icon={Network}
+          kicker="Topic Map"
+          title="論点マップ"
+          desc="OSI / 暗号 / PM — ノードから関連問題へ"
+        />
+        <StudyEntry
+          href="/misconceptions"
+          accent="#FF9500"
+          icon={Skull}
+          kicker="Trap Dictionary"
+          title="誤解パターン辞典"
+          desc="ひっかけの正体を予習する"
+        />
+      </section>
+
+      {/* ─────────────────────────────────────────────────────────────
+          CHAPTER 4 — フィードバック (進捗を確認する)
+         ───────────────────────────────────────────────────────────── */}
+      <ChapterDivider
+        index="04"
+        kicker="Feedback · Progress"
+        title="進捗と分析"
+        sub="正答率・連続記録・週の活動。詳細は分析ダッシュボードへ"
+      />
+
+      <section
+        aria-label="今週の進捗"
+        className="editorial-card p-5"
+      >
+        <div className="relative z-10 grid gap-5 sm:grid-cols-[auto_1px_1fr]">
+          <div className="flex items-center gap-4">
+            <AccuracyRing
+              percent={accuracy}
+              size={96}
+              thickness={8}
+              label="ACCURACY"
+            />
+            <div className="space-y-1.5">
+              <StatLine
+                icon={<Flame className="h-3.5 w-3.5 text-ios-orange" />}
+                label="連続"
+                value={summary.streakDays}
+                unit="日"
+              />
+              <StatLine
+                icon={<Target className="h-3.5 w-3.5 text-ios-blue" />}
+                label="累計"
+                value={summary.totalAttempts}
+                unit="問"
+              />
+              <StatLine
+                icon={<Compass className="h-3.5 w-3.5 text-ios-green" />}
+                label="習熟"
+                value={overallPct}
+                unit="%"
+              />
+              <StatLine
+                icon={<Bookmark className="h-3.5 w-3.5 text-ios-purple" />}
+                label="ブックマーク"
+                value={summary.bookmarkCount}
+                unit="件"
+              />
             </div>
           </div>
-        )}
-        {mockTemplates.length > 0 && (
-          <div className="space-y-2">
-            <RuleLabel title="理解ノート · オリジナル" />
-            <div className="hscroll">
-              {mockTemplates.map((t) => {
-                const locked =
-                  !canMock || (t.tier === "premium" && plan !== "premium");
-                return (
-                  <MockAlbum key={t.slug} template={t} locked={locked} />
-                );
-              })}
+          <div
+            aria-hidden
+            className="hidden h-full w-px bg-border sm:block"
+          />
+          <div className="min-h-[150px]">
+            <ActivityWeek data={daily} />
+          </div>
+        </div>
+        {dailyCap && !pro && (
+          <div className="relative z-10 mt-5 border-t border-border pt-4">
+            <div className="flex items-baseline justify-between text-[11.5px]">
+              <span className="font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+                今日の枠
+              </span>
+              <span className="num text-muted-foreground">
+                <span className="font-semibold text-foreground">
+                  {todayTotal}
+                </span>
+                {" / "}
+                {dailyCap} 問
+              </span>
+            </div>
+            <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-muted">
+              <div
+                className="h-full rounded-full bg-grad-sunset transition-[width] duration-500"
+                style={{ width: `${Math.max(3, todayPct)}%` }}
+              />
             </div>
           </div>
         )}
       </section>
 
-      {/* ── 6. Roadmap ────────────────────────────── */}
-      {roadmap && roadmap.length > 0 && <Roadmap majors={roadmap} signedIn />}
+      <Link
+        href="/dashboard"
+        className="surface-card group flex items-center gap-4 p-5 transition-transform active:scale-[0.99]"
+      >
+        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-grad-purple text-white shadow-tile">
+          <BarChart3 className="h-5 w-5" strokeWidth={2.2} />
+        </span>
+        <div className="min-w-0 flex-1">
+          <div className="text-[10.5px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+            Analytics
+          </div>
+          <div className="text-[16px] font-semibold">
+            分析ダッシュボードを開く
+          </div>
+          <div className="text-[12px] text-muted-foreground">
+            習熟ヒートマップ / 弱点トップ3 / 学習プラン
+          </div>
+        </div>
+        <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+      </Link>
     </div>
   );
 }
 
 // ── Subcomponents ────────────────────────────────────────────────────────
+
+/**
+ * Numbered chapter divider — gives each of the four sections a magazine-style
+ * heading so the order of the page (map → output → input → feedback) reads
+ * as deliberate structure, not stacked widgets.
+ */
+function ChapterDivider({
+  index,
+  kicker,
+  title,
+  sub,
+}: {
+  index: string;
+  kicker: string;
+  title: string;
+  sub?: string;
+}) {
+  return (
+    <div className="border-t border-border pt-5">
+      <div className="flex items-baseline gap-3 px-1">
+        <span className="num text-[28px] font-semibold leading-none tracking-tight text-muted-foreground/50">
+          {index}
+        </span>
+        <div className="min-w-0 flex-1">
+          <div className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+            {kicker}
+          </div>
+          <div className="mt-0.5 text-[20px] font-semibold tracking-tight text-balance">
+            {title}
+          </div>
+          {sub && (
+            <div className="mt-0.5 text-[12px] text-muted-foreground text-pretty">
+              {sub}
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function StatLine({
   icon,
@@ -378,71 +561,107 @@ function StatLine({
   );
 }
 
-function EditorialHero({
-  rec,
-  fallbackTitle,
-  fallbackSub,
+function ModeTile({
+  href,
+  grad,
+  icon: Icon,
+  kicker,
+  title,
+  sub,
+  lockedLabel,
 }: {
-  rec: {
-    slug: string;
-    title: string;
-    reason: string;
-    attempted: number;
-    correctRate: number;
-  } | null;
-  fallbackTitle: string;
-  fallbackSub: string;
+  href: string;
+  grad: string;
+  icon: LucideIcon;
+  kicker: string;
+  title: string;
+  sub: string;
+  lockedLabel?: string;
 }) {
-  const href = rec
-    ? `/learn/session/new?mode=topic&topic=${rec.slug}&count=5`
-    : "/learn/session/new?mode=weakness&count=5";
-  const title = rec?.title ?? fallbackTitle;
-  const sub = rec?.reason ?? fallbackSub;
-
   return (
     <Link
       href={href}
-      className="editorial-card group relative block overflow-hidden p-7 sm:p-9"
+      className={`relative flex aspect-[4/3] flex-col justify-between overflow-hidden rounded-3xl ${grad} p-4 text-white shadow-hero transition-transform active:scale-[0.97]`}
     >
-      <div className="relative z-10 grid gap-6 sm:grid-cols-[1fr_auto] sm:items-end">
-        <div className="space-y-3">
-          <div className="kicker">Today's Practice</div>
-          <h2 className="text-[30px] font-semibold leading-[1.08] tracking-tight text-balance sm:text-[36px]">
-            {title}
-          </h2>
-          <p className="max-w-md text-[13.5px] text-muted-foreground text-pretty">
-            {sub}
-            {rec && rec.attempted > 0 && (
-              <>
-                {" · "}
-                <span className="num font-medium text-foreground">
-                  {Math.round(rec.correctRate * 100)}%
-                </span>{" "}
-                / {rec.attempted}問
-              </>
-            )}
-          </p>
-          <div className="flex flex-wrap items-center gap-2 pt-1">
-            <span className="inline-flex h-10 items-center gap-1.5 rounded-full bg-foreground px-4 text-[13.5px] font-semibold text-background shadow-ios transition-transform group-active:scale-[0.98]">
-              <PlayCircle className="h-4 w-4" />
-              5問セッションを開始
-            </span>
-            <span className="inline-flex items-center gap-1 text-[12px] text-muted-foreground">
-              <Clock className="h-3 w-3" /> 約5〜8分
-            </span>
-          </div>
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage:
+            "radial-gradient(120% 80% at 100% 0%, rgba(255,255,255,0.22), transparent 55%), radial-gradient(100% 80% at 0% 100%, rgba(0,0,0,0.20), transparent 50%)",
+        }}
+      />
+      <div className="relative z-10 flex items-start justify-between">
+        <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/15 ring-1 ring-inset ring-white/25 backdrop-blur">
+          <Icon className="h-5 w-5" strokeWidth={2.2} />
+        </span>
+        {lockedLabel ? (
+          <span className="glass-chip">
+            <Lock className="h-3 w-3" />
+            {lockedLabel}
+          </span>
+        ) : (
+          <span className="text-[10px] font-semibold uppercase tracking-[0.12em] opacity-85">
+            {kicker}
+          </span>
+        )}
+      </div>
+      <div className="relative z-10">
+        <div className="text-[17px] font-semibold leading-tight tracking-tight">
+          {title}
         </div>
+        <div className="text-[11.5px] opacity-85">{sub}</div>
+      </div>
+    </Link>
+  );
+}
 
+function StudyEntry({
+  href,
+  accent,
+  icon: Icon,
+  kicker,
+  title,
+  desc,
+}: {
+  href: string;
+  accent: string;
+  icon: LucideIcon;
+  kicker: string;
+  title: string;
+  desc: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="group surface-card relative block overflow-hidden p-5 transition-transform active:scale-[0.99]"
+    >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full opacity-[0.14] blur-2xl transition-opacity group-hover:opacity-[0.25]"
+        style={{ background: accent }}
+      />
+      <div className="relative">
         <div
-          aria-hidden
-          className="pointer-events-none hidden h-[140px] w-[140px] shrink-0 items-center justify-center sm:flex"
+          className="flex h-11 w-11 items-center justify-center rounded-2xl text-white shadow-tile"
+          style={{ background: accent }}
         >
-          <div className="relative grid place-items-center">
-            <span className="absolute inset-[-14px] rounded-full bg-grad-sunset opacity-50 blur-2xl" />
-            <span className="relative flex h-[120px] w-[120px] items-center justify-center rounded-3xl bg-grad-sunset text-white shadow-hero">
-              <Target className="h-10 w-10" strokeWidth={2.0} />
-            </span>
-          </div>
+          <Icon className="h-5 w-5" strokeWidth={2.2} />
+        </div>
+        <div
+          className="mt-4 text-[10.5px] font-semibold uppercase tracking-[0.14em]"
+          style={{ color: accent }}
+        >
+          {kicker}
+        </div>
+        <div className="mt-0.5 text-[16px] font-semibold tracking-tight">
+          {title}
+        </div>
+        <p className="mt-1 text-[12.5px] text-muted-foreground text-pretty">
+          {desc}
+        </p>
+        <div className="mt-3 inline-flex items-center gap-0.5 text-[12px] font-medium text-muted-foreground transition-transform group-hover:translate-x-0.5">
+          開く <ChevronRight className="h-3.5 w-3.5" />
         </div>
       </div>
     </Link>
@@ -515,11 +734,6 @@ function YearAlbum({
   );
 }
 
-/**
- * Card for an original mock exam template (sourceType=mock). Visually
- * distinct from YearAlbum — no year badge, uses category-themed gradient
- * so the user can tell at a glance this isn't a verbatim past paper.
- */
 function MockAlbum({
   template,
   locked,
@@ -642,3 +856,4 @@ function relativeJp(d: Date): string {
   if (days < 7) return `${days}日前`;
   return `${Math.floor(days / 7)}週間前`;
 }
+

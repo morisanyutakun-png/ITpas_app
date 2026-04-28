@@ -216,7 +216,7 @@ export default async function MockExamEntryPage({
                     Featured · オリジナル模試
                   </div>
                   <div className="mt-1 text-[28px] font-semibold leading-tight tracking-tight">
-                    理解ノート模試 フル
+                    ITpass オリジナル模試 フル
                   </div>
                   <div className="mt-1 flex flex-wrap items-center gap-2 text-[12px] opacity-90">
                     <span className="glass-chip">

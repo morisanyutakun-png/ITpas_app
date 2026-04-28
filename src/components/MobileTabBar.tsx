@@ -2,14 +2,14 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, BookOpen, Timer, BarChart3, User } from "lucide-react";
+import { Home, BookOpen, Timer, AlertTriangle, BarChart3 } from "lucide-react";
 
 const TABS = [
   { href: "/home", label: "ホーム", icon: Home, matchPrefix: false },
   { href: "/learn/questions", label: "問題", icon: BookOpen, matchPrefix: true },
   { href: "/learn/mock-exam", label: "模試", icon: Timer, matchPrefix: true },
+  { href: "/misconceptions", label: "誤解", icon: AlertTriangle, matchPrefix: true },
   { href: "/dashboard", label: "分析", icon: BarChart3, matchPrefix: true },
-  { href: "/account", label: "アカウント", icon: User, matchPrefix: true },
 ] as const;
 
 /**

@@ -1,18 +1,13 @@
 import Link from "next/link";
 import {
-  ArrowRight,
-  ArrowUpRight,
+  AlertTriangle,
   Bookmark,
   ChevronRight,
   Clock,
   Flame,
   Lock,
   PlayCircle,
-  Shuffle,
-  Sparkles,
   Target,
-  Timer,
-  Zap,
 } from "lucide-react";
 import { getCurrentUser } from "@/lib/currentUser";
 import {
@@ -21,6 +16,7 @@ import {
 } from "@/lib/examSources";
 import { hasFeature, isPro, limitsFor, minAllowedExamYear } from "@/lib/plan";
 import { getDailyStats, getRecommendation } from "@/server/queries/history";
+import { listMisconceptionsWithStats } from "@/server/queries/misconceptions";
 import {
   getLastAttempt,
   getPersonalSummary,
@@ -42,25 +38,17 @@ const YEAR_GRAD: Record<number, string> = {
 };
 
 /**
- * Signed-in home. Editorial, Apple Music-inspired layout:
- *   1. Date kicker + named greeting
- *   2. Stats panel with AccuracyRing + 7-day activity
- *   3. "Today's practice" featured card (weakness-driven)
- *   4. Quick actions row (horizontal scroll of square tiles)
- *   5. Continue / For-you list
- *   6. Mock exam — past-paper album row (horizontal scroll)
- *   7. Roadmap
- *   8. Pro editorial card (if not adFree)
+ * Signed-in home. Six sections — header, stats, today's hero, continue,
+ * practice pool (past papers + original mocks), roadmap.
  */
 export default async function HomePage() {
   const user = await getCurrentUser();
   const pro = isPro(user);
-  const showAds = !hasFeature(user, "adFree");
   const plan = user.plan;
   const canMock = hasFeature(user, "mockExam");
   const dailyLimit = limitsFor(plan).dailyQuestionAttempts;
 
-  const [summary, last, rec, roadmap, daily, templates, pastExams, minYear] =
+  const [summary, last, rec, roadmap, daily, templates, pastExams, minYear, miscAll] =
     await Promise.all([
       getPersonalSummary(user.id),
       getLastAttempt(user.id),
@@ -70,7 +58,17 @@ export default async function HomePage() {
       Promise.resolve(getMockExamTemplates()),
       listPastExams(),
       minAllowedExamYear(plan),
+      listMisconceptionsWithStats(user.id),
     ]);
+
+  // Top "trap" — biggest user-specific weakness (>=2 attempts, highest
+  // incorrect rate). Cold start: most-linked misconception across questions.
+  const enemy =
+    miscAll
+      .filter((m) => m.attempted >= 2)
+      .sort((a, b) => b.incorrectRate - a.incorrectRate)[0] ??
+    [...miscAll].sort((a, b) => b.usageCount - a.usageCount)[0] ??
+    null;
 
   const accuracy =
     summary && summary.totalAttempts > 0
@@ -197,51 +195,8 @@ export default async function HomePage() {
         />
       </section>
 
-      {/* ── 4. Quick actions row (horizontal scroll) ── */}
-      <section className="space-y-3">
-        <RuleLabel title="Quick Start" />
-        <div className="hscroll">
-          <QuickTile
-            href="/learn/session/new?mode=weakness&count=5"
-            grad="bg-grad-sunset"
-            icon={<Target className="h-5 w-5" strokeWidth={2.2} />}
-            label="弱点5問"
-            sub="重み付き抽選"
-          />
-          <QuickTile
-            href="/learn/random"
-            grad="bg-grad-purple"
-            icon={<Shuffle className="h-5 w-5" strokeWidth={2.2} />}
-            label="ランダム1問"
-            sub="全範囲から"
-          />
-          <QuickTile
-            href="/learn/mock-exam"
-            grad="bg-grad-ocean"
-            icon={<Timer className="h-5 w-5" strokeWidth={2.2} />}
-            label="模擬試験"
-            sub="100問 / 120分"
-            locked={!canMock}
-          />
-          <QuickTile
-            href="/learn/past-exams"
-            grad="bg-grad-ink"
-            icon={<Zap className="h-5 w-5" strokeWidth={2.2} />}
-            label="過去問"
-            sub={`${pastExams.length}回分`}
-          />
-          <QuickTile
-            href="/topics"
-            grad="bg-grad-green"
-            icon={<Sparkles className="h-5 w-5" strokeWidth={2.2} />}
-            label="論点マップ"
-            sub="ノード一覧"
-          />
-        </div>
-      </section>
-
-      {/* ── 5. Continue / For You ─────────────────── */}
-      {(last || rec) && (
+      {/* ── 4. Continue / For You ─────────────────── */}
+      {(last || rec || enemy) && (
         <section className="space-y-3">
           <SectionHead kicker="For You" title="続きから" sub="迷ったらここから" />
           <div className="ios-list shadow-ios-sm">
@@ -302,121 +257,94 @@ export default async function HomePage() {
                 <ChevronRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
               </Link>
             )}
+            {enemy && (
+              <Link
+                href={`/learn/session/new?mode=weakness&misconception=${enemy.slug}&count=5`}
+                className="ios-row group active:bg-muted/60"
+              >
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-grad-purple text-white shadow-tile">
+                  <AlertTriangle className="h-5 w-5" strokeWidth={2.2} />
+                </span>
+                <div className="min-w-0 flex-1">
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.12em] text-ios-purple">
+                    {enemy.attempted >= 2 ? "今日の誤解" : "知っておきたい誤解"}
+                  </div>
+                  <div className="truncate text-[15px] font-medium">
+                    {enemy.title}
+                  </div>
+                  <div className="text-[11.5px] text-muted-foreground">
+                    {enemy.attempted >= 2
+                      ? `誤答率 ${Math.round(enemy.incorrectRate * 100)}% · ${enemy.attempted}問の履歴`
+                      : `関連 ${enemy.usageCount}問`}
+                    {" · "}誤解パターンで5問
+                  </div>
+                </div>
+                <ChevronRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
+              </Link>
+            )}
           </div>
         </section>
       )}
 
-      {/* ── 6a. 年度別過去問 (IPA公開問題そのまま) ──────── */}
-      <section className="space-y-3">
+      {/* ── 5. 演習プール (年度別過去問 + オリジナル模試) ── */}
+      <section className="space-y-4">
         <SectionHead
-          kicker="Past Papers"
-          title="年度別過去問"
-          sub="IPA公開問題から逐語出題"
-          rightHref="/learn/past-exams"
-          rightLabel="すべて"
-        />
-        <div className="hscroll">
-          {pastExamTemplates.map((t) => {
-            if (t.filter.kind !== "year") return null;
-            const y = t.filter.examYear;
-            const season = t.filter.examSeason;
-            const src = pastExams.find(
-              (p) =>
-                p.examYear === y &&
-                (season === undefined || p.examSeason === season)
-            );
-            const locked =
-              !canMock ||
-              (minYear != null && y < minYear) ||
-              (t.tier === "premium" && plan !== "premium");
-            return (
-              <YearAlbum
-                key={t.slug}
-                template={t}
-                year={y}
-                label={src?.shortLabel ?? `R${y}`}
-                imported={src?.importedCount ?? 0}
-                total={src?.totalQuestions ?? 100}
-                locked={locked}
-              />
-            );
-          })}
-        </div>
-      </section>
-
-      {/* ── 6b. 理解ノート模試 (オリジナル問題) ──────────── */}
-      <section className="space-y-3">
-        <SectionHead
-          kicker="Original Mocks"
-          title="理解ノート模試"
-          sub="本サイト作成のオリジナル問題から出題"
+          kicker="Practice Pool"
+          title="演習プール"
+          sub="年度別過去問と、理解ノート模試"
           rightHref="/learn/mock-exam"
           rightLabel="すべて"
         />
-        <div className="hscroll">
-          {mockTemplates.map((t) => {
-            const locked =
-              !canMock || (t.tier === "premium" && plan !== "premium");
-            return (
-              <MockAlbum key={t.slug} template={t} locked={locked} />
-            );
-          })}
-        </div>
-      </section>
-
-      {/* ── 7. Roadmap ────────────────────────────── */}
-      {roadmap && roadmap.length > 0 && <Roadmap majors={roadmap} signedIn />}
-
-      {/* ── 8. Upgrade — Apple Arcade-style editorial card ── */}
-      {showAds && (
-        <section className="editorial-card overflow-hidden">
-          <div className="relative z-10 grid gap-0 sm:grid-cols-[1.3fr_1fr]">
-            <div className="p-6 sm:p-7">
-              <div className="kicker">Editor's Pick · Pro</div>
-              <h2 className="mt-3 text-[26px] font-semibold leading-tight tracking-tight">
-                本気で合格を狙うなら、
-                <br />
-                <span className="bg-gradient-to-r from-[#FF9500] via-[#FF375F] to-[#AF52DE] bg-clip-text text-transparent">
-                  Pro
-                </span>
-                に切り替える。
-              </h2>
-              <p className="mt-2 text-[13.5px] text-muted-foreground max-w-sm text-pretty">
-                1日無制限 / 模擬試験 / 詳細分析 / 広告非表示。
-                月額 ¥780。いつでも解約可能。
-              </p>
-              <div className="mt-5 flex flex-wrap items-center gap-2">
-                <Link
-                  href="/pricing"
-                  className="inline-flex h-11 items-center gap-1.5 rounded-full bg-foreground px-5 text-[14px] font-semibold text-background shadow-ios active:opacity-90"
-                >
-                  プランを比較
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-                <Link
-                  href="/pricing?reason=mock_exam"
-                  className="inline-flex h-11 items-center gap-1 rounded-full px-4 text-[13.5px] font-semibold text-muted-foreground active:opacity-80"
-                >
-                  模擬試験を体験
-                  <ArrowUpRight className="h-3.5 w-3.5" />
-                </Link>
-              </div>
-            </div>
-            <div className="relative hidden items-end justify-end overflow-hidden p-6 sm:flex">
-              <span
-                aria-hidden
-                className="album-glyph text-[160px] leading-none bg-gradient-to-br from-foreground/90 to-foreground/30 bg-clip-text text-transparent"
-                style={{
-                  transform: "translate(18%, 12%) rotate(-4deg)",
-                }}
-              >
-                Pro
-              </span>
-              <Sparkles className="absolute right-6 top-6 h-6 w-6 text-ios-purple/80" />
+        {pastExamTemplates.length > 0 && (
+          <div className="space-y-2">
+            <RuleLabel title="年度別 · IPA公開" />
+            <div className="hscroll">
+              {pastExamTemplates.map((t) => {
+                if (t.filter.kind !== "year") return null;
+                const y = t.filter.examYear;
+                const season = t.filter.examSeason;
+                const src = pastExams.find(
+                  (p) =>
+                    p.examYear === y &&
+                    (season === undefined || p.examSeason === season)
+                );
+                const locked =
+                  !canMock ||
+                  (minYear != null && y < minYear) ||
+                  (t.tier === "premium" && plan !== "premium");
+                return (
+                  <YearAlbum
+                    key={t.slug}
+                    template={t}
+                    year={y}
+                    label={src?.shortLabel ?? `R${y}`}
+                    imported={src?.importedCount ?? 0}
+                    total={src?.totalQuestions ?? 100}
+                    locked={locked}
+                  />
+                );
+              })}
             </div>
           </div>
-        </section>
-      )}
+        )}
+        {mockTemplates.length > 0 && (
+          <div className="space-y-2">
+            <RuleLabel title="理解ノート · オリジナル" />
+            <div className="hscroll">
+              {mockTemplates.map((t) => {
+                const locked =
+                  !canMock || (t.tier === "premium" && plan !== "premium");
+                return (
+                  <MockAlbum key={t.slug} template={t} locked={locked} />
+                );
+              })}
+            </div>
+          </div>
+        )}
+      </section>
+
+      {/* ── 6. Roadmap ────────────────────────────── */}
+      {roadmap && roadmap.length > 0 && <Roadmap majors={roadmap} signedIn />}
     </div>
   );
 }
@@ -516,52 +444,6 @@ function EditorialHero({
             </span>
           </div>
         </div>
-      </div>
-    </Link>
-  );
-}
-
-function QuickTile({
-  href,
-  grad,
-  icon,
-  label,
-  sub,
-  locked,
-}: {
-  href: string;
-  grad: string;
-  icon: React.ReactNode;
-  label: string;
-  sub: string;
-  locked?: boolean;
-}) {
-  return (
-    <Link
-      href={href}
-      className={`relative flex h-[128px] w-[140px] flex-col justify-between overflow-hidden rounded-2xl ${grad} p-3.5 text-white shadow-hero transition-transform active:scale-[0.97]`}
-    >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          backgroundImage:
-            "radial-gradient(120% 80% at 100% 0%, rgba(255,255,255,0.22), transparent 55%)",
-        }}
-      />
-      <div className="relative z-10 flex items-start justify-between">
-        <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/15 ring-1 ring-inset ring-white/25 backdrop-blur">
-          {icon}
-        </span>
-        {locked && (
-          <span className="glass-chip">
-            <Lock className="h-3 w-3" /> Pro
-          </span>
-        )}
-      </div>
-      <div className="relative z-10">
-        <div className="text-[15px] font-semibold leading-tight">{label}</div>
-        <div className="text-[11px] opacity-85">{sub}</div>
       </div>
     </Link>
   );

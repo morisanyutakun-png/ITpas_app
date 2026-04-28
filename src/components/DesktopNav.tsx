@@ -7,10 +7,8 @@ const LINKS = [
   { href: "/home", label: "ホーム", matchPrefix: false },
   { href: "/learn/questions", label: "問題", matchPrefix: true },
   { href: "/learn/mock-exam", label: "模試", matchPrefix: true },
+  { href: "/misconceptions", label: "誤解", matchPrefix: true },
   { href: "/dashboard", label: "分析", matchPrefix: true },
-  { href: "/bookmarks", label: "保存", matchPrefix: true },
-  { href: "/topics", label: "論点", matchPrefix: true },
-  { href: "/pricing", label: "料金", matchPrefix: true },
 ] as const;
 
 export function DesktopNav() {

@@ -1,10 +1,8 @@
 import Link from "next/link";
 import { sql } from "drizzle-orm";
 import {
-  ArrowUpRight,
   ChevronRight,
   FileText,
-  Flame,
   Lock,
   PlayCircle,
   Target,
@@ -18,12 +16,11 @@ import {
   getProgressByMisconception,
   getProgressByTopic,
 } from "@/server/queries/progress";
-import { getDailyStats, getRecommendation } from "@/server/queries/history";
+import { getDailyStats } from "@/server/queries/history";
 import { MisconceptionHeatmap } from "@/components/dashboard/MisconceptionHeatmap";
 import { TopicHeatmap } from "@/components/dashboard/TopicHeatmap";
 import { DailySparkline } from "@/components/dashboard/DailySparkline";
 import { AdSlot } from "@/components/AdSlot";
-import { AccuracyRing } from "@/components/home/AccuracyRing";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "分析ダッシュボード" };
@@ -35,34 +32,25 @@ export default async function DashboardPage() {
   const mockExamUnlocked = hasFeature(user, "mockExam");
   const pdfUnlocked = hasFeature(user, "pdfExport");
 
-  const [statsRow, daily, rec, misc, topic] = await Promise.all([
+  const [statsRow, daily, misc, topic] = await Promise.all([
     db.execute(sql`
       SELECT
         COUNT(*)::int AS total,
-        SUM(CASE WHEN result = 'correct' THEN 1 ELSE 0 END)::int AS correct,
-        SUM(CASE WHEN result = 'incorrect' THEN 1 ELSE 0 END)::int AS incorrect,
         COALESCE(AVG(NULLIF(duration_ms, 0)), 0)::int AS avg_ms
       FROM attempts
       WHERE user_id = ${user.id} AND result IN ('correct', 'incorrect')
     `),
     getDailyStats(user.id, 14),
-    getRecommendation(user.id),
     analyticsUnlocked ? getProgressByMisconception(user.id) : Promise.resolve([]),
     analyticsUnlocked ? getProgressByTopic(user.id) : Promise.resolve([]),
   ]);
 
   const stats = (statsRow.rows[0] ?? {}) as {
     total?: number;
-    correct?: number;
-    incorrect?: number;
     avg_ms?: number;
   };
   const total = Number(stats.total ?? 0);
-  const correct = Number(stats.correct ?? 0);
-  const incorrect = Number(stats.incorrect ?? 0);
   const avgSec = Math.round(Number(stats.avg_ms ?? 0) / 1000);
-  const accuracy = total > 0 ? Math.round((correct / total) * 100) : 0;
-  const topEnemy = misc[0];
 
   // Daily sparkline — compute 14-day trend slope for editorial caption.
   const lastHalf = daily.slice(-7);
@@ -93,120 +81,40 @@ export default async function DashboardPage() {
         </Link>
       </header>
 
-      {/* ── Hero stats: ring + context ── */}
-      <section className="editorial-card p-5 sm:p-6">
-        <div className="relative z-10 grid gap-6 sm:grid-cols-[auto_1px_1fr]">
-          <div className="flex items-center gap-4">
-            <AccuracyRing
-              percent={total > 0 ? accuracy : null}
-              size={120}
-              thickness={10}
-              label="ACCURACY"
-            />
-            <div className="space-y-2">
-              <HeroStat label="累計" value={total} unit="問" accent="text-foreground" />
-              <HeroStat label="正解" value={correct} unit="問" accent="text-ios-green" />
-              <HeroStat label="誤答" value={incorrect} unit="問" accent="text-ios-red" />
-            </div>
-          </div>
-          <div aria-hidden className="hidden h-full w-px bg-border sm:block" />
-          <div className="min-h-[120px] space-y-3">
-            <div>
-              <div className="kicker">Top Enemy</div>
-              <div className="mt-1 truncate text-[18px] font-semibold leading-tight tracking-tight">
-                {analyticsUnlocked && topEnemy
-                  ? topEnemy.title
-                  : analyticsUnlocked
-                  ? "—"
-                  : "Pro で解放"}
-              </div>
-              {analyticsUnlocked && topEnemy && (
-                <div className="text-[11.5px] text-muted-foreground">
-                  誤答率{" "}
-                  <span className="num font-medium text-ios-red">
-                    {Math.round(topEnemy.incorrectRate * 100)}%
-                  </span>
-                  {" — "}
-                  この誤解に刺さる5問を組める。
-                </div>
-              )}
-            </div>
-            <div className="flex flex-wrap gap-4 border-t border-border pt-3 text-[11.5px]">
-              <div>
-                <div className="text-[10px] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
-                  平均解答時間
-                </div>
-                <div className="num mt-0.5 text-[15px] font-semibold tracking-tight">
-                  {avgSec > 0 ? `${avgSec}` : "—"}
-                  {avgSec > 0 && (
-                    <span className="ml-0.5 text-[11px] font-medium text-muted-foreground">
-                      秒
-                    </span>
-                  )}
-                </div>
-              </div>
-              <div>
-                <div className="text-[10px] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
-                  直近7日 vs 前週
-                </div>
-                <div
-                  className={`num mt-0.5 text-[15px] font-semibold tracking-tight ${
-                    deltaPct > 0
-                      ? "text-ios-green"
-                      : deltaPct < 0
-                      ? "text-ios-red"
-                      : "text-muted-foreground"
-                  }`}
-                >
-                  {deltaPct > 0 ? "+" : ""}
-                  {deltaPct}
-                  <span className="ml-0.5 text-[11px] font-medium text-muted-foreground">
-                    pt
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {!pro && <AdSlot variant="banner" />}
 
-      {/* ── Recommendation ── */}
-      {rec && (
-        <Link
-          href={`/learn/session/new?mode=topic&topic=${rec.slug}&count=5`}
-          className="group surface-card flex items-center gap-4 p-5 transition-transform active:scale-[0.99]"
-        >
-          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-grad-orange text-white shadow-tile">
-            <Flame className="h-5 w-5" strokeWidth={2.2} />
-          </span>
-          <div className="min-w-0 flex-1">
-            <div className="text-[10.5px] font-semibold uppercase tracking-[0.14em] text-ios-orange">
-              次に学ぶべき · {rec.reason}
-            </div>
-            <div className="truncate text-[16px] font-semibold">{rec.title}</div>
-            {rec.attempted > 0 && (
-              <div className="text-[11.5px] text-muted-foreground">
-                これまでの正答率{" "}
-                <span className="num font-medium">
-                  {Math.round(rec.correctRate * 100)}%
-                </span>{" "}
-                · {rec.attempted}問
-              </div>
-            )}
-          </div>
-          <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-        </Link>
-      )}
-
-      {/* ── 14-day sparkline ── */}
+      {/* ── 14-day sparkline + scalar metadata ── */}
       <section className="space-y-3">
         <SectionHead
           kicker="Trend"
           title="14日の推移"
-          sub="継続がいちばんの武器"
-          right={<TrendingUp className="h-4 w-4 text-muted-foreground" />}
+          sub={
+            total > 0
+              ? `累計 ${total}問${avgSec > 0 ? ` · 平均 ${avgSec}秒/問` : ""}`
+              : "解いた問題が増えるほど精度が上がります"
+          }
+          right={
+            total > 0 ? (
+              <span
+                className={`num inline-flex items-center gap-1 text-[12px] font-semibold ${
+                  deltaPct > 0
+                    ? "text-ios-green"
+                    : deltaPct < 0
+                      ? "text-ios-red"
+                      : "text-muted-foreground"
+                }`}
+              >
+                <TrendingUp className="h-3.5 w-3.5" />
+                {deltaPct > 0 ? "+" : ""}
+                {deltaPct}
+                <span className="text-[10px] font-medium text-muted-foreground">
+                  pt vs 前週
+                </span>
+              </span>
+            ) : (
+              <TrendingUp className="h-4 w-4 text-muted-foreground" />
+            )
+          }
         />
         <div className="surface-card p-5">
           <DailySparkline data={daily} />
@@ -276,34 +184,6 @@ export default async function DashboardPage() {
 }
 
 // ── Subcomponents ─────────────────────────────────────────────────────────
-
-function HeroStat({
-  label,
-  value,
-  unit,
-  accent,
-}: {
-  label: string;
-  value: number;
-  unit: string;
-  accent: string;
-}) {
-  return (
-    <div className="flex items-baseline gap-2">
-      <span className="w-12 text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-        {label}
-      </span>
-      <span
-        className={`num text-[15px] font-semibold tracking-tight ${accent}`}
-      >
-        {value}
-        <span className="ml-0.5 text-[11px] font-medium text-muted-foreground">
-          {unit}
-        </span>
-      </span>
-    </div>
-  );
-}
 
 function SectionHead({
   kicker,

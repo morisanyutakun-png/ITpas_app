@@ -79,6 +79,7 @@ export default async function SessionPage({
         originType={full.question.originType}
       />
       <QuestionPlayer
+        key={`${full.question.id}-${step}`}
         questionId={full.question.id}
         choices={full.choices.map((c) => ({
           label: c.label,

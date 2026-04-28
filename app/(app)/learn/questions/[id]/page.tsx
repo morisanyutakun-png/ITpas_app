@@ -104,6 +104,7 @@ export default async function QuestionDetailPage({
       />
 
       <QuestionPlayer
+        key={question.id}
         questionId={question.id}
         choices={choices.map((c) => ({
           label: c.label,

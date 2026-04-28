@@ -444,4 +444,38 @@
       radial-gradient(600px 300px at 0% 0%, hsl(211 100% 50% / 0.12), transparent 60%),
       radial-gradient(500px 300px at 100% 100%, hsl(280 90% 60% / 0.10), transparent 60%);
   }
+
+  /* ── Editorial typography ───────────────────────────────────────────
+     Reserved for the Reading Room (lesson pages). Mixing serif display
+     with iOS sans body — the same dual-stack used on Apple's editorial
+     pages and in long-form magazines. */
+  .font-serif {
+    font-family:
+      "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP",
+      ui-serif, Georgia, "Times New Roman", serif;
+    font-feature-settings: "palt" 1, "ss01" 1;
+  }
+  .font-mono {
+    font-family:
+      ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+      "Liberation Mono", monospace;
+  }
+
+  /* Drop cap on the first paragraph of a chapter — the affordance that
+     says "this is something to read", not "scan and skip". Subtle
+     coloring so it doesn't shout. Falls back gracefully on Japanese
+     characters: we apply only to the first letter regardless of script. */
+  .first-letter-drop::first-letter {
+    font-family:
+      "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP",
+      ui-serif, Georgia, serif;
+    font-weight: 600;
+    float: left;
+    line-height: 0.92;
+    margin-right: 0.18em;
+    margin-top: 0.04em;
+    margin-bottom: -0.06em;
+    font-size: 3.6em;
+    color: hsl(var(--foreground));
+  }
 }

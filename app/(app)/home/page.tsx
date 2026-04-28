@@ -1,10 +1,10 @@
 import Link from "next/link";
 import {
-  ArrowRight,
+  ArrowUpRight,
   BarChart3,
-  BookOpen,
   ChevronRight,
   Clock,
+  Compass,
   PlayCircle,
   Shuffle,
   Target,
@@ -19,7 +19,7 @@ import { listStudyLessonSlugs, getStudyLesson } from "@/server/queries/study";
 
 export const dynamic = "force-dynamic";
 
-export const metadata = { title: "ITpassホーム" };
+export const metadata = { title: "Home" };
 
 const MAJOR_META: Record<
   string,
@@ -28,30 +28,25 @@ const MAJOR_META: Record<
   strategy: {
     hue: "#FF375F",
     hueDim: "rgba(255,55,95,0.10)",
-    label: "STRATEGY",
+    label: "Strategy",
   },
   management: {
     hue: "#FF9500",
     hueDim: "rgba(255,149,0,0.10)",
-    label: "MANAGEMENT",
+    label: "Management",
   },
   technology: {
     hue: "#0A84FF",
     hueDim: "rgba(10,132,255,0.10)",
-    label: "TECHNOLOGY",
+    label: "Technology",
   },
 };
 
 /**
- * ITpassホーム — 4 つのはっきりした輪郭だけ。
- *
- *   1) 地図      Map of the IT Passport curriculum (3 chapters, slim)
- *   2) 現在地    Where you are: 1 hero card with the next topic
- *   3) インプット 学習モード (figure-based lessons)
- *   4) アウトプット 3-tile output triad
- *
- * 統計・週バー・続きから一覧などは取り除き、フィードバックは /dashboard
- * への 1 リンクに集約。
+ * Home — composed like Apple Music's Listen Now: a quiet editorial header,
+ * one featured "Reading Now" piece, a "Where you stand" anchor card, a
+ * slim atlas of the syllabus, then a small Practice Room. The page reads
+ * top-to-bottom as a magazine, not a dashboard.
  */
 export default async function HomePage() {
   const user = await getCurrentUser();
@@ -65,151 +60,151 @@ export default async function HomePage() {
     listStudyLessonSlugs(),
   ]);
 
-  // Resolve study lessons (input). Limit to 3 for the home preview.
   const studyLessons = (
     await Promise.all(studySlugs.slice(0, 6).map((s) => getStudyLesson(s)))
   ).filter((l): l is NonNullable<typeof l> => l !== null);
-  const studyAvailable = studyLessons.length > 0;
 
-  // "現在地" — pick the lesson that matches the recommended topic if we
-  // have a study file for it, else the recommended topic itself, else
-  // the first topic that is not yet mastered.
+  // Feature pick: prefer the lesson that matches the recommended topic;
+  // fall back to the first authored lesson so the page is never empty.
+  const featured =
+    (rec && studyLessons.find((l) => l.slug === rec.slug)) ??
+    studyLessons[0] ??
+    null;
+  const otherLessons = featured
+    ? studyLessons.filter((l) => l.slug !== featured.slug).slice(0, 4)
+    : studyLessons.slice(0, 4);
+
   const lessonForRec =
     rec && studyLessons.find((l) => l.slug === rec.slug) ? rec.slug : null;
 
-  const firstName = user.displayName?.split(" ")[0] ?? "学習者";
+  const firstName = user.displayName?.split(" ")[0] ?? null;
+  const now = new Date();
+  const jst = new Date(now.getTime() + 9 * 60 * 60 * 1000);
+  const dateStr = `${jst.getUTCFullYear()}年${jst.getUTCMonth() + 1}月${jst.getUTCDate()}日 (${["日", "月", "火", "水", "木", "金", "土"][jst.getUTCDay()]})`;
+  const greeting = greetingFor(jst.getUTCHours());
 
   return (
-    <div className="space-y-12 pb-12">
-      {/* ── Header ── */}
+    <div className="space-y-16 pb-16">
+      {/* ── Editorial header ───────────────────────────────────────
+         Date + greeting + name. No big section title — the page itself
+         is the title. Apple Music's Listen Now feels like this. */}
       <header className="space-y-1.5 pt-1">
-        <div className="kicker">ITpass Home</div>
-        <h1 className="text-ios-large font-semibold leading-[1.05] tracking-tight">
-          ITpassホーム
+        <div className="flex items-center gap-2 text-[10.5px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+          <span aria-hidden className="inline-block h-1 w-6 rounded-full bg-foreground/70" />
+          {dateStr}
+        </div>
+        <h1 className="font-serif text-[34px] font-semibold leading-[1.06] tracking-[-0.022em] text-balance sm:text-[40px]">
+          {greeting}
+          {firstName ? (
+            <>
+              <span className="text-muted-foreground/70">、</span>
+              {firstName}さん
+            </>
+          ) : (
+            ""
+          )}
+          。
         </h1>
-        <p className="text-[13.5px] text-muted-foreground">
-          {firstName}さん、こんにちは。
+        <p className="max-w-[52ch] text-[14px] leading-relaxed text-muted-foreground text-pretty">
+          今日は、読むことから始めましょう。
           {!pro && Number.isFinite(dailyLimit) && (
-            <> 今日の無料枠は {dailyLimit as number} 問です。</>
+            <> ── 演習の無料枠は {dailyLimit as number} 問です。</>
           )}
         </p>
       </header>
 
-      {/* ─────────────────────────────────────────────
-          01 地図 — 3 chapter strips. No rings, no segments. Just the
-          shape of the syllabus.
-         ───────────────────────────────────────────── */}
-      <Section
-        kicker="01 · The Map"
-        title="学習地図"
-        sub="ITパスポートの 3 領域 / 中項目の俯瞰"
+      {/* ── Reading Now ─────────────────────────────────────────────
+         Promoted as the protagonist. A single editorial card with the
+         featured lesson, plus a horizontal row of more reading. */}
+      {featured && (
+        <Editorial
+          eyebrow="Reading Now"
+          flair="Today's Feature"
+          rightHref="/learn/study"
+          rightLabel="Browse all"
+        >
+          <FeaturedLesson
+            slug={featured.slug}
+            title={featured.title}
+            dek={featured.dek ?? null}
+            hook={featured.hook}
+            readingMinutes={featured.readingMinutes}
+            questionCount={featured.questionCount}
+          />
+          {otherLessons.length > 0 && (
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              {otherLessons.map((l) => (
+                <ReadingRow
+                  key={l.slug}
+                  slug={l.slug}
+                  title={l.title}
+                  hook={l.hook}
+                  readingMinutes={l.readingMinutes}
+                />
+              ))}
+            </div>
+          )}
+        </Editorial>
+      )}
+
+      {/* ── Where You Stand ─────────────────────────────────────────
+         A single anchored card. Quiet by design — the lesson above is
+         the lead. */}
+      {rec && (
+        <Editorial eyebrow="Where You Stand" flair="Picked for You">
+          <CurrentSpot rec={rec} hasLesson={lessonForRec !== null} />
+        </Editorial>
+      )}
+
+      {/* ── The Atlas ──────────────────────────────────────────────
+         The whole syllabus in three strips. Replaces the literal
+         "学習地図" label with an editorial name. */}
+      <Editorial
+        eyebrow="The Atlas"
+        flair="A view of the syllabus"
+        rightHref="/topics"
+        rightLabel="Open atlas"
       >
         <div className="space-y-2">
           {roadmap.map((m) => (
             <ChapterStrip key={m.major} major={m} />
           ))}
         </div>
-      </Section>
+      </Editorial>
 
-      {/* ─────────────────────────────────────────────
-          02 現在地 — single hero. Knows what to do next.
-         ───────────────────────────────────────────── */}
-      <Section
-        kicker="02 · You Are Here"
-        title="現在地"
-        sub="次に手をつけると効きやすい 1 論点"
-      >
-        {rec ? (
-          <CurrentSpot rec={rec} hasLesson={lessonForRec !== null} />
-        ) : (
-          <div className="surface-card p-6 text-center text-[13px] text-muted-foreground">
-            まずは下のアウトプットから 5 問解いて、現在地を把握しましょう。
-          </div>
-        )}
-      </Section>
-
-      {/* ─────────────────────────────────────────────
-          03 インプット — 学習モード (figure-based lessons)
-         ───────────────────────────────────────────── */}
-      <Section
-        kicker="03 · Input"
-        title="インプット"
-        sub="図解と要点で、論点を 60 秒で押さえる"
-        rightHref="/learn/study"
-        rightLabel="一覧"
-      >
-        {studyAvailable ? (
-          <div className="grid gap-3 sm:grid-cols-2">
-            {studyLessons.slice(0, 4).map((l) => (
-              <StudyCard
-                key={l.slug}
-                slug={l.slug}
-                title={l.title}
-                hook={l.hook}
-                seconds={l.estimatedSeconds}
-                questionCount={l.questionCount}
-              />
-            ))}
-          </div>
-        ) : (
-          <Link
-            href="/learn/study"
-            className="surface-card flex items-center gap-4 p-5"
-          >
-            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-foreground text-background shadow-tile">
-              <BookOpen className="h-5 w-5" strokeWidth={2.2} />
-            </span>
-            <div className="min-w-0 flex-1">
-              <div className="text-[16px] font-semibold">学習モードを開く</div>
-              <div className="text-[12px] text-muted-foreground">
-                図解と要点で論点を読む
-              </div>
-            </div>
-            <ChevronRight className="h-4 w-4 text-muted-foreground" />
-          </Link>
-        )}
-      </Section>
-
-      {/* ─────────────────────────────────────────────
-          04 アウトプット — 3 tiles. That's it.
-         ───────────────────────────────────────────── */}
-      <Section
-        kicker="04 · Output"
-        title="アウトプット"
-        sub="解いて確かめる"
-      >
+      {/* ── Practice Room ──────────────────────────────────────────
+         Subordinate to reading. Three modes, no hierarchy hero. */}
+      <Editorial eyebrow="Practice Room" flair="When you are ready">
         <div className="grid gap-3 sm:grid-cols-3">
-          <OutputTile
+          <ModeTile
             href="/learn/random"
             grad="bg-grad-purple"
             icon={Shuffle}
-            kicker="Random"
-            title="ランダム1問"
+            kicker="Shuffle"
+            title="気分転換に1問"
             sub="全範囲から抽選"
           />
-          <OutputTile
+          <ModeTile
             href="/learn/session/new?mode=weakness&count=5"
             grad="bg-grad-sunset"
             icon={Target}
-            kicker="Weakness"
-            title="弱点5問"
+            kicker="Tune-Up"
+            title="弱点を5問で詰める"
             sub="誤解パターンで重み付け"
           />
-          <OutputTile
+          <ModeTile
             href={canMock ? "/learn/mock-exam" : "/pricing?reason=mock_exam"}
             grad="bg-grad-ocean"
             icon={Timer}
-            kicker="Mock Exam"
-            title="模擬試験"
-            sub="本番形式で力試し"
+            kicker="Studio Live"
+            title="本番形式の模擬試験"
+            sub={canMock ? "100問 / 120分" : "Pro で開放"}
             locked={!canMock}
           />
         </div>
-      </Section>
+      </Editorial>
 
-      {/* ─────────────────────────────────────────────
-          Feedback — single quiet link to /dashboard.
-         ───────────────────────────────────────────── */}
+      {/* ── Insights ── single quiet link. ── */}
       <Link
         href="/dashboard"
         className="surface-card flex items-center gap-4 p-5"
@@ -218,12 +213,14 @@ export default async function HomePage() {
           <BarChart3 className="h-5 w-5" strokeWidth={2.2} />
         </span>
         <div className="min-w-0 flex-1">
-          <div className="text-[10.5px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-            Feedback
+          <div className="text-[10.5px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+            Insights
           </div>
-          <div className="text-[15px] font-semibold">分析を見る</div>
+          <div className="mt-0.5 font-serif text-[18px] font-semibold leading-tight tracking-tight">
+            進捗を眺める
+          </div>
           <div className="text-[12px] text-muted-foreground">
-            正答率・連続記録・弱点トップ3
+            正答率・連続記録・誤解パターンの傾向
           </div>
         </div>
         <ChevronRight className="h-4 w-4 text-muted-foreground" />
@@ -232,45 +229,42 @@ export default async function HomePage() {
   );
 }
 
-// ── Subcomponents ────────────────────────────────────────────────────────
+// ── Editorial scaffolding ────────────────────────────────────────────────
 
-function Section({
-  kicker,
-  title,
-  sub,
+function Editorial({
+  eyebrow,
+  flair,
   rightHref,
   rightLabel,
   children,
 }: {
-  kicker: string;
-  title: string;
-  sub?: string;
+  eyebrow: string;
+  flair?: string;
   rightHref?: string;
   rightLabel?: string;
   children: React.ReactNode;
 }) {
   return (
-    <section className="space-y-3">
+    <section className="space-y-5">
       <div className="flex items-end justify-between gap-3 px-1">
         <div className="min-w-0">
-          <div className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-            {kicker}
+          <div className="flex items-center gap-2 text-[10.5px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+            <span aria-hidden className="inline-block h-1 w-6 rounded-full bg-foreground/60" />
+            {eyebrow}
           </div>
-          <div className="mt-1 text-[22px] font-semibold leading-tight tracking-tight">
-            {title}
-          </div>
-          {sub && (
-            <div className="mt-0.5 text-[12.5px] text-muted-foreground text-pretty">
-              {sub}
+          {flair && (
+            <div className="mt-2 font-serif text-[22px] font-semibold leading-tight tracking-[-0.018em]">
+              {flair}
             </div>
           )}
         </div>
         {rightHref && rightLabel && (
           <Link
             href={rightHref}
-            className="inline-flex shrink-0 items-center gap-0.5 text-[12px] font-medium text-muted-foreground hover:text-foreground"
+            className="inline-flex shrink-0 items-center gap-1 text-[11.5px] font-semibold uppercase tracking-[0.16em] text-muted-foreground hover:text-foreground"
           >
-            {rightLabel} <ChevronRight className="h-3.5 w-3.5" />
+            {rightLabel}
+            <ChevronRight className="h-3.5 w-3.5" />
           </Link>
         )}
       </div>
@@ -279,7 +273,120 @@ function Section({
   );
 }
 
-/** Slim chapter strip — the whole "map" is just three of these stacked. */
+// ── Pieces ───────────────────────────────────────────────────────────────
+
+function FeaturedLesson({
+  slug,
+  title,
+  dek,
+  hook,
+  readingMinutes,
+  questionCount,
+}: {
+  slug: string;
+  title: string;
+  dek: string | null;
+  hook: string;
+  readingMinutes: number;
+  questionCount: number;
+}) {
+  return (
+    <Link
+      href={`/learn/study/${slug}`}
+      className="editorial-card group relative block overflow-hidden p-7 sm:p-9"
+    >
+      <div className="relative z-10 grid gap-6 sm:grid-cols-[1fr_auto] sm:items-end">
+        <div className="space-y-4">
+          <div className="flex items-center gap-2 text-[10.5px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+            <span aria-hidden className="h-1 w-6 rounded-full bg-foreground/70" />
+            {dek ?? "Today's Reading"}
+          </div>
+          <h2 className="font-serif text-[30px] font-semibold leading-[1.08] tracking-[-0.02em] text-balance sm:text-[40px]">
+            {title}
+          </h2>
+          <p className="max-w-[58ch] text-[14.5px] leading-[1.75] text-muted-foreground text-pretty">
+            {hook}
+          </p>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-1 text-[11.5px] uppercase tracking-[0.16em] text-muted-foreground">
+            <span>
+              <span className="num font-semibold text-foreground">
+                {readingMinutes}
+              </span>{" "}
+              min read
+            </span>
+            <span aria-hidden className="text-border">
+              ·
+            </span>
+            <span>
+              followed by{" "}
+              <span className="num font-semibold text-foreground">
+                {questionCount}
+              </span>{" "}
+              questions
+            </span>
+          </div>
+          <div className="pt-3">
+            <span className="inline-flex h-11 items-center gap-1.5 rounded-full bg-foreground px-5 text-[14px] font-semibold text-background shadow-ios transition-transform group-hover:brightness-110 group-active:scale-[0.98]">
+              読みはじめる
+              <ArrowUpRight className="h-4 w-4" />
+            </span>
+          </div>
+        </div>
+        <div
+          aria-hidden
+          className="pointer-events-none hidden h-[160px] w-[160px] shrink-0 items-center justify-center sm:flex"
+        >
+          <div className="relative grid place-items-center">
+            <span className="absolute inset-[-18px] rounded-full bg-grad-sunset opacity-40 blur-3xl" />
+            <span className="relative flex h-[140px] w-[140px] items-center justify-center rounded-3xl bg-grad-ink text-white shadow-hero">
+              <span className="font-serif text-[64px] font-semibold leading-none tracking-[-0.04em]">
+                ¶
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </Link>
+  );
+}
+
+function ReadingRow({
+  slug,
+  title,
+  hook,
+  readingMinutes,
+}: {
+  slug: string;
+  title: string;
+  hook: string;
+  readingMinutes: number;
+}) {
+  return (
+    <Link
+      href={`/learn/study/${slug}`}
+      className="surface-card group flex h-full flex-col gap-2 p-5"
+    >
+      <div className="text-[10.5px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+        Reading
+      </div>
+      <div className="font-serif text-[18px] font-semibold leading-snug tracking-[-0.014em]">
+        {title}
+      </div>
+      <p className="line-clamp-2 text-[12.5px] leading-relaxed text-muted-foreground text-pretty">
+        {hook}
+      </p>
+      <div className="mt-auto flex items-center gap-2 pt-3 text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+        <Clock className="h-3 w-3" />
+        <span className="num">{readingMinutes}</span> min
+        <span aria-hidden className="ml-auto inline-flex items-center gap-1 normal-case tracking-normal text-muted-foreground/70">
+          続きを読む
+          <ChevronRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
+        </span>
+      </div>
+    </Link>
+  );
+}
+
 function ChapterStrip({ major }: { major: RoadmapMajor }) {
   const meta = MAJOR_META[major.major] ?? {
     hue: "#8E8E93",
@@ -297,24 +404,24 @@ function ChapterStrip({ major }: { major: RoadmapMajor }) {
     >
       <span
         aria-hidden
-        className="w-1 shrink-0 rounded-full"
+        className="w-[3px] shrink-0 rounded-full"
         style={{ background: meta.hue }}
       />
       <div className="min-w-0 flex-1">
         <div
-          className="text-[10.5px] font-semibold uppercase tracking-[0.16em]"
+          className="text-[10.5px] font-semibold uppercase tracking-[0.22em]"
           style={{ color: meta.hue }}
         >
           {meta.label}
         </div>
-        <div className="mt-0.5 text-[16px] font-semibold tracking-tight">
+        <div className="mt-0.5 font-serif text-[18px] font-semibold leading-tight tracking-[-0.014em]">
           {major.label}
         </div>
         <div className="text-[12px] text-muted-foreground">
-          {major.minors.length} 中項目 · {major.topicCount} 論点
+          {major.minors.length} minor topics · {major.topicCount} essays
         </div>
         <div
-          className="mt-2 h-1 overflow-hidden rounded-full"
+          className="mt-2.5 h-[3px] overflow-hidden rounded-full"
           style={{ background: meta.hueDim }}
         >
           <div
@@ -327,7 +434,7 @@ function ChapterStrip({ major }: { major: RoadmapMajor }) {
         </div>
       </div>
       <div className="flex flex-col items-end justify-between text-right">
-        <div className="num text-[20px] font-semibold leading-none tracking-tight">
+        <div className="num font-serif text-[22px] font-semibold leading-none tracking-[-0.02em]">
           {pct}
           <span className="ml-0.5 text-[11px] font-medium text-muted-foreground">
             %
@@ -339,7 +446,6 @@ function ChapterStrip({ major }: { major: RoadmapMajor }) {
   );
 }
 
-/** Single hero card — the editorial "you are here" recommendation. */
 function CurrentSpot({
   rec,
   hasLesson,
@@ -355,98 +461,60 @@ function CurrentSpot({
 }) {
   const ratePct = rec.attempted > 0 ? Math.round(rec.correctRate * 100) : null;
   return (
-    <article className="editorial-card relative overflow-hidden p-6 sm:p-7">
-      <div className="relative z-10 space-y-3">
-        <div className="kicker">Up Next · {rec.reason}</div>
-        <h2 className="text-[26px] font-semibold leading-tight tracking-tight text-balance sm:text-[30px]">
-          {rec.title}
-        </h2>
-        <div className="text-[12.5px] text-muted-foreground">
-          {rec.attempted > 0 ? (
-            <>
-              これまで{" "}
-              <span className="num font-semibold text-foreground">
-                {rec.attempted}
-              </span>
-              問 · 正答率{" "}
-              <span className="num font-semibold text-foreground">
-                {ratePct}%
-              </span>
-            </>
-          ) : (
-            "未挑戦の論点。ここから固める。"
-          )}
-        </div>
-        <div className="flex flex-wrap items-center gap-2 pt-1">
-          {hasLesson && (
+    <article className="surface-card relative overflow-hidden p-6 sm:p-7">
+      <div className="flex items-start gap-4">
+        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-foreground text-background shadow-tile">
+          <Compass className="h-5 w-5" strokeWidth={2.2} />
+        </span>
+        <div className="min-w-0 flex-1 space-y-2">
+          <div className="text-[10.5px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+            {rec.reason}
+          </div>
+          <h3 className="font-serif text-[22px] font-semibold leading-tight tracking-[-0.016em] text-balance sm:text-[26px]">
+            {rec.title}
+          </h3>
+          <p className="text-[13px] leading-relaxed text-muted-foreground text-pretty">
+            {rec.attempted > 0 ? (
+              <>
+                これまで{" "}
+                <span className="num font-semibold text-foreground">
+                  {rec.attempted}
+                </span>
+                問 ・ 正答率{" "}
+                <span className="num font-semibold text-foreground">
+                  {ratePct}%
+                </span>
+                。次の一歩を、ここから。
+              </>
+            ) : (
+              "まだ手をつけていない論点。最初の一冊から始めましょう。"
+            )}
+          </p>
+          <div className="flex flex-wrap items-center gap-2 pt-3">
+            {hasLesson && (
+              <Link
+                href={`/learn/study/${rec.slug}`}
+                className="inline-flex h-10 items-center gap-1.5 rounded-full bg-foreground px-4 text-[13px] font-semibold text-background shadow-ios hover:brightness-110 active:scale-[0.98]"
+              >
+                記事を読む
+                <ArrowUpRight className="h-3.5 w-3.5" />
+              </Link>
+            )}
             <Link
-              href={`/learn/study/${rec.slug}`}
-              className="inline-flex h-11 items-center gap-1.5 rounded-full bg-foreground px-5 text-[14px] font-semibold text-background shadow-ios hover:brightness-110 active:opacity-90"
+              href={`/learn/session/new?mode=topic&topic=${rec.slug}&count=5`}
+              className="inline-flex h-10 items-center gap-1.5 rounded-full bg-muted px-4 text-[13px] font-semibold text-foreground hover:bg-muted/70 active:scale-[0.98]"
             >
-              <BookOpen className="h-4 w-4" />
-              インプット (図解で読む)
+              <PlayCircle className="h-3.5 w-3.5" />
+              関連問題で復習
             </Link>
-          )}
-          <Link
-            href={`/learn/session/new?mode=topic&topic=${rec.slug}&count=5`}
-            className={`inline-flex h-11 items-center gap-1.5 rounded-full px-5 text-[14px] font-semibold ${
-              hasLesson
-                ? "bg-muted text-foreground hover:bg-muted/70"
-                : "bg-foreground text-background shadow-ios hover:brightness-110"
-            }`}
-          >
-            <PlayCircle className="h-4 w-4" />
-            アウトプット (5問)
-          </Link>
+          </div>
         </div>
       </div>
     </article>
   );
 }
 
-function StudyCard({
-  slug,
-  title,
-  hook,
-  seconds,
-  questionCount,
-}: {
-  slug: string;
-  title: string;
-  hook: string;
-  seconds: number;
-  questionCount: number;
-}) {
-  return (
-    <Link
-      href={`/learn/study/${slug}`}
-      className="surface-card group flex h-full flex-col gap-2 p-5"
-    >
-      <div className="flex items-center gap-2 text-[10.5px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-        <BookOpen className="h-3 w-3" />
-        Lesson
-      </div>
-      <div className="text-[16px] font-semibold leading-tight tracking-tight">
-        {title}
-      </div>
-      <p className="line-clamp-2 text-[12.5px] leading-relaxed text-muted-foreground text-pretty">
-        {hook}
-      </p>
-      <div className="mt-auto flex items-center gap-3 pt-2 text-[11.5px] text-muted-foreground">
-        <span className="inline-flex items-center gap-1">
-          <Clock className="h-3 w-3" />
-          {Math.round(seconds / 10) * 10}秒
-        </span>
-        <span className="inline-flex items-center gap-1">
-          <ArrowRight className="h-3 w-3" />
-          {questionCount}問へ
-        </span>
-      </div>
-    </Link>
-  );
-}
-
-function OutputTile({
+function ModeTile({
   href,
   grad,
   icon: Icon,
@@ -480,16 +548,24 @@ function OutputTile({
         <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/15 ring-1 ring-inset ring-white/25 backdrop-blur">
           <Icon className="h-5 w-5" strokeWidth={2.2} />
         </span>
-        <span className="text-[10px] font-semibold uppercase tracking-[0.12em] opacity-85">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.16em] opacity-85">
           {locked ? "Pro" : kicker}
         </span>
       </div>
       <div className="relative z-10">
-        <div className="text-[17px] font-semibold leading-tight tracking-tight">
+        <div className="font-serif text-[18px] font-semibold leading-tight tracking-[-0.014em]">
           {title}
         </div>
         <div className="text-[11.5px] opacity-85">{sub}</div>
       </div>
     </Link>
   );
+}
+
+function greetingFor(h: number) {
+  if (h < 5) return "深い夜にようこそ";
+  if (h < 11) return "おはようございます";
+  if (h < 17) return "こんにちは";
+  if (h < 21) return "こんばんは";
+  return "夜、おつかれさまです";
 }

@@ -13,13 +13,12 @@ import { hasFeature } from "@/lib/plan";
 import { listPastExams } from "@/server/queries/pastExams";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "演習" };
+export const metadata = { title: "Practice Room" };
 
 /**
- * 演習ハブ — output triad + a single quiet pointer back to input. The page
- * intentionally has no recommendations or hero cards; that work belongs on
- * /home. Here we just want the four crisp doors: Random / Weakness / Mock
- * / Past papers, plus a "go back to input" affordance.
+ * Practice Room — three ways to practice + the IPA archive. The page is
+ * intentionally a quiet "B-side" to the home; reading is the lead, and
+ * this is where you go to test what you've read.
  */
 export default async function LearnHubPage() {
   const user = await readCurrentUser();
@@ -27,47 +26,49 @@ export default async function LearnHubPage() {
   const pastExams = await listPastExams();
 
   return (
-    <div className="space-y-8 pb-10">
-      <header className="space-y-1.5 pt-1">
-        <div className="kicker">Output · Practice</div>
-        <h1 className="text-ios-large font-semibold leading-[1.05] tracking-tight">
-          演習
+    <div className="space-y-10 pb-12">
+      <header className="space-y-2 pt-1">
+        <div className="flex items-center gap-2 text-[10.5px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+          <span aria-hidden className="inline-block h-1 w-6 rounded-full bg-foreground/70" />
+          Practice Room
+        </div>
+        <h1 className="font-serif text-[34px] font-semibold leading-[1.06] tracking-[-0.022em] sm:text-[40px]">
+          解いて、確かめる。
         </h1>
-        <p className="max-w-xl text-[13.5px] text-muted-foreground text-pretty">
-          解いて確かめる。3 つの入口とアーカイブ。
+        <p className="max-w-[52ch] text-[14px] leading-relaxed text-muted-foreground text-pretty">
+          記事を読み終えたら、ここで知識を試す。
+          3 つのモードと、IPA 公式の過去問アーカイブを用意しています。
         </p>
       </header>
 
-      {/* ── Output triad ── */}
       <section className="grid gap-3 sm:grid-cols-3">
         <ModeCard
           href="/learn/random"
           grad="bg-grad-purple"
           icon={Shuffle}
-          kicker="Random"
-          title="ランダム1問"
-          sub="全範囲から1問だけ"
+          kicker="Shuffle"
+          title="気分転換に1問"
+          sub="全範囲から抽選"
         />
         <ModeCard
           href="/learn/session/new?mode=weakness&count=5"
           grad="bg-grad-sunset"
           icon={Target}
-          kicker="Weakness"
-          title="弱点5問"
+          kicker="Tune-Up"
+          title="弱点を5問で詰める"
           sub="誤解パターンで重み付け"
         />
         <ModeCard
           href={canMock ? "/learn/mock-exam" : "/pricing?reason=mock_exam"}
           grad="bg-grad-ocean"
           icon={Timer}
-          kicker="Mock Exam"
-          title="模擬試験"
-          sub="本番形式で力試し"
+          kicker="Studio Live"
+          title="本番形式の模擬試験"
+          sub={canMock ? "100問 / 120分" : "Pro で開放"}
           lockedLabel={canMock ? undefined : "Pro"}
         />
       </section>
 
-      {/* ── Past-exam archive — 1 quiet row ── */}
       <Link
         href="/learn/past-exams"
         className="surface-card flex items-center gap-4 p-5"
@@ -76,18 +77,19 @@ export default async function LearnHubPage() {
           <Archive className="h-5 w-5" strokeWidth={2.2} />
         </span>
         <div className="min-w-0 flex-1">
-          <div className="text-[10.5px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-            Archive · IPA
+          <div className="text-[10.5px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+            Archives · IPA
           </div>
-          <div className="text-[16px] font-semibold">過去問アーカイブ</div>
+          <div className="mt-0.5 font-serif text-[18px] font-semibold leading-tight tracking-[-0.014em]">
+            過去問の書庫
+          </div>
           <div className="text-[12px] text-muted-foreground">
-            IPA 公開 {pastExams.length} 回分
+            IPA 公開 {pastExams.length} 回分の原典
           </div>
         </div>
         <ChevronRight className="h-4 w-4 text-muted-foreground" />
       </Link>
 
-      {/* ── Cross-link to input ── */}
       <Link
         href="/learn/study"
         className="surface-card flex items-center gap-4 p-5"
@@ -96,12 +98,14 @@ export default async function LearnHubPage() {
           <BookOpen className="h-5 w-5" strokeWidth={2.2} />
         </span>
         <div className="min-w-0 flex-1">
-          <div className="text-[10.5px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-            Input
+          <div className="text-[10.5px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+            Reading Room
           </div>
-          <div className="text-[16px] font-semibold">学習モードで読む</div>
+          <div className="mt-0.5 font-serif text-[18px] font-semibold leading-tight tracking-[-0.014em]">
+            記事に戻る
+          </div>
           <div className="text-[12px] text-muted-foreground">
-            図解と要点で 60 秒インプット
+            読んでから試すと、もう一段定着する
           </div>
         </div>
         <ChevronRight className="h-4 w-4 text-muted-foreground" />
@@ -144,12 +148,12 @@ function ModeCard({
         <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/15 ring-1 ring-inset ring-white/25 backdrop-blur">
           <Icon className="h-5 w-5" strokeWidth={2.2} />
         </span>
-        <span className="text-[10px] font-semibold uppercase tracking-[0.12em] opacity-85">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.16em] opacity-85">
           {lockedLabel ?? kicker}
         </span>
       </div>
       <div className="relative z-10">
-        <div className="text-[17px] font-semibold leading-tight tracking-tight">
+        <div className="font-serif text-[18px] font-semibold leading-tight tracking-[-0.014em]">
           {title}
         </div>
         <div className="text-[11.5px] opacity-85">{sub}</div>

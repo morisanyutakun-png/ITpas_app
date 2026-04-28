@@ -205,14 +205,56 @@ export const studyFigureZ = z.discriminatedUnion("kind", [
   quadrantFigureZ,
 ]);
 
+// A callout — short, accented note inline with the prose. Three voices:
+//   • insight  : the lesson's takeaway in one breath (used sparingly)
+//   • caution  : a typical exam trap or terminology slip
+//   • aside    : context-only background that would otherwise distract
+const calloutZ = z.object({
+  kind: z.enum(["insight", "caution", "aside"]),
+  title: z.string().optional(),
+  body: z.string().min(1),
+});
+
+// One body section. `paragraphs` is plain prose (one item per paragraph),
+// optionally followed by a figure or callout *inside the same section*
+// — that's how the textbook reading rhythm gets composed.
+const sectionZ = z.object({
+  // Editorial heading. Section numbering is rendered by the page, so authors
+  // don't write "1.", "2." etc.
+  heading: z.string().min(1),
+  // 2-8 paragraphs. Bold is supported via `**word**`; inline code via
+  // `\`word\``. No HTML/MD beyond that — keep it readable in JSON.
+  paragraphs: z.array(z.string().min(1)).min(1).max(12),
+  // Optional inline figure rendered after the prose.
+  figure: studyFigureZ.optional(),
+  // Optional callouts rendered after the figure.
+  callouts: z.array(calloutZ).max(3).default([]),
+});
+
+const exampleZ = z.object({
+  // The full question stem — write it like an exam question, not a riddle.
+  question: z.string().min(1),
+  // The single correct answer + a 1-2 sentence reason.
+  answer: z.string().min(1),
+  reasoning: z.string().min(1),
+});
+
 export const studyLessonZ = z.object({
-  slug: z.string().min(1), // matches a topic slug
+  slug: z.string().min(1),
   title: z.string().min(1),
-  // 1 sentence "what this is + why it shows up". Anchors the lesson.
+  // 1-2 sentences placed under the title — sets the stakes of the lesson.
   hook: z.string().min(1),
+  // Optional editorial subheader ("dek") — magazine-style 1-line summary
+  // that runs *above* the title in small caps. Used to phrase the lesson
+  // as part of a series ("On the network stack", "On authentication", …).
+  dek: z.string().optional(),
+  // The hero figure rendered at the top of the lesson, before any prose.
+  // Sections may also carry their own inline figures.
   figure: studyFigureZ,
-  // 3-6 short bullets. `term` is the takeaway label; `body` is one line.
-  keyPoints: z
+  // Long-form body. 2-6 sections, each a small chapter.
+  sections: z.array(sectionZ).min(1).max(8),
+  // 3-7 takeaways at the end ("Reader's digest"). Each is one short line.
+  takeaways: z
     .array(
       z.object({
         term: z.string().min(1),
@@ -220,12 +262,14 @@ export const studyLessonZ = z.object({
       })
     )
     .min(2)
-    .max(7),
-  // 0-3 pitfalls — what the test usually swaps to trap you.
-  pitfalls: z.array(z.string()).max(3).default([]),
-  // Default 5; overridable for short topics.
+    .max(8),
+  // 0-4 worked examples — exam-style Q+A with reasoning. These show up as
+  // a quiet "練習問題" subsection before the related-question handoff.
+  examples: z.array(exampleZ).max(4).default([]),
+  // Reading time in minutes (renderer prefers minutes for long-form).
+  readingMinutes: z.number().int().min(1).max(20).default(5),
+  // Number of related exam questions to hand off to at the end.
   questionCount: z.number().int().min(1).max(20).default(5),
-  estimatedSeconds: z.number().int().min(20).max(600).default(60),
 });
 
 export type QuestionFile = z.infer<typeof questionFileZ>;

@@ -1,27 +1,115 @@
 {
   "slug": "cloud_service_models",
-  "title": "IaaS / PaaS / SaaS の使い分け",
-  "hook": "クラウドの提供範囲を3階層に分けたモデル。下に行くほど自社で管理する範囲が広い。",
+  "title": "IaaS / PaaS / SaaS ── どこまで自分で持つかの分担表",
+  "dek": "On Cloud Service Models",
+  "hook": "クラウドの提供範囲を 3 つに分けたモデル。試験では『どの層まで利用者が管理するか』『代表的なサービスがどれに属するか』が頻出する。",
   "figure": {
     "kind": "layered",
-    "caption": "上に行くほど『すぐ使える』が自由度は下がる。下に行くほど自由度は高いが、運用責任も増える。",
+    "caption": "上に行くほど『すぐ使える』が、自由度は下がる。下に行くほど自由度は高いが、運用責任も増える。",
     "layers": [
-      { "label": "オンプレミス (参考)", "items": ["全部自社"], "accent": "neutral" },
-      { "label": "IaaS", "items": ["AWS EC2", "GCE", "サーバ・OS をユーザが管理"], "accent": "cool" },
-      { "label": "PaaS", "items": ["Heroku", "App Engine", "アプリだけ用意すればよい"], "accent": "primary" },
-      { "label": "SaaS", "items": ["Gmail", "Salesforce", "そのまま使える"], "accent": "warm" }
+      { "label": "オンプレミス (参考)", "items": ["全部自社で管理"], "accent": "neutral" },
+      { "label": "IaaS", "items": ["AWS EC2", "Google Compute Engine"], "accent": "cool" },
+      { "label": "PaaS", "items": ["Heroku", "App Engine"], "accent": "primary" },
+      { "label": "SaaS", "items": ["Gmail", "Salesforce"], "accent": "warm" }
     ]
   },
-  "keyPoints": [
-    { "term": "IaaS (Infrastructure)", "body": "仮想サーバ・ストレージを提供。OS から上はユーザが管理する。" },
-    { "term": "PaaS (Platform)", "body": "OS・ミドルウェアまで提供。アプリのコードと設定だけを用意する。" },
-    { "term": "SaaS (Software)", "body": "完成したアプリを提供。ユーザは設定とデータだけを持ち込む。" },
-    { "term": "判別の鍵", "body": "「ユーザが何を管理するか」で見分ける。OS まで管理 → IaaS。" }
+  "sections": [
+    {
+      "heading": "クラウドが解いた問題",
+      "paragraphs": [
+        "従来、企業が自社でアプリケーションを動かすためには、**ハードウェア・OS・ミドルウェア・アプリ** をすべて自前で用意する必要があった (オンプレミス)。サーバを発注し、データセンターに置き、OS をインストールし、データベースを入れて、ようやくアプリを乗せられた。",
+        "クラウドはこの『**スタック (積み重ね)**』のうち、どこまでをサービス事業者が請け負うかで 3 つの提供形態に分かれる。請け負う範囲が広いほど、利用者は『すぐ使える』が、その代わり自由度は下がる。",
+        "頭文字 **IaaS / PaaS / SaaS** はそれぞれ Infrastructure / Platform / Software as a Service の略で、**何が As-a-Service として提供されるか** が名前そのものに入っている。"
+      ],
+      "callouts": [
+        {
+          "kind": "insight",
+          "title": "1 行で覚える",
+          "body": "『どこまでが他人の責任か』が違うだけ。下から積み上げて IaaS → PaaS → SaaS と他人の領域が広がる。"
+        }
+      ]
+    },
+    {
+      "heading": "IaaS ── インフラだけ借りる",
+      "paragraphs": [
+        "**IaaS (Infrastructure as a Service)** は、仮想サーバ・ストレージ・ネットワークといった『**インフラ**』だけを提供する形態だ。代表例は AWS EC2、Google Compute Engine、Microsoft Azure Virtual Machines。",
+        "利用者は **OS の選択から自分で行う**。Linux を入れるか Windows を入れるかも自由で、ミドルウェアも自分で構築する。仮想マシンの上は完全に自分の責任範囲だ。",
+        "自由度が高い反面、OS のパッチ当て・セキュリティ設定・バックアップなどの運用は利用者がやる。**『サーバを借りているだけ』** と理解するのが速い。"
+      ]
+    },
+    {
+      "heading": "PaaS ── 実行環境まで借りる",
+      "paragraphs": [
+        "**PaaS (Platform as a Service)** は、OS とミドルウェアまでを事業者が用意する形態。代表例は Heroku、Google App Engine、AWS Elastic Beanstalk など。",
+        "利用者は **アプリケーションコードと設定だけ** を持ち込む。サーバの OS パッチや Web サーバの設定は事業者が面倒を見るので、開発者はビジネスロジックに集中できる。",
+        "代わりに、提供されるミドルウェアの選択肢は限定される。『この PaaS は Node.js しかサポートしていない』のような制約があり、特殊な構成は組めない。"
+      ],
+      "figure": {
+        "kind": "compare",
+        "caption": "IaaS と PaaS の境目は『**OS とミドルウェアを誰が管理するか**』。ここで分ける。",
+        "left": {
+          "title": "IaaS",
+          "accent": "cool",
+          "points": [
+            "事業者が管理: ハード / 仮想化",
+            "利用者が管理: OS / MW / アプリ",
+            "例: EC2, GCE, Azure VM",
+            "鍵: OS から自分で入れる"
+          ]
+        },
+        "right": {
+          "title": "PaaS",
+          "accent": "primary",
+          "points": [
+            "事業者が管理: ハード / 仮想化 / OS / MW",
+            "利用者が管理: アプリ / データ",
+            "例: Heroku, App Engine",
+            "鍵: コードを置けば動く"
+          ]
+        }
+      }
+    },
+    {
+      "heading": "SaaS ── アプリそのものを借りる",
+      "paragraphs": [
+        "**SaaS (Software as a Service)** は、完成したアプリケーションを Web で提供する形態。Gmail、Salesforce、Microsoft 365、Slack など、私たちが日常的に使うクラウドサービスの大半はここに入る。",
+        "利用者は **アカウントを作って設定とデータを入れるだけ**。アプリ本体の保守・アップデートは事業者が行う。導入は早いが、業務の流れの方をアプリに合わせる必要がある。"
+      ],
+      "callouts": [
+        {
+          "kind": "caution",
+          "title": "頻出のひっかけ",
+          "body": "「Gmail は PaaS である」── 誤り。完成アプリを使うので **SaaS**。「EC2 は SaaS である」── 誤り。OS から自分で入れるので **IaaS**。"
+        }
+      ]
+    },
+    {
+      "heading": "見分け方の鉄則",
+      "paragraphs": [
+        "選択肢を見て迷ったら、**『利用者が何を管理しているか』** だけを見ればよい。",
+        "OS から管理 → IaaS。アプリから管理 → PaaS。アカウントだけ → SaaS。これだけで 3 択を確実に切れる。サービス名 (EC2 / Heroku / Gmail …) を覚えるよりも、**どの層を握っているか** で考える方が、新しいサービスが出てきても対応できる。"
+      ]
+    }
   ],
-  "pitfalls": [
-    "「Gmail は PaaS」── 誤り。完成アプリを使うので SaaS。",
-    "「EC2 は SaaS」── 誤り。OS から自分で入れるので IaaS。"
+  "takeaways": [
+    { "term": "IaaS", "body": "仮想サーバを借りる。OS から上はユーザが管理。例: EC2。" },
+    { "term": "PaaS", "body": "実行環境を借りる。アプリのコードだけ持ち込む。例: Heroku。" },
+    { "term": "SaaS", "body": "完成アプリを借りる。設定とデータだけ持つ。例: Gmail。" },
+    { "term": "見分け方", "body": "『利用者が OS を管理するか』が IaaS / PaaS の境目。" },
+    { "term": "命名のロジック", "body": "I/P/S は提供されるサービスの粒度。Infrastructure → Platform → Software。" }
   ],
-  "questionCount": 5,
-  "estimatedSeconds": 50
+  "examples": [
+    {
+      "question": "ハードウェアおよび仮想化基盤のみを提供し、OS から上の管理を利用者に任せるクラウドサービスのモデルはどれか。",
+      "answer": "IaaS",
+      "reasoning": "OS から上を利用者が管理するのが IaaS の特徴。PaaS は OS とミドルウェアまで事業者が管理する。"
+    },
+    {
+      "question": "Gmail が該当するクラウドサービスのモデルはどれか。",
+      "answer": "SaaS",
+      "reasoning": "Gmail は完成済みのメールアプリケーションを Web で提供しており、利用者はアカウントとデータだけを管理する。これは SaaS の典型例。"
+    }
+  ],
+  "readingMinutes": 4,
+  "questionCount": 5
 }

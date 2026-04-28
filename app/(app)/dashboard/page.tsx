@@ -4,26 +4,28 @@ import {
   ChevronRight,
   FileText,
   Lock,
-  PlayCircle,
   Target,
   Timer,
-  TrendingUp,
 } from "lucide-react";
 import { db } from "@/db/client";
 import { getCurrentUser } from "@/lib/currentUser";
 import { hasFeature, isPro, MOCK_EXAM_DURATION_MIN } from "@/lib/plan";
 import {
   getProgressByMisconception,
-  getProgressByTopic,
 } from "@/server/queries/progress";
-import { getDailyStats } from "@/server/queries/history";
-import { MisconceptionHeatmap } from "@/components/dashboard/MisconceptionHeatmap";
-import { TopicHeatmap } from "@/components/dashboard/TopicHeatmap";
-import { DailySparkline } from "@/components/dashboard/DailySparkline";
+import { getDailyStats, getRecommendation } from "@/server/queries/history";
+import { getRoadmap } from "@/server/queries/roadmap";
+import { StudyPlan } from "@/components/dashboard/StudyPlan";
+import { PaceCard } from "@/components/dashboard/PaceCard";
+import { CategoryMastery } from "@/components/dashboard/CategoryMastery";
+import { WeaknessTickets } from "@/components/dashboard/WeaknessTickets";
 import { AdSlot } from "@/components/AdSlot";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "分析ダッシュボード" };
+
+const FREE_WEEKLY_TARGET = 35; // 5問/日 × 7日
+const PRO_WEEKLY_TARGET = 70;
 
 export default async function DashboardPage() {
   const user = await getCurrentUser();
@@ -32,121 +34,107 @@ export default async function DashboardPage() {
   const mockExamUnlocked = hasFeature(user, "mockExam");
   const pdfUnlocked = hasFeature(user, "pdfExport");
 
-  const [statsRow, daily, misc, topic] = await Promise.all([
+  const [statsRow, daily, misc, roadmap, recommended] = await Promise.all([
     db.execute(sql`
       SELECT
         COUNT(*)::int AS total,
-        COALESCE(AVG(NULLIF(duration_ms, 0)), 0)::int AS avg_ms
+        SUM(CASE WHEN result = 'correct' THEN 1 ELSE 0 END)::int AS correct
       FROM attempts
       WHERE user_id = ${user.id} AND result IN ('correct', 'incorrect')
     `),
     getDailyStats(user.id, 14),
-    analyticsUnlocked ? getProgressByMisconception(user.id) : Promise.resolve([]),
-    analyticsUnlocked ? getProgressByTopic(user.id) : Promise.resolve([]),
+    getProgressByMisconception(user.id),
+    getRoadmap(user.id),
+    getRecommendation(user.id),
   ]);
 
-  const stats = (statsRow.rows[0] ?? {}) as {
-    total?: number;
-    avg_ms?: number;
-  };
+  const stats = (statsRow.rows[0] ?? {}) as { total?: number; correct?: number };
   const total = Number(stats.total ?? 0);
-  const avgSec = Math.round(Number(stats.avg_ms ?? 0) / 1000);
+  const correct = Number(stats.correct ?? 0);
+  const accuracy = total > 0 ? correct / total : 0;
 
-  // Daily sparkline — compute 14-day trend slope for editorial caption.
-  const lastHalf = daily.slice(-7);
-  const firstHalf = daily.slice(0, Math.max(0, daily.length - 7));
-  const avg = (xs: typeof daily) =>
-    xs.length === 0 ? 0 : xs.reduce((s, d) => s + d.rate, 0) / xs.length;
-  const deltaPct = Math.round((avg(lastHalf) - avg(firstHalf)) * 100);
+  const allTopicCount = roadmap.reduce((s, m) => s + m.topicCount, 0);
+  const attemptedTopicCount = roadmap.reduce((s, m) => s + m.attemptedCount, 0);
+  const coverage = allTopicCount ? attemptedTopicCount / allTopicCount : 0;
+
+  const topMisconception = misc.find(
+    (m) => m.attempted >= 2 && m.incorrectRate >= 0.3
+  ) ?? null;
+
+  const weeklyTarget = pro ? PRO_WEEKLY_TARGET : FREE_WEEKLY_TARGET;
 
   return (
-    <div className="space-y-8 pb-10">
-      {/* ── Editorial header ─────────── */}
-      <header className="flex items-end justify-between gap-3 pt-1">
-        <div className="space-y-1.5">
-          <div className="kicker">Progress Dashboard</div>
-          <h1 className="text-ios-large font-semibold leading-[1.05] tracking-tight">
-            分析
-          </h1>
-          <p className="text-[13.5px] text-muted-foreground">
-            どこでズレているか、ひと目で。
-          </p>
-        </div>
-        <Link
-          href="/learn/session/new?mode=weakness&count=5"
-          className="inline-flex h-10 items-center gap-1 rounded-full bg-foreground px-4 text-[13.5px] font-semibold text-background shadow-ios active:opacity-90"
-        >
-          弱点5問
-          <PlayCircle className="h-4 w-4" />
-        </Link>
+    <div className="space-y-7 pb-10">
+      {/* ── Header ─────────── */}
+      <header className="space-y-1.5 pt-1">
+        <div className="kicker">Progress Dashboard</div>
+        <h1 className="text-ios-large font-semibold leading-[1.05] tracking-tight">
+          分析
+        </h1>
+        <p className="text-[13.5px] text-muted-foreground">
+          現在地と次にやるべきことを、ここに集約。
+        </p>
       </header>
+
+      {/* ── 1. Study plan: diagnosis + 3 next-step tickets ── */}
+      <StudyPlan
+        totalAttempts={total}
+        accuracy={accuracy}
+        coverage={coverage}
+        topMisconception={
+          topMisconception
+            ? {
+                slug: topMisconception.slug,
+                title: topMisconception.title,
+                incorrectRate: topMisconception.incorrectRate,
+                attempted: topMisconception.attempted,
+              }
+            : null
+        }
+        weakestTopic={recommended}
+        canMockExam={mockExamUnlocked}
+      />
 
       {!pro && <AdSlot variant="banner" />}
 
-      {/* ── 14-day sparkline + scalar metadata ── */}
+      {/* ── 2. Weekly pace + category mastery ── */}
       <section className="space-y-3">
         <SectionHead
-          kicker="Trend"
-          title="14日の推移"
-          sub={
-            total > 0
-              ? `累計 ${total}問${avgSec > 0 ? ` · 平均 ${avgSec}秒/問` : ""}`
-              : "解いた問題が増えるほど精度が上がります"
-          }
-          right={
-            total > 0 ? (
-              <span
-                className={`num inline-flex items-center gap-1 text-[12px] font-semibold ${
-                  deltaPct > 0
-                    ? "text-ios-green"
-                    : deltaPct < 0
-                      ? "text-ios-red"
-                      : "text-muted-foreground"
-                }`}
-              >
-                <TrendingUp className="h-3.5 w-3.5" />
-                {deltaPct > 0 ? "+" : ""}
-                {deltaPct}
-                <span className="text-[10px] font-medium text-muted-foreground">
-                  pt vs 前週
-                </span>
-              </span>
-            ) : (
-              <TrendingUp className="h-4 w-4 text-muted-foreground" />
-            )
-          }
+          kicker="This Week"
+          title="今週のペース"
+          sub={`${pro ? "Pro" : "Free"} の目安は週 ${weeklyTarget}問`}
         />
-        <div className="surface-card p-5">
-          <DailySparkline data={daily} />
-        </div>
+        <PaceCard daily={daily} weeklyTarget={weeklyTarget} />
       </section>
 
-      {/* ── Heatmaps ── */}
-      <ProGate
-        unlocked={analyticsUnlocked}
-        kicker="Trap Heatmap"
-        title="誤解パターン別ヒートマップ"
-        desc="赤いほど誤答率が高い『敵』"
-      >
-        <div className="surface-card p-5">
-          <MisconceptionHeatmap items={misc} />
-        </div>
-      </ProGate>
-
-      <ProGate
-        unlocked={analyticsUnlocked}
-        kicker="Topic Heatmap"
-        title="論点別ヒートマップ"
-        desc="緑が押さえた論点・赤は補強対象"
-      >
-        <div className="surface-card p-5">
-          <TopicHeatmap items={topic} />
-        </div>
-      </ProGate>
-
-      {/* ── Tools ── */}
       <section className="space-y-3">
-        <SectionHead kicker="Tools" title="次の一手" />
+        <SectionHead
+          kicker="Mastery"
+          title="3分野の習熟度"
+          sub="正答率は 60% を合格ラインの目安に"
+        />
+        {analyticsUnlocked || total >= 5 ? (
+          <CategoryMastery majors={roadmap} />
+        ) : (
+          <ProGate />
+        )}
+      </section>
+
+      {/* ── 3. Top 3 weakness tickets ── */}
+      <section className="space-y-3">
+        <SectionHead
+          kicker="Top Weaknesses"
+          title="優先して潰す3つ"
+          sub="誤答率の高い誤解パターンから、その場で5問セッション"
+          rightHref="/misconceptions"
+          rightLabel="すべて見る"
+        />
+        <WeaknessTickets items={misc} />
+      </section>
+
+      {/* ── 4. Tools ── */}
+      <section className="space-y-3">
+        <SectionHead kicker="Tools" title="その他" />
         <div className="grid gap-3 sm:grid-cols-3">
           <ToolCard
             href={
@@ -189,12 +177,14 @@ function SectionHead({
   kicker,
   title,
   sub,
-  right,
+  rightHref,
+  rightLabel,
 }: {
   kicker: string;
   title: string;
   sub?: string;
-  right?: React.ReactNode;
+  rightHref?: string;
+  rightLabel?: string;
 }) {
   return (
     <div className="flex items-end justify-between px-1">
@@ -205,51 +195,36 @@ function SectionHead({
         </div>
         {sub && <div className="text-[12px] text-muted-foreground">{sub}</div>}
       </div>
-      {right}
+      {rightHref && rightLabel && (
+        <Link
+          href={rightHref}
+          className="inline-flex shrink-0 items-center gap-0.5 text-[12px] font-medium text-muted-foreground active:opacity-70"
+        >
+          {rightLabel}
+          <ChevronRight className="h-3.5 w-3.5" />
+        </Link>
+      )}
     </div>
   );
 }
 
-function ProGate({
-  unlocked,
-  kicker,
-  title,
-  desc,
-  children,
-}: {
-  unlocked: boolean;
-  kicker: string;
-  title: string;
-  desc: string;
-  children: React.ReactNode;
-}) {
-  if (unlocked) {
-    return (
-      <section className="space-y-3">
-        <SectionHead kicker={kicker} title={title} sub={desc} />
-        {children}
-      </section>
-    );
-  }
+function ProGate() {
   return (
-    <section className="space-y-3">
-      <SectionHead kicker={kicker} title={title} sub={desc} />
-      <Link
-        href="/pricing?reason=advanced_analytics"
-        className="surface-card flex items-center gap-4 p-5 transition-transform active:scale-[0.99]"
-      >
-        <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-muted text-muted-foreground">
-          <Lock className="h-4 w-4" />
-        </span>
-        <div className="min-w-0 flex-1">
-          <div className="text-[15px] font-semibold">詳細分析は Pro で解放</div>
-          <div className="text-[12px] text-muted-foreground">
-            弱点の深掘りと学習経路の推薦で合格までの距離を短縮
-          </div>
+    <Link
+      href="/pricing?reason=advanced_analytics"
+      className="surface-card flex items-center gap-4 p-5 transition-transform active:scale-[0.99]"
+    >
+      <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-muted text-muted-foreground">
+        <Lock className="h-4 w-4" />
+      </span>
+      <div className="min-w-0 flex-1">
+        <div className="text-[15px] font-semibold">詳細分析は Pro で解放</div>
+        <div className="text-[12px] text-muted-foreground">
+          5問解くか、Proにすると分野別の習熟度が表示されます
         </div>
-        <ChevronRight className="h-4 w-4 text-muted-foreground" />
-      </Link>
-    </section>
+      </div>
+      <ChevronRight className="h-4 w-4 text-muted-foreground" />
+    </Link>
   );
 }
 

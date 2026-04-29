@@ -2,6 +2,7 @@ import Link from "next/link";
 import { BookOpen, ChevronRight, Clock } from "lucide-react";
 import { listStudyLessonSlugs, getStudyLesson } from "@/server/queries/study";
 import { listTopics } from "@/server/queries/topics";
+import { LessonThumbnail } from "@/components/study/Thumbnail";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "学ぶ" };
@@ -57,16 +58,24 @@ export default async function StudyIndexPage() {
               <li key={lesson.slug}>
                 <Link
                   href={`/learn/study/${lesson.slug}`}
-                  className="surface-card group grid grid-cols-[44px_1fr_auto] items-start gap-4 p-5"
+                  className="surface-card group grid grid-cols-[112px_1fr_auto] items-start gap-4 overflow-hidden p-5 sm:grid-cols-[148px_1fr_auto]"
                 >
-                  <span
-                    className="num flex h-10 w-10 items-center justify-center rounded-full text-[14px] font-semibold"
-                    style={{ background: `${meta.hue}14`, color: meta.hue }}
-                  >
-                    {String(idx + 1).padStart(2, "0")}
-                  </span>
+                  <div className="overflow-hidden rounded-xl">
+                    <LessonThumbnail
+                      hue={meta.hue}
+                      figureKind={lesson.figure.kind}
+                      ariaLabel={`${lesson.title} のサムネイル`}
+                      className="h-full w-full"
+                    />
+                  </div>
                   <div className="min-w-0">
                     <div className="flex flex-wrap items-center gap-2 text-[11px] font-semibold">
+                      <span
+                        className="num inline-flex items-center rounded-full px-2 py-0.5"
+                        style={{ background: `${meta.hue}14`, color: meta.hue }}
+                      >
+                        {String(idx + 1).padStart(2, "0")}
+                      </span>
                       <span
                         className="inline-flex items-center rounded-full px-2 py-0.5"
                         style={{ background: `${meta.hue}14`, color: meta.hue }}

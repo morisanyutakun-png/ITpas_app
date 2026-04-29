@@ -1,0 +1,74 @@
+{
+  "slug": "biz_enterprise_systems",
+  "title": "基幹業務システム ── ERP / SCM / CRM / SFA",
+  "dek": "情報システム戦略",
+  "hook": "企業の業務を支えるシステム。略語が似ているので『何の業務を扱うか』をセットで覚えるのがコツです。",
+  "figure": {
+    "kind": "tree",
+    "caption": "扱う業務領域が違う 4 つ。重なる部分もあるが主目的で見分ける。",
+    "root": { "title": "基幹業務システム", "body": "企業の業務を IT で支える 4 種類" },
+    "children": [
+      { "title": "ERP", "accent": "primary", "items": ["全社統合", "経理・人事・販売・生産"] },
+      { "title": "SCM", "accent": "warm", "items": ["供給連鎖", "調達→生産→物流→販売"] },
+      { "title": "CRM", "accent": "cool", "items": ["顧客関係", "問合せ・購買履歴・LTV"] },
+      { "title": "SFA", "accent": "neutral", "items": ["営業活動", "案件管理・行動記録"] }
+    ]
+  },
+  "sections": [
+    {
+      "heading": "ERP ── 全社の経営資源を統合",
+      "summary": "Enterprise Resource Planning。会計・人事・販売・生産などをひとつのシステムで一元管理。",
+      "paragraphs": [
+        "**ERP (Enterprise Resource Planning)** は、**会社の主要業務をすべて 1 つのシステムに統合** する考え方。会計・人事・販売・購買・生産などの **モジュール** を組み合わせて使います。",
+        "個別最適のシステムを別々に持つと『会計の数字と販売の数字が合わない』が起きがち。ERP は **データ基盤を 1 つに揃える** ことで、これを根本から解消します。"
+      ],
+      "miniQuiz": { "question": "ERP が扱う領域は?", "answer": "会計・人事・販売・生産など全社の主要業務", "hint": "Resource = 経営資源。全社統合がポイント。" }
+    },
+    {
+      "heading": "SCM ── 供給網の最適化",
+      "summary": "Supply Chain Management。原材料調達から販売までの流れを最適化する。",
+      "paragraphs": [
+        "**SCM (Supply Chain Management)** は、**調達 → 生産 → 物流 → 販売** という供給網全体を見渡して、過剰在庫や欠品を抑える仕組み。",
+        "ERP との違いは『**会社の中** の業務 vs **会社の外との連携も含めた供給の流れ**』。SCM は外部の取引先 (サプライヤー、物流会社) も視野に入れます。"
+      ]
+    },
+    {
+      "heading": "CRM ── 顧客との関係を蓄積",
+      "summary": "Customer Relationship Management。問合せ履歴や購買データから顧客との関係を継続改善。",
+      "paragraphs": [
+        "**CRM (Customer Relationship Management)** は、**顧客の問合せ・購買・サポート履歴** を集約し、長期的な関係性を作る仕組み。Salesforce、HubSpot などが代表例。",
+        "目的は **LTV (顧客生涯価値) の最大化**。一度きりの取引ではなく、リピートやクロスセルにつなげる視点で設計します。"
+      ]
+    },
+    {
+      "heading": "SFA ── 営業活動を可視化",
+      "summary": "Sales Force Automation。営業案件・行動を記録して再現性を高める。",
+      "paragraphs": [
+        "**SFA (Sales Force Automation)** は、**営業担当の案件状況・訪問記録・受注確度** を蓄積し、属人化を防ぐ仕組み。CRM の中に SFA 機能が含まれることも多い。",
+        "CRM が『顧客視点』なら、SFA は『**営業活動視点**』。誰がどの案件を、どこまで進めているかを管理します。"
+      ],
+      "callouts": [
+        {
+          "kind": "caution",
+          "title": "頻出のすり替え",
+          "body": "「**SCM** は顧客との長期的な関係を蓄積する仕組みである」── **誤り**。それは **CRM**。SCM は供給網の最適化。"
+        }
+      ]
+    }
+  ],
+  "takeaways": [
+    { "term": "ERP", "body": "全社の業務を 1 つのシステムに統合。" },
+    { "term": "SCM", "body": "調達から販売までの供給網を最適化。" },
+    { "term": "CRM", "body": "顧客との関係を蓄積、LTV を上げる。" },
+    { "term": "SFA", "body": "営業活動を記録、属人化を防ぐ。" }
+  ],
+  "examples": [
+    {
+      "question": "顧客の購買履歴・問合せ履歴・サポート履歴を一元管理し、長期的な関係構築に役立てるシステムはどれか。",
+      "answer": "CRM",
+      "reasoning": "Customer Relationship Management。SCM は供給網、ERP は全社業務の統合で目的が異なる。"
+    }
+  ],
+  "readingMinutes": 5,
+  "questionCount": 5
+}

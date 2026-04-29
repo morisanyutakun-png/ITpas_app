@@ -17,6 +17,9 @@ import { hasFeature, isPro, limitsFor } from "@/lib/plan";
 import { getRecommendation } from "@/server/queries/history";
 import { getRoadmap, type RoadmapMajor } from "@/server/queries/roadmap";
 import { listStudyLessonSlugs, getStudyLesson } from "@/server/queries/study";
+import { listTopics } from "@/server/queries/topics";
+import { LessonThumbnail } from "@/components/study/Thumbnail";
+import type { StudyFigure } from "@/lib/contentSchema";
 
 export const dynamic = "force-dynamic";
 
@@ -56,15 +59,23 @@ export default async function HomePage() {
   const canMock = hasFeature(user, "mockExam");
   const dailyLimit = limitsFor(user.plan).dailyQuestionAttempts;
 
-  const [rec, roadmap, studySlugs] = await Promise.all([
+  const [rec, roadmap, studySlugs, allTopics] = await Promise.all([
     getRecommendation(user.id),
     getRoadmap(user.id),
     listStudyLessonSlugs(),
+    listTopics(),
   ]);
+  const topicBySlug = new Map(allTopics.map((t) => [t.slug, t]));
 
   const studyLessons = (
     await Promise.all(studySlugs.slice(0, 6).map((s) => getStudyLesson(s)))
   ).filter((l): l is NonNullable<typeof l> => l !== null);
+
+  const hueOf = (slug: string): string => {
+    const t = topicBySlug.get(slug);
+    if (!t) return "#0A84FF";
+    return MAJOR_META[t.majorCategory]?.hue ?? "#0A84FF";
+  };
 
   const featured =
     (rec && studyLessons.find((l) => l.slug === rec.slug)) ??
@@ -117,6 +128,8 @@ export default async function HomePage() {
             hook={featured.hook}
             readingMinutes={featured.readingMinutes}
             questionCount={featured.questionCount}
+            figureKind={featured.figure.kind}
+            hue={hueOf(featured.slug)}
           />
           {otherLessons.length > 0 && (
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
@@ -128,6 +141,8 @@ export default async function HomePage() {
                   hook={l.hook}
                   readingMinutes={l.readingMinutes}
                   dek={l.dek ?? null}
+                  figureKind={l.figure.kind}
+                  hue={hueOf(l.slug)}
                 />
               ))}
             </div>
@@ -259,6 +274,8 @@ function FeaturedLesson({
   hook,
   readingMinutes,
   questionCount,
+  figureKind,
+  hue,
 }: {
   slug: string;
   title: string;
@@ -266,16 +283,21 @@ function FeaturedLesson({
   hook: string;
   readingMinutes: number;
   questionCount: number;
+  figureKind: StudyFigure["kind"];
+  hue: string;
 }) {
   return (
     <Link
       href={`/learn/study/${slug}`}
-      className="surface-card group relative block overflow-hidden p-6 sm:p-7"
+      className="surface-card group relative block overflow-hidden p-0"
     >
-      <div className="grid gap-5 sm:grid-cols-[1fr_auto] sm:items-start">
-        <div className="space-y-3">
+      <div className="grid gap-0 sm:grid-cols-[1fr_220px]">
+        <div className="space-y-3 p-6 sm:p-7">
           {dek && (
-            <span className="inline-flex items-center gap-1 rounded-full bg-[#0A84FF]/10 px-2.5 py-1 text-[11px] font-semibold text-[#0A84FF]">
+            <span
+              className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold"
+              style={{ background: `${hue}14`, color: hue }}
+            >
               <BookOpen className="h-3 w-3" />
               {dek}
             </span>
@@ -315,9 +337,14 @@ function FeaturedLesson({
         </div>
         <div
           aria-hidden
-          className="hidden h-[120px] w-[120px] shrink-0 items-center justify-center rounded-2xl bg-grad-blue text-white shadow-tile sm:flex"
+          className="hidden h-full overflow-hidden sm:block"
         >
-          <BookOpen className="h-10 w-10" strokeWidth={1.8} />
+          <LessonThumbnail
+            hue={hue}
+            figureKind={figureKind}
+            ariaLabel={`${title} のサムネイル`}
+            className="h-full w-full"
+          />
         </div>
       </div>
     </Link>
@@ -330,41 +357,58 @@ function ReadingRow({
   hook,
   readingMinutes,
   dek,
+  figureKind,
+  hue,
 }: {
   slug: string;
   title: string;
   hook: string;
   readingMinutes: number;
   dek: string | null;
+  figureKind: StudyFigure["kind"];
+  hue: string;
 }) {
   return (
     <Link
       href={`/learn/study/${slug}`}
-      className="surface-card group flex h-full flex-col gap-2 p-5"
+      className="surface-card group flex h-full flex-col overflow-hidden p-0"
     >
-      {dek && (
-        <span className="inline-flex w-fit items-center gap-1 rounded-full bg-muted px-2 py-0.5 text-[11px] font-semibold text-muted-foreground">
-          <BookOpen className="h-3 w-3" />
-          {dek}
-        </span>
-      )}
-      <div className="text-[16px] font-semibold leading-snug tracking-tight">
-        {title}
+      <div className="aspect-[16/9] w-full overflow-hidden">
+        <LessonThumbnail
+          hue={hue}
+          figureKind={figureKind}
+          ariaLabel={`${title} のサムネイル`}
+          className="h-full w-full"
+        />
       </div>
-      <p className="line-clamp-2 text-[12.5px] leading-relaxed text-muted-foreground text-pretty">
-        {hook}
-      </p>
-      <div className="mt-auto flex items-center gap-2 pt-2 text-[11.5px] text-muted-foreground">
-        <Clock className="h-3 w-3" />
-        <span>
-          <span className="num font-semibold text-foreground">
-            {readingMinutes}
-          </span>{" "}
-          分で読める
-        </span>
-        <span aria-hidden className="ml-auto inline-flex items-center gap-1 text-muted-foreground/70">
-          <ChevronRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
-        </span>
+      <div className="flex flex-1 flex-col gap-2 p-5">
+        {dek && (
+          <span
+            className="inline-flex w-fit items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-semibold"
+            style={{ background: `${hue}14`, color: hue }}
+          >
+            <BookOpen className="h-3 w-3" />
+            {dek}
+          </span>
+        )}
+        <div className="text-[16px] font-semibold leading-snug tracking-tight">
+          {title}
+        </div>
+        <p className="line-clamp-2 text-[12.5px] leading-relaxed text-muted-foreground text-pretty">
+          {hook}
+        </p>
+        <div className="mt-auto flex items-center gap-2 pt-2 text-[11.5px] text-muted-foreground">
+          <Clock className="h-3 w-3" />
+          <span>
+            <span className="num font-semibold text-foreground">
+              {readingMinutes}
+            </span>{" "}
+            分で読める
+          </span>
+          <span aria-hidden className="ml-auto inline-flex items-center gap-1 text-muted-foreground/70">
+            <ChevronRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
+          </span>
+        </div>
       </div>
     </Link>
   );

@@ -2,7 +2,8 @@ import "server-only";
 import { asc, eq, sql } from "drizzle-orm";
 import { db } from "@/db/client";
 import { questionTopics, topics } from "@/db/schema";
-import { listStudyLessonSlugs } from "./study";
+import type { StudyFigure } from "@/lib/contentSchema";
+import { getStudyLesson, listStudyLessonSlugs } from "./study";
 
 type Major = "strategy" | "management" | "technology";
 
@@ -12,6 +13,10 @@ export type CurriculumChapter = {
   summary: string;
   questionCount: number;
   hasLesson: boolean;
+  /** Figure kind of the lesson, used to pick the thumbnail glyph. */
+  lessonFigureKind: StudyFigure["kind"] | null;
+  /** Reading minutes from the lesson; null if no lesson. */
+  readingMinutes: number | null;
   attempted: number;
   correct: number;
   correctRate: number;
@@ -128,20 +133,39 @@ export async function getCurriculum(
     }
   }
 
-  // 4) Which topics have an authored lesson
+  // 4) Which topics have an authored lesson, plus their figure kinds.
   const lessonSlugs = new Set(await listStudyLessonSlugs());
+  const lessonsForMajor = ts.filter((t) => lessonSlugs.has(t.slug));
+  const lessonMeta = new Map<
+    string,
+    { figureKind: StudyFigure["kind"]; readingMinutes: number }
+  >();
+  await Promise.all(
+    lessonsForMajor.map(async (t) => {
+      const l = await getStudyLesson(t.slug);
+      if (l) {
+        lessonMeta.set(t.slug, {
+          figureKind: l.figure.kind,
+          readingMinutes: l.readingMinutes,
+        });
+      }
+    })
+  );
 
   // 5) Group by minor topic, preserving the order from the SQL.
   const minorMap = new Map<string, CurriculumChapter[]>();
   for (const t of ts) {
     const p = progress.get(t.slug) ?? { attempted: 0, correct: 0 };
     const rate = p.attempted > 0 ? p.correct / p.attempted : 0;
+    const meta = lessonMeta.get(t.slug);
     const ch: CurriculumChapter = {
       slug: t.slug,
       title: t.title,
       summary: t.summary,
       questionCount: qCount.get(t.slug) ?? 0,
       hasLesson: lessonSlugs.has(t.slug),
+      lessonFigureKind: meta?.figureKind ?? null,
+      readingMinutes: meta?.readingMinutes ?? null,
       attempted: p.attempted,
       correct: p.correct,
       correctRate: rate,

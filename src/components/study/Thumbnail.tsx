@@ -1,0 +1,291 @@
+import type { StudyFigure } from "@/lib/contentSchema";
+
+/**
+ * Deterministic SVG thumbnail for a lesson card. Renders one of seven
+ * abstract glyphs that mirror the lesson's hero figure kind, on a
+ * gradient drawn from the major's hue. No images, no fonts, no JS — just
+ * a small SVG that scales cleanly and stays consistent across the app.
+ */
+export function LessonThumbnail({
+  hue,
+  figureKind,
+  className,
+  ariaLabel,
+}: {
+  hue: string;
+  figureKind: StudyFigure["kind"];
+  className?: string;
+  ariaLabel?: string;
+}) {
+  const id = `t-${figureKind}-${slug(hue)}`;
+  return (
+    <svg
+      viewBox="0 0 320 200"
+      role="img"
+      aria-label={ariaLabel ?? "lesson thumbnail"}
+      className={className}
+      preserveAspectRatio="xMidYMid slice"
+    >
+      <defs>
+        <linearGradient id={`${id}-bg`} x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor={hue} stopOpacity="0.92" />
+          <stop offset="60%" stopColor={hue} stopOpacity="0.72" />
+          <stop offset="100%" stopColor={mix(hue, "#000", 0.55)} />
+        </linearGradient>
+        <radialGradient id={`${id}-glow`} cx="0.85" cy="0.1" r="0.9">
+          <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.32" />
+          <stop offset="60%" stopColor="#FFFFFF" stopOpacity="0" />
+        </radialGradient>
+        <linearGradient id={`${id}-shadow`} x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0%" stopColor="#000" stopOpacity="0.18" />
+          <stop offset="100%" stopColor="#000" stopOpacity="0" />
+        </linearGradient>
+        <pattern
+          id={`${id}-grid`}
+          width="16"
+          height="16"
+          patternUnits="userSpaceOnUse"
+        >
+          <path
+            d="M 16 0 L 0 0 0 16"
+            fill="none"
+            stroke="#FFFFFF"
+            strokeOpacity="0.06"
+            strokeWidth="1"
+          />
+        </pattern>
+      </defs>
+
+      {/* Background */}
+      <rect width="320" height="200" fill={`url(#${id}-bg)`} />
+      <rect width="320" height="200" fill={`url(#${id}-grid)`} />
+      <rect width="320" height="200" fill={`url(#${id}-glow)`} />
+      <rect width="320" height="200" fill={`url(#${id}-shadow)`} />
+
+      {/* Figure-kind glyph */}
+      <g transform="translate(40, 32)">{glyphFor(figureKind)}</g>
+    </svg>
+  );
+}
+
+function glyphFor(kind: StudyFigure["kind"]) {
+  // Each glyph fits within 240×136 starting at (0,0) so the parent
+  // translate places it inside a 40px gutter on a 320×200 canvas.
+  switch (kind) {
+    case "layered":
+      return (
+        <g>
+          {[0, 1, 2, 3].map((i) => (
+            <rect
+              key={i}
+              x={0}
+              y={i * 30}
+              width={240 - i * 30}
+              height={20}
+              rx={6}
+              fill="#FFFFFF"
+              fillOpacity={0.92 - i * 0.18}
+            />
+          ))}
+        </g>
+      );
+
+    case "compare":
+      return (
+        <g>
+          <rect
+            x={0}
+            y={6}
+            width={108}
+            height={120}
+            rx={14}
+            fill="#FFFFFF"
+            fillOpacity={0.92}
+          />
+          <rect
+            x={132}
+            y={6}
+            width={108}
+            height={120}
+            rx={14}
+            fill="#FFFFFF"
+            fillOpacity={0.5}
+          />
+          <line
+            x1={120}
+            y1={20}
+            x2={120}
+            y2={112}
+            stroke="#FFFFFF"
+            strokeOpacity={0.6}
+            strokeWidth={2}
+            strokeDasharray="4 6"
+          />
+        </g>
+      );
+
+    case "flow":
+      return (
+        <g transform="translate(0, 36)">
+          {[0, 1, 2].map((i) => (
+            <g key={i} transform={`translate(${i * 88}, 0)`}>
+              <circle cx={32} cy={32} r={26} fill="#FFFFFF" fillOpacity={0.9} />
+              {i < 2 && (
+                <path
+                  d="M 60 32 H 84"
+                  stroke="#FFFFFF"
+                  strokeOpacity={0.85}
+                  strokeWidth={3}
+                  strokeLinecap="round"
+                />
+              )}
+            </g>
+          ))}
+        </g>
+      );
+
+    case "quadrant":
+      return (
+        <g>
+          {[0, 1, 2, 3].map((i) => {
+            const col = i % 2;
+            const row = Math.floor(i / 2);
+            return (
+              <rect
+                key={i}
+                x={col * 124}
+                y={row * 70}
+                width={116}
+                height={62}
+                rx={12}
+                fill="#FFFFFF"
+                fillOpacity={0.85 - i * 0.12}
+              />
+            );
+          })}
+        </g>
+      );
+
+    case "step-list":
+      return (
+        <g>
+          {[0, 1, 2].map((i) => (
+            <g key={i} transform={`translate(0, ${i * 44})`}>
+              <circle cx={18} cy={18} r={14} fill="#FFFFFF" fillOpacity={0.94} />
+              <text
+                x={18}
+                y={22}
+                fontFamily="ui-sans-serif, system-ui, sans-serif"
+                fontWeight={700}
+                fontSize={14}
+                textAnchor="middle"
+                fill={"currentColor"}
+                style={{ color: "#0F172A", mixBlendMode: "normal" }}
+              >
+                {i + 1}
+              </text>
+              <rect
+                x={44}
+                y={6}
+                width={196}
+                height={24}
+                rx={6}
+                fill="#FFFFFF"
+                fillOpacity={0.7 - i * 0.14}
+              />
+            </g>
+          ))}
+        </g>
+      );
+
+    case "tree":
+      return (
+        <g>
+          <rect
+            x={84}
+            y={0}
+            width={72}
+            height={26}
+            rx={8}
+            fill="#FFFFFF"
+            fillOpacity={0.95}
+          />
+          {[0, 1, 2].map((i) => (
+            <g key={i}>
+              <path
+                d={`M 120 26 Q 120 50 ${30 + i * 90} 64`}
+                stroke="#FFFFFF"
+                strokeOpacity={0.55}
+                strokeWidth={2}
+                fill="none"
+              />
+              <rect
+                x={i * 90}
+                y={64}
+                width={60}
+                height={56}
+                rx={10}
+                fill="#FFFFFF"
+                fillOpacity={0.78 - i * 0.14}
+              />
+            </g>
+          ))}
+        </g>
+      );
+
+    case "labeled-diagram":
+      return (
+        <g>
+          <circle cx={70} cy={60} r={50} fill="#FFFFFF" fillOpacity={0.94} />
+          {[0, 1, 2].map((i) => (
+            <g key={i}>
+              <line
+                x1={120}
+                y1={60}
+                x2={154}
+                y2={20 + i * 40}
+                stroke="#FFFFFF"
+                strokeOpacity={0.55}
+                strokeWidth={2}
+              />
+              <rect
+                x={156}
+                y={10 + i * 40}
+                width={84}
+                height={20}
+                rx={6}
+                fill="#FFFFFF"
+                fillOpacity={0.85 - i * 0.16}
+              />
+            </g>
+          ))}
+        </g>
+      );
+  }
+}
+
+// ── Color helpers ─────────────────────────────────────────────────────────
+
+function slug(s: string) {
+  return s.replace(/[^a-zA-Z0-9]/g, "");
+}
+
+function mix(a: string, b: string, t: number): string {
+  const A = parseHex(a);
+  const B = parseHex(b);
+  const r = Math.round(A.r + (B.r - A.r) * t);
+  const g = Math.round(A.g + (B.g - A.g) * t);
+  const bl = Math.round(A.b + (B.b - A.b) * t);
+  return `#${[r, g, bl].map((n) => n.toString(16).padStart(2, "0")).join("")}`;
+}
+
+function parseHex(s: string): { r: number; g: number; b: number } {
+  const m = s.replace("#", "").match(/^([0-9a-f]{6}|[0-9a-f]{3})$/i);
+  if (!m) return { r: 30, g: 41, b: 59 };
+  const v = m[1].length === 3 ? m[1].split("").map((c) => c + c).join("") : m[1];
+  return {
+    r: parseInt(v.slice(0, 2), 16),
+    g: parseInt(v.slice(2, 4), 16),
+    b: parseInt(v.slice(4, 6), 16),
+  };
+}

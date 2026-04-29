@@ -1,0 +1,66 @@
+{
+  "slug": "network_protocols",
+  "title": "主要プロトコルと所属層",
+  "dek": "ネットワーク",
+  "hook": "OSI 参照モデルを学んだ後の応用編。各プロトコルが『どの層に属し、何のために使われるか』を整理します。",
+  "figure": {
+    "kind": "layered",
+    "caption": "プロトコルを所属層と一緒に覚えると、選択肢の上下入れ替えに強くなる。",
+    "layers": [
+      { "label": "アプリ層", "items": ["HTTP/HTTPS", "SMTP / POP3 / IMAP", "DNS", "DHCP", "FTP"], "accent": "warm" },
+      { "label": "トランスポート層", "items": ["TCP", "UDP"], "accent": "primary" },
+      { "label": "ネットワーク層", "items": ["IP", "ICMP", "ARP"], "accent": "primary" },
+      { "label": "データリンク層", "items": ["Ethernet"], "accent": "cool" }
+    ]
+  },
+  "sections": [
+    {
+      "heading": "アプリケーション層の主要プロトコル",
+      "summary": "Web・メール・名前解決・自動設定など、ユーザーに見える層。",
+      "paragraphs": [
+        "**HTTP / HTTPS** は Web 通信。**HTTPS は HTTP + TLS** で、暗号化された安全な Web。",
+        "**SMTP** はメール送信、**POP3 / IMAP** はメール受信。POP3 は端末にダウンロードして消す方式、IMAP はサーバ上に残す方式。",
+        "**DNS** はドメイン名を IP アドレスに変換するシステム。**DHCP** は端末に IP アドレスを自動割り当てします。"
+      ],
+      "miniQuiz": { "question": "メールを送信するプロトコルは?", "answer": "SMTP", "hint": "Send Mail Transfer Protocol。受信は POP3 / IMAP。" }
+    },
+    {
+      "heading": "トランスポート層 ── TCP と UDP",
+      "summary": "信頼の TCP、速さの UDP。アプリケーションに応じて使い分け。",
+      "paragraphs": [
+        "**TCP** はコネクションを張り、データの順序保証・到達確認を行う **信頼性重視** のプロトコル。Web や メールで使う。",
+        "**UDP** はコネクションを張らず、速度重視で送りっぱなし。**音声・動画ストリーミング・DNS** などで使う。"
+      ]
+    },
+    {
+      "heading": "ネットワーク層 ── IP と関連",
+      "summary": "IP で経路を決め、ICMP で疎通確認、ARP で MAC アドレスを引く。",
+      "paragraphs": [
+        "**IP** はネットワークをまたいで届けるための住所システム。**IPv4 (32bit)** と **IPv6 (128bit)** がある。",
+        "**ICMP** は疎通確認 (ping コマンド) で使われ、エラー通知も担う。**ARP** は IP アドレスから MAC アドレスを引くプロトコル。"
+      ],
+      "callouts": [
+        {
+          "kind": "caution",
+          "title": "頻出の罠",
+          "body": "「**HTTP** はトランスポート層のプロトコルである」── **誤り**。HTTP は **アプリケーション層**。中で TCP を使っているだけ。"
+        }
+      ]
+    }
+  ],
+  "takeaways": [
+    { "term": "Web", "body": "HTTP / HTTPS (アプリ層)。" },
+    { "term": "メール", "body": "送信 SMTP / 受信 POP3・IMAP (アプリ層)。" },
+    { "term": "名前解決", "body": "DNS (アプリ層)。" },
+    { "term": "TCP/UDP", "body": "信頼性 vs 速度 (トランスポート層)。" }
+  ],
+  "examples": [
+    {
+      "question": "ドメイン名を IP アドレスに変換するプロトコルはどれか。",
+      "answer": "DNS",
+      "reasoning": "Domain Name System。HTTP はアクセス、ARP は MAC への変換で目的が異なる。"
+    }
+  ],
+  "readingMinutes": 5,
+  "questionCount": 5
+}

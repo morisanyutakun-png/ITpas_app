@@ -1,0 +1,75 @@
+{
+  "slug": "biz_validation_methods",
+  "title": "事業検証の手法 ── PoC / PoV / MVP / プロトタイプ",
+  "dek": "ビジネス開発入門",
+  "hook": "新規事業を本格投資する前に小さく試す手法は複数あります。試験では『何を検証するのか』を入れ替える出題が頻出。",
+  "figure": {
+    "kind": "tree",
+    "caption": "目的が違う 4 つの『試作』。",
+    "root": { "title": "事業検証の手法", "body": "本投資の前に小さく確かめる" },
+    "children": [
+      { "title": "PoC", "accent": "primary", "items": ["Proof of Concept", "技術的に実現可能か"] },
+      { "title": "PoV", "accent": "warm", "items": ["Proof of Value", "ビジネス価値があるか"] },
+      { "title": "MVP", "accent": "cool", "items": ["Minimum Viable Product", "最小限で市場検証"] },
+      { "title": "プロトタイプ", "accent": "neutral", "items": ["試作品", "形を見せて議論"] }
+    ]
+  },
+  "sections": [
+    {
+      "heading": "PoC ── 技術が成り立つかを試す",
+      "summary": "Proof of Concept。新技術が実用になるかを少数で検証する。",
+      "paragraphs": [
+        "**PoC (Proof of Concept / 概念実証)** は、**技術的に実現できるか** を確かめるための小規模な検証。たとえば『画像 AI で不良品を識別できるか』を、限定された条件・少数のデータで試します。",
+        "PoC で示せるのは『**技術が成り立つかどうか**』だけ。その技術がビジネスとしてうまくいくか (=価値があるか) は、PoC では分かりません。次の PoV が担当します。"
+      ],
+      "miniQuiz": { "question": "PoC で確かめるのは何?", "answer": "技術的な実現可能性", "hint": "Proof of Concept = 概念実証。" }
+    },
+    {
+      "heading": "PoV ── ビジネス価値があるかを試す",
+      "summary": "Proof of Value。技術が成り立つ前提で、ビジネス価値が出るかを確かめる。",
+      "paragraphs": [
+        "**PoV (Proof of Value)** は、技術の実現性が確認された後で、**実際のビジネスで価値を生むか** を検証します。コスト削減・売上向上・顧客満足など、具体的な指標で評価。",
+        "PoC が技術側の検証なら、PoV は **経営側の検証** と覚えるとよい。"
+      ]
+    },
+    {
+      "heading": "MVP ── 必要最小限で市場に出す",
+      "summary": "Minimum Viable Product。最小限の機能で実際にユーザーに使わせ、学ぶ。",
+      "analogy": { "label": "たとえると", "body": "**屋台で 1 種類のメニューだけ出す** イメージ。フルメニューを揃える前に、まず 1 品を出して反応を見る ── 早く市場に出して学ぶのが MVP の発想です。" },
+      "paragraphs": [
+        "**MVP (Minimum Viable Product / 最小実用製品)** は、**必要最小限の機能だけを実装し、実ユーザーに当てて学ぶ** アプローチ。Lean Startup の中核概念です。",
+        "PoC や PoV が**社内で確かめる**性格が強いのに対し、MVP は **実際の市場・ユーザー** に出すのが特徴。だからこそ得られる学びの種類が違います。"
+      ]
+    },
+    {
+      "heading": "プロトタイプ ── 形を見せて議論する",
+      "summary": "試作品を作って、関係者と『これでよいか』を議論するための道具。",
+      "paragraphs": [
+        "**プロトタイプ** は **試作品**。デザイン・UI・操作感を **目に見える形で確認** するために作ります。実装の完成度は二の次で、議論のたたき台が目的。",
+        "プロトタイプと MVP の違いは『市場に出すか / 出さないか』。**プロトタイプは社内議論用、MVP は市場投入用** と覚えると区別しやすい。"
+      ],
+      "callouts": [
+        {
+          "kind": "caution",
+          "title": "頻出のすり替え",
+          "body": "「**MVP** は技術が実現可能かを検証する手法である」── **誤り**。技術検証は **PoC**。MVP は最小限を **市場に出して学ぶ** 手法。"
+        }
+      ]
+    }
+  ],
+  "takeaways": [
+    { "term": "PoC", "body": "技術が成り立つかの検証。" },
+    { "term": "PoV", "body": "ビジネス価値の検証。" },
+    { "term": "MVP", "body": "最小限を市場に出して学ぶ。" },
+    { "term": "プロトタイプ", "body": "形を見せて議論するための試作品。" }
+  ],
+  "examples": [
+    {
+      "question": "技術的に実現可能かを少数のサンプルで確かめるための小規模検証はどれか。",
+      "answer": "PoC (概念実証)",
+      "reasoning": "Proof of Concept は技術検証。PoV は価値検証、MVP は市場投入で目的が異なる。"
+    }
+  ],
+  "readingMinutes": 5,
+  "questionCount": 5
+}

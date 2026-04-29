@@ -15,6 +15,7 @@ import {
   getCurriculum,
   type CurriculumChapter,
 } from "@/server/queries/curriculum";
+import { LessonThumbnail } from "@/components/study/Thumbnail";
 
 export const dynamic = "force-dynamic";
 
@@ -219,13 +220,24 @@ function ChapterRow({
 
   return (
     <li className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:gap-4 sm:p-5">
-      {/* Index badge */}
-      <span
-        className="num flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-[12px] font-semibold"
-        style={{ background: `${hue}14`, color: hue }}
-      >
-        {String(index).padStart(2, "0")}
-      </span>
+      {/* Thumbnail or index badge */}
+      {chapter.hasLesson && chapter.lessonFigureKind ? (
+        <div className="h-12 w-20 shrink-0 overflow-hidden rounded-lg sm:h-14 sm:w-24">
+          <LessonThumbnail
+            hue={hue}
+            figureKind={chapter.lessonFigureKind}
+            ariaLabel={`${chapter.title} のサムネイル`}
+            className="h-full w-full"
+          />
+        </div>
+      ) : (
+        <span
+          className="num flex h-12 w-20 shrink-0 items-center justify-center rounded-lg text-[14px] font-semibold sm:h-14 sm:w-24"
+          style={{ background: `${hue}14`, color: hue }}
+        >
+          {String(index).padStart(2, "0")}
+        </span>
+      )}
 
       {/* Title + meta */}
       <div className="min-w-0 flex-1">

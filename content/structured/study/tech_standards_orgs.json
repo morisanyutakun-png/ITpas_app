@@ -1,0 +1,60 @@
+{
+  "slug": "tech_standards_orgs",
+  "title": "国際標準化機関・標準化団体",
+  "dek": "標準化入門",
+  "hook": "標準化機関は『何を、誰が決めているか』が分野ごとに決まっています。略語と分野のセットで覚えるのが王道。",
+  "figure": {
+    "kind": "tree",
+    "caption": "代表的な 5 機関。担当分野が違う。",
+    "root": { "title": "国際標準化の主要機関", "body": "略語と担当分野で覚える" },
+    "children": [
+      { "title": "ISO", "accent": "primary", "items": ["International Org. for Standardization", "工業全般・品質・環境"] },
+      { "title": "IEC", "accent": "warm", "items": ["国際電気標準会議", "電気・電子分野"] },
+      { "title": "ITU", "accent": "cool", "items": ["国際電気通信連合", "通信・電波"] },
+      { "title": "IEEE", "accent": "neutral", "items": ["米電気電子学会", "Wi-Fi (802.11) など"] },
+      { "title": "JIS", "accent": "primary", "items": ["日本産業規格", "日本国内の工業規格"] }
+    ]
+  },
+  "sections": [
+    {
+      "heading": "ISO / IEC / JIS ── 工業規格の柱",
+      "summary": "ISO は世界、IEC は電気、JIS は日本の規格。",
+      "paragraphs": [
+        "**ISO (International Organization for Standardization)** は、工業製品全般・品質マネジメント・環境マネジメントなどを扱う国際標準化機関。**ISO 9001 (品質)、ISO 27001 (情報セキュリティ)** が代表的。",
+        "**IEC (International Electrotechnical Commission)** は電気・電子分野の専門機関。**JIS (日本産業規格)** は日本国内の工業規格で、ISO/IEC と整合させて運用されています。"
+      ],
+      "miniQuiz": { "question": "ISO 9001 が扱うのは?", "answer": "品質マネジメントシステム", "hint": "ISO 27001 はセキュリティ、9001 は品質。" }
+    },
+    {
+      "heading": "ITU と IEEE ── 通信系の標準",
+      "summary": "ITU は電波・通信全般、IEEE は LAN や Wi-Fi の規格。",
+      "paragraphs": [
+        "**ITU (International Telecommunication Union)** は、**電気通信・電波** に関する国連機関。携帯通信や衛星通信の周波数割当などを担います。",
+        "**IEEE (米国電気電子学会)** は、**LAN や Wi-Fi の規格** を作る学会。**802.11 シリーズ** が Wi-Fi の規格群です。"
+      ],
+      "callouts": [
+        {
+          "kind": "caution",
+          "title": "頻出のすり替え",
+          "body": "「**Wi-Fi の規格 802.11 を策定する機関は ISO である**」── **誤り**。802.11 を策定するのは **IEEE**。"
+        }
+      ]
+    }
+  ],
+  "takeaways": [
+    { "term": "ISO", "body": "工業全般・品質・環境の国際規格。" },
+    { "term": "IEC", "body": "電気・電子分野の国際規格。" },
+    { "term": "ITU", "body": "電気通信・電波の国連機関。" },
+    { "term": "IEEE", "body": "Wi-Fi (802.11) などの規格を作る学会。" },
+    { "term": "JIS", "body": "日本の工業規格。" }
+  ],
+  "examples": [
+    {
+      "question": "Wi-Fi の規格 802.11 シリーズを策定している標準化団体はどれか。",
+      "answer": "IEEE",
+      "reasoning": "IEEE 802 委員会が LAN/Wi-Fi 規格を策定。ISO は工業全般、ITU は電気通信。"
+    }
+  ],
+  "readingMinutes": 4,
+  "questionCount": 5
+}

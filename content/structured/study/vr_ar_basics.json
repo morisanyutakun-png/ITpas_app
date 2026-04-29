@@ -1,0 +1,64 @@
+{
+  "slug": "vr_ar_basics",
+  "title": "VR / AR / MR ── 仮想現実技術の境界",
+  "dek": "新技術",
+  "hook": "似た 3 つの言葉。『仮想がどれくらいか』で区別すれば一気にクリアになります。",
+  "figure": {
+    "kind": "tree",
+    "caption": "現実と仮想の混ざり方が違う 3 種類。",
+    "root": { "title": "仮想現実系の技術", "body": "現実 ↔ 仮想のスペクトル" },
+    "children": [
+      { "title": "VR", "accent": "primary", "items": ["Virtual Reality", "完全に仮想空間", "現実は遮断"] },
+      { "title": "AR", "accent": "warm", "items": ["Augmented Reality", "現実に情報を重ねる", "ポケモン GO 系"] },
+      { "title": "MR", "accent": "cool", "items": ["Mixed Reality", "現実と仮想が相互作用", "HoloLens"] }
+    ]
+  },
+  "sections": [
+    {
+      "heading": "VR ── 完全に仮想空間",
+      "summary": "ゴーグルで視界を覆い、別世界に没入する技術。",
+      "paragraphs": [
+        "**VR (Virtual Reality / 仮想現実)** は、ヘッドマウントディスプレイで **視界を完全に覆い、CG で構築された別世界に没入** させる技術。ゲーム・訓練シミュレータ・建築プレビューなどに使われます。",
+        "現実世界は遮断されるので、**移動中の利用は不可**。"
+      ],
+      "miniQuiz": { "question": "視界を完全に覆って仮想世界に没入する技術は?", "answer": "VR", "hint": "Virtual Reality。" }
+    },
+    {
+      "heading": "AR ── 現実に情報を重ねる",
+      "summary": "現実の景色に CG や情報を上乗せして表示する。",
+      "paragraphs": [
+        "**AR (Augmented Reality / 拡張現実)** は、**現実世界の上にデジタル情報を重ねて表示** する技術。スマホカメラ越しに地図情報を出すアプリ、ポケモン GO がこの仲間。",
+        "VR が『現実遮断』なのに対し、AR は **現実が見えたまま** 情報が追加されるのが本質。"
+      ]
+    },
+    {
+      "heading": "MR ── 現実と仮想が相互作用",
+      "summary": "現実空間に置かれた仮想物体に手で触れて動かせるレベル。",
+      "paragraphs": [
+        "**MR (Mixed Reality / 複合現実)** は、**現実空間と仮想物体が相互に作用** する技術。Microsoft HoloLens のような専用デバイスで、机の上に仮想ホログラムを置き、それを手で動かしたりできます。",
+        "AR が『情報を重ねるだけ』なのに対し、MR は **仮想物体が現実に固定され、人と相互作用する** 点が違います。"
+      ],
+      "callouts": [
+        {
+          "kind": "caution",
+          "title": "頻出のすり替え",
+          "body": "「**VR** は現実世界に情報を重ねて表示する技術である」── **誤り**。それは **AR**。VR は現実を遮断して仮想空間に没入。"
+        }
+      ]
+    }
+  ],
+  "takeaways": [
+    { "term": "VR", "body": "完全仮想。現実は遮断。" },
+    { "term": "AR", "body": "現実に情報を重ねる。" },
+    { "term": "MR", "body": "現実と仮想が相互作用。" }
+  ],
+  "examples": [
+    {
+      "question": "現実の風景に CG やテキスト情報を重ねて表示する技術はどれか。",
+      "answer": "AR (拡張現実)",
+      "reasoning": "情報を重ねるのが AR。VR は現実を遮断して仮想空間に没入する点で異なる。"
+    }
+  ],
+  "readingMinutes": 5,
+  "questionCount": 5
+}

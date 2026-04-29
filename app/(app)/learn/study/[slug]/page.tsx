@@ -11,6 +11,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { readCurrentUser } from "@/lib/currentUser";
+import { getNextChapterWithLesson } from "@/server/queries/curriculum";
 import { getStudyLesson } from "@/server/queries/study";
 import { getTopic, getTopicProgress } from "@/server/queries/topics";
 import { StudyFigureView } from "@/components/study/Figure";
@@ -63,16 +64,24 @@ export default async function StudyLessonPage({
   const ratePct =
     progress.attempted > 0 ? Math.round(progress.rate * 100) : null;
 
+  // Next chapter handoff: only meaningful if we know the major.
+  const nextChapter = topic
+    ? await getNextChapterWithLesson(topic.majorCategory, slug)
+    : null;
+  const curriculumHref = topic
+    ? `/curriculum/${topic.majorCategory}`
+    : "/learn/study";
+
   return (
     <div className="mx-auto max-w-[720px] pb-16">
       {/* ── Breadcrumb ── */}
       <nav className="pt-1">
         <Link
-          href="/learn/study"
+          href={curriculumHref}
           className="inline-flex items-center gap-1 text-[12.5px] text-muted-foreground hover:text-foreground"
         >
           <ChevronLeft className="h-3.5 w-3.5" />
-          学習一覧へ戻る
+          {topic ? `${MAJOR_META[topic.majorCategory]?.label ?? "カリキュラム"} に戻る` : "学習一覧へ戻る"}
         </Link>
       </nav>
 
@@ -216,6 +225,14 @@ export default async function StudyLessonPage({
 
       {/* ── Quiet revision handoff ── */}
       <RevisionHandoff lesson={lesson} ratePct={ratePct} hue={meta.hue} />
+
+      {/* ── Next chapter / curriculum handoff ── */}
+      <NextChapter
+        nextChapter={nextChapter}
+        curriculumHref={curriculumHref}
+        majorLabel={topic ? MAJOR_META[topic.majorCategory]?.label ?? null : null}
+        hue={meta.hue}
+      />
     </div>
   );
 }
@@ -506,6 +523,70 @@ function WorkedExample({
         </p>
       </div>
     </div>
+  );
+}
+
+function NextChapter({
+  nextChapter,
+  curriculumHref,
+  majorLabel,
+  hue,
+}: {
+  nextChapter: { slug: string; title: string } | null;
+  curriculumHref: string;
+  majorLabel: string | null;
+  hue: string;
+}) {
+  return (
+    <section className="mt-8 grid gap-3 sm:grid-cols-2">
+      {nextChapter && (
+        <Link
+          href={`/learn/study/${nextChapter.slug}`}
+          className="surface-card group flex items-start gap-4 p-5"
+        >
+          <span
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl text-white shadow-tile"
+            style={{ background: hue }}
+          >
+            <ArrowRight className="h-5 w-5" strokeWidth={2.2} />
+          </span>
+          <div className="min-w-0 flex-1">
+            <div
+              className="text-[10.5px] font-semibold uppercase tracking-[0.16em]"
+              style={{ color: hue }}
+            >
+              次の章へ進む
+            </div>
+            <div className="mt-0.5 line-clamp-2 text-[15px] font-semibold tracking-tight">
+              {nextChapter.title}
+            </div>
+            <div className="mt-0.5 text-[12px] text-muted-foreground">
+              続けて読むと定着が早い
+            </div>
+          </div>
+        </Link>
+      )}
+      <Link
+        href={curriculumHref}
+        className="surface-card flex items-start gap-4 p-5"
+      >
+        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-muted text-muted-foreground">
+          <BookOpen className="h-5 w-5" strokeWidth={2.2} />
+        </span>
+        <div className="min-w-0 flex-1">
+          <div className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+            カリキュラムに戻る
+          </div>
+          <div className="mt-0.5 text-[15px] font-semibold tracking-tight">
+            {majorLabel ?? "カリキュラム"}の章一覧
+          </div>
+          <div className="mt-0.5 text-[12px] text-muted-foreground">
+            進捗を確認して次の章を選ぶ
+          </div>
+        </div>
+        <ChevronLeft className="h-4 w-4 shrink-0 self-center text-muted-foreground" />
+      </Link>
+    </section>
   );
 }
 

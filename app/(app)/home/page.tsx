@@ -145,9 +145,7 @@ export default async function HomePage() {
       {/* ── 全体の地図 ── */}
       <Section
         title="ITパスポートの全体像"
-        sub="3 つの分野と、あなたの進み具合"
-        rightHref="/topics"
-        rightLabel="論点マップ"
+        sub="分野を選ぶと、カリキュラム (記事 → 練習問題) に進めます"
       >
         <div className="space-y-2">
           {roadmap.map((m) => (
@@ -384,8 +382,8 @@ function ChapterStrip({ major }: { major: RoadmapMajor }) {
       : 0;
   return (
     <Link
-      href={`/guides/${major.major}`}
-      className="surface-card flex items-stretch gap-4 p-4"
+      href={`/curriculum/${major.major}`}
+      className="surface-card group flex items-stretch gap-4 p-4"
     >
       <span
         aria-hidden
@@ -412,14 +410,17 @@ function ChapterStrip({ major }: { major: RoadmapMajor }) {
           />
         </div>
       </div>
-      <div className="flex flex-col items-end justify-between text-right">
+      <div className="flex flex-col items-end justify-between gap-1 text-right">
         <div className="num text-[20px] font-semibold leading-none tracking-tight">
           {pct}
           <span className="ml-0.5 text-[11px] font-medium text-muted-foreground">
             %
           </span>
         </div>
-        <div className="text-[10.5px] text-muted-foreground">習熟度</div>
+        <span className="inline-flex items-center gap-0.5 text-[10.5px] font-semibold text-muted-foreground group-hover:text-foreground">
+          カリキュラム
+          <ChevronRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
+        </span>
       </div>
     </Link>
   );

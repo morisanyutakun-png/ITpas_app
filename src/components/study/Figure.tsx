@@ -39,15 +39,18 @@ const ACCENT: Record<
 };
 
 /**
- * Renders a typed lesson figure. The four supported figure kinds were
- * chosen to cover ~90% of IT Passport diagrams without giving authors
- * arbitrary canvas — that way every lesson reads like the same textbook.
+ * Renders a typed lesson figure. Seven kinds total, all picked to cover
+ * the diagrams a beginner sees in an IT Passport textbook without giving
+ * authors free canvas — every lesson stays visually consistent.
  */
 export function StudyFigureView({ figure }: { figure: StudyFigure }) {
   if (figure.kind === "layered") return <LayeredFigure figure={figure} />;
   if (figure.kind === "compare") return <CompareFigure figure={figure} />;
   if (figure.kind === "flow") return <FlowFigure figure={figure} />;
-  return <QuadrantFigure figure={figure} />;
+  if (figure.kind === "quadrant") return <QuadrantFigure figure={figure} />;
+  if (figure.kind === "step-list") return <StepListFigure figure={figure} />;
+  if (figure.kind === "tree") return <TreeFigure figure={figure} />;
+  return <LabeledDiagramFigure figure={figure} />;
 }
 
 function LayeredFigure({
@@ -193,6 +196,189 @@ function FlowFigure({
       </div>
       {figure.caption && (
         <figcaption className="mt-4 text-[11.5px] leading-relaxed text-muted-foreground">
+          {figure.caption}
+        </figcaption>
+      )}
+    </figure>
+  );
+}
+
+function StepListFigure({
+  figure,
+}: {
+  figure: Extract<StudyFigure, { kind: "step-list" }>;
+}) {
+  return (
+    <figure className="surface-card overflow-hidden p-5 sm:p-6">
+      <ol className="space-y-3">
+        {figure.steps.map((s, idx) => (
+          <li
+            key={idx}
+            className="grid grid-cols-[40px_1fr] items-start gap-3"
+          >
+            <span className="num flex h-9 w-9 items-center justify-center rounded-full bg-[#0A84FF] text-[14px] font-semibold text-white shadow-tile">
+              {idx + 1}
+            </span>
+            <div className="rounded-xl bg-muted/60 px-4 py-3 ring-1 ring-inset ring-border">
+              <div className="text-[14.5px] font-semibold tracking-tight">
+                {s.title}
+              </div>
+              <div className="mt-1 text-[13px] leading-relaxed text-muted-foreground text-pretty">
+                {s.body}
+              </div>
+            </div>
+          </li>
+        ))}
+      </ol>
+      {figure.caption && (
+        <figcaption className="mt-4 text-[12px] leading-relaxed text-muted-foreground">
+          {figure.caption}
+        </figcaption>
+      )}
+    </figure>
+  );
+}
+
+function TreeFigure({
+  figure,
+}: {
+  figure: Extract<StudyFigure, { kind: "tree" }>;
+}) {
+  return (
+    <figure className="surface-card overflow-hidden p-5 sm:p-6">
+      {/* Root */}
+      <div className="mx-auto max-w-md rounded-xl bg-foreground p-3.5 text-center text-background shadow-tile">
+        <div className="text-[10.5px] font-semibold uppercase tracking-[0.16em] opacity-70">
+          Root
+        </div>
+        <div className="mt-0.5 text-[15px] font-semibold tracking-tight">
+          {figure.root.title}
+        </div>
+        {figure.root.body && (
+          <div className="mt-0.5 text-[12px] leading-relaxed opacity-85">
+            {figure.root.body}
+          </div>
+        )}
+      </div>
+      {/* Connector */}
+      <div
+        aria-hidden
+        className="mx-auto h-5 w-px bg-border"
+      />
+      {/* Children */}
+      <div
+        className="grid gap-3"
+        style={{
+          gridTemplateColumns: `repeat(${Math.min(
+            figure.children.length,
+            3
+          )}, minmax(0, 1fr))`,
+        }}
+      >
+        {figure.children.map((c, idx) => {
+          const accent = ACCENT[c.accent];
+          return (
+            <div
+              key={idx}
+              className={`rounded-xl ${accent.soft} p-3.5 ring-1 ring-inset ${accent.ring}`}
+            >
+              <div
+                className={`flex items-center gap-1.5 text-[10.5px] font-semibold uppercase tracking-[0.14em] ${accent.text}`}
+              >
+                <span
+                  aria-hidden
+                  className={`h-1.5 w-1.5 rounded-full ${accent.bg}`}
+                />
+                Branch
+              </div>
+              <div className="mt-0.5 text-[14px] font-semibold tracking-tight">
+                {c.title}
+              </div>
+              {c.body && (
+                <div className="mt-0.5 text-[12px] leading-relaxed text-muted-foreground text-pretty">
+                  {c.body}
+                </div>
+              )}
+              {c.items.length > 0 && (
+                <ul className="mt-2 space-y-1">
+                  {c.items.map((it, i) => (
+                    <li
+                      key={i}
+                      className="flex gap-1.5 text-[12px] leading-relaxed text-foreground/85"
+                    >
+                      <span
+                        aria-hidden
+                        className={`mt-1.5 h-1 w-1 shrink-0 rounded-full ${accent.bg}`}
+                      />
+                      <span>{it}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          );
+        })}
+      </div>
+      {figure.caption && (
+        <figcaption className="mt-4 text-[12px] leading-relaxed text-muted-foreground">
+          {figure.caption}
+        </figcaption>
+      )}
+    </figure>
+  );
+}
+
+function LabeledDiagramFigure({
+  figure,
+}: {
+  figure: Extract<StudyFigure, { kind: "labeled-diagram" }>;
+}) {
+  const accent = ACCENT[figure.centerpiece.accent];
+  return (
+    <figure className="surface-card overflow-hidden p-5 sm:p-6">
+      <div className="grid gap-4 sm:grid-cols-[260px_1fr] sm:items-center">
+        {/* Centerpiece */}
+        <div
+          className={`relative flex aspect-square flex-col items-center justify-center overflow-hidden rounded-2xl ${accent.soft} p-5 text-center ring-1 ring-inset ${accent.ring}`}
+        >
+          <span
+            aria-hidden
+            className={`h-2.5 w-2.5 rounded-full ${accent.bg}`}
+          />
+          <div className="mt-3 text-[18px] font-semibold tracking-tight">
+            {figure.centerpiece.title}
+          </div>
+          {figure.centerpiece.body && (
+            <div className="mt-1.5 max-w-[220px] text-[12.5px] leading-relaxed text-muted-foreground text-pretty">
+              {figure.centerpiece.body}
+            </div>
+          )}
+        </div>
+        {/* Labels */}
+        <ul className="space-y-2">
+          {figure.labels.map((lbl, i) => (
+            <li
+              key={i}
+              className="grid grid-cols-[28px_auto_1fr] items-baseline gap-2"
+            >
+              <span
+                className="num flex h-6 w-6 items-center justify-center rounded-full text-[11.5px] font-semibold"
+                style={{ background: "rgba(10,132,255,0.10)", color: "#0A84FF" }}
+              >
+                {i + 1}
+              </span>
+              <span className="text-[13.5px] font-semibold tracking-tight">
+                {lbl.label}
+              </span>
+              <span className="text-[13px] leading-relaxed text-muted-foreground text-pretty">
+                {lbl.body}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      {figure.caption && (
+        <figcaption className="mt-4 text-[12px] leading-relaxed text-muted-foreground">
           {figure.caption}
         </figcaption>
       )}

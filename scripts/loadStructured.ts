@@ -5,10 +5,12 @@ import {
   materialFrontmatterZ,
   misconceptionFileZ,
   questionFileZ,
+  studyLessonZ,
   topicFileZ,
   type MaterialFrontmatter,
   type MisconceptionFile,
   type QuestionFile,
+  type StudyLesson,
   type TopicFile,
 } from "../src/lib/contentSchema";
 
@@ -61,5 +63,12 @@ export function loadQuestions(): QuestionFile[] {
   return listJsonFiles(join(CONTENT_ROOT, "questions")).map((p) => {
     const raw = JSON.parse(readFileSync(p, "utf8"));
     return questionFileZ.parse(raw);
+  });
+}
+
+export function loadStudyLessons(): StudyLesson[] {
+  return listJsonFiles(join(CONTENT_ROOT, "study")).map((p) => {
+    const raw = JSON.parse(readFileSync(p, "utf8"));
+    return studyLessonZ.parse(raw);
   });
 }

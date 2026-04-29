@@ -198,11 +198,77 @@ const quadrantFigureZ = z.object({
   caption: z.string().optional(),
 });
 
+// Numbered step-list figure — for procedures and "what happens in order"
+// explanations. Renders as numbered cards stacked vertically. Better than
+// `flow` for beginners because the numbers are unambiguous and the layout
+// stays compact on mobile.
+const stepListFigureZ = z.object({
+  kind: z.literal("step-list"),
+  steps: z
+    .array(
+      z.object({
+        title: z.string().min(1),
+        body: z.string().min(1),
+      })
+    )
+    .min(2)
+    .max(8),
+  caption: z.string().optional(),
+});
+
+// Tree / hierarchy figure — for taxonomies (e.g. malware kinds, network
+// topology, organizational structure). One root → 2-5 children, each
+// optionally with sub-points.
+const treeFigureZ = z.object({
+  kind: z.literal("tree"),
+  root: z.object({
+    title: z.string().min(1),
+    body: z.string().optional(),
+  }),
+  children: z
+    .array(
+      z.object({
+        title: z.string().min(1),
+        body: z.string().optional(),
+        accent: z.enum(["primary", "warm", "cool", "neutral"]).default("neutral"),
+        items: z.array(z.string()).default([]),
+      })
+    )
+    .min(2)
+    .max(6),
+  caption: z.string().optional(),
+});
+
+// Labeled diagram — a single concept with surrounding annotations. Use
+// for "anatomy" diagrams where one central thing has 3-5 callouts pointing
+// at parts of it. Renders as a centerpiece card surrounded by labels.
+const labeledDiagramFigureZ = z.object({
+  kind: z.literal("labeled-diagram"),
+  centerpiece: z.object({
+    title: z.string().min(1),
+    body: z.string().optional(),
+    accent: z.enum(["primary", "warm", "cool", "neutral"]).default("primary"),
+  }),
+  labels: z
+    .array(
+      z.object({
+        label: z.string().min(1),
+        body: z.string().min(1),
+      })
+    )
+    .min(2)
+    .max(6),
+  caption: z.string().optional(),
+});
+
 export const studyFigureZ = z.discriminatedUnion("kind", [
   layeredFigureZ,
   compareFigureZ,
   flowFigureZ,
   quadrantFigureZ,
+  stepListFigureZ,
+  treeFigureZ,
+  labeledDiagramFigureZ,
 ]);
 
 // A callout — short, accented note inline with the prose. Three voices:
@@ -215,20 +281,47 @@ const calloutZ = z.object({
   body: z.string().min(1),
 });
 
-// One body section. `paragraphs` is plain prose (one item per paragraph),
-// optionally followed by a figure or callout *inside the same section*
-// — that's how the textbook reading rhythm gets composed.
+// "アナロジー" block — a tiny everyday-life metaphor that prepares the
+// reader before a hard term. Drawn from psychology: anchoring an unfamiliar
+// concept to something familiar nearly halves the cognitive load.
+const analogyZ = z.object({
+  // Short label — e.g. "たとえると", "身近な例で言うと"
+  label: z.string().default("たとえると"),
+  body: z.string().min(1),
+});
+
+// Mini self-check at the end of a section — one short ◯×/択一 question.
+// Different from the formal `examples` array: this is "the paragraph you
+// just read" rather than exam-format.
+const miniQuizZ = z.object({
+  // 1-line yes/no or short-answer question.
+  question: z.string().min(1),
+  // The expected answer ("はい" / "いいえ" / "ルータ" / etc.).
+  answer: z.string().min(1),
+  // Optional 1-line explanation.
+  hint: z.string().optional(),
+});
+
+// One body section. The renderer enforces "every section has a figure"
+// editorially via authoring guidance — the schema keeps `figure` optional
+// to allow the rare narrative-only opener.
 const sectionZ = z.object({
-  // Editorial heading. Section numbering is rendered by the page, so authors
-  // don't write "1.", "2." etc.
+  // Section heading shown as "Step N · 見出し".
   heading: z.string().min(1),
-  // 2-8 paragraphs. Bold is supported via `**word**`; inline code via
-  // `\`word\``. No HTML/MD beyond that — keep it readable in JSON.
+  // Optional 1-sentence summary shown right under the heading. Helps
+  // beginners grasp the section's point before reading the prose.
+  summary: z.string().optional(),
+  // Optional analogy box rendered at the very top of the section, before
+  // any paragraphs.
+  analogy: analogyZ.optional(),
+  // 2-8 paragraphs. Bold via `**word**`; inline code via `\`word\``.
   paragraphs: z.array(z.string().min(1)).min(1).max(12),
   // Optional inline figure rendered after the prose.
   figure: studyFigureZ.optional(),
   // Optional callouts rendered after the figure.
   callouts: z.array(calloutZ).max(3).default([]),
+  // Optional mini self-check at the end of the section.
+  miniQuiz: miniQuizZ.optional(),
 });
 
 const exampleZ = z.object({

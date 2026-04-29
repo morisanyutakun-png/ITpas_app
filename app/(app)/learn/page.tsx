@@ -13,12 +13,11 @@ import { hasFeature } from "@/lib/plan";
 import { listPastExams } from "@/server/queries/pastExams";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Practice Room" };
+export const metadata = { title: "問題を解く" };
 
 /**
- * Practice Room — three ways to practice + the IPA archive. The page is
- * intentionally a quiet "B-side" to the home; reading is the lead, and
- * this is where you go to test what you've read.
+ * 「問題を解く」ハブ — 3 つの演習モードと過去問アーカイブ。読み物に
+ * 戻る導線も最後に置き、学習サイクル (読む → 解く → 読む) を支える。
  */
 export default async function LearnHubPage() {
   const user = await readCurrentUser();
@@ -26,18 +25,14 @@ export default async function LearnHubPage() {
   const pastExams = await listPastExams();
 
   return (
-    <div className="space-y-10 pb-12">
+    <div className="space-y-8 pb-12">
       <header className="space-y-2 pt-1">
-        <div className="flex items-center gap-2 text-[10.5px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-          <span aria-hidden className="inline-block h-1 w-6 rounded-full bg-foreground/70" />
-          Practice Room
-        </div>
-        <h1 className="font-serif text-[34px] font-semibold leading-[1.06] tracking-[-0.022em] sm:text-[40px]">
-          解いて、確かめる。
+        <h1 className="text-[26px] font-semibold leading-tight tracking-tight sm:text-[30px]">
+          問題を解く
         </h1>
-        <p className="max-w-[52ch] text-[14px] leading-relaxed text-muted-foreground text-pretty">
-          記事を読み終えたら、ここで知識を試す。
-          3 つのモードと、IPA 公式の過去問アーカイブを用意しています。
+        <p className="max-w-[52ch] text-[13.5px] leading-relaxed text-muted-foreground text-pretty">
+          記事を読み終えたら、ここで知識を試しましょう。
+          3 つの演習モードと、IPA 公式の過去問アーカイブを用意しています。
         </p>
       </header>
 
@@ -46,7 +41,7 @@ export default async function LearnHubPage() {
           href="/learn/random"
           grad="bg-grad-purple"
           icon={Shuffle}
-          kicker="Shuffle"
+          kicker="ランダム"
           title="気分転換に1問"
           sub="全範囲から抽選"
         />
@@ -54,7 +49,7 @@ export default async function LearnHubPage() {
           href="/learn/session/new?mode=weakness&count=5"
           grad="bg-grad-sunset"
           icon={Target}
-          kicker="Tune-Up"
+          kicker="弱点補強"
           title="弱点を5問で詰める"
           sub="誤解パターンで重み付け"
         />
@@ -62,8 +57,8 @@ export default async function LearnHubPage() {
           href={canMock ? "/learn/mock-exam" : "/pricing?reason=mock_exam"}
           grad="bg-grad-ocean"
           icon={Timer}
-          kicker="Studio Live"
-          title="本番形式の模擬試験"
+          kicker={canMock ? "模擬試験" : "Pro"}
+          title="本番形式で力試し"
           sub={canMock ? "100問 / 120分" : "Pro で開放"}
           lockedLabel={canMock ? undefined : "Pro"}
         />
@@ -77,13 +72,10 @@ export default async function LearnHubPage() {
           <Archive className="h-5 w-5" strokeWidth={2.2} />
         </span>
         <div className="min-w-0 flex-1">
-          <div className="text-[10.5px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-            Archives · IPA
+          <div className="text-[16px] font-semibold tracking-tight">
+            過去問アーカイブ
           </div>
-          <div className="mt-0.5 font-serif text-[18px] font-semibold leading-tight tracking-[-0.014em]">
-            過去問の書庫
-          </div>
-          <div className="text-[12px] text-muted-foreground">
+          <div className="mt-0.5 text-[12.5px] text-muted-foreground">
             IPA 公開 {pastExams.length} 回分の原典
           </div>
         </div>
@@ -94,18 +86,15 @@ export default async function LearnHubPage() {
         href="/learn/study"
         className="surface-card flex items-center gap-4 p-5"
       >
-        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-foreground text-background shadow-tile">
+        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-grad-blue text-white shadow-tile">
           <BookOpen className="h-5 w-5" strokeWidth={2.2} />
         </span>
         <div className="min-w-0 flex-1">
-          <div className="text-[10.5px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-            Reading Room
+          <div className="text-[16px] font-semibold tracking-tight">
+            学ぶに戻る
           </div>
-          <div className="mt-0.5 font-serif text-[18px] font-semibold leading-tight tracking-[-0.014em]">
-            記事に戻る
-          </div>
-          <div className="text-[12px] text-muted-foreground">
-            読んでから試すと、もう一段定着する
+          <div className="mt-0.5 text-[12.5px] text-muted-foreground">
+            読んでから解くと、もう一段定着します
           </div>
         </div>
         <ChevronRight className="h-4 w-4 text-muted-foreground" />
@@ -148,12 +137,12 @@ function ModeCard({
         <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/15 ring-1 ring-inset ring-white/25 backdrop-blur">
           <Icon className="h-5 w-5" strokeWidth={2.2} />
         </span>
-        <span className="text-[10px] font-semibold uppercase tracking-[0.16em] opacity-85">
+        <span className="rounded-full bg-white/15 px-2 py-0.5 text-[10.5px] font-semibold backdrop-blur">
           {lockedLabel ?? kicker}
         </span>
       </div>
       <div className="relative z-10">
-        <div className="font-serif text-[18px] font-semibold leading-tight tracking-[-0.014em]">
+        <div className="text-[16px] font-semibold leading-tight tracking-tight">
           {title}
         </div>
         <div className="text-[11.5px] opacity-85">{sub}</div>

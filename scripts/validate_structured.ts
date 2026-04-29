@@ -2,6 +2,7 @@ import {
   loadMaterials,
   loadMisconceptions,
   loadQuestions,
+  loadStudyLessons,
   loadTopics,
 } from "./loadStructured";
 
@@ -16,6 +17,7 @@ function main() {
     const misconceptions = loadMisconceptions();
     const materials = loadMaterials();
     const questions = loadQuestions();
+    const studyLessons = loadStudyLessons();
 
     topicSlugs = new Set(topics.map((t) => t.slug));
     misconceptionSlugs = new Set(misconceptions.map((m) => m.slug));
@@ -25,6 +27,7 @@ function main() {
     console.log(`  misconceptions: ${misconceptions.length}`);
     console.log(`  materials:      ${materials.length}`);
     console.log(`  questions:      ${questions.length}`);
+    console.log(`  study lessons:  ${studyLessons.length}`);
 
     const errors: string[] = [];
     for (const q of questions) {
@@ -55,6 +58,15 @@ function main() {
             `Q ${q.externalKey}: unknown materialSlug '${m.slug}'`
           );
         }
+      }
+    }
+
+    // Study lessons must reference an existing topic by slug.
+    for (const l of studyLessons) {
+      if (!topicSlugs.has(l.slug)) {
+        errors.push(
+          `Lesson ${l.slug}: no topic with this slug exists in content/structured/topics/`
+        );
       }
     }
 

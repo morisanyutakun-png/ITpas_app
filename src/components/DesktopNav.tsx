@@ -4,10 +4,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const LINKS = [
-  { href: "/home", label: "Home", matchPrefix: false },
-  { href: "/learn/study", label: "Reading", matchPrefix: true },
-  { href: "/learn", label: "Practice", matchPrefix: false },
-  { href: "/dashboard", label: "Insights", matchPrefix: true },
+  { href: "/home", label: "ホーム", matchPrefix: false },
+  { href: "/learn/study", label: "学ぶ", matchPrefix: true },
+  { href: "/learn", label: "問題を解く", matchPrefix: false },
+  { href: "/dashboard", label: "進捗", matchPrefix: true },
 ] as const;
 
 export function DesktopNav() {

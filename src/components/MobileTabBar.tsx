@@ -5,10 +5,10 @@ import { usePathname } from "next/navigation";
 import { Home, BookOpen, Target, BarChart3 } from "lucide-react";
 
 const TABS = [
-  { href: "/home", label: "Home", icon: Home, matchPrefix: false },
-  { href: "/learn/study", label: "Reading", icon: BookOpen, matchPrefix: true },
-  { href: "/learn", label: "Practice", icon: Target, matchPrefix: false },
-  { href: "/dashboard", label: "Insights", icon: BarChart3, matchPrefix: true },
+  { href: "/home", label: "ホーム", icon: Home, matchPrefix: false },
+  { href: "/learn/study", label: "学ぶ", icon: BookOpen, matchPrefix: true },
+  { href: "/learn", label: "問題を解く", icon: Target, matchPrefix: false },
+  { href: "/dashboard", label: "進捗", icon: BarChart3, matchPrefix: true },
 ] as const;
 
 /**

@@ -2,12 +2,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   AlertTriangle,
-  ArrowUpRight,
+  ArrowRight,
+  BookOpen,
   ChevronLeft,
-  ChevronRight,
   Info,
-  Quote,
-  Sparkle,
+  Lightbulb,
+  PlayCircle,
+  Sparkles,
 } from "lucide-react";
 import { readCurrentUser } from "@/lib/currentUser";
 import { getStudyLesson } from "@/server/queries/study";
@@ -18,9 +19,9 @@ import type { StudyLesson } from "@/lib/contentSchema";
 export const dynamic = "force-dynamic";
 
 const MAJOR_META: Record<string, { hue: string; label: string }> = {
-  strategy: { hue: "#FF375F", label: "Strategy" },
-  management: { hue: "#FF9500", label: "Management" },
-  technology: { hue: "#0A84FF", label: "Technology" },
+  strategy: { hue: "#FF375F", label: "ストラテジ系" },
+  management: { hue: "#FF9500", label: "マネジメント系" },
+  technology: { hue: "#0A84FF", label: "テクノロジ系" },
 };
 
 export async function generateMetadata({
@@ -30,22 +31,15 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const lesson = await getStudyLesson(slug);
-  return { title: lesson?.title ?? "Reading" };
+  return { title: lesson?.title ?? "学習" };
 }
 
 /**
- * Lesson reader — reading is the protagonist.
- *
- * Layout choices that make the page feel like an editorial piece, not a
- * quiz funnel:
- *
- *   • Magazine "dek" small-caps line above the title.
- *   • Drop cap on the first paragraph (psychology: invites long-form reading).
- *   • Numbered section heads in muted gray, large serif body subheads.
- *   • Inline figures live *inside* the section that introduces them.
- *   • Callouts use three calm voices (insight / caution / aside).
- *   • Related-question handoff is a quiet section at the end labeled
- *     "Test what you read", not a hero CTA.
+ * Lesson reader — textbook-style. Reading is the protagonist, but the
+ * page tone is a study platform: numbered "Step N" section badges, a
+ * progress sidebar showing how far you've read, plenty of figures,
+ * everyday-life analogies, and a mini self-check at the end of each
+ * section so the reader commits in small bites before the formal quiz.
  */
 export default async function StudyLessonPage({
   params,
@@ -63,111 +57,130 @@ export default async function StudyLessonPage({
 
   const topic = topicData?.topic ?? null;
   const meta = topic
-    ? MAJOR_META[topic.majorCategory] ?? { hue: "#8E8E93", label: "Topic" }
-    : { hue: "#8E8E93", label: "Topic" };
+    ? MAJOR_META[topic.majorCategory] ?? { hue: "#8E8E93", label: "論点" }
+    : { hue: "#8E8E93", label: "論点" };
 
   const ratePct =
     progress.attempted > 0 ? Math.round(progress.rate * 100) : null;
 
   return (
-    <article className="mx-auto max-w-[680px] pb-16">
+    <div className="mx-auto max-w-[720px] pb-16">
       {/* ── Breadcrumb ── */}
       <nav className="pt-1">
         <Link
           href="/learn/study"
-          className="inline-flex items-center gap-1 text-[12px] text-muted-foreground hover:text-foreground"
+          className="inline-flex items-center gap-1 text-[12.5px] text-muted-foreground hover:text-foreground"
         >
           <ChevronLeft className="h-3.5 w-3.5" />
-          <span className="uppercase tracking-[0.16em]">Reading Room</span>
+          学習一覧へ戻る
         </Link>
       </nav>
 
-      {/* ── Editorial header ─────────────────────────────────────────
-         Dek (small caps) → display title → byline-style hook.
-         No big colored card here — let typography carry the moment.
-      */}
-      <header className="mt-8 space-y-5">
-        {lesson.dek && (
-          <div className="flex items-center gap-2 text-[10.5px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-            <span
-              aria-hidden
-              className="inline-block h-1 w-6 rounded-full"
-              style={{ background: meta.hue }}
-            />
-            {lesson.dek}
-          </div>
-        )}
-        <h1 className="font-serif text-[40px] font-semibold leading-[1.08] tracking-[-0.02em] text-balance sm:text-[48px]">
+      {/* ── Lesson header (textbook style) ──────────────────────────
+         Big colored badge for the major + plain (sans) title. Drop
+         caps, serif display, eyebrow flourishes — all gone. */}
+      <header className="mt-6 space-y-4">
+        <div className="flex flex-wrap items-center gap-2 text-[11px] font-semibold">
+          <span
+            className="inline-flex items-center gap-1 rounded-full px-2.5 py-1"
+            style={{
+              background: `${meta.hue}14`,
+              color: meta.hue,
+            }}
+          >
+            {meta.label}
+          </span>
+          {topic?.minorTopic && (
+            <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2.5 py-1 text-muted-foreground">
+              {topic.minorTopic}
+            </span>
+          )}
+          {lesson.dek && (
+            <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2.5 py-1 text-muted-foreground">
+              <BookOpen className="h-3 w-3" />
+              {lesson.dek}
+            </span>
+          )}
+        </div>
+        <h1 className="text-[28px] font-semibold leading-[1.18] tracking-tight text-balance sm:text-[32px]">
           {lesson.title}
         </h1>
-        <p className="max-w-[58ch] text-[16px] leading-[1.7] text-muted-foreground text-pretty">
+        <p className="max-w-[60ch] rounded-2xl bg-muted/50 px-5 py-4 text-[14px] leading-[1.85] text-foreground/90 text-pretty">
           {lesson.hook}
         </p>
-        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-y border-border py-3 text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
-          <span style={{ color: meta.hue }}>{meta.label}</span>
-          {topic?.minorTopic && (
-            <span className="hidden sm:inline">· {topic.minorTopic}</span>
-          )}
-          <span className="ml-auto inline-flex items-center gap-3">
-            <span>
-              <span className="num font-semibold text-foreground">
-                {lesson.readingMinutes}
-              </span>{" "}
-              min read
-            </span>
-            <span aria-hidden className="text-border">
-              ·
-            </span>
-            <span>
-              <span className="num font-semibold text-foreground">
-                {lesson.sections.length}
-              </span>{" "}
-              sections
-            </span>
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-y border-border py-3 text-[12px] text-muted-foreground">
+          <span className="inline-flex items-center gap-1.5">
+            <BookOpen className="h-3.5 w-3.5" />
+            読了の目安{" "}
+            <span className="num font-semibold text-foreground">
+              {lesson.readingMinutes}
+            </span>{" "}
+            分
+          </span>
+          <span aria-hidden className="text-border">
+            ·
+          </span>
+          <span>
+            全{" "}
+            <span className="num font-semibold text-foreground">
+              {lesson.sections.length}
+            </span>{" "}
+            ステップ
+          </span>
+          <span aria-hidden className="text-border">
+            ·
+          </span>
+          <span>
+            最後に関連問題{" "}
+            <span className="num font-semibold text-foreground">
+              {lesson.questionCount}
+            </span>{" "}
+            問
           </span>
         </div>
       </header>
 
       {/* ── Hero figure ── */}
-      <div className="mt-8">
+      <div className="mt-7">
         <StudyFigureView figure={lesson.figure} />
       </div>
 
-      {/* ── Long-form body ── */}
-      <div className="mt-12 space-y-14">
+      {/* ── Steps (= sections) ── */}
+      <div className="mt-12 space-y-12">
         {lesson.sections.map((section, idx) => (
           <BodySection
             key={idx}
-            index={idx + 1}
-            heading={section.heading}
-            paragraphs={section.paragraphs}
-            figure={section.figure}
-            callouts={section.callouts}
-            isFirst={idx === 0}
+            stepIndex={idx + 1}
+            stepCount={lesson.sections.length}
+            section={section}
+            hue={meta.hue}
           />
         ))}
       </div>
 
-      {/* ── Reader's digest (takeaways) ── */}
-      <section className="mt-16 border-t border-border pt-10">
-        <SectionLabel index="—" label="Reader's Digest" />
-        <h2 className="mt-3 font-serif text-[26px] font-semibold tracking-[-0.018em]">
-          ひと息で読める要約
+      {/* ── Summary / takeaways ── */}
+      <section className="mt-14 rounded-3xl bg-muted/40 p-6 ring-1 ring-inset ring-border sm:p-8">
+        <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+          <Sparkles className="h-3.5 w-3.5" />
+          まとめ
+        </div>
+        <h2 className="mt-2 text-[20px] font-semibold tracking-tight">
+          ひと息で読み返せる要約
         </h2>
-        <ul className="mt-6 space-y-4">
+        <ul className="mt-5 space-y-3.5">
           {lesson.takeaways.map((kp, i) => (
-            <li key={i} className="grid grid-cols-[28px_1fr] gap-4">
+            <li key={i} className="grid grid-cols-[28px_1fr] gap-3">
               <span
-                className="num pt-0.5 text-[11.5px] font-semibold uppercase tracking-[0.14em]"
-                style={{ color: meta.hue }}
+                className="num flex h-7 w-7 items-center justify-center rounded-full text-[12px] font-semibold"
+                style={{ background: `${meta.hue}14`, color: meta.hue }}
               >
-                {String(i + 1).padStart(2, "0")}
+                {i + 1}
               </span>
               <div>
-                <div className="text-[15.5px] font-semibold tracking-tight">
+                <div className="text-[14.5px] font-semibold tracking-tight">
                   {kp.term}
                 </div>
-                <div className="mt-0.5 text-[14px] leading-[1.7] text-muted-foreground text-pretty">
+                <div className="mt-0.5 text-[13.5px] leading-[1.75] text-muted-foreground text-pretty">
                   {kp.body}
                 </div>
               </div>
@@ -178,12 +191,15 @@ export default async function StudyLessonPage({
 
       {/* ── Worked examples ── */}
       {lesson.examples.length > 0 && (
-        <section className="mt-16 border-t border-border pt-10">
-          <SectionLabel index="—" label="Worked Examples" />
-          <h2 className="mt-3 font-serif text-[26px] font-semibold tracking-[-0.018em]">
+        <section className="mt-12">
+          <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+            <Lightbulb className="h-3.5 w-3.5" />
+            例題で頭を温める
+          </div>
+          <h2 className="mt-2 text-[20px] font-semibold tracking-tight">
             読みながら、軽く頭を使う
           </h2>
-          <div className="mt-6 space-y-5">
+          <div className="mt-5 space-y-4">
             {lesson.examples.map((ex, i) => (
               <WorkedExample
                 key={i}
@@ -200,56 +216,73 @@ export default async function StudyLessonPage({
 
       {/* ── Quiet revision handoff ── */}
       <RevisionHandoff lesson={lesson} ratePct={ratePct} hue={meta.hue} />
-    </article>
+    </div>
   );
 }
 
 // ── Subcomponents ────────────────────────────────────────────────────────
 
-function SectionLabel({ index, label }: { index: string; label: string }) {
-  return (
-    <div className="flex items-baseline gap-3 text-[10.5px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-      <span className="num">{index}</span>
-      <span aria-hidden className="h-px flex-1 bg-border" />
-      <span>{label}</span>
-    </div>
-  );
-}
-
 function BodySection({
-  index,
-  heading,
-  paragraphs,
-  figure,
-  callouts,
-  isFirst,
+  stepIndex,
+  stepCount,
+  section,
+  hue,
 }: {
-  index: number;
-  heading: string;
-  paragraphs: string[];
-  figure?: StudyLesson["sections"][number]["figure"];
-  callouts: StudyLesson["sections"][number]["callouts"];
-  isFirst: boolean;
+  stepIndex: number;
+  stepCount: number;
+  section: StudyLesson["sections"][number];
+  hue: string;
 }) {
   return (
     <section>
-      <SectionLabel index={String(index).padStart(2, "0")} label="Chapter" />
-      <h2 className="mt-3 font-serif text-[26px] font-semibold leading-[1.18] tracking-[-0.018em] text-balance sm:text-[30px]">
-        {heading}
+      {/* Color-coded "Step N of M" badge — the platform feel. */}
+      <div className="flex items-center gap-3">
+        <span
+          className="num flex h-9 w-9 items-center justify-center rounded-full text-[13px] font-semibold text-white shadow-tile"
+          style={{ background: hue }}
+        >
+          {stepIndex}
+        </span>
+        <div className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+          Step {stepIndex} / {stepCount}
+        </div>
+      </div>
+
+      <h2 className="mt-3 text-[22px] font-semibold leading-[1.32] tracking-tight text-balance sm:text-[24px]">
+        {section.heading}
       </h2>
-      <div className="mt-5 space-y-5">
-        {paragraphs.map((p, i) => (
-          <Paragraph key={i} text={p} dropCap={isFirst && i === 0} />
+
+      {section.summary && (
+        <p className="mt-2 text-[13px] leading-[1.7] text-muted-foreground text-pretty">
+          {section.summary}
+        </p>
+      )}
+
+      {/* Analogy block — comes BEFORE prose, anchors abstract idea. */}
+      {section.analogy && (
+        <Analogy label={section.analogy.label} body={section.analogy.body} />
+      )}
+
+      <div className="mt-5 space-y-4">
+        {section.paragraphs.map((p, i) => (
+          <p
+            key={i}
+            className="text-[15px] leading-[1.92] text-foreground/90 text-pretty"
+          >
+            {renderInline(p)}
+          </p>
         ))}
       </div>
-      {figure && (
-        <div className="mt-8">
-          <StudyFigureView figure={figure} />
+
+      {section.figure && (
+        <div className="mt-7">
+          <StudyFigureView figure={section.figure} />
         </div>
       )}
-      {callouts.length > 0 && (
-        <div className="mt-8 space-y-3">
-          {callouts.map((c, i) => (
+
+      {section.callouts.length > 0 && (
+        <div className="mt-7 space-y-3">
+          {section.callouts.map((c, i) => (
             <Callout
               key={i}
               kind={c.kind}
@@ -259,30 +292,38 @@ function BodySection({
           ))}
         </div>
       )}
+
+      {section.miniQuiz && (
+        <MiniQuiz
+          question={section.miniQuiz.question}
+          answer={section.miniQuiz.answer}
+          hint={section.miniQuiz.hint}
+          hue={hue}
+        />
+      )}
     </section>
   );
 }
 
-/**
- * Renders a paragraph with `**bold**` and `\`code\`` parsed inline. We
- * roll our own micro-parser instead of pulling Markdown so the visual
- * stays consistent and authors can't introduce arbitrary formatting.
- */
-function Paragraph({ text, dropCap }: { text: string; dropCap: boolean }) {
-  const parts = renderInline(text);
+function Analogy({ label, body }: { label: string; body: string }) {
   return (
-    <p
-      className={`text-[16.5px] leading-[1.85] text-foreground/90 text-pretty ${
-        dropCap ? "first-letter-drop" : ""
-      }`}
-    >
-      {parts}
-    </p>
+    <aside className="mt-5 grid grid-cols-[40px_1fr] gap-3 rounded-2xl bg-[#34C759]/[0.08] p-4 ring-1 ring-inset ring-[#34C759]/20">
+      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#34C759] text-white shadow-tile">
+        <Lightbulb className="h-4 w-4" strokeWidth={2.4} />
+      </span>
+      <div>
+        <div className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-[#34C759]">
+          {label}
+        </div>
+        <p className="mt-1 text-[14px] leading-[1.85] text-foreground/90 text-pretty">
+          {renderInline(body)}
+        </p>
+      </div>
+    </aside>
   );
 }
 
 function renderInline(text: string): React.ReactNode[] {
-  // Tokenize on `**...**` and `` `...` ``.
   const tokens: React.ReactNode[] = [];
   const re = /(\*\*[^*]+\*\*|`[^`]+`)/g;
   let last = 0;
@@ -328,23 +369,23 @@ function Callout({
           ring: "ring-[#0A84FF]/25",
           bg: "bg-[#0A84FF]/[0.06]",
           accent: "text-[#0A84FF]",
-          icon: <Sparkle className="h-4 w-4" />,
-          label: "Insight",
+          icon: <Sparkles className="h-4 w-4" />,
+          label: "ポイント",
         }
       : kind === "caution"
         ? {
             ring: "ring-[#FF9500]/25",
-            bg: "bg-[#FF9500]/[0.06]",
+            bg: "bg-[#FF9500]/[0.08]",
             accent: "text-[#FF9500]",
             icon: <AlertTriangle className="h-4 w-4" />,
-            label: "Watch out",
+            label: "注意",
           }
         : {
             ring: "ring-border",
             bg: "bg-muted/60",
             accent: "text-muted-foreground",
             icon: <Info className="h-4 w-4" />,
-            label: "Aside",
+            label: "補足",
           };
 
   return (
@@ -353,14 +394,71 @@ function Callout({
     >
       <div className={`flex items-center gap-2 ${conf.accent}`}>
         {conf.icon}
-        <span className="text-[10.5px] font-semibold uppercase tracking-[0.16em]">
+        <span className="text-[10.5px] font-semibold uppercase tracking-[0.14em]">
           {title ?? conf.label}
         </span>
       </div>
-      <p className="mt-2 text-[14.5px] leading-[1.75] text-foreground/90 text-pretty">
+      <p className="mt-2 text-[14px] leading-[1.85] text-foreground/90 text-pretty">
         {renderInline(body)}
       </p>
     </aside>
+  );
+}
+
+/**
+ * Inline self-check at the end of a section. Renders as a `<details>` so
+ * the answer is hidden by default — the reader commits to thinking
+ * before seeing the answer (psychological "active recall").
+ */
+function MiniQuiz({
+  question,
+  answer,
+  hint,
+  hue,
+}: {
+  question: string;
+  answer: string;
+  hint?: string;
+  hue: string;
+}) {
+  return (
+    <details className="group mt-7 rounded-2xl border border-dashed border-border bg-card p-5">
+      <summary className="flex cursor-pointer items-start gap-3 list-none [&::-webkit-details-marker]:hidden">
+        <span
+          className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[12px] font-semibold text-white shadow-tile"
+          style={{ background: hue }}
+        >
+          ?
+        </span>
+        <div className="min-w-0 flex-1">
+          <div className="text-[10.5px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+            理解の確認
+          </div>
+          <div className="mt-0.5 text-[14.5px] font-semibold tracking-tight">
+            {question}
+          </div>
+          <div className="mt-1 text-[12px] text-muted-foreground group-open:hidden">
+            タップして答えを見る ↓
+          </div>
+        </div>
+      </summary>
+      <div className="mt-3 space-y-2 border-t border-dashed border-border pt-3">
+        <div className="flex items-baseline gap-2">
+          <span
+            className="text-[10.5px] font-semibold uppercase tracking-[0.14em]"
+            style={{ color: hue }}
+          >
+            答え
+          </span>
+          <span className="text-[14px] font-semibold">{answer}</span>
+        </div>
+        {hint && (
+          <p className="text-[12.5px] leading-relaxed text-muted-foreground text-pretty">
+            {hint}
+          </p>
+        )}
+      </div>
+    </details>
   );
 }
 
@@ -378,36 +476,32 @@ function WorkedExample({
   hue: string;
 }) {
   return (
-    <div className="rounded-2xl border border-border p-5">
+    <div className="rounded-2xl border border-border bg-card p-5">
       <div className="flex items-center gap-3">
         <span
           className="num flex h-7 w-7 items-center justify-center rounded-full text-[11.5px] font-semibold"
-          style={{ background: `${hue}1A`, color: hue }}
+          style={{ background: `${hue}14`, color: hue }}
         >
           {index}
         </span>
-        <div className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-          Example
+        <div className="text-[10.5px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+          例題 {index}
         </div>
       </div>
-      <p className="mt-3 flex gap-2 text-[15px] leading-[1.75] text-foreground/90">
-        <Quote
-          aria-hidden
-          className="mt-1 h-3.5 w-3.5 shrink-0 text-muted-foreground/60"
-        />
-        <span>{renderInline(question)}</span>
+      <p className="mt-3 text-[14.5px] leading-[1.8] text-foreground/90">
+        {renderInline(question)}
       </p>
       <div className="mt-4 grid gap-3 sm:grid-cols-[auto_1fr] sm:items-start">
-        <div className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-muted-foreground sm:pt-0.5">
-          Answer
+        <div className="text-[10.5px] font-semibold uppercase tracking-[0.14em] text-muted-foreground sm:pt-0.5">
+          答え
         </div>
-        <div className="text-[14.5px] font-semibold tracking-tight">
+        <div className="text-[14px] font-semibold tracking-tight">
           {answer}
         </div>
-        <div className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-muted-foreground sm:pt-0.5">
-          Why
+        <div className="text-[10.5px] font-semibold uppercase tracking-[0.14em] text-muted-foreground sm:pt-0.5">
+          解説
         </div>
-        <p className="text-[13.5px] leading-[1.75] text-muted-foreground text-pretty">
+        <p className="text-[13px] leading-[1.8] text-muted-foreground text-pretty">
           {renderInline(reasoning)}
         </p>
       </div>
@@ -425,36 +519,34 @@ function RevisionHandoff({
   hue: string;
 }) {
   return (
-    <section className="mt-16 border-t border-border pt-10">
-      <SectionLabel index="—" label="Test What You Read" />
-      <h2 className="mt-3 font-serif text-[26px] font-semibold tracking-[-0.018em]">
-        読み終えたら、関連問題で復習
-      </h2>
-      <p className="mt-3 max-w-[56ch] text-[14px] leading-[1.75] text-muted-foreground text-pretty">
-        理解の定着には、自分の言葉で答えを再構成する作業が要る。
-        この章の論点をそのまま問う {lesson.questionCount} 問で、覚えたつもりを点検しよう。
-        {ratePct !== null && (
-          <>
-            {" "}
-            これまでの正答率は{" "}
-            <span className="num font-semibold text-foreground">
-              {ratePct}%
-            </span>
-            。
-          </>
-        )}
-      </p>
-      <Link
-        href={`/learn/session/new?mode=topic&topic=${lesson.slug}&count=${lesson.questionCount}`}
-        className="mt-6 inline-flex h-12 items-center gap-2 rounded-full px-6 text-[14px] font-semibold text-white shadow-ios transition-transform hover:brightness-110 active:scale-[0.98]"
-        style={{ background: hue }}
-      >
-        関連問題で復習する
-        <ArrowUpRight className="h-4 w-4" />
-      </Link>
-      <div className="mt-4 inline-flex items-center gap-1 text-[12px] text-muted-foreground">
-        <span>{lesson.questionCount} 問 · 約 {lesson.questionCount * 90 / 60 | 0}〜{Math.ceil(lesson.questionCount * 2.4)} 分</span>
-        <ChevronRight className="h-3 w-3" />
+    <section className="mt-14 overflow-hidden rounded-3xl bg-foreground text-background">
+      <div className="p-7 sm:p-8">
+        <div className="flex items-center gap-2 text-[10.5px] font-semibold uppercase tracking-[0.16em] opacity-70">
+          <PlayCircle className="h-3.5 w-3.5" />
+          理解の定着
+        </div>
+        <h2 className="mt-2 text-[22px] font-semibold leading-tight tracking-tight">
+          読み終えたら、関連問題で復習
+        </h2>
+        <p className="mt-2 max-w-[56ch] text-[13.5px] leading-[1.85] opacity-85 text-pretty">
+          理解の定着には、自分の言葉で答えを再構成する作業が必要です。
+          この章の論点をそのまま問う <span className="num font-semibold">{lesson.questionCount}</span> 問で、覚えたつもりを点検しましょう。
+          {ratePct !== null && (
+            <>
+              {" "}
+              これまでの正答率は{" "}
+              <span className="num font-semibold">{ratePct}%</span> です。
+            </>
+          )}
+        </p>
+        <Link
+          href={`/learn/session/new?mode=topic&topic=${lesson.slug}&count=${lesson.questionCount}`}
+          className="mt-5 inline-flex h-12 items-center gap-2 rounded-full px-6 text-[14px] font-semibold text-white shadow-ios transition-transform hover:brightness-110 active:scale-[0.98]"
+          style={{ background: hue }}
+        >
+          関連問題で復習する
+          <ArrowRight className="h-4 w-4" />
+        </Link>
       </div>
     </section>
   );

@@ -1,7 +1,8 @@
 import Link from "next/link";
 import {
-  ArrowUpRight,
+  ArrowRight,
   BarChart3,
+  BookOpen,
   ChevronRight,
   Clock,
   Compass,
@@ -19,7 +20,7 @@ import { listStudyLessonSlugs, getStudyLesson } from "@/server/queries/study";
 
 export const dynamic = "force-dynamic";
 
-export const metadata = { title: "Home" };
+export const metadata = { title: "ホーム" };
 
 const MAJOR_META: Record<
   string,
@@ -28,25 +29,26 @@ const MAJOR_META: Record<
   strategy: {
     hue: "#FF375F",
     hueDim: "rgba(255,55,95,0.10)",
-    label: "Strategy",
+    label: "ストラテジ系",
   },
   management: {
     hue: "#FF9500",
     hueDim: "rgba(255,149,0,0.10)",
-    label: "Management",
+    label: "マネジメント系",
   },
   technology: {
     hue: "#0A84FF",
     hueDim: "rgba(10,132,255,0.10)",
-    label: "Technology",
+    label: "テクノロジ系",
   },
 };
 
 /**
- * Home — composed like Apple Music's Listen Now: a quiet editorial header,
- * one featured "Reading Now" piece, a "Where you stand" anchor card, a
- * slim atlas of the syllabus, then a small Practice Room. The page reads
- * top-to-bottom as a magazine, not a dashboard.
+ * Home — a study platform front page. Section heads use plain Japanese
+ * verbs (学ぶ / 問題を解く / 進捗) so beginners immediately know where
+ * each section leads. The featured lesson sits at the top because the
+ * input flow is the lead, but the visual styling stays warm and
+ * textbook-like rather than editorial.
  */
 export default async function HomePage() {
   const user = await getCurrentUser();
@@ -64,8 +66,6 @@ export default async function HomePage() {
     await Promise.all(studySlugs.slice(0, 6).map((s) => getStudyLesson(s)))
   ).filter((l): l is NonNullable<typeof l> => l !== null);
 
-  // Feature pick: prefer the lesson that matches the recommended topic;
-  // fall back to the first authored lesson so the page is never empty.
   const featured =
     (rec && studyLessons.find((l) => l.slug === rec.slug)) ??
     studyLessons[0] ??
@@ -84,44 +84,31 @@ export default async function HomePage() {
   const greeting = greetingFor(jst.getUTCHours());
 
   return (
-    <div className="space-y-16 pb-16">
-      {/* ── Editorial header ───────────────────────────────────────
-         Date + greeting + name. No big section title — the page itself
-         is the title. Apple Music's Listen Now feels like this. */}
+    <div className="space-y-12 pb-12">
+      {/* ── Header ── */}
       <header className="space-y-1.5 pt-1">
-        <div className="flex items-center gap-2 text-[10.5px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-          <span aria-hidden className="inline-block h-1 w-6 rounded-full bg-foreground/70" />
-          {dateStr}
-        </div>
-        <h1 className="font-serif text-[34px] font-semibold leading-[1.06] tracking-[-0.022em] text-balance sm:text-[40px]">
+        <div className="text-[12px] text-muted-foreground">{dateStr}</div>
+        <h1 className="text-[26px] font-semibold leading-tight tracking-tight sm:text-[30px]">
           {greeting}
-          {firstName ? (
-            <>
-              <span className="text-muted-foreground/70">、</span>
-              {firstName}さん
-            </>
-          ) : (
-            ""
-          )}
-          。
+          {firstName ? `、${firstName}さん` : ""}。
         </h1>
-        <p className="max-w-[52ch] text-[14px] leading-relaxed text-muted-foreground text-pretty">
-          今日は、読むことから始めましょう。
-          {!pro && Number.isFinite(dailyLimit) && (
-            <> ── 演習の無料枠は {dailyLimit as number} 問です。</>
+        <p className="max-w-[52ch] text-[13.5px] leading-relaxed text-muted-foreground">
+          {!pro && Number.isFinite(dailyLimit) ? (
+            <>今日の学習を始めましょう。問題演習の無料枠は {dailyLimit as number} 問です。</>
+          ) : (
+            <>今日の学習を始めましょう。</>
           )}
         </p>
       </header>
 
-      {/* ── Reading Now ─────────────────────────────────────────────
-         Promoted as the protagonist. A single editorial card with the
-         featured lesson, plus a horizontal row of more reading. */}
+      {/* ── 今日のおすすめ記事 ─────────────────────────
+         Featured lesson — the input flow is the lead. */}
       {featured && (
-        <Editorial
-          eyebrow="Reading Now"
-          flair="Today's Feature"
+        <Section
+          title="今日のおすすめ記事"
+          sub="まずは読んで、理解してから問題に進みましょう"
           rightHref="/learn/study"
-          rightLabel="Browse all"
+          rightLabel="記事一覧"
         >
           <FeaturedLesson
             slug={featured.slug}
@@ -132,7 +119,7 @@ export default async function HomePage() {
             questionCount={featured.questionCount}
           />
           {otherLessons.length > 0 && (
-            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
               {otherLessons.map((l) => (
                 <ReadingRow
                   key={l.slug}
@@ -140,47 +127,43 @@ export default async function HomePage() {
                   title={l.title}
                   hook={l.hook}
                   readingMinutes={l.readingMinutes}
+                  dek={l.dek ?? null}
                 />
               ))}
             </div>
           )}
-        </Editorial>
+        </Section>
       )}
 
-      {/* ── Where You Stand ─────────────────────────────────────────
-         A single anchored card. Quiet by design — the lesson above is
-         the lead. */}
+      {/* ── 次に学ぶ論点 (現在地) ── */}
       {rec && (
-        <Editorial eyebrow="Where You Stand" flair="Picked for You">
+        <Section title="次に学ぶ論点" sub="あなたのこれまでの結果から選びました">
           <CurrentSpot rec={rec} hasLesson={lessonForRec !== null} />
-        </Editorial>
+        </Section>
       )}
 
-      {/* ── The Atlas ──────────────────────────────────────────────
-         The whole syllabus in three strips. Replaces the literal
-         "学習地図" label with an editorial name. */}
-      <Editorial
-        eyebrow="The Atlas"
-        flair="A view of the syllabus"
+      {/* ── 全体の地図 ── */}
+      <Section
+        title="ITパスポートの全体像"
+        sub="3 つの分野と、あなたの進み具合"
         rightHref="/topics"
-        rightLabel="Open atlas"
+        rightLabel="論点マップ"
       >
         <div className="space-y-2">
           {roadmap.map((m) => (
             <ChapterStrip key={m.major} major={m} />
           ))}
         </div>
-      </Editorial>
+      </Section>
 
-      {/* ── Practice Room ──────────────────────────────────────────
-         Subordinate to reading. Three modes, no hierarchy hero. */}
-      <Editorial eyebrow="Practice Room" flair="When you are ready">
+      {/* ── 問題を解く ── */}
+      <Section title="問題を解く" sub="読んだ後の力試しに">
         <div className="grid gap-3 sm:grid-cols-3">
           <ModeTile
             href="/learn/random"
             grad="bg-grad-purple"
             icon={Shuffle}
-            kicker="Shuffle"
+            kicker="ランダム"
             title="気分転換に1問"
             sub="全範囲から抽選"
           />
@@ -188,7 +171,7 @@ export default async function HomePage() {
             href="/learn/session/new?mode=weakness&count=5"
             grad="bg-grad-sunset"
             icon={Target}
-            kicker="Tune-Up"
+            kicker="弱点補強"
             title="弱点を5問で詰める"
             sub="誤解パターンで重み付け"
           />
@@ -196,30 +179,27 @@ export default async function HomePage() {
             href={canMock ? "/learn/mock-exam" : "/pricing?reason=mock_exam"}
             grad="bg-grad-ocean"
             icon={Timer}
-            kicker="Studio Live"
-            title="本番形式の模擬試験"
+            kicker={canMock ? "模擬試験" : "Pro"}
+            title="本番形式で力試し"
             sub={canMock ? "100問 / 120分" : "Pro で開放"}
             locked={!canMock}
           />
         </div>
-      </Editorial>
+      </Section>
 
-      {/* ── Insights ── single quiet link. ── */}
+      {/* ── 進捗 ── */}
       <Link
         href="/dashboard"
         className="surface-card flex items-center gap-4 p-5"
       >
-        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-muted text-muted-foreground">
+        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-grad-blue text-white shadow-tile">
           <BarChart3 className="h-5 w-5" strokeWidth={2.2} />
         </span>
         <div className="min-w-0 flex-1">
-          <div className="text-[10.5px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-            Insights
+          <div className="text-[16px] font-semibold tracking-tight">
+            進捗を確認する
           </div>
-          <div className="mt-0.5 font-serif text-[18px] font-semibold leading-tight tracking-tight">
-            進捗を眺める
-          </div>
-          <div className="text-[12px] text-muted-foreground">
+          <div className="mt-0.5 text-[12.5px] text-muted-foreground">
             正答率・連続記録・誤解パターンの傾向
           </div>
         </div>
@@ -229,39 +209,38 @@ export default async function HomePage() {
   );
 }
 
-// ── Editorial scaffolding ────────────────────────────────────────────────
+// ── Section header ──────────────────────────────────────────────────────
 
-function Editorial({
-  eyebrow,
-  flair,
+function Section({
+  title,
+  sub,
   rightHref,
   rightLabel,
   children,
 }: {
-  eyebrow: string;
-  flair?: string;
+  title: string;
+  sub?: string;
   rightHref?: string;
   rightLabel?: string;
   children: React.ReactNode;
 }) {
   return (
-    <section className="space-y-5">
+    <section className="space-y-3">
       <div className="flex items-end justify-between gap-3 px-1">
         <div className="min-w-0">
-          <div className="flex items-center gap-2 text-[10.5px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-            <span aria-hidden className="inline-block h-1 w-6 rounded-full bg-foreground/60" />
-            {eyebrow}
-          </div>
-          {flair && (
-            <div className="mt-2 font-serif text-[22px] font-semibold leading-tight tracking-[-0.018em]">
-              {flair}
-            </div>
+          <h2 className="text-[18px] font-semibold tracking-tight sm:text-[20px]">
+            {title}
+          </h2>
+          {sub && (
+            <p className="mt-0.5 text-[12.5px] text-muted-foreground text-pretty">
+              {sub}
+            </p>
           )}
         </div>
         {rightHref && rightLabel && (
           <Link
             href={rightHref}
-            className="inline-flex shrink-0 items-center gap-1 text-[11.5px] font-semibold uppercase tracking-[0.16em] text-muted-foreground hover:text-foreground"
+            className="inline-flex shrink-0 items-center gap-0.5 text-[12.5px] font-medium text-muted-foreground hover:text-foreground"
           >
             {rightLabel}
             <ChevronRight className="h-3.5 w-3.5" />
@@ -273,7 +252,7 @@ function Editorial({
   );
 }
 
-// ── Pieces ───────────────────────────────────────────────────────────────
+// ── Pieces ──────────────────────────────────────────────────────────────
 
 function FeaturedLesson({
   slug,
@@ -293,57 +272,54 @@ function FeaturedLesson({
   return (
     <Link
       href={`/learn/study/${slug}`}
-      className="editorial-card group relative block overflow-hidden p-7 sm:p-9"
+      className="surface-card group relative block overflow-hidden p-6 sm:p-7"
     >
-      <div className="relative z-10 grid gap-6 sm:grid-cols-[1fr_auto] sm:items-end">
-        <div className="space-y-4">
-          <div className="flex items-center gap-2 text-[10.5px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-            <span aria-hidden className="h-1 w-6 rounded-full bg-foreground/70" />
-            {dek ?? "Today's Reading"}
-          </div>
-          <h2 className="font-serif text-[30px] font-semibold leading-[1.08] tracking-[-0.02em] text-balance sm:text-[40px]">
+      <div className="grid gap-5 sm:grid-cols-[1fr_auto] sm:items-start">
+        <div className="space-y-3">
+          {dek && (
+            <span className="inline-flex items-center gap-1 rounded-full bg-[#0A84FF]/10 px-2.5 py-1 text-[11px] font-semibold text-[#0A84FF]">
+              <BookOpen className="h-3 w-3" />
+              {dek}
+            </span>
+          )}
+          <h3 className="text-[22px] font-semibold leading-snug tracking-tight text-balance sm:text-[26px]">
             {title}
-          </h2>
-          <p className="max-w-[58ch] text-[14.5px] leading-[1.75] text-muted-foreground text-pretty">
+          </h3>
+          <p className="max-w-[58ch] text-[14px] leading-[1.8] text-muted-foreground text-pretty">
             {hook}
           </p>
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-1 text-[11.5px] uppercase tracking-[0.16em] text-muted-foreground">
-            <span>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 pt-1 text-[12px] text-muted-foreground">
+            <span className="inline-flex items-center gap-1.5">
+              <Clock className="h-3.5 w-3.5" />
+              読了の目安{" "}
               <span className="num font-semibold text-foreground">
                 {readingMinutes}
               </span>{" "}
-              min read
+              分
             </span>
             <span aria-hidden className="text-border">
               ·
             </span>
             <span>
-              followed by{" "}
+              読み終えたら関連問題{" "}
               <span className="num font-semibold text-foreground">
                 {questionCount}
               </span>{" "}
-              questions
+              問
             </span>
           </div>
-          <div className="pt-3">
+          <div className="pt-2">
             <span className="inline-flex h-11 items-center gap-1.5 rounded-full bg-foreground px-5 text-[14px] font-semibold text-background shadow-ios transition-transform group-hover:brightness-110 group-active:scale-[0.98]">
-              読みはじめる
-              <ArrowUpRight className="h-4 w-4" />
+              この記事を読む
+              <ArrowRight className="h-4 w-4" />
             </span>
           </div>
         </div>
         <div
           aria-hidden
-          className="pointer-events-none hidden h-[160px] w-[160px] shrink-0 items-center justify-center sm:flex"
+          className="hidden h-[120px] w-[120px] shrink-0 items-center justify-center rounded-2xl bg-grad-blue text-white shadow-tile sm:flex"
         >
-          <div className="relative grid place-items-center">
-            <span className="absolute inset-[-18px] rounded-full bg-grad-sunset opacity-40 blur-3xl" />
-            <span className="relative flex h-[140px] w-[140px] items-center justify-center rounded-3xl bg-grad-ink text-white shadow-hero">
-              <span className="font-serif text-[64px] font-semibold leading-none tracking-[-0.04em]">
-                ¶
-              </span>
-            </span>
-          </div>
+          <BookOpen className="h-10 w-10" strokeWidth={1.8} />
         </div>
       </div>
     </Link>
@@ -355,31 +331,40 @@ function ReadingRow({
   title,
   hook,
   readingMinutes,
+  dek,
 }: {
   slug: string;
   title: string;
   hook: string;
   readingMinutes: number;
+  dek: string | null;
 }) {
   return (
     <Link
       href={`/learn/study/${slug}`}
       className="surface-card group flex h-full flex-col gap-2 p-5"
     >
-      <div className="text-[10.5px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-        Reading
-      </div>
-      <div className="font-serif text-[18px] font-semibold leading-snug tracking-[-0.014em]">
+      {dek && (
+        <span className="inline-flex w-fit items-center gap-1 rounded-full bg-muted px-2 py-0.5 text-[11px] font-semibold text-muted-foreground">
+          <BookOpen className="h-3 w-3" />
+          {dek}
+        </span>
+      )}
+      <div className="text-[16px] font-semibold leading-snug tracking-tight">
         {title}
       </div>
       <p className="line-clamp-2 text-[12.5px] leading-relaxed text-muted-foreground text-pretty">
         {hook}
       </p>
-      <div className="mt-auto flex items-center gap-2 pt-3 text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+      <div className="mt-auto flex items-center gap-2 pt-2 text-[11.5px] text-muted-foreground">
         <Clock className="h-3 w-3" />
-        <span className="num">{readingMinutes}</span> min
-        <span aria-hidden className="ml-auto inline-flex items-center gap-1 normal-case tracking-normal text-muted-foreground/70">
-          続きを読む
+        <span>
+          <span className="num font-semibold text-foreground">
+            {readingMinutes}
+          </span>{" "}
+          分で読める
+        </span>
+        <span aria-hidden className="ml-auto inline-flex items-center gap-1 text-muted-foreground/70">
           <ChevronRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
         </span>
       </div>
@@ -404,24 +389,18 @@ function ChapterStrip({ major }: { major: RoadmapMajor }) {
     >
       <span
         aria-hidden
-        className="w-[3px] shrink-0 rounded-full"
+        className="w-1 shrink-0 rounded-full"
         style={{ background: meta.hue }}
       />
       <div className="min-w-0 flex-1">
-        <div
-          className="text-[10.5px] font-semibold uppercase tracking-[0.22em]"
-          style={{ color: meta.hue }}
-        >
-          {meta.label}
-        </div>
-        <div className="mt-0.5 font-serif text-[18px] font-semibold leading-tight tracking-[-0.014em]">
+        <div className="text-[16px] font-semibold tracking-tight">
           {major.label}
         </div>
         <div className="text-[12px] text-muted-foreground">
-          {major.minors.length} minor topics · {major.topicCount} essays
+          中項目 {major.minors.length} · 論点 {major.topicCount}
         </div>
         <div
-          className="mt-2.5 h-[3px] overflow-hidden rounded-full"
+          className="mt-2 h-1.5 overflow-hidden rounded-full"
           style={{ background: meta.hueDim }}
         >
           <div
@@ -434,13 +413,13 @@ function ChapterStrip({ major }: { major: RoadmapMajor }) {
         </div>
       </div>
       <div className="flex flex-col items-end justify-between text-right">
-        <div className="num font-serif text-[22px] font-semibold leading-none tracking-[-0.02em]">
+        <div className="num text-[20px] font-semibold leading-none tracking-tight">
           {pct}
           <span className="ml-0.5 text-[11px] font-medium text-muted-foreground">
             %
           </span>
         </div>
-        <ChevronRight className="h-4 w-4 text-muted-foreground" />
+        <div className="text-[10.5px] text-muted-foreground">習熟度</div>
       </div>
     </Link>
   );
@@ -461,19 +440,19 @@ function CurrentSpot({
 }) {
   const ratePct = rec.attempted > 0 ? Math.round(rec.correctRate * 100) : null;
   return (
-    <article className="surface-card relative overflow-hidden p-6 sm:p-7">
+    <article className="surface-card relative overflow-hidden p-5 sm:p-6">
       <div className="flex items-start gap-4">
         <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-foreground text-background shadow-tile">
           <Compass className="h-5 w-5" strokeWidth={2.2} />
         </span>
-        <div className="min-w-0 flex-1 space-y-2">
-          <div className="text-[10.5px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+        <div className="min-w-0 flex-1">
+          <div className="text-[11.5px] font-semibold text-muted-foreground">
             {rec.reason}
           </div>
-          <h3 className="font-serif text-[22px] font-semibold leading-tight tracking-[-0.016em] text-balance sm:text-[26px]">
+          <h3 className="mt-1 text-[18px] font-semibold leading-tight tracking-tight text-balance sm:text-[20px]">
             {rec.title}
           </h3>
-          <p className="text-[13px] leading-relaxed text-muted-foreground text-pretty">
+          <p className="mt-1.5 text-[13px] leading-relaxed text-muted-foreground text-pretty">
             {rec.attempted > 0 ? (
               <>
                 これまで{" "}
@@ -487,17 +466,17 @@ function CurrentSpot({
                 。次の一歩を、ここから。
               </>
             ) : (
-              "まだ手をつけていない論点。最初の一冊から始めましょう。"
+              <>まだ手をつけていない論点です。最初の一歩を踏み出しましょう。</>
             )}
           </p>
-          <div className="flex flex-wrap items-center gap-2 pt-3">
+          <div className="mt-3 flex flex-wrap items-center gap-2">
             {hasLesson && (
               <Link
                 href={`/learn/study/${rec.slug}`}
                 className="inline-flex h-10 items-center gap-1.5 rounded-full bg-foreground px-4 text-[13px] font-semibold text-background shadow-ios hover:brightness-110 active:scale-[0.98]"
               >
+                <BookOpen className="h-3.5 w-3.5" />
                 記事を読む
-                <ArrowUpRight className="h-3.5 w-3.5" />
               </Link>
             )}
             <Link
@@ -548,12 +527,12 @@ function ModeTile({
         <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/15 ring-1 ring-inset ring-white/25 backdrop-blur">
           <Icon className="h-5 w-5" strokeWidth={2.2} />
         </span>
-        <span className="text-[10px] font-semibold uppercase tracking-[0.16em] opacity-85">
+        <span className="rounded-full bg-white/15 px-2 py-0.5 text-[10.5px] font-semibold backdrop-blur">
           {locked ? "Pro" : kicker}
         </span>
       </div>
       <div className="relative z-10">
-        <div className="font-serif text-[18px] font-semibold leading-tight tracking-[-0.014em]">
+        <div className="text-[16px] font-semibold leading-tight tracking-tight">
           {title}
         </div>
         <div className="text-[11.5px] opacity-85">{sub}</div>
@@ -563,9 +542,9 @@ function ModeTile({
 }
 
 function greetingFor(h: number) {
-  if (h < 5) return "深い夜にようこそ";
+  if (h < 5) return "夜更かしお疲れさま";
   if (h < 11) return "おはようございます";
   if (h < 17) return "こんにちは";
   if (h < 21) return "こんばんは";
-  return "夜、おつかれさまです";
+  return "夜の学習、お疲れさま";
 }

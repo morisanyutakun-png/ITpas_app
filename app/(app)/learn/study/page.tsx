@@ -1,21 +1,20 @@
 import Link from "next/link";
-import { ChevronRight, Clock } from "lucide-react";
+import { BookOpen, ChevronRight, Clock } from "lucide-react";
 import { listStudyLessonSlugs, getStudyLesson } from "@/server/queries/study";
 import { listTopics } from "@/server/queries/topics";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Reading Room" };
+export const metadata = { title: "学ぶ" };
 
 const MAJOR_META: Record<string, { hue: string; label: string }> = {
-  strategy: { hue: "#FF375F", label: "Strategy" },
-  management: { hue: "#FF9500", label: "Management" },
-  technology: { hue: "#0A84FF", label: "Technology" },
+  strategy: { hue: "#FF375F", label: "ストラテジ系" },
+  management: { hue: "#FF9500", label: "マネジメント系" },
+  technology: { hue: "#0A84FF", label: "テクノロジ系" },
 };
 
 /**
- * Reading Room — index of full essays. Listed as a magazine table of
- * contents rather than a card grid; the visual decision invites the
- * reader to commit to a piece, not to scan tiles.
+ * 学ぶ — 入門者向けの解説記事一覧。学習プラットフォームらしい教科書
+ * トーン (色付きジャンルバッジ + 読了目安 + 関連問題数) で並べる。
  */
 export default async function StudyIndexPage() {
   const slugs = await listStudyLessonSlugs();
@@ -32,22 +31,14 @@ export default async function StudyIndexPage() {
     .map((l) => ({ lesson: l, topic: topicBySlug.get(l.slug)! }));
 
   return (
-    <div className="mx-auto max-w-[760px] space-y-12 pb-16">
-      {/* ── Editorial header ── */}
-      <header className="space-y-3 pt-1">
-        <div className="flex items-center gap-2 text-[10.5px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-          <span aria-hidden className="inline-block h-1 w-6 rounded-full bg-foreground/70" />
-          Reading Room
-        </div>
-        <h1 className="font-serif text-[40px] font-semibold leading-[1.06] tracking-[-0.022em] text-balance sm:text-[48px]">
-          読んで、納得して、
-          <br className="hidden sm:inline" />
-          そして問題で確かめる。
+    <div className="mx-auto max-w-[760px] space-y-8 pb-12">
+      <header className="space-y-2 pt-1">
+        <h1 className="text-[26px] font-semibold leading-tight tracking-tight sm:text-[30px]">
+          学ぶ
         </h1>
-        <p className="max-w-[58ch] text-[15px] leading-[1.75] text-muted-foreground text-pretty">
-          ITパスポートの主要論点を、ブログ記事の濃度で。
-          ひとつの章は 4〜6 分で読み切れる長さに整えてあります。
-          読み終えたら、その場で関連問題に進んで定着を確かめましょう。
+        <p className="max-w-[58ch] text-[14px] leading-[1.8] text-muted-foreground text-pretty">
+          ITパスポートの主要論点を、図解と日常のたとえを使ってやさしく解説します。
+          1 記事 4〜6 分で読み切れる長さ。読み終えたら、その場で関連問題に進めます。
         </p>
       </header>
 
@@ -56,58 +47,74 @@ export default async function StudyIndexPage() {
           記事を準備中です。
         </div>
       ) : (
-        <ol className="divide-y divide-border border-y border-border">
+        <ul className="space-y-3">
           {items.map(({ lesson, topic }, idx) => {
             const meta = MAJOR_META[topic.majorCategory] ?? {
               hue: "#8E8E93",
-              label: "Topic",
+              label: "論点",
             };
             return (
               <li key={lesson.slug}>
                 <Link
                   href={`/learn/study/${lesson.slug}`}
-                  className="group grid grid-cols-[auto_1fr_auto] items-start gap-5 py-7 transition-colors hover:bg-muted/30"
+                  className="surface-card group grid grid-cols-[44px_1fr_auto] items-start gap-4 p-5"
                 >
-                  <div className="num pt-1 text-[12px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+                  <span
+                    className="num flex h-10 w-10 items-center justify-center rounded-full text-[14px] font-semibold"
+                    style={{ background: `${meta.hue}14`, color: meta.hue }}
+                  >
                     {String(idx + 1).padStart(2, "0")}
-                  </div>
+                  </span>
                   <div className="min-w-0">
-                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[10.5px] font-semibold uppercase tracking-[0.18em]">
-                      <span style={{ color: meta.hue }}>{meta.label}</span>
-                      <span className="text-muted-foreground/80">
-                        · {topic.minorTopic}
+                    <div className="flex flex-wrap items-center gap-2 text-[11px] font-semibold">
+                      <span
+                        className="inline-flex items-center rounded-full px-2 py-0.5"
+                        style={{ background: `${meta.hue}14`, color: meta.hue }}
+                      >
+                        {meta.label}
+                      </span>
+                      <span className="inline-flex items-center rounded-full bg-muted px-2 py-0.5 text-muted-foreground">
+                        {topic.minorTopic}
                       </span>
                       {lesson.dek && (
-                        <span className="text-muted-foreground/60">
-                          · {lesson.dek}
+                        <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2 py-0.5 text-muted-foreground">
+                          <BookOpen className="h-3 w-3" />
+                          {lesson.dek}
                         </span>
                       )}
                     </div>
-                    <h2 className="mt-2 font-serif text-[24px] font-semibold leading-[1.18] tracking-[-0.018em] text-balance sm:text-[28px]">
+                    <h2 className="mt-2 text-[18px] font-semibold leading-snug tracking-tight text-balance sm:text-[20px]">
                       {lesson.title}
                     </h2>
-                    <p className="mt-2 line-clamp-2 max-w-[58ch] text-[14px] leading-[1.75] text-muted-foreground text-pretty">
+                    <p className="mt-1.5 line-clamp-2 max-w-[58ch] text-[13px] leading-[1.8] text-muted-foreground text-pretty">
                       {lesson.hook}
                     </p>
-                    <div className="mt-3 flex flex-wrap items-center gap-x-4 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-                      <span className="inline-flex items-center gap-1.5">
+                    <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11.5px] text-muted-foreground">
+                      <span className="inline-flex items-center gap-1">
                         <Clock className="h-3 w-3" />
-                        <span className="num">{lesson.readingMinutes}</span> min read
+                        <span className="num font-semibold text-foreground">
+                          {lesson.readingMinutes}
+                        </span>{" "}
+                        分で読める
                       </span>
                       <span aria-hidden className="text-border">
                         ·
                       </span>
                       <span>
-                        <span className="num">{lesson.questionCount}</span> revision questions
+                        関連問題{" "}
+                        <span className="num font-semibold text-foreground">
+                          {lesson.questionCount}
+                        </span>{" "}
+                        問
                       </span>
                     </div>
                   </div>
-                  <ChevronRight className="mt-2 h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
+                  <ChevronRight className="mt-3 h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
                 </Link>
               </li>
             );
           })}
-        </ol>
+        </ul>
       )}
     </div>
   );

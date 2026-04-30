@@ -137,72 +137,75 @@
       "figure": {
         "kind": "cinematic",
         "aspect": "16:9",
-        "caption": "5 シーン構成。各シーン内で複数のオブジェクトが同時に変形・移動します。",
+        "caption": "アリス・ボブ・イブの 3 人を主役に、鍵と封筒が動く 5 シーン構成。キャラクターは静止、動くのは小道具だけです。",
         "objects": [
-          { "id": "alice", "kind": "icon", "label": "アリス (送信者)", "x": 12, "y": 40, "accent": "warm", "width": 16, "height": 12 },
-          { "id": "bob", "kind": "icon", "label": "ボブ (受信者)", "x": 88, "y": 40, "accent": "primary", "width": 16, "height": 12 },
-          { "id": "eve", "kind": "icon", "label": "イブ (盗聴者)", "x": 50, "y": 88, "accent": "danger", "width": 14, "height": 12, "opacity": 0.3 },
-          { "id": "pubkey", "kind": "key", "label": "公開鍵", "x": 88, "y": 18, "accent": "primary", "width": 8, "height": 8, "opacity": 0 },
-          { "id": "privkey", "kind": "key", "label": "秘密鍵", "x": 88, "y": 62, "accent": "accent", "width": 8, "height": 8, "opacity": 0 },
-          { "id": "msg", "kind": "chip", "label": "Hello!", "x": 12, "y": 22, "accent": "warm", "width": 12, "height": 6, "opacity": 0 },
-          { "id": "lock", "kind": "lock", "label": "🔒", "x": 50, "y": 40, "accent": "neutral", "width": 8, "height": 8, "opacity": 0 },
-          { "id": "evePeek", "kind": "chip", "label": "❌ 解読不能", "x": 50, "y": 78, "accent": "danger", "width": 14, "height": 6, "opacity": 0 }
+          { "id": "alice", "kind": "character", "character": "alice", "label": "アリス", "sublabel": "送信者", "x": 14, "y": 50, "width": 16, "height": 35, "expression": "happy" },
+          { "id": "bob", "kind": "character", "character": "bob", "label": "ボブ", "sublabel": "受信者", "x": 86, "y": 50, "width": 16, "height": 35, "expression": "neutral" },
+          { "id": "eve", "kind": "character", "character": "eve", "label": "イブ", "sublabel": "盗聴者", "x": 50, "y": 90, "width": 14, "height": 32, "expression": "smug", "opacity": 0 },
+          { "id": "pubkey", "kind": "key", "label": "公開鍵", "x": 86, "y": 26, "accent": "primary", "width": 7, "height": 7, "opacity": 0 },
+          { "id": "privkey", "kind": "key", "label": "秘密鍵", "x": 92, "y": 32, "accent": "accent", "width": 7, "height": 7, "opacity": 0 },
+          { "id": "letter", "kind": "envelope", "label": "Hello!", "x": 14, "y": 28, "accent": "warm", "width": 9, "height": 9, "opacity": 0 },
+          { "id": "lock", "kind": "lock", "x": 14, "y": 28, "accent": "neutral", "width": 5, "height": 5, "opacity": 0 },
+          { "id": "evePeek", "kind": "chip", "label": "❌ 解読不能", "x": 50, "y": 78, "accent": "danger", "width": 14, "height": 5, "opacity": 0 }
         ],
         "scenes": [
           {
-            "title": "シーン 1: ボブが鍵ペアを生成",
-            "narration": "受信者ボブが、公開鍵と秘密鍵のペアを内部で生成します。秘密鍵はボブだけが保持。",
+            "title": "シーン 1: ボブが鍵ペアを作る",
+            "narration": "ボブが内部で公開鍵と秘密鍵のペアを生成。秘密鍵はずっと自分の手元に置きます。",
+            "duration": 3400,
+            "actions": [
+              { "target": "bob", "at": 100, "duration": 600, "expression": "happy" },
+              { "target": "pubkey", "at": 400, "duration": 800, "opacity": 1, "scale": 1.3, "effect": "pulse" },
+              { "target": "privkey", "at": 900, "duration": 800, "opacity": 1, "scale": 1.3, "effect": "pulse" },
+              { "target": "pubkey", "at": 1900, "duration": 700, "scale": 1 },
+              { "target": "privkey", "at": 1900, "duration": 700, "scale": 1 }
+            ]
+          },
+          {
+            "title": "シーン 2: 公開鍵だけアリスへ届ける",
+            "narration": "公開鍵は誰に渡してもよい鍵。アリスにも渡しておきます (秘密鍵はボブの手元のまま)。",
             "duration": 3200,
             "actions": [
-              { "target": "pubkey", "at": 200, "duration": 800, "opacity": 1, "scale": 1.2, "effect": "pulse" },
-              { "target": "privkey", "at": 600, "duration": 800, "opacity": 1, "scale": 1.2, "effect": "pulse" },
-              { "target": "pubkey", "at": 1600, "duration": 600, "scale": 1 },
-              { "target": "privkey", "at": 1600, "duration": 600, "scale": 1 },
-              { "target": "bob", "at": 200, "duration": 600, "effect": "pulse" }
+              { "target": "pubkey", "at": 200, "duration": 2000, "x": 18, "y": 26 },
+              { "target": "alice", "at": 2200, "duration": 600, "expression": "happy", "effect": "pulse" }
             ]
           },
           {
-            "title": "シーン 2: 公開鍵を世界に配る",
-            "narration": "公開鍵は誰にでも公開して構わない。アリスもその鍵を入手します。",
-            "duration": 3000,
-            "actions": [
-              { "target": "pubkey", "at": 100, "duration": 1800, "x": 12, "y": 18 },
-              { "target": "alice", "at": 1800, "duration": 600, "effect": "pulse" }
-            ]
-          },
-          {
-            "title": "シーン 3: アリスが暗号化",
-            "narration": "アリスはメッセージ『Hello!』をボブの公開鍵で施錠。中身は誰にも読めない暗号文になります。",
-            "duration": 3400,
-            "actions": [
-              { "target": "msg", "at": 100, "duration": 600, "opacity": 1 },
-              { "target": "msg", "at": 800, "duration": 1000, "x": 18, "y": 22, "effect": "shake" },
-              { "target": "lock", "at": 1500, "duration": 700, "opacity": 1, "scale": 1.4, "x": 18, "y": 22, "effect": "ripple" },
-              { "target": "lock", "at": 2300, "duration": 500, "scale": 1 },
-              { "target": "msg", "at": 2300, "duration": 500, "label": "🔒 暗号文", "accent": "neutral" }
-            ]
-          },
-          {
-            "title": "シーン 4: 暗号文がネットを渡る",
-            "narration": "暗号文がインターネットを横断してボブに届きます。途中で盗聴者イブも目にしますが、開けません。",
+            "title": "シーン 3: アリスが手紙を公開鍵で施錠",
+            "narration": "アリスはメッセージを封筒に入れ、ボブの公開鍵で施錠。中身は誰にも読めない暗号文になります。",
             "duration": 3600,
             "actions": [
-              { "target": "msg", "at": 0, "duration": 2400, "x": 82, "y": 40 },
-              { "target": "lock", "at": 0, "duration": 2400, "x": 82, "y": 40 },
-              { "target": "eve", "at": 800, "duration": 600, "opacity": 1, "effect": "shake" },
-              { "target": "evePeek", "at": 1600, "duration": 600, "opacity": 1, "effect": "flash" },
-              { "target": "evePeek", "at": 3000, "duration": 500, "opacity": 0 }
+              { "target": "letter", "at": 100, "duration": 600, "opacity": 1 },
+              { "target": "pubkey", "at": 800, "duration": 800, "x": 14, "y": 28, "scale": 1.2, "effect": "pulse" },
+              { "target": "lock", "at": 1700, "duration": 600, "opacity": 1, "scale": 1.4, "effect": "ripple" },
+              { "target": "lock", "at": 2400, "duration": 500, "scale": 1 },
+              { "target": "letter", "at": 2400, "duration": 500, "label": "暗号文", "accent": "neutral" },
+              { "target": "pubkey", "at": 2700, "duration": 600, "opacity": 0 }
             ]
           },
           {
-            "title": "シーン 5: ボブが秘密鍵で復号",
-            "narration": "ボブは自分の秘密鍵で暗号文を解錠。元のメッセージ『Hello!』が読めるのはボブだけ。",
-            "duration": 3400,
+            "title": "シーン 4: 暗号文がネットを渡る (盗聴者は読めない)",
+            "narration": "封筒がインターネットを渡ってボブへ。途中でイブが覗き見しますが、秘密鍵がないので開けません。",
+            "duration": 4000,
             "actions": [
-              { "target": "privkey", "at": 100, "duration": 800, "x": 82, "y": 40, "scale": 1.4, "effect": "pulse" },
-              { "target": "lock", "at": 1200, "duration": 700, "opacity": 0, "scale": 0.4, "rotation": -180 },
-              { "target": "msg", "at": 1500, "duration": 600, "label": "Hello!", "accent": "success", "effect": "flash" },
-              { "target": "bob", "at": 2200, "duration": 700, "effect": "ripple" }
+              { "target": "letter", "at": 0, "duration": 2800, "x": 82, "y": 50 },
+              { "target": "lock", "at": 0, "duration": 2800, "x": 82, "y": 50 },
+              { "target": "eve", "at": 600, "duration": 700, "opacity": 1, "expression": "smug" },
+              { "target": "evePeek", "at": 1700, "duration": 600, "opacity": 1, "effect": "flash" },
+              { "target": "eve", "at": 2600, "duration": 600, "expression": "worried" },
+              { "target": "evePeek", "at": 3300, "duration": 500, "opacity": 0 }
+            ]
+          },
+          {
+            "title": "シーン 5: ボブが秘密鍵で開封",
+            "narration": "ボブは自分の秘密鍵で施錠を解除。元のメッセージ『Hello!』が読めるのはボブだけです。",
+            "duration": 3800,
+            "actions": [
+              { "target": "privkey", "at": 200, "duration": 800, "x": 82, "y": 50, "scale": 1.3, "effect": "pulse" },
+              { "target": "lock", "at": 1300, "duration": 700, "opacity": 0, "scale": 0.4 },
+              { "target": "letter", "at": 1700, "duration": 600, "label": "Hello!", "accent": "success", "effect": "flash" },
+              { "target": "bob", "at": 2400, "duration": 700, "expression": "happy", "effect": "pulse" },
+              { "target": "eve", "at": 2400, "duration": 700, "expression": "shocked" }
             ]
           }
         ]
@@ -326,53 +329,57 @@
       "figure": {
         "kind": "cinematic",
         "aspect": "16:9",
-        "caption": "3 シーン構成。雪崩効果と一方向性を 1 つの動画で見せます。",
+        "caption": "アリスがハッシュ関数を試す 3 シーン。雪崩効果と一方向性を見ます。",
         "objects": [
-          { "id": "in1", "kind": "chip", "label": "password", "x": 12, "y": 25, "accent": "warm", "width": 16, "height": 8 },
-          { "id": "in2", "kind": "chip", "label": "passw0rd", "x": 12, "y": 50, "accent": "warm", "width": 16, "height": 8 },
-          { "id": "in3", "kind": "chip", "label": "Password", "x": 12, "y": 75, "accent": "warm", "width": 16, "height": 8 },
-          { "id": "fn", "kind": "icon", "label": "ハッシュ関数 SHA-256", "x": 50, "y": 50, "accent": "accent", "width": 18, "height": 14 },
-          { "id": "out1", "kind": "chip", "label": "5e88...3a4f", "x": 86, "y": 25, "accent": "primary", "width": 18, "height": 8, "opacity": 0 },
-          { "id": "out2", "kind": "chip", "label": "9f12...8b21", "x": 86, "y": 50, "accent": "primary", "width": 18, "height": 8, "opacity": 0 },
-          { "id": "out3", "kind": "chip", "label": "c41a...d7e9", "x": 86, "y": 75, "accent": "primary", "width": 18, "height": 8, "opacity": 0 },
-          { "id": "reverse", "kind": "chip", "label": "❌ 逆算不可", "x": 50, "y": 92, "accent": "danger", "width": 18, "height": 6, "opacity": 0 }
+          { "id": "alice", "kind": "character", "character": "alice", "label": "アリス", "x": 12, "y": 50, "width": 14, "height": 32, "expression": "happy" },
+          { "id": "in1", "kind": "chip", "label": "password", "x": 28, "y": 30, "accent": "warm", "width": 14, "height": 6 },
+          { "id": "in2", "kind": "chip", "label": "passw0rd", "x": 28, "y": 50, "accent": "warm", "width": 14, "height": 6 },
+          { "id": "in3", "kind": "chip", "label": "Password", "x": 28, "y": 70, "accent": "warm", "width": 14, "height": 6 },
+          { "id": "fn", "kind": "box", "label": "SHA-256", "sublabel": "ハッシュ関数", "x": 56, "y": 50, "accent": "accent", "width": 18, "height": 14 },
+          { "id": "out1", "kind": "chip", "label": "5e88...3a4f", "x": 86, "y": 30, "accent": "primary", "width": 18, "height": 6, "opacity": 0 },
+          { "id": "out2", "kind": "chip", "label": "9f12...8b21", "x": 86, "y": 50, "accent": "primary", "width": 18, "height": 6, "opacity": 0 },
+          { "id": "out3", "kind": "chip", "label": "c41a...d7e9", "x": 86, "y": 70, "accent": "primary", "width": 18, "height": 6, "opacity": 0 },
+          { "id": "reverse", "kind": "chip", "label": "❌ 逆算不可", "x": 56, "y": 88, "accent": "danger", "width": 16, "height": 5, "opacity": 0 }
         ],
         "scenes": [
           {
-            "title": "シーン 1: 入力をハッシュ関数へ",
-            "narration": "似た 3 つの文字列『password』『passw0rd』『Password』をハッシュ関数に入れます。",
-            "duration": 3000,
+            "title": "シーン 1: アリスが 3 つの入力を投入",
+            "narration": "似た 3 つの文字列『password / passw0rd / Password』をハッシュ関数に渡します。",
+            "duration": 3200,
             "actions": [
-              { "target": "in1", "at": 100, "duration": 1200, "x": 38, "y": 50, "effect": "shake" },
-              { "target": "in2", "at": 400, "duration": 1200, "x": 38, "y": 50, "effect": "shake" },
-              { "target": "in3", "at": 700, "duration": 1200, "x": 38, "y": 50, "effect": "shake" },
-              { "target": "fn", "at": 1500, "duration": 800, "scale": 1.15, "effect": "pulse" }
+              { "target": "alice", "at": 100, "duration": 600, "expression": "happy" },
+              { "target": "in1", "at": 200, "duration": 1200, "x": 50, "y": 50 },
+              { "target": "in2", "at": 500, "duration": 1200, "x": 50, "y": 50 },
+              { "target": "in3", "at": 800, "duration": 1200, "x": 50, "y": 50 },
+              { "target": "fn", "at": 1700, "duration": 700, "scale": 1.15, "effect": "pulse" }
             ]
           },
           {
-            "title": "シーン 2: 雪崩効果 — 1 文字違うだけで全然違うハッシュ",
-            "narration": "わずか 1 文字違うだけなのに、出力されるハッシュ値はまったくの別物になります。これが『雪崩効果』。",
-            "duration": 3600,
+            "title": "シーン 2: 雪崩効果 — 1 文字違うと全然違うハッシュ",
+            "narration": "1 文字違うだけで出力はまったく別物に。これが雪崩効果と呼ばれる性質です。",
+            "duration": 3800,
             "actions": [
-              { "target": "fn", "at": 0, "duration": 600, "scale": 1, "rotation": 360 },
-              { "target": "in1", "at": 600, "duration": 800, "opacity": 0 },
-              { "target": "in2", "at": 600, "duration": 800, "opacity": 0 },
-              { "target": "in3", "at": 600, "duration": 800, "opacity": 0 },
-              { "target": "out1", "at": 1200, "duration": 700, "opacity": 1, "effect": "flash" },
-              { "target": "out2", "at": 1700, "duration": 700, "opacity": 1, "effect": "flash" },
-              { "target": "out3", "at": 2200, "duration": 700, "opacity": 1, "effect": "flash" }
+              { "target": "fn", "at": 0, "duration": 600, "scale": 1, "effect": "spin" },
+              { "target": "in1", "at": 700, "duration": 600, "opacity": 0 },
+              { "target": "in2", "at": 700, "duration": 600, "opacity": 0 },
+              { "target": "in3", "at": 700, "duration": 600, "opacity": 0 },
+              { "target": "out1", "at": 1300, "duration": 700, "opacity": 1, "effect": "flash" },
+              { "target": "out2", "at": 1800, "duration": 700, "opacity": 1, "effect": "flash" },
+              { "target": "out3", "at": 2300, "duration": 700, "opacity": 1, "effect": "flash" },
+              { "target": "alice", "at": 2800, "duration": 600, "expression": "shocked" }
             ]
           },
           {
             "title": "シーン 3: 一方向性 — 出力から入力には戻せない",
-            "narration": "ハッシュ値を見ても元の文字列は逆算できません。これがパスワード保管や改ざん検知に使える理由です。",
-            "duration": 3400,
+            "narration": "ハッシュ値からは元の文字列を復元できません。これがパスワード保管や改ざん検知に使える理由です。",
+            "duration": 3600,
             "actions": [
-              { "target": "reverse", "at": 100, "duration": 700, "opacity": 1, "effect": "flash" },
-              { "target": "out1", "at": 800, "duration": 700, "x": 50, "y": 50, "scale": 0.6, "opacity": 0.4 },
-              { "target": "out2", "at": 800, "duration": 700, "x": 50, "y": 50, "scale": 0.6, "opacity": 0.4 },
-              { "target": "out3", "at": 800, "duration": 700, "x": 50, "y": 50, "scale": 0.6, "opacity": 0.4 },
-              { "target": "fn", "at": 1700, "duration": 800, "effect": "shake" }
+              { "target": "reverse", "at": 200, "duration": 600, "opacity": 1, "effect": "flash" },
+              { "target": "out1", "at": 900, "duration": 700, "x": 56, "y": 50, "scale": 0.6, "opacity": 0.4 },
+              { "target": "out2", "at": 900, "duration": 700, "x": 56, "y": 50, "scale": 0.6, "opacity": 0.4 },
+              { "target": "out3", "at": 900, "duration": 700, "x": 56, "y": 50, "scale": 0.6, "opacity": 0.4 },
+              { "target": "fn", "at": 1800, "duration": 800, "effect": "shake" },
+              { "target": "alice", "at": 2200, "duration": 600, "expression": "neutral" }
             ]
           }
         ]

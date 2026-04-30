@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Pause, Play, RotateCcw, SkipForward } from "lucide-react";
+import { Pause, Play, RotateCcw, SkipForward, Mail } from "lucide-react";
 import { Key, Lock, Server, Skull, Smartphone, Hash, Shield, FileText } from "lucide-react";
 import type { StudyFigure } from "@/lib/contentSchema";
+import { Character } from "./Characters";
 
 type Cinematic = Extract<StudyFigure, { kind: "cinematic" }>;
 type Obj = Cinematic["objects"][number];
@@ -106,8 +107,10 @@ export function CinematicFigure({ figure }: { figure: Cinematic }) {
         accent: o.accent,
         label: o.label ?? "",
         sublabel: o.sublabel ?? "",
+        expression: o.expression ?? "neutral",
         effect: null,
         kind: o.kind,
+        character: o.character,
         width: o.width,
         height: o.height,
       });
@@ -133,6 +136,7 @@ export function CinematicFigure({ figure }: { figure: Cinematic }) {
       if (action.accent !== undefined) cur.accent = action.accent;
       if (action.label !== undefined) cur.label = action.label;
       if (action.sublabel !== undefined) cur.sublabel = action.sublabel;
+      if (action.expression !== undefined) cur.expression = action.expression;
       if (action.hidden !== undefined) cur.opacity = action.hidden ? 0 : cur.opacity;
       if (action.effect && t < end) cur.effect = action.effect;
     }
@@ -287,8 +291,10 @@ type ResolvedObj = {
   accent: Accent;
   label: string;
   sublabel: string;
+  expression: NonNullable<Obj["expression"]>;
   effect: Action["effect"] | null;
   kind: Obj["kind"];
+  character?: Obj["character"];
   width: number;
   height: number;
 };
@@ -307,6 +313,12 @@ function CinObject({ obj, state }: { obj: Obj; state: ResolvedObj }) {
             : state.effect === "ripple"
               ? "cin-effect-ripple"
               : "";
+
+  // Characters are drawn full-body and shouldn't get a tinted box around
+  // them; their wrapper just positions the SVG. Other objects keep the
+  // existing renderShape fallback path.
+  const isCharacter = state.kind === "character";
+
   return (
     <div
       className="absolute"
@@ -316,14 +328,24 @@ function CinObject({ obj, state }: { obj: Obj; state: ResolvedObj }) {
         transform: `translate(-50%, -50%) scale(${state.scale}) rotate(${state.rotation}deg)`,
         opacity: state.opacity,
         transition:
-          "left 600ms cubic-bezier(0.4,0,0.2,1), top 600ms cubic-bezier(0.4,0,0.2,1), transform 600ms cubic-bezier(0.4,0,0.2,1), opacity 400ms ease-out",
-        // Width/height for boxes, derived from the % units of the canvas.
+          "left 700ms cubic-bezier(0.4,0,0.2,1), top 700ms cubic-bezier(0.4,0,0.2,1), transform 700ms cubic-bezier(0.4,0,0.2,1), opacity 500ms ease-out",
         width: `${state.width}%`,
-        // height handled by inner content for some shapes
       }}
     >
-      <div className={`relative ${effectClass}`} style={{ "--cin-hue": hue } as React.CSSProperties}>
-        {renderShape(obj, state, hue)}
+      <div
+        className={`relative ${effectClass}`}
+        style={{ "--cin-hue": hue } as React.CSSProperties}
+      >
+        {isCharacter ? (
+          <Character
+            name={state.character ?? "alice"}
+            expression={state.expression}
+            label={state.label || undefined}
+            sublabel={state.sublabel || undefined}
+          />
+        ) : (
+          renderShape(obj, state, hue)
+        )}
       </div>
     </div>
   );
@@ -394,6 +416,22 @@ function renderShape(obj: Obj, s: ResolvedObj, hue: string) {
           style={{ background: hue, minWidth: "44px" }}
         >
           <Key className="h-5 w-5" strokeWidth={2.4} />
+        </div>
+      );
+    case "envelope":
+      return (
+        <div className="flex flex-col items-center gap-1">
+          <div
+            className="flex aspect-[4/3] w-14 items-center justify-center rounded-md border-2 bg-white shadow-tile"
+            style={{ borderColor: hue }}
+          >
+            <Mail className="h-6 w-6" strokeWidth={2} style={{ color: hue }} />
+          </div>
+          {s.label && (
+            <span className="rounded-full bg-foreground/85 px-1.5 py-px text-[9.5px] font-semibold text-background">
+              {s.label}
+            </span>
+          )}
         </div>
       );
     case "text":

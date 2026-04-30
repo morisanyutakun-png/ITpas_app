@@ -459,7 +459,28 @@ const cinematicAccentZ = z.enum([
 
 const cinematicObjectZ = z.object({
   id: z.string().min(1),
-  kind: z.enum(["box", "circle", "chip", "icon", "text", "lock", "key"]),
+  kind: z.enum([
+    "box",
+    "circle",
+    "chip",
+    "icon",
+    "text",
+    "lock",
+    "key",
+    "envelope",
+    "character",
+  ]),
+  // Character variants — used only when kind = "character". Drawn as
+  // illustrated avatars (head + hair / accessory + expression) that stay
+  // visually still even when the surrounding scene moves. The names map
+  // to the cryptography-textbook tradition of Alice / Bob / Eve.
+  character: z
+    .enum(["alice", "bob", "eve", "server", "hacker", "trent"])
+    .optional(),
+  // Optional facial expression for `character` kind.
+  expression: z
+    .enum(["happy", "neutral", "worried", "smug", "shocked"])
+    .default("neutral"),
   label: z.string().optional(),
   sublabel: z.string().optional(),
   // Initial state — actions later mutate any of these.
@@ -493,6 +514,9 @@ const cinematicActionZ = z.object({
   accent: cinematicAccentZ.optional(),
   label: z.string().optional(),
   sublabel: z.string().optional(),
+  expression: z
+    .enum(["happy", "neutral", "worried", "smug", "shocked"])
+    .optional(),
   hidden: z.boolean().optional(),
   // Visual flair: a one-shot pulse / shake / flash that decorates this
   // action without changing persistent state.

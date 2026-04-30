@@ -148,7 +148,10 @@
           { "id": "lock", "kind": "lock", "x": 14, "y": 30, "accent": "neutral", "width": 5, "height": 5, "opacity": 0 },
           { "id": "evePeek", "kind": "chip", "label": "❌ 解読不能", "x": 50, "y": 80, "accent": "danger", "width": 12, "height": 5, "opacity": 0 },
           { "id": "spark1", "kind": "chip", "label": "✦", "x": 86, "y": 30, "accent": "primary", "width": 3, "height": 3, "opacity": 0 },
-          { "id": "spark2", "kind": "chip", "label": "✦", "x": 90, "y": 35, "accent": "accent", "width": 3, "height": 3, "opacity": 0 }
+          { "id": "spark2", "kind": "chip", "label": "✦", "x": 90, "y": 35, "accent": "accent", "width": 3, "height": 3, "opacity": 0 },
+          { "id": "labelEnc", "kind": "chip", "label": "🔑 公開鍵で暗号化", "x": 18, "y": 14, "accent": "primary", "width": 22, "height": 4, "opacity": 0 },
+          { "id": "labelTransit", "kind": "chip", "label": "📡 ネット経由で送信", "x": 50, "y": 14, "accent": "neutral", "width": 22, "height": 4, "opacity": 0 },
+          { "id": "labelDec", "kind": "chip", "label": "🔓 秘密鍵で復号", "x": 82, "y": 14, "accent": "success", "width": 22, "height": 4, "opacity": 0 }
         ],
         "scenes": [
           {
@@ -204,25 +207,33 @@
             "narration": "アリスはボブの公開鍵を使って封筒を施錠。中身を読める鍵はもうこの世で 1 本だけ ── ボブの秘密鍵です。",
             "duration": 2400,
             "actions": [
+              { "target": "labelEnc", "at": 0, "duration": 300, "opacity": 1, "scale": 1.1, "effect": "flash" },
+              { "target": "labelEnc", "at": 400, "duration": 300, "scale": 1 },
               { "target": "pubkey", "at": 0, "duration": 500, "x": 18, "y": 30, "scale": 1.4 },
               { "target": "pubkey", "at": 500, "duration": 350, "rotation": 90, "effect": "spin" },
               { "target": "lock", "at": 700, "duration": 300, "opacity": 1, "scale": 1.6, "effect": "ripple" },
               { "target": "lock", "at": 1000, "duration": 400, "scale": 1 },
               { "target": "letter", "at": 1100, "duration": 400, "label": "暗号文", "accent": "neutral", "effect": "flash" },
-              { "target": "pubkey", "at": 1500, "duration": 500, "opacity": 0, "scale": 0.6 }
+              { "target": "pubkey", "at": 1500, "duration": 500, "opacity": 0, "scale": 0.6 },
+              { "target": "labelEnc", "at": 1900, "duration": 500, "opacity": 0 }
             ]
           },
           {
             "title": "06 · 暗号文がネットを横断",
-            "narration": "封筒がボブのもとへ向かいます。盗聴者イブも経路で目を光らせています。",
-            "duration": 2600,
+            "narration": "封筒は施錠されたままインターネットを渡ってボブのもとへ。途中でイブが見ても、開けることはできません。",
+            "duration": 2800,
             "actions": [
-              { "target": "letter", "at": 0, "duration": 1800, "x": 50, "y": 30 },
-              { "target": "lock", "at": 0, "duration": 1800, "x": 50, "y": 30 },
+              { "target": "labelTransit", "at": 0, "duration": 300, "opacity": 1, "scale": 1.1, "effect": "flash" },
+              { "target": "labelTransit", "at": 400, "duration": 300, "scale": 1 },
+              { "target": "letter", "at": 100, "duration": 1000, "x": 35, "y": 30 },
+              { "target": "lock", "at": 100, "duration": 1000, "x": 35, "y": 30 },
+              { "target": "letter", "at": 1200, "duration": 800, "x": 65, "y": 30 },
+              { "target": "lock", "at": 1200, "duration": 800, "x": 65, "y": 30 },
+              { "target": "letter", "at": 2100, "duration": 600, "x": 82, "y": 30 },
+              { "target": "lock", "at": 2100, "duration": 600, "x": 82, "y": 30 },
               { "target": "eve", "at": 200, "duration": 500, "opacity": 1, "y": 78 },
               { "target": "eve", "at": 800, "duration": 400, "expression": "smug", "effect": "shake" },
-              { "target": "letter", "at": 1700, "duration": 800, "x": 82, "y": 30 },
-              { "target": "lock", "at": 1700, "duration": 800, "x": 82, "y": 30 }
+              { "target": "labelTransit", "at": 2300, "duration": 500, "opacity": 0 }
             ]
           },
           {
@@ -242,6 +253,8 @@
             "narration": "ボブは自分の秘密鍵で施錠を解除。元のメッセージ『Hello!』が読めるのはボブだけです。",
             "duration": 2800,
             "actions": [
+              { "target": "labelDec", "at": 0, "duration": 300, "opacity": 1, "scale": 1.1, "effect": "flash" },
+              { "target": "labelDec", "at": 400, "duration": 300, "scale": 1 },
               { "target": "privkey", "at": 0, "duration": 500, "x": 82, "y": 30, "scale": 1.3, "effect": "pulse" },
               { "target": "privkey", "at": 500, "duration": 400, "rotation": -90, "effect": "spin" },
               { "target": "lock", "at": 800, "duration": 400, "opacity": 0, "scale": 0.3, "rotation": -180 },
@@ -250,7 +263,8 @@
               { "target": "letter", "at": 1700, "duration": 400, "scale": 1 },
               { "target": "bob", "at": 1600, "duration": 400, "expression": "happy", "effect": "pulse" },
               { "target": "privkey", "at": 2000, "duration": 500, "x": 88, "y": 60, "scale": 1, "rotation": 0 },
-              { "target": "eve", "at": 1600, "duration": 500, "expression": "shocked" }
+              { "target": "eve", "at": 1600, "duration": 500, "expression": "shocked" },
+              { "target": "labelDec", "at": 2400, "duration": 400, "opacity": 0 }
             ]
           }
         ]
@@ -385,31 +399,37 @@
           { "id": "out1", "kind": "chip", "label": "5e88...3a4f", "x": 86, "y": 30, "accent": "primary", "width": 16, "height": 5, "opacity": 0 },
           { "id": "out2", "kind": "chip", "label": "9f12...8b21", "x": 86, "y": 50, "accent": "primary", "width": 16, "height": 5, "opacity": 0 },
           { "id": "out3", "kind": "chip", "label": "c41a...d7e9", "x": 86, "y": 70, "accent": "primary", "width": 16, "height": 5, "opacity": 0 },
-          { "id": "reverse", "kind": "chip", "label": "❌ 逆算不可", "x": 56, "y": 88, "accent": "danger", "width": 14, "height": 5, "opacity": 0 }
+          { "id": "reverse", "kind": "chip", "label": "❌ 逆算不可", "x": 56, "y": 88, "accent": "danger", "width": 14, "height": 5, "opacity": 0 },
+          { "id": "labelIn", "kind": "chip", "label": "入力 (元の文字列)", "x": 26, "y": 14, "accent": "warm", "width": 18, "height": 4, "opacity": 0 },
+          { "id": "labelFn", "kind": "chip", "label": "ハッシュ計算", "x": 56, "y": 14, "accent": "accent", "width": 18, "height": 4, "opacity": 0 },
+          { "id": "labelOut", "kind": "chip", "label": "出力 (固定長ハッシュ値)", "x": 86, "y": 14, "accent": "primary", "width": 22, "height": 4, "opacity": 0 }
         ],
         "scenes": [
           {
             "title": "01 · 入力 1 が関数へ",
             "narration": "まずアリスが『password』をハッシュ関数 SHA-256 に投入します。",
-            "duration": 1800,
+            "duration": 2000,
             "actions": [
+              { "target": "labelIn", "at": 0, "duration": 250, "opacity": 1, "effect": "flash" },
+              { "target": "labelFn", "at": 200, "duration": 250, "opacity": 1, "effect": "flash" },
               { "target": "alice", "at": 0, "duration": 200, "expression": "happy" },
-              { "target": "in1", "at": 100, "duration": 250, "scale": 1.2 },
-              { "target": "in1", "at": 350, "duration": 900, "x": 50, "y": 50, "scale": 1 },
-              { "target": "fn", "at": 1100, "duration": 400, "scale": 1.15, "effect": "pulse" }
+              { "target": "in1", "at": 300, "duration": 250, "scale": 1.2 },
+              { "target": "in1", "at": 550, "duration": 900, "x": 50, "y": 50, "scale": 1 },
+              { "target": "fn", "at": 1300, "duration": 400, "scale": 1.15, "effect": "pulse" }
             ]
           },
           {
             "title": "02 · ハッシュ値 1 が吐き出される",
-            "narration": "関数の中で計算が走り、固定長のハッシュ値が右側に現れます。",
-            "duration": 1800,
+            "narration": "関数の中で計算が走り、固定長のハッシュ値が右側に現れます。経路は『入力 → 関数 → 出力』。",
+            "duration": 2000,
             "actions": [
+              { "target": "labelOut", "at": 0, "duration": 250, "opacity": 1, "effect": "flash" },
               { "target": "in1", "at": 0, "duration": 350, "opacity": 0 },
               { "target": "spark", "at": 200, "duration": 250, "opacity": 1, "scale": 1.4 },
-              { "target": "spark", "at": 450, "duration": 350, "x": 86, "y": 30, "scale": 0.6, "opacity": 0 },
-              { "target": "out1", "at": 800, "duration": 400, "opacity": 1, "scale": 1.2, "effect": "flash" },
-              { "target": "out1", "at": 1200, "duration": 400, "scale": 1 },
-              { "target": "fn", "at": 1100, "duration": 400, "scale": 1 }
+              { "target": "spark", "at": 450, "duration": 600, "x": 86, "y": 30, "scale": 0.6, "opacity": 0 },
+              { "target": "out1", "at": 1100, "duration": 400, "opacity": 1, "scale": 1.2, "effect": "flash" },
+              { "target": "out1", "at": 1500, "duration": 400, "scale": 1 },
+              { "target": "fn", "at": 1300, "duration": 400, "scale": 1 }
             ]
           },
           {

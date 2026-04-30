@@ -95,7 +95,7 @@ export function CinematicFigure({ figure }: { figure: Cinematic }) {
     lastRef.current = null;
   }, [sceneIdx]);
 
-  const objStates = useMemo(() => {
+  const { objStates, trails } = useMemo(() => {
     const states = new Map<string, ResolvedObj>();
     for (const o of figure.objects) {
       states.set(o.id, {
@@ -115,6 +115,11 @@ export function CinematicFigure({ figure }: { figure: Cinematic }) {
         height: o.height,
       });
     }
+    // Trail entries: visual record of a move so the audience can follow
+    // the route of a packet/key/envelope. We collect start/end positions
+    // for any action that mutates x or y while the object is at least
+    // partly visible.
+    const trailList: Trail[] = [];
     // Apply all actions in this scene up to time `t`, blending.
     for (const action of scene.actions) {
       const start = action.at;
@@ -123,8 +128,13 @@ export function CinematicFigure({ figure }: { figure: Cinematic }) {
       const cur = states.get(action.target);
       if (!cur) continue;
       const progress = action.duration === 0 ? 1 : Math.min(1, (t - start) / action.duration);
-      // Numeric tween from current → action.* using simple ease-in-out.
       const ease = easeInOut(progress);
+
+      // Position before applying this action — used as the trail start
+      // when the action moves the object.
+      const fromX = cur.x;
+      const fromY = cur.y;
+
       if (action.x !== undefined) cur.x = lerp(cur.x, action.x, ease);
       if (action.y !== undefined) cur.y = lerp(cur.y, action.y, ease);
       if (action.scale !== undefined) cur.scale = lerp(cur.scale, action.scale, ease);
@@ -132,15 +142,52 @@ export function CinematicFigure({ figure }: { figure: Cinematic }) {
         cur.rotation = lerp(cur.rotation, action.rotation, ease);
       if (action.opacity !== undefined)
         cur.opacity = lerp(cur.opacity, action.opacity, ease);
-      // Snap (non-tweened) props at the start of the window.
+
       if (action.accent !== undefined) cur.accent = action.accent;
       if (action.label !== undefined) cur.label = action.label;
       if (action.sublabel !== undefined) cur.sublabel = action.sublabel;
       if (action.expression !== undefined) cur.expression = action.expression;
       if (action.hidden !== undefined) cur.opacity = action.hidden ? 0 : cur.opacity;
       if (action.effect && t < end) cur.effect = action.effect;
+
+      // Build a trail entry when this action visibly moves the object.
+      // Tiny jitter (< 1.5%) is ignored so spin / pulse don't smear lines.
+      const dx = (action.x ?? fromX) - fromX;
+      const dy = (action.y ?? fromY) - fromY;
+      const dist = Math.hypot(dx, dy);
+      if ((action.x !== undefined || action.y !== undefined) && dist > 1.5) {
+        // Fade-in during the move, fade-out after the end.
+        const since = t - start;
+        const dur = action.duration;
+        const tail = since - dur;
+        let alpha = 1;
+        if (since < dur) {
+          alpha = Math.min(1, since / Math.max(1, dur * 0.4));
+        } else if (tail < 1200) {
+          alpha = 1 - tail / 1200;
+        } else {
+          alpha = 0;
+        }
+        if (alpha > 0.05) {
+          trailList.push({
+            id: `${action.target}-${start}`,
+            target: action.target,
+            fromX,
+            fromY,
+            toX: action.x ?? fromX,
+            toY: action.y ?? fromY,
+            // Use the object's current accent so the line color matches
+            // what the audience just saw moving.
+            accent: cur.accent,
+            alpha,
+            // True while the move is still in flight — used to show the
+            // start/end markers brightly.
+            inFlight: since < dur,
+          });
+        }
+      }
     }
-    return states;
+    return { objStates: states, trails: trailList };
   }, [figure.objects, scene.actions, t]);
 
   return (
@@ -182,6 +229,100 @@ export function CinematicFigure({ figure }: { figure: Cinematic }) {
               </pattern>
             </defs>
             <rect width="100" height="100" fill="url(#cin-grid)" />
+          </svg>
+
+          {/* Trail layer — draws a curved dashed line from each move's
+              start point to its end point, plus a from-marker (●) and a
+              to-marker (◎). This is the single biggest improvement to
+              "where did the message come from / go to". The layer sits
+              behind objects (z-5) so the moving piece itself stays on
+              top of its own line. */}
+          <svg
+            aria-hidden
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+            className="absolute inset-0 z-[5] h-full w-full overflow-visible"
+          >
+            <defs>
+              <marker
+                id="cin-arrow"
+                viewBox="0 0 10 10"
+                refX="6"
+                refY="5"
+                markerWidth="4"
+                markerHeight="4"
+                orient="auto-start-reverse"
+              >
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+              </marker>
+            </defs>
+            {trails.map((tr) => {
+              const hue = HUE[tr.accent];
+              // Curved path — slight arch above the straight line so multiple
+              // routes can overlap without merging.
+              const dx = tr.toX - tr.fromX;
+              const dy = tr.toY - tr.fromY;
+              const len = Math.hypot(dx, dy);
+              const archHeight = Math.min(8, len * 0.18);
+              const midX = (tr.fromX + tr.toX) / 2;
+              const midY = (tr.fromY + tr.toY) / 2 - archHeight;
+              return (
+                <g key={tr.id} style={{ color: hue }}>
+                  <path
+                    d={`M ${tr.fromX} ${tr.fromY} Q ${midX} ${midY} ${tr.toX} ${tr.toY}`}
+                    fill="none"
+                    stroke={hue}
+                    strokeWidth={tr.inFlight ? 0.5 : 0.32}
+                    strokeOpacity={tr.alpha * (tr.inFlight ? 0.85 : 0.5)}
+                    strokeDasharray="1.4 1.6"
+                    strokeLinecap="round"
+                    markerEnd={tr.inFlight ? "url(#cin-arrow)" : undefined}
+                  />
+                  {/* From marker — solid dot at origin */}
+                  <circle
+                    cx={tr.fromX}
+                    cy={tr.fromY}
+                    r={tr.inFlight ? 1.4 : 0.9}
+                    fill={hue}
+                    opacity={tr.alpha * 0.85}
+                  />
+                  {/* To marker — ring at destination, brighter while in flight */}
+                  <circle
+                    cx={tr.toX}
+                    cy={tr.toY}
+                    r={tr.inFlight ? 2.0 : 1.4}
+                    fill="none"
+                    stroke={hue}
+                    strokeWidth="0.4"
+                    opacity={tr.alpha * (tr.inFlight ? 0.9 : 0.55)}
+                  />
+                  {tr.inFlight && (
+                    <circle
+                      cx={tr.toX}
+                      cy={tr.toY}
+                      r={2.6}
+                      fill="none"
+                      stroke={hue}
+                      strokeWidth="0.3"
+                      opacity={0.4}
+                    >
+                      <animate
+                        attributeName="r"
+                        values="1.8;3.4;1.8"
+                        dur="1.2s"
+                        repeatCount="indefinite"
+                      />
+                      <animate
+                        attributeName="opacity"
+                        values="0.5;0;0.5"
+                        dur="1.2s"
+                        repeatCount="indefinite"
+                      />
+                    </circle>
+                  )}
+                </g>
+              );
+            })}
           </svg>
 
           {/* Objects */}
@@ -287,6 +428,18 @@ export function CinematicFigure({ figure }: { figure: Cinematic }) {
 }
 
 // ── Object renderer ─────────────────────────────────────────────────────
+
+type Trail = {
+  id: string;
+  target: string;
+  fromX: number;
+  fromY: number;
+  toX: number;
+  toY: number;
+  accent: Accent;
+  alpha: number;
+  inFlight: boolean;
+};
 
 type ResolvedObj = {
   x: number;

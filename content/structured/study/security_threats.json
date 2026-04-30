@@ -219,7 +219,9 @@
           { "id": "p3", "kind": "chip", "label": "req", "x": 36, "y": 78, "accent": "danger", "width": 5, "height": 4, "opacity": 0 },
           { "id": "p4", "kind": "chip", "label": "req", "x": 36, "y": 36, "accent": "danger", "width": 5, "height": 4, "opacity": 0 },
           { "id": "p5", "kind": "chip", "label": "req", "x": 36, "y": 64, "accent": "danger", "width": 5, "height": 4, "opacity": 0 },
-          { "id": "err503", "kind": "chip", "label": "503", "x": 86, "y": 35, "accent": "danger", "width": 6, "height": 5, "opacity": 0 }
+          { "id": "err503", "kind": "chip", "label": "503", "x": 86, "y": 35, "accent": "danger", "width": 6, "height": 5, "opacity": 0 },
+          { "id": "labelAttack", "kind": "chip", "label": "🌊 攻撃の流れ", "x": 36, "y": 8, "accent": "danger", "width": 18, "height": 4, "opacity": 0 },
+          { "id": "labelDefense", "kind": "chip", "label": "🛡 WAF が手前で防御", "x": 56, "y": 8, "accent": "success", "width": 22, "height": 4, "opacity": 0 }
         ],
         "scenes": [
           {
@@ -235,15 +237,16 @@
           },
           {
             "title": "02 · 第 1 波のリクエスト発射",
-            "narration": "3 台のボットが同時にリクエストパケットを送り出します。",
-            "duration": 1800,
+            "narration": "3 台のボットが同時にリクエストパケットを発射します。各経路が trail で見えます。",
+            "duration": 2000,
             "actions": [
-              { "target": "p1", "at": 0, "duration": 200, "opacity": 1, "scale": 1.3 },
-              { "target": "p2", "at": 100, "duration": 200, "opacity": 1, "scale": 1.3 },
-              { "target": "p3", "at": 200, "duration": 200, "opacity": 1, "scale": 1.3 },
-              { "target": "p1", "at": 400, "duration": 1200, "x": 82, "y": 50, "scale": 1 },
-              { "target": "p2", "at": 500, "duration": 1200, "x": 82, "y": 50, "scale": 1 },
-              { "target": "p3", "at": 600, "duration": 1200, "x": 82, "y": 50, "scale": 1 }
+              { "target": "labelAttack", "at": 0, "duration": 250, "opacity": 1, "effect": "flash" },
+              { "target": "p1", "at": 100, "duration": 200, "opacity": 1, "scale": 1.3 },
+              { "target": "p2", "at": 200, "duration": 200, "opacity": 1, "scale": 1.3 },
+              { "target": "p3", "at": 300, "duration": 200, "opacity": 1, "scale": 1.3 },
+              { "target": "p1", "at": 500, "duration": 1200, "x": 82, "y": 50, "scale": 1 },
+              { "target": "p2", "at": 600, "duration": 1200, "x": 82, "y": 50, "scale": 1 },
+              { "target": "p3", "at": 700, "duration": 1200, "x": 82, "y": 50, "scale": 1 }
             ]
           },
           {
@@ -286,8 +289,10 @@
           {
             "title": "06 · WAF を前段に配置",
             "narration": "サーバの前に WAF / CDN を置けば、攻撃を手前で吸収できます。",
-            "duration": 1800,
+            "duration": 2000,
             "actions": [
+              { "target": "labelAttack", "at": 0, "duration": 300, "opacity": 0 },
+              { "target": "labelDefense", "at": 200, "duration": 300, "opacity": 1, "effect": "flash" },
               { "target": "err503", "at": 0, "duration": 400, "opacity": 0 },
               { "target": "server", "at": 100, "duration": 400, "expression": "neutral" },
               { "target": "waf", "at": 300, "duration": 300, "opacity": 1, "scale": 1.4, "effect": "ripple" },
@@ -297,8 +302,8 @@
           },
           {
             "title": "07 · WAF が攻撃を吸収",
-            "narration": "ボットからの攻撃が WAF で消え、サーバは平常運転に戻ります。",
-            "duration": 2400,
+            "narration": "ボットからの攻撃が WAF で消え、サーバは平常運転に戻ります。経路が WAF (中央) で途切れているのが分かります。",
+            "duration": 2600,
             "actions": [
               { "target": "p1", "at": 0, "duration": 200, "x": 36, "y": 22, "opacity": 1, "scale": 1.2 },
               { "target": "p2", "at": 100, "duration": 200, "x": 36, "y": 50, "opacity": 1, "scale": 1.2 },
@@ -307,7 +312,8 @@
               { "target": "p2", "at": 500, "duration": 1000, "x": 56, "y": 50, "scale": 0.4, "opacity": 0 },
               { "target": "p3", "at": 600, "duration": 1000, "x": 56, "y": 50, "scale": 0.4, "opacity": 0 },
               { "target": "waf", "at": 1500, "duration": 400, "effect": "pulse" },
-              { "target": "server", "at": 1700, "duration": 500, "expression": "happy", "effect": "pulse" }
+              { "target": "server", "at": 1700, "duration": 500, "expression": "happy", "effect": "pulse" },
+              { "target": "labelDefense", "at": 2200, "duration": 400, "opacity": 0 }
             ]
           }
         ]

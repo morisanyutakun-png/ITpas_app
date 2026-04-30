@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Pause, Play, RotateCcw, SkipForward, Mail } from "lucide-react";
+import { Pause, Play, RotateCcw, SkipForward, Mail, Circle, User, ShieldCheck } from "lucide-react";
 import { Key, Lock, Server, Skull, Smartphone, Hash, Shield, FileText } from "lucide-react";
 import type { StudyFigure } from "@/lib/contentSchema";
 import { Character } from "./Characters";
@@ -190,23 +190,33 @@ export function CinematicFigure({ figure }: { figure: Cinematic }) {
     return { objStates: states, trails: trailList };
   }, [figure.objects, scene.actions, t]);
 
+  // Title-card lifecycle: the title overlay fades in for the first 800ms
+  // of each scene, holds, then fades out once the scene's first real
+  // action starts (at 1500ms). This gives the audience a moment to read
+  // the section header before the animation begins.
+  const titleOpacity =
+    t < 250 ? t / 250 : t < 1500 ? 1 : Math.max(0, 1 - (t - 1500) / 500);
+
   return (
     <figure className="rounded-2xl border border-border bg-card p-5 shadow-surface sm:p-6">
-      {/* Title bar */}
-      <div className="mb-3 flex items-center gap-2">
+      {/* Header — chapter style with current scene + total */}
+      <div className="mb-3 flex items-center justify-between gap-2">
         <span className="inline-flex items-center gap-1.5 rounded-full bg-[#AF52DE]/12 px-2.5 py-1 text-[11px] font-semibold text-[#AF52DE]">
           <span
             aria-hidden
             className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-[#AF52DE]"
           />
-          シーン解説
+          動画解説
         </span>
-        <div className="text-[12px] text-muted-foreground">
-          シーン{" "}
-          <span className="num font-semibold text-foreground">{sceneIdx + 1}</span>
-          {" / "}
-          <span className="num">{figure.scenes.length}</span>
-          <span className="ml-2 text-muted-foreground/70">{scene.title}</span>
+        <div className="text-[11.5px] uppercase tracking-[0.14em] text-muted-foreground">
+          Scene{" "}
+          <span className="num font-semibold text-foreground">
+            {String(sceneIdx + 1).padStart(2, "0")}
+          </span>
+          <span className="opacity-50">
+            {" / "}
+            {String(figure.scenes.length).padStart(2, "0")}
+          </span>
         </div>
       </div>
 
@@ -215,6 +225,35 @@ export function CinematicFigure({ figure }: { figure: Cinematic }) {
         className="relative w-full overflow-hidden rounded-xl bg-gradient-to-br from-[#0A84FF]/[0.04] via-muted/30 to-[#AF52DE]/[0.05] ring-1 ring-inset ring-border"
         style={{ paddingTop: ASPECT[figure.aspect] }}
       >
+        {/* Top progress bar — current scene's elapsed % */}
+        <div
+          aria-hidden
+          className="absolute inset-x-0 top-0 z-30 h-[3px] bg-foreground/[0.06]"
+        >
+          <div
+            className="h-full bg-gradient-to-r from-[#0A84FF] to-[#AF52DE] transition-[width] duration-150 ease-linear"
+            style={{
+              width: `${Math.min(100, (t / scene.duration) * 100)}%`,
+            }}
+          />
+        </div>
+
+        {/* Title card overlay — fades in/out at the start of each scene */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center"
+          style={{ opacity: titleOpacity }}
+        >
+          <div className="rounded-2xl bg-foreground/[0.94] px-7 py-5 text-center text-background shadow-hero backdrop-blur">
+            <div className="text-[10.5px] font-semibold uppercase tracking-[0.22em] opacity-70">
+              Scene {String(sceneIdx + 1).padStart(2, "0")}
+            </div>
+            <div className="mt-1.5 text-[18px] font-semibold tracking-tight sm:text-[22px]">
+              {scene.title}
+            </div>
+          </div>
+        </div>
+
         <div className="absolute inset-0">
           {/* Background grid */}
           <svg
@@ -333,6 +372,25 @@ export function CinematicFigure({ figure }: { figure: Cinematic }) {
           })}
         </div>
       </div>
+
+      {/* Persistent legend — visible across all scenes so the audience
+          never has to remember which color/shape means what. */}
+      {figure.legend.length > 0 && (
+        <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 rounded-xl border border-border bg-muted/40 px-4 py-2.5">
+          <span className="text-[10.5px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+            登場するもの
+          </span>
+          {figure.legend.map((l, i) => (
+            <span
+              key={i}
+              className="inline-flex items-center gap-1.5 text-[12px] text-foreground"
+            >
+              <LegendGlyph glyph={l.glyph} hue={HUE[l.accent]} />
+              <span>{l.label}</span>
+            </span>
+          ))}
+        </div>
+      )}
 
       {/* Narration block — sits below the canvas so it never overlaps
           the characters or props. Title + narration as a black "subtitle
@@ -623,6 +681,39 @@ function IconForLabel({ label }: { label: string }) {
 function lerp(a: number, b: number, t: number) {
   return a + (b - a) * t;
 }
+
+// Smooth ease curve (cubic in/out with slight overshoot avoided). Replaces
+// the previous quadratic curve — feels softer when objects move long
+// distances and stops without any visible snap.
 function easeInOut(t: number) {
-  return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+}
+
+// ── Legend glyphs ─────────────────────────────────────────────────────
+
+function LegendGlyph({
+  glyph,
+  hue,
+}: {
+  glyph: "dot" | "key" | "lock" | "envelope" | "person" | "shield";
+  hue: string;
+}) {
+  const common = "h-3.5 w-3.5";
+  if (glyph === "key")
+    return <Key className={common} strokeWidth={2.4} style={{ color: hue }} />;
+  if (glyph === "lock")
+    return <Lock className={common} strokeWidth={2.4} style={{ color: hue }} />;
+  if (glyph === "envelope")
+    return <Mail className={common} strokeWidth={2.4} style={{ color: hue }} />;
+  if (glyph === "person")
+    return <User className={common} strokeWidth={2.4} style={{ color: hue }} />;
+  if (glyph === "shield")
+    return <ShieldCheck className={common} strokeWidth={2.4} style={{ color: hue }} />;
+  return (
+    <Circle
+      className={common}
+      style={{ color: hue, fill: hue }}
+      strokeWidth={0}
+    />
+  );
 }

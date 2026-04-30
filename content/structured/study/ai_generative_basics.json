@@ -6,12 +6,43 @@
   "figure": {
     "kind": "tree",
     "caption": "生成 AI 関連の頻出 4 語。",
-    "root": { "title": "生成 AI の基本概念", "body": "これだけは押さえる" },
+    "root": {
+      "title": "生成 AI の基本概念",
+      "body": "これだけは押さえる"
+    },
     "children": [
-      { "title": "プロンプト", "accent": "primary", "items": ["AI への指示文", "結果の質を左右"] },
-      { "title": "ハルシネーション", "accent": "warm", "items": ["事実でない情報生成", "鵜呑みは危険"] },
-      { "title": "RAG", "accent": "cool", "items": ["外部知識を参照", "情報の鮮度向上"] },
-      { "title": "ファインチューニング", "accent": "neutral", "items": ["モデルを追加学習", "用途特化"] }
+      {
+        "title": "プロンプト",
+        "accent": "primary",
+        "items": [
+          "AI への指示文",
+          "結果の質を左右"
+        ]
+      },
+      {
+        "title": "ハルシネーション",
+        "accent": "warm",
+        "items": [
+          "事実でない情報生成",
+          "鵜呑みは危険"
+        ]
+      },
+      {
+        "title": "RAG",
+        "accent": "cool",
+        "items": [
+          "外部知識を参照",
+          "情報の鮮度向上"
+        ]
+      },
+      {
+        "title": "ファインチューニング",
+        "accent": "neutral",
+        "items": [
+          "モデルを追加学習",
+          "用途特化"
+        ]
+      }
     ]
   },
   "sections": [
@@ -22,7 +53,11 @@
         "**プロンプト (prompt)** は、生成 AI に与える **入力テキスト全体**。質問だけでなく、文脈・制約・出力形式の指定もすべてプロンプトに含まれます。",
         "プロンプトの工夫で結果の質が劇的に変わるため、近年は **プロンプトエンジニアリング** という分野も生まれています。"
       ],
-      "miniQuiz": { "question": "生成 AI に対する入力指示文を何という?", "answer": "プロンプト", "hint": "結果の質はプロンプト次第。" }
+      "miniQuiz": {
+        "question": "生成 AI に対する入力指示文を何という?",
+        "answer": "プロンプト",
+        "hint": "結果の質はプロンプト次第。"
+      }
     },
     {
       "heading": "ハルシネーション ── もっともらしい嘘",
@@ -49,54 +84,213 @@
         "kind": "cinematic",
         "aspect": "16:9",
         "caption": "アリスのプロンプトが LLM に流れ込み、推論を経て出力が返る 4 シーン。ハルシネーションが起こる瞬間も再現。",
+        "legend": [
+          {
+            "label": "アリス (利用者)",
+            "accent": "warm",
+            "glyph": "person"
+          },
+          {
+            "label": "プロンプト (入力)",
+            "accent": "warm",
+            "glyph": "envelope"
+          },
+          {
+            "label": "LLM 推論エンジン",
+            "accent": "accent",
+            "glyph": "shield"
+          },
+          {
+            "label": "応答 (出力)",
+            "accent": "primary",
+            "glyph": "dot"
+          },
+          {
+            "label": "ハルシネーション",
+            "accent": "danger",
+            "glyph": "dot"
+          }
+        ],
         "objects": [
-          { "id": "alice", "kind": "character", "character": "alice", "label": "アリス", "x": 12, "y": 50, "width": 12, "height": 30 },
-          { "id": "prompt", "kind": "chip", "label": "プロンプト", "x": 26, "y": 30, "accent": "warm", "width": 12, "height": 5, "opacity": 0 },
-          { "id": "llm", "kind": "box", "label": "LLM", "sublabel": "巨大言語モデル", "x": 56, "y": 50, "accent": "accent", "width": 18, "height": 16 },
-          { "id": "output", "kind": "chip", "label": "応答", "x": 84, "y": 50, "accent": "primary", "width": 12, "height": 5, "opacity": 0 },
-          { "id": "halluc", "kind": "chip", "label": "⚠ ハルシネーション", "x": 56, "y": 80, "accent": "danger", "width": 18, "height": 5, "opacity": 0 }
+          {
+            "id": "alice",
+            "kind": "character",
+            "character": "alice",
+            "label": "アリス",
+            "x": 12,
+            "y": 50,
+            "width": 12,
+            "height": 30
+          },
+          {
+            "id": "prompt",
+            "kind": "chip",
+            "label": "プロンプト",
+            "x": 26,
+            "y": 30,
+            "accent": "warm",
+            "width": 12,
+            "height": 5,
+            "opacity": 0
+          },
+          {
+            "id": "llm",
+            "kind": "box",
+            "label": "LLM",
+            "sublabel": "巨大言語モデル",
+            "x": 56,
+            "y": 50,
+            "accent": "accent",
+            "width": 18,
+            "height": 16
+          },
+          {
+            "id": "output",
+            "kind": "chip",
+            "label": "応答",
+            "x": 84,
+            "y": 50,
+            "accent": "primary",
+            "width": 12,
+            "height": 5,
+            "opacity": 0
+          },
+          {
+            "id": "halluc",
+            "kind": "chip",
+            "label": "⚠ ハルシネーション",
+            "x": 56,
+            "y": 80,
+            "accent": "danger",
+            "width": 18,
+            "height": 5,
+            "opacity": 0
+          }
         ],
         "scenes": [
           {
             "title": "01 · プロンプト入力",
             "narration": "アリスが質問を入力します。プロンプトの良し悪しが結果を左右します。",
-            "duration": 1800,
+            "duration": 4100,
             "actions": [
-              { "target": "prompt", "at": 100, "duration": 300, "opacity": 1, "scale": 1.2, "effect": "flash" },
-              { "target": "prompt", "at": 500, "duration": 800, "x": 50, "y": 50, "scale": 1 }
+              {
+                "target": "prompt",
+                "at": 1600,
+                "duration": 300,
+                "opacity": 1,
+                "scale": 1.2,
+                "effect": "flash"
+              },
+              {
+                "target": "prompt",
+                "at": 2000,
+                "duration": 800,
+                "x": 50,
+                "y": 50,
+                "scale": 1
+              }
             ]
           },
           {
             "title": "02 · LLM 内部で推論",
             "narration": "数百億のパラメータが動き、トークン単位で次の単語を予測していきます。",
-            "duration": 2400,
+            "duration": 4700,
             "actions": [
-              { "target": "prompt", "at": 0, "duration": 400, "opacity": 0 },
-              { "target": "llm", "at": 100, "duration": 400, "scale": 1.15, "effect": "pulse" },
-              { "target": "llm", "at": 700, "duration": 400, "effect": "pulse" },
-              { "target": "llm", "at": 1300, "duration": 400, "effect": "spin" },
-              { "target": "llm", "at": 1900, "duration": 400, "scale": 1 }
+              {
+                "target": "prompt",
+                "at": 1500,
+                "duration": 400,
+                "opacity": 0
+              },
+              {
+                "target": "llm",
+                "at": 1600,
+                "duration": 400,
+                "scale": 1.15,
+                "effect": "pulse"
+              },
+              {
+                "target": "llm",
+                "at": 2200,
+                "duration": 400,
+                "effect": "pulse"
+              },
+              {
+                "target": "llm",
+                "at": 2800,
+                "duration": 400,
+                "effect": "spin"
+              },
+              {
+                "target": "llm",
+                "at": 3400,
+                "duration": 400,
+                "scale": 1
+              }
             ]
           },
           {
             "title": "03 · 出力が生成される",
             "narration": "LLM が応答を生成。これがプロンプトに対する答えです。",
-            "duration": 2000,
+            "duration": 4300,
             "actions": [
-              { "target": "output", "at": 200, "duration": 400, "x": 70, "y": 50, "opacity": 1, "scale": 1.3 },
-              { "target": "output", "at": 800, "duration": 800, "x": 84, "y": 50, "scale": 1, "effect": "flash" },
-              { "target": "alice", "at": 1300, "duration": 400, "expression": "happy" }
+              {
+                "target": "output",
+                "at": 1700,
+                "duration": 400,
+                "x": 70,
+                "y": 50,
+                "opacity": 1,
+                "scale": 1.3
+              },
+              {
+                "target": "output",
+                "at": 2300,
+                "duration": 800,
+                "x": 84,
+                "y": 50,
+                "scale": 1,
+                "effect": "flash"
+              },
+              {
+                "target": "alice",
+                "at": 2800,
+                "duration": 400,
+                "expression": "happy"
+              }
             ]
           },
           {
             "title": "04 · ハルシネーション注意",
             "narration": "学習にない情報を聞かれると、AI は『もっともらしい嘘』を生成することも。必ずファクトチェックを。",
-            "duration": 2400,
+            "duration": 4700,
             "actions": [
-              { "target": "halluc", "at": 0, "duration": 400, "opacity": 1, "scale": 1.3, "effect": "flash" },
-              { "target": "halluc", "at": 600, "duration": 400, "scale": 1 },
-              { "target": "alice", "at": 800, "duration": 500, "expression": "worried" },
-              { "target": "llm", "at": 1200, "duration": 500, "effect": "shake" }
+              {
+                "target": "halluc",
+                "at": 1500,
+                "duration": 400,
+                "opacity": 1,
+                "scale": 1.3,
+                "effect": "flash"
+              },
+              {
+                "target": "halluc",
+                "at": 2100,
+                "duration": 400,
+                "scale": 1
+              },
+              {
+                "target": "alice",
+                "at": 2300,
+                "duration": 500,
+                "expression": "worried"
+              },
+              {
+                "target": "llm",
+                "at": 2700,
+                "duration": 500,
+                "effect": "shake"
+              }
             ]
           }
         ]
@@ -112,10 +306,22 @@
     }
   ],
   "takeaways": [
-    { "term": "プロンプト", "body": "AI への入力指示文。書き方で結果が変わる。" },
-    { "term": "ハルシネーション", "body": "事実でない情報をもっともらしく出す現象。" },
-    { "term": "RAG", "body": "外部知識を検索して生成。最新情報に強い。" },
-    { "term": "ファインチューニング", "body": "モデルを追加学習。特定用途に特化。" }
+    {
+      "term": "プロンプト",
+      "body": "AI への入力指示文。書き方で結果が変わる。"
+    },
+    {
+      "term": "ハルシネーション",
+      "body": "事実でない情報をもっともらしく出す現象。"
+    },
+    {
+      "term": "RAG",
+      "body": "外部知識を検索して生成。最新情報に強い。"
+    },
+    {
+      "term": "ファインチューニング",
+      "body": "モデルを追加学習。特定用途に特化。"
+    }
   ],
   "examples": [
     {

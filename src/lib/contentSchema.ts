@@ -532,13 +532,25 @@ const cinematicSceneZ = z.object({
   actions: z.array(cinematicActionZ).min(0).max(20),
 });
 
+// Persistent legend chip — shown in a bar below the canvas across every
+// scene so the audience always remembers what the colors / characters
+// stand for. Plays the same role as the bottom strip in a professional
+// explainer video.
+const cinematicLegendZ = z.object({
+  label: z.string().min(1),
+  accent: cinematicAccentZ.default("neutral"),
+  // Optional small icon glyph: a key, lock, person, or plain dot.
+  glyph: z.enum(["dot", "key", "lock", "envelope", "person", "shield"]).default("dot"),
+});
+
 const cinematicFigureZ = z.object({
   kind: z.literal("cinematic"),
   caption: z.string().optional(),
-  // Aspect of the canvas. Default 16:9.
   aspect: z.enum(["16:9", "4:3", "21:9"]).default("16:9"),
-  objects: z.array(cinematicObjectZ).min(1).max(20),
-  scenes: z.array(cinematicSceneZ).min(1).max(10),
+  objects: z.array(cinematicObjectZ).min(1).max(24),
+  scenes: z.array(cinematicSceneZ).min(1).max(12),
+  // 0-6 legend chips shown across all scenes.
+  legend: z.array(cinematicLegendZ).max(6).default([]),
 });
 
 // Model diagram — picks one of a curated set of *fully drawn* SVG models

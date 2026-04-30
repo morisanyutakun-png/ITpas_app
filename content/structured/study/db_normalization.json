@@ -129,54 +129,214 @@
         "kind": "cinematic",
         "aspect": "16:9",
         "caption": "肥大化テーブルが正規化されていく 4 シーン。重複データが別表に切り出され、各表が小さくなる流れが見えます。",
+        "legend": [
+          {
+            "label": "正規化前 (混在表)",
+            "accent": "danger",
+            "glyph": "dot"
+          },
+          {
+            "label": "注文表",
+            "accent": "primary",
+            "glyph": "dot"
+          },
+          {
+            "label": "顧客マスタ",
+            "accent": "warm",
+            "glyph": "dot"
+          },
+          {
+            "label": "商品マスタ",
+            "accent": "success",
+            "glyph": "dot"
+          }
+        ],
         "objects": [
-          { "id": "fat", "kind": "box", "label": "注文+顧客+商品 (混在)", "sublabel": "正規化前", "x": 50, "y": 50, "accent": "danger", "width": 40, "height": 18 },
-          { "id": "tOrder", "kind": "box", "label": "注文表", "sublabel": "ID + 数量", "x": 18, "y": 50, "accent": "primary", "width": 18, "height": 12, "opacity": 0 },
-          { "id": "tCustomer", "kind": "box", "label": "顧客マスタ", "sublabel": "顧客 ID + 名前", "x": 50, "y": 50, "accent": "warm", "width": 18, "height": 12, "opacity": 0 },
-          { "id": "tProduct", "kind": "box", "label": "商品マスタ", "sublabel": "商品 ID + 商品名", "x": 82, "y": 50, "accent": "success", "width": 18, "height": 12, "opacity": 0 },
-          { "id": "labelDup", "kind": "chip", "label": "❌ 重複だらけ", "x": 50, "y": 14, "accent": "danger", "width": 18, "height": 5, "opacity": 0 },
-          { "id": "labelOk", "kind": "chip", "label": "✅ 重複なし", "x": 50, "y": 14, "accent": "success", "width": 18, "height": 5, "opacity": 0 }
+          {
+            "id": "fat",
+            "kind": "box",
+            "label": "注文+顧客+商品 (混在)",
+            "sublabel": "正規化前",
+            "x": 50,
+            "y": 50,
+            "accent": "danger",
+            "width": 40,
+            "height": 18
+          },
+          {
+            "id": "tOrder",
+            "kind": "box",
+            "label": "注文表",
+            "sublabel": "ID + 数量",
+            "x": 18,
+            "y": 50,
+            "accent": "primary",
+            "width": 18,
+            "height": 12,
+            "opacity": 0
+          },
+          {
+            "id": "tCustomer",
+            "kind": "box",
+            "label": "顧客マスタ",
+            "sublabel": "顧客 ID + 名前",
+            "x": 50,
+            "y": 50,
+            "accent": "warm",
+            "width": 18,
+            "height": 12,
+            "opacity": 0
+          },
+          {
+            "id": "tProduct",
+            "kind": "box",
+            "label": "商品マスタ",
+            "sublabel": "商品 ID + 商品名",
+            "x": 82,
+            "y": 50,
+            "accent": "success",
+            "width": 18,
+            "height": 12,
+            "opacity": 0
+          },
+          {
+            "id": "labelDup",
+            "kind": "chip",
+            "label": "❌ 重複だらけ",
+            "x": 50,
+            "y": 14,
+            "accent": "danger",
+            "width": 18,
+            "height": 5,
+            "opacity": 0
+          },
+          {
+            "id": "labelOk",
+            "kind": "chip",
+            "label": "✅ 重複なし",
+            "x": 50,
+            "y": 14,
+            "accent": "success",
+            "width": 18,
+            "height": 5,
+            "opacity": 0
+          }
         ],
         "scenes": [
           {
             "title": "01 · 1 枚の肥大化テーブル",
             "narration": "注文ごとに顧客名・商品名が繰り返し記録され、データが重複しています。",
-            "duration": 2200,
+            "duration": 4500,
             "actions": [
-              { "target": "labelDup", "at": 0, "duration": 300, "opacity": 1, "effect": "flash" },
-              { "target": "fat", "at": 200, "duration": 400, "scale": 1.1, "effect": "shake" },
-              { "target": "fat", "at": 700, "duration": 400, "scale": 1 }
+              {
+                "target": "labelDup",
+                "at": 1500,
+                "duration": 300,
+                "opacity": 1,
+                "effect": "flash"
+              },
+              {
+                "target": "fat",
+                "at": 1700,
+                "duration": 400,
+                "scale": 1.1,
+                "effect": "shake"
+              },
+              {
+                "target": "fat",
+                "at": 2200,
+                "duration": 400,
+                "scale": 1
+              }
             ]
           },
           {
             "title": "02 · 顧客情報を別表に切り出す",
             "narration": "重複していた顧客名を別表 (顧客マスタ) に分離。注文表からは顧客 ID で参照します。",
-            "duration": 2200,
+            "duration": 4500,
             "actions": [
-              { "target": "fat", "at": 0, "duration": 600, "scale": 0.7, "opacity": 0.4 },
-              { "target": "tCustomer", "at": 400, "duration": 600, "opacity": 1, "scale": 1.2, "effect": "ripple" },
-              { "target": "tCustomer", "at": 1100, "duration": 400, "scale": 1 }
+              {
+                "target": "fat",
+                "at": 1500,
+                "duration": 600,
+                "scale": 0.7,
+                "opacity": 0.4
+              },
+              {
+                "target": "tCustomer",
+                "at": 1900,
+                "duration": 600,
+                "opacity": 1,
+                "scale": 1.2,
+                "effect": "ripple"
+              },
+              {
+                "target": "tCustomer",
+                "at": 2600,
+                "duration": 400,
+                "scale": 1
+              }
             ]
           },
           {
             "title": "03 · 商品情報も別表に切り出す",
             "narration": "商品名も商品マスタに分離。注文表は ID だけを持つようになります。",
-            "duration": 2200,
+            "duration": 4500,
             "actions": [
-              { "target": "tProduct", "at": 200, "duration": 600, "opacity": 1, "scale": 1.2, "effect": "ripple" },
-              { "target": "tProduct", "at": 900, "duration": 400, "scale": 1 },
-              { "target": "fat", "at": 1100, "duration": 600, "opacity": 0 }
+              {
+                "target": "tProduct",
+                "at": 1700,
+                "duration": 600,
+                "opacity": 1,
+                "scale": 1.2,
+                "effect": "ripple"
+              },
+              {
+                "target": "tProduct",
+                "at": 2400,
+                "duration": 400,
+                "scale": 1
+              },
+              {
+                "target": "fat",
+                "at": 2600,
+                "duration": 600,
+                "opacity": 0
+              }
             ]
           },
           {
             "title": "04 · 注文表は ID だけのスリムな表に",
             "narration": "残った注文表は注文 ID と数量だけ。3 つの表が外部キーで連携するクリーンな状態に。",
-            "duration": 2400,
+            "duration": 4700,
             "actions": [
-              { "target": "tOrder", "at": 200, "duration": 600, "opacity": 1, "scale": 1.2, "effect": "ripple" },
-              { "target": "tOrder", "at": 900, "duration": 400, "scale": 1 },
-              { "target": "labelDup", "at": 800, "duration": 400, "opacity": 0 },
-              { "target": "labelOk", "at": 1200, "duration": 400, "opacity": 1, "effect": "flash" }
+              {
+                "target": "tOrder",
+                "at": 1700,
+                "duration": 600,
+                "opacity": 1,
+                "scale": 1.2,
+                "effect": "ripple"
+              },
+              {
+                "target": "tOrder",
+                "at": 2400,
+                "duration": 400,
+                "scale": 1
+              },
+              {
+                "target": "labelDup",
+                "at": 2300,
+                "duration": 400,
+                "opacity": 0
+              },
+              {
+                "target": "labelOk",
+                "at": 2700,
+                "duration": 400,
+                "opacity": 1,
+                "effect": "flash"
+              }
             ]
           }
         ]
@@ -200,22 +360,38 @@
           {
             "title": "A: 原子性",
             "accent": "primary",
-            "items": ["Atomicity", "全部成功 or 全部失敗", "途中で止まらない"]
+            "items": [
+              "Atomicity",
+              "全部成功 or 全部失敗",
+              "途中で止まらない"
+            ]
           },
           {
             "title": "C: 一貫性",
             "accent": "warm",
-            "items": ["Consistency", "整合 → 整合", "制約を守る"]
+            "items": [
+              "Consistency",
+              "整合 → 整合",
+              "制約を守る"
+            ]
           },
           {
             "title": "I: 独立性",
             "accent": "cool",
-            "items": ["Isolation", "並行実行が干渉しない", "ロックなどで保証"]
+            "items": [
+              "Isolation",
+              "並行実行が干渉しない",
+              "ロックなどで保証"
+            ]
           },
           {
             "title": "D: 永続性",
             "accent": "neutral",
-            "items": ["Durability", "コミット後は消えない", "ログで保証"]
+            "items": [
+              "Durability",
+              "コミット後は消えない",
+              "ログで保証"
+            ]
           }
         ]
       },
@@ -227,11 +403,26 @@
     }
   ],
   "takeaways": [
-    { "term": "正規化の目的", "body": "重複と不整合の原因を取り除く。" },
-    { "term": "1NF", "body": "1 セル 1 値。繰り返し列を排除。" },
-    { "term": "2NF", "body": "複合主キーの一部に依存する属性を別表に。" },
-    { "term": "3NF", "body": "主キー以外に依存する属性を別表に。" },
-    { "term": "ACID", "body": "原子性・一貫性・独立性・永続性。トランザクションの 4 大性質。" }
+    {
+      "term": "正規化の目的",
+      "body": "重複と不整合の原因を取り除く。"
+    },
+    {
+      "term": "1NF",
+      "body": "1 セル 1 値。繰り返し列を排除。"
+    },
+    {
+      "term": "2NF",
+      "body": "複合主キーの一部に依存する属性を別表に。"
+    },
+    {
+      "term": "3NF",
+      "body": "主キー以外に依存する属性を別表に。"
+    },
+    {
+      "term": "ACID",
+      "body": "原子性・一貫性・独立性・永続性。トランザクションの 4 大性質。"
+    }
   ],
   "examples": [
     {

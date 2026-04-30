@@ -7,12 +7,43 @@
   "figure": {
     "kind": "tree",
     "caption": "マルウェアは『増殖の方法』で 4 種類に分類できる。",
-    "root": { "title": "マルウェア", "body": "悪意のあるソフトウェアの総称" },
+    "root": {
+      "title": "マルウェア",
+      "body": "悪意のあるソフトウェアの総称"
+    },
     "children": [
-      { "title": "ウイルス", "accent": "warm", "items": ["他のファイルに寄生", "実行で増殖"] },
-      { "title": "ワーム", "accent": "primary", "items": ["単独で動く", "ネットワーク経由で自己増殖"] },
-      { "title": "トロイの木馬", "accent": "accent", "items": ["善意のソフトのふり", "感染後に悪意動作"] },
-      { "title": "ランサムウェア", "accent": "danger", "items": ["ファイルを暗号化", "身代金を要求"] }
+      {
+        "title": "ウイルス",
+        "accent": "warm",
+        "items": [
+          "他のファイルに寄生",
+          "実行で増殖"
+        ]
+      },
+      {
+        "title": "ワーム",
+        "accent": "primary",
+        "items": [
+          "単独で動く",
+          "ネットワーク経由で自己増殖"
+        ]
+      },
+      {
+        "title": "トロイの木馬",
+        "accent": "accent",
+        "items": [
+          "善意のソフトのふり",
+          "感染後に悪意動作"
+        ]
+      },
+      {
+        "title": "ランサムウェア",
+        "accent": "danger",
+        "items": [
+          "ファイルを暗号化",
+          "身代金を要求"
+        ]
+      }
     ]
   },
   "sections": [
@@ -27,46 +58,92 @@
         "kind": "matrix",
         "caption": "4 種を『動く方法・増殖・気づきやすさ・主に狙う CIA』で並べて比較。",
         "columns": [
-          { "title": "ウイルス", "accent": "warm" },
-          { "title": "ワーム", "accent": "primary" },
-          { "title": "トロイ", "accent": "accent" },
-          { "title": "ランサム", "accent": "danger" }
+          {
+            "title": "ウイルス",
+            "accent": "warm"
+          },
+          {
+            "title": "ワーム",
+            "accent": "primary"
+          },
+          {
+            "title": "トロイ",
+            "accent": "accent"
+          },
+          {
+            "title": "ランサム",
+            "accent": "danger"
+          }
         ],
         "rows": [
           {
             "label": "実行されるには",
             "cells": [
-              { "text": "宿主ファイルが実行される" },
-              { "text": "単独で動ける" },
-              { "text": "利用者が起動する" },
-              { "text": "侵入後に発動" }
+              {
+                "text": "宿主ファイルが実行される"
+              },
+              {
+                "text": "単独で動ける"
+              },
+              {
+                "text": "利用者が起動する"
+              },
+              {
+                "text": "侵入後に発動"
+              }
             ]
           },
           {
             "label": "増殖の方法",
             "cells": [
-              { "text": "他のファイルに寄生" },
-              { "text": "ネットワーク自己増殖", "tone": "negative" },
-              { "text": "増殖しない (基本)" },
-              { "text": "増殖しない (基本)" }
+              {
+                "text": "他のファイルに寄生"
+              },
+              {
+                "text": "ネットワーク自己増殖",
+                "tone": "negative"
+              },
+              {
+                "text": "増殖しない (基本)"
+              },
+              {
+                "text": "増殖しない (基本)"
+              }
             ]
           },
           {
             "label": "気づきやすさ",
             "cells": [
-              { "text": "中" },
-              { "text": "高 (急激に拡散)" },
-              { "text": "低 (善意ソフトのふり)", "tone": "negative" },
-              { "text": "高 (画面表示)" }
+              {
+                "text": "中"
+              },
+              {
+                "text": "高 (急激に拡散)"
+              },
+              {
+                "text": "低 (善意ソフトのふり)",
+                "tone": "negative"
+              },
+              {
+                "text": "高 (画面表示)"
+              }
             ]
           },
           {
             "label": "主に狙う CIA",
             "cells": [
-              { "text": "完全性" },
-              { "text": "可用性" },
-              { "text": "機密性" },
-              { "text": "可用性 + 機密性 (二重恐喝)" }
+              {
+                "text": "完全性"
+              },
+              {
+                "text": "可用性"
+              },
+              {
+                "text": "機密性"
+              },
+              {
+                "text": "可用性 + 機密性 (二重恐喝)"
+              }
             ]
           }
         ]
@@ -85,88 +162,83 @@
         "対策の代表例も合わせて覚えましょう ── ==SQLi はプレースホルダ==、==XSS はエスケープ==、==CSRF はトークン==。"
       ],
       "figure": {
-        "kind": "animated-process",
-        "caption": "SQL インジェクションが成立するまでの流れ。攻撃者の入力が SQL 文に直接埋め込まれてしまうのが原因です。",
-        "stepDurationMs": 2400,
-        "actors": [
-          { "id": "attacker", "label": "ハッカー", "sublabel": "攻撃者", "x": 10, "y": 50, "accent": "danger", "shape": "device" },
-          { "id": "app", "label": "Web アプリ", "sublabel": "未対策", "x": 50, "y": 50, "accent": "warm", "shape": "box" },
-          { "id": "db", "label": "DB サーバ", "x": 90, "y": 50, "accent": "primary", "shape": "box" }
-        ],
-        "steps": [
-          {
-            "title": "ステップ 1: 悪意のある入力",
-            "narration": "攻撃者が ' OR '1'='1 のような SQL 断片を含む文字列を入力します。",
-            "from": "attacker",
-            "to": "app",
-            "payload": "' OR 1=1 --",
-            "packetAccent": "danger"
-          },
-          {
-            "title": "ステップ 2: 文字列連結で SQL を組み立て",
-            "narration": "アプリが入力をそのまま SQL 文に連結。「常に真」となる SQL が完成してしまいます。",
-            "from": "app",
-            "to": "db",
-            "payload": "壊れた SQL",
-            "packetAccent": "danger"
-          },
-          {
-            "title": "ステップ 3: 全件返却",
-            "narration": "DB は文法上正しい SQL として実行。条件が常に真なので全行返してしまいます。",
-            "from": "db",
-            "to": "app",
-            "payload": "全データ",
-            "packetAccent": "danger"
-          },
-          {
-            "title": "ステップ 4: 攻撃者にデータ流出",
-            "narration": "アプリは結果を画面に表示し、機密情報が攻撃者に渡ります。プレースホルダを使えばこれを防げます。",
-            "from": "app",
-            "to": "attacker",
-            "payload": "漏洩データ",
-            "packetAccent": "danger"
-          }
-        ]
-      },
-      "figure": {
         "kind": "matrix",
         "caption": "Web 3 大攻撃 × 入口・被害・対策。出題は『どの対策がどの攻撃を防ぐか』が頻出。",
         "columns": [
-          { "title": "SQL インジェクション", "accent": "danger" },
-          { "title": "XSS", "accent": "warm" },
-          { "title": "CSRF", "accent": "accent" }
+          {
+            "title": "SQL インジェクション",
+            "accent": "danger"
+          },
+          {
+            "title": "XSS",
+            "accent": "warm"
+          },
+          {
+            "title": "CSRF",
+            "accent": "accent"
+          }
         ],
         "rows": [
           {
             "label": "入口",
             "cells": [
-              { "text": "入力欄から SQL 文を注入" },
-              { "text": "入力欄に <script> を注入" },
-              { "text": "別サイトから偽リクエスト" }
+              {
+                "text": "入力欄から SQL 文を注入"
+              },
+              {
+                "text": "入力欄に <script> を注入"
+              },
+              {
+                "text": "別サイトから偽リクエスト"
+              }
             ]
           },
           {
             "label": "実行される場所",
             "cells": [
-              { "text": "DB サーバ" },
-              { "text": "他ユーザのブラウザ" },
-              { "text": "対象サイトのサーバ" }
+              {
+                "text": "DB サーバ"
+              },
+              {
+                "text": "他ユーザのブラウザ"
+              },
+              {
+                "text": "対象サイトのサーバ"
+              }
             ]
           },
           {
             "label": "被害",
             "cells": [
-              { "text": "DB の盗難・改ざん", "tone": "negative" },
-              { "text": "Cookie 盗難・なりすまし", "tone": "negative" },
-              { "text": "意図しない操作 (送金等)", "tone": "negative" }
+              {
+                "text": "DB の盗難・改ざん",
+                "tone": "negative"
+              },
+              {
+                "text": "Cookie 盗難・なりすまし",
+                "tone": "negative"
+              },
+              {
+                "text": "意図しない操作 (送金等)",
+                "tone": "negative"
+              }
             ]
           },
           {
             "label": "代表的対策",
             "cells": [
-              { "text": "プレースホルダ / バインド変数", "tone": "positive" },
-              { "text": "出力エスケープ / CSP", "tone": "positive" },
-              { "text": "CSRF トークン / SameSite", "tone": "positive" }
+              {
+                "text": "プレースホルダ / バインド変数",
+                "tone": "positive"
+              },
+              {
+                "text": "出力エスケープ / CSP",
+                "tone": "positive"
+              },
+              {
+                "text": "CSRF トークン / SameSite",
+                "tone": "positive"
+              }
             ]
           }
         ]
@@ -207,113 +279,518 @@
         "kind": "cinematic",
         "aspect": "16:9",
         "caption": "ハッカーが操る 3 台のボットがサーバを狙い、WAF が前段で守る ── 7 シーンで臨場感ある攻防を再現。",
+        "legend": [
+          { "label": "ハッカー", "accent": "danger", "glyph": "person" },
+          { "label": "ボット端末", "accent": "danger", "glyph": "dot" },
+          { "label": "リクエスト", "accent": "danger", "glyph": "dot" },
+          { "label": "WAF (防御)", "accent": "success", "glyph": "shield" },
+          { "label": "サーバ", "accent": "primary", "glyph": "person" }
+        ],
         "objects": [
-          { "id": "hacker", "kind": "character", "character": "hacker", "label": "ハッカー", "sublabel": "指令役", "x": 8, "y": 55, "width": 12, "height": 30 },
-          { "id": "bot1", "kind": "box", "label": "Bot #1", "x": 28, "y": 22, "accent": "danger", "width": 11, "height": 8 },
-          { "id": "bot2", "kind": "box", "label": "Bot #2", "x": 28, "y": 50, "accent": "danger", "width": 11, "height": 8 },
-          { "id": "bot3", "kind": "box", "label": "Bot #3", "x": 28, "y": 78, "accent": "danger", "width": 11, "height": 8 },
-          { "id": "waf", "kind": "icon", "label": "WAF", "sublabel": "前段で防御", "x": 56, "y": 50, "accent": "success", "width": 11, "height": 11, "opacity": 0 },
-          { "id": "server", "kind": "character", "character": "server", "label": "サーバ", "x": 86, "y": 55, "width": 14, "height": 30, "expression": "neutral" },
-          { "id": "p1", "kind": "chip", "label": "req", "x": 36, "y": 22, "accent": "danger", "width": 5, "height": 4, "opacity": 0 },
-          { "id": "p2", "kind": "chip", "label": "req", "x": 36, "y": 50, "accent": "danger", "width": 5, "height": 4, "opacity": 0 },
-          { "id": "p3", "kind": "chip", "label": "req", "x": 36, "y": 78, "accent": "danger", "width": 5, "height": 4, "opacity": 0 },
-          { "id": "p4", "kind": "chip", "label": "req", "x": 36, "y": 36, "accent": "danger", "width": 5, "height": 4, "opacity": 0 },
-          { "id": "p5", "kind": "chip", "label": "req", "x": 36, "y": 64, "accent": "danger", "width": 5, "height": 4, "opacity": 0 },
-          { "id": "err503", "kind": "chip", "label": "503", "x": 86, "y": 35, "accent": "danger", "width": 6, "height": 5, "opacity": 0 },
-          { "id": "labelAttack", "kind": "chip", "label": "🌊 攻撃の流れ", "x": 36, "y": 8, "accent": "danger", "width": 18, "height": 4, "opacity": 0 },
-          { "id": "labelDefense", "kind": "chip", "label": "🛡 WAF が手前で防御", "x": 56, "y": 8, "accent": "success", "width": 22, "height": 4, "opacity": 0 }
+          {
+            "id": "hacker",
+            "kind": "character",
+            "character": "hacker",
+            "label": "ハッカー",
+            "sublabel": "指令役",
+            "x": 8,
+            "y": 55,
+            "width": 12,
+            "height": 30
+          },
+          {
+            "id": "bot1",
+            "kind": "box",
+            "label": "Bot #1",
+            "x": 28,
+            "y": 22,
+            "accent": "danger",
+            "width": 11,
+            "height": 8
+          },
+          {
+            "id": "bot2",
+            "kind": "box",
+            "label": "Bot #2",
+            "x": 28,
+            "y": 50,
+            "accent": "danger",
+            "width": 11,
+            "height": 8
+          },
+          {
+            "id": "bot3",
+            "kind": "box",
+            "label": "Bot #3",
+            "x": 28,
+            "y": 78,
+            "accent": "danger",
+            "width": 11,
+            "height": 8
+          },
+          {
+            "id": "waf",
+            "kind": "icon",
+            "label": "WAF",
+            "sublabel": "前段で防御",
+            "x": 56,
+            "y": 50,
+            "accent": "success",
+            "width": 11,
+            "height": 11,
+            "opacity": 0
+          },
+          {
+            "id": "server",
+            "kind": "character",
+            "character": "server",
+            "label": "サーバ",
+            "x": 86,
+            "y": 55,
+            "width": 14,
+            "height": 30,
+            "expression": "neutral"
+          },
+          {
+            "id": "p1",
+            "kind": "chip",
+            "label": "req",
+            "x": 36,
+            "y": 22,
+            "accent": "danger",
+            "width": 5,
+            "height": 4,
+            "opacity": 0
+          },
+          {
+            "id": "p2",
+            "kind": "chip",
+            "label": "req",
+            "x": 36,
+            "y": 50,
+            "accent": "danger",
+            "width": 5,
+            "height": 4,
+            "opacity": 0
+          },
+          {
+            "id": "p3",
+            "kind": "chip",
+            "label": "req",
+            "x": 36,
+            "y": 78,
+            "accent": "danger",
+            "width": 5,
+            "height": 4,
+            "opacity": 0
+          },
+          {
+            "id": "p4",
+            "kind": "chip",
+            "label": "req",
+            "x": 36,
+            "y": 36,
+            "accent": "danger",
+            "width": 5,
+            "height": 4,
+            "opacity": 0
+          },
+          {
+            "id": "p5",
+            "kind": "chip",
+            "label": "req",
+            "x": 36,
+            "y": 64,
+            "accent": "danger",
+            "width": 5,
+            "height": 4,
+            "opacity": 0
+          },
+          {
+            "id": "err503",
+            "kind": "chip",
+            "label": "503",
+            "x": 86,
+            "y": 35,
+            "accent": "danger",
+            "width": 6,
+            "height": 5,
+            "opacity": 0
+          },
+          {
+            "id": "labelAttack",
+            "kind": "chip",
+            "label": "🌊 攻撃の流れ",
+            "x": 36,
+            "y": 8,
+            "accent": "danger",
+            "width": 18,
+            "height": 4,
+            "opacity": 0
+          },
+          {
+            "id": "labelDefense",
+            "kind": "chip",
+            "label": "🛡 WAF が手前で防御",
+            "x": 56,
+            "y": 8,
+            "accent": "success",
+            "width": 22,
+            "height": 4,
+            "opacity": 0
+          }
         ],
         "scenes": [
           {
             "title": "01 · ハッカーが指令を出す",
             "narration": "感染済みのボット 3 台 (実際は数千台) に攻撃命令が飛びます。",
-            "duration": 1800,
+            "duration": 4100,
             "actions": [
-              { "target": "hacker", "at": 0, "duration": 300, "effect": "pulse" },
-              { "target": "bot1", "at": 300, "duration": 250, "effect": "flash" },
-              { "target": "bot2", "at": 500, "duration": 250, "effect": "flash" },
-              { "target": "bot3", "at": 700, "duration": 250, "effect": "flash" }
+              {
+                "target": "hacker",
+                "at": 1500,
+                "duration": 300,
+                "effect": "pulse"
+              },
+              {
+                "target": "bot1",
+                "at": 1800,
+                "duration": 250,
+                "effect": "flash"
+              },
+              {
+                "target": "bot2",
+                "at": 2000,
+                "duration": 250,
+                "effect": "flash"
+              },
+              {
+                "target": "bot3",
+                "at": 2200,
+                "duration": 250,
+                "effect": "flash"
+              }
             ]
           },
           {
             "title": "02 · 第 1 波のリクエスト発射",
             "narration": "3 台のボットが同時にリクエストパケットを発射します。各経路が trail で見えます。",
-            "duration": 2000,
+            "duration": 4300,
             "actions": [
-              { "target": "labelAttack", "at": 0, "duration": 250, "opacity": 1, "effect": "flash" },
-              { "target": "p1", "at": 100, "duration": 200, "opacity": 1, "scale": 1.3 },
-              { "target": "p2", "at": 200, "duration": 200, "opacity": 1, "scale": 1.3 },
-              { "target": "p3", "at": 300, "duration": 200, "opacity": 1, "scale": 1.3 },
-              { "target": "p1", "at": 500, "duration": 1200, "x": 82, "y": 50, "scale": 1 },
-              { "target": "p2", "at": 600, "duration": 1200, "x": 82, "y": 50, "scale": 1 },
-              { "target": "p3", "at": 700, "duration": 1200, "x": 82, "y": 50, "scale": 1 }
+              {
+                "target": "labelAttack",
+                "at": 1500,
+                "duration": 250,
+                "opacity": 1,
+                "effect": "flash"
+              },
+              {
+                "target": "p1",
+                "at": 1600,
+                "duration": 200,
+                "opacity": 1,
+                "scale": 1.3
+              },
+              {
+                "target": "p2",
+                "at": 1700,
+                "duration": 200,
+                "opacity": 1,
+                "scale": 1.3
+              },
+              {
+                "target": "p3",
+                "at": 1800,
+                "duration": 200,
+                "opacity": 1,
+                "scale": 1.3
+              },
+              {
+                "target": "p1",
+                "at": 2000,
+                "duration": 1200,
+                "x": 82,
+                "y": 50,
+                "scale": 1
+              },
+              {
+                "target": "p2",
+                "at": 2100,
+                "duration": 1200,
+                "x": 82,
+                "y": 50,
+                "scale": 1
+              },
+              {
+                "target": "p3",
+                "at": 2200,
+                "duration": 1200,
+                "x": 82,
+                "y": 50,
+                "scale": 1
+              }
             ]
           },
           {
             "title": "03 · 第 2 波が連続して飛来",
             "narration": "立て続けに次のリクエスト群が飛来。サーバの負荷が一気に膨らみます。",
-            "duration": 1800,
+            "duration": 4100,
             "actions": [
-              { "target": "p1", "at": 0, "duration": 300, "opacity": 0 },
-              { "target": "p2", "at": 0, "duration": 300, "opacity": 0 },
-              { "target": "p3", "at": 0, "duration": 300, "opacity": 0 },
-              { "target": "p4", "at": 100, "duration": 200, "opacity": 1, "scale": 1.3 },
-              { "target": "p5", "at": 200, "duration": 200, "opacity": 1, "scale": 1.3 },
-              { "target": "p4", "at": 400, "duration": 1200, "x": 82, "y": 50, "scale": 1 },
-              { "target": "p5", "at": 500, "duration": 1200, "x": 82, "y": 50, "scale": 1 },
-              { "target": "server", "at": 1200, "duration": 400, "expression": "worried", "effect": "shake" }
+              {
+                "target": "p1",
+                "at": 1500,
+                "duration": 300,
+                "opacity": 0
+              },
+              {
+                "target": "p2",
+                "at": 1500,
+                "duration": 300,
+                "opacity": 0
+              },
+              {
+                "target": "p3",
+                "at": 1500,
+                "duration": 300,
+                "opacity": 0
+              },
+              {
+                "target": "p4",
+                "at": 1600,
+                "duration": 200,
+                "opacity": 1,
+                "scale": 1.3
+              },
+              {
+                "target": "p5",
+                "at": 1700,
+                "duration": 200,
+                "opacity": 1,
+                "scale": 1.3
+              },
+              {
+                "target": "p4",
+                "at": 1900,
+                "duration": 1200,
+                "x": 82,
+                "y": 50,
+                "scale": 1
+              },
+              {
+                "target": "p5",
+                "at": 2000,
+                "duration": 1200,
+                "x": 82,
+                "y": 50,
+                "scale": 1
+              },
+              {
+                "target": "server",
+                "at": 2700,
+                "duration": 400,
+                "expression": "worried",
+                "effect": "shake"
+              }
             ]
           },
           {
             "title": "04 · サーバが過負荷で揺らぐ",
             "narration": "サーバは処理能力を超え、リクエストキューが詰まり始めます。",
-            "duration": 1600,
+            "duration": 3900,
             "actions": [
-              { "target": "p4", "at": 0, "duration": 300, "opacity": 0 },
-              { "target": "p5", "at": 0, "duration": 300, "opacity": 0 },
-              { "target": "server", "at": 0, "duration": 400, "scale": 0.96, "effect": "shake" },
-              { "target": "server", "at": 500, "duration": 400, "scale": 1.02, "effect": "shake" },
-              { "target": "server", "at": 1000, "duration": 400, "scale": 1, "expression": "shocked" }
+              {
+                "target": "p4",
+                "at": 1500,
+                "duration": 300,
+                "opacity": 0
+              },
+              {
+                "target": "p5",
+                "at": 1500,
+                "duration": 300,
+                "opacity": 0
+              },
+              {
+                "target": "server",
+                "at": 1500,
+                "duration": 400,
+                "scale": 0.96,
+                "effect": "shake"
+              },
+              {
+                "target": "server",
+                "at": 2000,
+                "duration": 400,
+                "scale": 1.02,
+                "effect": "shake"
+              },
+              {
+                "target": "server",
+                "at": 2500,
+                "duration": 400,
+                "scale": 1,
+                "expression": "shocked"
+              }
             ]
           },
           {
             "title": "05 · 503 — サービス停止",
             "narration": "サーバは 503 を返し、正規ユーザもアクセスできなくなります。可用性 (A) の喪失です。",
-            "duration": 2000,
+            "duration": 4300,
             "actions": [
-              { "target": "err503", "at": 0, "duration": 300, "opacity": 1, "scale": 1.4, "effect": "flash" },
-              { "target": "err503", "at": 400, "duration": 400, "scale": 1 },
-              { "target": "server", "at": 200, "duration": 400, "expression": "shocked", "effect": "flash" }
+              {
+                "target": "err503",
+                "at": 1500,
+                "duration": 300,
+                "opacity": 1,
+                "scale": 1.4,
+                "effect": "flash"
+              },
+              {
+                "target": "err503",
+                "at": 1900,
+                "duration": 400,
+                "scale": 1
+              },
+              {
+                "target": "server",
+                "at": 1700,
+                "duration": 400,
+                "expression": "shocked",
+                "effect": "flash"
+              }
             ]
           },
           {
             "title": "06 · WAF を前段に配置",
             "narration": "サーバの前に WAF / CDN を置けば、攻撃を手前で吸収できます。",
-            "duration": 2000,
+            "duration": 4300,
             "actions": [
-              { "target": "labelAttack", "at": 0, "duration": 300, "opacity": 0 },
-              { "target": "labelDefense", "at": 200, "duration": 300, "opacity": 1, "effect": "flash" },
-              { "target": "err503", "at": 0, "duration": 400, "opacity": 0 },
-              { "target": "server", "at": 100, "duration": 400, "expression": "neutral" },
-              { "target": "waf", "at": 300, "duration": 300, "opacity": 1, "scale": 1.4, "effect": "ripple" },
-              { "target": "waf", "at": 700, "duration": 400, "scale": 1 },
-              { "target": "waf", "at": 1200, "duration": 400, "effect": "pulse" }
+              {
+                "target": "labelAttack",
+                "at": 1500,
+                "duration": 300,
+                "opacity": 0
+              },
+              {
+                "target": "labelDefense",
+                "at": 1700,
+                "duration": 300,
+                "opacity": 1,
+                "effect": "flash"
+              },
+              {
+                "target": "err503",
+                "at": 1500,
+                "duration": 400,
+                "opacity": 0
+              },
+              {
+                "target": "server",
+                "at": 1600,
+                "duration": 400,
+                "expression": "neutral"
+              },
+              {
+                "target": "waf",
+                "at": 1800,
+                "duration": 300,
+                "opacity": 1,
+                "scale": 1.4,
+                "effect": "ripple"
+              },
+              {
+                "target": "waf",
+                "at": 2200,
+                "duration": 400,
+                "scale": 1
+              },
+              {
+                "target": "waf",
+                "at": 2700,
+                "duration": 400,
+                "effect": "pulse"
+              }
             ]
           },
           {
             "title": "07 · WAF が攻撃を吸収",
             "narration": "ボットからの攻撃が WAF で消え、サーバは平常運転に戻ります。経路が WAF (中央) で途切れているのが分かります。",
-            "duration": 2600,
+            "duration": 4900,
             "actions": [
-              { "target": "p1", "at": 0, "duration": 200, "x": 36, "y": 22, "opacity": 1, "scale": 1.2 },
-              { "target": "p2", "at": 100, "duration": 200, "x": 36, "y": 50, "opacity": 1, "scale": 1.2 },
-              { "target": "p3", "at": 200, "duration": 200, "x": 36, "y": 78, "opacity": 1, "scale": 1.2 },
-              { "target": "p1", "at": 400, "duration": 1000, "x": 56, "y": 50, "scale": 0.4, "opacity": 0 },
-              { "target": "p2", "at": 500, "duration": 1000, "x": 56, "y": 50, "scale": 0.4, "opacity": 0 },
-              { "target": "p3", "at": 600, "duration": 1000, "x": 56, "y": 50, "scale": 0.4, "opacity": 0 },
-              { "target": "waf", "at": 1500, "duration": 400, "effect": "pulse" },
-              { "target": "server", "at": 1700, "duration": 500, "expression": "happy", "effect": "pulse" },
-              { "target": "labelDefense", "at": 2200, "duration": 400, "opacity": 0 }
+              {
+                "target": "p1",
+                "at": 1500,
+                "duration": 200,
+                "x": 36,
+                "y": 22,
+                "opacity": 1,
+                "scale": 1.2
+              },
+              {
+                "target": "p2",
+                "at": 1600,
+                "duration": 200,
+                "x": 36,
+                "y": 50,
+                "opacity": 1,
+                "scale": 1.2
+              },
+              {
+                "target": "p3",
+                "at": 1700,
+                "duration": 200,
+                "x": 36,
+                "y": 78,
+                "opacity": 1,
+                "scale": 1.2
+              },
+              {
+                "target": "p1",
+                "at": 1900,
+                "duration": 1000,
+                "x": 56,
+                "y": 50,
+                "scale": 0.4,
+                "opacity": 0
+              },
+              {
+                "target": "p2",
+                "at": 2000,
+                "duration": 1000,
+                "x": 56,
+                "y": 50,
+                "scale": 0.4,
+                "opacity": 0
+              },
+              {
+                "target": "p3",
+                "at": 2100,
+                "duration": 1000,
+                "x": 56,
+                "y": 50,
+                "scale": 0.4,
+                "opacity": 0
+              },
+              {
+                "target": "waf",
+                "at": 3000,
+                "duration": 400,
+                "effect": "pulse"
+              },
+              {
+                "target": "server",
+                "at": 3200,
+                "duration": 500,
+                "expression": "happy",
+                "effect": "pulse"
+              },
+              {
+                "target": "labelDefense",
+                "at": 3700,
+                "duration": 400,
+                "opacity": 0
+              }
             ]
           }
         ]
@@ -326,10 +803,22 @@
         "kind": "step-list",
         "caption": "サイバー攻撃に対する『多層防御』の典型ステップ。1 つ突破されても次が止める。",
         "steps": [
-          { "title": "予防 (Prevent)", "body": "ファイアウォール / WAF / 入口でブロック。最も望ましい段階。" },
-          { "title": "検知 (Detect)", "body": "IDS / SIEM / ログ監視。突破を即座に気づける仕組み。" },
-          { "title": "対応 (Respond)", "body": "インシデント対応チーム (CSIRT) が初動・拡大防止・復旧を担う。" },
-          { "title": "教訓 (Learn)", "body": "事後分析と再発防止策。多層防御は『学んで進化する』前提で機能する。" }
+          {
+            "title": "予防 (Prevent)",
+            "body": "ファイアウォール / WAF / 入口でブロック。最も望ましい段階。"
+          },
+          {
+            "title": "検知 (Detect)",
+            "body": "IDS / SIEM / ログ監視。突破を即座に気づける仕組み。"
+          },
+          {
+            "title": "対応 (Respond)",
+            "body": "インシデント対応チーム (CSIRT) が初動・拡大防止・復旧を担う。"
+          },
+          {
+            "title": "教訓 (Learn)",
+            "body": "事後分析と再発防止策。多層防御は『学んで進化する』前提で機能する。"
+          }
         ]
       },
       "paragraphs": [
@@ -338,12 +827,30 @@
     }
   ],
   "takeaways": [
-    { "term": "ウイルス", "body": "寄生型。他のファイルに付着して増殖。" },
-    { "term": "ワーム", "body": "単独型。自己増殖でネットワーク拡散。" },
-    { "term": "トロイの木馬", "body": "偽装型。善意ソフトを装って侵入。" },
-    { "term": "ランサムウェア", "body": "暗号化して身代金要求。可用性 + 機密性を狙う。" },
-    { "term": "Web 3 大攻撃", "body": "SQLi / XSS / CSRF。対策は『プレースホルダ・エスケープ・トークン』。" },
-    { "term": "ソーシャルエンジニアリング", "body": "人の心理を突く攻撃。技術不要。" }
+    {
+      "term": "ウイルス",
+      "body": "寄生型。他のファイルに付着して増殖。"
+    },
+    {
+      "term": "ワーム",
+      "body": "単独型。自己増殖でネットワーク拡散。"
+    },
+    {
+      "term": "トロイの木馬",
+      "body": "偽装型。善意ソフトを装って侵入。"
+    },
+    {
+      "term": "ランサムウェア",
+      "body": "暗号化して身代金要求。可用性 + 機密性を狙う。"
+    },
+    {
+      "term": "Web 3 大攻撃",
+      "body": "SQLi / XSS / CSRF。対策は『プレースホルダ・エスケープ・トークン』。"
+    },
+    {
+      "term": "ソーシャルエンジニアリング",
+      "body": "人の心理を突く攻撃。技術不要。"
+    }
   ],
   "examples": [
     {

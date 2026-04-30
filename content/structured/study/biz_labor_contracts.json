@@ -39,12 +39,19 @@
     {
       "heading": "派遣 ── 雇用主と指揮命令者が分かれる",
       "summary": "労働者は派遣元と雇用契約、派遣先で実際に働く。指揮命令は派遣先。",
-      "analogy": { "label": "たとえると", "body": "**人材会社からスタッフを借りる** イメージ。給料は人材会社 (派遣元) が払うが、現場で指示を出すのは借りた会社 (派遣先) です。" },
+      "analogy": {
+        "label": "たとえると",
+        "body": "**人材会社からスタッフを借りる** イメージ。給料は人材会社 (派遣元) が払うが、現場で指示を出すのは借りた会社 (派遣先) です。"
+      },
       "paragraphs": [
         "**派遣** は、**派遣元 (雇用主)** と **派遣先 (指揮命令者)** が異なる三角関係。労働者は派遣元と雇用契約を結びつつ、実際の業務は派遣先で行います。",
         "ポイントは **指揮命令権が派遣先にある** こと。これが請負との決定的な違いです。"
       ],
-      "miniQuiz": { "question": "派遣労働者に対して指揮命令を行うのは誰?", "answer": "派遣先", "hint": "雇用主は派遣元だが、現場の指揮は派遣先。" }
+      "miniQuiz": {
+        "question": "派遣労働者に対して指揮命令を行うのは誰?",
+        "answer": "派遣先",
+        "hint": "雇用主は派遣元だが、現場の指揮は派遣先。"
+      }
     },
     {
       "heading": "請負 ── 成果物に対する契約",
@@ -71,61 +78,287 @@
         "kind": "cinematic",
         "aspect": "16:9",
         "caption": "派遣 (上) と請負 (下) の経路の違い。指揮命令の矢印が誰から誰に向かうかが決定的に違います。",
+        "legend": [
+          {
+            "label": "派遣 (賃金)",
+            "accent": "primary",
+            "glyph": "dot"
+          },
+          {
+            "label": "派遣 (指示)",
+            "accent": "warm",
+            "glyph": "dot"
+          },
+          {
+            "label": "請負 (賃金+指示)",
+            "accent": "success",
+            "glyph": "dot"
+          },
+          {
+            "label": "請負 (成果物)",
+            "accent": "neutral",
+            "glyph": "envelope"
+          }
+        ],
         "objects": [
-          { "id": "派遣元", "kind": "box", "label": "派遣元", "sublabel": "雇用主", "x": 18, "y": 22, "accent": "primary", "width": 16, "height": 10 },
-          { "id": "派遣先", "kind": "box", "label": "派遣先", "sublabel": "指揮命令", "x": 60, "y": 22, "accent": "warm", "width": 16, "height": 10 },
-          { "id": "派遣スタッフ", "kind": "box", "label": "派遣スタッフ", "x": 88, "y": 22, "accent": "neutral", "width": 16, "height": 10 },
-          { "id": "請負会社", "kind": "box", "label": "請負会社", "sublabel": "雇用 + 指揮命令", "x": 18, "y": 76, "accent": "success", "width": 16, "height": 10 },
-          { "id": "発注者", "kind": "box", "label": "発注者", "sublabel": "成果物を受領", "x": 60, "y": 76, "accent": "neutral", "width": 16, "height": 10 },
-          { "id": "請負スタッフ", "kind": "box", "label": "請負スタッフ", "x": 88, "y": 76, "accent": "neutral", "width": 16, "height": 10 },
-          { "id": "wage1", "kind": "chip", "label": "賃金", "x": 18, "y": 22, "accent": "primary", "width": 6, "height": 4, "opacity": 0 },
-          { "id": "order1", "kind": "chip", "label": "業務指示", "x": 60, "y": 22, "accent": "warm", "width": 8, "height": 4, "opacity": 0 },
-          { "id": "wage2", "kind": "chip", "label": "賃金 + 指示", "x": 18, "y": 76, "accent": "success", "width": 10, "height": 4, "opacity": 0 },
-          { "id": "deliver", "kind": "chip", "label": "成果物", "x": 88, "y": 76, "accent": "neutral", "width": 8, "height": 4, "opacity": 0 },
-          { "id": "labelHaken", "kind": "chip", "label": "派遣 (雇用 ≠ 指揮)", "x": 50, "y": 50, "accent": "primary", "width": 22, "height": 5, "opacity": 0 },
-          { "id": "labelUkeoi", "kind": "chip", "label": "請負 (雇用 = 指揮)", "x": 50, "y": 50, "accent": "success", "width": 22, "height": 5, "opacity": 0 }
+          {
+            "id": "派遣元",
+            "kind": "box",
+            "label": "派遣元",
+            "sublabel": "雇用主",
+            "x": 18,
+            "y": 22,
+            "accent": "primary",
+            "width": 16,
+            "height": 10
+          },
+          {
+            "id": "派遣先",
+            "kind": "box",
+            "label": "派遣先",
+            "sublabel": "指揮命令",
+            "x": 60,
+            "y": 22,
+            "accent": "warm",
+            "width": 16,
+            "height": 10
+          },
+          {
+            "id": "派遣スタッフ",
+            "kind": "box",
+            "label": "派遣スタッフ",
+            "x": 88,
+            "y": 22,
+            "accent": "neutral",
+            "width": 16,
+            "height": 10
+          },
+          {
+            "id": "請負会社",
+            "kind": "box",
+            "label": "請負会社",
+            "sublabel": "雇用 + 指揮命令",
+            "x": 18,
+            "y": 76,
+            "accent": "success",
+            "width": 16,
+            "height": 10
+          },
+          {
+            "id": "発注者",
+            "kind": "box",
+            "label": "発注者",
+            "sublabel": "成果物を受領",
+            "x": 60,
+            "y": 76,
+            "accent": "neutral",
+            "width": 16,
+            "height": 10
+          },
+          {
+            "id": "請負スタッフ",
+            "kind": "box",
+            "label": "請負スタッフ",
+            "x": 88,
+            "y": 76,
+            "accent": "neutral",
+            "width": 16,
+            "height": 10
+          },
+          {
+            "id": "wage1",
+            "kind": "chip",
+            "label": "賃金",
+            "x": 18,
+            "y": 22,
+            "accent": "primary",
+            "width": 6,
+            "height": 4,
+            "opacity": 0
+          },
+          {
+            "id": "order1",
+            "kind": "chip",
+            "label": "業務指示",
+            "x": 60,
+            "y": 22,
+            "accent": "warm",
+            "width": 8,
+            "height": 4,
+            "opacity": 0
+          },
+          {
+            "id": "wage2",
+            "kind": "chip",
+            "label": "賃金 + 指示",
+            "x": 18,
+            "y": 76,
+            "accent": "success",
+            "width": 10,
+            "height": 4,
+            "opacity": 0
+          },
+          {
+            "id": "deliver",
+            "kind": "chip",
+            "label": "成果物",
+            "x": 88,
+            "y": 76,
+            "accent": "neutral",
+            "width": 8,
+            "height": 4,
+            "opacity": 0
+          },
+          {
+            "id": "labelHaken",
+            "kind": "chip",
+            "label": "派遣 (雇用 ≠ 指揮)",
+            "x": 50,
+            "y": 50,
+            "accent": "primary",
+            "width": 22,
+            "height": 5,
+            "opacity": 0
+          },
+          {
+            "id": "labelUkeoi",
+            "kind": "chip",
+            "label": "請負 (雇用 = 指揮)",
+            "x": 50,
+            "y": 50,
+            "accent": "success",
+            "width": 22,
+            "height": 5,
+            "opacity": 0
+          }
         ],
         "scenes": [
           {
             "title": "01 · 派遣 — 賃金は派遣元から",
             "narration": "派遣スタッフは派遣元と雇用契約。賃金は派遣元から支払われます。",
-            "duration": 2400,
+            "duration": 4700,
             "actions": [
-              { "target": "labelHaken", "at": 0, "duration": 400, "opacity": 1, "effect": "flash" },
-              { "target": "wage1", "at": 200, "duration": 300, "opacity": 1, "scale": 1.2 },
-              { "target": "wage1", "at": 600, "duration": 1400, "x": 88, "y": 22, "scale": 1 }
+              {
+                "target": "labelHaken",
+                "at": 1500,
+                "duration": 400,
+                "opacity": 1,
+                "effect": "flash"
+              },
+              {
+                "target": "wage1",
+                "at": 1700,
+                "duration": 300,
+                "opacity": 1,
+                "scale": 1.2
+              },
+              {
+                "target": "wage1",
+                "at": 2100,
+                "duration": 1400,
+                "x": 88,
+                "y": 22,
+                "scale": 1
+              }
             ]
           },
           {
             "title": "02 · 派遣 — 指揮命令は派遣先から",
             "narration": "ところが現場の指揮命令は派遣先から。雇用と指揮命令の主体が分かれているのが派遣の特徴です。",
-            "duration": 2400,
+            "duration": 4700,
             "actions": [
-              { "target": "wage1", "at": 0, "duration": 400, "opacity": 0 },
-              { "target": "order1", "at": 200, "duration": 300, "opacity": 1, "scale": 1.2 },
-              { "target": "order1", "at": 600, "duration": 1400, "x": 88, "y": 22, "scale": 1, "effect": "flash" }
+              {
+                "target": "wage1",
+                "at": 1500,
+                "duration": 400,
+                "opacity": 0
+              },
+              {
+                "target": "order1",
+                "at": 1700,
+                "duration": 300,
+                "opacity": 1,
+                "scale": 1.2
+              },
+              {
+                "target": "order1",
+                "at": 2100,
+                "duration": 1400,
+                "x": 88,
+                "y": 22,
+                "scale": 1,
+                "effect": "flash"
+              }
             ]
           },
           {
             "title": "03 · 請負 — 雇用も指揮命令も請負会社",
             "narration": "請負ではスタッフを雇い指揮命令するのは請負会社。発注者は **指示を出してはいけません** (偽装請負)。",
-            "duration": 2400,
+            "duration": 4700,
             "actions": [
-              { "target": "labelHaken", "at": 0, "duration": 400, "opacity": 0 },
-              { "target": "order1", "at": 0, "duration": 300, "opacity": 0 },
-              { "target": "labelUkeoi", "at": 200, "duration": 400, "opacity": 1, "effect": "flash" },
-              { "target": "wage2", "at": 600, "duration": 300, "opacity": 1, "scale": 1.2 },
-              { "target": "wage2", "at": 1000, "duration": 1300, "x": 88, "y": 76, "scale": 1 }
+              {
+                "target": "labelHaken",
+                "at": 1500,
+                "duration": 400,
+                "opacity": 0
+              },
+              {
+                "target": "order1",
+                "at": 1500,
+                "duration": 300,
+                "opacity": 0
+              },
+              {
+                "target": "labelUkeoi",
+                "at": 1700,
+                "duration": 400,
+                "opacity": 1,
+                "effect": "flash"
+              },
+              {
+                "target": "wage2",
+                "at": 2100,
+                "duration": 300,
+                "opacity": 1,
+                "scale": 1.2
+              },
+              {
+                "target": "wage2",
+                "at": 2500,
+                "duration": 1300,
+                "x": 88,
+                "y": 76,
+                "scale": 1
+              }
             ]
           },
           {
             "title": "04 · 請負 — 発注者には『成果物』だけ届く",
             "narration": "発注者が受け取るのは作業ではなく成果物。完成品の納品が契約の中心です。",
-            "duration": 2400,
+            "duration": 4700,
             "actions": [
-              { "target": "wage2", "at": 0, "duration": 400, "opacity": 0 },
-              { "target": "deliver", "at": 200, "duration": 300, "opacity": 1, "scale": 1.2 },
-              { "target": "deliver", "at": 600, "duration": 1400, "x": 60, "y": 76, "scale": 1, "effect": "flash" }
+              {
+                "target": "wage2",
+                "at": 1500,
+                "duration": 400,
+                "opacity": 0
+              },
+              {
+                "target": "deliver",
+                "at": 1700,
+                "duration": 300,
+                "opacity": 1,
+                "scale": 1.2
+              },
+              {
+                "target": "deliver",
+                "at": 2100,
+                "duration": 1400,
+                "x": 60,
+                "y": 76,
+                "scale": 1,
+                "effect": "flash"
+              }
             ]
           }
         ]
@@ -141,10 +374,22 @@
     }
   ],
   "takeaways": [
-    { "term": "雇用契約", "body": "労働者と雇用主の基本契約。指揮命令は雇用主。" },
-    { "term": "派遣", "body": "雇用は派遣元、指揮命令は派遣先。" },
-    { "term": "請負", "body": "成果物に対する契約。発注者は指揮命令しない。" },
-    { "term": "準委任", "body": "業務遂行に対する契約。完成責任なし。" }
+    {
+      "term": "雇用契約",
+      "body": "労働者と雇用主の基本契約。指揮命令は雇用主。"
+    },
+    {
+      "term": "派遣",
+      "body": "雇用は派遣元、指揮命令は派遣先。"
+    },
+    {
+      "term": "請負",
+      "body": "成果物に対する契約。発注者は指揮命令しない。"
+    },
+    {
+      "term": "準委任",
+      "body": "業務遂行に対する契約。完成責任なし。"
+    }
   ],
   "examples": [
     {

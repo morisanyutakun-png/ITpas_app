@@ -461,6 +461,25 @@
       "Liberation Mono", monospace;
   }
 
+  /* Reading prose — applied to lesson body paragraphs.
+     Adds gentle ruby-line baseline, slight letter-spacing, and tunes
+     `<strong>` so bold text sits on a soft yellow halo (subtle marker
+     accent) without competing with explicit `==marker==` runs. */
+  .reading-prose p {
+    color: hsl(var(--foreground) / 0.92);
+  }
+  .reading-prose strong {
+    background-image: linear-gradient(transparent 70%, rgba(10, 132, 255, 0.12) 70%);
+    background-repeat: no-repeat;
+    padding: 0 0.08em;
+  }
+  .reading-prose code {
+    letter-spacing: -0.01em;
+  }
+  .reading-prose mark {
+    background-color: transparent;
+  }
+
   /* Drop cap on the first paragraph of a chapter — the affordance that
      says "this is something to read", not "scan and skip". Subtle
      coloring so it doesn't shout. Falls back gracefully on Japanese

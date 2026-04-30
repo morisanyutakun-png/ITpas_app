@@ -284,11 +284,11 @@ function BodySection({
         <Analogy label={section.analogy.label} body={section.analogy.body} />
       )}
 
-      <div className="mt-5 space-y-4">
+      <div className="mt-5 space-y-4 reading-prose">
         {section.paragraphs.map((p, i) => (
           <p
             key={i}
-            className="text-[15px] leading-[1.92] text-foreground/90 text-pretty"
+            className="text-[15.5px] leading-[1.95] text-foreground/90 text-pretty tracking-[-0.002em]"
           >
             {renderInline(p)}
           </p>
@@ -344,9 +344,20 @@ function Analogy({ label, body }: { label: string; body: string }) {
   );
 }
 
+/**
+ * Inline parser that supports four lightweight syntaxes:
+ *   **bold**     → semantic bold
+ *   `code`       → inline monospaced
+ *   ==marker==   → highlighter-style background (yellow/lime); blog-feel
+ *   __underline__ → emphatic underline (dotted, study-book feel)
+ *
+ * The whole thing intentionally stays simple — the ZodSafeParse-validated
+ * lesson JSON and these four marks are the only formatting authors get,
+ * which keeps every lesson visually consistent.
+ */
 function renderInline(text: string): React.ReactNode[] {
   const tokens: React.ReactNode[] = [];
-  const re = /(\*\*[^*]+\*\*|`[^`]+`)/g;
+  const re = /(\*\*[^*]+\*\*|`[^`]+`|==[^=]+==|__[^_]+__)/g;
   let last = 0;
   let m: RegExpExecArray | null;
   let key = 0;
@@ -359,7 +370,7 @@ function renderInline(text: string): React.ReactNode[] {
           {t.slice(2, -2)}
         </strong>
       );
-    } else {
+    } else if (t.startsWith("`")) {
       tokens.push(
         <code
           key={key++}
@@ -367,6 +378,24 @@ function renderInline(text: string): React.ReactNode[] {
         >
           {t.slice(1, -1)}
         </code>
+      );
+    } else if (t.startsWith("==")) {
+      tokens.push(
+        <mark
+          key={key++}
+          className="rounded-[2px] bg-[linear-gradient(transparent_55%,rgba(255,204,0,0.45)_55%)] px-0.5 font-medium text-foreground"
+        >
+          {t.slice(2, -2)}
+        </mark>
+      );
+    } else {
+      tokens.push(
+        <span
+          key={key++}
+          className="border-b-2 border-dotted border-[#0A84FF]/55 pb-px font-medium"
+        >
+          {t.slice(2, -2)}
+        </span>
       );
     }
     last = re.lastIndex;

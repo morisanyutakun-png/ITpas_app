@@ -320,49 +320,44 @@ function QuadrantFigure({
   const ACCENTS: AccentKey[] = ["success", "primary", "warm", "danger"];
   return (
     <FigureFrame caption={figure.caption}>
-      <div className="grid grid-cols-[auto_1fr_auto] gap-2">
-        {/* Y axis label */}
-        <div
-          aria-hidden
-          className="flex items-center justify-center text-[10.5px] font-semibold uppercase tracking-[0.14em] text-muted-foreground [writing-mode:vertical-rl] [transform:rotate(180deg)]"
-        >
-          ↑ {figure.axes.y}
-        </div>
-        <div className="grid grid-cols-2 gap-2">
-          {figure.cells.map((c, i) => {
-            const accent = ACCENT[ACCENTS[i] ?? "neutral"];
-            return (
+      {/* Y-axis label, top-aligned arrow indicates "increases upward". */}
+      <div className="mb-2 flex items-center justify-center gap-1.5 text-[10.5px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+        <ArrowDown className="h-3 w-3 rotate-180" />
+        {figure.axes.y}
+      </div>
+      <div className="grid grid-cols-2 gap-2">
+        {figure.cells.map((c, i) => {
+          const accent = ACCENT[ACCENTS[i] ?? "neutral"];
+          return (
+            <div
+              key={i}
+              className={`rounded-xl ${accent.soft} p-4 ring-1 ring-inset ${accent.ring}`}
+            >
               <div
-                key={i}
-                className={`rounded-xl ${accent.soft} p-4 ring-1 ring-inset ${accent.ring}`}
+                className={`flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] ${accent.text}`}
               >
-                <div
-                  className={`flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] ${accent.text}`}
-                >
-                  <span
-                    aria-hidden
-                    className={`h-1.5 w-1.5 rounded-full ${accent.bg}`}
-                  />
-                  Q{i + 1}
-                </div>
-                <div className="mt-1 text-[14.5px] font-semibold tracking-tight">
-                  {c.title}
-                </div>
-                {c.body && (
-                  <div className="mt-1 text-[12px] leading-relaxed text-muted-foreground text-pretty">
-                    {c.body}
-                  </div>
-                )}
+                <span
+                  aria-hidden
+                  className={`h-1.5 w-1.5 rounded-full ${accent.bg}`}
+                />
+                Q{i + 1}
               </div>
-            );
-          })}
-        </div>
-        <div aria-hidden className="hidden sm:block" />
-        <div aria-hidden />
-        <div className="text-right text-[10.5px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-          {figure.axes.x} →
-        </div>
-        <div aria-hidden className="hidden sm:block" />
+              <div className="mt-1 text-[14.5px] font-semibold tracking-tight">
+                {c.title}
+              </div>
+              {c.body && (
+                <div className="mt-1 text-[12px] leading-relaxed text-muted-foreground text-pretty">
+                  {c.body}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+      {/* X-axis label, arrow indicates "increases rightward". */}
+      <div className="mt-2 flex items-center justify-end gap-1.5 text-[10.5px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+        {figure.axes.x}
+        <ArrowRight className="h-3 w-3" />
       </div>
     </FigureFrame>
   );
@@ -377,34 +372,34 @@ function StepListFigure({
 }) {
   return (
     <FigureFrame caption={figure.caption}>
-      <ol className="relative space-y-3">
-        {figure.steps.map((s, idx) => (
-          <li
-            key={idx}
-            className="grid grid-cols-[44px_1fr] items-start gap-3"
-          >
-            <div className="flex flex-col items-center">
-              <span className="num flex h-10 w-10 items-center justify-center rounded-full bg-[#0A84FF] text-[15px] font-semibold text-white shadow-tile">
+      {/* Outer relative wrapper holds the spine that runs through every
+          number circle. The spine spans full content height and lives
+          behind the circles so it can't overlap the body cards. */}
+      <ol className="relative">
+        <span
+          aria-hidden
+          className="absolute left-[19px] top-5 bottom-5 w-px bg-border"
+        />
+        <div className="space-y-3">
+          {figure.steps.map((s, idx) => (
+            <li
+              key={idx}
+              className="relative grid grid-cols-[40px_1fr] items-start gap-3"
+            >
+              <span className="num relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-[#0A84FF] text-[15px] font-semibold text-white shadow-tile">
                 {idx + 1}
               </span>
-              {idx < figure.steps.length - 1 && (
-                <span
-                  aria-hidden
-                  className="mt-1 h-full w-px flex-1 bg-border"
-                  style={{ minHeight: 12 }}
-                />
-              )}
-            </div>
-            <div className="rounded-xl bg-muted/50 p-4 ring-1 ring-inset ring-border">
-              <div className="text-[14.5px] font-semibold tracking-tight">
-                {s.title}
+              <div className="rounded-xl bg-muted/50 p-4 ring-1 ring-inset ring-border">
+                <div className="text-[14.5px] font-semibold tracking-tight">
+                  {s.title}
+                </div>
+                <div className="mt-1.5 text-[13px] leading-[1.75] text-foreground/80 text-pretty">
+                  {s.body}
+                </div>
               </div>
-              <div className="mt-1.5 text-[13px] leading-[1.75] text-foreground/80 text-pretty">
-                {s.body}
-              </div>
-            </div>
-          </li>
-        ))}
+            </li>
+          ))}
+        </div>
       </ol>
     </FigureFrame>
   );
@@ -435,27 +430,37 @@ function TreeFigure({
           </div>
         )}
       </div>
-      {/* SVG connector lines from root to each child column */}
-      <div className="relative h-7 w-full">
-        <svg
-          viewBox="0 0 100 28"
-          preserveAspectRatio="none"
-          className="absolute inset-0 h-full w-full"
-        >
-          {figure.children.map((_, i) => {
-            const xCenter = 50;
-            const xChild = (100 / cols) * (i % cols) + 100 / (cols * 2);
-            return (
-              <path
-                key={i}
-                d={`M ${xCenter} 0 C ${xCenter} 16, ${xChild} 12, ${xChild} 28`}
-                fill="none"
-                stroke="hsl(var(--border))"
-                strokeWidth="0.6"
-              />
-            );
-          })}
-        </svg>
+      {/* Connector: a clean trunk + horizontal bar + per-child stems.
+          Built with positioned divs so it scales correctly regardless of
+          column count or the children grid width. */}
+      <div className="relative mx-auto h-8 w-full max-w-md">
+        {/* Vertical trunk from root */}
+        <span
+          aria-hidden
+          className="absolute left-1/2 top-0 h-3 w-px -translate-x-1/2 bg-border"
+        />
+        {/* Horizontal bar that spans the children columns */}
+        {N > 1 && (
+          <span
+            aria-hidden
+            className="absolute left-[8.333%] right-[8.333%] top-3 h-px bg-border"
+            style={{
+              left: `${100 / (cols * 2)}%`,
+              right: `${100 / (cols * 2)}%`,
+            }}
+          />
+        )}
+        {/* Child stems descending into each child column */}
+        {figure.children.map((_, i) => (
+          <span
+            key={i}
+            aria-hidden
+            className="absolute top-3 h-5 w-px -translate-x-1/2 bg-border"
+            style={{
+              left: `${(100 / cols) * (i % cols) + 100 / (cols * 2)}%`,
+            }}
+          />
+        ))}
       </div>
       {/* Children */}
       <div

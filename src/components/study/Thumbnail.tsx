@@ -376,6 +376,53 @@ function glyphFor(kind: StudyFigure["kind"]) {
         </g>
       );
 
+    case "cinematic":
+      // Filmstrip motif — three frames + glowing dot to suggest a movie.
+      return (
+        <g>
+          {/* Three film cells */}
+          {[0, 1, 2].map((i) => (
+            <rect
+              key={i}
+              x={10 + i * 78}
+              y={30}
+              width={70}
+              height={76}
+              rx={8}
+              fill="#FFFFFF"
+              fillOpacity={0.92 - i * 0.18}
+            />
+          ))}
+          {/* Sprocket holes */}
+          {[0, 1, 2, 3].map((i) => (
+            <rect
+              key={`top-${i}`}
+              x={20 + i * 56}
+              y={14}
+              width={14}
+              height={6}
+              rx={2}
+              fill="#FFFFFF"
+              fillOpacity={0.75}
+            />
+          ))}
+          {[0, 1, 2, 3].map((i) => (
+            <rect
+              key={`bot-${i}`}
+              x={20 + i * 56}
+              y={116}
+              width={14}
+              height={6}
+              rx={2}
+              fill="#FFFFFF"
+              fillOpacity={0.55}
+            />
+          ))}
+          {/* Glow dot in center cell */}
+          <circle cx={123} cy={68} r={11} fill="#FFFFFF" fillOpacity={0.95} />
+        </g>
+      );
+
     case "animated-process":
       // Play-button-in-frame motif to suggest "moving figure".
       return (

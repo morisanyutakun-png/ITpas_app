@@ -129,6 +129,86 @@
       }
     },
     {
+      "heading": "[シーン解説] 公開鍵暗号の動き — 詳細版",
+      "summary": "鍵ペア生成 → 公開鍵配布 → 暗号化 → 復号 → 盗聴失敗を、複数オブジェクトが同時に動くシーンで体感。",
+      "paragraphs": [
+        "公開鍵暗号で実際に何が動いているのか、5 シーンのアニメで深掘りします。鍵ペアが生まれ、公開鍵だけが世界に出ていき、メッセージが施錠された状態でネットを渡り、対の秘密鍵だけがそれを開ける ── この流れを各オブジェクトが同時並行で動く形で見られます。"
+      ],
+      "figure": {
+        "kind": "cinematic",
+        "aspect": "16:9",
+        "caption": "5 シーン構成。各シーン内で複数のオブジェクトが同時に変形・移動します。",
+        "objects": [
+          { "id": "alice", "kind": "icon", "label": "アリス (送信者)", "x": 12, "y": 40, "accent": "warm", "width": 16, "height": 12 },
+          { "id": "bob", "kind": "icon", "label": "ボブ (受信者)", "x": 88, "y": 40, "accent": "primary", "width": 16, "height": 12 },
+          { "id": "eve", "kind": "icon", "label": "イブ (盗聴者)", "x": 50, "y": 88, "accent": "danger", "width": 14, "height": 12, "opacity": 0.3 },
+          { "id": "pubkey", "kind": "key", "label": "公開鍵", "x": 88, "y": 18, "accent": "primary", "width": 8, "height": 8, "opacity": 0 },
+          { "id": "privkey", "kind": "key", "label": "秘密鍵", "x": 88, "y": 62, "accent": "accent", "width": 8, "height": 8, "opacity": 0 },
+          { "id": "msg", "kind": "chip", "label": "Hello!", "x": 12, "y": 22, "accent": "warm", "width": 12, "height": 6, "opacity": 0 },
+          { "id": "lock", "kind": "lock", "label": "🔒", "x": 50, "y": 40, "accent": "neutral", "width": 8, "height": 8, "opacity": 0 },
+          { "id": "evePeek", "kind": "chip", "label": "❌ 解読不能", "x": 50, "y": 78, "accent": "danger", "width": 14, "height": 6, "opacity": 0 }
+        ],
+        "scenes": [
+          {
+            "title": "シーン 1: ボブが鍵ペアを生成",
+            "narration": "受信者ボブが、公開鍵と秘密鍵のペアを内部で生成します。秘密鍵はボブだけが保持。",
+            "duration": 3200,
+            "actions": [
+              { "target": "pubkey", "at": 200, "duration": 800, "opacity": 1, "scale": 1.2, "effect": "pulse" },
+              { "target": "privkey", "at": 600, "duration": 800, "opacity": 1, "scale": 1.2, "effect": "pulse" },
+              { "target": "pubkey", "at": 1600, "duration": 600, "scale": 1 },
+              { "target": "privkey", "at": 1600, "duration": 600, "scale": 1 },
+              { "target": "bob", "at": 200, "duration": 600, "effect": "pulse" }
+            ]
+          },
+          {
+            "title": "シーン 2: 公開鍵を世界に配る",
+            "narration": "公開鍵は誰にでも公開して構わない。アリスもその鍵を入手します。",
+            "duration": 3000,
+            "actions": [
+              { "target": "pubkey", "at": 100, "duration": 1800, "x": 12, "y": 18 },
+              { "target": "alice", "at": 1800, "duration": 600, "effect": "pulse" }
+            ]
+          },
+          {
+            "title": "シーン 3: アリスが暗号化",
+            "narration": "アリスはメッセージ『Hello!』をボブの公開鍵で施錠。中身は誰にも読めない暗号文になります。",
+            "duration": 3400,
+            "actions": [
+              { "target": "msg", "at": 100, "duration": 600, "opacity": 1 },
+              { "target": "msg", "at": 800, "duration": 1000, "x": 18, "y": 22, "effect": "shake" },
+              { "target": "lock", "at": 1500, "duration": 700, "opacity": 1, "scale": 1.4, "x": 18, "y": 22, "effect": "ripple" },
+              { "target": "lock", "at": 2300, "duration": 500, "scale": 1 },
+              { "target": "msg", "at": 2300, "duration": 500, "label": "🔒 暗号文", "accent": "neutral" }
+            ]
+          },
+          {
+            "title": "シーン 4: 暗号文がネットを渡る",
+            "narration": "暗号文がインターネットを横断してボブに届きます。途中で盗聴者イブも目にしますが、開けません。",
+            "duration": 3600,
+            "actions": [
+              { "target": "msg", "at": 0, "duration": 2400, "x": 82, "y": 40 },
+              { "target": "lock", "at": 0, "duration": 2400, "x": 82, "y": 40 },
+              { "target": "eve", "at": 800, "duration": 600, "opacity": 1, "effect": "shake" },
+              { "target": "evePeek", "at": 1600, "duration": 600, "opacity": 1, "effect": "flash" },
+              { "target": "evePeek", "at": 3000, "duration": 500, "opacity": 0 }
+            ]
+          },
+          {
+            "title": "シーン 5: ボブが秘密鍵で復号",
+            "narration": "ボブは自分の秘密鍵で暗号文を解錠。元のメッセージ『Hello!』が読めるのはボブだけ。",
+            "duration": 3400,
+            "actions": [
+              { "target": "privkey", "at": 100, "duration": 800, "x": 82, "y": 40, "scale": 1.4, "effect": "pulse" },
+              { "target": "lock", "at": 1200, "duration": 700, "opacity": 0, "scale": 0.4, "rotation": -180 },
+              { "target": "msg", "at": 1500, "duration": 600, "label": "Hello!", "accent": "success", "effect": "flash" },
+              { "target": "bob", "at": 2200, "duration": 700, "effect": "ripple" }
+            ]
+          }
+        ]
+      }
+    },
+    {
       "heading": "ハイブリッド方式 ── 速さと配送のいいとこ取り",
       "summary": "公開鍵で『鍵を渡す』、共通鍵で『データを暗号化する』。実は TLS の仕組み。",
       "paragraphs": [
@@ -236,6 +316,67 @@
           "body": "**公開鍵で『鍵を渡す』 + 共通鍵で『本通信』**。試験で『TLS のデータ暗号化方式は?』に対する答えは『**共通鍵暗号**』。"
         }
       ]
+    },
+    {
+      "heading": "[シーン解説] ハッシュ関数の動き",
+      "summary": "違う入力からは違うハッシュ値、同じ入力からは必ず同じハッシュ値。これがパスワード保管・改ざん検知の根拠です。",
+      "paragraphs": [
+        "ハッシュ関数の挙動を、3 つの入力の同時処理で見てみましょう。==1 文字違うだけで出力が大きく変わる== ことと、==元の入力には決して戻せない== ことが視覚的にわかります。"
+      ],
+      "figure": {
+        "kind": "cinematic",
+        "aspect": "16:9",
+        "caption": "3 シーン構成。雪崩効果と一方向性を 1 つの動画で見せます。",
+        "objects": [
+          { "id": "in1", "kind": "chip", "label": "password", "x": 12, "y": 25, "accent": "warm", "width": 16, "height": 8 },
+          { "id": "in2", "kind": "chip", "label": "passw0rd", "x": 12, "y": 50, "accent": "warm", "width": 16, "height": 8 },
+          { "id": "in3", "kind": "chip", "label": "Password", "x": 12, "y": 75, "accent": "warm", "width": 16, "height": 8 },
+          { "id": "fn", "kind": "icon", "label": "ハッシュ関数 SHA-256", "x": 50, "y": 50, "accent": "accent", "width": 18, "height": 14 },
+          { "id": "out1", "kind": "chip", "label": "5e88...3a4f", "x": 86, "y": 25, "accent": "primary", "width": 18, "height": 8, "opacity": 0 },
+          { "id": "out2", "kind": "chip", "label": "9f12...8b21", "x": 86, "y": 50, "accent": "primary", "width": 18, "height": 8, "opacity": 0 },
+          { "id": "out3", "kind": "chip", "label": "c41a...d7e9", "x": 86, "y": 75, "accent": "primary", "width": 18, "height": 8, "opacity": 0 },
+          { "id": "reverse", "kind": "chip", "label": "❌ 逆算不可", "x": 50, "y": 92, "accent": "danger", "width": 18, "height": 6, "opacity": 0 }
+        ],
+        "scenes": [
+          {
+            "title": "シーン 1: 入力をハッシュ関数へ",
+            "narration": "似た 3 つの文字列『password』『passw0rd』『Password』をハッシュ関数に入れます。",
+            "duration": 3000,
+            "actions": [
+              { "target": "in1", "at": 100, "duration": 1200, "x": 38, "y": 50, "effect": "shake" },
+              { "target": "in2", "at": 400, "duration": 1200, "x": 38, "y": 50, "effect": "shake" },
+              { "target": "in3", "at": 700, "duration": 1200, "x": 38, "y": 50, "effect": "shake" },
+              { "target": "fn", "at": 1500, "duration": 800, "scale": 1.15, "effect": "pulse" }
+            ]
+          },
+          {
+            "title": "シーン 2: 雪崩効果 — 1 文字違うだけで全然違うハッシュ",
+            "narration": "わずか 1 文字違うだけなのに、出力されるハッシュ値はまったくの別物になります。これが『雪崩効果』。",
+            "duration": 3600,
+            "actions": [
+              { "target": "fn", "at": 0, "duration": 600, "scale": 1, "rotation": 360 },
+              { "target": "in1", "at": 600, "duration": 800, "opacity": 0 },
+              { "target": "in2", "at": 600, "duration": 800, "opacity": 0 },
+              { "target": "in3", "at": 600, "duration": 800, "opacity": 0 },
+              { "target": "out1", "at": 1200, "duration": 700, "opacity": 1, "effect": "flash" },
+              { "target": "out2", "at": 1700, "duration": 700, "opacity": 1, "effect": "flash" },
+              { "target": "out3", "at": 2200, "duration": 700, "opacity": 1, "effect": "flash" }
+            ]
+          },
+          {
+            "title": "シーン 3: 一方向性 — 出力から入力には戻せない",
+            "narration": "ハッシュ値を見ても元の文字列は逆算できません。これがパスワード保管や改ざん検知に使える理由です。",
+            "duration": 3400,
+            "actions": [
+              { "target": "reverse", "at": 100, "duration": 700, "opacity": 1, "effect": "flash" },
+              { "target": "out1", "at": 800, "duration": 700, "x": 50, "y": 50, "scale": 0.6, "opacity": 0.4 },
+              { "target": "out2", "at": 800, "duration": 700, "x": 50, "y": 50, "scale": 0.6, "opacity": 0.4 },
+              { "target": "out3", "at": 800, "duration": 700, "x": 50, "y": 50, "scale": 0.6, "opacity": 0.4 },
+              { "target": "fn", "at": 1700, "duration": 800, "effect": "shake" }
+            ]
+          }
+        ]
+      }
     },
     {
       "heading": "ハッシュ ── 戻せない一方向関数",

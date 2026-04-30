@@ -436,6 +436,48 @@
   }
 }
 
+/* ── Cinematic figure effect classes ─────────────────────────────────────
+   One-shot decorative animations for CinematicFigure actions. Live in the
+   global stylesheet so the keyframes can be defined alongside Tailwind's
+   layers — utilities can't define @keyframes. */
+
+@keyframes cin-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 var(--cin-hue, #0A84FF); transform: scale(1); }
+  50% { box-shadow: 0 0 0 16px transparent; transform: scale(1.06); }
+}
+@keyframes cin-flash {
+  0%, 100% { filter: brightness(1); }
+  35% { filter: brightness(1.6) saturate(1.4); }
+}
+@keyframes cin-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-3px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(2px); }
+}
+@keyframes cin-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes cin-ripple {
+  0% { box-shadow: 0 0 0 0 var(--cin-hue, #0A84FF); }
+  100% { box-shadow: 0 0 0 24px rgba(0,0,0,0); }
+}
+.cin-effect-pulse { animation: cin-pulse 1.2s ease-in-out 1 both; border-radius: inherit; }
+.cin-effect-flash { animation: cin-flash 0.6s ease-in-out 1 both; }
+.cin-effect-shake { animation: cin-shake 0.5s ease-in-out 1 both; }
+.cin-effect-spin  { animation: cin-spin 0.9s linear 1 both; }
+.cin-effect-ripple { animation: cin-ripple 1s ease-out 1 both; border-radius: inherit; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cin-effect-pulse,
+  .cin-effect-flash,
+  .cin-effect-shake,
+  .cin-effect-spin,
+  .cin-effect-ripple { animation: none !important; }
+}
+
 @layer utilities {
   .text-balance { text-wrap: balance; }
   .text-pretty  { text-wrap: pretty; }

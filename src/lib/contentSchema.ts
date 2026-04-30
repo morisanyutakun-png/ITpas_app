@@ -433,6 +433,90 @@ const proportionBarFigureZ = z.object({
     .max(8),
 });
 
+// ── Cinematic figure ────────────────────────────────────────────────────
+//
+// A timeline-based animation scene. The author authors:
+//   1) `objects`: a stable cast of items (boxes, circles, icons, text)
+//      placed at start positions on a 0..100 % canvas.
+//   2) `scenes`: a sequence of titled scenes, each containing one or more
+//      `actions` that mutate object state (move, fade, scale, color, label,
+//      flash, spawn, despawn) at given offsets within the scene.
+//
+// The renderer interpolates state changes using CSS transforms on each
+// object's wrapper, so multiple actions can run concurrently without the
+// author having to choreograph SVG animateMotion paths. This is what makes
+// it "cinematic" rather than the existing point-to-point animated-process.
+
+const cinematicAccentZ = z.enum([
+  "primary",
+  "warm",
+  "cool",
+  "neutral",
+  "accent",
+  "danger",
+  "success",
+]);
+
+const cinematicObjectZ = z.object({
+  id: z.string().min(1),
+  kind: z.enum(["box", "circle", "chip", "icon", "text", "lock", "key"]),
+  label: z.string().optional(),
+  sublabel: z.string().optional(),
+  // Initial state — actions later mutate any of these.
+  x: z.number().min(-20).max(120),
+  y: z.number().min(-20).max(120),
+  width: z.number().min(2).max(80).default(18),
+  height: z.number().min(2).max(80).default(10),
+  accent: cinematicAccentZ.default("neutral"),
+  opacity: z.number().min(0).max(1).default(1),
+  scale: z.number().min(0).max(3).default(1),
+  rotation: z.number().min(-360).max(360).default(0),
+  hidden: z.boolean().default(false),
+});
+
+// Per-action mutation. Numeric props default to "no change" if omitted —
+// only the props authored on the action are altered, others stay at the
+// object's current state.
+const cinematicActionZ = z.object({
+  // Object id this action targets.
+  target: z.string().min(1),
+  // Offset (in milliseconds) from the *start* of the parent scene.
+  at: z.number().int().min(0).max(20000).default(0),
+  // Duration of this action in ms (transition time).
+  duration: z.number().int().min(0).max(10000).default(600),
+  // Mutations.
+  x: z.number().min(-20).max(120).optional(),
+  y: z.number().min(-20).max(120).optional(),
+  scale: z.number().min(0).max(4).optional(),
+  rotation: z.number().min(-720).max(720).optional(),
+  opacity: z.number().min(0).max(1).optional(),
+  accent: cinematicAccentZ.optional(),
+  label: z.string().optional(),
+  sublabel: z.string().optional(),
+  hidden: z.boolean().optional(),
+  // Visual flair: a one-shot pulse / shake / flash that decorates this
+  // action without changing persistent state.
+  effect: z.enum(["pulse", "flash", "shake", "spin", "ripple"]).optional(),
+});
+
+const cinematicSceneZ = z.object({
+  title: z.string().min(1),
+  narration: z.string().min(1),
+  // Total duration of the scene in ms (used as the auto-advance cadence).
+  duration: z.number().int().min(1000).max(20000).default(3500),
+  // 0..N actions running on objects within this scene.
+  actions: z.array(cinematicActionZ).min(0).max(20),
+});
+
+const cinematicFigureZ = z.object({
+  kind: z.literal("cinematic"),
+  caption: z.string().optional(),
+  // Aspect of the canvas. Default 16:9.
+  aspect: z.enum(["16:9", "4:3", "21:9"]).default("16:9"),
+  objects: z.array(cinematicObjectZ).min(1).max(20),
+  scenes: z.array(cinematicSceneZ).min(1).max(10),
+});
+
 export const studyFigureZ = z.discriminatedUnion("kind", [
   layeredFigureZ,
   compareFigureZ,
@@ -446,6 +530,7 @@ export const studyFigureZ = z.discriminatedUnion("kind", [
   timelineFigureZ,
   proportionBarFigureZ,
   animatedProcessFigureZ,
+  cinematicFigureZ,
 ]);
 
 // A callout — short, accented note inline with the prose. Three voices:

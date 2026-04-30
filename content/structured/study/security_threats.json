@@ -202,7 +202,84 @@
       "paragraphs": [
         "**DoS (Denial of Service)** は、サーバに **大量のリクエスト** を送ってサービスを停止させる攻撃。**DDoS (Distributed DoS)** は、世界中の感染端末 (==ボットネット==) から同時に攻撃する分散版で、防御がさらに難しい。",
         "防御は **WAF (Web Application Firewall)** や **CDN** に攻撃を吸収させるのが定番。回線そのものを太くして耐える、という選択肢もあります。"
-      ]
+      ],
+      "figure": {
+        "kind": "cinematic",
+        "aspect": "16:9",
+        "caption": "DDoS の攻撃成立から WAF による防御まで、4 シーンで動かします。複数のボットが同時に動くのが見どころ。",
+        "objects": [
+          { "id": "bot1", "kind": "icon", "label": "ボット端末 1", "x": 12, "y": 18, "accent": "danger", "width": 14, "height": 10 },
+          { "id": "bot2", "kind": "icon", "label": "ボット端末 2", "x": 12, "y": 40, "accent": "danger", "width": 14, "height": 10 },
+          { "id": "bot3", "kind": "icon", "label": "ボット端末 3", "x": 12, "y": 62, "accent": "danger", "width": 14, "height": 10 },
+          { "id": "bot4", "kind": "icon", "label": "ボット端末 4", "x": 12, "y": 84, "accent": "danger", "width": 14, "height": 10 },
+          { "id": "waf", "kind": "icon", "label": "WAF / 防御", "x": 50, "y": 50, "accent": "neutral", "width": 16, "height": 12, "opacity": 0 },
+          { "id": "server", "kind": "icon", "label": "サーバ", "x": 86, "y": 50, "accent": "primary", "width": 18, "height": 14 },
+          { "id": "p1", "kind": "chip", "label": "req", "x": 22, "y": 18, "accent": "danger", "width": 6, "height": 5, "opacity": 0 },
+          { "id": "p2", "kind": "chip", "label": "req", "x": 22, "y": 40, "accent": "danger", "width": 6, "height": 5, "opacity": 0 },
+          { "id": "p3", "kind": "chip", "label": "req", "x": 22, "y": 62, "accent": "danger", "width": 6, "height": 5, "opacity": 0 },
+          { "id": "p4", "kind": "chip", "label": "req", "x": 22, "y": 84, "accent": "danger", "width": 6, "height": 5, "opacity": 0 }
+        ],
+        "scenes": [
+          {
+            "title": "シーン 1: ボットネットから一斉攻撃",
+            "narration": "感染した複数の端末 (ボットネット) が同時にリクエストを送り始めます。",
+            "duration": 3200,
+            "actions": [
+              { "target": "bot1", "at": 100, "duration": 400, "effect": "pulse" },
+              { "target": "bot2", "at": 200, "duration": 400, "effect": "pulse" },
+              { "target": "bot3", "at": 300, "duration": 400, "effect": "pulse" },
+              { "target": "bot4", "at": 400, "duration": 400, "effect": "pulse" },
+              { "target": "p1", "at": 700, "duration": 600, "opacity": 1 },
+              { "target": "p2", "at": 800, "duration": 600, "opacity": 1 },
+              { "target": "p3", "at": 900, "duration": 600, "opacity": 1 },
+              { "target": "p4", "at": 1000, "duration": 600, "opacity": 1 }
+            ]
+          },
+          {
+            "title": "シーン 2: 大量リクエストがサーバに到達",
+            "narration": "リクエストがサーバに殺到。サーバは処理しきれず過負荷状態になります。",
+            "duration": 3000,
+            "actions": [
+              { "target": "p1", "at": 0, "duration": 1800, "x": 80, "y": 50 },
+              { "target": "p2", "at": 100, "duration": 1800, "x": 80, "y": 50 },
+              { "target": "p3", "at": 200, "duration": 1800, "x": 80, "y": 50 },
+              { "target": "p4", "at": 300, "duration": 1800, "x": 80, "y": 50 },
+              { "target": "server", "at": 1800, "duration": 800, "accent": "danger", "effect": "shake" },
+              { "target": "server", "at": 2400, "duration": 500, "scale": 0.92 }
+            ]
+          },
+          {
+            "title": "シーン 3: サービス停止 — 可用性が損なわれる",
+            "narration": "正規ユーザもアクセスできなくなり、可用性 (A) が損なわれた状態に陥ります。",
+            "duration": 2600,
+            "actions": [
+              { "target": "server", "at": 0, "duration": 700, "sublabel": "503 Service Unavailable", "effect": "flash" },
+              { "target": "p1", "at": 600, "duration": 600, "opacity": 0 },
+              { "target": "p2", "at": 600, "duration": 600, "opacity": 0 },
+              { "target": "p3", "at": 600, "duration": 600, "opacity": 0 },
+              { "target": "p4", "at": 600, "duration": 600, "opacity": 0 }
+            ]
+          },
+          {
+            "title": "シーン 4: WAF が前段で吸収",
+            "narration": "WAF / CDN を前段に置けば、悪意のあるリクエストを手前で弾いてサーバを守れます。",
+            "duration": 4000,
+            "actions": [
+              { "target": "server", "at": 100, "duration": 600, "accent": "primary", "scale": 1, "sublabel": "" },
+              { "target": "waf", "at": 200, "duration": 700, "opacity": 1, "scale": 1.1, "accent": "success", "effect": "ripple" },
+              { "target": "p1", "at": 1100, "duration": 400, "opacity": 1 },
+              { "target": "p2", "at": 1200, "duration": 400, "opacity": 1 },
+              { "target": "p3", "at": 1300, "duration": 400, "opacity": 1 },
+              { "target": "p4", "at": 1400, "duration": 400, "opacity": 1 },
+              { "target": "p1", "at": 1500, "duration": 1000, "x": 46, "y": 50, "opacity": 0 },
+              { "target": "p2", "at": 1600, "duration": 1000, "x": 46, "y": 50, "opacity": 0 },
+              { "target": "p3", "at": 1700, "duration": 1000, "x": 46, "y": 50, "opacity": 0 },
+              { "target": "p4", "at": 1800, "duration": 1000, "x": 46, "y": 50, "opacity": 0 },
+              { "target": "waf", "at": 2900, "duration": 600, "effect": "pulse" }
+            ]
+          }
+        ]
+      }
     },
     {
       "heading": "防御の基本フレーム",

@@ -220,25 +220,25 @@
       ],
       "figure": {
         "kind": "animated-process",
-        "caption": "TLS ハンドシェイクの簡略版を 4 ステップで動かします。冒頭だけ公開鍵を使い、本通信は共通鍵で高速にやりとりするのがポイント。",
+        "caption": "TLS ハンドシェイクの簡略版を 4 ステップで動かします。アリス (ブラウザ) とサーバの間で、冒頭だけ公開鍵を使い、本通信は共通鍵で高速にやりとりします。",
         "stepDurationMs": 2400,
         "actors": [
-          { "id": "client", "label": "クライアント", "sublabel": "ブラウザ", "x": 14, "y": 30, "accent": "warm", "shape": "device" },
-          { "id": "server", "label": "サーバ", "sublabel": "Web サイト", "x": 86, "y": 30, "accent": "primary", "shape": "device" }
+          { "id": "alice", "label": "アリス", "sublabel": "ブラウザ", "x": 14, "y": 50, "accent": "warm", "shape": "device" },
+          { "id": "server", "label": "サーバ", "sublabel": "Web サイト", "x": 86, "y": 50, "accent": "primary", "shape": "device" }
         ],
         "steps": [
           {
             "title": "ステップ 1: 公開鍵を受け取る",
-            "narration": "クライアントがアクセスを開始すると、サーバが SSL 証明書 (=公開鍵) を返します。",
+            "narration": "アリスがアクセスを開始すると、サーバが SSL 証明書 (=公開鍵) を返します。",
             "from": "server",
-            "to": "client",
+            "to": "alice",
             "payload": "公開鍵",
             "packetAccent": "primary"
           },
           {
             "title": "ステップ 2: 共通鍵を作って暗号化送信",
-            "narration": "クライアントがランダムに共通鍵を生成し、サーバの公開鍵で暗号化して送ります。",
-            "from": "client",
+            "narration": "アリスがランダムに共通鍵を生成し、サーバの公開鍵で暗号化して送ります。",
+            "from": "alice",
             "to": "server",
             "payload": "🔒共通鍵",
             "packetAccent": "warm"
@@ -246,7 +246,7 @@
           {
             "title": "ステップ 3: 共通鍵で本通信",
             "narration": "両者が共通鍵を共有できたので、以降は高速な共通鍵暗号で大量データをやりとり。",
-            "from": "client",
+            "from": "alice",
             "to": "server",
             "payload": "暗号化リクエスト",
             "packetAccent": "success"
@@ -255,7 +255,7 @@
             "title": "ステップ 4: 同じ共通鍵で応答",
             "narration": "サーバも同じ共通鍵で応答を暗号化。これが HTTPS の通信本体です。",
             "from": "server",
-            "to": "client",
+            "to": "alice",
             "payload": "暗号化応答",
             "packetAccent": "success"
           }

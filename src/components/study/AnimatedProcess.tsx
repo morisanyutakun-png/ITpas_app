@@ -3,8 +3,33 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Pause, Play, RotateCcw, SkipForward } from "lucide-react";
 import type { StudyFigure } from "@/lib/contentSchema";
+import { Character } from "./Characters";
 
 type Animated = Extract<StudyFigure, { kind: "animated-process" }>;
+
+type CharName =
+  | "alice"
+  | "bob"
+  | "eve"
+  | "server"
+  | "hacker"
+  | "trent";
+
+/**
+ * Heuristic: when an actor's id or label hints at a known character,
+ * we upgrade the rendering to a proper SVG illustration. Existing
+ * animated-process scenes pick up the new characters automatically.
+ */
+function actorAsCharacter(id: string, label: string): CharName | null {
+  const s = `${id} ${label}`.toLowerCase();
+  if (/alice|アリス/.test(s)) return "alice";
+  if (/\bbob\b|ボブ/.test(s)) return "bob";
+  if (/\beve\b|イブ/.test(s)) return "eve";
+  if (/trent|トレント|認証局|\bca\b/.test(s)) return "trent";
+  if (/hacker|attacker|攻撃者|ハッカー/.test(s)) return "hacker";
+  if (/server|サーバ/.test(s)) return "server";
+  return null;
+}
 
 const HUE: Record<string, string> = {
   primary: "#0A84FF",
@@ -91,7 +116,9 @@ export function AnimatedProcess({ figure }: { figure: Animated }) {
         </div>
       </div>
 
-      {/* SVG canvas */}
+      {/* SVG canvas — paths/arrows/packets only. Actors that match a known
+          character are rendered as HTML SVG illustrations on top so the
+          face details stay crisp. */}
       <div className="relative w-full overflow-hidden rounded-xl bg-gradient-to-br from-muted/40 to-muted/10 ring-1 ring-inset ring-border">
         <svg
           viewBox={`0 0 ${W} ${H}`}
@@ -112,76 +139,28 @@ export function AnimatedProcess({ figure }: { figure: Animated }) {
             </marker>
           </defs>
 
-          {/* Actors */}
+          {/* Plain (non-character) actors */}
           {figure.actors.map((a) => {
+            const charMatch = actorAsCharacter(a.id, a.label);
+            if (charMatch) return null; // drawn as HTML overlay below
             const cx = (a.x / 100) * W;
             const cy = (a.y / 100) * H;
-            const isActive = a.id === step.from || a.id === step.to;
             const accent = HUE[a.accent] ?? HUE.neutral;
             return (
-              <g
-                key={a.id}
-                transform={`translate(${cx}, ${cy})`}
-                style={{ transition: "filter 300ms ease-out" }}
-                filter={isActive ? "url(#none)" : undefined}
-              >
-                {/* Pulse ring on the source actor */}
+              <g key={a.id} transform={`translate(${cx}, ${cy})`}>
                 {a.id === step.from && !reducedMotion && (
-                  <circle
-                    r={56}
-                    fill="none"
-                    stroke={accent}
-                    strokeWidth={2}
-                    opacity={0.6}
-                  >
-                    <animate
-                      attributeName="r"
-                      values="48;72;48"
-                      dur="1.6s"
-                      repeatCount="indefinite"
-                    />
-                    <animate
-                      attributeName="opacity"
-                      values="0.55;0;0.55"
-                      dur="1.6s"
-                      repeatCount="indefinite"
-                    />
+                  <circle r={56} fill="none" stroke={accent} strokeWidth={2} opacity={0.6}>
+                    <animate attributeName="r" values="48;72;48" dur="1.6s" repeatCount="indefinite" />
+                    <animate attributeName="opacity" values="0.55;0;0.55" dur="1.6s" repeatCount="indefinite" />
                   </circle>
                 )}
-                <ellipse
-                  cx={0}
-                  cy={36}
-                  rx={68}
-                  ry={4}
-                  fill="rgba(15,23,42,0.10)"
-                />
+                <ellipse cx={0} cy={36} rx={68} ry={4} fill="rgba(15,23,42,0.10)" />
                 {a.shape === "circle" ? (
-                  <circle
-                    r={36}
-                    fill="white"
-                    stroke={accent}
-                    strokeWidth={2.5}
-                  />
+                  <circle r={36} fill="white" stroke={accent} strokeWidth={2.5} />
                 ) : (
-                  <rect
-                    x={-72}
-                    y={-32}
-                    width={144}
-                    height={64}
-                    rx={14}
-                    fill="white"
-                    stroke={accent}
-                    strokeWidth={2.5}
-                  />
+                  <rect x={-72} y={-32} width={144} height={64} rx={14} fill="white" stroke={accent} strokeWidth={2.5} />
                 )}
-                <rect
-                  x={-72}
-                  y={-32}
-                  width={6}
-                  height={64}
-                  rx={3}
-                  fill={accent}
-                />
+                <rect x={-72} y={-32} width={6} height={64} rx={3} fill={accent} />
                 <text
                   x={-58}
                   y={a.sublabel ? -2 : 6}
@@ -223,14 +202,47 @@ export function AnimatedProcess({ figure }: { figure: Animated }) {
           )}
         </svg>
 
-        {/* Narration overlay */}
-        <div className="absolute inset-x-3 bottom-3 rounded-xl bg-foreground/[0.92] px-4 py-2.5 text-background backdrop-blur">
-          <div className="text-[10.5px] font-semibold uppercase tracking-[0.18em] opacity-70">
-            {step.title}
-          </div>
-          <div className="mt-0.5 text-[12.5px] leading-relaxed">
-            {step.narration}
-          </div>
+        {/* Character overlay (HTML, on top of SVG). Each actor whose name
+            matches a known character is rendered with the rich SVG
+            illustration so the face stays detailed. */}
+        {figure.actors.map((a) => {
+          const charMatch = actorAsCharacter(a.id, a.label);
+          if (!charMatch) return null;
+          const isActive = a.id === step.from || a.id === step.to;
+          return (
+            <div
+              key={`char-${a.id}`}
+              className="pointer-events-none absolute"
+              style={{
+                left: `${a.x}%`,
+                top: `${a.y}%`,
+                transform: "translate(-50%, -50%)",
+                width: "16%",
+                transition: "transform 400ms ease-out",
+              }}
+            >
+              <div className={isActive ? "scale-105" : "opacity-90"}>
+                <Character
+                  name={charMatch}
+                  expression={isActive ? "happy" : "neutral"}
+                  label={a.label}
+                  sublabel={a.sublabel}
+                />
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Narration block — placed below the SVG so it never covers the
+          actors or moving packet. */}
+      <div className="mt-3 rounded-xl bg-foreground px-4 py-3 text-background">
+        <div className="flex items-center gap-2 text-[10.5px] font-semibold uppercase tracking-[0.18em] opacity-70">
+          <span aria-hidden className="inline-block h-1.5 w-1.5 rounded-full bg-[#0A84FF]" />
+          {step.title}
+        </div>
+        <div className="mt-1 text-[13px] leading-[1.75]">
+          {step.narration}
         </div>
       </div>
 

@@ -89,9 +89,9 @@
         "caption": "SQL インジェクションが成立するまでの流れ。攻撃者の入力が SQL 文に直接埋め込まれてしまうのが原因です。",
         "stepDurationMs": 2400,
         "actors": [
-          { "id": "attacker", "label": "攻撃者", "x": 10, "y": 30, "accent": "danger", "shape": "device" },
-          { "id": "app", "label": "Web アプリ", "sublabel": "未対策", "x": 50, "y": 30, "accent": "warm", "shape": "box" },
-          { "id": "db", "label": "DB サーバ", "x": 90, "y": 30, "accent": "primary", "shape": "box" }
+          { "id": "attacker", "label": "ハッカー", "sublabel": "攻撃者", "x": 10, "y": 50, "accent": "danger", "shape": "device" },
+          { "id": "app", "label": "Web アプリ", "sublabel": "未対策", "x": 50, "y": 50, "accent": "warm", "shape": "box" },
+          { "id": "db", "label": "DB サーバ", "x": 90, "y": 50, "accent": "primary", "shape": "box" }
         ],
         "steps": [
           {

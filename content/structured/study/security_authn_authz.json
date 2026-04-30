@@ -33,10 +33,10 @@
       ],
       "figure": {
         "kind": "animated-process",
-        "caption": "ユーザがリソースにアクセスするまでの流れを 5 ステップでアニメで見ます。認証 NG ならそこで終わり。認証 OK でも認可 NG なら拒否されます。",
+        "caption": "アリスがリソースにアクセスするまでの流れを 5 ステップで見ます。認証 NG ならそこで終わり。認証 OK でも認可 NG なら拒否されます。",
         "stepDurationMs": 2200,
         "actors": [
-          { "id": "user", "label": "ユーザ", "x": 8, "y": 50, "accent": "neutral", "shape": "device" },
+          { "id": "alice", "label": "アリス", "sublabel": "ユーザ", "x": 8, "y": 50, "accent": "warm", "shape": "device" },
           { "id": "authn", "label": "認証サーバ", "sublabel": "Who are you?", "x": 36, "y": 50, "accent": "primary", "shape": "box" },
           { "id": "authz", "label": "認可サーバ", "sublabel": "What can you do?", "x": 64, "y": 50, "accent": "warm", "shape": "box" },
           { "id": "resource", "label": "リソース", "sublabel": "API / ページ", "x": 92, "y": 50, "accent": "success", "shape": "box" }
@@ -44,8 +44,8 @@
         "steps": [
           {
             "title": "ステップ 1: 認証情報を提示",
-            "narration": "ユーザがパスワード・指紋などをサーバに送ります。",
-            "from": "user",
+            "narration": "アリスがパスワード・指紋などをサーバに送ります。",
+            "from": "alice",
             "to": "authn",
             "payload": "ID + パスワード",
             "packetAccent": "primary"
@@ -54,14 +54,14 @@
             "title": "ステップ 2: 本人確認 OK",
             "narration": "認証サーバが本人と確認すると、認証トークンを発行します。",
             "from": "authn",
-            "to": "user",
+            "to": "alice",
             "payload": "認証トークン",
             "packetAccent": "primary"
           },
           {
             "title": "ステップ 3: トークンで権限を確認",
-            "narration": "ユーザはトークンを添えて認可サーバに『この操作してよい?』と問い合わせ。",
-            "from": "user",
+            "narration": "アリスはトークンを添えて認可サーバに『この操作してよい?』と問い合わせ。",
+            "from": "alice",
             "to": "authz",
             "payload": "トークン + 操作要求",
             "packetAccent": "warm"
@@ -70,14 +70,14 @@
             "title": "ステップ 4: 権限あり",
             "narration": "認可サーバがロールと操作を照らして OK なら、許可を返します。",
             "from": "authz",
-            "to": "user",
+            "to": "alice",
             "payload": "許可",
             "packetAccent": "warm"
           },
           {
             "title": "ステップ 5: リソースにアクセス",
             "narration": "認可された操作だけがリソースに到達できます。NG ならここに来れません。",
-            "from": "user",
+            "from": "alice",
             "to": "resource",
             "payload": "操作実行",
             "packetAccent": "success"

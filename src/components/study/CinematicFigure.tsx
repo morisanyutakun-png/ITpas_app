@@ -163,7 +163,7 @@ export function CinematicFigure({ figure }: { figure: Cinematic }) {
         </div>
       </div>
 
-      {/* Stage */}
+      {/* Stage — pure canvas, no overlapping narration */}
       <div
         className="relative w-full overflow-hidden rounded-xl bg-gradient-to-br from-[#0A84FF]/[0.04] via-muted/30 to-[#AF52DE]/[0.05] ring-1 ring-inset ring-border"
         style={{ paddingTop: ASPECT[figure.aspect] }}
@@ -191,15 +191,21 @@ export function CinematicFigure({ figure }: { figure: Cinematic }) {
             return <CinObject key={o.id} obj={o} state={s} />;
           })}
         </div>
+      </div>
 
-        {/* Narration overlay */}
-        <div className="absolute inset-x-3 bottom-3 rounded-xl bg-foreground/[0.94] px-4 py-3 text-background backdrop-blur">
-          <div className="text-[10.5px] font-semibold uppercase tracking-[0.18em] opacity-70">
-            {scene.title}
-          </div>
-          <div className="mt-0.5 text-[12.5px] leading-relaxed">
-            {scene.narration}
-          </div>
+      {/* Narration block — sits below the canvas so it never overlaps
+          the characters or props. Title + narration as a black "subtitle
+          card" with a leading dot to suggest a TV-bug. */}
+      <div className="mt-3 rounded-xl bg-foreground px-4 py-3 text-background">
+        <div className="flex items-center gap-2 text-[10.5px] font-semibold uppercase tracking-[0.18em] opacity-70">
+          <span
+            aria-hidden
+            className="inline-block h-1.5 w-1.5 rounded-full bg-[#AF52DE]"
+          />
+          {scene.title}
+        </div>
+        <div className="mt-1 text-[13px] leading-[1.75]">
+          {scene.narration}
         </div>
       </div>
 

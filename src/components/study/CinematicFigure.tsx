@@ -325,21 +325,23 @@ function CinObject({ obj, state }: { obj: Obj; state: ResolvedObj }) {
   // existing renderShape fallback path.
   const isCharacter = state.kind === "character";
 
+  // Character avatars sit on the back layer so keys/locks/envelopes drawn
+  // afterwards land *on top of* the character (rather than the other way
+  // around, which was hiding the props). Use explicit z-index because the
+  // children share the same stacking context.
   return (
     <div
-      className="absolute"
+      className={`absolute ${isCharacter ? "z-0" : "z-10"} cin-anim-fast`}
       style={{
         left: `${state.x}%`,
         top: `${state.y}%`,
         transform: `translate(-50%, -50%) scale(${state.scale}) rotate(${state.rotation}deg)`,
         opacity: state.opacity,
-        transition:
-          "left 700ms cubic-bezier(0.4,0,0.2,1), top 700ms cubic-bezier(0.4,0,0.2,1), transform 700ms cubic-bezier(0.4,0,0.2,1), opacity 500ms ease-out",
         width: `${state.width}%`,
       }}
     >
       <div
-        className={`relative ${effectClass}`}
+        className={`relative ${isCharacter ? "cin-breathe" : ""} ${effectClass}`}
         style={{ "--cin-hue": hue } as React.CSSProperties}
       >
         {isCharacter ? (

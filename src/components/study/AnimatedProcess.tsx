@@ -116,13 +116,44 @@ export function AnimatedProcess({ figure }: { figure: Animated }) {
         </div>
       </div>
 
-      {/* SVG canvas — paths/arrows/packets only. Actors that match a known
-          character are rendered as HTML SVG illustrations on top so the
-          face details stay crisp. */}
+      {/* Layered stage:
+            • back  — HTML characters (z-0)
+            • mid   — SVG actors / animated packet (z-10)
+          Putting characters on the back layer means the moving packet,
+          payload chips and arrows draw *on top of* them (so the key /
+          envelope / data label is always visible). */}
       <div className="relative w-full overflow-hidden rounded-xl bg-gradient-to-br from-muted/40 to-muted/10 ring-1 ring-inset ring-border">
+        {/* Character overlay — back layer */}
+        {figure.actors.map((a) => {
+          const charMatch = actorAsCharacter(a.id, a.label);
+          if (!charMatch) return null;
+          const isActive = a.id === step.from || a.id === step.to;
+          return (
+            <div
+              key={`char-${a.id}`}
+              className="pointer-events-none absolute z-0 cin-anim-fast"
+              style={{
+                left: `${a.x}%`,
+                top: `${a.y}%`,
+                transform: "translate(-50%, -50%)",
+                width: "16%",
+              }}
+            >
+              <div className={`cin-breathe ${isActive ? "scale-105" : "opacity-90"}`}>
+                <Character
+                  name={charMatch}
+                  expression={isActive ? "happy" : "neutral"}
+                  label={a.label}
+                  sublabel={a.sublabel}
+                />
+              </div>
+            </div>
+          );
+        })}
+
         <svg
           viewBox={`0 0 ${W} ${H}`}
-          className="h-auto w-full"
+          className="relative z-10 h-auto w-full"
           preserveAspectRatio="xMidYMid meet"
         >
           <defs>
@@ -202,36 +233,6 @@ export function AnimatedProcess({ figure }: { figure: Animated }) {
           )}
         </svg>
 
-        {/* Character overlay (HTML, on top of SVG). Each actor whose name
-            matches a known character is rendered with the rich SVG
-            illustration so the face stays detailed. */}
-        {figure.actors.map((a) => {
-          const charMatch = actorAsCharacter(a.id, a.label);
-          if (!charMatch) return null;
-          const isActive = a.id === step.from || a.id === step.to;
-          return (
-            <div
-              key={`char-${a.id}`}
-              className="pointer-events-none absolute"
-              style={{
-                left: `${a.x}%`,
-                top: `${a.y}%`,
-                transform: "translate(-50%, -50%)",
-                width: "16%",
-                transition: "transform 400ms ease-out",
-              }}
-            >
-              <div className={isActive ? "scale-105" : "opacity-90"}>
-                <Character
-                  name={charMatch}
-                  expression={isActive ? "happy" : "neutral"}
-                  label={a.label}
-                  sublabel={a.sublabel}
-                />
-              </div>
-            </div>
-          );
-        })}
       </div>
 
       {/* Narration block — placed below the SVG so it never covers the

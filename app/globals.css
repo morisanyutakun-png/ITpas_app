@@ -470,6 +470,32 @@
 .cin-effect-spin  { animation: cin-spin 0.9s linear 1 both; }
 .cin-effect-ripple { animation: cin-ripple 1s ease-out 1 both; border-radius: inherit; }
 
+/* Faster transitions for cinematic objects so position / scale / rotation
+   feel responsive and less like a slideshow. The wrapper sets the base
+   transition; nothing else needs to. */
+.cin-anim-fast {
+  transition:
+    left 380ms cubic-bezier(0.34, 1.2, 0.4, 1),
+    top 380ms cubic-bezier(0.34, 1.2, 0.4, 1),
+    transform 380ms cubic-bezier(0.34, 1.2, 0.4, 1),
+    opacity 280ms ease-out;
+}
+
+/* Subtle breathing — characters lift very slightly on a 3.6s cycle so the
+   stage never feels frozen between scene transitions. */
+@keyframes cin-breathe {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+.cin-breathe { animation: cin-breathe 3.6s ease-in-out infinite; will-change: transform; }
+
+/* A drifting glow / float decoration for ambient props (keys, locks). */
+@keyframes cin-float {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-4px) rotate(1deg); }
+}
+.cin-float { animation: cin-float 2.6s ease-in-out infinite; }
+
 @media (prefers-reduced-motion: reduce) {
   .cin-effect-pulse,
   .cin-effect-flash,

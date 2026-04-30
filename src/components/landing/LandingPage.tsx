@@ -508,6 +508,16 @@ function StatCell({ value, label }: { value: string; label: string }) {
 // ── Pricing teaser ───────────────────────────────────────────────────────
 
 function PricingTeaserSection() {
+  // Direct-to-Stripe shortcut. The LP doesn't know whether the visitor is
+  // signed in; routing through `/api/auth/google/login?returnTo=...` works
+  // in both cases — the login route fast-forwards already-authenticated
+  // visitors back to `returnTo` without showing the Google chooser again.
+  const proHref = `/api/auth/google/login?returnTo=${encodeURIComponent(
+    "/api/checkout/start?tier=pro"
+  )}`;
+  const premiumHref = `/api/auth/google/login?returnTo=${encodeURIComponent(
+    "/api/checkout/start?tier=premium"
+  )}`;
   const plans = [
     {
       tier: "Free",
@@ -529,7 +539,7 @@ function PricingTeaserSection() {
         "模擬試験 (100問/120分)",
         "広告非表示",
       ],
-      cta: { href: "/pricing", label: "Proの詳細" },
+      cta: { href: proHref, label: "Proを始める" },
     },
     {
       tier: "Premium",
@@ -542,7 +552,7 @@ function PricingTeaserSection() {
         "最大200問の模擬試験",
         "優先サポート",
       ],
-      cta: { href: "/pricing", label: "Premiumの詳細" },
+      cta: { href: premiumHref, label: "Premiumを始める" },
     },
   ];
   return (

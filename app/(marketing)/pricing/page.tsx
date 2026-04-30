@@ -8,7 +8,6 @@ import {
   PRO_PRICE_JPY_MONTHLY,
   type Plan,
 } from "@/lib/plan";
-import { startCheckoutAction } from "@/server/actions/checkout";
 import { stripeConfigured } from "@/lib/stripe";
 
 export const dynamic = "force-dynamic";
@@ -266,21 +265,35 @@ function CheckoutButtons({
   const primaryBg = isPremium
     ? "bg-ios-purple text-white"
     : "bg-primary text-primary-foreground";
+  // Single-hop checkout: signed-out users go through Google sign-in and the
+  // OAuth callback's returnTo lands them on /api/checkout/start, which
+  // 303-redirects straight to the Stripe Checkout URL. No interstitial.
+  const checkoutHref = signedIn
+    ? `/api/checkout/start?tier=${tier}`
+    : `/api/auth/google/login?returnTo=${encodeURIComponent(
+        `/api/checkout/start?tier=${tier}`
+      )}`;
   return (
     <div className="space-y-2">
-      <form action={startCheckoutAction}>
-        <input type="hidden" name="tier" value={tier} />
+      {configured ? (
+        <Link
+          href={checkoutHref}
+          className={`inline-flex h-11 w-full items-center justify-center rounded-full ${primaryBg} text-[15px] font-semibold active:opacity-80`}
+        >
+          {signedIn ? "アップグレード" : "Googleでログインしてアップグレード"}
+        </Link>
+      ) : (
         <button
-          type="submit"
-          disabled={!configured}
-          className={`inline-flex h-11 w-full items-center justify-center rounded-full ${primaryBg} text-[15px] font-semibold active:opacity-80 disabled:opacity-40`}
+          type="button"
+          disabled
+          className={`inline-flex h-11 w-full items-center justify-center rounded-full ${primaryBg} text-[15px] font-semibold opacity-40`}
         >
           アップグレード
         </button>
-      </form>
+      )}
       {!signedIn && (
         <p className="text-center text-[11px] text-muted-foreground">
-          お支払いにはGoogleログインが必要です
+          ログイン完了後、すぐ決済画面に進みます
         </p>
       )}
     </div>

@@ -6,13 +6,7 @@ import { eq } from "drizzle-orm";
 import { db } from "@/db/client";
 import { users } from "@/db/schema";
 import { getCurrentUser } from "@/lib/currentUser";
-import {
-  createCheckoutSession,
-  createBillingPortalSession,
-  priceIdFor,
-  stripeConfigured,
-  type StripeTier,
-} from "@/lib/stripe";
+import { createBillingPortalSession } from "@/lib/stripe";
 
 async function siteOrigin(): Promise<string> {
   const h = await headers();
@@ -22,32 +16,9 @@ async function siteOrigin(): Promise<string> {
   return process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 }
 
-export async function startCheckoutAction(formData: FormData): Promise<void> {
-  const tier: StripeTier =
-    formData.get("tier") === "premium" ? "premium" : "pro";
-
-  const user = await getCurrentUser();
-  if (!user.isSignedIn || !user.email) {
-    redirect(`/api/auth/google/login?returnTo=${encodeURIComponent("/pricing")}`);
-  }
-  if (!stripeConfigured()) {
-    redirect("/pricing?stripe=unconfigured");
-  }
-  const priceId = priceIdFor(tier);
-  if (!priceId) {
-    redirect(`/pricing?stripe=missing_${tier}`);
-  }
-
-  const origin = await siteOrigin();
-  const session = await createCheckoutSession({
-    priceId,
-    customerEmail: user.email,
-    clientReferenceId: user.id,
-    successUrl: `${origin}/account?upgraded=${tier}`,
-    cancelUrl: `${origin}/pricing?canceled=1`,
-  });
-  redirect(session.url);
-}
+// Checkout entry now lives at GET /api/checkout/start. Server actions used
+// to handle this, but the LP needs a single-hop flow (sign in → Stripe)
+// without a server-action POST round-trip, so the new route owns it.
 
 export async function openBillingPortalAction(formData: FormData): Promise<void> {
   void formData;

@@ -363,6 +363,56 @@ const timelineFigureZ = z.object({
     .max(8),
 });
 
+// Animated process — a "video-ish" diagram. The author lays out actors
+// (boxes) at fixed positions and a sequence of steps; each step describes
+// a packet/token moving from one actor to another along a labeled arrow.
+// The renderer cycles through steps with CSS animations so the reader can
+// watch the protocol unfold (TLS handshake, public-key exchange, hashing,
+// SQL injection, etc.). It is more honest than embedding YouTube and
+// far lighter than shipping a video file.
+const animatedProcessFigureZ = z.object({
+  kind: z.literal("animated-process"),
+  caption: z.string().optional(),
+  // Layout actors. Positions are 0..100 percent on the canvas.
+  actors: z
+    .array(
+      z.object({
+        id: z.string().min(1),
+        label: z.string().min(1),
+        sublabel: z.string().optional(),
+        x: z.number().min(0).max(100),
+        y: z.number().min(0).max(100),
+        accent: z
+          .enum(["primary", "warm", "cool", "neutral", "accent", "danger", "success"])
+          .default("neutral"),
+        shape: z.enum(["box", "circle", "device"]).default("box"),
+      })
+    )
+    .min(2)
+    .max(6),
+  // The animated sequence. Each step focuses on a moving "packet" that
+  // travels from `from` to `to`, optionally carrying a payload label.
+  steps: z
+    .array(
+      z.object({
+        title: z.string().min(1),
+        narration: z.string().min(1),
+        from: z.string().min(1),
+        to: z.string().min(1),
+        // Tag floating with the moving packet (e.g. 「公開鍵で暗号化」).
+        payload: z.string().optional(),
+        // Optional accent for the packet itself.
+        packetAccent: z
+          .enum(["primary", "warm", "cool", "neutral", "accent", "danger", "success"])
+          .default("primary"),
+      })
+    )
+    .min(2)
+    .max(8),
+  // Auto-play interval per step in ms. Defaults to 2400.
+  stepDurationMs: z.number().int().min(800).max(8000).default(2400),
+});
+
 // Proportion bar — show how a whole is divided. Useful for capacity ratios
 // (RAID), market share, time allocation.
 const proportionBarFigureZ = z.object({
@@ -395,6 +445,7 @@ export const studyFigureZ = z.discriminatedUnion("kind", [
   matrixFigureZ,
   timelineFigureZ,
   proportionBarFigureZ,
+  animatedProcessFigureZ,
 ]);
 
 // A callout — short, accented note inline with the prose. Three voices:

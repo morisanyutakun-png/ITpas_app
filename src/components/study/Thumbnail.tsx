@@ -375,6 +375,47 @@ function glyphFor(kind: StudyFigure["kind"]) {
           ))}
         </g>
       );
+
+    case "animated-process":
+      // Play-button-in-frame motif to suggest "moving figure".
+      return (
+        <g>
+          {/* Two actor boxes with a connecting curve and a packet */}
+          <rect
+            x={0}
+            y={36}
+            width={70}
+            height={64}
+            rx={10}
+            fill="#FFFFFF"
+            fillOpacity={0.92}
+          />
+          <rect
+            x={170}
+            y={36}
+            width={70}
+            height={64}
+            rx={10}
+            fill="#FFFFFF"
+            fillOpacity={0.78}
+          />
+          <path
+            d="M 70 68 Q 120 24, 170 68"
+            stroke="#FFFFFF"
+            strokeOpacity={0.55}
+            strokeWidth={2.5}
+            fill="none"
+            strokeDasharray="5 5"
+          />
+          <circle cx={120} cy={42} r={9} fill="#FFFFFF" fillOpacity={0.95} />
+          {/* Play triangle on left actor */}
+          <path
+            d="M 28 56 L 28 80 L 50 68 z"
+            fill="#0F172A"
+            fillOpacity={0.85}
+          />
+        </g>
+      );
   }
 }
 

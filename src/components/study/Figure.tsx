@@ -1,5 +1,6 @@
 import { ArrowDown, ArrowRight, Check, X } from "lucide-react";
 import type { StudyFigure } from "@/lib/contentSchema";
+import { AnimatedProcess } from "./AnimatedProcess";
 
 // ── Accent palette ────────────────────────────────────────────────────────
 //
@@ -111,6 +112,7 @@ export function StudyFigureView({ figure }: { figure: StudyFigure }) {
   if (figure.kind === "topology") return <TopologyFigure figure={figure} />;
   if (figure.kind === "matrix") return <MatrixFigure figure={figure} />;
   if (figure.kind === "timeline") return <TimelineFigure figure={figure} />;
+  if (figure.kind === "animated-process") return <AnimatedProcess figure={figure} />;
   return <ProportionBarFigure figure={figure} />;
 }
 

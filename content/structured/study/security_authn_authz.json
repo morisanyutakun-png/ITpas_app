@@ -32,20 +32,55 @@
         "システムの中でも同じことが起きています。最初にユーザを特定し、次にその人に対して『何ができるか』を判断する ── このルールは、__世界中のどんな仕組みでも同じ__ です。"
       ],
       "figure": {
-        "kind": "step-list",
-        "caption": "順番は固定。逆になることはありません。",
+        "kind": "animated-process",
+        "caption": "ユーザがリソースにアクセスするまでの流れを 5 ステップでアニメで見ます。認証 NG ならそこで終わり。認証 OK でも認可 NG なら拒否されます。",
+        "stepDurationMs": 2200,
+        "actors": [
+          { "id": "user", "label": "ユーザ", "x": 8, "y": 50, "accent": "neutral", "shape": "device" },
+          { "id": "authn", "label": "認証サーバ", "sublabel": "Who are you?", "x": 36, "y": 50, "accent": "primary", "shape": "box" },
+          { "id": "authz", "label": "認可サーバ", "sublabel": "What can you do?", "x": 64, "y": 50, "accent": "warm", "shape": "box" },
+          { "id": "resource", "label": "リソース", "sublabel": "API / ページ", "x": 92, "y": 50, "accent": "success", "shape": "box" }
+        ],
         "steps": [
           {
-            "title": "ステップ 1: 認証 (Authentication)",
-            "body": "ユーザに『あなたは誰?』と尋ね、パスワードや指紋などで本人と確認する。"
+            "title": "ステップ 1: 認証情報を提示",
+            "narration": "ユーザがパスワード・指紋などをサーバに送ります。",
+            "from": "user",
+            "to": "authn",
+            "payload": "ID + パスワード",
+            "packetAccent": "primary"
           },
           {
-            "title": "ステップ 2: 認可 (Authorization)",
-            "body": "確認できた本人に対して、『あなたは何ができるか』を、ロールや権限に基づいて判断する。"
+            "title": "ステップ 2: 本人確認 OK",
+            "narration": "認証サーバが本人と確認すると、認証トークンを発行します。",
+            "from": "authn",
+            "to": "user",
+            "payload": "認証トークン",
+            "packetAccent": "primary"
           },
           {
-            "title": "ステップ 3: 操作の実行",
-            "body": "認可で OK が出た操作だけを、システムが実際に実行する。NG なら拒否。"
+            "title": "ステップ 3: トークンで権限を確認",
+            "narration": "ユーザはトークンを添えて認可サーバに『この操作してよい?』と問い合わせ。",
+            "from": "user",
+            "to": "authz",
+            "payload": "トークン + 操作要求",
+            "packetAccent": "warm"
+          },
+          {
+            "title": "ステップ 4: 権限あり",
+            "narration": "認可サーバがロールと操作を照らして OK なら、許可を返します。",
+            "from": "authz",
+            "to": "user",
+            "payload": "許可",
+            "packetAccent": "warm"
+          },
+          {
+            "title": "ステップ 5: リソースにアクセス",
+            "narration": "認可された操作だけがリソースに到達できます。NG ならここに来れません。",
+            "from": "user",
+            "to": "resource",
+            "payload": "操作実行",
+            "packetAccent": "success"
           }
         ]
       },

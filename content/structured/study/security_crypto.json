@@ -63,18 +63,56 @@
         "弱点は **処理が遅い** こと。共通鍵に比べて 100〜1,000 倍ほど重いので、大量データの暗号化には向きません。"
       ],
       "figure": {
-        "kind": "topology",
-        "caption": "送信者・受信者・盗聴者がいる場面。公開鍵で暗号化されたメッセージは、秘密鍵を持つ受信者だけが復号できる。",
-        "nodes": [
-          { "id": "alice", "label": "送信者", "sublabel": "公開鍵で暗号化", "x": 8, "y": 28, "accent": "warm", "shape": "device" },
-          { "id": "msg", "label": "暗号文", "sublabel": "盗まれても読めない", "x": 50, "y": 28, "accent": "neutral", "shape": "box" },
-          { "id": "bob", "label": "受信者", "sublabel": "秘密鍵で復号", "x": 92, "y": 28, "accent": "primary", "shape": "device" },
-          { "id": "eve", "label": "盗聴者", "sublabel": "秘密鍵がない", "x": 50, "y": 80, "accent": "danger", "shape": "device" }
+        "kind": "animated-process",
+        "caption": "送信者 (アリス) が公開鍵で暗号化 → 暗号文がインターネットを渡る → 受信者 (ボブ) が秘密鍵で復号、という 4 ステップを動かして見ます。盗聴者 (イブ) が公開鍵を持っていても、対の秘密鍵がないので復号できません。",
+        "stepDurationMs": 2600,
+        "actors": [
+          { "id": "bob", "label": "ボブ", "sublabel": "受信者 / 鍵ペアを生成", "x": 86, "y": 30, "accent": "primary", "shape": "device" },
+          { "id": "alice", "label": "アリス", "sublabel": "送信者", "x": 12, "y": 30, "accent": "warm", "shape": "device" },
+          { "id": "net", "label": "インターネット", "sublabel": "誰でも見える", "x": 50, "y": 70, "accent": "neutral", "shape": "box" },
+          { "id": "eve", "label": "イブ", "sublabel": "盗聴者", "x": 86, "y": 78, "accent": "danger", "shape": "device" }
         ],
-        "edges": [
-          { "from": "alice", "to": "msg", "label": "暗号化", "style": "arrow" },
-          { "from": "msg", "to": "bob", "label": "復号", "style": "arrow" },
-          { "from": "msg", "to": "eve", "label": "解読不可", "style": "dashed" }
+        "steps": [
+          {
+            "title": "ステップ 1: 鍵ペアを作る",
+            "narration": "ボブが公開鍵 / 秘密鍵のペアを生成します。秘密鍵はボブだけが保持します。",
+            "from": "bob",
+            "to": "bob",
+            "payload": "🔑+🔒",
+            "packetAccent": "primary"
+          },
+          {
+            "title": "ステップ 2: 公開鍵を配る",
+            "narration": "ボブは公開鍵を世界中に公開してよい。アリスもその公開鍵を入手します。",
+            "from": "bob",
+            "to": "alice",
+            "payload": "公開鍵",
+            "packetAccent": "primary"
+          },
+          {
+            "title": "ステップ 3: 公開鍵で暗号化",
+            "narration": "アリスはボブの公開鍵でメッセージを暗号化し、暗号文をネットへ送ります。",
+            "from": "alice",
+            "to": "net",
+            "payload": "暗号文",
+            "packetAccent": "warm"
+          },
+          {
+            "title": "ステップ 4: 秘密鍵で復号",
+            "narration": "ネットを渡った暗号文をボブが受け取り、秘密鍵で復号します。元のメッセージが読めるのはボブだけ。",
+            "from": "net",
+            "to": "bob",
+            "payload": "暗号文",
+            "packetAccent": "warm"
+          },
+          {
+            "title": "ステップ 5: 盗聴者は読めない",
+            "narration": "イブが暗号文をコピーしても、ボブの秘密鍵がないので復号できません。これが公開鍵暗号の安全性の核です。",
+            "from": "net",
+            "to": "eve",
+            "payload": "解読不可",
+            "packetAccent": "danger"
+          }
         ]
       },
       "callouts": [
@@ -97,6 +135,49 @@
         "現実の通信では、**速い共通鍵 + 鍵配送に強い公開鍵** を組み合わせた **ハイブリッド方式** がほぼ標準です。HTTPS / TLS もこの仕組みで動いています。",
         "流れは: ① 通信の最初に **公開鍵暗号で『共通鍵を交換』** する。② 共通鍵が両者に渡ったら、③ 以降の **大量データは共通鍵暗号で高速にやりとり**。鍵配送と速度の両方を解決する、よくできた組合せです。"
       ],
+      "figure": {
+        "kind": "animated-process",
+        "caption": "TLS ハンドシェイクの簡略版を 4 ステップで動かします。冒頭だけ公開鍵を使い、本通信は共通鍵で高速にやりとりするのがポイント。",
+        "stepDurationMs": 2400,
+        "actors": [
+          { "id": "client", "label": "クライアント", "sublabel": "ブラウザ", "x": 14, "y": 30, "accent": "warm", "shape": "device" },
+          { "id": "server", "label": "サーバ", "sublabel": "Web サイト", "x": 86, "y": 30, "accent": "primary", "shape": "device" }
+        ],
+        "steps": [
+          {
+            "title": "ステップ 1: 公開鍵を受け取る",
+            "narration": "クライアントがアクセスを開始すると、サーバが SSL 証明書 (=公開鍵) を返します。",
+            "from": "server",
+            "to": "client",
+            "payload": "公開鍵",
+            "packetAccent": "primary"
+          },
+          {
+            "title": "ステップ 2: 共通鍵を作って暗号化送信",
+            "narration": "クライアントがランダムに共通鍵を生成し、サーバの公開鍵で暗号化して送ります。",
+            "from": "client",
+            "to": "server",
+            "payload": "🔒共通鍵",
+            "packetAccent": "warm"
+          },
+          {
+            "title": "ステップ 3: 共通鍵で本通信",
+            "narration": "両者が共通鍵を共有できたので、以降は高速な共通鍵暗号で大量データをやりとり。",
+            "from": "client",
+            "to": "server",
+            "payload": "暗号化リクエスト",
+            "packetAccent": "success"
+          },
+          {
+            "title": "ステップ 4: 同じ共通鍵で応答",
+            "narration": "サーバも同じ共通鍵で応答を暗号化。これが HTTPS の通信本体です。",
+            "from": "server",
+            "to": "client",
+            "payload": "暗号化応答",
+            "packetAccent": "success"
+          }
+        ]
+      },
       "figure": {
         "kind": "matrix",
         "caption": "3 方式を、速度・鍵配送・主用途で比較。実用ではハイブリッドで補い合う。",

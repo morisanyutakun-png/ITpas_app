@@ -91,6 +91,32 @@
       ]
     },
     {
+      "heading": "アローダイアグラムをアニメで体感",
+      "summary": "並行できる作業がどう走るか、依存関係を矢印で動かして見る。",
+      "paragraphs": [
+        "アローダイアグラムは『どの作業が終わってから次に進めるか』を矢印で繋いだ図です。==複数の経路が並行で走り、最終工程で合流する== のが特徴。下のアニメで動きを見てみましょう。"
+      ],
+      "figure": {
+        "kind": "animated-process",
+        "caption": "5 工程のミニプロジェクト。設計 → (要件 ‖ デザイン) → 開発 → 検収。経路がどう流れるかを見る。",
+        "stepDurationMs": 2100,
+        "actors": [
+          { "id": "design", "label": "設計", "x": 10, "y": 50, "accent": "primary", "shape": "box" },
+          { "id": "req", "label": "要件定義", "x": 38, "y": 25, "accent": "warm", "shape": "box" },
+          { "id": "ui", "label": "UI デザイン", "x": 38, "y": 75, "accent": "accent", "shape": "box" },
+          { "id": "dev", "label": "開発", "x": 68, "y": 50, "accent": "primary", "shape": "box" },
+          { "id": "qa", "label": "検収", "x": 92, "y": 50, "accent": "success", "shape": "box" }
+        ],
+        "steps": [
+          { "title": "1. 設計開始", "narration": "プロジェクトは設計工程から始まります。", "from": "design", "to": "req", "payload": "fork →", "packetAccent": "primary" },
+          { "title": "2. 並行 (UI 側)", "narration": "設計と並行して UI デザインが走ります。", "from": "design", "to": "ui", "payload": "fork ↘", "packetAccent": "accent" },
+          { "title": "3. 開発に合流", "narration": "要件と UI が揃ったら、開発工程に合流します。", "from": "req", "to": "dev", "payload": "join", "packetAccent": "warm" },
+          { "title": "4. UI も合流", "narration": "UI デザインも開発に合流します。両方が揃わないと開発を始められません。", "from": "ui", "to": "dev", "payload": "join", "packetAccent": "accent" },
+          { "title": "5. 検収", "narration": "開発が終わったら検収へ。最終工程です。", "from": "dev", "to": "qa", "payload": "deliver", "packetAccent": "success" }
+        ]
+      }
+    },
+    {
       "heading": "クリティカルパス ── プロジェクト全体の所要時間を決める経路",
       "summary": "アローダイアグラムの中で『最も時間がかかる経路』。1 日遅れると全体が遅れる。",
       "paragraphs": [

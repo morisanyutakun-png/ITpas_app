@@ -33,6 +33,29 @@
       ]
     },
     {
+      "heading": "DNS 問い合わせの動きを見る",
+      "summary": "アドレスバーに名前を入れたとき、裏で何が起きているかを 4 ステップで体感。",
+      "paragraphs": [
+        "DNS は『**ドメイン名 → IP アドレス**』の変換を担当する仕組みです。普段は意識しませんが、ブラウザがアクセスするたびに ==必ず最初に呼ばれる== のが DNS。"
+      ],
+      "figure": {
+        "kind": "animated-process",
+        "caption": "ブラウザが example.com にアクセスする裏で動く DNS 問い合わせ。",
+        "stepDurationMs": 2200,
+        "actors": [
+          { "id": "browser", "label": "ブラウザ", "x": 12, "y": 30, "accent": "warm", "shape": "device" },
+          { "id": "dns", "label": "DNS サーバ", "sublabel": "名前を IP に変換", "x": 50, "y": 30, "accent": "primary", "shape": "box" },
+          { "id": "web", "label": "Web サーバ", "sublabel": "実体は IP", "x": 88, "y": 30, "accent": "success", "shape": "box" }
+        ],
+        "steps": [
+          { "title": "1. 名前を尋ねる", "narration": "ブラウザが『example.com の IP は?』と DNS に問い合わせます。", "from": "browser", "to": "dns", "payload": "example.com?", "packetAccent": "warm" },
+          { "title": "2. IP を返す", "narration": "DNS が登録された A レコードから IP アドレスを返します。", "from": "dns", "to": "browser", "payload": "93.184.216.34", "packetAccent": "primary" },
+          { "title": "3. IP で接続", "narration": "ブラウザは取得した IP に対して HTTP で接続要求を送ります。", "from": "browser", "to": "web", "payload": "GET /", "packetAccent": "success" },
+          { "title": "4. 応答を表示", "narration": "Web サーバが HTML を返し、ブラウザが描画します。", "from": "web", "to": "browser", "payload": "HTML", "packetAccent": "success" }
+        ]
+      }
+    },
+    {
       "heading": "ネットワーク層 ── IP と関連",
       "summary": "IP で経路を決め、ICMP で疎通確認、ARP で MAC アドレスを引く。",
       "paragraphs": [

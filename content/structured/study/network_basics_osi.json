@@ -169,6 +169,57 @@
       }
     },
     {
+      "heading": "TCP の動きを 3 ステップで体感する",
+      "summary": "TCP は通信を始める前に『**3 way ハンドシェイク**』で接続を張ります。これがあるから順序保証ができる。",
+      "paragraphs": [
+        "TCP の最大の特徴は、**通信を始める前に必ず接続を張る** こと。これを ==3 way ハンドシェイク== と呼びます。SYN → SYN+ACK → ACK の 3 回のやりとりで両者が『話す準備ができた』と確認し合います。",
+        "UDP にはこの手続きがありません。だから速い反面、相手が受け取れる状態かは確認しないまま投げます。"
+      ],
+      "figure": {
+        "kind": "animated-process",
+        "caption": "TCP の 3 way ハンドシェイク。両端が『話す準備 OK』を相互に確認してからデータが流れます。",
+        "stepDurationMs": 2200,
+        "actors": [
+          { "id": "client", "label": "クライアント", "x": 14, "y": 35, "accent": "warm", "shape": "device" },
+          { "id": "server", "label": "サーバ", "x": 86, "y": 35, "accent": "primary", "shape": "device" }
+        ],
+        "steps": [
+          {
+            "title": "1. SYN",
+            "narration": "クライアントが『接続したい』を意味する SYN パケットを送ります。",
+            "from": "client",
+            "to": "server",
+            "payload": "SYN",
+            "packetAccent": "warm"
+          },
+          {
+            "title": "2. SYN + ACK",
+            "narration": "サーバが『了解 + そっちはどう?』を意味する SYN+ACK で返します。",
+            "from": "server",
+            "to": "client",
+            "payload": "SYN+ACK",
+            "packetAccent": "primary"
+          },
+          {
+            "title": "3. ACK",
+            "narration": "クライアントが ACK で確認。これで両者が話す準備 OK となり、本通信が始まります。",
+            "from": "client",
+            "to": "server",
+            "payload": "ACK",
+            "packetAccent": "success"
+          },
+          {
+            "title": "4. データ送信開始",
+            "narration": "ハンドシェイク後はデータを順序保証で送信。届かなければ再送します。",
+            "from": "client",
+            "to": "server",
+            "payload": "data",
+            "packetAccent": "success"
+          }
+        ]
+      }
+    },
+    {
       "heading": "試験で間違えやすい『一段ズレ』",
       "summary": "出題者が好むトラップは、正しい用語を 1 段ズラして並べる手口。覚え方を工夫すれば防げます。",
       "paragraphs": [

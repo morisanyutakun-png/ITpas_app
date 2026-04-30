@@ -24,6 +24,29 @@
       ]
     },
     {
+      "heading": "命令サイクルをアニメで見る",
+      "summary": "CPU が 1 個の命令を実行するときに、内部で何が起きているかを 4 段で体感する。",
+      "paragraphs": [
+        "CPU は 1 個の機械語命令を ==取り出す → 解読する → 実行する → 結果を書く== の 4 段で処理します。これを毎秒数十億回繰り返すのがクロック周波数の意味です。"
+      ],
+      "figure": {
+        "kind": "animated-process",
+        "caption": "CPU の命令サイクル。フェッチ → デコード → 実行 → ライトバック を繰り返す。",
+        "stepDurationMs": 1900,
+        "actors": [
+          { "id": "mem", "label": "メモリ", "sublabel": "命令とデータが置かれる", "x": 12, "y": 50, "accent": "neutral", "shape": "box" },
+          { "id": "cpu", "label": "CPU", "sublabel": "命令を実行", "x": 50, "y": 30, "accent": "primary", "shape": "box" },
+          { "id": "reg", "label": "レジスタ", "sublabel": "結果を書き戻す", "x": 88, "y": 50, "accent": "warm", "shape": "box" }
+        ],
+        "steps": [
+          { "title": "1. フェッチ", "narration": "CPU がメモリから次の命令を取り出します。", "from": "mem", "to": "cpu", "payload": "命令", "packetAccent": "primary" },
+          { "title": "2. デコード", "narration": "取り出した命令を解読し、何をすべきかを判断します。", "from": "cpu", "to": "cpu", "payload": "解読", "packetAccent": "warm" },
+          { "title": "3. 実行", "narration": "演算装置 (ALU) が計算を実行します。", "from": "cpu", "to": "cpu", "payload": "計算", "packetAccent": "success" },
+          { "title": "4. ライトバック", "narration": "結果をレジスタやメモリに書き戻します。", "from": "cpu", "to": "reg", "payload": "結果", "packetAccent": "warm" }
+        ]
+      }
+    },
+    {
       "heading": "メモリ階層",
       "summary": "速さと容量のトレードオフで階層になっている。",
       "analogy": { "label": "たとえると", "body": "**机の上 (レジスタ・キャッシュ)** に置く物は手が早く伸びるが、置ける数が少ない。**本棚 (主記憶)** はたくさん入る。**倉庫 (HDD)** はもっと入るが取りに行くのに時間がかかる ── そんな階層です。" },

@@ -14,7 +14,7 @@ import { readCurrentUser } from "@/lib/currentUser";
 import { getNextChapterWithLesson } from "@/server/queries/curriculum";
 import { getStudyLesson } from "@/server/queries/study";
 import { getTopic, getTopicProgress } from "@/server/queries/topics";
-import { StudyFigureView } from "@/components/study/Figure";
+import { ACCENT_HEX, StudyFigureView } from "@/components/study/Figure";
 import type { StudyLesson } from "@/lib/contentSchema";
 
 export const dynamic = "force-dynamic";
@@ -57,9 +57,13 @@ export default async function StudyLessonPage({
   if (!lesson) notFound();
 
   const topic = topicData?.topic ?? null;
-  const meta = topic
+  const baseMeta = topic
     ? MAJOR_META[topic.majorCategory] ?? { hue: "#8E8E93", label: "論点" }
     : { hue: "#8E8E93", label: "論点" };
+  // Lesson can override the accent (e.g. `accent: "success"` for crypto).
+  const meta = lesson.accent
+    ? { ...baseMeta, hue: ACCENT_HEX(lesson.accent) }
+    : baseMeta;
 
   const ratePct =
     progress.attempted > 0 ? Math.round(progress.rate * 100) : null;

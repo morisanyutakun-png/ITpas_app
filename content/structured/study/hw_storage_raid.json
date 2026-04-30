@@ -2,6 +2,7 @@
   "slug": "hw_storage_raid",
   "title": "ストレージと RAID 構成",
   "dek": "コンピュータシステム",
+  "accent": "accent",
   "hook": "RAID は『複数のディスクを束ねて、性能や信頼性を高める仕組み』。レベル番号と特徴のセットで覚えるのが王道です。",
   "figure": {
     "kind": "compare",
@@ -44,7 +45,63 @@
         "**RAID 6** は **2 台までの故障に耐える** 拡張版。容量効率は (N-2)/N。",
         "両者とも書き込み時にパリティ計算が必要なので、RAID 0 より書き込みは遅い。"
       ],
+      "figure": {
+        "kind": "matrix",
+        "caption": "RAID レベルを耐故障台数・容量効率・速度で比較 (ディスク N 台構成時)。",
+        "columns": [
+          { "title": "RAID 0", "accent": "warm" },
+          { "title": "RAID 1", "accent": "primary" },
+          { "title": "RAID 5", "accent": "accent" },
+          { "title": "RAID 6", "accent": "success" }
+        ],
+        "rows": [
+          {
+            "label": "耐故障台数",
+            "cells": [
+              { "text": "0 台", "tone": "negative" },
+              { "text": "1 台", "tone": "positive" },
+              { "text": "1 台", "tone": "positive" },
+              { "text": "2 台", "tone": "positive" }
+            ]
+          },
+          {
+            "label": "容量効率",
+            "cells": [
+              { "text": "100% (N/N)", "tone": "positive" },
+              { "text": "50% (1/2)", "tone": "negative" },
+              { "text": "(N-1)/N", "tone": "neutral" },
+              { "text": "(N-2)/N", "tone": "neutral" }
+            ]
+          },
+          {
+            "label": "書込み速度",
+            "cells": [
+              { "text": "速い", "tone": "positive" },
+              { "text": "普通" },
+              { "text": "やや遅い (パリティ計算)" },
+              { "text": "遅い (二重パリティ)", "tone": "negative" }
+            ]
+          }
+        ]
+      },
       "miniQuiz": { "question": "1 台までの故障に耐えるパリティ方式は RAID ?", "answer": "RAID 5", "hint": "RAID 6 は 2 台までの故障に耐える。" }
+    },
+    {
+      "heading": "容量効率を比較する",
+      "summary": "ディスク 4 台 (1 台あたり 1TB) で構成したときの利用可能容量。",
+      "paragraphs": [
+        "RAID は『**何台のディスクで何 TB 使えるか**』が運用の核心。下のバーは、1TB のディスクを 4 台用意したときに、各 RAID で実際に使える容量を示しています。",
+        "**RAID 0** は 4TB 全部使えるが信頼性ゼロ。**RAID 1** は 2TB しか使えないが 1 台故障に耐える。**RAID 5** は 3TB 使えて 1 台故障に耐える ── このバランスの良さが業務向けで愛用される理由です。"
+      ],
+      "figure": {
+        "kind": "proportion-bar",
+        "caption": "4 台構成で、(青)=データ容量 (ピンク)=冗長/パリティ。RAID 5 はデータ 75%、パリティ 25%。",
+        "total": 4,
+        "segments": [
+          { "label": "データ (75%)", "value": 3, "accent": "primary" },
+          { "label": "パリティ (25%)", "value": 1, "accent": "danger" }
+        ]
+      }
     },
     {
       "heading": "RAID 10 ── 速さ + 信頼性",

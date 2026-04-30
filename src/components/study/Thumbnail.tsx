@@ -261,6 +261,120 @@ function glyphFor(kind: StudyFigure["kind"]) {
           ))}
         </g>
       );
+
+    case "topology":
+      return (
+        <g>
+          {/* 4 nodes connected as a small graph */}
+          {[
+            { x: 30, y: 18, label: "A" },
+            { x: 200, y: 18, label: "B" },
+            { x: 30, y: 108, label: "C" },
+            { x: 200, y: 108, label: "D" },
+          ].map((n, i) => (
+            <g key={i}>
+              <rect
+                x={n.x}
+                y={n.y}
+                width={36}
+                height={26}
+                rx={6}
+                fill="#FFFFFF"
+                fillOpacity={0.9 - i * 0.1}
+              />
+            </g>
+          ))}
+          {[
+            [48, 31, 218, 31],
+            [48, 31, 48, 121],
+            [218, 31, 218, 121],
+            [48, 121, 218, 121],
+            [48, 31, 218, 121],
+          ].map((p, i) => (
+            <line
+              key={i}
+              x1={p[0]}
+              y1={p[1]}
+              x2={p[2]}
+              y2={p[3]}
+              stroke="#FFFFFF"
+              strokeOpacity={0.45}
+              strokeWidth={1.5}
+            />
+          ))}
+        </g>
+      );
+
+    case "matrix":
+      return (
+        <g>
+          {[0, 1, 2, 3].map((r) =>
+            [0, 1, 2].map((c) => (
+              <rect
+                key={`${r}-${c}`}
+                x={c * 80}
+                y={r * 32}
+                width={72}
+                height={24}
+                rx={4}
+                fill="#FFFFFF"
+                fillOpacity={c === 0 ? 0.9 - r * 0.04 : 0.6 - r * 0.08}
+              />
+            ))
+          )}
+        </g>
+      );
+
+    case "timeline":
+      return (
+        <g>
+          {/* Color-banded timeline bar */}
+          {[0, 1, 2, 3].map((i) => (
+            <rect
+              key={i}
+              x={i * 60}
+              y={48}
+              width={56}
+              height={36}
+              rx={i === 0 ? 8 : 0}
+              fill="#FFFFFF"
+              fillOpacity={0.92 - i * 0.18}
+            />
+          ))}
+          {/* Markers */}
+          {[0, 1, 2, 3].map((i) => (
+            <circle
+              key={i}
+              cx={i * 60 + 28}
+              cy={108}
+              r={5}
+              fill="#FFFFFF"
+              fillOpacity={0.85}
+            />
+          ))}
+        </g>
+      );
+
+    case "proportion-bar":
+      return (
+        <g>
+          {[
+            { x: 0, w: 110 },
+            { x: 110, w: 70 },
+            { x: 180, w: 60 },
+          ].map((s, i) => (
+            <rect
+              key={i}
+              x={s.x}
+              y={48}
+              width={s.w}
+              height={42}
+              fill="#FFFFFF"
+              fillOpacity={0.92 - i * 0.18}
+            />
+          ))}
+        </g>
+      );
   }
 }
 

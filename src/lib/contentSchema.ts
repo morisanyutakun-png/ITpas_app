@@ -142,7 +142,9 @@ const layeredFigureZ = z.object({
       z.object({
         label: z.string().min(1),
         items: z.array(z.string()).default([]),
-        accent: z.enum(["primary", "warm", "cool", "neutral"]).default("neutral"),
+        accent: z
+        .enum(["primary", "warm", "cool", "neutral", "accent", "danger", "success"])
+        .default("neutral"),
       })
     )
     .min(2),
@@ -154,12 +156,16 @@ const compareFigureZ = z.object({
   kind: z.literal("compare"),
   left: z.object({
     title: z.string().min(1),
-    accent: z.enum(["primary", "warm", "cool", "neutral"]).default("primary"),
+    accent: z
+      .enum(["primary", "warm", "cool", "neutral", "accent", "danger", "success"])
+      .default("primary"),
     points: z.array(z.string()).min(1),
   }),
   right: z.object({
     title: z.string().min(1),
-    accent: z.enum(["primary", "warm", "cool", "neutral"]).default("warm"),
+    accent: z
+      .enum(["primary", "warm", "cool", "neutral", "accent", "danger", "success"])
+      .default("warm"),
     points: z.array(z.string()).min(1),
   }),
   caption: z.string().optional(),
@@ -230,7 +236,9 @@ const treeFigureZ = z.object({
       z.object({
         title: z.string().min(1),
         body: z.string().optional(),
-        accent: z.enum(["primary", "warm", "cool", "neutral"]).default("neutral"),
+        accent: z
+        .enum(["primary", "warm", "cool", "neutral", "accent", "danger", "success"])
+        .default("neutral"),
         items: z.array(z.string()).default([]),
       })
     )
@@ -247,7 +255,9 @@ const labeledDiagramFigureZ = z.object({
   centerpiece: z.object({
     title: z.string().min(1),
     body: z.string().optional(),
-    accent: z.enum(["primary", "warm", "cool", "neutral"]).default("primary"),
+    accent: z
+      .enum(["primary", "warm", "cool", "neutral", "accent", "danger", "success"])
+      .default("primary"),
   }),
   labels: z
     .array(
@@ -261,6 +271,118 @@ const labeledDiagramFigureZ = z.object({
   caption: z.string().optional(),
 });
 
+// Topology diagram — explicit positioned nodes connected by lines. Used
+// for network diagrams, authentication flows, request/response paths.
+// Positions are 0..100 percentages so the renderer can lay them out on a
+// 2D grid regardless of canvas size.
+const topologyFigureZ = z.object({
+  kind: z.literal("topology"),
+  caption: z.string().optional(),
+  nodes: z
+    .array(
+      z.object({
+        id: z.string().min(1),
+        label: z.string().min(1),
+        sublabel: z.string().optional(),
+        x: z.number().min(0).max(100),
+        y: z.number().min(0).max(100),
+        accent: z
+          .enum(["primary", "warm", "cool", "neutral", "accent", "danger", "success"])
+          .default("neutral"),
+        shape: z.enum(["box", "circle", "cloud", "device"]).default("box"),
+      })
+    )
+    .min(2)
+    .max(8),
+  edges: z
+    .array(
+      z.object({
+        from: z.string().min(1),
+        to: z.string().min(1),
+        label: z.string().optional(),
+        style: z.enum(["solid", "dashed", "arrow", "bidir"]).default("solid"),
+      })
+    )
+    .max(12),
+});
+
+// Matrix — N rows × M columns. The first column lists row labels (e.g.
+// "速度", "信頼性"), and each remaining column is one entity to compare.
+// Cells can be marked correct/wrong/neutral so visual hierarchy emerges.
+const matrixFigureZ = z.object({
+  kind: z.literal("matrix"),
+  caption: z.string().optional(),
+  columns: z
+    .array(
+      z.object({
+        title: z.string().min(1),
+        accent: z
+          .enum(["primary", "warm", "cool", "neutral", "accent", "danger", "success"])
+          .default("neutral"),
+      })
+    )
+    .min(2)
+    .max(4),
+  rows: z
+    .array(
+      z.object({
+        label: z.string().min(1),
+        cells: z
+          .array(
+            z.object({
+              text: z.string().min(1),
+              tone: z.enum(["positive", "negative", "neutral"]).default("neutral"),
+            })
+          )
+          .min(2)
+          .max(4),
+      })
+    )
+    .min(2)
+    .max(8),
+});
+
+// Timeline — phases with horizontal bars. Used for development phases,
+// PERT-style critical paths, lifecycle phases.
+const timelineFigureZ = z.object({
+  kind: z.literal("timeline"),
+  caption: z.string().optional(),
+  phases: z
+    .array(
+      z.object({
+        label: z.string().min(1),
+        body: z.string().optional(),
+        // Width as a relative weight; renderer normalizes.
+        weight: z.number().positive().default(1),
+        accent: z
+          .enum(["primary", "warm", "cool", "neutral", "accent", "danger", "success"])
+          .default("neutral"),
+      })
+    )
+    .min(2)
+    .max(8),
+});
+
+// Proportion bar — show how a whole is divided. Useful for capacity ratios
+// (RAID), market share, time allocation.
+const proportionBarFigureZ = z.object({
+  kind: z.literal("proportion-bar"),
+  caption: z.string().optional(),
+  total: z.number().positive().default(100),
+  segments: z
+    .array(
+      z.object({
+        label: z.string().min(1),
+        value: z.number().positive(),
+        accent: z
+          .enum(["primary", "warm", "cool", "neutral", "accent", "danger", "success"])
+          .default("neutral"),
+      })
+    )
+    .min(2)
+    .max(8),
+});
+
 export const studyFigureZ = z.discriminatedUnion("kind", [
   layeredFigureZ,
   compareFigureZ,
@@ -269,6 +391,10 @@ export const studyFigureZ = z.discriminatedUnion("kind", [
   stepListFigureZ,
   treeFigureZ,
   labeledDiagramFigureZ,
+  topologyFigureZ,
+  matrixFigureZ,
+  timelineFigureZ,
+  proportionBarFigureZ,
 ]);
 
 // A callout — short, accented note inline with the prose. Three voices:
@@ -338,9 +464,15 @@ export const studyLessonZ = z.object({
   // 1-2 sentences placed under the title — sets the stakes of the lesson.
   hook: z.string().min(1),
   // Optional editorial subheader ("dek") — magazine-style 1-line summary
-  // that runs *above* the title in small caps. Used to phrase the lesson
-  // as part of a series ("On the network stack", "On authentication", …).
+  // that runs *above* the title in small caps.
   dek: z.string().optional(),
+  // Optional accent override. When omitted the renderer falls back to the
+  // major color, but lessons can pick a sharper sub-accent (e.g. emerald
+  // for crypto under the technology hue) so similar topics don't look
+  // identical in the catalog.
+  accent: z
+    .enum(["primary", "warm", "cool", "neutral", "accent", "danger", "success"])
+    .optional(),
   // The hero figure rendered at the top of the lesson, before any prose.
   // Sections may also carry their own inline figures.
   figure: studyFigureZ,

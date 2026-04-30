@@ -277,14 +277,34 @@
       ],
       "figure": {
         "kind": "cinematic",
-        "aspect": "16:9",
+        "aspect": "16:10",
         "caption": "ハッカーが操る 3 台のボットがサーバを狙い、WAF が前段で守る ── 7 シーンで臨場感ある攻防を再現。",
         "legend": [
-          { "label": "ハッカー", "accent": "danger", "glyph": "person" },
-          { "label": "ボット端末", "accent": "danger", "glyph": "dot" },
-          { "label": "リクエスト", "accent": "danger", "glyph": "dot" },
-          { "label": "WAF (防御)", "accent": "success", "glyph": "shield" },
-          { "label": "サーバ", "accent": "primary", "glyph": "person" }
+          {
+            "label": "ハッカー",
+            "accent": "danger",
+            "glyph": "person"
+          },
+          {
+            "label": "ボット端末",
+            "accent": "danger",
+            "glyph": "dot"
+          },
+          {
+            "label": "リクエスト",
+            "accent": "danger",
+            "glyph": "dot"
+          },
+          {
+            "label": "WAF (防御)",
+            "accent": "success",
+            "glyph": "shield"
+          },
+          {
+            "label": "サーバ",
+            "accent": "primary",
+            "glyph": "person"
+          }
         ],
         "objects": [
           {
@@ -294,7 +314,7 @@
             "label": "ハッカー",
             "sublabel": "指令役",
             "x": 8,
-            "y": 55,
+            "y": 52,
             "width": 12,
             "height": 30
           },
@@ -303,7 +323,7 @@
             "kind": "box",
             "label": "Bot #1",
             "x": 28,
-            "y": 22,
+            "y": 28,
             "accent": "danger",
             "width": 11,
             "height": 8
@@ -313,7 +333,7 @@
             "kind": "box",
             "label": "Bot #2",
             "x": 28,
-            "y": 50,
+            "y": 52,
             "accent": "danger",
             "width": 11,
             "height": 8
@@ -323,7 +343,7 @@
             "kind": "box",
             "label": "Bot #3",
             "x": 28,
-            "y": 78,
+            "y": 74,
             "accent": "danger",
             "width": 11,
             "height": 8
@@ -334,7 +354,7 @@
             "label": "WAF",
             "sublabel": "前段で防御",
             "x": 56,
-            "y": 50,
+            "y": 52,
             "accent": "success",
             "width": 11,
             "height": 11,
@@ -346,7 +366,7 @@
             "character": "server",
             "label": "サーバ",
             "x": 86,
-            "y": 55,
+            "y": 52,
             "width": 14,
             "height": 30,
             "expression": "neutral"
@@ -356,7 +376,7 @@
             "kind": "chip",
             "label": "req",
             "x": 36,
-            "y": 22,
+            "y": 28,
             "accent": "danger",
             "width": 5,
             "height": 4,
@@ -367,7 +387,7 @@
             "kind": "chip",
             "label": "req",
             "x": 36,
-            "y": 50,
+            "y": 52,
             "accent": "danger",
             "width": 5,
             "height": 4,
@@ -378,7 +398,7 @@
             "kind": "chip",
             "label": "req",
             "x": 36,
-            "y": 78,
+            "y": 74,
             "accent": "danger",
             "width": 5,
             "height": 4,
@@ -389,7 +409,7 @@
             "kind": "chip",
             "label": "req",
             "x": 36,
-            "y": 36,
+            "y": 34,
             "accent": "danger",
             "width": 5,
             "height": 4,
@@ -400,7 +420,7 @@
             "kind": "chip",
             "label": "req",
             "x": 36,
-            "y": 64,
+            "y": 68,
             "accent": "danger",
             "width": 5,
             "height": 4,
@@ -411,7 +431,7 @@
             "kind": "chip",
             "label": "503",
             "x": 86,
-            "y": 35,
+            "y": 90,
             "accent": "danger",
             "width": 6,
             "height": 5,
@@ -422,7 +442,7 @@
             "kind": "chip",
             "label": "🌊 攻撃の流れ",
             "x": 36,
-            "y": 8,
+            "y": 7,
             "accent": "danger",
             "width": 18,
             "height": 4,
@@ -433,7 +453,7 @@
             "kind": "chip",
             "label": "🛡 WAF が手前で防御",
             "x": 56,
-            "y": 8,
+            "y": 7,
             "accent": "success",
             "width": 22,
             "height": 4,
@@ -510,7 +530,7 @@
                 "at": 2000,
                 "duration": 1200,
                 "x": 82,
-                "y": 50,
+                "y": 52,
                 "scale": 1
               },
               {
@@ -518,7 +538,7 @@
                 "at": 2100,
                 "duration": 1200,
                 "x": 82,
-                "y": 50,
+                "y": 52,
                 "scale": 1
               },
               {
@@ -526,7 +546,7 @@
                 "at": 2200,
                 "duration": 1200,
                 "x": 82,
-                "y": 50,
+                "y": 52,
                 "scale": 1
               }
             ]
@@ -573,7 +593,7 @@
                 "at": 1900,
                 "duration": 1200,
                 "x": 82,
-                "y": 50,
+                "y": 52,
                 "scale": 1
               },
               {
@@ -581,7 +601,7 @@
                 "at": 2000,
                 "duration": 1200,
                 "x": 82,
-                "y": 50,
+                "y": 52,
                 "scale": 1
               },
               {
@@ -723,7 +743,7 @@
                 "at": 1500,
                 "duration": 200,
                 "x": 36,
-                "y": 22,
+                "y": 28,
                 "opacity": 1,
                 "scale": 1.2
               },
@@ -732,7 +752,7 @@
                 "at": 1600,
                 "duration": 200,
                 "x": 36,
-                "y": 50,
+                "y": 52,
                 "opacity": 1,
                 "scale": 1.2
               },
@@ -741,7 +761,7 @@
                 "at": 1700,
                 "duration": 200,
                 "x": 36,
-                "y": 78,
+                "y": 74,
                 "opacity": 1,
                 "scale": 1.2
               },
@@ -750,7 +770,7 @@
                 "at": 1900,
                 "duration": 1000,
                 "x": 56,
-                "y": 50,
+                "y": 52,
                 "scale": 0.4,
                 "opacity": 0
               },
@@ -759,7 +779,7 @@
                 "at": 2000,
                 "duration": 1000,
                 "x": 56,
-                "y": 50,
+                "y": 52,
                 "scale": 0.4,
                 "opacity": 0
               },
@@ -768,7 +788,7 @@
                 "at": 2100,
                 "duration": 1000,
                 "x": 56,
-                "y": 50,
+                "y": 52,
                 "scale": 0.4,
                 "opacity": 0
               },

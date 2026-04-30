@@ -76,7 +76,7 @@
       ],
       "figure": {
         "kind": "cinematic",
-        "aspect": "16:9",
+        "aspect": "16:10",
         "caption": "派遣 (上) と請負 (下) の経路の違い。指揮命令の矢印が誰から誰に向かうかが決定的に違います。",
         "legend": [
           {
@@ -107,7 +107,7 @@
             "label": "派遣元",
             "sublabel": "雇用主",
             "x": 18,
-            "y": 22,
+            "y": 24,
             "accent": "primary",
             "width": 16,
             "height": 10
@@ -118,7 +118,7 @@
             "label": "派遣先",
             "sublabel": "指揮命令",
             "x": 60,
-            "y": 22,
+            "y": 24,
             "accent": "warm",
             "width": 16,
             "height": 10
@@ -128,7 +128,7 @@
             "kind": "box",
             "label": "派遣スタッフ",
             "x": 88,
-            "y": 22,
+            "y": 24,
             "accent": "neutral",
             "width": 16,
             "height": 10
@@ -139,7 +139,7 @@
             "label": "請負会社",
             "sublabel": "雇用 + 指揮命令",
             "x": 18,
-            "y": 76,
+            "y": 72,
             "accent": "success",
             "width": 16,
             "height": 10
@@ -150,7 +150,7 @@
             "label": "発注者",
             "sublabel": "成果物を受領",
             "x": 60,
-            "y": 76,
+            "y": 72,
             "accent": "neutral",
             "width": 16,
             "height": 10
@@ -160,7 +160,7 @@
             "kind": "box",
             "label": "請負スタッフ",
             "x": 88,
-            "y": 76,
+            "y": 72,
             "accent": "neutral",
             "width": 16,
             "height": 10
@@ -170,7 +170,7 @@
             "kind": "chip",
             "label": "賃金",
             "x": 18,
-            "y": 22,
+            "y": 24,
             "accent": "primary",
             "width": 6,
             "height": 4,
@@ -181,7 +181,7 @@
             "kind": "chip",
             "label": "業務指示",
             "x": 60,
-            "y": 22,
+            "y": 24,
             "accent": "warm",
             "width": 8,
             "height": 4,
@@ -192,7 +192,7 @@
             "kind": "chip",
             "label": "賃金 + 指示",
             "x": 18,
-            "y": 76,
+            "y": 72,
             "accent": "success",
             "width": 10,
             "height": 4,
@@ -203,7 +203,7 @@
             "kind": "chip",
             "label": "成果物",
             "x": 88,
-            "y": 76,
+            "y": 72,
             "accent": "neutral",
             "width": 8,
             "height": 4,
@@ -214,7 +214,7 @@
             "kind": "chip",
             "label": "派遣 (雇用 ≠ 指揮)",
             "x": 50,
-            "y": 50,
+            "y": 7,
             "accent": "primary",
             "width": 22,
             "height": 5,
@@ -225,7 +225,7 @@
             "kind": "chip",
             "label": "請負 (雇用 = 指揮)",
             "x": 50,
-            "y": 50,
+            "y": 7,
             "accent": "success",
             "width": 22,
             "height": 5,
@@ -257,7 +257,7 @@
                 "at": 2100,
                 "duration": 1400,
                 "x": 88,
-                "y": 22,
+                "y": 24,
                 "scale": 1
               }
             ]
@@ -285,7 +285,7 @@
                 "at": 2100,
                 "duration": 1400,
                 "x": 88,
-                "y": 22,
+                "y": 24,
                 "scale": 1,
                 "effect": "flash"
               }
@@ -327,7 +327,7 @@
                 "at": 2500,
                 "duration": 1300,
                 "x": 88,
-                "y": 76,
+                "y": 72,
                 "scale": 1
               }
             ]
@@ -355,7 +355,7 @@
                 "at": 2100,
                 "duration": 1400,
                 "x": 60,
-                "y": 76,
+                "y": 72,
                 "scale": 1,
                 "effect": "flash"
               }

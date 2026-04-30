@@ -24,6 +24,7 @@ const HUE: Record<Accent, string> = {
 
 const ASPECT: Record<Cinematic["aspect"], string> = {
   "16:9": "56.25%",
+  "16:10": "62.5%",
   "4:3": "75%",
   "21:9": "42.86%",
 };
@@ -603,11 +604,23 @@ function renderShape(obj: Obj, s: ResolvedObj, hue: string) {
       );
     case "chip":
       return (
-        <div
-          className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold text-white shadow-tile"
-          style={{ background: hue }}
-        >
-          {s.label}
+        <div className="relative">
+          <div
+            className="inline-flex items-center gap-1 whitespace-nowrap rounded-full bg-white px-3 py-1.5 text-[11.5px] font-semibold shadow-tile ring-2"
+            style={{
+              color: hue,
+              ["--tw-ring-color" as string]: hue,
+              borderColor: hue,
+            }}
+          >
+            {/* Color bullet that doubles as a focal cue */}
+            <span
+              aria-hidden
+              className="inline-block h-1.5 w-1.5 rounded-full"
+              style={{ background: hue }}
+            />
+            {s.label}
+          </div>
         </div>
       );
     case "icon":

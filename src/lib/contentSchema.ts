@@ -546,7 +546,7 @@ const cinematicLegendZ = z.object({
 const cinematicFigureZ = z.object({
   kind: z.literal("cinematic"),
   caption: z.string().optional(),
-  aspect: z.enum(["16:9", "4:3", "21:9"]).default("16:9"),
+  aspect: z.enum(["16:9", "16:10", "4:3", "21:9"]).default("16:10"),
   objects: z.array(cinematicObjectZ).min(1).max(24),
   scenes: z.array(cinematicSceneZ).min(1).max(12),
   // 0-6 legend chips shown across all scenes.

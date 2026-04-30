@@ -40,6 +40,69 @@
       ]
     },
     {
+      "heading": "プロンプト → 生成 AI → 出力 の流れをアニメで",
+      "summary": "ユーザがプロンプトを入れてから、AI が答えを生成するまでの流れを動画で見ます。",
+      "paragraphs": [
+        "==生成 AI の動き== は本質的に『**プロンプト → 推論 → 出力**』の連鎖です。下のアニメで 4 シーンに分けて流れを追ってみましょう。"
+      ],
+      "figure": {
+        "kind": "cinematic",
+        "aspect": "16:9",
+        "caption": "アリスのプロンプトが LLM に流れ込み、推論を経て出力が返る 4 シーン。ハルシネーションが起こる瞬間も再現。",
+        "objects": [
+          { "id": "alice", "kind": "character", "character": "alice", "label": "アリス", "x": 12, "y": 50, "width": 12, "height": 30 },
+          { "id": "prompt", "kind": "chip", "label": "プロンプト", "x": 26, "y": 30, "accent": "warm", "width": 12, "height": 5, "opacity": 0 },
+          { "id": "llm", "kind": "box", "label": "LLM", "sublabel": "巨大言語モデル", "x": 56, "y": 50, "accent": "accent", "width": 18, "height": 16 },
+          { "id": "output", "kind": "chip", "label": "応答", "x": 84, "y": 50, "accent": "primary", "width": 12, "height": 5, "opacity": 0 },
+          { "id": "halluc", "kind": "chip", "label": "⚠ ハルシネーション", "x": 56, "y": 80, "accent": "danger", "width": 18, "height": 5, "opacity": 0 }
+        ],
+        "scenes": [
+          {
+            "title": "01 · プロンプト入力",
+            "narration": "アリスが質問を入力します。プロンプトの良し悪しが結果を左右します。",
+            "duration": 1800,
+            "actions": [
+              { "target": "prompt", "at": 100, "duration": 300, "opacity": 1, "scale": 1.2, "effect": "flash" },
+              { "target": "prompt", "at": 500, "duration": 800, "x": 50, "y": 50, "scale": 1 }
+            ]
+          },
+          {
+            "title": "02 · LLM 内部で推論",
+            "narration": "数百億のパラメータが動き、トークン単位で次の単語を予測していきます。",
+            "duration": 2400,
+            "actions": [
+              { "target": "prompt", "at": 0, "duration": 400, "opacity": 0 },
+              { "target": "llm", "at": 100, "duration": 400, "scale": 1.15, "effect": "pulse" },
+              { "target": "llm", "at": 700, "duration": 400, "effect": "pulse" },
+              { "target": "llm", "at": 1300, "duration": 400, "effect": "spin" },
+              { "target": "llm", "at": 1900, "duration": 400, "scale": 1 }
+            ]
+          },
+          {
+            "title": "03 · 出力が生成される",
+            "narration": "LLM が応答を生成。これがプロンプトに対する答えです。",
+            "duration": 2000,
+            "actions": [
+              { "target": "output", "at": 200, "duration": 400, "x": 70, "y": 50, "opacity": 1, "scale": 1.3 },
+              { "target": "output", "at": 800, "duration": 800, "x": 84, "y": 50, "scale": 1, "effect": "flash" },
+              { "target": "alice", "at": 1300, "duration": 400, "expression": "happy" }
+            ]
+          },
+          {
+            "title": "04 · ハルシネーション注意",
+            "narration": "学習にない情報を聞かれると、AI は『もっともらしい嘘』を生成することも。必ずファクトチェックを。",
+            "duration": 2400,
+            "actions": [
+              { "target": "halluc", "at": 0, "duration": 400, "opacity": 1, "scale": 1.3, "effect": "flash" },
+              { "target": "halluc", "at": 600, "duration": 400, "scale": 1 },
+              { "target": "alice", "at": 800, "duration": 500, "expression": "worried" },
+              { "target": "llm", "at": 1200, "duration": 500, "effect": "shake" }
+            ]
+          }
+        ]
+      }
+    },
+    {
       "heading": "RAG とファインチューニング",
       "summary": "AI に新しい知識を持たせる 2 つのアプローチ。",
       "paragraphs": [

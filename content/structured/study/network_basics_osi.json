@@ -106,6 +106,25 @@
       }
     },
     {
+      "heading": "リアルな機器付きスタック図で全体像を掴む",
+      "summary": "PC・スイッチ・ルータが配線でつながるイメージで OSI 7 層を一望します。",
+      "paragraphs": [
+        "教科書では各層が矩形で並ぶだけのことが多いですが、実際には **PC ↔ ケーブル ↔ スイッチ ↔ ルータ** という機器の配線構造があります。これを 1 枚の図で頭に入れると、各層の代表機器が記憶に残りやすくなります。"
+      ],
+      "figure": {
+        "kind": "model-diagram",
+        "model": "osi-stack",
+        "caption": "OSI 7 層と、各層に対応する実物機器 (PC・ケーブル・スイッチ・ルータ) を 1 枚に。L1 はケーブル、L2 はスイッチ、L3 はルータ、と階層と機器の対応を視覚化。",
+        "callouts": [
+          { "anchor": "l4-tcp", "text": "TCP/UDP はここ (L4)", "accent": "primary" },
+          { "anchor": "l3-router", "text": "ルータは L3 機器", "accent": "primary" },
+          { "anchor": "l2-switch", "text": "スイッチは L2 機器", "accent": "cool" },
+          { "anchor": "l1-cable", "text": "ケーブルは L1", "accent": "neutral" },
+          { "anchor": "l7-http", "text": "HTTP はここ (L7)", "accent": "warm" }
+        ]
+      }
+    },
+    {
       "heading": "実機で見るネットワーク構成",
       "summary": "家庭からインターネットまで、実際にはどんな機器がどう繋がっているかを 1 枚で。",
       "paragraphs": [

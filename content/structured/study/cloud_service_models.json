@@ -123,6 +123,23 @@
       ]
     },
     {
+      "heading": "実際のシステム構成 — 3 層クライアント・サーバ",
+      "summary": "クラウド上で動くアプリは多くが『プレゼン層 / ファンクション層 / データ層』の 3 層で構成されています。",
+      "paragraphs": [
+        "クラウドの利用層を理解する前に、現代の Web アプリがどんな 3 層構造で動くかを見ましょう。**ブラウザ ↔ AP サーバ ↔ DB サーバ** の 3 つが連携することで、サービスが成立しています。"
+      ],
+      "figure": {
+        "kind": "model-diagram",
+        "model": "client-server-3tier",
+        "caption": "現代 Web アプリの定番構成。プレゼン層は HTTP で AP サーバに、AP サーバは SQL で DB に問い合わせる 3 層構造。",
+        "callouts": [
+          { "anchor": "client", "text": "ブラウザ / アプリ", "accent": "warm" },
+          { "anchor": "app", "text": "ロジックを実行", "accent": "primary" },
+          { "anchor": "db", "text": "データを永続化", "accent": "success" }
+        ]
+      }
+    },
+    {
       "heading": "見分け方の鉄則",
       "summary": "迷ったら『利用者が何を管理しているか』だけを見ましょう。",
       "paragraphs": [

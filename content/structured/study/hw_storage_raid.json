@@ -38,6 +38,23 @@
       ]
     },
     {
+      "heading": "RAID 5 をリアルなディスクアレイ図で見る",
+      "summary": "4 台のディスクにデータブロックとパリティブロックがどう分散するか、実物に近い図で。",
+      "paragraphs": [
+        "RAID 5 のキモは **パリティが回り持ち** で複数ディスクに分散していること。1 台壊れても、残りのデータと回り持ちのパリティから復元できます。次の図でディスク内のストライプを直接見てみましょう。"
+      ],
+      "figure": {
+        "kind": "model-diagram",
+        "model": "raid-5",
+        "caption": "ディスク 4 台で 4 ストライプを構成。各ストライプには 3 つのデータブロック (D) と 1 つのパリティブロック (P) があり、P の位置がストライプごとに回り持ちで移動します。",
+        "callouts": [
+          { "anchor": "parity", "text": "P = パリティ (回り持ち)", "accent": "danger" },
+          { "anchor": "data", "text": "D = データブロック", "accent": "primary" },
+          { "anchor": "rotation", "text": "P の位置が斜めに走る", "accent": "warm" }
+        ]
+      }
+    },
+    {
       "heading": "RAID 5 と RAID 6 ── パリティで信頼性",
       "summary": "データとパリティ (誤り訂正情報) を分散保存。",
       "paragraphs": [

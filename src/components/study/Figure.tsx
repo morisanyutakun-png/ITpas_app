@@ -2,6 +2,7 @@ import { ArrowDown, ArrowRight, Check, X } from "lucide-react";
 import type { StudyFigure } from "@/lib/contentSchema";
 import { AnimatedProcess } from "./AnimatedProcess";
 import { CinematicFigure } from "./CinematicFigure";
+import { ModelDiagramView } from "./ModelLibrary";
 
 // ── Accent palette ────────────────────────────────────────────────────────
 //
@@ -115,6 +116,14 @@ export function StudyFigureView({ figure }: { figure: StudyFigure }) {
   if (figure.kind === "timeline") return <TimelineFigure figure={figure} />;
   if (figure.kind === "animated-process") return <AnimatedProcess figure={figure} />;
   if (figure.kind === "cinematic") return <CinematicFigure figure={figure} />;
+  if (figure.kind === "model-diagram")
+    return (
+      <ModelDiagramView
+        model={figure.model}
+        caption={figure.caption}
+        callouts={figure.callouts}
+      />
+    );
   return <ProportionBarFigure figure={figure} />;
 }
 

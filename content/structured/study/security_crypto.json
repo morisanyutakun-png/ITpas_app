@@ -51,6 +51,23 @@
       }
     },
     {
+      "heading": "メールボックスの比喩で公開鍵暗号を理解する",
+      "summary": "投函口 (=公開鍵) は誰でも使える。中を取り出せる鍵 (=秘密鍵) はボブだけが持つ。",
+      "paragraphs": [
+        "言葉での説明より、**メールボックス** に置き換えるとピンときます。投函口は誰でも触れる ── これが公開鍵。でも中の手紙を取り出せるのは、ボブの持っている秘密鍵だけ。"
+      ],
+      "figure": {
+        "kind": "model-diagram",
+        "model": "public-key-mailbox",
+        "caption": "誰でも公開鍵で投函できるが、復号 (中身を取り出す) はボブの秘密鍵でしかできない。",
+        "callouts": [
+          { "anchor": "pubkey", "text": "誰でも入手 OK", "accent": "primary" },
+          { "anchor": "privkey", "text": "ボブだけが保持", "accent": "accent" },
+          { "anchor": "slot", "text": "ここから施錠投函", "accent": "warm" }
+        ]
+      }
+    },
+    {
       "heading": "公開鍵暗号 ── 鍵を 2 つペアで持つ",
       "summary": "公開鍵と秘密鍵のペア。公開鍵で暗号化、秘密鍵で復号 (またはその逆)。",
       "analogy": {

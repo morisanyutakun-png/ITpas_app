@@ -56,6 +56,40 @@
       }
     },
     {
+      "heading": "TCP セグメントの中身を見る",
+      "summary": "通信の信頼性を支える TCP ヘッダの構造を、フィールド単位で。",
+      "paragraphs": [
+        "TCP がなぜ順序保証や再送ができるのか ── その答えは **ヘッダのフィールド構成** にあります。各 32 bit 行に役割があり、フラグ・シーケンス番号・確認応答番号がセットで信頼性を作ります。"
+      ],
+      "figure": {
+        "kind": "model-diagram",
+        "model": "tcp-packet",
+        "caption": "TCP セグメントの先頭 16 byte。ポート / シーケンス番号 / ACK 番号 / フラグ / ウィンドウの 5 大フィールド。",
+        "callouts": [
+          { "anchor": "seq", "text": "順序保証の鍵", "accent": "primary" },
+          { "anchor": "flags", "text": "SYN / ACK / FIN", "accent": "warm" },
+          { "anchor": "port", "text": "プロセスを識別", "accent": "success" }
+        ]
+      }
+    },
+    {
+      "heading": "DNS の階層構造",
+      "summary": "ルート → TLD → 権威 DNS の 3 段構造で名前解決が動きます。",
+      "paragraphs": [
+        "DNS は世界中で **分散管理される階層型** の名前解決システム。ルート → TLD → 権威サーバ と委任が下りていきます。"
+      ],
+      "figure": {
+        "kind": "model-diagram",
+        "model": "dns-hierarchy",
+        "caption": "DNS は世界中で分散管理される階層型の名前解決システム。各層が下位層へ問い合わせを委任します。",
+        "callouts": [
+          { "anchor": "root", "text": "ルートサーバ (世界に 13 系統)", "accent": "primary" },
+          { "anchor": "tld", "text": "TLD 管理組織", "accent": "warm" },
+          { "anchor": "authoritative", "text": "実体の IP を持つ", "accent": "success" }
+        ]
+      }
+    },
+    {
       "heading": "ネットワーク層 ── IP と関連",
       "summary": "IP で経路を決め、ICMP で疎通確認、ARP で MAC アドレスを引く。",
       "paragraphs": [

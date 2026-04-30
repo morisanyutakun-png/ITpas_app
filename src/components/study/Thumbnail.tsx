@@ -423,6 +423,50 @@ function glyphFor(kind: StudyFigure["kind"]) {
         </g>
       );
 
+    case "model-diagram":
+      // A small "blueprint" motif to imply a hand-drawn model. Three
+      // stacked panels with anchor dots suggesting callouts.
+      return (
+        <g>
+          {[0, 1, 2].map((i) => (
+            <rect
+              key={i}
+              x={4}
+              y={20 + i * 36}
+              width={232}
+              height={28}
+              rx={4}
+              fill="#FFFFFF"
+              fillOpacity={0.92 - i * 0.18}
+            />
+          ))}
+          {[34, 70, 106].map((y, i) => (
+            <g key={y}>
+              <circle cx={210} cy={y} r={4.5} fill="#FFFFFF" fillOpacity={0.95} />
+              <line
+                x1={210}
+                y1={y}
+                x2={236}
+                y2={y - 12}
+                stroke="#FFFFFF"
+                strokeOpacity={0.7}
+                strokeWidth={1.5}
+                strokeDasharray="2 2"
+              />
+              <rect
+                x={236}
+                y={y - 18}
+                width={36}
+                height={12}
+                rx={2}
+                fill="#FFFFFF"
+                fillOpacity={0.65 - i * 0.12}
+              />
+            </g>
+          ))}
+        </g>
+      );
+
     case "animated-process":
       // Play-button-in-frame motif to suggest "moving figure".
       return (

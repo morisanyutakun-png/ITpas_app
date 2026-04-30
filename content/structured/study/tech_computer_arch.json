@@ -47,6 +47,40 @@
       }
     },
     {
+      "heading": "CPU パイプラインを見る",
+      "summary": "1 つの命令が CPU 内部で 5 段階を経て実行される流れを、図で押さえます。",
+      "paragraphs": [
+        "現代の CPU は **命令を 5 段階のパイプライン** に流して、複数の命令を同時並行に処理しています。各段が同時に走るので、1 サイクルあたりの命令完了数が増えます。"
+      ],
+      "figure": {
+        "kind": "model-diagram",
+        "model": "cpu-pipeline",
+        "caption": "命令フェッチ → デコード → 実行 → メモリアクセス → ライトバック の 5 段階。各段が並列で動くため、ほぼ毎サイクル 1 命令が完了します。",
+        "callouts": [
+          { "anchor": "fetch", "text": "メモリから命令を取得", "accent": "primary" },
+          { "anchor": "execute", "text": "演算装置 (ALU) が動く", "accent": "warm" },
+          { "anchor": "writeback", "text": "結果をレジスタに戻す", "accent": "success" }
+        ]
+      }
+    },
+    {
+      "heading": "メモリ階層をピラミッドで見る",
+      "summary": "速さと容量はトレードオフ ── ピラミッドの上下で対比。",
+      "paragraphs": [
+        "メモリ階層は **速さと容量のトレードオフ** で 5 段に積まれています。CPU に近いほど速くて小さく、遠いほど遅くて大きい。"
+      ],
+      "figure": {
+        "kind": "model-diagram",
+        "model": "memory-hierarchy",
+        "caption": "上ほど速くて小容量、下ほど遅くて大容量。レジスタからストレージまで 5 段の階層構造。",
+        "callouts": [
+          { "anchor": "register", "text": "最速 — CPU 内のレジスタ", "accent": "danger" },
+          { "anchor": "main", "text": "DRAM = 揮発性", "accent": "primary" },
+          { "anchor": "storage", "text": "SSD/HDD = 不揮発性", "accent": "success" }
+        ]
+      }
+    },
+    {
       "heading": "メモリ階層",
       "summary": "速さと容量のトレードオフで階層になっている。",
       "analogy": { "label": "たとえると", "body": "**机の上 (レジスタ・キャッシュ)** に置く物は手が早く伸びるが、置ける数が少ない。**本棚 (主記憶)** はたくさん入る。**倉庫 (HDD)** はもっと入るが取りに行くのに時間がかかる ── そんな階層です。" },

@@ -541,6 +541,44 @@ const cinematicFigureZ = z.object({
   scenes: z.array(cinematicSceneZ).min(1).max(10),
 });
 
+// Model diagram — picks one of a curated set of *fully drawn* SVG models
+// that resemble what a textbook illustration would look like (e.g. an
+// actual OSI 7-layer stack with cables and routers, a RAID-5 disk array
+// with parity stripes, a TCP packet header). The model itself lives in
+// a hand-authored React component; the JSON only selects which model to
+// render and provides optional callouts/highlights.
+const modelDiagramFigureZ = z.object({
+  kind: z.literal("model-diagram"),
+  // Which model SVG to render. Each name maps to a React component in
+  // src/components/study/ModelLibrary.tsx.
+  model: z.enum([
+    "osi-stack",
+    "raid-5",
+    "memory-hierarchy",
+    "tcp-packet",
+    "public-key-mailbox",
+    "client-server-3tier",
+    "cpu-pipeline",
+    "dns-hierarchy",
+  ]),
+  caption: z.string().optional(),
+  // Optional list of callouts: small annotations pinned to specific
+  // points of the model. The model component decides where each named
+  // anchor lives; the JSON provides the text.
+  callouts: z
+    .array(
+      z.object({
+        anchor: z.string().min(1),
+        text: z.string().min(1),
+        accent: z
+          .enum(["primary", "warm", "cool", "neutral", "accent", "danger", "success"])
+          .default("primary"),
+      })
+    )
+    .max(8)
+    .default([]),
+});
+
 export const studyFigureZ = z.discriminatedUnion("kind", [
   layeredFigureZ,
   compareFigureZ,
@@ -555,6 +593,7 @@ export const studyFigureZ = z.discriminatedUnion("kind", [
   proportionBarFigureZ,
   animatedProcessFigureZ,
   cinematicFigureZ,
+  modelDiagramFigureZ,
 ]);
 
 // A callout — short, accented note inline with the prose. Three voices:

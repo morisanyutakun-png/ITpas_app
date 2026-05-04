@@ -6,8 +6,9 @@ import { usePathname } from "next/navigation";
 const LINKS = [
   { href: "/home", label: "ホーム", matchPrefix: false },
   { href: "/learn/study", label: "学ぶ", matchPrefix: true },
-  { href: "/learn", label: "問題を解く", matchPrefix: false },
-  { href: "/dashboard", label: "進捗", matchPrefix: true },
+  { href: "/learn", label: "演習", matchPrefix: false },
+  { href: "/map", label: "マップ", matchPrefix: true },
+  { href: "/account", label: "自分", matchPrefix: true },
 ] as const;
 
 export function DesktopNav() {

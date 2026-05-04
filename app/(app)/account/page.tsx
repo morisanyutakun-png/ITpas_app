@@ -274,10 +274,18 @@ export default async function AccountPage({
 
       {/* Links */}
       <section className="space-y-2">
-        <div className="ios-section-label">その他</div>
+        <div className="ios-section-label">学習</div>
         <div className="ios-list">
+          <SettingsLink href="/dashboard" label="学習レポート" />
           <SettingsLink href="/bookmarks" label="ブックマーク" />
           <SettingsLink href="/history" label="学習履歴" />
+          <SettingsLink href="/misconceptions" label="誤解パターン辞典" />
+        </div>
+      </section>
+
+      <section className="space-y-2">
+        <div className="ios-section-label">設定・サービス</div>
+        <div className="ios-list">
           <SettingsLink href="/pricing" label="料金プラン" />
           <SettingsLink href="/legal" label="著作権・引用について" />
         </div>

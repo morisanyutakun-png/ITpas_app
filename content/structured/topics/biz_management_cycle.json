@@ -1,0 +1,8 @@
+{
+  "slug": "biz_management_cycle",
+  "title": "経営管理サイクル（PDCA / OODA / BCP・BCM）",
+  "majorCategory": "strategy",
+  "minorTopic": "経営管理",
+  "summary": "PDCA = 計画起点の改善ループ。OODA = 観察起点の即応ループ。BCP = 事業継続計画、BCM = それを運用し続ける管理体制。",
+  "body": "## 主な用語\n\n- **PDCA**: Plan → Do → Check → Act。品質改善の古典サイクル。ISO 9000 / 14000 の根幹\n- **OODA**: Observe → Orient → Decide → Act。不確実な状況下での即応的意思決定\n- **BCP**: Business Continuity Plan。災害時に重要事業を継続するための計画\n- **BCM**: Business Continuity Management。BCP を訓練・点検・更新する管理サイクル\n- **リスクアセスメント**: 脅威の洗い出し → 影響度評価 → 優先度付け\n- **回避・低減・移転・受容**: リスク対応の4区分\n\n## PDCA の各フェーズで何をやるか\n\n- **Plan**: 目標と計画を立てる\n- **Do**: 計画通りに実行する\n- **Check**: 実行結果と計画のズレを評価する\n- **Act**: 改善を加えて次の Plan につなげる\n\n## ひっかけ\n- 『PDCA の C で中長期のありたい姿を把握する』 → ✗ それは SWOT 分析\n- 『PDCA の C で外部環境を分析する』 → ✗ それは PEST 分析\n- 『BCP の目的 = 建物・設備の保全』 → ✗ 主目的は重要事業の継続\n- 『BCP の目的 = 労働災害の発生確率低減』 → ✗ それは安全衛生管理\n- 『PDCA = 不確実な状況に強い』 → ✗ それは OODA"
+}

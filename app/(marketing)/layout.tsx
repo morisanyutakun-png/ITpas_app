@@ -55,13 +55,13 @@ export default async function MarketingLayout({
                 <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             ) : (
-              <Link
-                href="/api/auth/google/login?returnTo=/home"
-                className="pill-neutral ml-1 h-9 gap-1 px-3.5 text-[13px]"
+              <a
+                href="/#try"
+                className="pill-primary ml-1 h-9 gap-1 px-3.5 text-[13px] shadow-tint-blue"
               >
-                Googleで始める
+                無料で1問試す
                 <ArrowRight className="h-3.5 w-3.5" />
-              </Link>
+              </a>
             )}
           </nav>
         </div>

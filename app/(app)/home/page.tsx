@@ -54,7 +54,7 @@ export default async function HomePage() {
       FROM attempts
       WHERE user_id = ${user.id}
         AND result IN ('correct', 'incorrect')
-        AND (started_at AT TIME ZONE 'Asia/Tokyo')::date
+        AND (created_at AT TIME ZONE 'Asia/Tokyo')::date
             = (now() AT TIME ZONE 'Asia/Tokyo')::date
     `),
   ]);

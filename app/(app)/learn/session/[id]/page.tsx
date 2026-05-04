@@ -11,6 +11,7 @@ import { MockExamTimer } from "@/components/session/MockExamTimer";
 import { getOrCreateAnonUser } from "@/lib/anonId";
 import { getQuestionFull } from "@/server/queries/questions";
 import { MOCK_EXAM_DURATION_MIN } from "@/lib/plan";
+import { getMisconceptionArchetype } from "@/server/content/misconceptionArchetypeMap";
 
 export const dynamic = "force-dynamic";
 
@@ -92,7 +93,10 @@ export default async function SessionPage({
         keyInsight={full.question.keyInsight}
         commonMistakeFlow={full.question.commonMistakeFlow}
         topics={full.topics}
-        misconceptions={full.misconceptions}
+        misconceptions={full.misconceptions.map((m) => ({
+          ...m,
+          archetype: getMisconceptionArchetype(m.slug),
+        }))}
         materials={full.materials}
         nextHref={nextHref}
         sessionId={id}

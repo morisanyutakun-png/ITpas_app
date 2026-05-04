@@ -6,6 +6,7 @@ import {
   ChevronRight,
   Clock,
   Compass,
+  Map as MapIcon,
   PlayCircle,
   Shuffle,
   Target,
@@ -156,6 +157,25 @@ export default async function HomePage() {
           <CurrentSpot rec={rec} hasLesson={lessonForRec !== null} />
         </Section>
       )}
+
+      {/* ── 概念マップへの導線 ── */}
+      <Link
+        href="/map"
+        className="surface-card group flex items-center gap-4 overflow-hidden p-5 transition-transform active:scale-[0.99]"
+      >
+        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-grad-purple text-white shadow-tile">
+          <MapIcon className="h-5 w-5" strokeWidth={2.2} />
+        </span>
+        <div className="min-w-0 flex-1">
+          <div className="text-[16px] font-semibold tracking-tight">
+            コンセプトマップで現在地を見る
+          </div>
+          <div className="mt-0.5 text-[12.5px] text-muted-foreground">
+            試験範囲のどこにいるか、何を次に学ぶかが地図で分かります
+          </div>
+        </div>
+        <ChevronRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
+      </Link>
 
       {/* ── 全体の地図 ── */}
       <Section

@@ -2,6 +2,7 @@
   "slug": "confuse_enterprise_systems",
   "title": "基幹業務システムの用途混同",
   "definition": "ERP/SCM/CRM/SFAといった基幹業務システムについて、頭文字が何を指すかを把握しないまま雰囲気で選択してしまい、目的と対象部門を取り違える。",
+  "archetype": "rephrase_trap",
   "typicalExample": "『供給の最適化』という問いに対し『統合』という連想でERPを選んでしまう。あるいは『顧客』という単語に反応してSFAをCRMと混同する。",
   "counterExample": "問題文のキーワードを頭文字に戻して対応づける。『供給=Supply=SCM』『顧客=Customer=CRM』『営業=Force=SFA』『経営資源=Resource=ERP』。",
   "recoveryHint": "S/C/F/R の頭文字が何の略かを暗唱する癖をつける。曖昧なときは『対象となる部門は誰か？』を問い直すと正解に辿り着きやすい。"

@@ -2,6 +2,7 @@
   "slug": "confuse_crypto_method",
   "title": "共通鍵 / 公開鍵 / ハッシュ の取り違え",
   "definition": "暗号方式の種類と用途を区別せずに使ってしまう。",
+  "archetype": "rephrase_trap",
   "typicalExample": "デジタル署名の仕組みを問われて『共通鍵で署名する』と回答してしまう。",
   "counterExample": "デジタル署名は秘密鍵で署名・公開鍵で検証 = 公開鍵暗号方式。共通鍵は機密性、ハッシュは改ざん検出。",
   "recoveryHint": "『鍵が1つか2つか / 戻せるか戻せないか』の2軸で整理する。"

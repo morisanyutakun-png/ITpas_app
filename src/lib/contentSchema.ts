@@ -107,6 +107,14 @@ export const topicFileZ = z.object({
   body: z.string().default(""),
 });
 
+export const misconceptionArchetypeZ = z.enum([
+  "rephrase_trap",
+  "hierarchy_mix",
+  "contrast_swap",
+  "order_reverse",
+  "scope_misread",
+]);
+
 export const misconceptionFileZ = z.object({
   slug: z.string().min(1),
   title: z.string().min(1),
@@ -114,6 +122,7 @@ export const misconceptionFileZ = z.object({
   typicalExample: z.string().default(""),
   counterExample: z.string().default(""),
   recoveryHint: z.string().default(""),
+  archetype: misconceptionArchetypeZ.optional(),
 });
 
 export const materialFrontmatterZ = z.object({

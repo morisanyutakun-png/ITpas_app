@@ -109,6 +109,8 @@ export async function getQuestionFull(id: string) {
     .select({
       slug: misconceptions.slug,
       title: misconceptions.title,
+      counterExample: misconceptions.counterExample,
+      recoveryHint: misconceptions.recoveryHint,
     })
     .from(questionMisconceptions)
     .innerJoin(

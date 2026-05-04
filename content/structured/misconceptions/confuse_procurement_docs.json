@@ -2,6 +2,7 @@
   "slug": "confuse_procurement_docs",
   "title": "RFI / RFP / RFQ など調達略語の混同",
   "definition": "RF系の略語が多く、目的（情報/提案/見積）と段階（前/中/後）を取り違える。",
+  "archetype": "order_reverse",
   "typicalExample": "『活用事例の提供を依頼する文書』を問われて RFP と答える。",
   "counterExample": "情報収集=RFI / 提案依頼=RFP / 見積依頼=RFQ。順序は I→P→Q。",
   "recoveryHint": "『I=Information / P=Proposal / Q=Quotation』と頭文字で覚え、調達フローの順番をセットで頭に置く。"

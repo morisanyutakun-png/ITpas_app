@@ -8,6 +8,15 @@ import { WhyAttractiveCard } from "./WhyAttractiveCard";
 import { MisconceptionBadges } from "./MisconceptionBadges";
 import { RelatedTopics } from "./RelatedTopics";
 import { RelatedMaterials } from "./RelatedMaterials";
+import type { MisconceptionArchetype } from "@/lib/misconceptionArchetypes";
+
+export type ResultPanelMisconception = {
+  slug: string;
+  title: string;
+  counterExample?: string | null;
+  recoveryHint?: string | null;
+  archetype?: MisconceptionArchetype | null;
+};
 
 export type ResultPanelData = {
   isCorrect: boolean;
@@ -18,10 +27,14 @@ export type ResultPanelData = {
     whyAttractive: string | null;
     misconceptionSlug: string | null;
   } | null;
+  correctChoice: {
+    label: string;
+    body: string;
+  } | null;
   explanation: string;
   keyInsight?: string | null;
   commonMistakeFlow?: string | null;
-  misconceptions: { slug: string; title: string }[];
+  misconceptions: ResultPanelMisconception[];
   topics: { slug: string; title: string; summary: string }[];
   materials: { slug: string; title: string; body: string; role: string }[];
 };
@@ -80,6 +93,14 @@ export function ResultPanel({
         </div>
       </motion.div>
 
+      {/* Choice contrast — selected vs correct, side by side */}
+      {!data.isCorrect && data.selectedChoice && data.correctChoice && (
+        <ChoiceContrast
+          selected={data.selectedChoice}
+          correct={data.correctChoice}
+        />
+      )}
+
       {/* WhyAttractive */}
       {!data.isCorrect && data.selectedChoice?.whyAttractive && (
         <WhyAttractiveCard
@@ -87,6 +108,9 @@ export function ResultPanel({
           whyAttractive={data.selectedChoice.whyAttractive}
           misconceptionSlug={data.selectedChoice.misconceptionSlug ?? null}
           misconceptionTitle={selectedMisconception?.title}
+          archetype={selectedMisconception?.archetype ?? null}
+          counterExample={selectedMisconception?.counterExample ?? null}
+          recoveryHint={selectedMisconception?.recoveryHint ?? null}
         />
       )}
 
@@ -180,5 +204,77 @@ export function ResultPanel({
         )}
       </motion.div>
     </div>
+  );
+}
+
+/**
+ * 「あなた → 正解」の横並び対比カード。誤答時のみ表示。
+ *
+ * 横スライドで両者を並べることで、「自分が選んだ罠」と「正解」の差を 1 視野に
+ * 入れる。テキスト密度は抑え、ラベルと本文だけを左右に置く。
+ */
+function ChoiceContrast({
+  selected,
+  correct,
+}: {
+  selected: { label: string; body: string };
+  correct: { label: string; body: string };
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 6 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.08 }}
+      className="grid gap-2 sm:grid-cols-[1fr_auto_1fr] sm:items-stretch"
+    >
+      <motion.div
+        initial={{ opacity: 0, x: -10 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ type: "spring", stiffness: 220, damping: 22, delay: 0.12 }}
+        className="relative overflow-hidden rounded-2xl bg-card p-4 shadow-surface ring-1 ring-ios-red/30"
+      >
+        <div className="flex items-center gap-2">
+          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-ios-red text-[12px] font-bold text-white">
+            {selected.label}
+          </span>
+          <span className="text-[10.5px] font-semibold uppercase tracking-[0.12em] text-ios-red">
+            あなたの選択
+          </span>
+        </div>
+        <p className="mt-2 text-[13.5px] leading-[1.65] text-foreground/85">
+          {selected.body}
+        </p>
+      </motion.div>
+
+      <div className="hidden items-center justify-center sm:flex">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.6 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.22, type: "spring", stiffness: 280 }}
+          className="flex h-9 w-9 items-center justify-center rounded-full bg-card shadow-surface ring-1 ring-black/[0.06] dark:ring-white/[0.08]"
+        >
+          <ArrowRight className="h-4 w-4 text-muted-foreground" />
+        </motion.div>
+      </div>
+
+      <motion.div
+        initial={{ opacity: 0, x: 10 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ type: "spring", stiffness: 220, damping: 22, delay: 0.18 }}
+        className="relative overflow-hidden rounded-2xl bg-card p-4 shadow-surface ring-1 ring-ios-green/30"
+      >
+        <div className="flex items-center gap-2">
+          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-ios-green text-[12px] font-bold text-white">
+            {correct.label}
+          </span>
+          <span className="text-[10.5px] font-semibold uppercase tracking-[0.12em] text-ios-green">
+            正解
+          </span>
+        </div>
+        <p className="mt-2 text-[13.5px] leading-[1.65] text-foreground/85">
+          {correct.body}
+        </p>
+      </motion.div>
+    </motion.div>
   );
 }

@@ -14,6 +14,8 @@ import {
   getMisconception,
   getMisconceptionProgress,
 } from "@/server/queries/misconceptions";
+import { getMisconceptionArchetype } from "@/server/content/misconceptionArchetypeMap";
+import { ARCHETYPE_META } from "@/lib/misconceptionArchetypes";
 
 export const dynamic = "force-dynamic";
 
@@ -30,6 +32,9 @@ export default async function MisconceptionDetailPage({
   ]);
   if (!data) notFound();
   const { misconception, questions } = data;
+  const archetype = getMisconceptionArchetype(slug);
+  const archetypeMeta = archetype ? ARCHETYPE_META[archetype] : null;
+  const ArchetypeIcon = archetypeMeta?.icon;
 
   // Severity tone from personal incorrect rate.
   const personalized = progress.attempted >= 2;
@@ -69,13 +74,27 @@ export default async function MisconceptionDetailPage({
         <div className="relative z-10 grid gap-5 sm:grid-cols-[1fr_auto] sm:items-start">
           <div className="min-w-0 space-y-3">
             <div className="flex flex-wrap items-center gap-2 text-[10.5px] font-semibold uppercase tracking-[0.14em]">
-              <span
-                className="inline-flex items-center gap-1 rounded-full px-2 py-0.5"
-                style={{ background: hueDim, color: hue }}
-              >
-                <AlertTriangle className="h-3 w-3" />
-                Trap Pattern
-              </span>
+              {archetypeMeta && ArchetypeIcon ? (
+                <Link
+                  href={`/misconceptions?archetype=${archetypeMeta.slug}`}
+                  className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 transition-transform active:scale-[0.97]"
+                  style={{
+                    background: archetypeMeta.hueDim,
+                    color: archetypeMeta.hue,
+                  }}
+                >
+                  <ArchetypeIcon className="h-3 w-3" strokeWidth={2.4} />
+                  {archetypeMeta.label} 型
+                </Link>
+              ) : (
+                <span
+                  className="inline-flex items-center gap-1 rounded-full px-2 py-0.5"
+                  style={{ background: hueDim, color: hue }}
+                >
+                  <AlertTriangle className="h-3 w-3" />
+                  Trap Pattern
+                </span>
+              )}
               {questions.length > 0 && (
                 <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2 py-0.5 text-muted-foreground">
                   <Target className="h-3 w-3" />

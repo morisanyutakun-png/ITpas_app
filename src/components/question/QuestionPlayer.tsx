@@ -4,7 +4,11 @@ import { useState, useTransition } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Loader2 } from "lucide-react";
 import { ChoiceList, type ChoiceVM } from "./ChoiceList";
-import { ResultPanel, type ResultPanelData } from "./ResultPanel";
+import {
+  ResultPanel,
+  type ResultPanelData,
+  type ResultPanelMisconception,
+} from "./ResultPanel";
 import { recordAttemptAction } from "@/server/actions/attempts";
 import { UpgradeModal } from "@/components/UpgradeModal";
 
@@ -17,7 +21,7 @@ export type QuestionPlayerProps = {
   explanation: string;
   keyInsight?: string | null;
   commonMistakeFlow?: string | null;
-  misconceptions: { slug: string; title: string }[];
+  misconceptions: ResultPanelMisconception[];
   topics: { slug: string; title: string; summary: string }[];
   materials: { slug: string; title: string; body: string; role: string }[];
   nextHref?: string;
@@ -125,6 +129,7 @@ function buildResultData(
   selectedLabel: string
 ): ResultPanelData {
   const selected = props.choices.find((c) => c.label === selectedLabel) ?? null;
+  const correct = props.choices.find((c) => c.isCorrect) ?? null;
   return {
     isCorrect: selected?.isCorrect ?? false,
     selectedLabel,
@@ -135,6 +140,9 @@ function buildResultData(
           whyAttractive: selected.whyAttractive,
           misconceptionSlug: selected.misconceptionSlug,
         }
+      : null,
+    correctChoice: correct
+      ? { label: correct.label, body: correct.body }
       : null,
     explanation: props.explanation,
     keyInsight: props.keyInsight ?? null,

@@ -3,7 +3,7 @@ import Link from "next/link";
 export function MisconceptionBadges({
   items,
 }: {
-  items: { slug: string; title: string }[];
+  items: { slug: string; title: string }[] | { slug: string; title: string; [key: string]: unknown }[];
 }) {
   if (items.length === 0) return null;
   return (

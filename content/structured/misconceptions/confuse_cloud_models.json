@@ -2,6 +2,7 @@
   "slug": "confuse_cloud_models",
   "title": "IaaS / PaaS / SaaS の境界の取り違え",
   "definition": "クラウドサービスモデルの『どこまでベンダ提供か』を曖昧に覚えている。",
+  "archetype": "hierarchy_mix",
   "typicalExample": "『IaaS は Office 365 のようなアプリ』と回答してしまう。",
   "counterExample": "Office 365 は SaaS。IaaS は仮想マシンまで（OSは利用者がインストール）。",
   "recoveryHint": "I=Infrastructure(VM), P=Platform(実行環境), S=Software(アプリ完成品) と頭文字に対応させる。"

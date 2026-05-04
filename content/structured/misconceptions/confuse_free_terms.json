@@ -2,6 +2,7 @@
   "slug": "confuse_free_terms",
   "title": "フリーミアム / フリーウェア / フリーライド の取り違え",
   "definition": "『フリー○○』系の語を見た目の語感で混同する。",
+  "archetype": "rephrase_trap",
   "typicalExample": "『無料＋有料アップグレード』のビジネスモデルを問われて『フリーウェア』と答えてしまう。",
   "counterExample": "フリーミアム=基本無料+追加有料、フリーウェア=完全無料、フリーライド=ただ乗り、フリーランス=働き方。",
   "recoveryHint": "『収益化の型』を問われていたら**フリーミアム** (Freemium = Free + Premium)。"

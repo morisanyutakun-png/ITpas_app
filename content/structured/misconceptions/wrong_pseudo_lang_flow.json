@@ -2,6 +2,7 @@
   "slug": "wrong_pseudo_lang_flow",
   "title": "擬似言語の制御フローを追えない",
   "definition": "if/while/for の挙動を1ステップずつ追えず、条件成立タイミングや変数の状態を見誤る。",
+  "archetype": "scope_misread",
   "typicalExample": "if文の条件を無視して全要素を集計してしまう、ループ回数を1回ズレて数える。",
   "counterExample": "1反復ごとに『i の値 / 条件の真偽 / 変数の更新後の値』を1行ずつ書き出してから答える。",
   "recoveryHint": "本番ではメモ用紙に縦に変数を並べ、各反復で値を書き換えて追う。"

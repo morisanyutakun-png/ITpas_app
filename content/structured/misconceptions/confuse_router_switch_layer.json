@@ -2,6 +2,7 @@
   "slug": "confuse_router_switch_layer",
   "title": "ルータとスイッチの所属層を取り違える",
   "definition": "ルータ(L3)とスイッチ(L2)を同じものとして扱ったり、層を逆に覚えてしまう。",
+  "archetype": "hierarchy_mix",
   "typicalExample": "『MACアドレスで宛先を判断する機器はルータ』を選んでしまう。",
   "counterExample": "MACアドレス→スイッチ(L2) / IPアドレス→ルータ(L3)。",
   "recoveryHint": "『L=Local(MAC) / R=Route(IP)』のように頭文字で結びつける。"

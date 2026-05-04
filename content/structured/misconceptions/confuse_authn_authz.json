@@ -2,6 +2,7 @@
   "slug": "confuse_authn_authz",
   "title": "認証(AuthN)と認可(AuthZ)の取り違え",
   "definition": "『誰か(認証)』と『何ができるか(認可)』を区別せずに使ってしまう。",
+  "archetype": "contrast_swap",
   "typicalExample": "『多要素認証によって権限を制御する』のような表現を正答と判断してしまう。",
   "counterExample": "多要素認証は『本人確認(AuthN)』。権限の制御は『AuthZ』の話。",
   "recoveryHint": "AuthN=Who? / AuthZ=What can you do? の2行をノート冒頭に貼る。"

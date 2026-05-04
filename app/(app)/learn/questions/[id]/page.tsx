@@ -13,6 +13,7 @@ import { AiExplanationPanel } from "@/components/question/AiExplanationPanel";
 import { getQuestionFull } from "@/server/queries/questions";
 import { getCurrentUser } from "@/lib/currentUser";
 import { hasFeature, isPro, isYearAllowed, planLabel } from "@/lib/plan";
+import { getMisconceptionArchetype } from "@/server/content/misconceptionArchetypeMap";
 
 export const dynamic = "force-dynamic";
 
@@ -117,7 +118,10 @@ export default async function QuestionDetailPage({
         keyInsight={question.keyInsight}
         commonMistakeFlow={question.commonMistakeFlow}
         topics={topics}
-        misconceptions={misconceptions}
+        misconceptions={misconceptions.map((m) => ({
+          ...m,
+          archetype: getMisconceptionArchetype(m.slug),
+        }))}
         materials={materials}
       />
 

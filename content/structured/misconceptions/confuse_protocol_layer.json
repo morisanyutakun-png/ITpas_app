@@ -2,6 +2,7 @@
   "slug": "confuse_protocol_layer",
   "title": "プロトコルの所属層を取り違える",
   "definition": "DNS, DHCP, HTTP などアプリ層プロトコルを下位層と混同する。",
+  "archetype": "hierarchy_mix",
   "typicalExample": "『DNSはトランスポート層のプロトコル』と回答してしまう。",
   "counterExample": "DNS / HTTP / SMTP / DHCP はアプリケーション層。下位層 (TCP/UDP, IP) を使って動いている。",
   "recoveryHint": "『人が使うサービス名 = アプリ層』『TCP/UDP = トランスポート』『IP = ネットワーク』の3階で覚える。"
